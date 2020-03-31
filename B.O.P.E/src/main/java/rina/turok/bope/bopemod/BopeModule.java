@@ -29,6 +29,13 @@ public class BopeModule {
 		ClientRegistry.registerKeyBinding(module);
 	}
 
+	// Bind.
+	public void bind() {
+		if (module.isKeyDown()) {
+			toggle();
+		}
+	}
+
 	// While actived.
 	public void while_actived() {}
 

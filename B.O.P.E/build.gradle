@@ -1,0 +1,60 @@
+//
+// This code have protect with MIT, you can copy for sell, all rights reserver to me!
+// All Rigths for the dependcies too.
+// Discord. // For IRC.
+// Alpine.  // For event manager.
+//
+
+buildScript {
+	repositories {
+		jcenter()
+
+		maven {
+			url = "http://files.minecraftforge.net/maven"
+		}
+	}
+
+	dependencies {
+		classpath "net.minecraftforge.gradle:ForgeGradle:2.3-SNAPSHO"
+	}
+}
+
+apply plugin: "net.minecraftforge.gradle.forge";
+
+version          project.client_version
+group            project.client_group
+archivesBaseName project.client_base_name
+
+minecraft {
+	version  = "1.12.2-14.23.5.2772"
+	runDir   = "run"
+	mappings = "snapshot_20171003"
+}
+
+dependencies {} // None depencie.
+
+shadowJar {
+	dependencies {
+		include(dependency("com.github.ZeroMemes:Alpine"))
+	}
+
+	exclude "dummyThing"
+	exclude "LICENSE.txt"
+
+	classifier = "release"
+}
+
+processResources {
+	inputs.property "version",   project.version
+	inputs.property "mcversion", project.minecraft.version
+
+	from (sourceSets.main.resources.srcDirs) {
+		include "mcmod.info"
+
+		expand "version" : project.version, "mcversion" : project.minecraft.version
+	}
+
+	from (sourceSets.main.resources.srcDirs) {
+		exclude "mcmod.info"
+	}
+}

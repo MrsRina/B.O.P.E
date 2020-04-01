@@ -5,7 +5,7 @@
 // Alpine.  // For event manager.
 //
 
-buildScript {
+buildscript {
 	repositories {
 		jcenter()
 
@@ -15,7 +15,7 @@ buildScript {
 	}
 
 	dependencies {
-		classpath "net.minecraftforge.gradle:ForgeGradle:2.3-SNAPSHO"
+		classpath "net.minecraftforge.gradle:ForgeGradle:2.3-SNAPSHOT"
 	}
 }
 
@@ -23,7 +23,8 @@ apply plugin: "net.minecraftforge.gradle.forge";
 
 version          project.client_version
 group            project.client_group
-archivesBaseName project.client_base_name
+
+archivesBaseName = "bope"
 
 minecraft {
 	version  = "1.12.2-14.23.5.2772"
@@ -31,7 +32,9 @@ minecraft {
 	mappings = "snapshot_20171003"
 }
 
-dependencies {} // None depencie.
+dependencies {
+	compile "com.github.ZeroMemes:Alpine:1.5"
+}
 
 shadowJar {
 	dependencies {
@@ -58,3 +61,5 @@ processResources {
 		exclude "mcmod.info"
 	}
 }
+
+build.dependsOn(shadowJar)

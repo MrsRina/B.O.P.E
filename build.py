@@ -8,7 +8,7 @@ class Compile:
 		
 		import shutil
 		try:
-			shutil.copyfile("B.O.P.E/build/libs/rina-bope.jar", os.getenv("APPDATA") + "\\.minecraft\\mods\\turok-b0.4-release.jar")
+			shutil.copyfile("B.O.P.E/build/libs/bope-0.1.jar", os.getenv("APPDATA") + "\\.minecraft\\mods\\bope-0.1.jar")
 			os.system("start C:/Users/Public/Desktop/Minecraft_Launcher")
 			print("Copiadokkk")
 		except:

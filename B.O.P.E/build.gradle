@@ -32,21 +32,6 @@ minecraft {
 	mappings = "snapshot_20171003"
 }
 
-dependencies {
-	compile "com.github.ZeroMemes:Alpine:1.5"
-}
-
-shadowJar {
-	dependencies {
-		include(dependency("com.github.ZeroMemes:Alpine"))
-	}
-
-	exclude "dummyThing"
-	exclude "LICENSE.txt"
-
-	classifier = "release"
-}
-
 processResources {
 	inputs.property "version",   project.version
 	inputs.property "mcversion", project.minecraft.version
@@ -61,5 +46,3 @@ processResources {
 		exclude "mcmod.info"
 	}
 }
-
-build.dependsOn(shadowJar)

@@ -83,4 +83,8 @@ public class BopeModule {
 	public String get_description() {
 		return this.descritpion;
 	}
+
+	public set_bind(int key) {
+		this.key = key; 
+	}
 }

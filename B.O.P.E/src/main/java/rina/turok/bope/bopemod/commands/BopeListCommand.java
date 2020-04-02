@@ -14,7 +14,7 @@ import rina.turok.bope.bopemod.commands.*;
 // Rina.
 public class BopeListCommand {
 	public static ArrayList<BopeCommand> command_list = new ArrayList<BopeCommand>();
-	static HashMap<String, BopeCommand> lookup        = new HashMap<>();
+	static HashMap<String, BopeCommand> list_command  = new HashMap<>();
 
 	public static final TurokString prefix = new TurokString(".");
 
@@ -27,10 +27,10 @@ public class BopeListCommand {
 	}
 
 	public static void init_bope_command_lookup() {
-		lookup.clear();
+		list_command.clear();
 
-		for (BopeCommand command : command_list) {
-			lookup.put(command.get_name().toLowerCase(), command);
+		for (BopeCommand commands : command_list) {
+			list_command.put(commands.get_name().toLowerCase(), commands);
 		}
 	}
 
@@ -65,6 +65,6 @@ public class BopeListCommand {
 	}
 
 	public static BopeCommand get_command_by_name(String command) {
-		return lookup.get(command.toLowerCase());
+		return list_command.get(command.toLowerCase());
 	}
 }

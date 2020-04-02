@@ -50,7 +50,7 @@ public class BopeModule {
 		throw new IllegalStateException("You need create @NewModule(...) before start module. Error in class -> " + this.getClass().getCanonicalName() + "");
 	}
 
-	public void register_module() {
+	public void subscribe_event() {
 		if (state_module.get_value()) {
 			if (Keyboard.isKeyDown(bind.get_value())) {
 				toggle();
@@ -62,11 +62,15 @@ public class BopeModule {
 		}
 	}
 
-	public void while_actived() {}
+	public void while_world_render(RenderEvent event) {} // Render event into module.
 
-	public void actived() {}
+	public void while_actived() {} // While module.
 
-	public void disabled() {}
+	public void while_render() {} // While render.
+
+	public void disabled() {} // Disable effect.
+
+	public void actived() {} // While actived.
 
 	public void set_active(boolean value) {
 		state_module.set_value(value);

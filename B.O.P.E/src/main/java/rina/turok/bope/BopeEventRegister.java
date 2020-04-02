@@ -9,8 +9,4 @@ public class BopeEventRegister {
 	public static void register_manager(BopeCommandManager manager) {
 		MinecraftForge.EVENT_BUS.register(manager);
 	}
-
-	public static void register_modules() {
-		
-	}
 }

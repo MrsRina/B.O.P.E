@@ -15,6 +15,7 @@ import me.zero.alpine.EventManager;
 import me.zero.alpine.EventBus;
 
 import rina.turok.bope.bopemod.manager.BopeCommandManager;
+import rina.turok.bope.bopemod.manager.BopeModuleManager;
 import rina.turok.bope.BopeEventRegister;
 
 //
@@ -23,13 +24,17 @@ import rina.turok.bope.BopeEventRegister;
 //
 @Mod(modid = "bope", version = Bope.BOPE_VERSION)
 public class Bope {
+	// Somes arguments like, version, name, space...
 	public static final String BOPE_NAME    = "B.O.P.E";
 	public static final String BOPE_VERSION = "0.1";
 	public static final String BOPE_SPACE   = " ";
 
+	// A just log for initializing and if get a error show in log Minecraft.
 	public static final Logger bope_register_log = LogManager.getLogger("bope");
 
+	// Starting managers.
 	public static BopeCommandManager command_manager;
+	public static BopeModuleManager  module_manager = new BopeModuleManager("Mode -> LoadUtil.");
 
 	// INSTANCE.
 	@Mod.Instance
@@ -47,11 +52,20 @@ public class Bope {
 
 		bope_register_log.info("B.O.P.E initializing command list.");
 
-		// I will change it.
+		// Register event command.
 		BopeEventRegister.register_manager(command_manager = new BopeCommandManager());
+
+		// Init bope module manager.
+		module_manager.init_bope_manager()
+
+		// Init modules.
+		module_manager.init_bope_modules();
+
+		// Update the list modules.
+		module_manager.update_module_list();
 	}
 
 	public static Bope get_instance() {
-		return INSTANCE;
+		return INSTANCE; // A function for get INSTANCE from all client.
 	} 
 }

@@ -11,6 +11,7 @@ import rina.turok.bope.framework.TurokString;
 import rina.turok.bope.bopemod.BopeCommand;
 import rina.turok.bope.bopemod.commands.*;
 
+// Rina.
 public class BopeListCommand {
 	public static ArrayList<BopeCommand> command_list = new ArrayList<BopeCommand>();
 	static HashMap<String, BopeCommand> lookup        = new HashMap<>();
@@ -41,22 +42,22 @@ public class BopeListCommand {
 		String[] arguments = {};
 
 		if (has_prefix(message)) {
-			arguments = message.replaceFirst(prefix.get_string(), "").split(" ");
+			arguments = message.replaceFirst(prefix.get_value(), "").split(" ");
 		}
 
 		return arguments;
 	}
 
 	public boolean has_prefix(String message) {
-		return message.startsWith(prefix.get_string());
+		return message.startsWith(prefix.get_value());
 	}
 
 	public void set_prefix(String new_prefix) {
-		prefix.set_string(new_prefix);
+		prefix.set_value(new_prefix);
 	}
 
 	public String get_prefix() {
-		return prefix.get_string();
+		return prefix.get_value();
 	}
 
 	public ArrayList<BopeCommand> get_pure_command_list() {

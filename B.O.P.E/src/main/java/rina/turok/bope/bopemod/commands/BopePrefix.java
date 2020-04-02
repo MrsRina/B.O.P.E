@@ -4,6 +4,7 @@ import rina.turok.bope.bopemod.BopeCommand;
 import rina.turok.bope.bopemod.BopeMessage;
 import rina.turok.bope.Bope;
 
+// Rina.
 public class BopePrefix extends BopeCommand {
 	public BopePrefix() {
 		super("prefix", "Change prefix.");

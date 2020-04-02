@@ -10,6 +10,10 @@ import org.apache.logging.log4j.Logger;
 import org.lwjgl.input.Keyboard;
 import org.lwjgl.opengl.Display;
 
+// Zero Alpine.
+import me.zero.alpine.EventManager;
+import me.zero.alpine.EventBus;
+
 import rina.turok.bope.bopemod.manager.BopeCommandManager;
 import rina.turok.bope.BopeEventRegister;
 
@@ -30,6 +34,9 @@ public class Bope {
 	// INSTANCE.
 	@Mod.Instance
 	private static Bope INSTANCE;
+
+	// EVENT_BUS from ZeroAlpine.
+	public static final EventBus EVENT_BUS = new EventManager();
 
 	@Mod.EventHandler
 	public void init(FMLInitializationEvent event) {

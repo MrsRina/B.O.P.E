@@ -1,5 +1,6 @@
 package rina.turok.bope.bopemod;
 
+// Rina.
 public class BopeCommand {
 	String name;
 	String description;

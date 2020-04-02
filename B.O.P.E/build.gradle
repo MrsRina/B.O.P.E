@@ -16,10 +16,12 @@ buildscript {
 
 	dependencies {
 		classpath "net.minecraftforge.gradle:ForgeGradle:2.3-SNAPSHOT"
+		classpath "com.github.jengelman.gradle.plugins:shadow:1.2.3"
 	}
 }
 
 apply plugin: "net.minecraftforge.gradle.forge";
+apply plugin: "com.github.johnrengelman.shadow";
 
 version          project.client_version
 group            project.client_group
@@ -30,6 +32,37 @@ minecraft {
 	version  = "1.12.2-14.23.5.2772"
 	runDir   = "run"
 	mappings = "snapshot_20171003"
+}
+
+repositories {
+	maven {
+		name = "swt-repo"
+		url  = "http://maven-eclipse.github.io/maven"
+	}
+
+	maven {
+		name = "jitpack.io"
+		url  = "https://jitpack.io"
+	}
+
+	mavenCentral()
+}
+
+dependencies {
+	compile "com.github.ZeroMemes:Alpine:1.5"
+}
+
+shadowJar {
+	dependencies {
+		include(dependency("com.github.ZeroMemes:Alpine"))
+	}
+}
+
+reobf {
+	shadowJar {
+		mappingType = 'SEARGE'
+		classpath   = sourceSets.main.compileClasspath
+    }
 }
 
 processResources {
@@ -46,3 +79,5 @@ processResources {
 		exclude "mcmod.info"
 	}
 }
+
+build.dependsOn(shadowJar)

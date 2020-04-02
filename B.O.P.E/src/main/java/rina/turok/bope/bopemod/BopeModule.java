@@ -1,8 +1,23 @@
 package rina.turok.bope.bopemod;
 
 import net.minecraftforge.fml.client.registry.ClientRegistry;
+import net.minecraftforge.common.MinecraftForge;
 import net.minecraft.client.settings.KeyBinding;
 import net.minecraft.client.Minecraft;
+
+import java.lang.annotation.RetentionPolicy;
+import java.lang.annotation.Retention;
+import java.util.ArrayList;
+import java.util.List;
+
+import org.lwjgl.input.Keyboard;
+
+import rina.turok.bope.bopemod.hacks.BopeCategory;
+import rina.turok.bope.framework.TurokBoolean;
+import rina.turok.bope.framework.TurokString;
+import rina.turok.bope.framework.TurokEnum;
+import rina.turok.bope.framework.TurokInt;
+import rina.turok.bope.Bope;
 
 //
 // Rina.
@@ -10,46 +25,53 @@ import net.minecraft.client.Minecraft;
 // 31/03/2020.
 //
 public class BopeModule {
-	public String name;
-	public String descritpion;
-	public String category;
+	public TurokString name        = new TurokString(get_info().name());
+	public TurokString description = new TurokString(get_info().description());
 
-	public boolean active;
+	public BopeCategory.Category category = get_info().category();
 
-	public KeyBinding module;
+	public TurokBoolean state_module = new TurokBoolean(false);
 
-	public int bind = - 1;
+	public boolean state_optional = get_info().state_active();
+
+	public TurokInt bind = new TurokInt(-1);
 
 	public final Minecraft mc = Minecraft.getMinecraft();
 
-	public BopeModule(String name) {
-		module = new KeyBinding(get_name(), get_bind(), "");
-
-		ClientRegistry.registerKeyBinding(module);
+	public BopeModule() {
+		state_optional = get_info().state_active();;
 	}
 
-	// Bind.
-	public void bind() {
-		if (module.isKeyDown()) {
-			toggle();
+	private NewModule get_info() {
+		if (getClass().isAnnotationPresent(NewModule.class)) {
+			return getClass().getAnnotation(NewModule.class);
+		}
+
+		throw new IllegalStateException("You need create @NewModule(...) before start module. Error in class -> " + this.getClass().getCanonicalName() + "");
+	}
+
+	public void register_module() {
+		if (state_module.get_value()) {
+			if (Keyboard.isKeyDown(bind.get_value())) {
+				toggle();
+			}
+
+			Bope.EVENT_BUS.subscribe(this);
+		} else {
+			Bope.EVENT_BUS.unsubscribe(this);
 		}
 	}
 
-	// While actived.
 	public void while_actived() {}
 
-	// Actived.
 	public void actived() {}
 
-	// Disabled.
 	public void disabled() {}
 
-	// Set active.
 	public void set_active(boolean value) {
-		this.active = value;
+		state_module.set_value(value);
 	}
 
-	// Enable hack.
 	public void toggle() {
 		set_active(!is_active());
 
@@ -60,34 +82,45 @@ public class BopeModule {
 		}
 	}
 
-	// Disable.
 	public void disable() {
-		this.active = false;
+		state_module.set_value(false);
 	}
 
-	// Enable.
 	public void enable() {
-		this.active = true;
+		state_module.set_value(true);
 	}
 
-	// Is active.
 	public boolean is_active() {
-		return this.active;
+		return state_module.get_value();
 	}
 
 	public String get_name() {
-		return this.name;
+		return name.get_value();
 	}
 
 	public String get_description() {
-		return this.descritpion;
+		return description.get_value();
 	}
 
 	public void set_bind(int key) {
-		this.bind = key; 
+		bind.set_value(key);
 	}
 
 	public int get_bind() {
-		return this.bind;
+		return bind.get_value();
+	}
+
+	public BopeCategory.Category get_category() {
+		return category;
+	}
+
+	@Retention(RetentionPolicy.RUNTIME)
+	public @interface NewModule {
+		String name();
+		String description();
+
+		BopeCategory.Category category();
+
+		boolean state_active() default false;
 	}
 }

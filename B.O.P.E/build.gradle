@@ -62,7 +62,7 @@ reobf {
 	shadowJar {
 		mappingType = 'SEARGE'
 		classpath   = sourceSets.main.compileClasspath
-    }
+	}
 }
 
 processResources {

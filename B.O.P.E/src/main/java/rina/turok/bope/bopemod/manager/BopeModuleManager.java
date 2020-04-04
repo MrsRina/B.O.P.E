@@ -36,7 +36,7 @@ public class BopeModuleManager {
 		list_module.clear();
 
 		for (BopeModule modules : module_list) {
-			list_module.put(modules.get_name().toLowerCase(), modules);
+			list_module.put(modules.get_name_tag().toLowerCase(), modules);
 		}
 	}
 

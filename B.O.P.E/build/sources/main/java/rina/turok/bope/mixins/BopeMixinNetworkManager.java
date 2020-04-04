@@ -27,7 +27,7 @@ import rina.turok.bope.external.BopeEventBus;
 public class BopeMixinNetworkManager {
 	// Receive packet.
 	@Inject(method = "channelRead0", at = @At("HEAD"), cancellable = true)
-	public void channelRead(ChannelHandlerContext context, Packet<?> packet, CallbackInfo callback) {
+	private void onChannelRead(ChannelHandlerContext context, Packet<?> packet, CallbackInfo callback) {
 		BopeEventPacket event_packet = new BopeEventPacket.ReceivePacket(packet);
 
 		BopeEventBus.ZERO_ALPINE_EVENT_BUS.post(event_packet);
@@ -39,7 +39,7 @@ public class BopeMixinNetworkManager {
 
 	// Send packet.
 	@Inject(method = "sendPacket(Lnet/minecraft/network/Packet;)V", at = @At("HEAD"), cancellable = true)
-	public void sendPacket(Packet<?> packet, CallbackInfo callback) {
+	private void onSendPacket(Packet<?> packet, CallbackInfo callback) {
 		BopeEventPacket event_packet = new BopeEventPacket.SendPacket(packet);
 
 		BopeEventBus.ZERO_ALPINE_EVENT_BUS.post(event_packet);
@@ -51,7 +51,7 @@ public class BopeMixinNetworkManager {
 
 	// Exception packet.
 	@Inject(method = "exceptionCaught", at = @At("HEAD"), cancellable = true)
-	public void exceptionCaught(ChannelHandlerContext exc, Throwable exc_, CallbackInfo callback) {
+	private void exceptionCaught(ChannelHandlerContext exc, Throwable exc_, CallbackInfo callback) {
 		if (exc_ instanceof Exception && BopeNoPacketKick.is_active()) {
 			callback.cancel();
 		}

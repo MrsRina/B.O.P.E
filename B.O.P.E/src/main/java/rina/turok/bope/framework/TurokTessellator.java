@@ -8,6 +8,8 @@ import net.minecraft.util.math.BlockPos;
 
 import org.lwjgl.opengl.GL11;
 
+import rina.turok.bope.framework.TurokGL;
+
 //
 // Rina.
 // Is not the same.
@@ -20,7 +22,7 @@ public class TurokTessellator extends Tessellator {
 	}
 
 	public static void prepare(int mode) {
-		prepare_gl(); // Prepare.
+		TurokGL.prepare(); // Prepare.
 
 		INSTANCE.getBuffer().begin(mode, DefaultVertexFormats.POSITION_COLOR);
 	}
@@ -28,29 +30,14 @@ public class TurokTessellator extends Tessellator {
 	public static void release() {
 		INSTANCE.draw();
 
-		release_gl(); // Buffer //
+		TurokGL.release(); // Buffer //
 	}
 
 	public static void prepare_gl() {
-		GL11.glBlendFunc(GL11.GL_SRC_ALPHA, GL11.GL_ONE_MINUS_SRC_ALPHA);
-		
-		GlStateManager.tryBlendFuncSeparate(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA, GlStateManager.SourceFactor.ONE, GlStateManager.DestFactor.ZERO);
-		GlStateManager.glLineWidth(1.5F);
-		GlStateManager.disableTexture2D();
-		GlStateManager.depthMask(false);
-		GlStateManager.enableBlend();
-		GlStateManager.disableDepth();
-		GlStateManager.disableLighting();
-		GlStateManager.disableCull();
-		GlStateManager.enableAlpha();
-		GlStateManager.color(1, 1, 1);
+		TurokGL.prepare();
 	}
 
 	public static void release_gl() {
-		GlStateManager.enableCull();
-		GlStateManager.depthMask(true);
-		GlStateManager.enableTexture2D();
-		GlStateManager.enableBlend();
-		GlStateManager.enableDepth();
+		TurokGL.release();
 	}
 }

@@ -16,10 +16,13 @@ import rina.turok.bope.bopemod.manager.BopeEventManager;
 import rina.turok.bope.external.BopeEventHandler;
 import rina.turok.bope.BopeEventRegister;
 
-//
+// // // // ...
 // Rina.
 // Author: Rina.
-//
+// The ZeroAlpine event manager is compatible with license MIT.
+// All Rights for Rina.
+// // // // ...
+
 @Mod(modid = "bope", version = Bope.BOPE_VERSION)
 public class Bope {
 	// Somes arguments like, version, name, space...

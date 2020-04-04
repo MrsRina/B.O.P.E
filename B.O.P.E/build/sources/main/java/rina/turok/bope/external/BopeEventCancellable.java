@@ -1,14 +1,14 @@
-package rina.turok.bope.bopemod;
+package rina.turok.bope.external;
 
 import me.zero.alpine.type.Cancellable;
 
 import net.minecraft.client.Minecraft;
 
-public class BopeEvent extends Cancellable {
+public class BopeEventCancellable extends Cancellable {
 	private Era era_switch = Era.EVENT_PRE;
 	private final float partial_ticks;
 
-	public BopeEvent() {
+	public BopeEventCancellable() {
 		partial_ticks = Minecraft.getMinecraft().getRenderPartialTicks();
 	}
 

@@ -2,9 +2,9 @@ package rina.turok.bope.bopemod.events;
 
 import net.minecraft.network.Packet;
 
-import rina.turok.bope.bopemod.BopeEvent;
+import rina.turok.bope.external.BopeEventCancellable;
 
-public class BopeEventPacket extends BopeEvent {
+public class BopeEventPacket extends BopeEventCancellable {
 	private final Packet packet;
 
 	public BopeEventPacket(Packet packet) {

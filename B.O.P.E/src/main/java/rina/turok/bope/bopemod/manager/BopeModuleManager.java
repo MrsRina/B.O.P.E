@@ -15,8 +15,8 @@ import net.minecraft.entity.Entity;
 import org.reflections.Reflections;
 import org.lwjgl.opengl.GL11;
 
-import rina.turok.bope.bopemod.hacks.chat.BopeTestModule;
 import rina.turok.bope.bopemod.events.BopeEventRender;
+import rina.turok.bope.bopemod.hacks.BopeFinderModule;
 import rina.turok.bope.framework.TurokTessellator;
 import rina.turok.bope.bopemod.BopeModule;
 
@@ -47,7 +47,7 @@ public class BopeModuleManager {
 	}
 
 	public void init_bope_manager() {
-		Set<Class> class_list = find_class(BopeTestModule.class.getPackage().getName(), BopeModule.class);
+		Set<Class> class_list = find_class(BopeFinderModule.class.getPackage().getName(), BopeModule.class);
 
 		class_list.forEach(found_class -> {
 			try {

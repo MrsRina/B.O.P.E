@@ -31,6 +31,7 @@ import rina.turok.bope.external.BopeEventBus;
 //
 public class BopeModule {
 	public TurokString name;
+	public TurokString name_tag;
 	public TurokString description;
 
 	public BopeCategory.Category category;
@@ -41,8 +42,9 @@ public class BopeModule {
 
 	public final Minecraft mc = Minecraft.getMinecraft();
 
-	public BopeModule(String name_module, String description_module, int key, BopeCategory.Category category_module) {
+	public BopeModule(String name_module, String name_tag_module, String description_module, int key, BopeCategory.Category category_module) {
 		name        = new TurokString(name_module);
+		name_tag    = new TurokString(name_tag_module);
 		description = new TurokString(description_module);
 		bind        = new TurokBind(key);
 		category    = category_module;
@@ -96,6 +98,10 @@ public class BopeModule {
 
 	public String get_name() {
 		return name.get_value();
+	}
+
+	public String get_name_tag() {
+		return name_tag.get_value();
 	}
 
 	public String get_description() {

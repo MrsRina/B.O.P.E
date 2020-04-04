@@ -4,9 +4,9 @@ import net.minecraft.client.renderer.BufferBuilder;
 import net.minecraft.client.renderer.Tessellator;
 import net.minecraft.util.math.Vec3d;
 
-import rina.turok.bope.bopemod.BopeEvent;
+import rina.turok.bope.external.BopeEventCancellable;
 
-public class BopeEventRender extends BopeEvent {
+public class BopeEventRender extends BopeEventCancellable {
 	private final Tessellator tessellator;
 	private final Vec3d       render_pos;
 

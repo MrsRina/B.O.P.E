@@ -13,6 +13,7 @@ import org.lwjgl.opengl.Display;
 import rina.turok.bope.bopemod.manager.BopeCommandManager;
 import rina.turok.bope.bopemod.manager.BopeModuleManager;
 import rina.turok.bope.bopemod.manager.BopeEventManager;
+import rina.turok.bope.external.BopeEventHandler;
 import rina.turok.bope.BopeEventRegister;
 
 //
@@ -46,6 +47,11 @@ public class Bope {
 
 		// Register event command.
 		BopeEventRegister.register_command_manager(command_manager = new BopeCommandManager());
+
+		send_log("B.O.P.E initializing event handler.");
+
+		// Init BopeEventHandler.
+		BopeEventHandler.INSTANCE = new BopeEventHandler();
 
 		send_log("B.O.P.E initializing module manager.");
 

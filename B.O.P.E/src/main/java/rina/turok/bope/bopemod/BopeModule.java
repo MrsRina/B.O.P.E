@@ -54,14 +54,14 @@ public class BopeModule {
 
 	public void onRender() {} // While render.
 
-	public void onDisable() {} // Disable effect.
+	protected void onDisable() {} // Disable effect.
 
-	public void onEnable() {} // While actived.
+	protected void onEnable() {} // While actived.
 
 	public void set_active(boolean value) {
-		state_module.set_value(value);
+		boolean is = state_module.get_value();
 
-		if (state_module.get_value() != value) {
+		if (is != value) {
 			if (value) {
 				enable();
 			} else {

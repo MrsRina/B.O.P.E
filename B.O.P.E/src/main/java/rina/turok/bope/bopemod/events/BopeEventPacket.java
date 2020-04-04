@@ -17,14 +17,14 @@ public class BopeEventPacket extends BopeEvent {
 		return this.packet;
 	}
 
-	public static class Receive extends BopeEventPacket {
-		public Receive(Packet packet) {
+	public static class ReceivePacket extends BopeEventPacket {
+		public ReceivePacket(Packet packet) {
 			super(packet);
 		}
 	}
 
-	public static class Send extends BopeEventPacket {
-		public Send(Packet packet) {
+	public static class SendPacket extends BopeEventPacket {
+		public SendPacket(Packet packet) {
 			super(packet);
 		}
 	}

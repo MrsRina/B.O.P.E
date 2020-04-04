@@ -28,7 +28,7 @@ public class BopeMixinNetworkManager {
 	// Receive packet.
 	@Inject(method = "channelRead0", at = @At("HEAD"), cancellable = true)
 	public void channelRead(ChannelHandlerContext context, Packet<?> packet, CallbackInfo callback) {
-		BopeEventPacket event_packet = new BopeEventPacket.Receive(packet);
+		BopeEventPacket event_packet = new BopeEventPacket.ReceivePacket(packet);
 
 		BopeEventBus.ZERO_ALPINE_EVENT_BUS.post(event_packet);
 
@@ -40,7 +40,7 @@ public class BopeMixinNetworkManager {
 	// Send packet.
 	@Inject(method = "sendPacket(Lnet/minecraft/network/Packet;)V", at = @At("HEAD"), cancellable = true)
 	public void sendPacket(Packet<?> packet, CallbackInfo callback) {
-		BopeEventPacket event_packet = new BopeEventPacket.Send(packet);
+		BopeEventPacket event_packet = new BopeEventPacket.SendPacket(packet);
 
 		BopeEventBus.ZERO_ALPINE_EVENT_BUS.post(event_packet);
 

@@ -5,12 +5,15 @@ import net.minecraftforge.fml.common.eventhandler.EventPriority;
 import net.minecraftforge.event.entity.living.LivingEvent;
 import net.minecraftforge.fml.common.gameevent.InputEvent;
 import net.minecraftforge.fml.common.gameevent.TickEvent;
+import net.minecraft.client.renderer.GlStateManager;
+import net.minecraft.entity.passive.AbstractHorse;
 import net.minecraftforge.client.event.*;
 import net.minecraft.client.Minecraft;
 
 import org.lwjgl.input.Keyboard;
 import org.lwjgl.opengl.GL11;
 
+import rina.turok.bope.framework.TurokTessellator;
 import rina.turok.bope.Bope;
 
 public class BopeEventManager {
@@ -40,6 +43,33 @@ public class BopeEventManager {
 
 		Bope.get_instance().module_manager.onWorldRender(event);
 	}
+
+	@SubscribeEvent
+	public void onRender(RenderGameOverlayEvent.Post event) {
+		if (event.isCanceled()) {
+			return;
+		}
+
+		RenderGameOverlayEvent.ElementType target = RenderGameOverlayEvent.ElementType.EXPERIENCE;
+
+		if (!mc.player.isCreative() && mc.player.getRidingEntity() instanceof AbstractHorse) {
+			target = RenderGameOverlayEvent.ElementType.HEALTHMOUNT;
+		}
+
+		if (event.getType() == target) {
+			Bope.get_instance().module_manager.onRender();
+
+			GL11.glPushMatrix();
+
+			GL11.glEnable(GL11.GL_TEXTURE_2D);
+			GL11.glEnable(GL11.GL_BLEND);
+			GlStateManager.enableBlend();
+
+			GL11.glPopMatrix();
+
+			TurokTessellator.release_gl();
+		}
+	} 
 
 	@SubscribeEvent(priority = EventPriority.NORMAL, receiveCanceled = true)
 	public void onKeyInput(InputEvent.KeyInputEvent event) {

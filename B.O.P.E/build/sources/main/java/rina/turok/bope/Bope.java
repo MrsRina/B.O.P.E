@@ -13,6 +13,7 @@ import org.lwjgl.opengl.Display;
 import rina.turok.bope.bopemod.manager.BopeCommandManager;
 import rina.turok.bope.bopemod.manager.BopeModuleManager;
 import rina.turok.bope.bopemod.manager.BopeEventManager;
+import rina.turok.bope.bopemod.backgui.BopeButton;
 import rina.turok.bope.external.BopeEventHandler;
 import rina.turok.bope.BopeEventRegister;
 
@@ -70,6 +71,11 @@ public class Bope {
 
 		// Register event modules and manager.
 		BopeEventRegister.register_module_manager(new BopeEventManager());
+
+		send_log("B.O.P.E starting buttons.");
+
+		// Start buttons.
+		BopeButton.update_buttons();
 
 		send_log("\n\n------------- B.O.P.E Started -------------");
 	}

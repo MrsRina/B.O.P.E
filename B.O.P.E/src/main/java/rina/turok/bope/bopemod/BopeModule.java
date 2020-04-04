@@ -36,18 +36,19 @@ public class BopeModule {
 
 	public BopeCategory.Category category;
 
-	public TurokBoolean state_module = new TurokBoolean(false);
+	public TurokBoolean state_module;
 
 	public TurokBind bind;
 
 	public final Minecraft mc = Minecraft.getMinecraft();
 
 	public BopeModule(String name_module, String name_tag_module, String description_module, int key, BopeCategory.Category category_module) {
-		name        = new TurokString(name_module);
-		name_tag    = new TurokString(name_tag_module);
-		description = new TurokString(description_module);
-		bind        = new TurokBind(key);
-		category    = category_module;
+		name         = new TurokString(name_module, name_tag_module, name_module);
+		name_tag     = new TurokString(name_module, name_tag_module, name_tag_module);
+		description  = new TurokString(name_module, name_tag_module, description_module);
+		state_module = new TurokBoolean(name_module, name_tag_module, false);
+		bind         = new TurokBind(key);
+		category     = category_module;
 	}
 
 	public void onWorldRender(BopeEventRender event) {} // Render event into module.

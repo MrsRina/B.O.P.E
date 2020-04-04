@@ -36,7 +36,7 @@ public class BopeModule {
 
 	public BopeCategory.Category category;
 
-	public TurokBoolean state_module = new TurokBoolean(false);
+	public TurokBoolean state_module = new TurokBoolean("Module State", "Modules", false);
 
 	public TurokBind bind;
 

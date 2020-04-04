@@ -1,8 +1,8 @@
 package rina.turok.bope.bopemod.manager;
 
 import java.lang.reflect.InvocationTargetException;
-import java.util.ArrayList;
 import java.util.Comparator;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Set;
 
@@ -36,7 +36,7 @@ public class BopeModuleManager {
 		list_module.clear();
 
 		for (BopeModule modules : module_list) {
-			list_module.put(modules.get_name().toLowerCase(), modules);
+			list_module.put(modules.get_name_tag().toLowerCase(), modules);
 		}
 	}
 

@@ -4,10 +4,19 @@
 // Discord. // For IRC.
 // Alpine.  // For event manager.
 //
+// I have used zero alpine like a event manager.
+// I really liked how it works, thanks for.
+//
+// Somes dependcy is require by zero.alpine.
 
 buildscript {
 	repositories {
 		jcenter()
+
+		maven {
+			name = "SpongePowered"
+			url  = "http://repo.spongepowered.org/maven"
+		}
 
 		maven {
 			url = "http://files.minecraftforge.net/maven"
@@ -17,11 +26,15 @@ buildscript {
 	dependencies {
 		classpath "net.minecraftforge.gradle:ForgeGradle:2.3-SNAPSHOT"
 		classpath "com.github.jengelman.gradle.plugins:shadow:1.2.3"
+		classpath "org.spongepowered:mixingradle:0.4-SNAPSHOT"
 	}
 }
 
 apply plugin: "net.minecraftforge.gradle.forge";
 apply plugin: "com.github.johnrengelman.shadow";
+apply plugin: "org.spongepowered.mixin"
+
+// Dont change here if you dont know.
 
 version          project.client_version
 group            project.client_group
@@ -29,12 +42,19 @@ group            project.client_group
 archivesBaseName = "bope"
 
 minecraft {
-	version  = "1.12.2-14.23.5.2772"
+	version  = "1.12.2-14.23.0.2531"
 	runDir   = "run"
-	mappings = "snapshot_20171003"
+	coreMod  = "rina.turok.bope.BopeMixinLoader"
+	mappings = "snapshot_20180814"
+	makeObfSourceJar = true
 }
 
 repositories {
+	maven {
+		name = "spongepowered-repo"
+		url  = "http://repo.spongepowered.org/maven/"
+	}
+
 	maven {
 		name = "swt-repo"
 		url  = "http://maven-eclipse.github.io/maven"
@@ -50,12 +70,33 @@ repositories {
 
 dependencies {
 	compile "com.github.ZeroMemes:Alpine:1.5"
+
+	compile group : "net.jodah",       name : "typetools",   version: "0.5.0"
+	compile(group : "org.reflections", name : "reflections", version: "0.9.11") {
+		exclude group: "com.google.guava", module: "guava"
+	}
+
+	compile("org.spongepowered:mixin:0.7.4-SNAPSHOT") {
+		exclude module: "launchwrapper"
+		exclude module: "commons-io"
+		exclude module: "guava"
+		exclude module: "gson"
+	}
 }
 
 shadowJar {
 	dependencies {
 		include(dependency("com.github.ZeroMemes:Alpine"))
+		include(dependency("org.reflections:reflections"))
+		include(dependency("org.javassist:javassist"))
+		include(dependency("org.spongepowered:mixin"))
+		include(dependency("net.jodah:typetools"))
 	}
+}
+
+mixin {
+	defaultObfuscationEnv searge
+	add sourceSets.main, "mixins.bope.refmap.json"
 }
 
 reobf {
@@ -77,6 +118,22 @@ processResources {
 
 	from (sourceSets.main.resources.srcDirs) {
 		exclude "mcmod.info"
+	}
+
+	rename "(.+_at.cfg)", 'META-INF/$1';
+}
+
+jar {
+	manifest {
+		attributes (
+			"FMLCorePluginContainsFMLMod" : "true",
+			"ForceLoadAsMod"              : "true",
+			"FMLCorePlugin"               : "rina.turok.bope.BopeMixinLoader",
+			"MixinConfigs"                : "mixins.bope.json",
+			"tweakClass"                  : "org.spongepowered.asm.launch.MixinTweaker",
+			"TweakOrder"                  : 0,
+			"FMLAT"                       : "bope_at.cfg"
+		)
 	}
 }
 

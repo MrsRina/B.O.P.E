@@ -10,12 +10,9 @@ import org.apache.logging.log4j.Logger;
 import org.lwjgl.input.Keyboard;
 import org.lwjgl.opengl.Display;
 
-// Zero Alpine.
-import me.zero.alpine.EventManager;
-import me.zero.alpine.EventBus;
-
 import rina.turok.bope.bopemod.manager.BopeCommandManager;
 import rina.turok.bope.bopemod.manager.BopeModuleManager;
+import rina.turok.bope.bopemod.manager.BopeEventManager;
 import rina.turok.bope.BopeEventRegister;
 
 //
@@ -40,32 +37,43 @@ public class Bope {
 	@Mod.Instance
 	private static Bope INSTANCE;
 
-	// EVENT_BUS from ZeroAlpine.
-	public static final EventBus EVENT_BUS = new EventManager();
-
 	@Mod.EventHandler
-	public void init(FMLInitializationEvent event) {
-		Display.setTitle("B.O.P.E" + BOPE_SPACE + BOPE_VERSION);
+	public void BopeStarting(FMLInitializationEvent event) {
+		send_log("\n\n------------- B.O.P.E -------------");
+		send_log("B.O.P.E loading utils.");
 
-		bope_register_log.info("\n\n------------- B.O.P.E -------------");
-		bope_register_log.info("B.O.P.E loading utils.");
-
-		bope_register_log.info("B.O.P.E initializing command list.");
+		send_log("B.O.P.E initializing command manager.");
 
 		// Register event command.
-		BopeEventRegister.register_manager(command_manager = new BopeCommandManager());
+		BopeEventRegister.register_command_manager(command_manager = new BopeCommandManager());
+
+		send_log("B.O.P.E initializing module manager.");
 
 		// Init bope module manager.
-		module_manager.init_bope_manager()
+		module_manager.init_bope_manager();
+
+		send_log("B.O.P.E initializing modules.");
 
 		// Init modules.
 		module_manager.init_bope_modules();
 
-		// Update the list modules.
-		module_manager.update_module_list();
+		send_log("B.O.P.E initializing events.");
+
+		// Register event modules and manager.
+		BopeEventRegister.register_module_manager(new BopeEventManager());
+
+		send_log("\n\n------------- B.O.P.E Started -------------");
 	}
 
 	public static Bope get_instance() {
 		return INSTANCE; // A function for get INSTANCE from all client.
-	} 
+	}
+
+	public static void send_log(String log) {
+		bope_register_log.info(log);
+	}
+
+	public static String get_version() {
+		return BOPE_VERSION;
+	}
 }

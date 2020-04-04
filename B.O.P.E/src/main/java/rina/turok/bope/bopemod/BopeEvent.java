@@ -4,11 +4,11 @@ import me.zero.alpine.type.Cancellable;
 
 import net.minecraft.client.Minecraft;
 
-public class BopeEvents {
+public class BopeEvent extends Cancellable {
 	private Era era_switch = Era.EVENT_PRE;
 	private final float partial_ticks;
 
-	public BopeEvents() {
+	public BopeEvent() {
 		partial_ticks = Minecraft.getMinecraft().getRenderPartialTicks();
 	}
 

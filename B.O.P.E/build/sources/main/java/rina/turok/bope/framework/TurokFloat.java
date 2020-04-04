@@ -1,5 +1,6 @@
 package rina.turok.bope.framework;
 
+// Rina.
 public class TurokFloat {
 	float value;
 

@@ -1,0 +1,9 @@
+{
+	"required"           : true,
+	"compatibilityLevel" : "JAVA_8",
+	"package"            : "rina.turok.bope.mixins",
+	"refmap"             : "mixins.bope.refmap.json",
+	"mixins"             : [
+		"BopeMixinNetworkManager"
+	]
+}

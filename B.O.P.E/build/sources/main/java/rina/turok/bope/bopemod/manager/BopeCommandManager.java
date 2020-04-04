@@ -1,4 +1,4 @@
-package rina.turok.bope.bopemod.manager;
+ package rina.turok.bope.bopemod.manager;
 
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.client.event.ClientChatEvent;

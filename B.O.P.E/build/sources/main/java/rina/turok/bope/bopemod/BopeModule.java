@@ -12,12 +12,17 @@ import java.util.List;
 
 import org.lwjgl.input.Keyboard;
 
+import rina.turok.bope.bopemod.events.BopeEventRender;
 import rina.turok.bope.bopemod.hacks.BopeCategory;
 import rina.turok.bope.framework.TurokBoolean;
 import rina.turok.bope.framework.TurokString;
+import rina.turok.bope.framework.TurokBind;
 import rina.turok.bope.framework.TurokEnum;
 import rina.turok.bope.framework.TurokInt;
 import rina.turok.bope.Bope;
+
+// External:
+import rina.turok.bope.external.BopeEventBus;
 
 //
 // Rina.
@@ -25,69 +30,64 @@ import rina.turok.bope.Bope;
 // 31/03/2020.
 //
 public class BopeModule {
-	public TurokString name        = new TurokString(get_info().name());
-	public TurokString description = new TurokString(get_info().description());
+	public TurokString name;
+	public TurokString description;
 
-	public BopeCategory.Category category = get_info().category();
+	public BopeCategory.Category category;
 
 	public TurokBoolean state_module = new TurokBoolean(false);
 
-	public boolean state_optional = get_info().state_active();
-
-	public TurokInt bind = new TurokInt(-1);
+	public TurokBind bind;
 
 	public final Minecraft mc = Minecraft.getMinecraft();
 
-	public BopeModule() {
-		state_optional = get_info().state_active();;
+	public BopeModule(String name_module, String description_module, int key, BopeCategory.Category category_module) {
+		name        = new TurokString(name_module);
+		description = new TurokString(description_module);
+		bind        = new TurokBind(key);
+		category    = category_module;
 	}
 
-	private NewModule get_info() {
-		if (getClass().isAnnotationPresent(NewModule.class)) {
-			return getClass().getAnnotation(NewModule.class);
-		}
+	public void onWorldRender(BopeEventRender event) {} // Render event into module.
 
-		throw new IllegalStateException("You need create @NewModule(...) before start module. Error in class -> " + this.getClass().getCanonicalName() + "");
-	}
+	public void onUpdate() {} // While module.
 
-	public void register_module() {
-		if (state_module.get_value()) {
-			if (Keyboard.isKeyDown(bind.get_value())) {
-				toggle();
-			}
+	public void onRender() {} // While render.
 
-			Bope.EVENT_BUS.subscribe(this);
-		} else {
-			Bope.EVENT_BUS.unsubscribe(this);
-		}
-	}
+	public void onDisable() {} // Disable effect.
 
-	public void while_actived() {}
-
-	public void actived() {}
-
-	public void disabled() {}
+	public void onEnable() {} // While actived.
 
 	public void set_active(boolean value) {
 		state_module.set_value(value);
+
+		if (state_module.get_value() != value) {
+			if (value) {
+				enable();
+			} else {
+				disable();
+			}
+		}
 	}
 
 	public void toggle() {
 		set_active(!is_active());
-
-		if (is_active()) {
-			actived();
-		} else {
-			disabled();
-		}
 	}
 
 	public void disable() {
 		state_module.set_value(false);
+
+		onDisable();
+
+		BopeEventBus.ZERO_ALPINE_EVENT_BUS.unsubscribe(this);
 	}
 
 	public void enable() {
 		state_module.set_value(true);
+
+		onEnable();
+
+		BopeEventBus.ZERO_ALPINE_EVENT_BUS.subscribe(this);
 	}
 
 	public boolean is_active() {
@@ -103,24 +103,18 @@ public class BopeModule {
 	}
 
 	public void set_bind(int key) {
-		bind.set_value(key);
+		bind.set_key(key);
 	}
 
-	public int get_bind() {
-		return bind.get_value();
+	public TurokBind get_bind() {
+		return bind;
+	}
+
+	public int get_key_bind() {
+		return bind.get_key();
 	}
 
 	public BopeCategory.Category get_category() {
 		return category;
-	}
-
-	@Retention(RetentionPolicy.RUNTIME)
-	public @interface NewModule {
-		String name();
-		String description();
-
-		BopeCategory.Category category();
-
-		boolean state_active() default false;
 	}
 }

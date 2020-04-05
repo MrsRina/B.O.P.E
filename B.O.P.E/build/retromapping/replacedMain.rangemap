@@ -1092,7 +1092,7 @@ Class Start: rina.turok.bope.bopemod.hacks.chat.BopeExtraSlots
 Class End  : rina.turok.bope.bopemod.hacks.chat.BopeExtraSlots
 endProcessing "rina/turok/bope/bopemod/hacks/exploit/BopeExtraSlots.java"
 
-startProcessing "rina/turok/bope/bopemod/manager/BopeCommandManager.java" md5: cec623feff6cbb237e0b4598c721ad30
+startProcessing "rina/turok/bope/bopemod/manager/BopeCommandManager.java" md5: a3b0f3aac21f62308d35a8699255bb9e
 @|rina/turok/bope/bopemod/manager/BopeCommandManager.java|9|40|rina.turok.bope.bopemod.manager|package|rina.turok.bope.bopemod.manager|(file)
 Class Start: rina.turok.bope.bopemod.manager.BopeCommandManager
    @|rina/turok/bope/bopemod/manager/BopeCommandManager.java|524|542|BopeCommandManager|class|rina.turok.bope.bopemod.manager.BopeCommandManager|false
@@ -1144,25 +1144,28 @@ Class Start: rina.turok.bope.bopemod.manager.BopeCommandManager
       @|rina/turok/bope/bopemod/manager/BopeCommandManager.java|1239|1250|BopeCommand|class|rina.turok.bope.bopemod.BopeCommand|false
       @|rina/turok/bope/bopemod/manager/BopeCommandManager.java|1261|1273|command_list|field|rina.turok.bope.bopemod.manager.BopeCommandManager|command_list
       @|rina/turok/bope/bopemod/manager/BopeCommandManager.java|1274|1295|get_pure_command_list|method|rina.turok.bope.bopemod.commands.BopeListCommand|get_pure_command_list|()Ljava/util/ArrayList;
-      @|rina/turok/bope/bopemod/manager/BopeCommandManager.java|1310|1322|command_list|field|rina.turok.bope.bopemod.manager.BopeCommandManager|command_list
-      @|rina/turok/bope/bopemod/manager/BopeCommandManager.java|1323|1334|get_message|method|rina.turok.bope.bopemod.commands.BopeListCommand|get_message|(Ljava/lang/String;)[Ljava/lang/String;
-      @|rina/turok/bope/bopemod/manager/BopeCommandManager.java|1335|1340|event|param|rina.turok.bope.bopemod.manager.BopeCommandManager|onChat|(Lnet/minecraftforge/client/event/ClientChatEvent;)V|event|0
-      @|rina/turok/bope/bopemod/manager/BopeCommandManager.java|1341|1351|getMessage|method|net.minecraftforge.client.event.ClientChatEvent|getMessage|()Ljava/lang/String;
-      @|rina/turok/bope/bopemod/manager/BopeCommandManager.java|1358|1374|equalsIgnoreCase|method|java.lang.String|equalsIgnoreCase|(Ljava/lang/String;)Z
-      @|rina/turok/bope/bopemod/manager/BopeCommandManager.java|1383|1391|get_name|method|rina.turok.bope.bopemod.BopeCommand|get_name|()Ljava/lang/String;
-      @|rina/turok/bope/bopemod/manager/BopeCommandManager.java|1427|1438|get_message|method|rina.turok.bope.bopemod.BopeCommand|get_message|([Ljava/lang/String;)Z
-      @|rina/turok/bope/bopemod/manager/BopeCommandManager.java|1439|1451|command_list|field|rina.turok.bope.bopemod.manager.BopeCommandManager|command_list
-      @|rina/turok/bope/bopemod/manager/BopeCommandManager.java|1452|1463|get_message|method|rina.turok.bope.bopemod.commands.BopeListCommand|get_message|(Ljava/lang/String;)[Ljava/lang/String;
-      @|rina/turok/bope/bopemod/manager/BopeCommandManager.java|1464|1469|event|param|rina.turok.bope.bopemod.manager.BopeCommandManager|onChat|(Lnet/minecraftforge/client/event/ClientChatEvent;)V|event|0
-      @|rina/turok/bope/bopemod/manager/BopeCommandManager.java|1470|1480|getMessage|method|net.minecraftforge.client.event.ClientChatEvent|getMessage|()Ljava/lang/String;
-      @|rina/turok/bope/bopemod/manager/BopeCommandManager.java|1526|1538|command_list|field|rina.turok.bope.bopemod.manager.BopeCommandManager|command_list
-      @|rina/turok/bope/bopemod/manager/BopeCommandManager.java|1539|1549|has_prefix|method|rina.turok.bope.bopemod.commands.BopeListCommand|has_prefix|(Ljava/lang/String;)Z
-      @|rina/turok/bope/bopemod/manager/BopeCommandManager.java|1550|1555|event|param|rina.turok.bope.bopemod.manager.BopeCommandManager|onChat|(Lnet/minecraftforge/client/event/ClientChatEvent;)V|event|0
-      @|rina/turok/bope/bopemod/manager/BopeCommandManager.java|1556|1566|getMessage|method|net.minecraftforge.client.event.ClientChatEvent|getMessage|()Ljava/lang/String;
-      @|rina/turok/bope/bopemod/manager/BopeCommandManager.java|1578|1589|BopeMessage|class|rina.turok.bope.bopemod.BopeMessage|false
-      @|rina/turok/bope/bopemod/manager/BopeCommandManager.java|1590|1609|send_client_message|method|rina.turok.bope.bopemod.BopeMessage|send_client_message|(Ljava/lang/String;)V
-      @|rina/turok/bope/bopemod/manager/BopeCommandManager.java|1696|1701|event|param|rina.turok.bope.bopemod.manager.BopeCommandManager|onChat|(Lnet/minecraftforge/client/event/ClientChatEvent;)V|event|0
-      @|rina/turok/bope/bopemod/manager/BopeCommandManager.java|1702|1712|setMessage|method|net.minecraftforge.client.event.ClientChatEvent|setMessage|(Ljava/lang/String;)V
+      @|rina/turok/bope/bopemod/manager/BopeCommandManager.java|1322|1334|command_list|field|rina.turok.bope.bopemod.manager.BopeCommandManager|command_list
+      @|rina/turok/bope/bopemod/manager/BopeCommandManager.java|1335|1346|get_message|method|rina.turok.bope.bopemod.commands.BopeListCommand|get_message|(Ljava/lang/String;)[Ljava/lang/String;
+      @|rina/turok/bope/bopemod/manager/BopeCommandManager.java|1347|1352|event|param|rina.turok.bope.bopemod.manager.BopeCommandManager|onChat|(Lnet/minecraftforge/client/event/ClientChatEvent;)V|event|0
+      @|rina/turok/bope/bopemod/manager/BopeCommandManager.java|1353|1363|getMessage|method|net.minecraftforge.client.event.ClientChatEvent|getMessage|()Ljava/lang/String;
+      @|rina/turok/bope/bopemod/manager/BopeCommandManager.java|1370|1386|equalsIgnoreCase|method|java.lang.String|equalsIgnoreCase|(Ljava/lang/String;)Z
+      @|rina/turok/bope/bopemod/manager/BopeCommandManager.java|1395|1403|get_name|method|rina.turok.bope.bopemod.BopeCommand|get_name|()Ljava/lang/String;
+      @|rina/turok/bope/bopemod/manager/BopeCommandManager.java|1440|1451|get_message|method|rina.turok.bope.bopemod.BopeCommand|get_message|([Ljava/lang/String;)Z
+      @|rina/turok/bope/bopemod/manager/BopeCommandManager.java|1452|1464|command_list|field|rina.turok.bope.bopemod.manager.BopeCommandManager|command_list
+      @|rina/turok/bope/bopemod/manager/BopeCommandManager.java|1465|1476|get_message|method|rina.turok.bope.bopemod.commands.BopeListCommand|get_message|(Ljava/lang/String;)[Ljava/lang/String;
+      @|rina/turok/bope/bopemod/manager/BopeCommandManager.java|1477|1482|event|param|rina.turok.bope.bopemod.manager.BopeCommandManager|onChat|(Lnet/minecraftforge/client/event/ClientChatEvent;)V|event|0
+      @|rina/turok/bope/bopemod/manager/BopeCommandManager.java|1483|1493|getMessage|method|net.minecraftforge.client.event.ClientChatEvent|getMessage|()Ljava/lang/String;
+      @|rina/turok/bope/bopemod/manager/BopeCommandManager.java|1521|1530|Exception|class|java.lang.Exception|false
+      @|rina/turok/bope/bopemod/manager/BopeCommandManager.java|1544|1555|BopeMessage|class|rina.turok.bope.bopemod.BopeMessage|false
+      @|rina/turok/bope/bopemod/manager/BopeCommandManager.java|1556|1575|send_client_message|method|rina.turok.bope.bopemod.BopeMessage|send_client_message|(Ljava/lang/String;)V
+      @|rina/turok/bope/bopemod/manager/BopeCommandManager.java|1650|1662|command_list|field|rina.turok.bope.bopemod.manager.BopeCommandManager|command_list
+      @|rina/turok/bope/bopemod/manager/BopeCommandManager.java|1663|1673|has_prefix|method|rina.turok.bope.bopemod.commands.BopeListCommand|has_prefix|(Ljava/lang/String;)Z
+      @|rina/turok/bope/bopemod/manager/BopeCommandManager.java|1674|1679|event|param|rina.turok.bope.bopemod.manager.BopeCommandManager|onChat|(Lnet/minecraftforge/client/event/ClientChatEvent;)V|event|0
+      @|rina/turok/bope/bopemod/manager/BopeCommandManager.java|1680|1690|getMessage|method|net.minecraftforge.client.event.ClientChatEvent|getMessage|()Ljava/lang/String;
+      @|rina/turok/bope/bopemod/manager/BopeCommandManager.java|1702|1713|BopeMessage|class|rina.turok.bope.bopemod.BopeMessage|false
+      @|rina/turok/bope/bopemod/manager/BopeCommandManager.java|1714|1733|send_client_message|method|rina.turok.bope.bopemod.BopeMessage|send_client_message|(Ljava/lang/String;)V
+      @|rina/turok/bope/bopemod/manager/BopeCommandManager.java|1820|1825|event|param|rina.turok.bope.bopemod.manager.BopeCommandManager|onChat|(Lnet/minecraftforge/client/event/ClientChatEvent;)V|event|0
+      @|rina/turok/bope/bopemod/manager/BopeCommandManager.java|1826|1836|setMessage|method|net.minecraftforge.client.event.ClientChatEvent|setMessage|(Ljava/lang/String;)V
    Method End: onChat(Lnet/minecraftforge/client/event/ClientChatEvent;)V
 Class End  : rina.turok.bope.bopemod.manager.BopeCommandManager
 endProcessing "rina/turok/bope/bopemod/manager/BopeCommandManager.java"

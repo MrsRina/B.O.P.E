@@ -40,9 +40,11 @@ public class BopeCommandManager {
 
 		if (message_args.length > 0) {
 			for (BopeCommand command : command_list.get_pure_command_list()) {
-				if (command_list.get_message(event.getMessage())[0].equalsIgnoreCase(command.get_name())) {
-					true_command = command.get_message(command_list.get_message(event.getMessage()));
-				}
+				try {
+					if (command_list.get_message(event.getMessage())[0].equalsIgnoreCase(command.get_name())) {
+						true_command = command.get_message(command_list.get_message(event.getMessage()));
+					}
+				} catch (Exception exc) {} // Somes gays problems.
 			}
 
 			if (!true_command && command_list.has_prefix(event.getMessage())) {

@@ -14,6 +14,7 @@ import rina.turok.bope.bopemod.manager.BopeCommandManager;
 import rina.turok.bope.bopemod.manager.BopeModuleManager;
 import rina.turok.bope.bopemod.manager.BopeEventManager;
 import rina.turok.bope.bopemod.backgui.BopeButton;
+import rina.turok.bope.bopemod.backgui.BopeFrame;
 import rina.turok.bope.external.BopeEventHandler;
 import rina.turok.bope.BopeEventRegister;
 
@@ -45,39 +46,40 @@ public class Bope {
 	@Mod.EventHandler
 	public void BopeStarting(FMLInitializationEvent event) {
 		send_log("\n\n------------- B.O.P.E -------------");
-		send_log("B.O.P.E loading utils.");
+		send_log(" - B.O.P.E loading utils.");
 
-		send_log("B.O.P.E initializing command manager.");
+		send_log(" - B.O.P.E initializing command manager.");
 
 		// Register event command.
 		BopeEventRegister.register_command_manager(command_manager = new BopeCommandManager());
 
-		send_log("B.O.P.E initializing event handler.");
+		send_log(" - B.O.P.E initializing event handler.");
 
 		// Init BopeEventHandler.
 		BopeEventHandler.INSTANCE = new BopeEventHandler();
 
-		send_log("B.O.P.E initializing module manager.");
+		send_log(" - B.O.P.E initializing module manager.");
 
 		// Init bope module manager.
 		module_manager.init_bope_manager();
 
-		send_log("B.O.P.E initializing modules.");
+		send_log(" - B.O.P.E initializing modules.");
 
 		// Init modules.
 		module_manager.init_bope_modules();
 
-		send_log("B.O.P.E initializing events.");
+		send_log(" - B.O.P.E initializing events.");
 
 		// Register event modules and manager.
 		BopeEventRegister.register_module_manager(new BopeEventManager());
 
-		send_log("B.O.P.E starting buttons.");
+		send_log(" - B.O.P.E starting widgets.");
 
-		// Start buttons.
+		// Start widgets.
+		BopeFrame.update_components();
 		BopeButton.update_buttons();
 
-		send_log("\n\n------------- B.O.P.E Started -------------");
+		send_log("\n - B.O.P.E Started");
 	}
 
 	public static Bope get_instance() {

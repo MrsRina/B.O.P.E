@@ -16,7 +16,7 @@ public class BopeListCommand {
 	public static ArrayList<BopeCommand> command_list = new ArrayList<BopeCommand>();
 	static HashMap<String, BopeCommand> list_command  = new HashMap<>();
 
-	public static final TurokString prefix = new TurokString(".");
+	public static final TurokString prefix = new TurokString("Prefix", "Prefix", ".");
 
 	public final Style style;
 

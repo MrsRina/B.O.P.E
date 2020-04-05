@@ -8,8 +8,8 @@ import rina.turok.bope.framework.TurokInt;
 public class TurokBind {
 	TurokInt bind;
 
-	public TurokBind(int bind_turok) {
-		this.bind = new TurokInt(bind_turok);
+	public TurokBind(String name, String tag, int bind_turok) {
+		this.bind = new TurokInt(name, tag, bind_turok);
 	}
 
 	public boolean pressed(int pressed) {
@@ -26,5 +26,9 @@ public class TurokBind {
 
 	public boolean is_bind() {
 		return this.bind.get_value() < 0;
+	}
+
+	public TurokInt get_int() {
+		return this.bind;
 	}
 }

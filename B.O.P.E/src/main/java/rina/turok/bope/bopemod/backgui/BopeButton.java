@@ -36,6 +36,6 @@ public class BopeButton {
 	}
 
 	public static ArrayList<TurokBoolean> get_buttons() {
-		return list_buttons;
+		return buttons_list;
 	}
 }

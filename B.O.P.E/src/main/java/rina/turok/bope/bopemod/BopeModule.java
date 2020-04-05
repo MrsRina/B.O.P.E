@@ -47,7 +47,7 @@ public class BopeModule {
 		name_tag     = new TurokString(name_module, name_tag_module, name_tag_module);
 		description  = new TurokString(name_module, name_tag_module, description_module);
 		state_module = new TurokBoolean(name_module, name_tag_module, false);
-		bind         = new TurokBind(key);
+		bind         = new TurokBind(name_module, name_tag_module, key);
 		category     = category_module;
 	}
 

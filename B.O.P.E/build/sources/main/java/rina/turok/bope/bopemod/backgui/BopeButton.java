@@ -34,4 +34,8 @@ public class BopeButton {
 	public static TurokBoolean get_button(String name) {
 		return list_buttons.get(name.toLowerCase());
 	}
+
+	public static ArrayList<TurokBoolean> get_buttons() {
+		return buttons_list;
+	}
 }

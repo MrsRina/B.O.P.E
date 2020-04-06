@@ -79,8 +79,12 @@ public class Bope {
 		BopeFrame.update_components();
 		BopeButton.update_buttons();
 
+		// load_settings();
+
 		send_log("\n - B.O.P.E Started");
 	}
+
+	public static void load_settings() {}
 
 	public static Bope get_instance() {
 		return INSTANCE; // A function for get INSTANCE from all client.

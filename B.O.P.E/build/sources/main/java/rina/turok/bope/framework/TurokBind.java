@@ -9,7 +9,7 @@ public class TurokBind {
 	TurokInt bind;
 
 	public TurokBind(String name, String tag, int bind_turok) {
-		this.bind = new TurokInt(name, tag, bind_turok);
+		this.bind = new TurokInt(name, tag, bind_turok, 0, 0);
 	}
 
 	public boolean pressed(int pressed) {

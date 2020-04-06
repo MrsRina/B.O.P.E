@@ -10,7 +10,7 @@ import java.util.Set;
 
 public class BopeFrame {
 	public static ArrayList<TurokBoolean> buttons_list = new ArrayList<>();
-	static HashMap<String, TurokBoolean>    list_buttons = new HashMap<>();
+	static HashMap<String, TurokBoolean>  list_buttons = new HashMap<>();
 
 	public BopeFrame(String tag) {}
 

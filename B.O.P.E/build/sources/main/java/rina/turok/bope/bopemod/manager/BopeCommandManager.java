@@ -44,9 +44,7 @@ public class BopeCommandManager {
 					if (command_list.get_message(event.getMessage())[0].equalsIgnoreCase(command.get_name())) {
 						true_command = command.get_message(command_list.get_message(event.getMessage()));
 					}
-				} catch (Exception exc) {
-					BopeMessage.send_client_message("Other client giving problems.");
-				}
+				} catch (Exception exc) {} // Somes gays problems.
 			}
 
 			if (!true_command && command_list.has_prefix(event.getMessage())) {

@@ -13,6 +13,7 @@ import org.lwjgl.opengl.Display;
 import rina.turok.bope.bopemod.manager.BopeCommandManager;
 import rina.turok.bope.bopemod.manager.BopeModuleManager;
 import rina.turok.bope.bopemod.manager.BopeEventManager;
+import rina.turok.bope.bopemod.backgui.BopeSlider;
 import rina.turok.bope.bopemod.backgui.BopeButton;
 import rina.turok.bope.bopemod.backgui.BopeFrame;
 import rina.turok.bope.external.BopeEventHandler;
@@ -79,7 +80,9 @@ public class Bope {
 		BopeFrame.update_components();
 		BopeButton.update_buttons();
 
-		// load_settings();
+		BopeSlider.update_sliders(1); // Double.
+		BopeSlider.update_sliders(2); // Float.
+		BopeSlider.update_sliders(3); // int.
 
 		send_log("\n - B.O.P.E Started");
 	}

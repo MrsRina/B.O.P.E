@@ -9,7 +9,7 @@ public class TurokFloat {
 	float max;
 	float min;
 
-	public TurokFloat(String name, String tag, float turok_float, float max, float min) {
+	public TurokFloat(String name, String tag, float turok_float, float min, float max) {
 		this.name  = name;
 		this.tag   = tag;
 		this.value = value;
@@ -21,7 +21,7 @@ public class TurokFloat {
 		this.value = turok_float;
 	}
 
-	public void set_value_slider(float turok_float) {
+	public void set_slider_value(float turok_float) {
 		if (turok_float >= this.max) {
 			this.value = this.max;
 		} else if (turok_float <= this.min) {

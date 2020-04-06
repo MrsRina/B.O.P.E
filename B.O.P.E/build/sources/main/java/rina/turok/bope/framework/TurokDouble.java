@@ -9,7 +9,7 @@ public class TurokDouble {
 	double max;
 	double min;
 
-	public TurokDouble(String name, String tag, double turok_double, double max, double min) {
+	public TurokDouble(String name, String tag, double turok_double, double min, double max) {
 		this.name  = name;
 		this.tag   = tag;
 		this.value = turok_double;
@@ -21,7 +21,7 @@ public class TurokDouble {
 		this.value = turok_double;
 	}
 
-	public void set_value_slider(double turok_double) {
+	public void set_slider_value(double turok_double) {
 		if (turok_double >= this.max) {
 			this.value = this.max;
 		} else if (turok_double <= this.min) {

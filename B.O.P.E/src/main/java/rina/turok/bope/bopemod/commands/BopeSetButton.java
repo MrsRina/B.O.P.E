@@ -1,12 +1,13 @@
 package rina.turok.bope.bopemod.commands;
 
+import rina.turok.bope.bopemod.backgui.BopeSlider;
 import rina.turok.bope.bopemod.backgui.BopeButton;
 import rina.turok.bope.bopemod.BopeMessage;
 import rina.turok.bope.bopemod.BopeCommand;
 
-public class BopeSettings extends BopeCommand {
-	public BopeSettings() {
-		super("set", "Configure settings.");
+public class BopeSetButton extends BopeCommand {
+	public BopeSetButton() {
+		super("button", "Configure button state.");
 	}
 
 	public boolean get_message(String[] message) {

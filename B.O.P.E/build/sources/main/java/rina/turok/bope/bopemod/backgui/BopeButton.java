@@ -10,29 +10,35 @@ import rina.turok.bope.framework.TurokBoolean;
 
 // Rina.
 public class BopeButton {
-	public static ArrayList<BopeButtonList> buttons_list = new ArrayList<>();
+	public static ArrayList<BopeButtonList> array_buttons = new ArrayList<>();
 
-	public static BopeButtonList list_buttons = new BopeButtonList("Buttons");
+	public static HashMap<String, TurokBoolean> hash_buttons = new HashMap<>();
+
+	public static BopeButtonList buttons = new BopeButtonList("Buttons");
 
 	public static void init_buttons() {
-		buttons_list.add(list_buttons);
+		array_buttons.add(buttons);
 	}
 
 	public static void update_buttons() {
-		list_buttons.update_hash();
+		hash_buttons.clear();
+
+		for (TurokBoolean buttons : buttons.get_list()) {
+			hash_buttons.put(buttons.get_tag(), buttons);
+		}
 	}
 
 	public static void create_new_button(String name, String tag, boolean default_) {
-		list_buttons.add_button(name, tag, default_);
+		buttons.add_button(name, tag, default_);
 
 		update_buttons();
 	}
 
-	public static TurokBoolean get_button(String name) {
-		return list_buttons.get_button(name);
+	public static TurokBoolean get_button(String button) {
+		return hash_buttons.get(button.toLowerCase());
 	}
 
-	public static ArrayList<BopeButtonList> get_buttons() {
-		return buttons_list;
+	public static ArrayList<BopeButtonList> convert_to_list() {
+		return array_buttons;
 	}
 }

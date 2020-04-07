@@ -11,24 +11,19 @@ import rina.turok.bope.bopemod.BopeModule;
 public class BopeModuleTest extends BopeModule {
 	public BopeModuleTest() {
 		super(
-			"test",
-			"test",
-			"Testing the Module.",
+			"Module Test",
+			"ModuleTest",
+			"Dev module.",
 			Keyboard.KEY_Y,
 			BopeCategory.Category.BOPE_CHAT
 		);
 
-		BopeButton.create_new_button("Test Button", "StartTest", false);
-		BopeButton.create_new_button("Test Button 2", "button", false);
-		BopeButton.create_new_button("Test Button 3", "buttonerror", false);
-		BopeSlider.create_new_slider_float("Test Slider", "FloatValue", 1.0f, 0.5f, 10.0f);
+		BopeButton.create_new_button("Button Test 1", "Start", false);
+		BopeSlider.create_new_double_slider("Color R", "Slider_r", 5d, 1, 20);
+		BopeSlider.create_new_double_slider("Color G", "Slider_g", 5d, 1, 20);
+		BopeSlider.create_new_double_slider("Color B", "Slider_b", 5d, 1, 20);
 	}
 
 	@Override
-	public void onUpdate() {
-		if (BopeButton.get_button("StartTest").get_value()) {
-			BopeMessage.send_client_message("Value test: 0x0" + BopeSlider.get_slider_float("FloatValue").get_value());
-		}
-	}
-
+	public void onUpdate() {}
 }

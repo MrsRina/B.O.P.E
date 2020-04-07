@@ -5,34 +5,17 @@ import rina.turok.bope.framework.TurokBoolean;
 import java.util.*;
 
 public class BopeButtonList {
-	ArrayList<TurokBoolean> buttons;
-
-	HashMap<String, TurokBoolean> hash;
+	ArrayList<TurokBoolean> BUTTON_TYPE_BOOLEAN;
 
 	public BopeButtonList(String name) {
-		this.buttons = new ArrayList<>();
-		this.hash    = new HashMap<>();
-	}
-
-	public void update_hash() {
-		this.hash.clear();
-
-		for (TurokBoolean buttons : this.buttons) {
-			this.hash.put(buttons.get_tag().toLowerCase(), buttons);
-		}
+		this.BUTTON_TYPE_BOOLEAN = new ArrayList<>();
 	}
 
 	public void add_button(String name, String tag, boolean default_) {
-		this.buttons.add(new TurokBoolean(name, tag, default_));
-
-		update_hash();
+		this.BUTTON_TYPE_BOOLEAN.add(new TurokBoolean(name, tag, default_));
 	}
 
-	public TurokBoolean get_button(String button) {
-		return this.hash.get(button.toLowerCase());
-	}
-
-	public ArrayList get_list() {
-		return this.buttons;
+	public ArrayList<TurokBoolean> get_list() {
+		return this.BUTTON_TYPE_BOOLEAN;
 	}
 }

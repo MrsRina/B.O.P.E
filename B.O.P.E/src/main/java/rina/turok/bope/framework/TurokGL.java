@@ -4,6 +4,7 @@ import net.minecraft.client.renderer.GlStateManager;
 
 import org.lwjgl.opengl.GL11;
 
+// Rina.
 public class TurokGL {
 	public static void prepare() {
 		GL11.glBlendFunc(GL11.GL_SRC_ALPHA, GL11.GL_ONE_MINUS_SRC_ALPHA);

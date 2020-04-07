@@ -79,9 +79,7 @@ public class Bope {
 		BopeButton.init_buttons();
 		BopeButton.update_buttons();
 
-		BopeSlider.update_sliders(1); // Double.
-		BopeSlider.update_sliders(2); // Float.
-		BopeSlider.update_sliders(3); // int.
+		BopeSlider.init_sliders();
 
 		send_log("\n - B.O.P.E Started");
 	}

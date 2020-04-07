@@ -17,19 +17,19 @@ public class BopeSetSlider extends BopeCommand {
 
 			if (type.equals("double")) {
 				try {
-					BopeSlider.get_slider_double(slider).set_slider_value(Double.parseDouble(value));
+					BopeSlider.get_double_slider(slider).set_slider_value(Double.parseDouble(value));
 				} catch (Exception exc) {
 					BopeMessage.send_client_error_message("This is not a double value.");
 				}
 			} else if (type.equals("float")) {
 				try {
-					BopeSlider.get_slider_float(slider).set_slider_value(Float.parseFloat(value));
+					BopeSlider.get_float_slider(slider).set_slider_value(Float.parseFloat(value));
 				} catch (Exception exc) {
 					BopeMessage.send_client_error_message("This is not a float value.");
 				}
 			} else if (type.equals("int")) {
 				try {
-					BopeSlider.get_slider_int(slider).set_slider_value(Integer.parseInt(value));
+					BopeSlider.get_int_slider(slider).set_slider_value(Integer.parseInt(value));
 				} catch (Exception exc) {
 					BopeMessage.send_client_error_message("This is not a int value.");
 				}

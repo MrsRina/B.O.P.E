@@ -26,59 +26,60 @@ public class BopeConfig {
 	public static Path PATH_FOLDER  = Paths.get(BOPE_ABS_FOLDER);
 	public static Path PATH_BINDS   = Paths.get(BOPE_ABS_BINDS);
 
-	public static void verify_files() throws IOException {
+	public static void BOPE_VERIFY_FOLDER_CONFIGS() throws IOException {
 		if (!Files.exists(PATH_FOLDER)) {
 			Files.createDirectories(PATH_FOLDER);
 		}
+	}
 
+	public static void BOPE_VERIFY_FILES_WIDGETS () throws IOException {
 		if (!Files.exists(PATH_WIDGETS)) {
 			Files.createFile(PATH_WIDGETS);
 		}
+	}
 
+	public static void BOPE_VERIFY_FILES_BINDS() throws IOException {
 		if (!Files.exists(PATH_BINDS)) {
 			Files.createFile(PATH_BINDS);
 		}
 	}
 
-	public static void delet_widgets_file() throws IOException {
+	public static void BOPE_DELETE_FILES_WIDGETS() throws IOException {
 		File file = new File(BOPE_ABS_WIDGETS);
 
 		file.delete();
 	}
 
-	public static void save() {
-		try {
-			verify_files();
-			save_buttons();
-		} catch (IOException exc) {
-			exc.printStackTrace();
-		}		
-	}
+	public static void BOPE_SAVE_WIDGETS() throws IOException {
+		ArrayList BOPE_LIST_WIDGETS = new ArrayList();
 
-	public static void save_buttons() throws IOException {
-		ArrayList widgets = new ArrayList();
+		BOPE_LIST_WIDGETS.add(BopeButton.convert_to_list());
+		BOPE_LIST_WIDGETS.add(BopeSlider.convert_to_list());
 
-		widgets.add(BopeButton.get_buttons());
-		widgets.add(BopeSlider.get_sliders_double());
-		widgets.add(BopeSlider.get_sliders_float());
-		widgets.add(BopeSlider.get_sliders_int());
+		BOPE_DELETE_FILES_WIDGETS();
+		BOPE_VERIFY_FILES_WIDGETS();
 
-		delet_widgets_file();
-		verify_files();
-
-		Gson plivid = new GsonBuilder().setPrettyPrinting().create();
-
-		JsonParser leafy = new JsonParser();
-		JsonElement cam  = leafy.parse(new Gson().toJson(widgets));
-
-		String demtio = plivid.toJson(cam);
+		Gson        BOPE_PLVIDID       = new GsonBuilder().setPrettyPrinting().create();
+		JsonParser  BOPE_LEAFY         = new JsonParser();
+		JsonElement BOPE_EXPLOSIVE_CAM = BOPE_LEAFY.parse(new Gson().toJson(BOPE_LIST_WIDGETS));
+		String      BOPE_DEMTIO        = BOPE_PLVIDID.toJson(BOPE_EXPLOSIVE_CAM);
 
 		FileWriter file;
 
 		file = new FileWriter(BOPE_ABS_WIDGETS);
-		file.write(demtio);
+		file.write(BOPE_DEMTIO);
 
 		file.close();
+	}
+
+	public static void save() {
+		try {
+			BOPE_VERIFY_FOLDER_CONFIGS();
+
+			BOPE_SAVE_WIDGETS();
+		} catch (IOException exc) {
+			exc.printStackTrace();
+		}		
 	}
 
 	public static void load_configs() throws IOException {
@@ -88,4 +89,6 @@ public class BopeConfig {
 
 		stream.close();
 	}
+
+
 }

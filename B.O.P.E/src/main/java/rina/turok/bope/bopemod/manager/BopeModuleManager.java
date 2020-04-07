@@ -17,7 +17,7 @@ import org.lwjgl.opengl.GL11;
 
 import rina.turok.bope.bopemod.events.BopeEventRender;
 import rina.turok.bope.bopemod.hacks.BopeFinderModule;
-import rina.turok.bope.framework.TurokTessellator;
+import rina.turok.bope.framework.TurokRenderHelp;
 import rina.turok.bope.bopemod.BopeModule;
 
 // Rina, ok i used the same system manager of KAMI, but why?
@@ -120,7 +120,7 @@ public class BopeModuleManager {
 
 		Vec3d pos = get_interpolated_pos(mc.player, event.getPartialTicks());
 
-		BopeEventRender event_render = new BopeEventRender(TurokTessellator.INSTANCE, pos);
+		BopeEventRender event_render = new BopeEventRender(TurokRenderHelp.INSTANCE, pos);
 
 		event_render.reset_translation();
 
@@ -132,7 +132,7 @@ public class BopeModuleManager {
 
 		release_gl();
 
-		TurokTessellator.release_gl();
+		TurokRenderHelp.release_gl();
 	}
 
 	public static Vec3d process(Entity entity, double x, double y, double z) {

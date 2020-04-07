@@ -13,7 +13,7 @@ import net.minecraft.client.Minecraft;
 import org.lwjgl.input.Keyboard;
 import org.lwjgl.opengl.GL11;
 
-import rina.turok.bope.framework.TurokTessellator;
+import rina.turok.bope.framework.TurokRenderHelp;
 import rina.turok.bope.Bope;
 
 public class BopeEventManager {
@@ -68,7 +68,7 @@ public class BopeEventManager {
 
 			GL11.glPopMatrix();
 
-			TurokTessellator.release_gl();
+			TurokRenderHelp.release_gl();
 		}
 	} 
 

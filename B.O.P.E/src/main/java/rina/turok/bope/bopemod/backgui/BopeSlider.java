@@ -25,15 +25,15 @@ public class BopeSlider {
 	}
 
 	public static void create_new_slider_double(String name, String tag, double value, double min, double max) {
-		list_sliders.add_double_slider(name tag, value, min, max);
+		list_sliders.add_double_slider(name, tag, value, min, max);
 	}
 
 	public static void create_new_slider_float(String name, String tag, float value, float min, float max) {
-		list_sliders.add_float_slider(name tag, value, min, max);
+		list_sliders.add_float_slider(name, tag, value, min, max);
 	}
 
 	public static void create_new_slider_int(String name, String tag, int value, int min, int max) {
-		list_sliders.add_int_slider(name tag, value, min, max);
+		list_sliders.add_int_slider(name, tag, value, min, max);
 	}
 
 	public static TurokDouble get_double_slider(String slider) {

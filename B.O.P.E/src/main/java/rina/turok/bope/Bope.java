@@ -15,7 +15,6 @@ import rina.turok.bope.bopemod.manager.BopeModuleManager;
 import rina.turok.bope.bopemod.manager.BopeEventManager;
 import rina.turok.bope.bopemod.backgui.BopeSlider;
 import rina.turok.bope.bopemod.backgui.BopeButton;
-import rina.turok.bope.bopemod.backgui.BopeFrame;
 import rina.turok.bope.external.BopeEventHandler;
 import rina.turok.bope.BopeEventRegister;
 
@@ -77,7 +76,7 @@ public class Bope {
 		send_log(" - B.O.P.E starting widgets.");
 
 		// Start widgets.
-		BopeFrame.update_components();
+		BopeButton.init_buttons();
 		BopeButton.update_buttons();
 
 		BopeSlider.update_sliders(1); // Double.
@@ -87,7 +86,9 @@ public class Bope {
 		send_log("\n - B.O.P.E Started");
 	}
 
-	public static void load_settings() {}
+	public static void load_settings() {
+
+	}
 
 	public static Bope get_instance() {
 		return INSTANCE; // A function for get INSTANCE from all client.

@@ -13,12 +13,14 @@ public class BopeModuleTest extends BopeModule {
 		super(
 			"test",
 			"test",
-			"just test gay",
+			"Testing the Module.",
 			Keyboard.KEY_Y,
 			BopeCategory.Category.BOPE_CHAT
 		);
 
 		BopeButton.create_new_button("Test Button", "StartTest", false);
+		BopeButton.create_new_button("Test Button 2", "button", false);
+		BopeButton.create_new_button("Test Button 3", "buttonerror", false);
 		BopeSlider.create_new_slider_float("Test Slider", "FloatValue", 1.0f, 0.5f, 10.0f);
 	}
 

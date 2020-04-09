@@ -29,6 +29,8 @@ public class TurokRenderHelp extends Tessellator {
 
 	public static void release() {
 		TurokGL.release(); // Buffer //
+
+		INSTANCE.draw();
 	}
 
 	public static void prepare_gl() {
@@ -79,7 +81,5 @@ public class TurokRenderHelp extends Tessellator {
 		buffer.pos(x + w, y, z).color(r, g, b, a).endVertex();
 		buffer.pos(x + w, y + h, z).color(r, g, b, a).endVertex();
 		buffer.pos(x + w, y + h, z + d).color(r, g, b, a).endVertex();
-
-		INSTANCE.draw();
 	}
 }

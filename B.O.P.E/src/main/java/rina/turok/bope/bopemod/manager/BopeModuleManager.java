@@ -145,4 +145,8 @@ public class BopeModuleManager {
 	public static Vec3d get_interpolated_pos(Entity entity, double ticks) {
 		return new Vec3d(entity.lastTickPosX, entity.lastTickPosY, entity.lastTickPosZ).add(process(entity, ticks, ticks, ticks)); // x, y, z.
 	}
+
+	public static ArrayList<BopeModule> convert_to_list() {
+		return module_list;
+	}
 }

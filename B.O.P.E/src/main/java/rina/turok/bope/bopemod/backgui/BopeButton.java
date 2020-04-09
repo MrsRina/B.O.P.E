@@ -5,40 +5,49 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Set;
 
-import rina.turok.bope.bopemod.backgui.BopeButtonList;
 import rina.turok.bope.framework.TurokBoolean;
+import rina.turok.bope.bopemod.BopeModule;
 
-// Rina.
+/**
+ * @author Rina.
+ *
+ * Created by Rina.
+ * 08/04/2020.
+ *
+ */
 public class BopeButton {
-	public static ArrayList<BopeButtonList> array_buttons = new ArrayList<>();
+	BopeModule master;
 
-	public static HashMap<String, TurokBoolean> hash_buttons = new HashMap<>();
+	String name;
+	String tag;
 
-	public static BopeButtonList buttons = new BopeButtonList("Buttons");
+	TurokBoolean value;
 
-	public static void init_buttons() {
-		array_buttons.add(buttons);
+	public BopeButton(BopeModule master, String name, String tag, boolean default_value) {
+		this.master = master;
+		this.name   = name;
+		this.tag    = tag;
+
+		this.value = new TurokBoolean(name, tag, default_value);
 	}
 
-	public static void update_buttons() {
-		hash_buttons.clear();
-
-		for (TurokBoolean buttons : buttons.get_list()) {
-			hash_buttons.put(buttons.get_tag(), buttons);
-		}
+	public void set_value(boolean new_value) {
+		this.value.set_value(new_value);
 	}
 
-	public static void create_new_button(String name, String tag, boolean default_) {
-		buttons.add_button(name, tag, default_);
-
-		update_buttons();
+	public boolean get_value() {
+		return this.value.get_value();
 	}
 
-	public static TurokBoolean get_button(String button) {
-		return hash_buttons.get(button.toLowerCase());
+	public String get_master() {
+		return this.master.get_name_tag();
 	}
 
-	public static ArrayList<BopeButtonList> convert_to_list() {
-		return array_buttons;
+	public String get_name() {
+		return this.name;
+	}
+
+	public String get_tag() {
+		return this.tag;
 	}
 }

@@ -14,26 +14,6 @@ public class BopeSetSlider extends BopeCommand {
 			String slider = message[1];
 			String value  = message[2];
 			String type   = message[3];
-
-			if (type.equals("double")) {
-				try {
-					BopeSlider.get_double_slider(slider).set_slider_value(Double.parseDouble(value));
-				} catch (Exception exc) {
-					BopeMessage.send_client_error_message("This is not a double value.");
-				}
-			} else if (type.equals("float")) {
-				try {
-					BopeSlider.get_float_slider(slider).set_slider_value(Float.parseFloat(value));
-				} catch (Exception exc) {
-					BopeMessage.send_client_error_message("This is not a float value.");
-				}
-			} else if (type.equals("int")) {
-				try {
-					BopeSlider.get_int_slider(slider).set_slider_value(Integer.parseInt(value));
-				} catch (Exception exc) {
-					BopeMessage.send_client_error_message("This is not a int value.");
-				}
-			}
 		}
 
 		return true;

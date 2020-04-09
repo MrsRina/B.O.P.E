@@ -9,6 +9,7 @@ import java.io.*;
 
 import com.google.gson.*;
 
+import rina.turok.bope.bopemod.manager.BopeModuleManager;
 import rina.turok.bope.bopemod.backgui.BopeButton;
 import rina.turok.bope.bopemod.backgui.BopeSlider;
 
@@ -53,8 +54,7 @@ public class BopeConfig {
 	public static void BOPE_SAVE_WIDGETS() throws IOException {
 		ArrayList BOPE_LIST_WIDGETS = new ArrayList();
 
-		BOPE_LIST_WIDGETS.add(BopeButton.convert_to_list());
-		BOPE_LIST_WIDGETS.add(BopeSlider.convert_to_list());
+		BOPE_LIST_WIDGETS.add(BopeModuleManager.convert_to_list());
 
 		BOPE_DELETE_FILES_WIDGETS();
 		BOPE_VERIFY_FILES_WIDGETS();
@@ -72,6 +72,14 @@ public class BopeConfig {
 		file.close();
 	}
 
+	public static void BOPE_LOAD_WIDGETS() throws IOException {
+		InputStream BOPE_JSON_FILE    = Files.newInputStream(PATH_WIDGETS);
+		JsonObject  BOPE_JSON         = new JsonParser().parse(new InputStreamReader(BOPE_JSON_FILE)).getAsJsonObject();
+		JsonObject  BOPE_JSON_BUTTONS = BOPE_JSON.get("BUTTON_TYPE_BOOLEAN").getAsJsonObject();
+
+		BOPE_JSON_FILE.close();
+	}
+
 	public static void save() {
 		try {
 			BOPE_VERIFY_FOLDER_CONFIGS();
@@ -82,13 +90,11 @@ public class BopeConfig {
 		}		
 	}
 
-	public static void load_configs() throws IOException {
-		InputStream stream = Files.newInputStream(PATH_WIDGETS);
-
-		JsonObject json = new JsonParser().parse(new InputStreamReader(stream)).getAsJsonObject();
-
-		stream.close();
+	public static void load() {
+		try {
+			BOPE_LOAD_WIDGETS();
+		} catch (Exception exc) {
+			exc.printStackTrace();			
+		}
 	}
-
-
 }

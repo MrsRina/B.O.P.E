@@ -14,6 +14,7 @@ import org.lwjgl.input.Keyboard;
 
 import rina.turok.bope.bopemod.events.BopeEventRender;
 import rina.turok.bope.bopemod.hacks.BopeCategory;
+import rina.turok.bope.bopemod.backgui.BopeButton;
 import rina.turok.bope.framework.TurokBoolean;
 import rina.turok.bope.framework.TurokString;
 import rina.turok.bope.framework.TurokBind;
@@ -41,6 +42,8 @@ public class BopeModule {
 	public TurokBind bind;
 
 	public final Minecraft mc = Minecraft.getMinecraft();
+
+	public ArrayList<BopeButton> buttons = new ArrayList<>();
 
 	public BopeModule(String name_module, String name_tag_module, String description_module, int key, BopeCategory.Category category_module) {
 		name         = new TurokString(name_module, name_tag_module, name_module);
@@ -91,6 +94,10 @@ public class BopeModule {
 		onEnable();
 
 		BopeEventBus.ZERO_ALPINE_EVENT_BUS.subscribe(this);
+	}
+
+	public void add_button(BopeButton button) {
+		buttons.add(button);
 	}
 
 	public boolean is_active() {

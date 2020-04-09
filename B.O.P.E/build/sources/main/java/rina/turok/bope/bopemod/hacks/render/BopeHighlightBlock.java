@@ -23,11 +23,6 @@ public class BopeHighlightBlock extends BopeModule {
 			Keyboard.KEY_G,
 			Category.BOPE_RENDER
 		);
-
-		BopeSlider.create_new_float_slider("Color Red", "highlight_color_red", 50.0f, 0.0f, 255.0f);
-		BopeSlider.create_new_float_slider("Color Green", "highlight_color_green", 255.0f, 0.0f, 255.0f);
-		BopeSlider.create_new_float_slider("Color Blue", "highlight_color_blue", 255.0f, 0.0f, 255.0f);
-		BopeSlider.create_new_float_slider("Color Blue", "highlight_color_alpha", 255.0f, 0.0f, 255.0f);
 	}
 
 	RayTraceResult split;
@@ -64,10 +59,10 @@ public class BopeHighlightBlock extends BopeModule {
 		if (split.typeOfHit == RayTraceResult.Type.BLOCK) {
 			BlockPos position_block = split.getBlockPos();
 
-			float r = BopeSlider.get_float_slider("highlight_color_red").get_value();
-			float g = BopeSlider.get_float_slider("highlight_color_green").get_value();
-			float b = BopeSlider.get_float_slider("highlight_color_blue").get_value();
-			float a = BopeSlider.get_float_slider("highlight_color_alpha").get_value();
+			float r = 255;
+			float g = 255;
+			float b = 255;
+			float a = 255;
 
 			TurokRenderHelp.prepare(GL11.GL_QUADS);
 			TurokRenderHelp.draw_cube(position_block, r, g, b, a);

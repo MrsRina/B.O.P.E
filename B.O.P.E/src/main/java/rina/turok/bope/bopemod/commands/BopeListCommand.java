@@ -23,8 +23,8 @@ public class BopeListCommand {
 	public BopeListCommand(Style style_) {
 		style = style_;
 
-		add_command(new BopeSave());
 		add_command(new BopePrefix());
+		add_command(new BopeSettings());
 		add_command(new BopeSetSlider());
 		add_command(new BopeSetButton());
 		add_command(new BopeToggle());

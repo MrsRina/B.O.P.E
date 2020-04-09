@@ -75,12 +75,6 @@ public class Bope {
 
 		send_log(" - B.O.P.E starting widgets.");
 
-		// Start widgets.
-		BopeButton.init_buttons();
-		BopeButton.update_buttons();
-
-		BopeSlider.init_sliders();
-
 		send_log("\n - B.O.P.E Started");
 	}
 

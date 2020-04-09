@@ -4,6 +4,13 @@ import rina.turok.bope.bopemod.BopeCommand;
 import rina.turok.bope.bopemod.BopeMessage;
 import rina.turok.bope.Bope;
 
+/**
+* @author Rina
+*
+* Created by Rina.
+* 08/04/20.
+*
+*/
 public class BopeToggle extends BopeCommand {
 	public BopeToggle() {
 		super("t", "Toggle module.");

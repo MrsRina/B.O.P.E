@@ -25,11 +25,13 @@ import rina.turok.bope.Bope;
 // External:
 import rina.turok.bope.external.BopeEventBus;
 
-//
-// Rina.
-// Coded by Rina.
-// 31/03/2020.
-//
+/**
+* @author Rina
+*
+* Created by Rina.
+* 08/04/20.
+*
+*/
 public class BopeModule {
 	public TurokString name;
 	public TurokString name_tag;
@@ -130,5 +132,9 @@ public class BopeModule {
 
 	public BopeCategory.Category get_category() {
 		return category;
+	}
+
+	public ArrayList<BopeButton> get_list_buttons() {
+		return buttons;
 	}
 }

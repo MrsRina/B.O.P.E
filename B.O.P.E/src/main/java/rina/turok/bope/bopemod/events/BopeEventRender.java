@@ -6,6 +6,13 @@ import net.minecraft.util.math.Vec3d;
 
 import rina.turok.bope.external.BopeEventCancellable;
 
+/**
+* @author Rina
+*
+* Created by Rina.
+* 08/04/20.
+*
+*/
 public class BopeEventRender extends BopeEventCancellable {
 	private final Tessellator tessellator;
 	private final Vec3d       render_pos;

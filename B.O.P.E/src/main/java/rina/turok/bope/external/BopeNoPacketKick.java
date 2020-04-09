@@ -3,7 +3,13 @@ package rina.turok.bope.external;
 import rina.turok.bope.bopemod.hacks.BopeCategory;
 import rina.turok.bope.bopemod.BopeModule;
 
-// Rina.
+/**
+* @author Rina
+*
+* Created by Rina.
+* 08/04/20.
+*
+*/
 public class BopeNoPacketKick {
 	private static BopeNoPacketKick INSTANCE;
 

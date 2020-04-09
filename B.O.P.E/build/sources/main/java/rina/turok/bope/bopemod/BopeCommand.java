@@ -1,6 +1,12 @@
 package rina.turok.bope.bopemod;
 
-// Rina.
+/**
+* @author Rina
+*
+* Created by Rina.
+* 08/04/20.
+*
+*/
 public class BopeCommand {
 	String name;
 	String description;

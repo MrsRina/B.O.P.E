@@ -16,6 +16,13 @@ import org.lwjgl.opengl.GL11;
 import rina.turok.bope.framework.TurokRenderHelp;
 import rina.turok.bope.Bope;
 
+/**
+* @author Rina
+*
+* Created by Rina.
+* 08/04/20.
+*
+*/
 public class BopeEventManager {
 	Minecraft mc = Minecraft.getMinecraft();
 

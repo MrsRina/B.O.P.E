@@ -16,13 +16,13 @@ import rina.turok.bope.bopemod.events.BopeEventPacket;
 import rina.turok.bope.external.BopeNoPacketKick;
 import rina.turok.bope.external.BopeEventBus;
 
-//
-// Author: Rina
-// By Rina.
-//
-// I a module called NoPacketKick like a state and stance for this Mixin.
-//
-
+/**
+* @author Rina
+*
+* Created by Rina.
+* 08/04/20.
+*
+*/
 @Mixin(value = NetworkManager.class)
 public class BopeMixinNetworkManager {
 	// Receive packet.

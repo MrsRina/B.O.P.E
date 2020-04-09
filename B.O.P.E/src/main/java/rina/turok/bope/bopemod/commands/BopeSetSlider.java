@@ -4,6 +4,13 @@ import rina.turok.bope.bopemod.backgui.BopeSlider;
 import rina.turok.bope.bopemod.BopeMessage;
 import rina.turok.bope.bopemod.BopeCommand;
 
+/**
+* @author Rina
+*
+* Created by Rina.
+* 08/04/20.
+*
+*/
 public class BopeSetSlider extends BopeCommand {
 	public BopeSetSlider() {
 		super("slider", "Configure slider value.");

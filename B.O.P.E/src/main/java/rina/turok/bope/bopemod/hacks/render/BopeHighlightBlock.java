@@ -14,6 +14,13 @@ import rina.turok.bope.framework.TurokRenderHelp;
 import rina.turok.bope.bopemod.BopeMessage;
 import rina.turok.bope.bopemod.BopeModule;
 
+/**
+* @author Rina
+*
+* Created by Rina.
+* 08/04/20.
+*
+*/
 public class BopeHighlightBlock extends BopeModule {
 	public BopeHighlightBlock() {
 		super(

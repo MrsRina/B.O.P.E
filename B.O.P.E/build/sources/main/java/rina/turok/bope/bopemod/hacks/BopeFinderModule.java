@@ -4,6 +4,13 @@ import rina.turok.bope.bopemod.events.BopeEventRender;
 import rina.turok.bope.bopemod.hacks.BopeCategory;
 import rina.turok.bope.bopemod.BopeModule;
 
+/**
+* @author Rina
+*
+* Created by Rina.
+* 08/04/20.
+*
+*/
 public class BopeFinderModule extends BopeModule {
 	public BopeFinderModule() {
 		super(

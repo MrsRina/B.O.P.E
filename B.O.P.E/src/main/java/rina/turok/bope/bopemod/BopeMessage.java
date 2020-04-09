@@ -12,7 +12,13 @@ import java.util.regex.Pattern;
 
 import rina.turok.bope.Bope;
 
-// Rina.
+/**
+* @author Rina
+*
+* Created by Rina.
+* 08/04/20.
+*
+*/
 public class BopeMessage {
 	public static Minecraft mc = Minecraft.getMinecraft();
 

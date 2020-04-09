@@ -9,10 +9,11 @@ import rina.turok.bope.framework.TurokDouble;
 import rina.turok.bope.framework.TurokFloat;
 import rina.turok.bope.framework.TurokInt;
 
-//
-// Author: Rina.
-// Rina.
-// 1:2:3 TurokDouble TurokFloat TurokInt
-//
-
+/**
+* @author Rina
+*
+* Created by Rina.
+* 08/04/20.
+*
+*/
 public class BopeSlider {}

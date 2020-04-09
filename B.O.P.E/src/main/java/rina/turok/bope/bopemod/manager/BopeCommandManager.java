@@ -11,7 +11,13 @@ import rina.turok.bope.bopemod.commands.BopeListCommand;
 import rina.turok.bope.bopemod.BopeCommand;
 import rina.turok.bope.bopemod.BopeMessage;
 
-// Rina.
+/**
+* @author Rina
+*
+* Created by Rina.
+* 08/04/20.
+*
+*/
 public class BopeCommandManager {
 	public static BopeListCommand command_list;
 

@@ -5,10 +5,13 @@ import net.minecraftforge.common.MinecraftForge;
 import rina.turok.bope.bopemod.manager.BopeCommandManager;
 import rina.turok.bope.bopemod.manager.BopeEventManager;
 
-// 
-// Author: Rina.
-// Event register into FORGE, like a INSTANCE.
-//
+/**
+* @author Rina
+*
+* Created by Rina.
+* 08/04/20.
+*
+*/
 public class BopeEventRegister {
 	public static void register_command_manager(BopeCommandManager manager) {
 		MinecraftForge.EVENT_BUS.register(manager);

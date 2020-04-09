@@ -11,7 +11,13 @@ import rina.turok.bope.framework.TurokString;
 import rina.turok.bope.bopemod.BopeCommand;
 import rina.turok.bope.bopemod.commands.*;
 
-// Rina.
+/**
+* @author Rina
+*
+* Created by Rina.
+* 08/04/20.
+*
+*/
 public class BopeListCommand {
 	public static ArrayList<BopeCommand> command_list = new ArrayList<BopeCommand>();
 	static HashMap<String, BopeCommand> list_command  = new HashMap<>();

@@ -1,6 +1,12 @@
 package rina.turok.bope.bopemod.hacks;
 
-// Rina.
+/**
+* @author Rina
+*
+* Created by Rina.
+* 08/04/20.
+*
+*/
 public class BopeCategory {
 	public enum Category {
 		BOPE_CHAT     ("B.O.P.E Chat",     false, false),

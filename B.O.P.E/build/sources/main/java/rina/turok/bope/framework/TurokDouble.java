@@ -1,6 +1,12 @@
 package rina.turok.bope.framework;
 
-// Rina.
+/**
+* @author Rina
+*
+* Created by Rina.
+* 08/04/20.
+*
+*/
 public class TurokDouble {
 	String name;
 	String tag;

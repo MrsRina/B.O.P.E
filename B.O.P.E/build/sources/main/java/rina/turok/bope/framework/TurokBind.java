@@ -4,7 +4,13 @@ import org.lwjgl.input.Keyboard;
 
 import rina.turok.bope.framework.TurokInt;
 
-// Rina.
+/**
+* @author Rina
+*
+* Created by Rina.
+* 08/04/20.
+*
+*/
 public class TurokBind {
 	TurokInt bind;
 

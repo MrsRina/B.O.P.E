@@ -10,10 +10,13 @@ import org.lwjgl.opengl.GL11;
 
 import rina.turok.bope.framework.TurokGL;
 
-//
-// Rina.
-// Is not the same.
-//
+/**
+* @author Rina
+*
+* Created by Rina.
+* 08/04/20.
+*
+*/
 public class TurokRenderHelp extends Tessellator {
 	public static TurokRenderHelp INSTANCE = new TurokRenderHelp();
 

@@ -20,11 +20,21 @@ import rina.turok.bope.bopemod.hacks.BopeFinderModule;
 import rina.turok.bope.framework.TurokRenderHelp;
 import rina.turok.bope.bopemod.BopeModule;
 
-// Rina, ok i used the same system manager of KAMI, but why?
-// 1: I really cant think other type manager.
-// 2: huh?
-// 3: gay.
+/**
+* @author Rina
+*
+* Created by Rina.
+* 08/04/20.
+*
+*/
 public class BopeModuleManager {
+	/**
+	* @author Rina.
+	* It manager was referenced like KAMI.
+	* Thanks 086!
+	*
+	*/
+
 	public static ArrayList<BopeModule> module_list = new ArrayList<>();
 	static HashMap<String, BopeModule>  list_module = new HashMap<>();
 
@@ -144,9 +154,5 @@ public class BopeModuleManager {
 
 	public static Vec3d get_interpolated_pos(Entity entity, double ticks) {
 		return new Vec3d(entity.lastTickPosX, entity.lastTickPosY, entity.lastTickPosZ).add(process(entity, ticks, ticks, ticks)); // x, y, z.
-	}
-
-	public static ArrayList<BopeModule> convert_to_list() {
-		return module_list;
 	}
 }

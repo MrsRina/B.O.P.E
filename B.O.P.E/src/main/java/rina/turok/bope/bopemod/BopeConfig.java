@@ -7,13 +7,22 @@ import java.nio.file.Path;
 import java.util.*;
 import java.io.*;
 
+// Json manager.
 import com.google.gson.*;
 
 import rina.turok.bope.bopemod.manager.BopeModuleManager;
 import rina.turok.bope.bopemod.backgui.BopeButton;
 import rina.turok.bope.bopemod.backgui.BopeSlider;
+import rina.turok.bope.bopemod.BopeModule;
+import rina.turok.bope.Bope;
 
-// Rina.
+/**
+ * @author Rina.
+ *
+ * Created by Rina.
+ * 08/04/2020.
+ *
+ */
 public class BopeConfig {
 	public static String BOPE_FOLDER_CONFIG = "B.O.P.E/";
 	public static String BOPE_FILE_WIDGETS  = "Configs.json";
@@ -51,23 +60,42 @@ public class BopeConfig {
 		file.delete();
 	}
 
-	public static void BOPE_SAVE_WIDGETS() throws IOException {
-		ArrayList BOPE_LIST_WIDGETS = new ArrayList();
+	public static void BOPE_SAVE_CONFIGS() throws IOException {
+		Gson       BOPE_GSON   = new GsonBuilder().setPrettyPrinting().create();
+		JsonParser BOPE_PARSER = new JsonParser(); 
 
-		BOPE_LIST_WIDGETS.add(BopeModuleManager.convert_to_list());
+		// String BOPE_DEMTIO        = BOPE_PLVIDID.toJson(BOPE_EXPLOSIVE_CAM);
+
+		JsonObject BOPE_MAIN_JSON   = new JsonObject();
+		JsonObject BOPE_MODULE_JSON = new JsonObject();
+		JsonObject BOPE_MODULE_INFO = new JsonObject();
+
+		for (BopeModule module : Bope.get_instance().module_manager.get_modules()) {
+			JsonElement BOPE_BUTTONS = BOPE_PARSER.parse(new Gson().toJson(module.get_list_buttons()));
+
+			BOPE_MODULE_INFO.addProperty("Name", module.get_name());
+			BOPE_MODULE_INFO.addProperty("Tag", module.get_name_tag());
+			BOPE_MODULE_INFO.addProperty("Bind", Integer.toString(module.get_key_bind()));
+			
+			BOPE_MODULE_INFO.addProperty("WIDGET_TYPE_BUTTON", BOPE_GSON.toJson(BOPE_BUTTONS));
+			BOPE_MODULE_INFO.addProperty("WIDGET_TYPE_SLIDER_DOUBLE", (""));
+			BOPE_MODULE_INFO.addProperty("WIDGET_TYPE_SLIDER_FLOAT", (""));
+			BOPE_MODULE_INFO.addProperty("WIDGET_TYPE_SLIDER_INT", (""));
+
+			BOPE_MODULE_JSON.add(module.get_name_tag(), BOPE_MODULE_INFO);
+		}
+
+		BOPE_MAIN_JSON.add("Modules", BOPE_MODULE_JSON);
+
+		String BOPE_JSON = BOPE_MAIN_JSON.toString();
 
 		BOPE_DELETE_FILES_WIDGETS();
 		BOPE_VERIFY_FILES_WIDGETS();
 
-		Gson        BOPE_PLVIDID       = new GsonBuilder().setPrettyPrinting().create();
-		JsonParser  BOPE_LEAFY         = new JsonParser();
-		JsonElement BOPE_EXPLOSIVE_CAM = BOPE_LEAFY.parse(new Gson().toJson(BOPE_LIST_WIDGETS));
-		String      BOPE_DEMTIO        = BOPE_PLVIDID.toJson(BOPE_EXPLOSIVE_CAM);
-
 		FileWriter file;
 
 		file = new FileWriter(BOPE_ABS_WIDGETS);
-		file.write(BOPE_DEMTIO);
+		file.write(BOPE_JSON);
 
 		file.close();
 	}
@@ -84,7 +112,7 @@ public class BopeConfig {
 		try {
 			BOPE_VERIFY_FOLDER_CONFIGS();
 
-			BOPE_SAVE_WIDGETS();
+			BOPE_SAVE_CONFIGS();
 		} catch (IOException exc) {
 			exc.printStackTrace();
 		}		

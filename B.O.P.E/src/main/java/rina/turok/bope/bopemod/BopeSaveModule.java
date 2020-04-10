@@ -2,6 +2,8 @@ package rina.turok.bope.bopemod;
 
 import java.util.*;
 
+import org.lwjgl.input.Keyboard;
+
 import rina.turok.bope.bopemod.backgui.BopeButton;
 
 /**
@@ -42,7 +44,21 @@ public class BopeSaveModule {
 		return this.tag;
 	}
 
-	public int get_bind() {
+	public String get_string_bind() {
+		if (this.bind < 0) {
+			return "null";
+		} else {
+			String key = Keyboard.getKeyName(this.bind);
+
+			if (key.isEmpty()) {
+				return "";
+			} else {
+				return Character.toUpperCase(key.charAt(0)) + (key.length() != 1 ? key.substring(1).toLowerCase() : "");
+			}
+		}
+	}
+
+	public int get_int_bind() {
 		return this.bind;
 	}
 }

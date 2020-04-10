@@ -13,6 +13,7 @@ import com.google.gson.*;
 import rina.turok.bope.bopemod.manager.BopeModuleManager;
 import rina.turok.bope.bopemod.backgui.BopeButton;
 import rina.turok.bope.bopemod.backgui.BopeSlider;
+import rina.turok.bope.bopemod.BopeSaveModule;
 import rina.turok.bope.bopemod.BopeModule;
 import rina.turok.bope.Bope;
 
@@ -61,6 +62,8 @@ public class BopeConfig {
 	}
 
 	public static void BOPE_SAVE_CONFIGS() throws IOException {
+		HashMap<String, BopeSaveModule> modules_state = new HashMap<String, BopeSaveModule>();
+
 		Gson       BOPE_GSON   = new GsonBuilder().setPrettyPrinting().create();
 		JsonParser BOPE_PARSER = new JsonParser(); 
 
@@ -70,24 +73,19 @@ public class BopeConfig {
 		JsonObject BOPE_MODULE_JSON = new JsonObject();
 		JsonObject BOPE_MODULE_INFO = new JsonObject();
 
-		for (BopeModule module : Bope.get_instance().module_manager.get_modules()) {
-			JsonElement BOPE_BUTTONS = BOPE_PARSER.parse(new Gson().toJson(module.get_list_buttons()));
+		for (BopeSaveModule module : Bope.get_module_manager().get_save_modules()) {
+			modules_state.put(module.get_tag(), module);
 
-			BOPE_MODULE_INFO.addProperty("Name", module.get_name());
-			BOPE_MODULE_INFO.addProperty("Tag", module.get_name_tag());
-			BOPE_MODULE_INFO.addProperty("Bind", Integer.toString(module.get_key_bind()));
-			
-			BOPE_MODULE_INFO.addProperty("WIDGET_TYPE_BUTTON", BOPE_GSON.toJson(BOPE_BUTTONS));
-			BOPE_MODULE_INFO.addProperty("WIDGET_TYPE_SLIDER_DOUBLE", (""));
-			BOPE_MODULE_INFO.addProperty("WIDGET_TYPE_SLIDER_FLOAT", (""));
-			BOPE_MODULE_INFO.addProperty("WIDGET_TYPE_SLIDER_INT", (""));
+			JsonElement BOPE_MODULES = BOPE_PARSER.parse(new Gson().toJson(modules_state));
 
-			BOPE_MODULE_JSON.add(module.get_name_tag(), BOPE_MODULE_INFO);
+			BOPE_MODULE_JSON.add(module.get_tag(), BOPE_MODULES);
 		}
 
 		BOPE_MAIN_JSON.add("Modules", BOPE_MODULE_JSON);
 
-		String BOPE_JSON = BOPE_MAIN_JSON.toString();
+		JsonElement BOPE_MAIN_PRETTY_JSON = BOPE_PARSER.parse(BOPE_MAIN_JSON.toString());
+
+		String BOPE_JSON = BOPE_GSON.toJson(BOPE_MAIN_PRETTY_JSON);
 
 		BOPE_DELETE_FILES_WIDGETS();
 		BOPE_VERIFY_FILES_WIDGETS();

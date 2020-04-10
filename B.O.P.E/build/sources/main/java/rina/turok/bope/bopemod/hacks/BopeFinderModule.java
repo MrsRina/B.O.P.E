@@ -1,8 +1,11 @@
 package rina.turok.bope.bopemod.hacks;
 
+import rina.turok.bope.bopemod.hacks.BopeCategory.Category;
 import rina.turok.bope.bopemod.events.BopeEventRender;
-import rina.turok.bope.bopemod.hacks.BopeCategory;
+import rina.turok.bope.bopemod.BopeSaveModule;
+import rina.turok.bope.bopemod.BopeMessage;
 import rina.turok.bope.bopemod.BopeModule;
+import rina.turok.bope.Bope;
 
 /**
 * @author Rina
@@ -12,13 +15,21 @@ import rina.turok.bope.bopemod.BopeModule;
 *
 */
 public class BopeFinderModule extends BopeModule {
+	BopeSaveModule module_info;
+
 	public BopeFinderModule() {
-		super(
+		super(Category.BOPE_HIDDEN);
+
+		Bope.get_module_manager().register_module(new BopeSaveModule (
 			"B.O.P.E",
 			"B.O.P.E",
-			"B.O.P.E finder module.",
-			- 1,
-			BopeCategory.Category.BOPE_HIDDEN
+			-1
+		));
+
+		set_module_info (
+			"B.O.P.E",
+			"B.O.P.E",
+			"B.O.P.E official client."
 		);
 	}
 

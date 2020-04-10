@@ -18,6 +18,7 @@ import org.lwjgl.opengl.GL11;
 import rina.turok.bope.bopemod.events.BopeEventRender;
 import rina.turok.bope.bopemod.hacks.BopeFinderModule;
 import rina.turok.bope.framework.TurokRenderHelp;
+import rina.turok.bope.bopemod.BopeSaveModule;
 import rina.turok.bope.bopemod.BopeModule;
 
 /**
@@ -35,8 +36,11 @@ public class BopeModuleManager {
 	*
 	*/
 
-	public static ArrayList<BopeModule> module_list = new ArrayList<>();
-	static HashMap<String, BopeModule>  list_module = new HashMap<>();
+	public static ArrayList<BopeModule> module_list = new ArrayList<BopeModule>();
+	public static ArrayList<BopeSaveModule>    save_module = new ArrayList<BopeSaveModule>();
+
+	static HashMap<String, BopeModule>     list_module = new HashMap<>();
+	static HashMap<String, BopeSaveModule> list_save_m = new HashMap<>();
 
 	public static Minecraft mc = Minecraft.getMinecraft();
 
@@ -47,6 +51,14 @@ public class BopeModuleManager {
 
 		for (BopeModule modules : module_list) {
 			list_module.put(modules.get_name_tag().toLowerCase(), modules);
+		}
+	}
+
+	public void update_save_modules() {
+		list_save_m.clear();
+
+		for (BopeSaveModule modules_save : save_module) {
+			list_save_m.put(modules_save.get_tag(), modules_save);
 		}
 	}
 
@@ -61,8 +73,7 @@ public class BopeModuleManager {
 
 		class_list.forEach(found_class -> {
 			try {
-				BopeModule module = (BopeModule) found_class.getConstructor().newInstance();
-				module_list.add(module);
+				module_list.add((BopeModule) found_class.getConstructor().newInstance());
 			} catch (InvocationTargetException exc) {
 				exc.getCause().printStackTrace();
 			} catch (Exception exc) {
@@ -70,15 +81,29 @@ public class BopeModuleManager {
 			}
 		});
 
-		get_modules().sort(Comparator.comparing(BopeModule::get_name));
+		get_modules().sort(Comparator.comparing(BopeModule::get_name_tag));
 	}
 
 	public ArrayList<BopeModule> get_modules() {
 		return module_list;
 	}
 
+	public static ArrayList<BopeSaveModule> get_save_modules() {
+		return save_module;
+	}
+
+	public void register_module(BopeSaveModule save) {
+		save_module.add(save);
+
+		update_save_modules();
+	}
+
 	public static BopeModule get_module(String module) {
 		return list_module.get(module.toLowerCase());
+	}
+
+	public static BopeSaveModule get_save_module(String save_module) {
+		return list_save_m.get(save_module.toLowerCase());
 	}
 
 	public void onBind(int event_key) {

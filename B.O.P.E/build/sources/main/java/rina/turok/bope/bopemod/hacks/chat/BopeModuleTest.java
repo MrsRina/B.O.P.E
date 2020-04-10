@@ -5,8 +5,10 @@ import org.lwjgl.input.Keyboard;
 import rina.turok.bope.bopemod.backgui.BopeButton;
 import rina.turok.bope.bopemod.backgui.BopeSlider;
 import rina.turok.bope.bopemod.hacks.BopeCategory;
+import rina.turok.bope.bopemod.BopeSaveModule;
 import rina.turok.bope.bopemod.BopeMessage;
 import rina.turok.bope.bopemod.BopeModule;
+import rina.turok.bope.Bope;
 
 /**
 * @author Rina
@@ -19,15 +21,19 @@ public class BopeModuleTest extends BopeModule {
 	BopeButton start = new BopeButton(this, "Start", "start", true);
 	
 	public BopeModuleTest() {
-		super(
+		super(BopeCategory.Category.BOPE_CHAT);
+
+		Bope.get_module_manager().register_module(new BopeSaveModule (
 			"Module Test",
 			"ModuleTest",
-			"Dev module.",
-			Keyboard.KEY_Y,
-			BopeCategory.Category.BOPE_CHAT
-		);
+			-1
+		));
 
-		add_button(start);
+		set_module_info (
+			"Module Test",
+			"ModuleTest",
+			"Test Module"
+		);
 	}
 
 	@Override

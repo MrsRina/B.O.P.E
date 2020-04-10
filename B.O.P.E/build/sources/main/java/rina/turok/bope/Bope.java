@@ -93,4 +93,8 @@ public class Bope {
 	public static String get_version() {
 		return BOPE_VERSION;
 	}
+
+	public static BopeModuleManager get_module_manager() {
+		return get_instance().module_manager;
+	}
 }

@@ -16,5 +16,5 @@ class Compile:
 
 		import sys
 		sys.exit()
-
+ 
 Compile()

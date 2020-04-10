@@ -91,7 +91,7 @@ public class BopeConfig {
 			BOPE_MODULE_JSON.add(module.get_tag(), BOPE_MODULE_INFO);
 		}
 
-		BOPE_MAIN_JSON.add("Modules", BOPE_MODULE_JSON);
+		BOPE_MAIN_JSON.add("modules", BOPE_MODULE_JSON);
 
 		JsonElement BOPE_MAIN_PRETTY_JSON = BOPE_PARSER.parse(BOPE_MAIN_JSON.toString());
 
@@ -100,9 +100,9 @@ public class BopeConfig {
 		BOPE_DELETE_CONFIGS();
 		BOPE_VERIFY_CONFIG_FILES();
 
-		FileWriter file;
+		OutputStreamWriter file;
 
-		file = new FileWriter(BOPE_ABS_CONFIGS);
+		file = new OutputStreamWriter(new FileOutputStream(BOPE_ABS_BINDS), "UTF-8");
 		file.write(BOPE_JSON);
 
 		file.close();
@@ -118,13 +118,13 @@ public class BopeConfig {
 		for (BopeSaveModule module : Bope.get_module_manager().get_save_modules()) {
 			JsonObject BOPE_MODULE_INFO = new JsonObject();
 
-			BOPE_MODULE_INFO.add("Int", new JsonPrimitive(module.get_int_bind()));
-			BOPE_MODULE_INFO.add("String", new JsonPrimitive(module.get_string_bind()));
+			BOPE_MODULE_INFO.add("int", new JsonPrimitive(module.get_int_bind()));
+			BOPE_MODULE_INFO.add("string", new JsonPrimitive(module.get_string_bind()));
 
 			BOPE_MODULE_JSON.add(module.get_tag(), BOPE_MODULE_INFO);
 		}
 
-		BOPE_MAIN_JSON.add("Modules", BOPE_MODULE_JSON);
+		BOPE_MAIN_JSON.add("modules", BOPE_MODULE_JSON);
 
 		JsonElement BOPE_MAIN_PRETTY_JSON = BOPE_PARSER.parse(BOPE_MAIN_JSON.toString());
 
@@ -133,9 +133,9 @@ public class BopeConfig {
 		BOPE_DELETE_BINDS();
 		BOPE_VERIFY_FILES_BINDS();
 
-		FileWriter file;
+		OutputStreamWriter file;
 
-		file = new FileWriter(BOPE_ABS_BINDS);
+		file = new OutputStreamWriter(new FileOutputStream(BOPE_ABS_BINDS), "UTF-8");
 		file.write(BOPE_JSON);
 
 		file.close();
@@ -144,6 +144,20 @@ public class BopeConfig {
 	public static void BOPE_LOAD_CONFIGS() throws IOException {
 		InputStream BOPE_JSON_FILE    = Files.newInputStream(PATH_CONFIGS);
 		JsonObject  BOPE_JSON         = new JsonParser().parse(new InputStreamReader(BOPE_JSON_FILE)).getAsJsonObject();
+
+		BOPE_JSON_FILE.close();
+	}
+
+	public static void BOPE_LOAD_BINDS() throws IOException {
+		InputStream BOPE_JSON_FILE    = Files.newInputStream(PATH_CONFIGS);
+		JsonObject  BOPE_JSON         = new JsonParser().parse(new InputStreamReader(BOPE_JSON_FILE)).getAsJsonObject();
+
+		for (BopeSaveModule module : Bope.get_module_manager().get_save_modules()) {
+			JsonObject BOPE_LOAD_BINDS = BOPE_JSON.get("modules").getAsJsonObject();
+			JsonObject BOPE_LOAD_INFO  = BOPE_LOAD_BINDS.get(module.get_tag()).getAsJsonObject();
+
+			module.set_int_bind(BOPE_LOAD_INFO.get("int").getAsInt());
+		}
 
 		BOPE_JSON_FILE.close();
 	}
@@ -162,7 +176,8 @@ public class BopeConfig {
 
 	public static void load() {
 		try {
-			BOPE_LOAD_CONFIGS();
+			// BOPE_LOAD_CONFIGS();
+			BOPE_LOAD_BINDS();
 		} catch (Exception exc) {
 			exc.printStackTrace();			
 		}

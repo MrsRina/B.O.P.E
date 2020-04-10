@@ -15,21 +15,14 @@ import rina.turok.bope.Bope;
 *
 */
 public class BopeFinderModule extends BopeModule {
-	BopeSaveModule module_info;
-
 	public BopeFinderModule() {
 		super(Category.BOPE_HIDDEN);
 
-		Bope.get_module_manager().register_module(new BopeSaveModule (
+		module_info (
 			"B.O.P.E",
 			"B.O.P.E",
+			"B.O.P.E official client.",
 			-1
-		));
-
-		set_module_info (
-			"B.O.P.E",
-			"B.O.P.E",
-			"B.O.P.E official client."
 		);
 	}
 
@@ -46,5 +39,5 @@ public class BopeFinderModule extends BopeModule {
 	public void onRender() {}
 
 	@Override
-	public void onWorldRender(BopeEventRender funtion_for_get_world_event_with_tressallator) {}
+	public void onWorldRender(BopeEventRender funtion_for_get_world_event_with_tessallator) {}
 }

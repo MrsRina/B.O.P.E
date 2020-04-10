@@ -32,6 +32,10 @@ public class BopeSaveModule {
 		this.buttons.add(button);
 	}
 
+	public void set_int_bind(int bind) {
+		this.bind = bind;
+	}
+
 	public ArrayList<BopeButton> get_list_buttons() {
 		return this.buttons;
 	}

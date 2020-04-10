@@ -50,12 +50,18 @@ public class BopeModule {
 		category = category_module;
 	}
 
-	public void set_module_info(String name_module, String tag_module, String description_module) {
+	public void module_info(String name_module, String tag_module, String description_module, int default_key) {
+		Bope.get_module_manager().register_module(new BopeSaveModule (
+			name_module,
+			tag_module,
+			default_key
+		));
+
 		name         = new TurokString  (name_module, tag_module, name_module);
 		name_tag     = new TurokString  (name_module, tag_module, tag_module);
 		description  = new TurokString  (name_module, tag_module, description_module);
 		state_module = new TurokBoolean (name_module, tag_module, false);
-		bind         = new TurokBind    (name_module, tag_module, -1);
+		bind         = new TurokBind    (name_module, tag_module, default_key);
 	}
 
 	public void onWorldRender(BopeEventRender event) {} // Render event into module.

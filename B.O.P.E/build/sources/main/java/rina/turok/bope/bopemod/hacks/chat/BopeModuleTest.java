@@ -19,20 +19,15 @@ import rina.turok.bope.Bope;
 */
 public class BopeModuleTest extends BopeModule {
 	BopeButton start = new BopeButton(this, "Start", "start", true);
-	
+
 	public BopeModuleTest() {
 		super(BopeCategory.Category.BOPE_CHAT);
 
-		Bope.get_module_manager().register_module(new BopeSaveModule (
+		module_info(
 			"Module Test",
 			"ModuleTest",
+			"Module Test",
 			-1
-		));
-
-		set_module_info (
-			"Module Test",
-			"ModuleTest",
-			"Test Module"
 		);
 	}
 

@@ -62,8 +62,6 @@ public class BopeConfig {
 	}
 
 	public static void BOPE_SAVE_CONFIGS() throws IOException {
-		HashMap<String, BopeSaveModule> modules_state = new HashMap<String, BopeSaveModule>();
-
 		Gson       BOPE_GSON   = new GsonBuilder().setPrettyPrinting().create();
 		JsonParser BOPE_PARSER = new JsonParser(); 
 
@@ -71,14 +69,22 @@ public class BopeConfig {
 
 		JsonObject BOPE_MAIN_JSON   = new JsonObject();
 		JsonObject BOPE_MODULE_JSON = new JsonObject();
-		JsonObject BOPE_MODULE_INFO = new JsonObject();
 
 		for (BopeSaveModule module : Bope.get_module_manager().get_save_modules()) {
-			modules_state.put(module.get_tag(), module);
+			JsonElement BOPE_BUTTONS     = BOPE_PARSER.parse(new Gson().toJson(module.get_list_buttons()));			
+			JsonObject  BOPE_MODULE_INFO = new JsonObject();
 
-			JsonElement BOPE_MODULES = BOPE_PARSER.parse(new Gson().toJson(modules_state));
+			BOPE_MODULE_INFO.addProperty("name", module.get_name());
+			BOPE_MODULE_INFO.addProperty("tag",  module.get_tag());
 
-			BOPE_MODULE_JSON.add(module.get_tag(), BOPE_MODULES);
+			BOPE_MODULE_INFO.add("bind", new JsonPrimitive(module.get_bind()));
+
+			BOPE_MODULE_INFO.add("BUTTON_TYPE_BOOLEAN", BOPE_BUTTONS);
+			BOPE_MODULE_INFO.addProperty("SLIDER_TYPE_DOUBLE", "");
+			BOPE_MODULE_INFO.addProperty("SLIDER_TYPE_FLOAT", "");
+			BOPE_MODULE_INFO.addProperty("SLIDER_TYPE_INT", "");
+
+			BOPE_MODULE_JSON.add(module.get_tag(), BOPE_MODULE_INFO);
 		}
 
 		BOPE_MAIN_JSON.add("Modules", BOPE_MODULE_JSON);

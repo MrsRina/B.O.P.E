@@ -1,10 +1,7 @@
 package rina.turok.bope.bopemod.manager;
 
 import java.lang.reflect.InvocationTargetException;
-import java.util.Comparator;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Set;
+import java.util.*;
 
 import net.minecraftforge.client.event.RenderWorldLastEvent;
 import net.minecraft.client.renderer.GlStateManager;
@@ -36,11 +33,10 @@ public class BopeModuleManager {
 	*
 	*/
 
-	public static ArrayList<BopeModule> module_list = new ArrayList<BopeModule>();
-	public static ArrayList<BopeSaveModule>    save_module = new ArrayList<BopeSaveModule>();
+	public static ArrayList<BopeModule>     module_list = new ArrayList<BopeModule>();
+	public static ArrayList<BopeSaveModule> save_module = new ArrayList<BopeSaveModule>();
 
 	static HashMap<String, BopeModule>     list_module = new HashMap<>();
-	static HashMap<String, BopeSaveModule> list_save_m = new HashMap<>();
 
 	public static Minecraft mc = Minecraft.getMinecraft();
 
@@ -51,14 +47,6 @@ public class BopeModuleManager {
 
 		for (BopeModule modules : module_list) {
 			list_module.put(modules.get_name_tag().toLowerCase(), modules);
-		}
-	}
-
-	public void update_save_modules() {
-		list_save_m.clear();
-
-		for (BopeSaveModule modules_save : save_module) {
-			list_save_m.put(modules_save.get_tag(), modules_save);
 		}
 	}
 
@@ -94,16 +82,10 @@ public class BopeModuleManager {
 
 	public void register_module(BopeSaveModule save) {
 		save_module.add(save);
-
-		update_save_modules();
 	}
 
 	public static BopeModule get_module(String module) {
 		return list_module.get(module.toLowerCase());
-	}
-
-	public static BopeSaveModule get_save_module(String save_module) {
-		return list_save_m.get(save_module.toLowerCase());
 	}
 
 	public void onBind(int event_key) {

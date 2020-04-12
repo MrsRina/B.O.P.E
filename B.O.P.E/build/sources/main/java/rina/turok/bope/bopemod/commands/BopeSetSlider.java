@@ -1,6 +1,5 @@
 package rina.turok.bope.bopemod.commands;
 
-import rina.turok.bope.bopemod.backgui.BopeSlider;
 import rina.turok.bope.bopemod.BopeMessage;
 import rina.turok.bope.bopemod.BopeCommand;
 

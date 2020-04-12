@@ -2,8 +2,6 @@ package rina.turok.bope.bopemod.hacks;
 
 import org.lwjgl.input.Keyboard;
 
-import rina.turok.bope.bopemod.backgui.BopeButton;
-import rina.turok.bope.bopemod.backgui.BopeSlider;
 import rina.turok.bope.bopemod.hacks.BopeCategory;
 import rina.turok.bope.bopemod.BopeSaveModule;
 import rina.turok.bope.bopemod.BopeMessage;
@@ -18,8 +16,6 @@ import rina.turok.bope.Bope;
 *
 */
 public class BopeModuleTest extends BopeModule {
-	BopeButton start = new BopeButton(this, "Start", "start", true);
-
 	public BopeModuleTest() {
 		super(BopeCategory.Category.BOPE_CHAT);
 
@@ -30,13 +26,22 @@ public class BopeModuleTest extends BopeModule {
 			-1
 		);
 
-		update(start);
+		create_combobox(this, "Type", "types", "combobox");
+		create_button(this, "Test", "start_test", false);
+
+		get_setting("types").add_item("putting");
+		get_setting("types").add_item("gay");
+
+
+		get_setting("types").set_current_item("putting");
 	}
 
 	@Override
 	public void onUpdate() {
-		if (start.get_value()) {
-			mc.player.motionZ = 0.00001;
+		if (get_setting("start_test").get_button_state()) {
+			if (get_setting("types").get_combobox_value().equals("putting")) {
+				mc.player.motionZ = 0.00001;
+			}
 		}
 	}
 }

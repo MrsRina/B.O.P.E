@@ -10,12 +10,17 @@ import org.apache.logging.log4j.Logger;
 import org.lwjgl.input.Keyboard;
 import org.lwjgl.opengl.Display;
 
+// MANAGERS.
 import rina.turok.bope.bopemod.manager.BopeCommandManager;
+import rina.turok.bope.bopemod.manager.BopeSettingManager;
 import rina.turok.bope.bopemod.manager.BopeModuleManager;
 import rina.turok.bope.bopemod.manager.BopeEventManager;
-import rina.turok.bope.bopemod.backgui.BopeSlider;
-import rina.turok.bope.bopemod.backgui.BopeButton;
+
+
+// EXTERNAL.
 import rina.turok.bope.external.BopeEventHandler;
+
+// BOPE.
 import rina.turok.bope.BopeEventRegister;
 
 /** ...
@@ -36,8 +41,9 @@ public class Bope {
 	public static final Logger bope_register_log = LogManager.getLogger("bope");
 
 	// Starting managers.
+	public static BopeModuleManager  module_manager  = new BopeModuleManager   ("Mode -> LoadUtil.");
+	public static BopeSettingManager setting_manager = new BopeSettingManager ("Mode -> LoadUtil.");
 	public static BopeCommandManager command_manager;
-	public static BopeModuleManager  module_manager = new BopeModuleManager("Mode -> LoadUtil.");
 
 	// INSTANCE.
 	@Mod.Instance
@@ -57,6 +63,11 @@ public class Bope {
 
 		// Init BopeEventHandler.
 		BopeEventHandler.INSTANCE = new BopeEventHandler();
+
+		send_log(" - B.O.P.E initializing setting manager.");
+
+		// Init setting manager.
+		setting_manager.update_hash_settings();
 
 		send_log(" - B.O.P.E initializing module manager.");
 
@@ -96,5 +107,9 @@ public class Bope {
 
 	public static BopeModuleManager get_module_manager() {
 		return get_instance().module_manager;
+	}
+
+	public static BopeSettingManager get_setting_manager() {
+		return get_instance().setting_manager;
 	}
 }

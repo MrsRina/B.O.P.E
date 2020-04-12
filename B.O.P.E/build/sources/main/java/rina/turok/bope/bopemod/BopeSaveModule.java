@@ -4,8 +4,6 @@ import java.util.*;
 
 import org.lwjgl.input.Keyboard;
 
-import rina.turok.bope.bopemod.backgui.BopeButton;
-
 /**
  *
  * @author Rina.
@@ -20,24 +18,14 @@ public class BopeSaveModule {
 
 	int bind;
 
-	ArrayList<BopeButton> buttons = new ArrayList<>();
-
 	public BopeSaveModule(String name, String tag, int bind) {
 		this.name = name;
 		this.tag  = tag;
 		this.bind = bind;
 	}
 
-	public void add_button(BopeButton button) {
-		this.buttons.add(button);
-	}
-
 	public void set_int_bind(int bind) {
 		this.bind = bind;
-	}
-
-	public ArrayList<BopeButton> get_list_buttons() {
-		return this.buttons;
 	}
 
 	public String get_name() {

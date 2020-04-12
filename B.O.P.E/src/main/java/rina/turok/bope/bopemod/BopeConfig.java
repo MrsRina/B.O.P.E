@@ -11,8 +11,6 @@ import java.io.*;
 import com.google.gson.*;
 
 import rina.turok.bope.bopemod.manager.BopeModuleManager;
-import rina.turok.bope.bopemod.backgui.BopeButton;
-import rina.turok.bope.bopemod.backgui.BopeSlider;
 import rina.turok.bope.bopemod.BopeSaveModule;
 import rina.turok.bope.bopemod.BopeModule;
 import rina.turok.bope.Bope;
@@ -77,13 +75,12 @@ public class BopeConfig {
 		JsonObject BOPE_MODULE_JSON = new JsonObject();
 
 		for (BopeSaveModule module : Bope.get_module_manager().get_save_modules()) {
-			JsonElement BOPE_BUTTONS     = BOPE_PARSER.parse(new Gson().toJson(module.get_list_buttons()));			
 			JsonObject  BOPE_MODULE_INFO = new JsonObject();
 
 			BOPE_MODULE_INFO.addProperty("name", module.get_name());
 			BOPE_MODULE_INFO.addProperty("tag",  module.get_tag());
 
-			BOPE_MODULE_INFO.add("BUTTON_TYPE_BOOLEAN", BOPE_BUTTONS);
+			BOPE_MODULE_INFO.addProperty("BUTTON_TYPE_BOOLEAN", "");
 			BOPE_MODULE_INFO.addProperty("SLIDER_TYPE_DOUBLE", "");
 			BOPE_MODULE_INFO.addProperty("SLIDER_TYPE_FLOAT", "");
 			BOPE_MODULE_INFO.addProperty("SLIDER_TYPE_INT", "");

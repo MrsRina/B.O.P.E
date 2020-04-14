@@ -74,28 +74,44 @@ public class BopeModule {
 		}
 	}
 
-	public void create_button(BopeModule master, String name, String tag, boolean button) {
-		Bope.get_setting_manager().create_setting(master, name, tag, button);
+	protected BopeSetting.TypeButton create_button(String name, boolean default_) {
+		BopeSetting.TypeButton button_setting = new BopeSetting.TypeButton(name, this, default_);
+
+		Bope.get_setting_manager().register(button_setting);
+
+		return button_setting;
 	}
 
-	public void create_slider_double(BopeModule master, String name, String tag, double slider, double min, double max) {
-		Bope.get_setting_manager().create_setting(master, name, tag, slider, min, max);
+	protected BopeSetting.TypeDouble create_double(String name, double value, double min, double max) {
+		BopeSetting.TypeDouble double_setting = new BopeSetting.TypeDouble(name, this, value, min, max);
+		
+		Bope.get_setting_manager().register(double_setting);
+
+		return double_setting;
 	}
 
-	public void create_slider_float(BopeModule master, String name, String tag, float slider, float min, float max) {
-		Bope.get_setting_manager().create_setting(master, name, tag, slider, min, max);
+	protected BopeSetting.TypeInteger create_integer(String name, int value, int min, int max) {
+		BopeSetting.TypeInteger integer_setting = new BopeSetting.TypeInteger(name, this, value, min, max);
+
+		Bope.get_setting_manager().register(integer_setting);
+
+		return integer_setting;
 	}
 
-	public void create_slider_int(BopeModule master, String name, String tag, int slider, int min, int max) {
-		Bope.get_setting_manager().create_setting(master, name, tag, slider, min, max);
+	protected BopeSetting.TypeString create_custom_string(String name, String default_) {
+		BopeSetting.TypeString custom_setting = new BopeSetting.TypeString(name, this, default_);
+
+		Bope.get_setting_manager().register(custom_setting);
+
+		return custom_setting;
 	}
 
-	public void create_combobox(BopeModule master, String name, String tag, String combobox) {
-		Bope.get_setting_manager().create_setting(master, name, tag, combobox);
-	}
+	protected BopeSetting.TypeCombobox create_combobox(String name, List<String> modes, String default_) {
+		BopeSetting.TypeCombobox combobox_setting = new BopeSetting.TypeCombobox(name, this, modes, default_);
 
-	public BopeSetting get_setting(String setting) {
-		return Bope.get_setting_manager().get_setting(setting);
+		Bope.get_setting_manager().register(combobox_setting);
+
+		return combobox_setting;
 	}
 
 	public void onWorldRender(BopeEventRender event) {} // Render event into module.

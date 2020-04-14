@@ -17,6 +17,8 @@ import rina.turok.bope.Bope;
 *
 */
 public class BopeModuleTest extends BopeModule {
+	BopeSetting.TypeButton start = create_button("Test", false);
+
 	public BopeModuleTest() {
 		super(BopeCategory.Category.BOPE_CHAT);
 
@@ -26,23 +28,12 @@ public class BopeModuleTest extends BopeModule {
 			"Module Test",
 			-1
 		);
-
-		create_combobox(this, "Type", "types", "combobox");
-		Bope.setting_manager.create_setting(new BopeSetting(this, "Test", "start_test", false));
-
-		get_setting("types").add_item("putting");
-		get_setting("types").add_item("gay");
-
-
-		get_setting("types").set_current_item("putting");
 	}
 
 	@Override
 	public void onUpdate() {
-		if (get_setting("start_test").get_button_state()) {
-			if (get_setting("types").get_combobox_value().equals("putting")) {
-				mc.player.motionZ = 0.00001;
-			}
+		if (start.getValue()) {
+			BopeMessage.send_client_message("Turn off it KKKKKKKKKKKKKKKKKKKKKK");
 		}
 	}
 }

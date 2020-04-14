@@ -27,8 +27,6 @@ public class BopeSettings extends BopeCommand {
 				BopeConfig.save();
 
 				BopeMessage.send_client_message("Saved " + ChatFormatting.GREEN + "successful!");
-			} else if (what.equals("empty")) {
-				BopeMessage.send_client_message(Boolean.toString(BopeSettingManager.convert_to_list().isEmpty()));
 			}
 		}
 

@@ -15,6 +15,8 @@ import rina.turok.bope.bopemod.BopeModule;
  *
  **/
 public class BopeSaveModule {
+	BopeModule master;
+
 	boolean state;
 
 	String name;
@@ -23,6 +25,7 @@ public class BopeSaveModule {
 	int bind;
 
 	public BopeSaveModule(BopeModule master, String name, String tag) {
+		this.master = master;
 		this.state  = master.is_active();
 		this.name   = name;
 		this.tag    = tag;
@@ -35,6 +38,10 @@ public class BopeSaveModule {
 
 	public void set_int_bind(int bind) {
 		this.bind = bind;
+	}
+
+	public BopeModule get_master() {
+		return this.master;
 	}
 
 	public String get_name() {

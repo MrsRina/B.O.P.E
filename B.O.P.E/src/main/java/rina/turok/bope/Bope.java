@@ -16,7 +16,6 @@ import rina.turok.bope.bopemod.manager.BopeSettingManager;
 import rina.turok.bope.bopemod.manager.BopeModuleManager;
 import rina.turok.bope.bopemod.manager.BopeEventManager;
 
-
 // EXTERNAL.
 import rina.turok.bope.external.BopeEventHandler;
 
@@ -68,8 +67,6 @@ public class Bope {
 
 		// Init setting manager.
 		setting_manager = new BopeSettingManager("Mode -> LoadUtil.");
-
-		setting_manager.update_hash_settings();
 
 		send_log(" - B.O.P.E initializing module manager.");
 

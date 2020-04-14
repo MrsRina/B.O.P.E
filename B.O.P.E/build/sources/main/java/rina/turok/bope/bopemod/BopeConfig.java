@@ -68,8 +68,6 @@ public class BopeConfig {
 	}
 
 	public static void BOPE_SAVE_CONFIGS() throws IOException {
-		Bope.get_setting_manager().update_hash_settings();
-
 		Gson       BOPE_GSON   = new GsonBuilder().setPrettyPrinting().create();
 		JsonParser BOPE_PARSER = new JsonParser(); 
 
@@ -78,44 +76,15 @@ public class BopeConfig {
 		JsonObject BOPE_MAIN_JSON    = new JsonObject();
 		JsonObject BOPE_SETTING_JSON = new JsonObject();
 
-		for (BopeSetting config : BopeSettingManager.convert_to_list()) {
-			JsonObject BOPE_CONFIG_INFO = new JsonObject();
+		for (BopeSaveModule module : Bope.get_module_manager().get_save_modules()) {
+			JsonObject BOPE_CONFIG_INFO  = new JsonObject();
+			JsonObject BOPE_SETTING_INFO = new JsonObject();
 
-			BOPE_CONFIG_INFO.addProperty("master", config.get_master().get_name_tag());
-			BOPE_CONFIG_INFO.addProperty("name", config.get_name());
-			BOPE_CONFIG_INFO.addProperty("tag", config.get_tag());
-			BOPE_CONFIG_INFO.addProperty("type", config.get_type());
+			BOPE_CONFIG_INFO.addProperty("master", module.get_tag());
 
-			if (config.is_button()) {
-				BOPE_CONFIG_INFO.addProperty("value", config.get_button_value());
-			}
+			BOPE_CONFIG_INFO.add("settings", BOPE_PARSER.parse(new Gson().toJson(Bope.get_setting_manager().getSettingsForMod(module.get_master()))));
 
-			if (config.is_slider_double()) {
-				BOPE_CONFIG_INFO.addProperty("value", config.get_slider_double_value());
-				BOPE_CONFIG_INFO.addProperty("max", config.get_slider_double_max());
-				BOPE_CONFIG_INFO.addProperty("min", config.get_slider_double_min());
-			}
-
-			if (config.is_slider_float()) {
-				BOPE_CONFIG_INFO.addProperty("value", config.get_slider_float_value());
-				BOPE_CONFIG_INFO.addProperty("max", config.get_slider_float_max());
-				BOPE_CONFIG_INFO.addProperty("min", config.get_slider_float_min());
-			}
-
-			if (config.is_slider_int()) {
-				BOPE_CONFIG_INFO.addProperty("value", config.get_slider_int_value());
-				BOPE_CONFIG_INFO.addProperty("max", config.get_slider_int_max());
-				BOPE_CONFIG_INFO.addProperty("min", config.get_slider_int_min());
-			}
-
-			if (config.is_combobox()) {
-				JsonElement BOPE_COMBOBOX_VALUES = BOPE_PARSER.parse(new Gson().toJson(config.get_list()));
-
-				BOPE_CONFIG_INFO.addProperty("value", config.get_combobox_value());
-				BOPE_CONFIG_INFO.add("items", BOPE_COMBOBOX_VALUES);
-			}
-
-			BOPE_SETTING_JSON.add(config.get_tag(), BOPE_CONFIG_INFO);
+			BOPE_SETTING_JSON.add(module.get_tag(), BOPE_CONFIG_INFO);
 		}
 
 		BOPE_MAIN_JSON.add("modules", BOPE_SETTING_JSON);

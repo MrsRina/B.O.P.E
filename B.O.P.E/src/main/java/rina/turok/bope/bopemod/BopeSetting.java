@@ -17,7 +17,7 @@ public class BopeSetting {
     private final BopeModule  parent;
     private final SettingType type;
 
-    public BopeSetting(String name, BopeModule parent, SettingType type){
+    public BopeSetting(String name, BopeModule parent, SettingType type) {
         this.name   = name;
         this.parent = parent;
         this.type   = type;

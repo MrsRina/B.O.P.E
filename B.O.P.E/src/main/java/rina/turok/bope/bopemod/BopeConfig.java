@@ -76,15 +76,19 @@ public class BopeConfig {
 		JsonObject BOPE_MAIN_JSON    = new JsonObject();
 		JsonObject BOPE_SETTING_JSON = new JsonObject();
 
-		for (BopeSaveModule module : Bope.get_module_manager().get_save_modules()) {
+		for (BopeSetting module : Bope.get_module_manager().get_save_modules()) {
 			JsonObject BOPE_CONFIG_INFO  = new JsonObject();
 			JsonObject BOPE_SETTING_INFO = new JsonObject();
 
-			BOPE_CONFIG_INFO.addProperty("master", module.get_tag());
+			BOPE_CONFIG_INFO.addProperty("master", module.getParent().get_name_tag());
 
-			BOPE_CONFIG_INFO.add("settings", BOPE_PARSER.parse(new Gson().toJson(Bope.get_setting_manager().getSettingsForMod(module.get_master()))));
+			BOPE_CONFIG_INFO.add("type", new JsonElement(module.getType()));
 
-			BOPE_SETTING_JSON.add(module.get_tag(), BOPE_CONFIG_INFO);
+			BopeSetting.TypeButton module_settings = module.getAsButton();
+
+			BOPE_CONFIG_INFO.addProperty("value", module_settings.getValue());
+
+			BOPE_SETTING_JSON.add(module.getParent().get_name_tag(), BOPE_CONFIG_INFO);
 		}
 
 		BOPE_MAIN_JSON.add("modules", BOPE_SETTING_JSON);

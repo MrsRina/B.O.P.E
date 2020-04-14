@@ -17,10 +17,45 @@ public class BopeSetting {
     private final BopeModule  parent;
     private final SettingType type;
 
-    public BopeSetting(String name, BopeModule parent, SettingType type){
-        this.name   = name;
-        this.parent = parent;
-        this.type   = type;
+    private final TypeDouble   type_double;
+    private final TypeButton   type_button;
+    private final TypeInteger  type_integer;
+    private final TypeCombobox type_combobx;
+    private final TypeString   type_string;
+
+    public BopeSetting(String name, BopeModule parent, SettingType type, TypeDouble setting) {
+        this.name        = name;
+        this.parent      = parent;
+        this.type        = type;
+        this.type_double = setting;
+    }
+    
+    public BopeSetting(String name, BopeModule parent, SettingType type, TypeButton setting) {
+        this.name        = name;
+        this.parent      = parent;
+        this.type        = type;
+        this.type_button = setting;
+    }
+
+    public BopeSetting(String name, BopeModule parent, SettingType type, TypeInteger setting) {
+        this.name         = name;
+        this.parent       = parent;
+        this.type         = type;
+        this.type_integer = setting;
+    }
+
+    public BopeSetting(String name, BopeModule parent, SettingType type, TypeCombobox setting) {
+        this.name         = name;
+        this.parent       = parent;
+        this.type         = type;
+        this.type_combobx = setting;
+    }
+
+    public BopeSetting(String name, BopeModule parent, SettingType type, TypeString setting) {
+        this.name        = name;
+        this.parent      = parent;
+        this.type        = type;
+        this.type_string = setting;
     }
 
     public String getName() {
@@ -47,6 +82,26 @@ public class BopeSetting {
         return null;
     }
 
+    public TypeDouble getAsDouble() {
+    	return this.type_double;
+    }
+
+    public TypeButton getAsButton() {
+    	return this.type_button;
+    }
+
+    public TypeInteger getAsInteger() {
+    	return this.type_integer;
+    }
+
+    public TypeCombobox getAsCombobox() {
+    	return this.type_combobx;
+    }
+
+    public TypeString getAsString() {
+    	return this.type_string;
+    }
+
     public enum SettingType {
         INT, DOUBLE, BUTTON, STRING, COMBOBOX
     }
@@ -57,7 +112,7 @@ public class BopeSetting {
         private final int max;
 
         public TypeInteger(String name, BopeModule parent, int value, int min, int max){
-            super(name, parent, SettingType.INT);
+            super(name, parent, SettingType.INT, this);
             this.value = value;
             this.min = min;
             this.max = max;
@@ -87,7 +142,7 @@ public class BopeSetting {
         private final double max;
 
         public TypeDouble(String name, BopeModule parent, double value, double min, double max){
-            super(name, parent, SettingType.DOUBLE);
+            super(name, parent, SettingType.DOUBLE, this);
             this.value = value;
             this.min = min;
             this.max = max;
@@ -114,7 +169,7 @@ public class BopeSetting {
         private boolean value;
 
         public TypeButton(String name, BopeModule parent, boolean value){
-            super(name, parent, SettingType.BUTTON);
+            super(name, parent, SettingType.BUTTON, this);
 
             this.value = value;
         }
@@ -132,7 +187,7 @@ public class BopeSetting {
         private String value;
 
         public TypeString(String name, BopeModule parent, String value){
-            super(name, parent, SettingType.STRING);
+            super(name, parent, SettingType.STRING, this);
 
             this.value = value;
         }
@@ -151,7 +206,7 @@ public class BopeSetting {
         private final List<String> modes;
 
         public TypeCombobox(String name, BopeModule parent, List<String> modes, String value){
-            super(name, parent, SettingType.COMBOBOX);
+            super(name, parent, SettingType.COMBOBOX, this);
 
             this.value = value;
             this.modes = modes;

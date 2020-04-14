@@ -41,8 +41,8 @@ public class Bope {
 	public static final Logger bope_register_log = LogManager.getLogger("bope");
 
 	// Starting managers.
-	public static BopeModuleManager  module_manager  = new BopeModuleManager   ("Mode -> LoadUtil.");
-	public static BopeSettingManager setting_manager = new BopeSettingManager ("Mode -> LoadUtil.");
+	public static BopeModuleManager  module_manager;
+	public static BopeSettingManager setting_manager;
 	public static BopeCommandManager command_manager;
 
 	// INSTANCE.
@@ -67,11 +67,15 @@ public class Bope {
 		send_log(" - B.O.P.E initializing setting manager.");
 
 		// Init setting manager.
+		setting_manager = new BopeSettingManager("Mode -> LoadUtil.");
+
 		setting_manager.update_hash_settings();
 
 		send_log(" - B.O.P.E initializing module manager.");
 
 		// Init bope module manager.
+		module_manager = new BopeModuleManager("Mode -> LoadUtil.");
+
 		module_manager.init_bope_manager();
 
 		send_log(" - B.O.P.E initializing modules.");

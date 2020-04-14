@@ -5,6 +5,7 @@ import org.lwjgl.input.Keyboard;
 import rina.turok.bope.bopemod.hacks.BopeCategory;
 import rina.turok.bope.bopemod.BopeSaveModule;
 import rina.turok.bope.bopemod.BopeMessage;
+import rina.turok.bope.bopemod.BopeSetting;
 import rina.turok.bope.bopemod.BopeModule;
 import rina.turok.bope.Bope;
 
@@ -27,7 +28,7 @@ public class BopeModuleTest extends BopeModule {
 		);
 
 		create_combobox(this, "Type", "types", "combobox");
-		create_button(this, "Test", "start_test", false);
+		Bope.setting_manager.create_setting(new BopeSetting(this, "Test", "start_test", false));
 
 		get_setting("types").add_item("putting");
 		get_setting("types").add_item("gay");

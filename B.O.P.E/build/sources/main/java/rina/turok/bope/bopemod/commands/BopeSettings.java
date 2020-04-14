@@ -2,6 +2,7 @@ package rina.turok.bope.bopemod.commands;
 
 import com.mojang.realmsclient.gui.ChatFormatting;
 
+import rina.turok.bope.bopemod.manager.BopeSettingManager;
 import rina.turok.bope.bopemod.BopeCommand;
 import rina.turok.bope.bopemod.BopeMessage;
 import rina.turok.bope.bopemod.BopeConfig;
@@ -26,10 +27,8 @@ public class BopeSettings extends BopeCommand {
 				BopeConfig.save();
 
 				BopeMessage.send_client_message("Saved " + ChatFormatting.GREEN + "successful!");
-			} else if (what.equals("load")) {
-				BopeConfig.load();
-
-				BopeMessage.send_client_message("Client loaded " + ChatFormatting.GREEN + "successful!");
+			} else if (what.equals("empty")) {
+				BopeMessage.send_client_message(Boolean.toString(BopeSettingManager.convert_to_list().isEmpty()));
 			}
 		}
 

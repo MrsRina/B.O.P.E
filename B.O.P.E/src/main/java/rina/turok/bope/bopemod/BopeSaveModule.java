@@ -4,6 +4,8 @@ import java.util.*;
 
 import org.lwjgl.input.Keyboard;
 
+import rina.turok.bope.bopemod.BopeModule; 
+
 /**
  *
  * @author Rina.
@@ -13,15 +15,22 @@ import org.lwjgl.input.Keyboard;
  *
  **/
 public class BopeSaveModule {
+	boolean state;
+
 	String name;
 	String tag;
 
 	int bind;
 
-	public BopeSaveModule(String name, String tag, int bind) {
-		this.name = name;
-		this.tag  = tag;
-		this.bind = bind;
+	public BopeSaveModule(BopeModule master, String name, String tag) {
+		this.state  = master.is_active();
+		this.name   = name;
+		this.tag    = tag;
+		this.bind   = bind;
+	}
+
+	public void set_state(boolean new_state) {
+		this.state = new_state;
 	}
 
 	public void set_int_bind(int bind) {
@@ -34,6 +43,10 @@ public class BopeSaveModule {
 
 	public String get_tag() {
 		return this.tag;
+	}
+
+	public boolean get_state() {
+		return this.state; 
 	}
 
 	public String get_string_bind() {

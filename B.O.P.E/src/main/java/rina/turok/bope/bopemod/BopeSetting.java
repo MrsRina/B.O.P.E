@@ -238,4 +238,24 @@ public class BopeSetting {
 
 		return null;
 	}
+
+	public boolean is_button() {
+		return (type == 0);
+	}
+
+	public boolean is_slider_double() {
+		return (type == 1);
+	}
+
+	public boolean is_slider_float() {
+		return (type == 2);
+	}
+
+	public boolean is_slider_int() {
+		return (type == 3);
+	}
+
+	public boolean is_combobox() {
+		return (type == 4);
+	}
 }

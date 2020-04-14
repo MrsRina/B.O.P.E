@@ -20,6 +20,7 @@ import rina.turok.bope.framework.TurokString;
 import rina.turok.bope.framework.TurokBind;
 import rina.turok.bope.framework.TurokEnum;
 import rina.turok.bope.bopemod.BopeSetting;
+import rina.turok.bope.bopemod.BopeConfig;
 import rina.turok.bope.framework.TurokInt;
 import rina.turok.bope.Bope;
 
@@ -51,17 +52,26 @@ public class BopeModule {
 	}
 
 	public void module_info(String name_module, String tag_module, String description_module, int default_key) {
-		Bope.get_module_manager().register_module(new BopeSaveModule (
-			name_module,
-			tag_module,
-			default_key
-		));
-
 		name         = new TurokString  (name_module, tag_module, name_module);
 		name_tag     = new TurokString  (name_module, tag_module, tag_module);
 		description  = new TurokString  (name_module, tag_module, description_module);
 		state_module = new TurokBoolean (name_module, tag_module, false);
 		bind         = new TurokBind    (name_module, tag_module, default_key);
+
+		Bope.get_module_manager().register_module(new BopeSaveModule (
+			this,
+			name_module,
+			tag_module
+		));
+
+		BopeConfig.load_bind(tag_module);
+
+		BopeSaveModule load = Bope.get_module_manager().get_save_module(tag_module);
+
+		if (!(load.get_int_bind() == default_key)) {
+			set_bind(load.get_int_bind());
+			set_active(load.get_state());
+		}
 	}
 
 	public void create_button(BopeModule master, String name, String tag, boolean button) {
@@ -110,6 +120,20 @@ public class BopeModule {
 		}
 	}
 
+	public void set_bind(int key) {
+		bind.set_key(key);
+
+		Bope.get_module_manager().get_save_module(get_name_tag()).set_int_bind(key);
+	}
+
+	public void set_string_bind(String key) {
+		int new_bind = Keyboard.getKeyIndex(key);
+
+		bind.set_key(new_bind);
+
+		Bope.get_module_manager().get_save_module(get_name_tag()).set_int_bind(new_bind);
+	}
+
 	public void toggle() {
 		set_active(!is_active());
 	}
@@ -146,16 +170,16 @@ public class BopeModule {
 		return description.get_value();
 	}
 
-	public void set_bind(int key) {
-		bind.set_key(key);
-	}
-
 	public TurokBind get_bind() {
 		return bind;
 	}
 
 	public int get_key_bind() {
 		return bind.get_key();
+	}
+
+	public String get_string_bind() {
+		return Bope.get_module_manager().get_save_module(get_name_tag()).get_string_bind();
 	}
 
 	public BopeCategory.Category get_category() {

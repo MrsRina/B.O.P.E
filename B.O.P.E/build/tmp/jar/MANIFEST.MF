@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+TweakOrder: 0
+MixinConfigs: mixins.bope.json
+FMLCorePluginContainsFMLMod: true
+FMLAT: bope_at.cfg
+tweakClass: org.spongepowered.asm.launch.MixinTweaker
+ForceLoadAsMod: true
+FMLCorePlugin: rina.turok.bope.BopeMixinLoader
+

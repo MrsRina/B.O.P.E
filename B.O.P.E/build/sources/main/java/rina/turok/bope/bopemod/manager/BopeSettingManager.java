@@ -1,35 +1,47 @@
 package rina.turok.bope.bopemod.manager;
 
+import java.util.*;
+
 import rina.turok.bope.bopemod.BopeSetting;
 import rina.turok.bope.bopemod.BopeModule;
 
-import java.util.stream.Collectors;
-import java.util.ArrayList;
-import java.util.List;
-
 /**
- * @author FINZ0
- */
+ *
+ * @author Rina.
+ * Created by Rina.
+ *
+ * 12/04/2020.
+ *
+ **/
 public class BopeSettingManager {
-    private List<BopeSetting> settings;
+	private static ArrayList<BopeSetting> array_settings;
 
-    public BopeSettingManager(String tag){
-        settings = new ArrayList<>();
-    }
+	private static HashMap<String, BopeSetting> hash_settings;
 
-    public void register(BopeSetting setting){
-        settings.add(setting);
-    }
+	public BopeSettingManager(String tag) {
+		this.array_settings = new ArrayList<>();
+		this.hash_settings  = new HashMap<>();
+	};
 
-    public BopeSetting getSettingByNameAndMod(String name, BopeModule parent){
-        return settings.stream().filter(s -> s.getParent().equals(parent)).filter(s -> s.getName().equalsIgnoreCase(name)).findFirst().orElse(null);
-    }
+	public void update_hash_settings() {
+		this.hash_settings.clear();
 
-    public List<BopeSetting> getSettingsForMod(BopeModule parent){
-        return settings.stream().filter(s -> s.getParent().equals(parent)).collect(Collectors.toList());
-    }
+		for (BopeSetting setting : this.array_settings) {
+			this.hash_settings.put(setting.get_tag(), setting);
+		}
+	}
 
-    public List<BopeSetting> convert_to_list(){
-        return settings;
-    }
+	public static BopeSetting get_setting(String setting) {
+		return hash_settings.get(setting.toLowerCase());
+	}
+
+	public void create_setting(BopeSetting setting) {
+		this.array_settings.add(setting);
+
+		update_hash_settings();
+	}
+
+	public static ArrayList<BopeSetting> convert_to_list() {
+		return array_settings;
+	}
 }

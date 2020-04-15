@@ -17,7 +17,7 @@ import rina.turok.bope.Bope;
 *
 */
 public class BopeModuleTest extends BopeModule {
-	BopeSetting.TypeButton start = create_button("Test", false);
+	BopeSetting start;
 
 	public BopeModuleTest() {
 		super(BopeCategory.Category.BOPE_CHAT);
@@ -28,11 +28,13 @@ public class BopeModuleTest extends BopeModule {
 			"Module Test",
 			-1
 		);
+
+		start = create_button(this, "Test", "test", false);
 	}
 
 	@Override
 	public void onUpdate() {
-		if (start.getValue()) {
+		if (start.get_button_state()) {
 			BopeMessage.send_client_message("Turn off it KKKKKKKKKKKKKKKKKKKKKK");
 		}
 	}

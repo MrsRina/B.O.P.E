@@ -15,7 +15,6 @@ import rina.turok.bope.bopemod.manager.BopeSettingManager;
 import rina.turok.bope.bopemod.manager.BopeModuleManager;
 
 // Data.
-import rina.turok.bope.bopemod.BopeSaveModule;
 import rina.turok.bope.bopemod.BopeSetting;
 import rina.turok.bope.bopemod.BopeModule;
 
@@ -88,11 +87,15 @@ public class BopeConfig {
 			JsonObject BOPE_CONFIG_INFO  = new JsonObject();
 			JsonObject BOPE_SETTING_INFO = new JsonObject();
 
+			JsonObject BOPE_INTEGER_INFO  = new JsonObject();
+			JsonObject BOPE_DOUBLE_INFO   = new JsonObject();
+			JsonObject BOPE_BUTTON_INFO   = new JsonObject();
+			JsonObject BOPE_STRING_INFO   = new JsonObject();
+			JsonObject BOPE_COMBOBOX_INFO = new JsonObject();
+
 			BOPE_CONFIG_INFO.addProperty("parent", settings.getParent().get_name_tag());
 
 			if (settings.getType().equals(BopeSetting.SettingType.INT)) {
-				JsonObject BOPE_INTEGER_INFO = new JsonObject();
-
 				BOPE_INTEGER_INFO.add("name",  new JsonPrimitive(((BopeSetting.TypeInteger) settings).getName()));
 				BOPE_INTEGER_INFO.add("value", new JsonPrimitive(((BopeSetting.TypeInteger) settings).getValue()));
 				BOPE_INTEGER_INFO.add("min",   new JsonPrimitive(((BopeSetting.TypeInteger) settings).getMin()));
@@ -102,8 +105,6 @@ public class BopeConfig {
 			}
 
 			if (settings.getType().equals(BopeSetting.SettingType.DOUBLE)) {
-				JsonObject BOPE_DOUBLE_INFO = new JsonObject();
-
 				BOPE_DOUBLE_INFO.add("name",  new JsonPrimitive(((BopeSetting.TypeDouble) settings).getName()));
 				BOPE_DOUBLE_INFO.add("value", new JsonPrimitive(((BopeSetting.TypeDouble) settings).getValue()));
 				BOPE_DOUBLE_INFO.add("min",   new JsonPrimitive(((BopeSetting.TypeDouble) settings).getMin()));
@@ -113,8 +114,6 @@ public class BopeConfig {
 			}
 
 			if (settings.getType().equals(BopeSetting.SettingType.BUTTON)) {
-				JsonObject BOPE_BUTTON_INFO = new JsonObject();
-
 				BOPE_BUTTON_INFO.add("name",  new JsonPrimitive(((BopeSetting.TypeButton) settings).getName()));
 				BOPE_BUTTON_INFO.add("value", new JsonPrimitive(((BopeSetting.TypeButton) settings).getValue()));
 				
@@ -122,8 +121,6 @@ public class BopeConfig {
 			}
 
 			if (settings.getType().equals(BopeSetting.SettingType.STRING)) {
-				JsonObject BOPE_STRING_INFO = new JsonObject();
-
 				BOPE_STRING_INFO.add("name",  new JsonPrimitive(((BopeSetting.TypeString) settings).getName()));
 				BOPE_STRING_INFO.add("value", new JsonPrimitive(((BopeSetting.TypeString) settings).getValue()));
 			
@@ -131,7 +128,6 @@ public class BopeConfig {
 			}
 
 			if (settings.getType().equals(BopeSetting.SettingType.COMBOBOX)) {
-				JsonObject  BOPE_COMBOBOX_INFO  = new JsonObject();
 				JsonElement BOPE_COMBOBOX_ITEMS = BOPE_PARSER.parse(new Gson().toJson(((BopeSetting.TypeCombobox) settings).getModes()));
 
 				BOPE_COMBOBOX_INFO.add("name",  new JsonPrimitive(((BopeSetting.TypeCombobox) settings).getName()));
@@ -168,14 +164,14 @@ public class BopeConfig {
 		JsonObject BOPE_MAIN_JSON   = new JsonObject();
 		JsonObject BOPE_MODULE_JSON = new JsonObject();
 
-		for (BopeSaveModule module : Bope.get_module_manager().get_save_modules()) {
+		for (BopeModule module : Bope.get_module_manager().get_modules()) {
 			JsonObject BOPE_MODULE_INFO = new JsonObject();
 
 			BOPE_MODULE_INFO.add("int",    new JsonPrimitive(module.get_int_bind()));
 			BOPE_MODULE_INFO.add("string", new JsonPrimitive(module.get_string_bind()));
-			BOPE_MODULE_INFO.add("state",  new JsonPrimitive(module.get_state()));
+			BOPE_MODULE_INFO.add("state",  new JsonPrimitive(module.is_active()));
 
-			BOPE_MODULE_JSON.add(module.get_tag(), BOPE_MODULE_INFO);
+			BOPE_MODULE_JSON.add(module.get_name_tag(), BOPE_MODULE_INFO);
 		}
 
 		BOPE_MAIN_JSON.add("modules", BOPE_MODULE_JSON);
@@ -218,14 +214,11 @@ public class BopeConfig {
 		try {
 			InputStream BOPE_JSON_FILE = Files.newInputStream(PATH_CONFIGS);
 			JsonObject  BOPE_JSON      = new JsonParser().parse(new InputStreamReader(BOPE_JSON_FILE)).getAsJsonObject();
-	
-			BopeSaveModule bind_module = Bope.get_module_manager().get_save_module(module);
 			
 			JsonObject BOPE_MODULES_JS = BOPE_JSON.get("modules").getAsJsonObject();
-			JsonObject BOPE_LOAD_BINDS = BOPE_MODULES_JS.get(module).getAsJsonObject();
-	
-			bind_module.set_int_bind(BOPE_LOAD_BINDS.get("int").getAsInt());
-			bind_module.set_state(BOPE_LOAD_BINDS.get("state").getAsBoolean());
+			// JsonObject BOPE_LOAD_BINDS = BOPE_MODULES_JS.get(module).getAsJsonObject();
+
+			// BopeModuleManager.get_module(module).set_int_bind(BOPE_LOAD_BINDS.get("int").getAsInt());
 
 			BOPE_JSON_FILE.close();
 		} catch (IOException exc) {

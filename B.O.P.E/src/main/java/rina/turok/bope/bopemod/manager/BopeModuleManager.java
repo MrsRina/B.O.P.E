@@ -19,7 +19,6 @@ import rina.turok.bope.bopemod.events.BopeEventRender;
 import rina.turok.bope.bopemod.hacks.BopeFinderModule;
 
 // Data.
-import rina.turok.bope.bopemod.BopeSaveModule;
 import rina.turok.bope.bopemod.BopeModule;
 
 // Framework.
@@ -40,11 +39,9 @@ public class BopeModuleManager {
 	*
 	*/
 
-	public static ArrayList<BopeModule>     array_module      = new ArrayList<BopeModule>();
-	public static ArrayList<BopeSaveModule> array_save_module = new ArrayList<BopeSaveModule>();
+	public static ArrayList<BopeModule> array_module = new ArrayList<BopeModule>();
 
-	static HashMap<String, BopeModule>     hash_module      = new HashMap<>();
-	static HashMap<String, BopeSaveModule> hash_save_module = new HashMap<>();
+	static HashMap<String, BopeModule> hash_module = new HashMap<>();
 
 	public static Minecraft mc = Minecraft.getMinecraft();
 
@@ -55,14 +52,6 @@ public class BopeModuleManager {
 
 		for (BopeModule modules : array_module) {
 			hash_module.put(modules.get_name_tag().toLowerCase(), modules);
-		}
-	}
-
-	public void update_save_modules() {
-		hash_save_module.clear();
-
-		for (BopeSaveModule modules : array_save_module) {
-			hash_save_module.put(modules.get_tag().toLowerCase(), modules);
 		}
 	}
 
@@ -77,11 +66,14 @@ public class BopeModuleManager {
 
 		class_list.forEach(found_class -> {
 			try {
-				array_module.add((BopeModule) found_class.getConstructor().newInstance());
+				BopeModule mod = (BopeModule) found_class.getConstructor().newInstance();
+				array_module.add(mod);
 			} catch (InvocationTargetException exc) {
 				exc.getCause().printStackTrace();
 			} catch (Exception exc) {
 				exc.getCause().printStackTrace();
+
+				Bope.send_log("this modules was not started.");
 			}
 		});
 
@@ -92,22 +84,8 @@ public class BopeModuleManager {
 		return array_module;
 	}
 
-	public static ArrayList<BopeSaveModule> get_save_modules() {
-		return array_save_module;
-	}
-
-	public void register_module(BopeSaveModule save) {
-		array_save_module.add(save);
-
-		update_save_modules();
-	}
-
 	public static BopeModule get_module(String module) {
 		return hash_module.get(module.toLowerCase());
-	}
-
-	public static BopeSaveModule get_save_module(String module) {
-		return hash_save_module.get(module.toLowerCase());
 	}
 
 	public void onBind(int event_key) {

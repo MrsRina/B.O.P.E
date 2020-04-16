@@ -10,16 +10,16 @@ import org.apache.logging.log4j.Logger;
 import org.lwjgl.input.Keyboard;
 import org.lwjgl.opengl.Display;
 
-// MANAGERS.
+// Managers.
 import rina.turok.bope.bopemod.manager.BopeCommandManager;
 import rina.turok.bope.bopemod.manager.BopeSettingManager;
 import rina.turok.bope.bopemod.manager.BopeModuleManager;
 import rina.turok.bope.bopemod.manager.BopeEventManager;
 
-// EXTERNAL.
+// External.
 import rina.turok.bope.external.BopeEventHandler;
 
-// BOPE.
+// Core.
 import rina.turok.bope.BopeEventRegister;
 
 /** ...
@@ -40,7 +40,7 @@ public class Bope {
 	public static final Logger bope_register_log = LogManager.getLogger("bope");
 
 	// Starting managers.
-	public static BopeModuleManager  module_manager;
+	public static BopeModuleManager  module_manager = new BopeModuleManager("");
 	public static BopeSettingManager setting_manager;
 	public static BopeCommandManager command_manager;
 
@@ -71,8 +71,6 @@ public class Bope {
 		send_log(" - B.O.P.E initializing module manager.");
 
 		// Init bope module manager.
-		module_manager = new BopeModuleManager("Mode -> LoadUtil.");
-
 		module_manager.init_bope_manager();
 
 		send_log(" - B.O.P.E initializing modules.");

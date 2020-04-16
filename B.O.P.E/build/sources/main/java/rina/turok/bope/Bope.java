@@ -10,16 +10,16 @@ import org.apache.logging.log4j.Logger;
 import org.lwjgl.input.Keyboard;
 import org.lwjgl.opengl.Display;
 
-// MANAGERS.
+// Managers.
 import rina.turok.bope.bopemod.manager.BopeCommandManager;
 import rina.turok.bope.bopemod.manager.BopeSettingManager;
 import rina.turok.bope.bopemod.manager.BopeModuleManager;
 import rina.turok.bope.bopemod.manager.BopeEventManager;
 
-// EXTERNAL.
+// External.
 import rina.turok.bope.external.BopeEventHandler;
 
-// BOPE.
+// Core.
 import rina.turok.bope.BopeEventRegister;
 
 /** ...

@@ -18,9 +18,6 @@ import rina.turok.bope.bopemod.events.BopeEventRender;
 // Modules.
 import rina.turok.bope.bopemod.hacks.BopeCategory;
 
-// Data.
-import rina.turok.bope.bopemod.BopeSaveModule;
-
 // Framework.
 import rina.turok.bope.framework.TurokBoolean;
 import rina.turok.bope.framework.TurokString;
@@ -42,44 +39,30 @@ import rina.turok.bope.external.BopeEventBus;
 *
 */
 public class BopeModule {
-	public TurokString name;
-	public TurokString name_tag;
-	public TurokString description;
+	public String name;
+	public String name_tag;
+	public String description;
 
 	public BopeCategory.Category category;
 
-	public TurokBoolean state_module;
+	public boolean state_module;
 
 	public TurokBind bind;
 
 	public final Minecraft mc = Minecraft.getMinecraft();
 
-	public BopeModule(BopeCategory.Category category_module) {
+	public BopeModule(String name, BopeCategory.Category category_module) {
+		name     = name;
+		bind     = new TurokBind(name, "tag", -1);
 		category = category_module;
 	}
 
-	public void module_info(String name_module, String tag_module, String description_module, int default_key) {
-		name         = new TurokString  (name_module, tag_module, name_module);
-		name_tag     = new TurokString  (name_module, tag_module, tag_module);
-		description  = new TurokString  (name_module, tag_module, description_module);
-		state_module = new TurokBoolean (name_module, tag_module, false);
-		bind         = new TurokBind    (name_module, tag_module, default_key);
+	public void module_info(String tag, String description) {
+		name_tag     = tag;
+		description  = description;
+		state_module = false;
 
-		Bope.get_module_manager().register_module(new BopeSaveModule (
-			this,
-			name_module,
-			tag_module
-		));
-
-		BopeConfig.load_bind(tag_module);
-
-		BopeSaveModule load = Bope.get_module_manager().get_save_module(tag_module);
-
-		set_active(load.get_state());
-
-		if (load.get_int_bind() != default_key) {
-			set_bind(load.get_int_bind());
-		}
+		BopeConfig.load_bind(name_tag);
 	}
 
 	protected BopeSetting.TypeButton create_button(String name, boolean default_) {
@@ -133,7 +116,7 @@ public class BopeModule {
 	protected void onEnable() {} // While actived.
 
 	public void set_active(boolean value) {
-		boolean is = state_module.get_value();
+		boolean is = state_module;
 
 		if (is != value) {
 			if (value) {
@@ -144,18 +127,14 @@ public class BopeModule {
 		}
 	}
 
-	public void set_bind(int key) {
+	public void set_int_bind(int key) {
 		bind.set_key(key);
-
-		Bope.get_module_manager().get_save_module(get_name_tag()).set_int_bind(key);
 	}
 
 	public void set_string_bind(String key) {
-		int new_bind = Keyboard.getKeyIndex(key);
+		int new_bind = Keyboard.getKeyIndex(key.toLowerCase());
 
 		bind.set_key(new_bind);
-
-		Bope.get_module_manager().get_save_module(get_name_tag()).set_int_bind(new_bind);
 	}
 
 	public void toggle() {
@@ -163,7 +142,7 @@ public class BopeModule {
 	}
 
 	public void disable() {
-		state_module.set_value(false);
+		state_module = false;
 
 		onDisable();
 
@@ -171,7 +150,7 @@ public class BopeModule {
 	}
 
 	public void enable() {
-		state_module.set_value(true);
+		state_module = true;
 
 		onEnable();
 
@@ -179,31 +158,37 @@ public class BopeModule {
 	}
 
 	public boolean is_active() {
-		return state_module.get_value();
+		return state_module;
 	}
 
 	public String get_name() {
-		return name.get_value();
+		return name;
 	}
 
 	public String get_name_tag() {
-		return name_tag.get_value();
+		return name_tag;
 	}
 
 	public String get_description() {
-		return description.get_value();
+		return description;
 	}
 
 	public TurokBind get_bind() {
 		return bind;
 	}
 
-	public int get_key_bind() {
+	public int get_int_bind() {
 		return bind.get_key();
 	}
 
 	public String get_string_bind() {
-		return Bope.get_module_manager().get_save_module(get_name_tag()).get_string_bind();
+		if (get_int_bind() < 0) {
+			return ("null");
+		} else {
+			String key = Keyboard.getKeyName(get_int_bind());
+
+			return (Character.toUpperCase(key.charAt(0)) + (key.length() != 1 ? key.substring(1).toLowerCase() : ""));
+		}
 	}
 
 	public BopeCategory.Category get_category() {

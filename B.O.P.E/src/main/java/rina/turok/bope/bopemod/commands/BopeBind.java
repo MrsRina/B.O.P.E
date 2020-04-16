@@ -22,13 +22,9 @@ public class BopeBind extends BopeCommand {
 			String module = message[1];
 			String key    = message[2];
 
-			try {
-				Bope.get_module_manager().get_module(module).set_string_bind(key);
+			Bope.get_module_manager().get_module(module).set_string_bind(key);
 
-				BopeMessage.send_client_message("The bind of module " + Bope.get_module_manager().get_module(module).get_name() + " is now " + Bope.get_module_manager().get_module(module).get_string_bind());
-			} catch (Exception exc) {
-				BopeMessage.send_client_error_message("This module not exist or is a invalid key.");
-			}
+			BopeMessage.send_client_message("The bind of module " + Bope.get_module_manager().get_module(module).get_name() + " is now " + Bope.get_module_manager().get_module(module).get_string_bind());
 		}
 
 		return true;

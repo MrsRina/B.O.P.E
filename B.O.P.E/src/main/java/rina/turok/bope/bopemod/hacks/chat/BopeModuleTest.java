@@ -8,7 +8,6 @@ import java.util.*;
 import rina.turok.bope.bopemod.hacks.BopeCategory;
 
 // Data.
-import rina.turok.bope.bopemod.BopeSaveModule;
 import rina.turok.bope.bopemod.BopeMessage;
 import rina.turok.bope.bopemod.BopeSetting;
 import rina.turok.bope.bopemod.BopeModule;
@@ -24,17 +23,15 @@ import rina.turok.bope.Bope;
 *
 */
 public class BopeModuleTest extends BopeModule {
-	BopeSetting.TypeButton   start    = create_button("Test", true);
-	BopeSetting.TypeCombobox combobox = create_combobox("Test", Arrays.asList("test1", "test2"), "test1");
+	BopeSetting.TypeButton start = create_button("Test", true);
+	BopeSetting.TypeButton start_2 = create_button("Tes2t", true);
 
 	public BopeModuleTest() {
-		super(BopeCategory.Category.BOPE_CHAT);
+		super("Module Test", BopeCategory.Category.BOPE_CHAT);
 
 		module_info(
-			"Module Test",
 			"ModuleTest",
-			"Module Test",
-			Keyboard.KEY_P
+			"Module Test"
 		);
 	}
 
@@ -42,9 +39,7 @@ public class BopeModuleTest extends BopeModule {
 	public void onUpdate() {
 		if (start.getValue()) {
 
-			if (combobox.getValue().equals("test1")) {
-				BopeMessage.send_client_message("Turn off it KKKKKKKKKKKKKKKKKKKKKK");
-			}
+			BopeMessage.send_client_message("Turn off it KKKKKKKKKKKKKKKKKKKKKK");
 		}
 	}
 }

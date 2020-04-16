@@ -2,6 +2,7 @@ package rina.turok.bope;
 
 import net.minecraftforge.common.MinecraftForge;
 
+// Managers.
 import rina.turok.bope.bopemod.manager.BopeCommandManager;
 import rina.turok.bope.bopemod.manager.BopeEventManager;
 

@@ -1,257 +1,178 @@
 package rina.turok.bope.bopemod;
 
-import java.util.*;
+import java.util.List;
 
+// Data.
+import rina.turok.bope.bopemod.BopeSetting;
 import rina.turok.bope.bopemod.BopeModule;
 
 /**
+ * @author FINZ0
+ * 14/04/2020.
  *
- * @author Rina.
- * Created by Rina.
+ * Update by Rina in 14/04/2020.
  *
- * 12/04/2020 -> Offline. 11:28.
- *
- **/
+ */
 public class BopeSetting {
-	BopeModule master;
+	private final String      name;
+    private final BopeModule  parent;
+    private final SettingType type;
 
-	String name;
-	String tag;
+    public BopeSetting(String name, BopeModule parent, SettingType type){
+        this.name   = name;
+        this.parent = parent;
+        this.type   = type;
+    }
 
-	boolean      button;        // Button.
-	double       slider_double; // Slider type double.
-	float        slider_float;  // Slider type float.
-	int          slider_int;    // Slider type int.
-	List<String> combobox;      // Combobox.
+    public String getName() {
+        return name;
+    }
 
-	double slider_double_max;
-	double slider_double_min;
+    public BopeModule getParent() {
+        return parent;
+    }
 
-	float slider_float_max;
-	float slider_float_min;
+    public SettingType getType() {
+    	return type;
+    }
 
-	int slider_int_max;
-	int slider_int_min;
+    public String getStringType() {
+        if (type == SettingType.INT) {
+        	return "integer";
+        } else if (type == SettingType.DOUBLE) {
+        	return "double";
+        } else if (type == SettingType.BUTTON) {
+        	return "button";
+        } else if (type == SettingType.STRING) {
+        	return "string";
+        } else if (type == SettingType.COMBOBOX) {
+        	return "combobox";
+        }
 
-	String current_value_combobox;
+        return null;
+    }
 
-	int type;
+    public enum SettingType {
+        INT, DOUBLE, BUTTON, STRING, COMBOBOX
+    }
 
-	public BopeSetting(BopeModule master, String name, String tag, boolean default_) {
-		this.master = master;
-		this.name   = name;
-		this.tag    = tag;
+    public static class TypeInteger extends BopeSetting {
+        private int value;
+        private final int min;
+        private final int max;
 
-		this.button = default_;
+        public TypeInteger(String name, BopeModule parent, int value, int min, int max){
+            super(name, parent, SettingType.INT);
+            this.value = value;
+            this.min = min;
+            this.max = max;
+        }
 
-		this.type = 0;
-	}
+        public int getValue() {
+            return value;
+        }
 
-	public BopeSetting(BopeModule master, String name, String tag, 	double value, double min, double max) {
-		this.master = master;
-		this.name   = name;
-		this.tag    = tag;
+        public void setValue(int value) {
+            this.value = value;
+        }
 
-		this.slider_double     = value;
-		this.slider_double_max = max;
-		this.slider_double_min = min;
+        public int getMin() {
+            return min;
+        }
 
-		this.type = 1;
-	}
+        public int getMax() {
+            return max;
+        }
+    }
 
-	public BopeSetting(BopeModule master, String name, String tag, 	float value, float min, float max) {
-		this.master = master;
-		this.name   = name;
-		this.tag    = tag;
+    public static class TypeDouble extends BopeSetting {
+        private double value;
 
-		this.slider_float     = value;
-		this.slider_float_max = max;
-		this.slider_float_min = min;
+        private final double min;
+        private final double max;
 
-		this.type = 2;
-	}
+        public TypeDouble(String name, BopeModule parent, double value, double min, double max){
+            super(name, parent, SettingType.DOUBLE);
+            this.value = value;
+            this.min = min;
+            this.max = max;
+        }
 
-	public BopeSetting(BopeModule master, String name, String tag, 	int value, int min, int max) {
-		this.master = master;
-		this.name   = name;
-		this.tag    = tag;
+        public double getValue() {
+            return value;
+        }
 
-		this.slider_int     = value;
-		this.slider_int_max = max;
-		this.slider_int_min = min;
+        public void setValue(double value) {
+            this.value = value;
+        }
 
-		this.type = 3;
-	}
+        public double getMin() {
+            return min;
+        }
 
-	public BopeSetting(BopeModule master, String name, String tag, List<String> combobox, String current) {
-		this.master = master;
-		this.name   = name;
-		this.tag    = tag;
-		
+        public double getMax() {
+            return max;
+        }
+    }
 
-		this.current_value_combobox = current;
-		this.combobox               = combobox;
+    public static class TypeButton extends BopeSetting {
+        private boolean value;
 
-		this.type = 4;
-	}
+        public TypeButton(String name, BopeModule parent, boolean value){
+            super(name, parent, SettingType.BUTTON);
 
-	public void set_current_item(String item) {
-		if (!(this.type != 4)) {
-			for (String items : this.combobox) {
-				if (items.equalsIgnoreCase(item)) {
-					this.current_value_combobox = item.toLowerCase();
+            this.value = value;
+        }
 
-					break;
-				} else {
-					break;
-				}
-			}
-		}
-	}
+        public boolean getValue() {
+            return value;
+        }
 
-	public void set_button_value(boolean state) {
-		this.button = true;
-	}
+        public void setValue(boolean value) {
+            this.value = value;
+        }
+    }
 
-	public void set_slider_double_value(double value) {
-		if (value >= this.slider_double_max) {
-			this.slider_double = this.slider_double_max;
-		} else if (value <= this.slider_double_min) {
-			this.slider_double = this.slider_double_min;
-		} else {
-			this.slider_double = value;
-		}
-	}
+    public static class TypeString extends BopeSetting {
+        private String value;
 
-	public void set_slider_float_value(float value) {
-		if (value >= this.slider_float_max) {
-			this.slider_float = this.slider_float_max;
-		} else if (value <= this.slider_float_min) {
-			this.slider_float = this.slider_float_min;
-		} else {
-			this.slider_float = value;
-		}
-	}
+        public TypeString(String name, BopeModule parent, String value){
+            super(name, parent, SettingType.STRING);
 
-	public void set_slider_int_value(int value) {
-		if (value >= this.slider_int_max) {
-			this.slider_int = this.slider_int_max;
-		} else if (value <= this.slider_int_min) {
-			this.slider_int = this.slider_int_min;
-		} else {
-			this.slider_int = value;
-		}
-	}
+            this.value = value;
+        }
 
-	public boolean get_button_value() {
-		return this.button;
-	}
+        public String getValue() {
+            return value;
+        }
 
-	public double get_slider_double_value() {
-		return this.slider_double;
-	}
+        public void setValue(String value) {
+            this.value = value;
+        }
+    }
 
-	public float get_slider_float_value() {
-		return this.slider_float;
-	}
+    public static class TypeCombobox extends BopeSetting {
+        private String value;
+        
+        private final List<String> modes;
 
-	public int get_slider_int_value() {
-		return this.slider_int;
-	}
+        public TypeCombobox(String name, BopeModule parent, List<String> modes, String value){
+            super(name, parent, SettingType.COMBOBOX);
 
-	public BopeModule get_master() {
-		return this.master;
-	}
+            this.value = value;
+            this.modes = modes;
+        }
 
-	public String get_combobox_value() {
-		return this.current_value_combobox;
-	}
+        public String getValue() {
+            return value;
+        }
 
-	public boolean current_value_equals(String item) {
-		if (get_combobox_value().equalsIgnoreCase(item)) {
-			return true;
-		} else {
-			return false;
-		}
-	}
+        public void setValue(String value) {
+            this.value = value;
+        }
 
-	public List<String> get_list() {
-		if (!(this.type != 4)) {
-			return this.combobox;
-		}
-
-		return null;
-	}
-
-	public String get_name() {
-		return this.name;
-	}
-
-	public String get_tag() {
-		return this.tag;
-	}
-
-	public boolean get_button_state() {
-		return this.button;
-	}
-
-	public double get_slider_double_max() {
-		return this.slider_double_max;
-	}
-
-	public double get_slider_double_min() {
-		return this.slider_double_min;
-	}
-
-	public float get_slider_float_max() {
-		return this.slider_float_max;
-	}
-
-	public float get_slider_float_min() {
-		return this.slider_float_min;
-	}
-
-	public int get_slider_int_max() {
-		return this.slider_int_max;
-	}
-
-	public int get_slider_int_min() {
-		return this.slider_int_min;
-	}
-
-	public String get_type() {
-		if (type == 0) {
-			return ("button");
-		} else if (type == 1) {
-			return ("sliderdouble");
-		} else if (type == 2) {
-			return ("sliderfloat");
-		} else if (type == 3) {
-			return ("sliderint");
-		} else if (type == 4) {
-			return ("combobox");
-		}
-
-		return null;
-	}
-
-	public boolean is_button() {
-		return (type == 0);
-	}
-
-	public boolean is_slider_double() {
-		return (type == 1);
-	}
-
-	public boolean is_slider_float() {
-		return (type == 2);
-	}
-
-	public boolean is_slider_int() {
-		return (type == 3);
-	}
-
-	public boolean is_combobox() {
-		return (type == 4);
-	}
+        public List<String> getModes(){
+            return modes;
+        }
+    }
 }

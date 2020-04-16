@@ -2,11 +2,18 @@ package rina.turok.bope.bopemod.hacks;
 
 import org.lwjgl.input.Keyboard;
 
+import java.util.*;
+
+// Modules.
 import rina.turok.bope.bopemod.hacks.BopeCategory;
+
+// Data.
 import rina.turok.bope.bopemod.BopeSaveModule;
 import rina.turok.bope.bopemod.BopeMessage;
 import rina.turok.bope.bopemod.BopeSetting;
 import rina.turok.bope.bopemod.BopeModule;
+
+// Core.
 import rina.turok.bope.Bope;
 
 /**
@@ -17,7 +24,8 @@ import rina.turok.bope.Bope;
 *
 */
 public class BopeModuleTest extends BopeModule {
-	BopeSetting start;
+	BopeSetting.TypeButton   start    = create_button("Test", true);
+	BopeSetting.TypeCombobox combobox = create_combobox("Test", Arrays.asList("test1", "test2"), "test1");
 
 	public BopeModuleTest() {
 		super(BopeCategory.Category.BOPE_CHAT);
@@ -26,16 +34,17 @@ public class BopeModuleTest extends BopeModule {
 			"Module Test",
 			"ModuleTest",
 			"Module Test",
-			-1
+			Keyboard.KEY_P
 		);
-
-		start = create_button(this, "Test", "test", false);
 	}
 
 	@Override
 	public void onUpdate() {
-		if (start.get_button_state()) {
-			BopeMessage.send_client_message("Turn off it KKKKKKKKKKKKKKKKKKKKKK");
+		if (start.getValue()) {
+
+			if (combobox.getValue().equals("test1")) {
+				BopeMessage.send_client_message("Turn off it KKKKKKKKKKKKKKKKKKKKKK");
+			}
 		}
 	}
 }

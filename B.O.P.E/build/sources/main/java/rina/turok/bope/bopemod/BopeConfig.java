@@ -10,11 +10,19 @@ import java.io.*;
 // Json manager.
 import com.google.gson.*;
 
+// Managers.
 import rina.turok.bope.bopemod.manager.BopeSettingManager;
 import rina.turok.bope.bopemod.manager.BopeModuleManager;
+
+// Data.
 import rina.turok.bope.bopemod.BopeSaveModule;
 import rina.turok.bope.bopemod.BopeSetting;
 import rina.turok.bope.bopemod.BopeModule;
+
+// Framework.
+import rina.turok.bope.framework.TurokString;
+
+// Core.
 import rina.turok.bope.Bope;
 
 /**
@@ -71,18 +79,69 @@ public class BopeConfig {
 		Gson       BOPE_GSON   = new GsonBuilder().setPrettyPrinting().create();
 		JsonParser BOPE_PARSER = new JsonParser(); 
 
-		// String BOPE_DEMTIO        = BOPE_PLVIDID.toJson(BOPE_EXPLOSIVE_CAM);
-
 		JsonObject BOPE_MAIN_JSON    = new JsonObject();
 		JsonObject BOPE_SETTING_JSON = new JsonObject();
 
-		for (BopeSaveModule module : Bope.get_module_manager().get_save_modules()) {
+		// INT, DOUBLE, BUTTON, STRING, COMBOBOX
+
+		for (BopeSetting settings : Bope.get_setting_manager().convert_to_list()) {
 			JsonObject BOPE_CONFIG_INFO  = new JsonObject();
 			JsonObject BOPE_SETTING_INFO = new JsonObject();
 
-			BOPE_CONFIG_INFO.addProperty("master", module.get_tag());
+			BOPE_CONFIG_INFO.addProperty("parent", settings.getParent().get_name_tag());
 
-			BOPE_SETTING_JSON.add(module.get_tag(), BOPE_CONFIG_INFO);
+			if (settings.getType().equals(BopeSetting.SettingType.INT)) {
+				JsonObject BOPE_INTEGER_INFO = new JsonObject();
+
+				BOPE_INTEGER_INFO.add("name",  new JsonPrimitive(((BopeSetting.TypeInteger) settings).getName()));
+				BOPE_INTEGER_INFO.add("value", new JsonPrimitive(((BopeSetting.TypeInteger) settings).getValue()));
+				BOPE_INTEGER_INFO.add("min",   new JsonPrimitive(((BopeSetting.TypeInteger) settings).getMin()));
+				BOPE_INTEGER_INFO.add("max",   new JsonPrimitive(((BopeSetting.TypeInteger) settings).getMax()));
+				
+				BOPE_CONFIG_INFO.add("integer", BOPE_INTEGER_INFO);
+			}
+
+			if (settings.getType().equals(BopeSetting.SettingType.DOUBLE)) {
+				JsonObject BOPE_DOUBLE_INFO = new JsonObject();
+
+				BOPE_DOUBLE_INFO.add("name",  new JsonPrimitive(((BopeSetting.TypeDouble) settings).getName()));
+				BOPE_DOUBLE_INFO.add("value", new JsonPrimitive(((BopeSetting.TypeDouble) settings).getValue()));
+				BOPE_DOUBLE_INFO.add("min",   new JsonPrimitive(((BopeSetting.TypeDouble) settings).getMin()));
+				BOPE_DOUBLE_INFO.add("max",   new JsonPrimitive(((BopeSetting.TypeDouble) settings).getMax()));
+			
+				BOPE_CONFIG_INFO.add("doubles", BOPE_DOUBLE_INFO);
+			}
+
+			if (settings.getType().equals(BopeSetting.SettingType.BUTTON)) {
+				JsonObject BOPE_BUTTON_INFO = new JsonObject();
+
+				BOPE_BUTTON_INFO.add("name",  new JsonPrimitive(((BopeSetting.TypeButton) settings).getName()));
+				BOPE_BUTTON_INFO.add("value", new JsonPrimitive(((BopeSetting.TypeButton) settings).getValue()));
+				
+				BOPE_CONFIG_INFO.add("buttons", BOPE_BUTTON_INFO);
+			}
+
+			if (settings.getType().equals(BopeSetting.SettingType.STRING)) {
+				JsonObject BOPE_STRING_INFO = new JsonObject();
+
+				BOPE_STRING_INFO.add("name",  new JsonPrimitive(((BopeSetting.TypeString) settings).getName()));
+				BOPE_STRING_INFO.add("value", new JsonPrimitive(((BopeSetting.TypeString) settings).getValue()));
+			
+				BOPE_CONFIG_INFO.add("strings", BOPE_STRING_INFO);
+			}
+
+			if (settings.getType().equals(BopeSetting.SettingType.COMBOBOX)) {
+				JsonObject  BOPE_COMBOBOX_INFO  = new JsonObject();
+				JsonElement BOPE_COMBOBOX_ITEMS = BOPE_PARSER.parse(new Gson().toJson(((BopeSetting.TypeCombobox) settings).getModes()));
+
+				BOPE_COMBOBOX_INFO.add("name",  new JsonPrimitive(((BopeSetting.TypeCombobox) settings).getName()));
+				BOPE_COMBOBOX_INFO.add("value", new JsonPrimitive(((BopeSetting.TypeCombobox) settings).getValue()));
+
+				BOPE_COMBOBOX_INFO.add("items", BOPE_COMBOBOX_ITEMS);
+				BOPE_CONFIG_INFO.add("comboboxs", BOPE_COMBOBOX_INFO);
+			}
+
+			BOPE_SETTING_JSON.add(settings.getParent().get_name_tag(), BOPE_CONFIG_INFO);
 		}
 
 		BOPE_MAIN_JSON.add("modules", BOPE_SETTING_JSON);
@@ -112,9 +171,9 @@ public class BopeConfig {
 		for (BopeSaveModule module : Bope.get_module_manager().get_save_modules()) {
 			JsonObject BOPE_MODULE_INFO = new JsonObject();
 
-			BOPE_MODULE_INFO.add("int", new JsonPrimitive(module.get_int_bind()));
+			BOPE_MODULE_INFO.add("int",    new JsonPrimitive(module.get_int_bind()));
 			BOPE_MODULE_INFO.add("string", new JsonPrimitive(module.get_string_bind()));
-			BOPE_MODULE_INFO.add("state", new JsonPrimitive(module.get_state()));
+			BOPE_MODULE_INFO.add("state",  new JsonPrimitive(module.get_state()));
 
 			BOPE_MODULE_JSON.add(module.get_tag(), BOPE_MODULE_INFO);
 		}
@@ -172,5 +231,21 @@ public class BopeConfig {
 		} catch (IOException exc) {
 			exc.printStackTrace();
 		}
+	}
+
+	public static String convert_s(String value) {
+		return TurokString.to_string(value);
+	}
+
+	public static String convert_i(int value) {
+		return TurokString.to_string(value);
+	}
+
+	public static String convert_d(double value) {
+		return TurokString.to_string(value);
+	}
+
+	public static String convert_b(boolean value) {
+		return TurokString.to_string(value);
 	}
 }

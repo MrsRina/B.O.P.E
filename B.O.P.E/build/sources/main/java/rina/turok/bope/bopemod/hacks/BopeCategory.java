@@ -8,37 +8,61 @@ package rina.turok.bope.bopemod.hacks;
 *
 */
 public class BopeCategory {
+	/**
+	 * Hidden.
+	 * @param y_sw yes show.
+	 * @param n_sw no  show.
+	 *
+	 * Beta.
+	 * @param y_bt yes beta.
+	 * @param n_bt no  beta.
+	 **/
+
 	public enum Category {
-		BOPE_CHAT     ("B.O.P.E Chat",     false, false),
-		BOPE_COMBAT   ("B.O.P.E Combat",   false, false),
-		BOPE_MOVEMENT ("B.O.P.E Movement", false, false),
-		BOPE_RENDER   ("B.O.P.E Render",   false, false),
-		BOPE_EXPLOIT  ("B.O.P.E Exploit",  false, false),
-		BOPE_GUI      ("B.O.P.E GUI",      false, false),
-		BOPE_BETA     ("B.O.P.E Beta",     false, true),
-		BOPE_HIDDEN   ("B.O.P.E Hidden",   true, false);
+		BOPE_CHAT     ("B.O.P.E Chat"    , "BopeChat"    , "y_sw", "y_bt"),
+		BOPE_COMBAT   ("B.O.P.E Combat"  , "BopeCombat"  , "y_sw", "y_bt"),
+		BOPE_MOVEMENT ("B.O.P.E Movement", "BopeMovement", "y_sw", "y_bt"),
+		BOPE_RENDER   ("B.O.P.E Render"  , "BopeRender"  , "y_sw", "y_bt"),
+		BOPE_EXPLOIT  ("B.O.P.E Exploit" , "BopeExploit" , "y_sw", "y_bt"),
+		BOPE_GUI      ("B.O.P.E GUI"     , "BopeGUI"     , "y_sw", "y_bt"),
+		BOPE_BETA     ("B.O.P.E Beta"    , "BopeBeta"    , "y_sw", "n_bt"),
+		BOPE_HIDDEN   ("B.O.P.E Hidden"  , "BopeHidden"  , "n_sw", "y_bt");
 
 		String name;
+		String tag;
 
-		boolean hidden;
-		boolean beta;
+		String hidden;
+		String beta;
 
-		Category(String name, boolean hidden, boolean beta) {
+		Category(String name, String tag, String hidden, String beta) {
 			this.name   = name;
+			this.tag    = tag;
 			this.hidden = hidden;
 			this.beta   = beta;
 		}
 
 		public boolean is_hidden() {
-			return this.hidden;
+			if (this.hidden.equals("n_sw")) {
+				return true;
+			}
+
+			return false;
 		}
 
 		public boolean is_beta() {
-			return this.beta;
+			if (this.beta.equals("y_bt")) {
+				return true;
+			}
+
+			return false;
 		}
 
 		public String get_name() {
 			return this.name;
+		}
+
+		public String get_tag() {
+			return this.tag;
 		}
 	}
 }

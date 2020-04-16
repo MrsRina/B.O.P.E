@@ -7,7 +7,10 @@ import net.minecraft.util.text.TextFormatting;
 import net.minecraft.client.Minecraft;
 import net.minecraft.util.text.Style;
 
+// Commands.
 import rina.turok.bope.bopemod.commands.BopeListCommand;
+
+// Data.
 import rina.turok.bope.bopemod.BopeCommand;
 import rina.turok.bope.bopemod.BopeMessage;
 

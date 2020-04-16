@@ -13,7 +13,10 @@ import net.minecraft.client.Minecraft;
 import org.lwjgl.input.Keyboard;
 import org.lwjgl.opengl.GL11;
 
+// Framework.
 import rina.turok.bope.framework.TurokRenderHelp;
+
+// Core.
 import rina.turok.bope.Bope;
 
 /**

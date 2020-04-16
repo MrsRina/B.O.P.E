@@ -10,6 +10,7 @@ import com.mojang.realmsclient.gui.ChatFormatting;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+// Core.
 import rina.turok.bope.Bope;
 
 /**

@@ -5,18 +5,25 @@ import java.util.*;
 
 import net.minecraftforge.client.event.RenderWorldLastEvent;
 import net.minecraft.client.renderer.GlStateManager;
-import net.minecraft.util.math.Vec3d;
 import net.minecraft.client.Minecraft;
+import net.minecraft.util.math.Vec3d;
 import net.minecraft.entity.Entity;
 
 import org.reflections.Reflections;
 import org.lwjgl.opengl.GL11;
 
+// Events.
 import rina.turok.bope.bopemod.events.BopeEventRender;
+
+// Modules.
 import rina.turok.bope.bopemod.hacks.BopeFinderModule;
-import rina.turok.bope.framework.TurokRenderHelp;
+
+// Data.
 import rina.turok.bope.bopemod.BopeSaveModule;
 import rina.turok.bope.bopemod.BopeModule;
+
+// Framework.
+import rina.turok.bope.framework.TurokRenderHelp;
 
 /**
 * @author Rina

@@ -33,4 +33,24 @@ public class TurokString {
 	public String get_value() {
 		return this.value;
 	}
-} 
+
+	public static String to_string(String value) {
+		return value;
+	}
+
+	public static String to_string(boolean value) {
+		return Boolean.toString(value);
+	}
+	
+	public static String to_string(double value) {
+		return Double.toString(value);
+	}
+
+	public static String to_string(float value) {
+		return Float.toString(value);
+	}
+	
+	public static String to_string(int value) {
+		return Integer.toString(value);
+	}
+}

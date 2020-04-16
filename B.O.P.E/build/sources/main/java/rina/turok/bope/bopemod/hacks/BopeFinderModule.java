@@ -1,10 +1,17 @@
 package rina.turok.bope.bopemod.hacks;
 
+// Modules.
 import rina.turok.bope.bopemod.hacks.BopeCategory.Category;
+
+// Events.
 import rina.turok.bope.bopemod.events.BopeEventRender;
+
+// Data.
 import rina.turok.bope.bopemod.BopeSaveModule;
 import rina.turok.bope.bopemod.BopeMessage;
 import rina.turok.bope.bopemod.BopeModule;
+
+// Core.
 import rina.turok.bope.Bope;
 
 /**

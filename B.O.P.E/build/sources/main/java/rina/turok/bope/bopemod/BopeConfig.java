@@ -32,17 +32,17 @@ import rina.turok.bope.Bope;
  *
  */
 public class BopeConfig {
-	public static String BOPE_FOLDER_CONFIG = "B.O.P.E/";
-	public static String BOPE_FILE_CONFIGS  = "Configs.json";
-	public static String BOPE_FILE_BINDS    = "Binds.json";
+	private static String BOPE_FOLDER_CONFIG = "B.O.P.E/";
+	private static String BOPE_FILE_CONFIGS  = "Configs.json";
+	private static String BOPE_FILE_BINDS    = "Binds.json";
 
-	public static String BOPE_ABS_CONFIGS = (BOPE_FOLDER_CONFIG + BOPE_FILE_CONFIGS);
-	public static String BOPE_ABS_FOLDER  = (BOPE_FOLDER_CONFIG);
-	public static String BOPE_ABS_BINDS   = (BOPE_FOLDER_CONFIG + BOPE_FILE_BINDS);
+	private static String BOPE_ABS_CONFIGS = (BOPE_FOLDER_CONFIG + BOPE_FILE_CONFIGS);
+	private static String BOPE_ABS_FOLDER  = (BOPE_FOLDER_CONFIG);
+	private static String BOPE_ABS_BINDS   = (BOPE_FOLDER_CONFIG + BOPE_FILE_BINDS);
 
-	public static Path PATH_CONFIGS = Paths.get(BOPE_ABS_CONFIGS);
-	public static Path PATH_FOLDER  = Paths.get(BOPE_ABS_FOLDER);
-	public static Path PATH_BINDS   = Paths.get(BOPE_ABS_BINDS);
+	private static Path PATH_CONFIGS = Paths.get(BOPE_ABS_CONFIGS);
+	private static Path PATH_FOLDER  = Paths.get(BOPE_ABS_FOLDER);
+	private static Path PATH_BINDS   = Paths.get(BOPE_ABS_BINDS);
 
 	public static void BOPE_VERIFY_FOLDER_CONFIGS() throws IOException {
 		if (!Files.exists(PATH_FOLDER)) {
@@ -83,61 +83,26 @@ public class BopeConfig {
 
 		// INT, DOUBLE, BUTTON, STRING, COMBOBOX
 
-		for (BopeSetting settings : Bope.get_setting_manager().convert_to_list()) {
-			JsonObject BOPE_CONFIG_INFO  = new JsonObject();
-			JsonObject BOPE_SETTING_INFO = new JsonObject();
+		for (BopeSetting settings : Bope.get_setting_manager().get_list_settings()) {
+			JsonObject BOPE_MAIN_MODULES    = new JsonObject();
+			JsonObject BOPE_MODULE_SETTINGS = new JsonObject();
 
-			JsonObject BOPE_DOUBLE_INFO   = new JsonObject();
-			JsonObject BOPE_STRING_INFO   = new JsonObject();
-			JsonObject BOPE_COMBOBOX_INFO = new JsonObject();
-
-			BOPE_CONFIG_INFO.addProperty("parent", settings.getParent().get_name_tag());
-
-			if (settings.getType().equals(BopeSetting.SettingType.INT)) {
-				JsonObject BOPE_INTEGER_INFO = new JsonObject();
-			}
-
-			if (settings.getType().equals(BopeSetting.SettingType.DOUBLE)) {
-				BOPE_DOUBLE_INFO.add("name",  new JsonPrimitive(((BopeSetting.TypeDouble) settings).getName()));
-				BOPE_DOUBLE_INFO.add("value", new JsonPrimitive(((BopeSetting.TypeDouble) settings).getValue()));
-				BOPE_DOUBLE_INFO.add("min",   new JsonPrimitive(((BopeSetting.TypeDouble) settings).getMin()));
-				BOPE_DOUBLE_INFO.add("max",   new JsonPrimitive(((BopeSetting.TypeDouble) settings).getMax()));
-			
-				BOPE_CONFIG_INFO.add("doubles", BOPE_DOUBLE_INFO);
-			}
+			BOPE_MODULE_SETTINGS.add("parent", new JsonPrimitive(settings.getParent().get_tag()));
 
 			if (settings.getType().equals(BopeSetting.SettingType.BUTTON)) {
-				for (BopeSetting.TypeButton button : Bope.get_setting_manager().get_settings_from(settings.getParent(), BopeSetting.SettingType.BUTTON)) {
-					JsonObject BOPE_BUTTON_INFO = new JsonObject();
+				JsonObject BOPE_ALL_SETTING_BUTTONS = new JsonObject();
 
-					BOPE_BUTTON_INFO.add("name",  new JsonPrimitive(button.getName()));
-					BOPE_BUTTON_INFO.add("value", new JsonPrimitive(button.getValue()));
-					
-					BOPE_CONFIG_INFO.add("buttons", BOPE_BUTTON_INFO);
-				}
+				BopeSetting.TypeButton buttons = ((BopeSetting.TypeButton) settings);
+
+				BOPE_ALL_SETTING_BUTTONS.add("value", new JsonPrimitive(buttons.getValue()));
+
+				BOPE_MODULE_SETTINGS.add("buttons", BOPE_ALL_SETTING_BUTTONS);
 			}
 
-			if (settings.getType().equals(BopeSetting.SettingType.STRING)) {
-				BOPE_STRING_INFO.add("name",  new JsonPrimitive(((BopeSetting.TypeString) settings).getName()));
-				BOPE_STRING_INFO.add("value", new JsonPrimitive(((BopeSetting.TypeString) settings).getValue()));
-			
-				BOPE_CONFIG_INFO.add("strings", BOPE_STRING_INFO);
-			}
-
-			if (settings.getType().equals(BopeSetting.SettingType.COMBOBOX)) {
-				JsonElement BOPE_COMBOBOX_ITEMS = BOPE_PARSER.parse(new Gson().toJson(((BopeSetting.TypeCombobox) settings).getModes()));
-
-				BOPE_COMBOBOX_INFO.add("name",  new JsonPrimitive(((BopeSetting.TypeCombobox) settings).getName()));
-				BOPE_COMBOBOX_INFO.add("value", new JsonPrimitive(((BopeSetting.TypeCombobox) settings).getValue()));
-
-				BOPE_COMBOBOX_INFO.add("items", BOPE_COMBOBOX_ITEMS);
-				BOPE_CONFIG_INFO.add("comboboxs", BOPE_COMBOBOX_INFO);
-			}
-
-			BOPE_SETTING_JSON.add(settings.getParent().get_name_tag(), BOPE_CONFIG_INFO);
+			BOPE_MAIN_MODULES.add(settings.getParent().get_tag(), BOPE_MODULE_SETTINGS);
 		}
 
-		BOPE_MAIN_JSON.add("modules", BOPE_SETTING_JSON);
+		BOPE_MAIN_JSON.add("modules", BOPE_MAIN_MODULES);
 
 		JsonElement BOPE_MAIN_PRETTY_JSON = BOPE_PARSER.parse(BOPE_MAIN_JSON.toString());
 
@@ -168,7 +133,7 @@ public class BopeConfig {
 			BOPE_MODULE_INFO.add("string", new JsonPrimitive(module.get_string_bind()));
 			BOPE_MODULE_INFO.add("state",  new JsonPrimitive(module.is_active()));
 
-			BOPE_MODULE_JSON.add(module.get_name_tag(), BOPE_MODULE_INFO);
+			BOPE_MODULE_JSON.add(module.get_tag(), BOPE_MODULE_INFO);
 		}
 
 		BOPE_MAIN_JSON.add("modules", BOPE_MODULE_JSON);

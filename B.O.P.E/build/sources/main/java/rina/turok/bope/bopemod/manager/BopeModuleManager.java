@@ -91,7 +91,7 @@ public class BopeModuleManager {
 		hash_module.clear();
 
 		for (BopeModule modules : array_module) {
-			hash_module.put(modules.get_name_tag().toLowerCase(), modules);
+			hash_module.put(modules.get_tag().toLowerCase(), modules);
 		}
 	}
 

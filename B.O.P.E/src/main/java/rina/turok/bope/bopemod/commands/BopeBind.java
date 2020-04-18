@@ -22,9 +22,9 @@ public class BopeBind extends BopeCommand {
 			String module = message[1];
 			String key    = message[2];
 
-			Bope.get_module_manager().get_module(module).set_string_bind(key);
+			Bope.get_module_manager().get_module_with_tag(module).set_string_bind(key.toUpperCase());
 
-			BopeMessage.send_client_message("The bind of module " + Bope.get_module_manager().get_module(module).get_name() + " is now " + Bope.get_module_manager().get_module(module).get_string_bind());
+			BopeMessage.send_client_message("The bind of module " + Bope.get_module_manager().get_module_with_tag(module).get_name() + " is now " + Bope.get_module_manager().get_module_with_tag(module).get_string_bind());
 		}
 
 		return true;

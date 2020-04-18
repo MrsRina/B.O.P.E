@@ -1,5 +1,8 @@
 package rina.turok.bope.bopemod;
 
+// Core.
+import rina.turok.bope.Bope;
+
 /**
 * @author Rina
 *
@@ -12,7 +15,7 @@ public class BopeCommand {
 	String description;
 
 	public BopeCommand(String name, String description) {
-		this.name = name;
+		this.name        = name;
 		this.description = description;
 	}
 
@@ -26,5 +29,9 @@ public class BopeCommand {
 
 	public String get_description() {
 		return this.description;
+	}
+
+	public String current_prefix() {
+		return Bope.get_command_manager().get_prefix();
 	}
 }

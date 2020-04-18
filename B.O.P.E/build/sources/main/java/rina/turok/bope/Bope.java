@@ -31,79 +31,68 @@ import rina.turok.bope.BopeEventRegister;
  */
 @Mod(modid = "bope", version = Bope.BOPE_VERSION)
 public class Bope {
+	// Master instance.
+	@Mod.Instance
+	private static Bope MASTER;
+
 	// Somes arguments like, version, name, space...
 	public static final String BOPE_NAME    = "B.O.P.E";
 	public static final String BOPE_VERSION = "0.1";
 	public static final String BOPE_SPACE   = " ";
 
 	// A just log for initializing and if get a error show in log Minecraft.
-	public static final Logger bope_register_log = LogManager.getLogger("bope");
+	public static Logger bope_register_log;
 
 	// Starting managers.
 	public static BopeModuleManager  module_manager;
 	public static BopeSettingManager setting_manager;
 	public static BopeCommandManager command_manager;
-
-	// INSTANCE.
-	@Mod.Instance
-	private static Bope INSTANCE;
+	public static BopeEventManager   event_h_manager;
 
 	@Mod.EventHandler
 	public void BopeStarting(FMLInitializationEvent event) {
-		send_log("\n\n------------- B.O.P.E -------------");
-		send_log(" - B.O.P.E loading utils.");
+		init_log("BOPE");
 
-		send_log(" - B.O.P.E initializing command manager.");
-
-		// Register event command.
-		BopeEventRegister.register_command_manager(command_manager = new BopeCommandManager());
-
-		send_log(" - B.O.P.E initializing event handler.");
+		send_log("loading client core, external, data...");
 
 		// Init BopeEventHandler.
 		BopeEventHandler.INSTANCE = new BopeEventHandler();
 
-		send_log(" - B.O.P.E initializing setting manager.");
+		// Init managers.
+		setting_manager = new BopeSettingManager("Setting manager");
+		module_manager  = new BopeModuleManager("module manager");
+		command_manager = new BopeCommandManager("command manager");
+		event_h_manager = new BopeEventManager("event handler manager");
 
-		// Init setting manager.
-		setting_manager = new BopeSettingManager("Mode -> LoadUtil.");
-
-		send_log(" - B.O.P.E initializing module manager.");
-
-		// Init bope module manager.
-		module_manager = new BopeModuleManager("Mode -> LoadUtil.");
-
-		module_manager.init_bope_manager();
-
-		send_log(" - B.O.P.E initializing modules.");
-
-		// Init modules.
-		module_manager.init_bope_modules();
-
-		send_log(" - B.O.P.E initializing events.");
+		send_log("managers are started");
 
 		// Register event modules and manager.
-		BopeEventRegister.register_module_manager(new BopeEventManager());
+		BopeEventRegister.register_command_manager(command_manager);
+		BopeEventRegister.register_module_manager(event_h_manager);
 
-		send_log(" - B.O.P.E starting widgets.");
-
-		send_log("\n - B.O.P.E Started");
+		send_log("events are registered.");
 	}
 
-	public static void load_settings() {
+	public void init_log(String name) {
+		bope_register_log = LogManager.getLogger(name);
 
+		send_log("STARTING...");
 	}
 
 	public static Bope get_instance() {
-		return INSTANCE; // A function for get INSTANCE from all client.
+		return MASTER; // A function for get INSTANCE from all client.
 	}
 
 	public static void send_log(String log) {
-		bope_register_log.info(log);
+		bope_register_log.info(" - " + BOPE_NAME + BOPE_SPACE + log);
 	}
 
 	public static String get_version() {
 		return BOPE_VERSION;
+	}
+
+	public static BopeCommandManager get_command_manager() {
+		return get_instance().command_manager;
 	}
 
 	public static BopeModuleManager get_module_manager() {

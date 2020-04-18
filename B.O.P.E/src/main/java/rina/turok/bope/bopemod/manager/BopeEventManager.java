@@ -27,7 +27,13 @@ import rina.turok.bope.Bope;
 *
 */
 public class BopeEventManager {
+	String tag;
+
 	Minecraft mc = Minecraft.getMinecraft();
+
+	public BopeEventManager(String tag) {
+		this.tag = tag;
+	}
 
 	@SubscribeEvent
 	public void onUpdate(LivingEvent.LivingUpdateEvent event) {
@@ -87,5 +93,9 @@ public class BopeEventManager {
 		if (Keyboard.getEventKeyState()) {
 			Bope.get_instance().module_manager.onBind(Keyboard.getEventKey());
 		}
+	}
+
+	public String get_tag() {
+		return this.tag;
 	}
 }

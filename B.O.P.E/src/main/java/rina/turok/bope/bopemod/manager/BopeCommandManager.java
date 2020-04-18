@@ -22,10 +22,14 @@ import rina.turok.bope.bopemod.BopeMessage;
 *
 */
 public class BopeCommandManager {
+	String tag;
+
 	public static BopeListCommand command_list;
 
-	public BopeCommandManager() {
-		command_list = new BopeListCommand(new Style().setColor(TextFormatting.GRAY));
+	public BopeCommandManager(String tag) {
+		this.tag = tag;
+
+		command_list = new BopeListCommand(new Style().setColor(TextFormatting.BLUE));
 	}
 
 	public void init_commands() {
@@ -48,6 +52,8 @@ public class BopeCommandManager {
 		boolean true_command = false;
 
 		if (message_args.length > 0) {
+			event.setCanceled(true);
+			
 			for (BopeCommand command : command_list.get_pure_command_list()) {
 				try {
 					if (command_list.get_message(event.getMessage())[0].equalsIgnoreCase(command.get_name())) {
@@ -61,8 +67,10 @@ public class BopeCommandManager {
 
 				true_command = false;
 			}
-
-			event.setMessage(""); // For remove totally the message.
 		}
+	}
+
+	public String get_tag() {
+		return this.tag;
 	}
 }

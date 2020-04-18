@@ -1,4 +1,4 @@
-package rina.turok.bope.bopemod.hacks;
+package rina.turok.bope.bopemod.hacks.chat;
 
 import org.lwjgl.input.Keyboard;
 
@@ -23,8 +23,8 @@ import rina.turok.bope.Bope;
 *
 */
 public class BopeModuleTest extends BopeModule {
-	BopeSetting.TypeButton start = create_button("Test", true);
-	BopeSetting.TypeButton start_2 = create_button("Tes2t", true);
+	BopeSetting.TypeButton button_1 = create_button("button1", true);
+	BopeSetting.TypeButton button_2 = create_button("button2", true);
 
 	public BopeModuleTest() {
 		super("Module Test", BopeCategory.Category.BOPE_CHAT);
@@ -37,9 +37,12 @@ public class BopeModuleTest extends BopeModule {
 
 	@Override
 	public void onUpdate() {
-		if (start.getValue()) {
-
-			BopeMessage.send_client_message("Turn off it KKKKKKKKKKKKKKKKKKKKKK");
+		if (button_1.getValue()) {
+			if (button_2.getValue()) {
+				BopeMessage.send_client_message("Button 2 on");
+			} else {
+				BopeMessage.send_client_message("Button 2 off");
+			}
 		}
 	}
 }

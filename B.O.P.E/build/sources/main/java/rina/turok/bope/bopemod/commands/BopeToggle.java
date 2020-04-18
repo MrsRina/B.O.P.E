@@ -21,7 +21,7 @@ public class BopeToggle extends BopeCommand {
 			String module = message[1];
 
 			try {
-				Bope.get_instance().module_manager.get_module(module).toggle();
+				Bope.get_instance().module_manager.get_module_with_tag(module).toggle();
 			} catch (Exception exc) {
 				BopeMessage.send_client_error_message("This module not exist.");
 			}

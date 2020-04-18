@@ -87,21 +87,14 @@ public class BopeConfig {
 			JsonObject BOPE_CONFIG_INFO  = new JsonObject();
 			JsonObject BOPE_SETTING_INFO = new JsonObject();
 
-			JsonObject BOPE_INTEGER_INFO  = new JsonObject();
 			JsonObject BOPE_DOUBLE_INFO   = new JsonObject();
-			JsonObject BOPE_BUTTON_INFO   = new JsonObject();
 			JsonObject BOPE_STRING_INFO   = new JsonObject();
 			JsonObject BOPE_COMBOBOX_INFO = new JsonObject();
 
 			BOPE_CONFIG_INFO.addProperty("parent", settings.getParent().get_name_tag());
 
 			if (settings.getType().equals(BopeSetting.SettingType.INT)) {
-				BOPE_INTEGER_INFO.add("name",  new JsonPrimitive(((BopeSetting.TypeInteger) settings).getName()));
-				BOPE_INTEGER_INFO.add("value", new JsonPrimitive(((BopeSetting.TypeInteger) settings).getValue()));
-				BOPE_INTEGER_INFO.add("min",   new JsonPrimitive(((BopeSetting.TypeInteger) settings).getMin()));
-				BOPE_INTEGER_INFO.add("max",   new JsonPrimitive(((BopeSetting.TypeInteger) settings).getMax()));
-				
-				BOPE_CONFIG_INFO.add("integer", BOPE_INTEGER_INFO);
+				JsonObject BOPE_INTEGER_INFO = new JsonObject();
 			}
 
 			if (settings.getType().equals(BopeSetting.SettingType.DOUBLE)) {
@@ -114,10 +107,14 @@ public class BopeConfig {
 			}
 
 			if (settings.getType().equals(BopeSetting.SettingType.BUTTON)) {
-				BOPE_BUTTON_INFO.add("name",  new JsonPrimitive(((BopeSetting.TypeButton) settings).getName()));
-				BOPE_BUTTON_INFO.add("value", new JsonPrimitive(((BopeSetting.TypeButton) settings).getValue()));
-				
-				BOPE_CONFIG_INFO.add("buttons", BOPE_BUTTON_INFO);
+				for (BopeSetting.TypeButton button : Bope.get_setting_manager().get_settings_from(settings.getParent(), BopeSetting.SettingType.BUTTON)) {
+					JsonObject BOPE_BUTTON_INFO = new JsonObject();
+
+					BOPE_BUTTON_INFO.add("name",  new JsonPrimitive(button.getName()));
+					BOPE_BUTTON_INFO.add("value", new JsonPrimitive(button.getValue()));
+					
+					BOPE_CONFIG_INFO.add("buttons", BOPE_BUTTON_INFO);
+				}
 			}
 
 			if (settings.getType().equals(BopeSetting.SettingType.STRING)) {
@@ -164,7 +161,7 @@ public class BopeConfig {
 		JsonObject BOPE_MAIN_JSON   = new JsonObject();
 		JsonObject BOPE_MODULE_JSON = new JsonObject();
 
-		for (BopeModule module : Bope.get_module_manager().get_modules()) {
+		for (BopeModule module : Bope.get_module_manager().get_array_modules()) {
 			JsonObject BOPE_MODULE_INFO = new JsonObject();
 
 			BOPE_MODULE_INFO.add("int",    new JsonPrimitive(module.get_int_bind()));

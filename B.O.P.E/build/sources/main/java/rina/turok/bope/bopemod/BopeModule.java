@@ -40,10 +40,10 @@ import rina.turok.bope.external.BopeEventBus;
 */
 public class BopeModule {
 	public String name;
-	public String tag;
+	public String name_tag;
 	public String description;
 
-	public BopeCategory category;
+	public BopeCategory.Category category;
 
 	public boolean state_module;
 
@@ -51,14 +51,14 @@ public class BopeModule {
 
 	public final Minecraft mc = Minecraft.getMinecraft();
 
-	public BopeModule(String name, BopeCategory category_module) {
+	public BopeModule(String name, BopeCategory.Category category_module) {
 		name     = name;
 		bind     = new TurokBind(name, "tag", -1);
 		category = category_module;
 	}
 
 	public void module_info(String tag, String description) {
-		tag          = tag;
+		name_tag     = tag;
 		description  = description;
 		state_module = false;
 	}
@@ -164,7 +164,7 @@ public class BopeModule {
 	}
 
 	public String get_tag() {
-		return tag;
+		return name_tag;
 	}
 
 	public String get_description() {
@@ -189,7 +189,7 @@ public class BopeModule {
 		}
 	}
 
-	public BopeCategory get_category() {
+	public BopeCategory.Category get_category() {
 		return category;
 	}
 }

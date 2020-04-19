@@ -24,8 +24,6 @@ import rina.turok.bope.bopemod.BopeMessage;
 public class BopeCommandManager {
 	String tag;
 
-	private Minecraft mc = Minecraft.getMinecraft();
-
 	public static BopeListCommand command_list;
 
 	public BopeCommandManager(String tag) {
@@ -53,22 +51,18 @@ public class BopeCommandManager {
 
 		boolean true_command = false;
 
-		if (message_args.length > 0) {		
+		if (message_args.length > 0) {
+			event.setCanceled(true);
+			
 			for (BopeCommand command : command_list.get_pure_command_list()) {
 				try {
 					if (command_list.get_message(event.getMessage())[0].equalsIgnoreCase(command.get_name())) {
-						event.setCanceled(true);
-
-						mc.ingameGUI.getChatGUI().addToSentMessages(event.getMessage());
-
 						true_command = command.get_message(command_list.get_message(event.getMessage()));
 					}
 				} catch (Exception exc) {} // Somes gays problems.
 			}
 
 			if (!true_command && command_list.has_prefix(event.getMessage())) {
-				event.setCanceled(true);
-				
 				BopeMessage.send_client_message("Try use .help or talk with Rina or Cyro.");
 
 				true_command = false;

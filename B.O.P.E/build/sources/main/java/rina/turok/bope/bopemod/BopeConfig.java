@@ -32,17 +32,17 @@ import rina.turok.bope.Bope;
  *
  */
 public class BopeConfig {
-	private static String BOPE_FOLDER_CONFIG = "B.O.P.E/";
-	private static String BOPE_FILE_CONFIGS  = "Configs.json";
-	private static String BOPE_FILE_BINDS    = "Binds.json";
+	public static String BOPE_FOLDER_CONFIG = "B.O.P.E/";
+	public static String BOPE_FILE_CONFIGS  = "Configs.json";
+	public static String BOPE_FILE_BINDS    = "Binds.json";
 
-	private static String BOPE_ABS_CONFIGS = (BOPE_FOLDER_CONFIG + BOPE_FILE_CONFIGS);
-	private static String BOPE_ABS_FOLDER  = (BOPE_FOLDER_CONFIG);
-	private static String BOPE_ABS_BINDS   = (BOPE_FOLDER_CONFIG + BOPE_FILE_BINDS);
+	public static String BOPE_ABS_CONFIGS = (BOPE_FOLDER_CONFIG + BOPE_FILE_CONFIGS);
+	public static String BOPE_ABS_FOLDER  = (BOPE_FOLDER_CONFIG);
+	public static String BOPE_ABS_BINDS   = (BOPE_FOLDER_CONFIG + BOPE_FILE_BINDS);
 
-	private static Path PATH_CONFIGS = Paths.get(BOPE_ABS_CONFIGS);
-	private static Path PATH_FOLDER  = Paths.get(BOPE_ABS_FOLDER);
-	private static Path PATH_BINDS   = Paths.get(BOPE_ABS_BINDS);
+	public static Path PATH_CONFIGS = Paths.get(BOPE_ABS_CONFIGS);
+	public static Path PATH_FOLDER  = Paths.get(BOPE_ABS_FOLDER);
+	public static Path PATH_BINDS   = Paths.get(BOPE_ABS_BINDS);
 
 	public static void BOPE_VERIFY_FOLDER_CONFIGS() throws IOException {
 		if (!Files.exists(PATH_FOLDER)) {
@@ -82,26 +82,6 @@ public class BopeConfig {
 		JsonObject BOPE_SETTING_JSON = new JsonObject();
 
 		// INT, DOUBLE, BUTTON, STRING, COMBOBOX
-
-		for (BopeSetting settings : Bope.get_setting_manager().get_list_settings()) {
-			JsonObject BOPE_MODULE_SETTINGS = new JsonObject();
-
-			BOPE_MODULE_SETTINGS.add("parent", new JsonPrimitive(settings.getParent().get_tag()));
-
-			if (settings.getType().equals(BopeSetting.SettingType.BUTTON)) {
-				JsonObject BOPE_ALL_SETTING_BUTTONS = new JsonObject();
-
-				BopeSetting.TypeButton buttons = ((BopeSetting.TypeButton) settings);
-
-				BOPE_ALL_SETTING_BUTTONS.add("value", new JsonPrimitive(buttons.getValue()));
-
-				BOPE_MODULE_SETTINGS.add("buttons", BOPE_ALL_SETTING_BUTTONS);
-			}
-
-			BOPE_SETTING_JSON.add(settings.getParent().get_tag(), BOPE_MODULE_SETTINGS);
-		}
-
-		BOPE_MAIN_JSON.add("modules", BOPE_SETTING_JSON);
 
 		JsonElement BOPE_MAIN_PRETTY_JSON = BOPE_PARSER.parse(BOPE_MAIN_JSON.toString());
 

@@ -16,7 +16,7 @@ public class TurokGL {
 		GL11.glBlendFunc(GL11.GL_SRC_ALPHA, GL11.GL_ONE_MINUS_SRC_ALPHA);
 		
 		GlStateManager.tryBlendFuncSeparate(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA, GlStateManager.SourceFactor.ONE, GlStateManager.DestFactor.ZERO);
-		GlStateManager.glLineWidth(1.5f);
+		GlStateManager.glLineWidth(1.5F);
 		GlStateManager.disableTexture2D();
 		GlStateManager.depthMask(false);
 		GlStateManager.enableBlend();

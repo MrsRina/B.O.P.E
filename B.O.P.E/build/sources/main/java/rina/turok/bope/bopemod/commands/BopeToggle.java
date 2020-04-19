@@ -12,11 +12,6 @@ import rina.turok.bope.Bope;
 *
 */
 public class BopeToggle extends BopeCommand {
-	String module_toggled;
-	String module_state;
-
-	boolean is_real_module;
-
 	public BopeToggle() {
 		super("t", "Toggle module.");
 	}
@@ -24,25 +19,11 @@ public class BopeToggle extends BopeCommand {
 	public boolean get_message(String[] message) {
 		if (message.length > 1) {
 			String module = message[1];
-			
-			module_toggled = "null";
-			module_state   = "null";
-			is_real_module = false;
 
-			Bope.get_module_manager().get_array_modules().stream().forEach(module_requested -> {
-				if (module_requested.get_tag().equalsIgnoreCase(module)) {
-					module_requested.toggle();
-
-					is_real_module = true;
-					module_toggled = module_requested.get_tag();
-					module_state   = Boolean.toString(module_requested.is_active()); 
-				}
-			});
-
-			if (is_real_module != false) {
-				BopeMessage.send_client_error_message("It module not exist.");
-			} else {
-				BopeMessage.send_client_message("The module " + module_toggled + " is now " + module_state + ".");
+			try {
+				Bope.get_instance().module_manager.get_module_with_tag(module).toggle();
+			} catch (Exception exc) {
+				BopeMessage.send_client_error_message("This module not exist.");
 			}
 		} else {
 			BopeMessage.send_client_message(Bope.get_instance().command_manager.get_prefix() + "t module name.");

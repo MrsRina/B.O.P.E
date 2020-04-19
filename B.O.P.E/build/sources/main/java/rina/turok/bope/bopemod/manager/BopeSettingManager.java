@@ -39,7 +39,7 @@ public class BopeSettingManager {
         return settings.stream().filter(s -> s.getParent().equals(parent)).filter(s -> s.getType().equals(type)).collect(Collectors.toList());
     }
 
-    public List<BopeSetting> get_list_settings(){
+    public List<BopeSetting> convert_to_list(){
         return settings;
     }
 

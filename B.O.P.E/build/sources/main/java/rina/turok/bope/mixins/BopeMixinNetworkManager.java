@@ -22,9 +22,6 @@ import rina.turok.bope.external.BopeEventBus;
 * Created by Rina.
 * 08/04/20.
 *
-* I used like reference the mixins of KAMI.
-* All rights for 086, thanks!
-*
 */
 @Mixin(value = NetworkManager.class)
 public class BopeMixinNetworkManager {

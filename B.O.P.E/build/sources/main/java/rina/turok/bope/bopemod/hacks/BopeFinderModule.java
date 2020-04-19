@@ -1,7 +1,7 @@
 package rina.turok.bope.bopemod.hacks;
 
 // Modules.
-import rina.turok.bope.bopemod.hacks.BopeCategory;
+import rina.turok.bope.bopemod.hacks.BopeCategory.Category;
 
 // Events.
 import rina.turok.bope.bopemod.events.BopeEventRender;
@@ -22,7 +22,7 @@ import rina.turok.bope.Bope;
 */
 public class BopeFinderModule extends BopeModule {
 	public BopeFinderModule() {
-		super("B.O.PE", BopeCategory.BOPE_HIDDEN);
+		super("B.O.PE", Category.BOPE_HIDDEN);
 
 		module_info (
 			"B.O.P.E",

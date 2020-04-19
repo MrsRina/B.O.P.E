@@ -61,8 +61,6 @@ public class BopeModule {
 		name_tag     = tag;
 		description  = description;
 		state_module = false;
-
-		BopeConfig.load_bind(name_tag);
 	}
 
 	protected BopeSetting.TypeButton create_button(String name, boolean default_) {
@@ -165,7 +163,7 @@ public class BopeModule {
 		return name;
 	}
 
-	public String get_name_tag() {
+	public String get_tag() {
 		return name_tag;
 	}
 

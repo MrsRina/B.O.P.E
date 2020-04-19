@@ -72,14 +72,14 @@ public class BopeModuleManager {
 		return array_module;
 	}
 
-	public static Vec3d process(Entity entity, double x, double y, double z) {
+	public Vec3d process(Entity entity, double x, double y, double z) {
 		return new Vec3d(
 			(entity.posX - entity.lastTickPosX) * x,
 			(entity.posY - entity.lastTickPosY) * y,
 			(entity.posZ - entity.lastTickPosZ) * z);
 	}
 
-	public static Vec3d get_interpolated_pos(Entity entity, double ticks) {
+	public Vec3d get_interpolated_pos(Entity entity, double ticks) {
 		return new Vec3d(entity.lastTickPosX, entity.lastTickPosY, entity.lastTickPosZ).add(process(entity, ticks, ticks, ticks)); // x, y, z.
 	}
 
@@ -153,12 +153,12 @@ public class BopeModuleManager {
 		});
 	}
 
-	public static BopeModule get_module_with_tag(String tag) {
+	public BopeModule get_module_with_tag(String tag) {
 		BopeModule module_requested = null;
 
 		for (BopeModule module : get_array_modules()) {
 			if (module.get_tag().equalsIgnoreCase(tag)) {
-				module_requested = module.class;
+				module_requested = module;
 			}
 		}
 

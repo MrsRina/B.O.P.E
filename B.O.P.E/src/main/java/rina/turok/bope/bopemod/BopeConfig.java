@@ -112,7 +112,7 @@ public class BopeConfig {
 			BOPE_MODULE_INFO.add("string", new JsonPrimitive(module.get_string_bind()));
 			BOPE_MODULE_INFO.add("state",  new JsonPrimitive(module.is_active()));
 
-			BOPE_MODULE_JSON.add(module.get_name_tag(), BOPE_MODULE_INFO);
+			BOPE_MODULE_JSON.add(module.get_tag(), BOPE_MODULE_INFO);
 		}
 
 		BOPE_MAIN_JSON.add("modules", BOPE_MODULE_JSON);

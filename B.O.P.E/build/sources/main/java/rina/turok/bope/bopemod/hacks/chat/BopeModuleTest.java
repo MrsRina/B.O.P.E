@@ -27,7 +27,7 @@ public class BopeModuleTest extends BopeModule {
 	BopeSetting.TypeButton button_2 = create_button("button2", true);
 
 	public BopeModuleTest() {
-		super("Module Test", BopeCategory.BOPE_CHAT);
+		super("Module Test", BopeCategory.Category.BOPE_CHAT);
 
 		module_info(
 			"ModuleTest",

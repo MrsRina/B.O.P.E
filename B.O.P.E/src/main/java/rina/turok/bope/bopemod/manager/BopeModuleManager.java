@@ -8,8 +8,6 @@ import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.Minecraft;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.entity.Entity;
-
-import org.reflections.Reflections;
 import org.lwjgl.opengl.GL11;
 
 // Events.
@@ -48,74 +46,47 @@ public class BopeModuleManager {
 
 	public static ArrayList<BopeModule> array_module = new ArrayList<BopeModule>();
 
-	static HashMap<String, BopeModule> hash_module = new HashMap<>();
-
 	public static Minecraft mc = Minecraft.getMinecraft();
 
 	public BopeModuleManager(String tag) {
 		this.tag = tag;
 
 		// Chat.
-		init_bope_chat_modules();
+		add_module(new BopeModuleTest());
 
 		// Combat.
 		// init_bope_combat_modules();
 
 		// Exploit.
-		init_bope_exploit_modules();
+		add_module(new BopeExtraInventory());
 
 		// Render.
 		// init_bope_render_modules();
-
-		// Update hash modules.
-		initialize_name_modules();
 	}
-
-	public void init_bope_chat_modules() {
-		add_module(new BopeModuleTest());
-	}
-
-	public void init_bope_combat_modules() {}
-
-	public void init_bope_exploit_modules() {
-		add_module(new BopeExtraInventory());
-	}
-
-	public void init_bope_render_modules() {}
 
 	public void add_module(BopeModule module) {
 		array_module.add(module);
-	}
-
-	public void initialize_name_modules() {
-		hash_module.clear();
-
-		for (BopeModule modules : array_module) {
-			hash_module.put(modules.get_tag().toLowerCase(), modules);
-		}
 	}
 
 	public ArrayList<BopeModule> get_array_modules() {
 		return array_module;
 	}
 
-	public static BopeModule get_module_with_tag(String module) {
-		return hash_module.get(module.toLowerCase());
+	public static Vec3d process(Entity entity, double x, double y, double z) {
+		return new Vec3d(
+			(entity.posX - entity.lastTickPosX) * x,
+			(entity.posY - entity.lastTickPosY) * y,
+			(entity.posZ - entity.lastTickPosZ) * z);
 	}
 
-	public void onBind(int event_key) {
-		if (event_key == 0) {
-			return;
-		}
-
-		array_module.forEach(module -> {
-			if (module.get_bind().pressed(event_key)) {
-				module.toggle();
-			}
-		});
+	public static Vec3d get_interpolated_pos(Entity entity, double ticks) {
+		return new Vec3d(entity.lastTickPosX, entity.lastTickPosY, entity.lastTickPosZ).add(process(entity, ticks, ticks, ticks)); // x, y, z.
 	}
 
 	public void onWorldRender(RenderWorldLastEvent event) {
+		mc.profiler.startSection("bope");
+		mc.profiler.startSection("setup");
+
 		GlStateManager.disableTexture2D();
 		GlStateManager.enableBlend();
 		GlStateManager.disableAlpha();
@@ -131,9 +102,17 @@ public class BopeModuleManager {
 
 		event_render.reset_translation();
 
-		array_module.stream().filter(module -> module.is_active()).forEach(module -> {
+		mc.profiler.endSection();
+
+		get_array_modules().stream().filter(module -> module.is_active()).forEach(module -> {
+			mc.profiler.startSection(module.get_name());
+
 			module.onWorldRender(event_render);
+
+			mc.profiler.endSection();
 		});
+
+		mc.profiler.startSection("release");
 
 		GlStateManager.glLineWidth(1f);
 
@@ -145,28 +124,44 @@ public class BopeModuleManager {
 		GlStateManager.enableCull();
 
 		TurokRenderHelp.release_gl();
+
+		mc.profiler.endSection();
+		mc.profiler.endSection();
 	}
 
 	public void onUpdate() {
-		array_module.stream().filter(module -> module.is_active()).forEach(module -> module.onUpdate());
+		get_array_modules().stream().filter(BopeModule::is_active).forEach(BopeModule::onUpdate);
 	}
 
 	public void onRender() {
-		array_module.stream().filter(module -> module.is_active()).forEach(module -> module.onRender());
-	}
-
-	public static Vec3d process(Entity entity, double x, double y, double z) {
-		return new Vec3d(
-			(entity.posX - entity.lastTickPosX) * x,
-			(entity.posY - entity.lastTickPosY) * y,
-			(entity.posZ - entity.lastTickPosZ) * z);
-	}
-
-	public static Vec3d get_interpolated_pos(Entity entity, double ticks) {
-		return new Vec3d(entity.lastTickPosX, entity.lastTickPosY, entity.lastTickPosZ).add(process(entity, ticks, ticks, ticks)); // x, y, z.
+		get_array_modules().stream().filter(BopeModule::is_active).forEach(BopeModule::onRender);
 	}
 
 	public String get_tag() {
 		return this.tag;
+	}
+
+	public void onBind(int event_key) {
+		if (event_key == 0) {
+			return;
+		}
+
+		get_array_modules().forEach(module -> {
+			if (module.get_bind().pressed(event_key)) {
+				module.toggle();
+			}
+		});
+	}
+
+	public static BopeModule get_module_with_tag(String tag) {
+		BopeModule module_requested = null;
+
+		for (BopeModule module : get_array_modules()) {
+			if (module.get_tag().equalsIgnoreCase(tag)) {
+				module_requested = module.class;
+			}
+		}
+
+		return module_requested;
 	}
 }

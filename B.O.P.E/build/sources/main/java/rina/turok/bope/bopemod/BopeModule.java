@@ -43,7 +43,7 @@ public class BopeModule {
 	public String tag;
 	public String description;
 
-	public BopeCategory.Category category;
+	public BopeCategory category;
 
 	public boolean state_module;
 
@@ -51,7 +51,7 @@ public class BopeModule {
 
 	public final Minecraft mc = Minecraft.getMinecraft();
 
-	public BopeModule(String name, BopeCategory.Category category_module) {
+	public BopeModule(String name, BopeCategory category_module) {
 		name     = name;
 		bind     = new TurokBind(name, "tag", -1);
 		category = category_module;
@@ -61,8 +61,6 @@ public class BopeModule {
 		tag          = tag;
 		description  = description;
 		state_module = false;
-
-		BopeConfig.load_bind(tag);
 	}
 
 	protected BopeSetting.TypeButton create_button(String name, boolean default_) {
@@ -191,7 +189,7 @@ public class BopeModule {
 		}
 	}
 
-	public BopeCategory.Category get_category() {
+	public BopeCategory get_category() {
 		return category;
 	}
 }

@@ -16,7 +16,7 @@ import rina.turok.bope.Bope;
 	}
 
 	public boolean get_message(String[] message) {
-		if (message.length > 1) {
+		if (message.length >= 1) {
 			String prefix = message[1];
 
 			Bope.get_instance().command_manager.set_prefix(prefix);

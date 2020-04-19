@@ -1,0 +1,121 @@
+Unsupposrted library path: C:\Users\SrRina\Documents\B.O.P.E\B.O.P.E\build\classes\api
+Unsupposrted library path: C:\Users\SrRina\Documents\B.O.P.E\B.O.P.E\build\resources\api
+Symbol range map extraction starting
+Processing 39 files
+startProcessing "rina/turok/bope/Bope.java" md5: 083204eefb5f747638745bc603c7bf6a
+endProcessing "rina/turok/bope/Bope.java"
+
+startProcessing "rina/turok/bope/BopeEventRegister.java" md5: fe9c6818b1598ca2e7eb75c65e94031a
+endProcessing "rina/turok/bope/BopeEventRegister.java"
+
+startProcessing "rina/turok/bope/BopeMixinLoader.java" md5: 41221e1ecbbb7cfc36f0f33fa7a7fb29
+endProcessing "rina/turok/bope/BopeMixinLoader.java"
+
+startProcessing "rina/turok/bope/bopemod/BopeCommand.java" md5: 781bde782e7f45a6184fd4b7e953b87a
+endProcessing "rina/turok/bope/bopemod/BopeCommand.java"
+
+startProcessing "rina/turok/bope/bopemod/BopeConfig.java" md5: a02b50b69dd3c0c68ff0c4126ca985a9
+endProcessing "rina/turok/bope/bopemod/BopeConfig.java"
+
+startProcessing "rina/turok/bope/bopemod/BopeMessage.java" md5: b11555db2de331ceac75463c99f9a824
+endProcessing "rina/turok/bope/bopemod/BopeMessage.java"
+
+startProcessing "rina/turok/bope/bopemod/BopeModule.java" md5: 2134bd49512080fa3c7e21e3c528eb4b
+endProcessing "rina/turok/bope/bopemod/BopeModule.java"
+
+startProcessing "rina/turok/bope/bopemod/BopeSetting.java" md5: 7638aa4fe0394a229c77fb2e4f6bc882
+endProcessing "rina/turok/bope/bopemod/BopeSetting.java"
+
+startProcessing "rina/turok/bope/bopemod/commands/BopeBind.java" md5: 9601f6727db3fdb73b0dea7381f806f8
+endProcessing "rina/turok/bope/bopemod/commands/BopeBind.java"
+
+startProcessing "rina/turok/bope/bopemod/commands/BopeListCommand.java" md5: 6c020b35d99be72856247e6845e0bcaa
+endProcessing "rina/turok/bope/bopemod/commands/BopeListCommand.java"
+
+startProcessing "rina/turok/bope/bopemod/commands/BopePrefix.java" md5: 1997af45fc4600a2448e585544792fbb
+endProcessing "rina/turok/bope/bopemod/commands/BopePrefix.java"
+
+startProcessing "rina/turok/bope/bopemod/commands/BopeSetButton.java" md5: 4c0cd87ef63cb8af69bd0aef3a53482d
+endProcessing "rina/turok/bope/bopemod/commands/BopeSetButton.java"
+
+startProcessing "rina/turok/bope/bopemod/commands/BopeSetSlider.java" md5: 7acea80345dc8b086e4a219270805be8
+endProcessing "rina/turok/bope/bopemod/commands/BopeSetSlider.java"
+
+startProcessing "rina/turok/bope/bopemod/commands/BopeSettings.java" md5: 80331f4d7fe3cc89d73a9d5ba88c1430
+endProcessing "rina/turok/bope/bopemod/commands/BopeSettings.java"
+
+startProcessing "rina/turok/bope/bopemod/commands/BopeToggle.java" md5: 8b890199f8714cb3b12c0e9cdea98529
+endProcessing "rina/turok/bope/bopemod/commands/BopeToggle.java"
+
+startProcessing "rina/turok/bope/bopemod/events/BopeEventPacket.java" md5: cff0d84b917fc68e757fe124afcbb006
+endProcessing "rina/turok/bope/bopemod/events/BopeEventPacket.java"
+
+startProcessing "rina/turok/bope/bopemod/events/BopeEventRender.java" md5: 24f83ebfcb19e2bad8f1d2d402893520
+endProcessing "rina/turok/bope/bopemod/events/BopeEventRender.java"
+
+startProcessing "rina/turok/bope/bopemod/hacks/BopeCategory.java" md5: 60363b96ca095796f24ce73c6c1b5594
+endProcessing "rina/turok/bope/bopemod/hacks/BopeCategory.java"
+
+startProcessing "rina/turok/bope/bopemod/hacks/BopeFinderModule.java" md5: f743d404d490c4a11b358ef5a5341dc2
+endProcessing "rina/turok/bope/bopemod/hacks/BopeFinderModule.java"
+
+startProcessing "rina/turok/bope/bopemod/hacks/chat/BopeModuleTest.java" md5: f6f72f3303f15c4bca981e5be50d83d9
+endProcessing "rina/turok/bope/bopemod/hacks/chat/BopeModuleTest.java"
+
+startProcessing "rina/turok/bope/bopemod/hacks/exploit/BopeExtraInventory.java" md5: 5b77a10046513ea84064fc5f170f50e8
+endProcessing "rina/turok/bope/bopemod/hacks/exploit/BopeExtraInventory.java"
+
+startProcessing "rina/turok/bope/bopemod/manager/BopeCommandManager.java" md5: 087f79bdac247ec1c512e93ef798c11b
+endProcessing "rina/turok/bope/bopemod/manager/BopeCommandManager.java"
+
+startProcessing "rina/turok/bope/bopemod/manager/BopeEventManager.java" md5: eb0be32bfbc05e9d52d41010989ed598
+endProcessing "rina/turok/bope/bopemod/manager/BopeEventManager.java"
+
+startProcessing "rina/turok/bope/bopemod/manager/BopeModuleManager.java" md5: 95f2cb0304a1ff8472cbbbf8d37aeefe
+endProcessing "rina/turok/bope/bopemod/manager/BopeModuleManager.java"
+
+startProcessing "rina/turok/bope/bopemod/manager/BopeSettingManager.java" md5: ae4fc8a2a3bf0b4dcfed3422159e3a18
+endProcessing "rina/turok/bope/bopemod/manager/BopeSettingManager.java"
+
+startProcessing "rina/turok/bope/external/BopeEventBus.java" md5: 43cb3f7136d46ff109a1196d73eb3933
+endProcessing "rina/turok/bope/external/BopeEventBus.java"
+
+startProcessing "rina/turok/bope/external/BopeEventCancellable.java" md5: abfc217410f84ee1d5376629be5a3c1f
+endProcessing "rina/turok/bope/external/BopeEventCancellable.java"
+
+startProcessing "rina/turok/bope/external/BopeEventHandler.java" md5: 2fb23c87084d08b974d98d420a4f1e17
+endProcessing "rina/turok/bope/external/BopeEventHandler.java"
+
+startProcessing "rina/turok/bope/external/BopeNoPacketKick.java" md5: a50e11d1bd33ce4652242cabf11e02d3
+endProcessing "rina/turok/bope/external/BopeNoPacketKick.java"
+
+startProcessing "rina/turok/bope/framework/TurokBind.java" md5: eb3346d095b0f63d24ab6b21c92bf7f2
+endProcessing "rina/turok/bope/framework/TurokBind.java"
+
+startProcessing "rina/turok/bope/framework/TurokBoolean.java" md5: 203f630f9cd67c8cf1a6891c5d1ba6c0
+endProcessing "rina/turok/bope/framework/TurokBoolean.java"
+
+startProcessing "rina/turok/bope/framework/TurokDouble.java" md5: 3dd0c050e024eaada0a64fad139c8878
+endProcessing "rina/turok/bope/framework/TurokDouble.java"
+
+startProcessing "rina/turok/bope/framework/TurokEnum.java" md5: d90cb7bbe53619f116f5c806ad318e84
+endProcessing "rina/turok/bope/framework/TurokEnum.java"
+
+startProcessing "rina/turok/bope/framework/TurokFloat.java" md5: e0b4c6b1422b2e16b710d2190836848f
+endProcessing "rina/turok/bope/framework/TurokFloat.java"
+
+startProcessing "rina/turok/bope/framework/TurokGL.java" md5: 614b6e6cd79be80fb49069935a533731
+endProcessing "rina/turok/bope/framework/TurokGL.java"
+
+startProcessing "rina/turok/bope/framework/TurokInt.java" md5: 906df2210082a1a6f07a5be563c9f41d
+endProcessing "rina/turok/bope/framework/TurokInt.java"
+
+startProcessing "rina/turok/bope/framework/TurokRenderHelp.java" md5: 6130349ac717b198c5e54636147c1d94
+endProcessing "rina/turok/bope/framework/TurokRenderHelp.java"
+
+startProcessing "rina/turok/bope/framework/TurokString.java" md5: 56ec2454fc1e273f86a87c7c0bb6a83b
+endProcessing "rina/turok/bope/framework/TurokString.java"
+
+startProcessing "rina/turok/bope/mixins/BopeMixinNetworkManager.java" md5: 273f1a92bcde32f44bcdd0edb3e59891
+endProcessing "rina/turok/bope/mixins/BopeMixinNetworkManager.java"
+

@@ -53,10 +53,12 @@ public class Bope {
 	public void BopeStarting(FMLInitializationEvent event) {
 		init_log("BOPE");
 
-		send_log("loading client core, external, data...");
+		send_log("Client starting...");
 
 		// Init BopeEventHandler.
 		BopeEventHandler.INSTANCE = new BopeEventHandler();
+
+		send_log("initializing managers.");
 
 		// Init managers.
 		setting_manager = new BopeSettingManager("Setting manager");
@@ -64,13 +66,17 @@ public class Bope {
 		command_manager = new BopeCommandManager("command manager");
 		event_h_manager = new BopeEventManager("event handler manager");
 
-		send_log("managers are started");
+		send_log("Managers are started.");
+
+		send_log("Registering events.");
 
 		// Register event modules and manager.
 		BopeEventRegister.register_command_manager(command_manager);
 		BopeEventRegister.register_module_manager(event_h_manager);
 
-		send_log("events are registered.");
+		send_log("Events are registared.");
+
+		send_log("Client started no problems.");
 	}
 
 	public void init_log(String name) {
@@ -84,7 +90,7 @@ public class Bope {
 	}
 
 	public static void send_log(String log) {
-		bope_register_log.info(" - " + BOPE_NAME + BOPE_SPACE + log);
+		bope_register_log.info(log);
 	}
 
 	public static String get_version() {

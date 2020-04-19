@@ -29,7 +29,7 @@ public class BopeBind extends BopeCommand {
 
 				BopeMessage.send_client_message("The bind of module " + module_requested.get_name() + " is now " + module_requested.get_string_bind());
 			} else {
-				BopeMessage.send_error_client_message("It module not exist, or the key is not valid. " + module_requested.get_name() + " " + module_requested.get_string_bind());
+				BopeMessage.send_client_error_message("It module not exist, or the key is not valid. " + module_requested.get_name() + " " + module_requested.get_string_bind());
 			}
 		}
 

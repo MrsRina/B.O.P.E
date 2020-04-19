@@ -40,7 +40,7 @@ import rina.turok.bope.external.BopeEventBus;
 */
 public class BopeModule {
 	public String name;
-	public String tag;
+	public String name_tag;
 	public String description;
 
 	public BopeCategory.Category category;
@@ -58,11 +58,11 @@ public class BopeModule {
 	}
 
 	public void module_info(String tag, String description) {
-		tag          = tag;
+		name_tag     = tag;
 		description  = description;
 		state_module = false;
 
-		BopeConfig.load_bind(tag);
+		BopeConfig.load_bind(name_tag);
 	}
 
 	protected BopeSetting.TypeButton create_button(String name, boolean default_) {
@@ -165,8 +165,8 @@ public class BopeModule {
 		return name;
 	}
 
-	public String get_tag() {
-		return tag;
+	public String get_name_tag() {
+		return name_tag;
 	}
 
 	public String get_description() {

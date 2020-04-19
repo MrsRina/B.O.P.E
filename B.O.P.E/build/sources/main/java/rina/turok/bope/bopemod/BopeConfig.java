@@ -84,7 +84,6 @@ public class BopeConfig {
 		// INT, DOUBLE, BUTTON, STRING, COMBOBOX
 
 		for (BopeSetting settings : Bope.get_setting_manager().get_list_settings()) {
-			JsonObject BOPE_MAIN_MODULES    = new JsonObject();
 			JsonObject BOPE_MODULE_SETTINGS = new JsonObject();
 
 			BOPE_MODULE_SETTINGS.add("parent", new JsonPrimitive(settings.getParent().get_tag()));
@@ -99,10 +98,10 @@ public class BopeConfig {
 				BOPE_MODULE_SETTINGS.add("buttons", BOPE_ALL_SETTING_BUTTONS);
 			}
 
-			BOPE_MAIN_MODULES.add(settings.getParent().get_tag(), BOPE_MODULE_SETTINGS);
+			BOPE_SETTING_JSON.add(settings.getParent().get_tag(), BOPE_MODULE_SETTINGS);
 		}
 
-		BOPE_MAIN_JSON.add("modules", BOPE_MAIN_MODULES);
+		BOPE_MAIN_JSON.add("modules", BOPE_SETTING_JSON);
 
 		JsonElement BOPE_MAIN_PRETTY_JSON = BOPE_PARSER.parse(BOPE_MAIN_JSON.toString());
 

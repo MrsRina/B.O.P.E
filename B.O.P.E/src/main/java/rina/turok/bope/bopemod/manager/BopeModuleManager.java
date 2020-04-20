@@ -1,14 +1,13 @@
 package rina.turok.bope.bopemod.manager;
 
-import java.lang.reflect.InvocationTargetException;
-import java.util.*;
-
 import net.minecraftforge.client.event.RenderWorldLastEvent;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.Minecraft;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.entity.Entity;
 import org.lwjgl.opengl.GL11;
+
+import java.util.*;
 
 // Events.
 import rina.turok.bope.bopemod.events.BopeEventRender;

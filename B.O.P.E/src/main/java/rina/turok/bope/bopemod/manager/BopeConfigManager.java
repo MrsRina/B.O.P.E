@@ -1,5 +1,11 @@
 package rina.turok.bope.bopemod.manager;
 
+// Data.
+import rina.turok.bope.bopemod.BopeConfig;
+
+// Core.
+import rina.turok.bope.Bope;
+
 /**
  *
  * @author Rina
@@ -13,6 +19,8 @@ public class BopeConfigManager {
 
 	public BopeConfigManager(String tag) {
 		this.tag = tag;
+
+		
 	}
 
 	public String get_tag() {

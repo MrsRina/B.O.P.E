@@ -83,6 +83,10 @@ public class BopeConfig {
 
 		// INT, DOUBLE, BUTTON, STRING, COMBOBOX
 
+		for (BopeSetting settings : Bope.get_setting_manager().get_list_settings()) {
+			JsonObject BOPE_MODULE
+		}
+
 		JsonElement BOPE_MAIN_PRETTY_JSON = BOPE_PARSER.parse(BOPE_MAIN_JSON.toString());
 
 		String BOPE_JSON = BOPE_GSON.toJson(BOPE_MAIN_PRETTY_JSON);
@@ -96,6 +100,13 @@ public class BopeConfig {
 		file.write(BOPE_JSON);
 
 		file.close();
+	}
+
+	public static void BOPE_LOAD_CONFIGS() throws IOException {
+		InputStream BOPE_JSON_FILE    = Files.newInputStream(PATH_CONFIGS);
+		JsonObject  BOPE_JSON         = new JsonParser().parse(new InputStreamReader(BOPE_JSON_FILE)).getAsJsonObject();
+
+		BOPE_JSON_FILE.close();
 	}
 
 	public static void BOPE_SAVE_BINDS() throws IOException {
@@ -130,13 +141,6 @@ public class BopeConfig {
 		file.write(BOPE_JSON);
 
 		file.close();
-	}
-
-	public static void BOPE_LOAD_CONFIGS() throws IOException {
-		InputStream BOPE_JSON_FILE    = Files.newInputStream(PATH_CONFIGS);
-		JsonObject  BOPE_JSON         = new JsonParser().parse(new InputStreamReader(BOPE_JSON_FILE)).getAsJsonObject();
-
-		BOPE_JSON_FILE.close();
 	}
 
 	public static void save() {

@@ -11,39 +11,28 @@ import rina.turok.bope.bopemod.BopeModule;
 // Core.
 import rina.turok.bope.Bope;
 
-/**
- * @author FINZ0
- *
- * Update by Rina in 15/04/2020.
- */
 public class BopeSettingManager {
-    String tag;
+	public ArrayList<BopeSetting> array_setting = new ArrayList<>();
+	
+	String tag;
 
-    private List<BopeSetting> settings;
+	public BopeSettingManager(String tag) {
+		this.tag = tag;
+	}
 
-    public BopeSettingManager(String tag) {
-        this.tag = tag;
+	public ArrayList<BopeSetting> get_array_settings() {
+		return array_setting;
+	}
 
-        settings = new ArrayList<>();
-    }
+	public BopeSetting get_setting_with_tag(String tag) {
+		BopeSetting setting_requested = null;
 
-    public void register(BopeSetting setting) {
-        settings.add(setting);
-    }
+		for (BopeSetting settings : get_array_settings()) {
+			if (settings.get_tag().equalsIgnoreCase(tag)) {
+				setting_requested = settings;
+			}
+		}
 
-    public BopeSetting get_setting_by_name_in(String name, BopeModule parent) {
-        return settings.stream().filter(s -> s.getParent().equals(parent)).filter(s -> s.getName().equalsIgnoreCase(name)).findFirst().orElse(null);
-    }
-
-    public List<BopeSetting> get_settings_from(BopeModule parent, BopeSetting.SettingType type) {
-        return settings.stream().filter(s -> s.getParent().equals(parent)).filter(s -> s.getType().equals(type)).collect(Collectors.toList());
-    }
-
-    public List<BopeSetting> convert_to_list(){
-        return settings;
-    }
-
-    public String get_tag() {
-        return this.tag;
-    }
+		return setting_requested;
+	}
 }

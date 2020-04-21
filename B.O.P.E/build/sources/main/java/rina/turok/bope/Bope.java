@@ -13,8 +13,12 @@ import org.lwjgl.opengl.Display;
 // Managers.
 import rina.turok.bope.bopemod.manager.BopeCommandManager;
 import rina.turok.bope.bopemod.manager.BopeSettingManager;
+import rina.turok.bope.bopemod.manager.BopeConfigManager;
 import rina.turok.bope.bopemod.manager.BopeModuleManager;
 import rina.turok.bope.bopemod.manager.BopeEventManager;
+
+// Data.
+import rina.turok.bope.bopemod.BopeSetting;
 
 // External.
 import rina.turok.bope.external.BopeEventHandler;
@@ -44,10 +48,11 @@ public class Bope {
 	public static Logger bope_register_log;
 
 	// Starting managers.
-	public static BopeModuleManager  module_manager;
-	public static BopeSettingManager setting_manager;
 	public static BopeCommandManager command_manager;
-	public static BopeEventManager   event_h_manager;
+	public static BopeSettingManager setting_manager;
+	public static BopeConfigManager  configs_manager;
+	public static BopeModuleManager  module_manager;
+	public static BopeEventManager   event_manager;
 
 	@Mod.EventHandler
 	public void BopeStarting(FMLInitializationEvent event) {
@@ -59,16 +64,17 @@ public class Bope {
 		BopeEventHandler.INSTANCE = new BopeEventHandler();
 
 		// Init managers.
-		setting_manager = new BopeSettingManager("Setting manager");
-		module_manager  = new BopeModuleManager("module manager");
-		command_manager = new BopeCommandManager("command manager");
-		event_h_manager = new BopeEventManager("event handler manager");
+		setting_manager = new BopeSettingManager("_g_a_y_____");
+		configs_manager = new BopeConfigManager ("___kkk_____");
+		command_manager = new BopeCommandManager("_____t_____");
+		module_manager  = new BopeModuleManager ("_____r_____");
+		event_manager   = new BopeEventManager  ("__u__e_____");
 
 		send_log("Managers are initialed.");
 
 		// Register event modules and manager.
 		BopeEventRegister.register_command_manager(command_manager);
-		BopeEventRegister.register_module_manager(event_h_manager);
+		BopeEventRegister.register_module_manager(event_manager);
 
 		send_log("Events registered.");
 		send_log("Client started.");

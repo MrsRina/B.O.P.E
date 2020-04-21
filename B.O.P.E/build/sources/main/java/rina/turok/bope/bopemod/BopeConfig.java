@@ -83,6 +83,27 @@ public class BopeConfig {
 
 		// INT, DOUBLE, BUTTON, STRING, COMBOBOX
 
+		for (BopeSetting settings : Bope.get_setting_manager().get_array_settings()) {
+			JsonObject BOPE_SETTING_INFO = new JsonObject();
+			JsonObject BOPE_BUTTON_JSON  = new JsonObject();
+
+			if (settings.get_type().get_name().equals("Button")) {
+				JsonObject BOPE_BUTTON_INFO  = new JsonObject();
+
+				BOPE_BUTTON_INFO.add("master", new JsonPrimitive(settings.get_master().get_tag()));
+				BOPE_BUTTON_INFO.add("name", new JsonPrimitive(settings.get_tag()));
+				BOPE_BUTTON_INFO.add("value", new JsonPrimitive(settings.get_button_value()));
+
+				BOPE_BUTTON_INFO.add(settings.get_tag(), BOPE_BUTTON_INFO);
+
+				BOPE_SETTING_INFO.add("buttons", BOPE_BUTTON_JSON);
+			}
+
+			BOPE_SETTING_JSON.add(settings.get_master().get_tag(), BOPE_SETTING_INFO);
+		}
+
+		BOPE_MAIN_JSON.add("settings", BOPE_SETTING_JSON);
+
 		JsonElement BOPE_MAIN_PRETTY_JSON = BOPE_PARSER.parse(BOPE_MAIN_JSON.toString());
 
 		String BOPE_JSON = BOPE_GSON.toJson(BOPE_MAIN_PRETTY_JSON);
@@ -96,6 +117,13 @@ public class BopeConfig {
 		file.write(BOPE_JSON);
 
 		file.close();
+	}
+
+	public static void BOPE_LOAD_CONFIGS() throws IOException {
+		InputStream BOPE_JSON_FILE    = Files.newInputStream(PATH_CONFIGS);
+		JsonObject  BOPE_JSON         = new JsonParser().parse(new InputStreamReader(BOPE_JSON_FILE)).getAsJsonObject();
+
+		BOPE_JSON_FILE.close();
 	}
 
 	public static void BOPE_SAVE_BINDS() throws IOException {
@@ -130,13 +158,6 @@ public class BopeConfig {
 		file.write(BOPE_JSON);
 
 		file.close();
-	}
-
-	public static void BOPE_LOAD_CONFIGS() throws IOException {
-		InputStream BOPE_JSON_FILE    = Files.newInputStream(PATH_CONFIGS);
-		JsonObject  BOPE_JSON         = new JsonParser().parse(new InputStreamReader(BOPE_JSON_FILE)).getAsJsonObject();
-
-		BOPE_JSON_FILE.close();
 	}
 
 	public static void save() {

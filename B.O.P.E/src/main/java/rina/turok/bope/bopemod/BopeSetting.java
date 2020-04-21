@@ -6,173 +6,63 @@ import java.util.List;
 import rina.turok.bope.bopemod.BopeSetting;
 import rina.turok.bope.bopemod.BopeModule;
 
-/**
- * @author FINZ0
- * 14/04/2020.
- *
- * Update by Rina in 14/04/2020.
- *
- */
 public class BopeSetting {
-	private final String      name;
-    private final BopeModule  parent;
-    private final SettingType type;
+	private String name;
+	private String tag;
 
-    public BopeSetting(String name, BopeModule parent, SettingType type){
-        this.name   = name;
-        this.parent = parent;
-        this.type   = type;
-    }
+	private BopeModule master;
+	private BopeTypeSetting type;
 
-    public String getName() {
-        return name;
-    }
+	private boolean button_value;
 
-    public BopeModule getParent() {
-        return parent;
-    }
+	public BopeSetting(BopeModule master, String name, String tag, boolean value) {
+		this.master       = master;
+		this.name         = name;
+		this.tag          = tag;
+		this.button_value = value;
 
-    public SettingType getType() {
-    	return type;
-    }
+		this.type = BopeTypeSetting.SETTING_BOOLEAN;
+	}
 
-    public String getStringType() {
-        if (type == SettingType.INT) {
-        	return "integer";
-        } else if (type == SettingType.DOUBLE) {
-        	return "double";
-        } else if (type == SettingType.BUTTON) {
-        	return "button";
-        } else if (type == SettingType.STRING) {
-        	return "string";
-        } else if (type == SettingType.COMBOBOX) {
-        	return "combobox";
-        }
+	public void set_button_value(boolean value) {
+		this.button_value = value;
+	}
 
-        return null;
-    }
+	public BopeModule get_master() {
+		return this.master;
+	}
 
-    public enum SettingType {
-        INT, DOUBLE, BUTTON, STRING, COMBOBOX
-    }
+	public boolean get_button_value() {
+		return this.button_value;
+	}
 
-    public static class TypeInteger extends BopeSetting {
-        private int value;
-        private final int min;
-        private final int max;
+	public String get_name() {
+		return this.name;
+	}
 
-        public TypeInteger(String name, BopeModule parent, int value, int min, int max){
-            super(name, parent, SettingType.INT);
-            this.value = value;
-            this.min = min;
-            this.max = max;
-        }
+	public String get_tag() {
+		return this.tag;
+	}
 
-        public int getValue() {
-            return value;
-        }
+	public enum BopeTypeSetting {
+		SETTING_BOOLEAN("Button"),
+		SETTING_DOUBLE("Double"),
+		SETTING_INTEGER("Integer"),
+		SETTING_CUSTOM("String"),
+		SETTING_COMBOBOX("ComboString");
 
-        public void setValue(int value) {
-            this.value = value;
-        }
+		String name_setting;
 
-        public int getMin() {
-            return min;
-        }
+		BopeTypeSetting(String name_setting) {
+			this.name_setting = name_setting;
+		}
 
-        public int getMax() {
-            return max;
-        }
-    }
+		public String get_name() {
+			return this.name_setting;
+		}
+	}
 
-    public static class TypeDouble extends BopeSetting {
-        private double value;
-
-        private final double min;
-        private final double max;
-
-        public TypeDouble(String name, BopeModule parent, double value, double min, double max){
-            super(name, parent, SettingType.DOUBLE);
-            this.value = value;
-            this.min = min;
-            this.max = max;
-        }
-
-        public double getValue() {
-            return value;
-        }
-
-        public void setValue(double value) {
-            this.value = value;
-        }
-
-        public double getMin() {
-            return min;
-        }
-
-        public double getMax() {
-            return max;
-        }
-    }
-
-    public static class TypeButton extends BopeSetting {
-        private boolean value;
-
-        public TypeButton(String name, BopeModule parent, boolean value){
-            super(name, parent, SettingType.BUTTON);
-
-            this.value = value;
-        }
-
-        public boolean getValue() {
-            return value;
-        }
-
-        public void setValue(boolean value) {
-            this.value = value;
-        }
-    }
-
-    public static class TypeString extends BopeSetting {
-        private String value;
-
-        public TypeString(String name, BopeModule parent, String value){
-            super(name, parent, SettingType.STRING);
-
-            this.value = value;
-        }
-
-        public String getValue() {
-            return value;
-        }
-
-        public void setValue(String value) {
-            this.value = value;
-        }
-    }
-
-    public static class TypeCombobox extends BopeSetting {
-        private String value;
-        
-        private final List<String> modes;
-
-        public TypeCombobox(String name, BopeModule parent, List<String> modes, String value){
-            super(name, parent, SettingType.COMBOBOX);
-
-            this.value = value;
-            this.modes = modes;
-        }
-
-        public String getValue() {
-            return value;
-        }
-
-        public void setValue(String value) {
-            this.value = value;
-        }
-
-        public List<String> getModes(){
-            return modes;
-        }
-    }
+	public BopeTypeSetting get_type() {
+		return this.type;
+	}
 }

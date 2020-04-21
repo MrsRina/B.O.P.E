@@ -63,46 +63,6 @@ public class BopeModule {
 		state_module = false;
 	}
 
-	protected BopeSetting.TypeButton create_button(String name, boolean default_) {
-		BopeSetting.TypeButton button_setting = new BopeSetting.TypeButton(name, this, default_);
-
-		Bope.get_setting_manager().register(button_setting);
-
-		return button_setting;
-	}
-
-	protected BopeSetting.TypeDouble create_double(String name, double value, double min, double max) {
-		BopeSetting.TypeDouble double_setting = new BopeSetting.TypeDouble(name, this, value, min, max);
-		
-		Bope.get_setting_manager().register(double_setting);
-
-		return double_setting;
-	}
-
-	protected BopeSetting.TypeInteger create_integer(String name, int value, int min, int max) {
-		BopeSetting.TypeInteger integer_setting = new BopeSetting.TypeInteger(name, this, value, min, max);
-
-		Bope.get_setting_manager().register(integer_setting);
-
-		return integer_setting;
-	}
-
-	protected BopeSetting.TypeString create_custom_string(String name, String default_) {
-		BopeSetting.TypeString custom_setting = new BopeSetting.TypeString(name, this, default_);
-
-		Bope.get_setting_manager().register(custom_setting);
-
-		return custom_setting;
-	}
-
-	protected BopeSetting.TypeCombobox create_combobox(String name, List<String> modes, String default_) {
-		BopeSetting.TypeCombobox combobox_setting = new BopeSetting.TypeCombobox(name, this, modes, default_);
-
-		Bope.get_setting_manager().register(combobox_setting);
-
-		return combobox_setting;
-	}
-
 	public void onWorldRender(BopeEventRender event) {} // Render event into module.
 
 	public void onUpdate() {} // While module.

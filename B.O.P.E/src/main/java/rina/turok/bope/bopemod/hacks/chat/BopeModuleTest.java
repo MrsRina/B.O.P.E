@@ -23,8 +23,8 @@ import rina.turok.bope.Bope;
 *
 */
 public class BopeModuleTest extends BopeModule {
-	BopeSetting.TypeButton button_1 = create_button("button1", true);
-	BopeSetting.TypeButton button_2 = create_button("button2", true);
+	BopeSetting button_1 = new BopeSetting(this, "Button1", "button1", true);
+	BopeSetting button_2 = new BopeSetting(this, "Button2", "button2", true);
 
 	public BopeModuleTest() {
 		super("Module Test", BopeCategory.Category.BOPE_CHAT);
@@ -33,12 +33,15 @@ public class BopeModuleTest extends BopeModule {
 			"ModuleTest",
 			"Module Test"
 		);
+
+		Bope.get_setting_manager().array_setting.add(button_1);
+		Bope.get_setting_manager().array_setting.add(button_2);
 	}
 
 	@Override
 	public void onUpdate() {
-		if (button_1.getValue()) {
-			if (button_2.getValue()) {
+		if (button_1.get_button_value()) {
+			if (button_2.get_button_value()) {
 				BopeMessage.send_client_message("Button 2 on");
 			} else {
 				BopeMessage.send_client_message("Button 2 off");

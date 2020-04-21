@@ -17,6 +17,9 @@ import rina.turok.bope.bopemod.manager.BopeConfigManager;
 import rina.turok.bope.bopemod.manager.BopeModuleManager;
 import rina.turok.bope.bopemod.manager.BopeEventManager;
 
+// Data.
+import rina.turok.bope.bopemod.BopeSetting;
+
 // External.
 import rina.turok.bope.external.BopeEventHandler;
 

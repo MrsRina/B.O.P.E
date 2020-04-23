@@ -41,7 +41,7 @@ import rina.turok.bope.framework.TurokRenderHelp;
 *
 */
 public class BopeModuleManager {
-	String tag;
+	private String tag;
 
 	public static ArrayList<BopeModule> array_module = new ArrayList<BopeModule>();
 
@@ -51,20 +51,16 @@ public class BopeModuleManager {
 		this.tag = tag;
 
 		// Chat.
-		add_module(new BopeModuleTest());
+		array_module.add(new BopeModuleTest());
 
 		// Combat.
 		// init_bope_combat_modules();
 
 		// Exploit.
-		add_module(new BopeExtraInventory());
+		array_module.add(new BopeExtraInventory());
 
 		// Render.
 		// init_bope_render_modules();
-	}
-
-	public void add_module(BopeModule module) {
-		array_module.add(module);
 	}
 
 	public ArrayList<BopeModule> get_array_modules() {

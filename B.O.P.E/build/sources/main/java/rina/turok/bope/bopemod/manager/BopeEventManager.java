@@ -13,6 +13,10 @@ import net.minecraft.client.Minecraft;
 import org.lwjgl.input.Keyboard;
 import org.lwjgl.opengl.GL11;
 
+// Data.
+import rina.turok.bope.bopemod.BopeCommand;
+import rina.turok.bope.bopemod.BopeMessage;
+
 // Framework.
 import rina.turok.bope.framework.TurokRenderHelp;
 
@@ -27,9 +31,9 @@ import rina.turok.bope.Bope;
 *
 */
 public class BopeEventManager {
-	String tag;
+	private String tag;
 
-	Minecraft mc = Minecraft.getMinecraft();
+	private Minecraft mc = Minecraft.getMinecraft();
 
 	public BopeEventManager(String tag) {
 		this.tag = tag;
@@ -86,12 +90,40 @@ public class BopeEventManager {
 
 			TurokRenderHelp.release_gl();
 		}
-	} 
+	}
 
 	@SubscribeEvent(priority = EventPriority.NORMAL, receiveCanceled = true)
 	public void onKeyInput(InputEvent.KeyInputEvent event) {
 		if (Keyboard.getEventKeyState()) {
 			Bope.get_instance().module_manager.onBind(Keyboard.getEventKey());
+		}
+	}
+
+	@SubscribeEvent(priority = EventPriority.NORMAL)
+	public void onChat(ClientChatEvent event) {
+		String   message      = event.getMessage();
+		String[] message_args = Bope.get_command_manager().command_list.get_message(event.getMessage());
+
+		boolean true_command = false;
+
+		if (message_args.length > 0) {		
+			for (BopeCommand command : Bope.get_command_manager().command_list.get_pure_command_list()) {
+				try {
+					if (Bope.get_command_manager().command_list.get_message(event.getMessage())[0].equalsIgnoreCase(command.get_name())) {
+						event.setCanceled(true);
+
+						mc.ingameGUI.getChatGUI().addToSentMessages(event.getMessage());
+
+						true_command = command.get_message(Bope.get_command_manager().command_list.get_message(event.getMessage()));
+					}
+				} catch (Exception exc) {} // Somes gays problems.
+			}
+
+			if (!true_command && Bope.get_command_manager().command_list.has_prefix(event.getMessage())) {
+				BopeMessage.send_client_message("Try use .help or talk with Rina or Cyro.");
+
+				true_command = false;
+			}
 		}
 	}
 

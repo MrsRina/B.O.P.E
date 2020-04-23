@@ -17,9 +17,6 @@ import rina.turok.bope.bopemod.manager.BopeConfigManager;
 import rina.turok.bope.bopemod.manager.BopeModuleManager;
 import rina.turok.bope.bopemod.manager.BopeEventManager;
 
-// Data.
-import rina.turok.bope.bopemod.BopeSetting;
-
 // External.
 import rina.turok.bope.external.BopeEventHandler;
 
@@ -64,11 +61,11 @@ public class Bope {
 		BopeEventHandler.INSTANCE = new BopeEventHandler();
 
 		// Init managers.
-		setting_manager = new BopeSettingManager("_g_a_y_____");
-		configs_manager = new BopeConfigManager ("___kkk_____");
-		command_manager = new BopeCommandManager("_____t_____");
-		module_manager  = new BopeModuleManager ("_____r_____");
-		event_manager   = new BopeEventManager  ("__u__e_____");
+		setting_manager = new BopeSettingManager("<4><3><4><4><2><4><5><9><4><3><1>");
+		command_manager = new BopeCommandManager("<4><3><4><4><2><4><5><9><4><3><1>");
+		configs_manager = new BopeConfigManager ("<4><3><4><4><2><4><5><9><4><3><1>");
+		module_manager  = new BopeModuleManager ("<4><3><4><4><2><4><5><9><4><3><1>");
+		event_manager   = new BopeEventManager  ("<4><3><4><4><2><4><5><9><4><3><1>");
 
 		send_log("Managers are initialed.");
 

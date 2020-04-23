@@ -22,7 +22,7 @@ import rina.turok.bope.bopemod.BopeMessage;
 *
 */
 public class BopeCommandManager {
-	String tag;
+	private String tag;
 
 	public static BopeListCommand command_list;
 
@@ -42,32 +42,6 @@ public class BopeCommandManager {
 
 	public static String get_prefix() {
 		return command_list.get_prefix();
-	}
-
-	@SubscribeEvent
-	public void onChat(ClientChatEvent event) {
-		String   message      = event.getMessage();
-		String[] message_args = command_list.get_message(event.getMessage());
-
-		boolean true_command = false;
-
-		if (message_args.length > 0) {
-			event.setCanceled(true);
-			
-			for (BopeCommand command : command_list.get_pure_command_list()) {
-				try {
-					if (command_list.get_message(event.getMessage())[0].equalsIgnoreCase(command.get_name())) {
-						true_command = command.get_message(command_list.get_message(event.getMessage()));
-					}
-				} catch (Exception exc) {} // Somes gays problems.
-			}
-
-			if (!true_command && command_list.has_prefix(event.getMessage())) {
-				BopeMessage.send_client_message("Try use .help or talk with Rina or Cyro.");
-
-				true_command = false;
-			}
-		}
 	}
 
 	public String get_tag() {

@@ -56,7 +56,7 @@ Adding 8 imports
         com.google.gson.JsonParser
         com.google.gson.JsonPrimitive
         rina.turok.bope.Bope
-        rina.turok.bope.framework.TurokString
+        rina.turok.bope.bopemod.guiscreen.settings.BopeSetting
 End  Processing: rina/turok/bope/bopemod/BopeConfig.java
 
 Start Processing: rina/turok/bope/bopemod/BopeMessage.java
@@ -83,11 +83,8 @@ Adding 1 imports
 End  Processing: rina/turok/bope/bopemod/BopeMessage.java
 
 Start Processing: rina/turok/bope/bopemod/BopeModule.java
-New Key: class rina/turok/bope/bopemod/hacks/BopeCategory
-Rename method net/minecraft/client/Minecraft/getMinecraft ()Lnet/minecraft/client/Minecraft;[1167,1179]::getMinecraft->func_71410_x
-FOUND CONSTR method rina/turok/bope/bopemod/BopeModule/BopeModule (Ljava/lang/String;Lrina/turok/bope/bopemod/hacks/BopeCategory$Category;)V rina/turok/bope/bopemod/BopeModule
-New Key: class rina/turok/bope/bopemod/hacks/BopeCategory
-New Key: class rina/turok/bope/bopemod/hacks/BopeCategory
+Rename method net/minecraft/client/Minecraft/getMinecraft ()Lnet/minecraft/client/Minecraft;[1236,1248]::getMinecraft->func_71410_x
+FOUND CONSTR method rina/turok/bope/bopemod/BopeModule/BopeModule (Ljava/lang/String;Lrina/turok/bope/bopemod/hacks/BopeCategory;)V rina/turok/bope/bopemod/BopeModule
 Import: net.minecraftforge.fml.client.registry.ClientRegistry
 Import: net.minecraftforge.common.MinecraftForge
 Import: net.minecraft.client.settings.KeyBinding
@@ -97,18 +94,14 @@ Import: java.lang.annotation.Retention
 Import: java.util.ArrayList
 Import: java.util.List
 Import: org.lwjgl.input.Keyboard
-Adding 4 imports
+Adding 6 imports
+        rina.turok.bope.Bope
         rina.turok.bope.bopemod.events.BopeEventRender
+        rina.turok.bope.bopemod.guiscreen.settings.BopeSetting
         rina.turok.bope.bopemod.hacks.BopeCategory
         rina.turok.bope.external.BopeEventBus
         rina.turok.bope.framework.TurokBind
 End  Processing: rina/turok/bope/bopemod/BopeModule.java
-
-Start Processing: rina/turok/bope/bopemod/BopeSetting.java
-FOUND CONSTR method rina/turok/bope/bopemod/BopeSetting/BopeSetting (Lrina/turok/bope/bopemod/BopeModule;Ljava/lang/String;Ljava/lang/String;Z)V rina/turok/bope/bopemod/BopeSetting
-FOUND CONSTR method rina/turok/bope/bopemod/BopeSetting/BopeTypeSetting/BopeTypeSetting (Ljava/lang/String;)V rina/turok/bope/bopemod/BopeSetting/BopeTypeSetting
-Import: java.util.List
-End  Processing: rina/turok/bope/bopemod/BopeSetting.java
 
 Start Processing: rina/turok/bope/bopemod/commands/BopeBind.java
 FOUND CONSTR method rina/turok/bope/bopemod/commands/BopeBind/BopeBind ()V rina/turok/bope/bopemod/commands/BopeBind
@@ -141,7 +134,6 @@ Start Processing: rina/turok/bope/bopemod/commands/BopeSetButton.java
 FOUND CONSTR method rina/turok/bope/bopemod/commands/BopeSetButton/BopeSetButton ()V rina/turok/bope/bopemod/commands/BopeSetButton
 Import: rina.turok.bope.bopemod.BopeMessage
 Import: rina.turok.bope.bopemod.BopeCommand
-Import: rina.turok.bope.bopemod.BopeSetting
 Import: rina.turok.bope.Bope
 End  Processing: rina/turok/bope/bopemod/commands/BopeSetButton.java
 
@@ -195,13 +187,24 @@ Adding 1 imports
         rina.turok.bope.external.BopeEventCancellable
 End  Processing: rina/turok/bope/bopemod/events/BopeEventRender.java
 
+Start Processing: rina/turok/bope/bopemod/guiscreen/settings/BopeSetting.java
+FOUND CONSTR method rina/turok/bope/bopemod/guiscreen/settings/BopeSetting/BopeSetting (Lrina/turok/bope/bopemod/BopeModule;Ljava/lang/String;Ljava/lang/String;Z)V rina/turok/bope/bopemod/guiscreen/settings/BopeSetting
+FOUND CONSTR method rina/turok/bope/bopemod/guiscreen/settings/BopeSetting/BopeSetting (Lrina/turok/bope/bopemod/BopeModule;Ljava/lang/String;Ljava/lang/String;Ljava/util/List;Ljava/lang/String;)V rina/turok/bope/bopemod/guiscreen/settings/BopeSetting
+FOUND CONSTR method rina/turok/bope/bopemod/guiscreen/settings/BopeSetting/BopeSetting (Lrina/turok/bope/bopemod/BopeModule;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V rina/turok/bope/bopemod/guiscreen/settings/BopeSetting
+FOUND CONSTR method rina/turok/bope/bopemod/guiscreen/settings/BopeSetting/BopeSetting (Lrina/turok/bope/bopemod/BopeModule;Ljava/lang/String;Ljava/lang/String;DDD)V rina/turok/bope/bopemod/guiscreen/settings/BopeSetting
+FOUND CONSTR method rina/turok/bope/bopemod/guiscreen/settings/BopeSetting/BopeSetting (Lrina/turok/bope/bopemod/BopeModule;Ljava/lang/String;Ljava/lang/String;III)V rina/turok/bope/bopemod/guiscreen/settings/BopeSetting
+Import: java.util.*
+Adding 1 imports
+        rina.turok.bope.bopemod.BopeModule
+End  Processing: rina/turok/bope/bopemod/guiscreen/settings/BopeSetting.java
+
 Start Processing: rina/turok/bope/bopemod/hacks/BopeCategory.java
-FOUND CONSTR method rina/turok/bope/bopemod/hacks/BopeCategory/Category/Category (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V rina/turok/bope/bopemod/hacks/BopeCategory/Category
+FOUND CONSTR method rina/turok/bope/bopemod/hacks/BopeCategory/BopeCategory (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V rina/turok/bope/bopemod/hacks/BopeCategory
 End  Processing: rina/turok/bope/bopemod/hacks/BopeCategory.java
 
 Start Processing: rina/turok/bope/bopemod/hacks/BopeFinderModule.java
 FOUND CONSTR method rina/turok/bope/bopemod/hacks/BopeFinderModule/BopeFinderModule ()V rina/turok/bope/bopemod/hacks/BopeFinderModule
-Import: rina.turok.bope.bopemod.hacks.BopeCategory.Category
+Import: rina.turok.bope.bopemod.hacks.BopeCategory
 Adding 2 imports
         rina.turok.bope.bopemod.BopeModule
         rina.turok.bope.bopemod.events.BopeEventRender
@@ -209,14 +212,12 @@ End  Processing: rina/turok/bope/bopemod/hacks/BopeFinderModule.java
 
 Start Processing: rina/turok/bope/bopemod/hacks/chat/BopeModuleTest.java
 FOUND CONSTR method rina/turok/bope/bopemod/hacks/chat/BopeModuleTest/BopeModuleTest ()V rina/turok/bope/bopemod/hacks/chat/BopeModuleTest
-New Key: class rina/turok/bope/bopemod/hacks/BopeCategory
 Import: org.lwjgl.input.Keyboard
 Import: java.util.*
-Adding 5 imports
-        rina.turok.bope.Bope
+Adding 4 imports
         rina.turok.bope.bopemod.BopeMessage
         rina.turok.bope.bopemod.BopeModule
-        rina.turok.bope.bopemod.BopeSetting
+        rina.turok.bope.bopemod.guiscreen.settings.BopeSetting
         rina.turok.bope.bopemod.hacks.BopeCategory
 End  Processing: rina/turok/bope/bopemod/hacks/chat/BopeModuleTest.java
 
@@ -231,21 +232,19 @@ Adding 4 imports
         me.zero.alpine.listener.EventHandler
         rina.turok.bope.bopemod.BopeModule
         rina.turok.bope.bopemod.events.BopeEventPacket
-        rina.turok.bope.bopemod.hacks.BopeCategory.Category
+        rina.turok.bope.bopemod.hacks.BopeCategory
 End  Processing: rina/turok/bope/bopemod/hacks/exploit/BopeExtraInventory.java
 
 Start Processing: rina/turok/bope/bopemod/manager/BopeCommandManager.java
 FOUND CONSTR method rina/turok/bope/bopemod/manager/BopeCommandManager/BopeCommandManager (Ljava/lang/String;)V rina/turok/bope/bopemod/manager/BopeCommandManager
-Rename method net/minecraft/util/text/Style/setColor (Lnet/minecraft/util/text/TextFormatting;)Lnet/minecraft/util/text/Style;[771,779]::setColor->func_150238_a
+Rename method net/minecraft/util/text/Style/setColor (Lnet/minecraft/util/text/TextFormatting;)Lnet/minecraft/util/text/Style;[779,787]::setColor->func_150238_a
 Import: net.minecraftforge.fml.common.eventhandler.SubscribeEvent
 Import: net.minecraftforge.client.event.ClientChatEvent
 Import: net.minecraft.util.text.TextComponentString
 Import: net.minecraft.util.text.TextFormatting
 Import: net.minecraft.client.Minecraft
 Import: net.minecraft.util.text.Style
-Adding 3 imports
-        rina.turok.bope.bopemod.BopeCommand
-        rina.turok.bope.bopemod.BopeMessage
+Adding 1 imports
         rina.turok.bope.bopemod.commands.BopeListCommand
 End  Processing: rina/turok/bope/bopemod/manager/BopeCommandManager.java
 
@@ -255,21 +254,24 @@ Import: rina.turok.bope.bopemod.BopeConfig
 End  Processing: rina/turok/bope/bopemod/manager/BopeConfigManager.java
 
 Start Processing: rina/turok/bope/bopemod/manager/BopeEventManager.java
-Rename method net/minecraft/client/Minecraft/getMinecraft ()Lnet/minecraft/client/Minecraft;[832,844]::getMinecraft->func_71410_x
+Rename method net/minecraft/client/Minecraft/getMinecraft ()Lnet/minecraft/client/Minecraft;[946,958]::getMinecraft->func_71410_x
 FOUND CONSTR method rina/turok/bope/bopemod/manager/BopeEventManager/BopeEventManager (Ljava/lang/String;)V rina/turok/bope/bopemod/manager/BopeEventManager
 New Key: class net/minecraftforge/event/entity/living/LivingEvent
 New Key: class net/minecraftforge/fml/common/gameevent/TickEvent
-Rename field net/minecraft/client/Minecraft/player[1116,1122]::player->field_71439_g
+Rename field net/minecraft/client/Minecraft/player[1230,1236]::player->field_71439_g
 New Key: class net/minecraftforge/client/event/RenderGameOverlayEvent
 New Key: class net/minecraftforge/client/event/RenderGameOverlayEvent
 New Key: class net/minecraftforge/client/event/RenderGameOverlayEvent
-Rename field net/minecraft/client/Minecraft/player[1615,1621]::player->field_71439_g
-Rename method net/minecraft/entity/player/EntityPlayer/isCreative ()Z[1629,1639]::isCreative->func_184812_l_
-Rename field net/minecraft/client/Minecraft/player[1652,1658]::player->field_71439_g
-Rename method net/minecraft/entity/Entity/getRidingEntity ()Lnet/minecraft/entity/Entity;[1666,1681]::getRidingEntity->func_184187_bx
+Rename field net/minecraft/client/Minecraft/player[1729,1735]::player->field_71439_g
+Rename method net/minecraft/entity/player/EntityPlayer/isCreative ()Z[1743,1753]::isCreative->func_184812_l_
+Rename field net/minecraft/client/Minecraft/player[1766,1772]::player->field_71439_g
+Rename method net/minecraft/entity/Entity/getRidingEntity ()Lnet/minecraft/entity/Entity;[1780,1795]::getRidingEntity->func_184187_bx
 New Key: class net/minecraftforge/client/event/RenderGameOverlayEvent
-Rename method net/minecraft/client/renderer/GlStateManager/enableBlend ()V[1977,1988]::enableBlend->func_179147_l
+Rename method net/minecraft/client/renderer/GlStateManager/enableBlend ()V[2091,2102]::enableBlend->func_179147_l
 New Key: class net/minecraftforge/fml/common/gameevent/InputEvent
+Rename field net/minecraft/client/Minecraft/ingameGUI[3002,3011]::ingameGUI->field_71456_v
+Rename method net/minecraft/client/gui/GuiIngame/getChatGUI ()Lnet/minecraft/client/gui/GuiNewChat;[3016,3026]::getChatGUI->func_146158_b
+Rename method net/minecraft/client/gui/GuiNewChat/addToSentMessages (Ljava/lang/String;)V[3032,3049]::addToSentMessages->func_146239_a
 Import: net.minecraftforge.fml.common.eventhandler.SubscribeEvent
 Import: net.minecraftforge.fml.common.eventhandler.EventPriority
 Import: net.minecraftforge.event.entity.living.LivingEvent
@@ -281,55 +283,57 @@ Import: net.minecraftforge.client.event.*
 Import: net.minecraft.client.Minecraft
 Import: org.lwjgl.input.Keyboard
 Import: org.lwjgl.opengl.GL11
-Adding 2 imports
+Adding 4 imports
         rina.turok.bope.Bope
+        rina.turok.bope.bopemod.BopeCommand
+        rina.turok.bope.bopemod.BopeMessage
         rina.turok.bope.framework.TurokRenderHelp
 End  Processing: rina/turok/bope/bopemod/manager/BopeEventManager.java
 
 Start Processing: rina/turok/bope/bopemod/manager/BopeModuleManager.java
-Rename method net/minecraft/client/Minecraft/getMinecraft ()Lnet/minecraft/client/Minecraft;[1072,1084]::getMinecraft->func_71410_x
+Rename method net/minecraft/client/Minecraft/getMinecraft ()Lnet/minecraft/client/Minecraft;[1080,1092]::getMinecraft->func_71410_x
 FOUND CONSTR method rina/turok/bope/bopemod/manager/BopeModuleManager/BopeModuleManager (Ljava/lang/String;)V rina/turok/bope/bopemod/manager/BopeModuleManager
-Rename field net/minecraft/entity/Entity/posX[1604,1608]::posX->field_70165_t
-Rename field net/minecraft/entity/Entity/lastTickPosX[1627,1639]::lastTickPosX->field_70142_S
-Rename field net/minecraft/entity/Entity/posY[1658,1662]::posY->field_70163_u
-Rename field net/minecraft/entity/Entity/lastTickPosY[1681,1693]::lastTickPosY->field_70137_T
-Rename field net/minecraft/entity/Entity/posZ[1712,1716]::posZ->field_70161_v
-Rename field net/minecraft/entity/Entity/lastTickPosZ[1735,1747]::lastTickPosZ->field_70136_U
-Rename field net/minecraft/entity/Entity/lastTickPosX[1852,1864]::lastTickPosX->field_70142_S
-Rename field net/minecraft/entity/Entity/lastTickPosY[1874,1886]::lastTickPosY->field_70137_T
-Rename field net/minecraft/entity/Entity/lastTickPosZ[1896,1908]::lastTickPosZ->field_70136_U
-Rename method net/minecraft/util/math/Vec3d/add (Lnet/minecraft/util/math/Vec3d;)Lnet/minecraft/util/math/Vec3d;[1911,1914]::add->func_178787_e
-Rename field net/minecraft/client/Minecraft/profiler[2042,2050]::profiler->field_71424_I
-Rename method net/minecraft/profiler/Profiler/startSection (Ljava/lang/String;)V[2056,2068]::startSection->func_76320_a
-Rename field net/minecraft/client/Minecraft/profiler[2083,2091]::profiler->field_71424_I
-Rename method net/minecraft/profiler/Profiler/startSection (Ljava/lang/String;)V[2097,2109]::startSection->func_76320_a
-Rename method net/minecraft/client/renderer/GlStateManager/disableTexture2D ()V[2138,2154]::disableTexture2D->func_179090_x
-Rename method net/minecraft/client/renderer/GlStateManager/enableBlend ()V[2172,2183]::enableBlend->func_179147_l
-Rename method net/minecraft/client/renderer/GlStateManager/disableAlpha ()V[2206,2218]::disableAlpha->func_179118_c
-Rename method net/minecraft/client/renderer/GlStateManager/tryBlendFuncSeparate (IIII)V[2240,2260]::tryBlendFuncSeparate->func_179120_a
-Rename method net/minecraft/client/renderer/GlStateManager/shadeModel (I)V[2326,2336]::shadeModel->func_179103_j
-Rename method net/minecraft/client/renderer/GlStateManager/disableDepth ()V[2374,2386]::disableDepth->func_179097_i
-Rename method net/minecraft/client/renderer/GlStateManager/glLineWidth (F)V[2409,2420]::glLineWidth->func_187441_d
-Rename field net/minecraft/client/Minecraft/player[2467,2473]::player->field_71439_g
-Rename field net/minecraft/client/Minecraft/profiler[2637,2645]::profiler->field_71424_I
-Rename method net/minecraft/profiler/Profiler/endSection ()V[2651,2661]::endSection->func_76319_b
-Rename field net/minecraft/client/Minecraft/profiler[2762,2770]::profiler->field_71424_I
-Rename method net/minecraft/profiler/Profiler/startSection (Ljava/lang/String;)V[2776,2788]::startSection->func_76320_a
-Rename field net/minecraft/client/Minecraft/profiler[2856,2864]::profiler->field_71424_I
-Rename method net/minecraft/profiler/Profiler/endSection ()V[2870,2880]::endSection->func_76319_b
-Rename field net/minecraft/client/Minecraft/profiler[2898,2906]::profiler->field_71424_I
-Rename method net/minecraft/profiler/Profiler/startSection (Ljava/lang/String;)V[2912,2924]::startSection->func_76320_a
-Rename method net/minecraft/client/renderer/GlStateManager/glLineWidth (F)V[2955,2966]::glLineWidth->func_187441_d
-Rename method net/minecraft/client/renderer/GlStateManager/shadeModel (I)V[2992,3002]::shadeModel->func_179103_j
-Rename method net/minecraft/client/renderer/GlStateManager/disableBlend ()V[3038,3050]::disableBlend->func_179084_k
-Rename method net/minecraft/client/renderer/GlStateManager/enableAlpha ()V[3072,3083]::enableAlpha->func_179141_d
-Rename method net/minecraft/client/renderer/GlStateManager/enableTexture2D ()V[3106,3121]::enableTexture2D->func_179098_w
-Rename method net/minecraft/client/renderer/GlStateManager/enableDepth ()V[3140,3151]::enableDepth->func_179126_j
-Rename method net/minecraft/client/renderer/GlStateManager/enableCull ()V[3174,3184]::enableCull->func_179089_o
-Rename field net/minecraft/client/Minecraft/profiler[3230,3238]::profiler->field_71424_I
-Rename method net/minecraft/profiler/Profiler/endSection ()V[3244,3254]::endSection->func_76319_b
-Rename field net/minecraft/client/Minecraft/profiler[3265,3273]::profiler->field_71424_I
-Rename method net/minecraft/profiler/Profiler/endSection ()V[3279,3289]::endSection->func_76319_b
+Rename field net/minecraft/entity/Entity/posX[1547,1551]::posX->field_70165_t
+Rename field net/minecraft/entity/Entity/lastTickPosX[1570,1582]::lastTickPosX->field_70142_S
+Rename field net/minecraft/entity/Entity/posY[1601,1605]::posY->field_70163_u
+Rename field net/minecraft/entity/Entity/lastTickPosY[1624,1636]::lastTickPosY->field_70137_T
+Rename field net/minecraft/entity/Entity/posZ[1655,1659]::posZ->field_70161_v
+Rename field net/minecraft/entity/Entity/lastTickPosZ[1678,1690]::lastTickPosZ->field_70136_U
+Rename field net/minecraft/entity/Entity/lastTickPosX[1795,1807]::lastTickPosX->field_70142_S
+Rename field net/minecraft/entity/Entity/lastTickPosY[1817,1829]::lastTickPosY->field_70137_T
+Rename field net/minecraft/entity/Entity/lastTickPosZ[1839,1851]::lastTickPosZ->field_70136_U
+Rename method net/minecraft/util/math/Vec3d/add (Lnet/minecraft/util/math/Vec3d;)Lnet/minecraft/util/math/Vec3d;[1854,1857]::add->func_178787_e
+Rename field net/minecraft/client/Minecraft/profiler[1985,1993]::profiler->field_71424_I
+Rename method net/minecraft/profiler/Profiler/startSection (Ljava/lang/String;)V[1999,2011]::startSection->func_76320_a
+Rename field net/minecraft/client/Minecraft/profiler[2026,2034]::profiler->field_71424_I
+Rename method net/minecraft/profiler/Profiler/startSection (Ljava/lang/String;)V[2040,2052]::startSection->func_76320_a
+Rename method net/minecraft/client/renderer/GlStateManager/disableTexture2D ()V[2081,2097]::disableTexture2D->func_179090_x
+Rename method net/minecraft/client/renderer/GlStateManager/enableBlend ()V[2115,2126]::enableBlend->func_179147_l
+Rename method net/minecraft/client/renderer/GlStateManager/disableAlpha ()V[2149,2161]::disableAlpha->func_179118_c
+Rename method net/minecraft/client/renderer/GlStateManager/tryBlendFuncSeparate (IIII)V[2183,2203]::tryBlendFuncSeparate->func_179120_a
+Rename method net/minecraft/client/renderer/GlStateManager/shadeModel (I)V[2269,2279]::shadeModel->func_179103_j
+Rename method net/minecraft/client/renderer/GlStateManager/disableDepth ()V[2317,2329]::disableDepth->func_179097_i
+Rename method net/minecraft/client/renderer/GlStateManager/glLineWidth (F)V[2352,2363]::glLineWidth->func_187441_d
+Rename field net/minecraft/client/Minecraft/player[2410,2416]::player->field_71439_g
+Rename field net/minecraft/client/Minecraft/profiler[2580,2588]::profiler->field_71424_I
+Rename method net/minecraft/profiler/Profiler/endSection ()V[2594,2604]::endSection->func_76319_b
+Rename field net/minecraft/client/Minecraft/profiler[2705,2713]::profiler->field_71424_I
+Rename method net/minecraft/profiler/Profiler/startSection (Ljava/lang/String;)V[2719,2731]::startSection->func_76320_a
+Rename field net/minecraft/client/Minecraft/profiler[2799,2807]::profiler->field_71424_I
+Rename method net/minecraft/profiler/Profiler/endSection ()V[2813,2823]::endSection->func_76319_b
+Rename field net/minecraft/client/Minecraft/profiler[2841,2849]::profiler->field_71424_I
+Rename method net/minecraft/profiler/Profiler/startSection (Ljava/lang/String;)V[2855,2867]::startSection->func_76320_a
+Rename method net/minecraft/client/renderer/GlStateManager/glLineWidth (F)V[2898,2909]::glLineWidth->func_187441_d
+Rename method net/minecraft/client/renderer/GlStateManager/shadeModel (I)V[2935,2945]::shadeModel->func_179103_j
+Rename method net/minecraft/client/renderer/GlStateManager/disableBlend ()V[2981,2993]::disableBlend->func_179084_k
+Rename method net/minecraft/client/renderer/GlStateManager/enableAlpha ()V[3015,3026]::enableAlpha->func_179141_d
+Rename method net/minecraft/client/renderer/GlStateManager/enableTexture2D ()V[3049,3064]::enableTexture2D->func_179098_w
+Rename method net/minecraft/client/renderer/GlStateManager/enableDepth ()V[3083,3094]::enableDepth->func_179126_j
+Rename method net/minecraft/client/renderer/GlStateManager/enableCull ()V[3117,3127]::enableCull->func_179089_o
+Rename field net/minecraft/client/Minecraft/profiler[3173,3181]::profiler->field_71424_I
+Rename method net/minecraft/profiler/Profiler/endSection ()V[3187,3197]::endSection->func_76319_b
+Rename field net/minecraft/client/Minecraft/profiler[3208,3216]::profiler->field_71424_I
+Rename method net/minecraft/profiler/Profiler/endSection ()V[3222,3232]::endSection->func_76319_b
 Import: net.minecraftforge.client.event.RenderWorldLastEvent
 Import: net.minecraft.client.renderer.GlStateManager
 Import: net.minecraft.client.Minecraft
@@ -347,11 +351,10 @@ End  Processing: rina/turok/bope/bopemod/manager/BopeModuleManager.java
 
 Start Processing: rina/turok/bope/bopemod/manager/BopeSettingManager.java
 FOUND CONSTR method rina/turok/bope/bopemod/manager/BopeSettingManager/BopeSettingManager (Ljava/lang/String;)V rina/turok/bope/bopemod/manager/BopeSettingManager
-Import: java.util.stream.Collectors
-Import: java.util.ArrayList
-Import: java.util.List
-Adding 1 imports
-        rina.turok.bope.bopemod.BopeSetting
+Import: java.util.*
+Adding 2 imports
+        rina.turok.bope.bopemod.BopeModule
+        rina.turok.bope.bopemod.guiscreen.settings.BopeSetting
 End  Processing: rina/turok/bope/bopemod/manager/BopeSettingManager.java
 
 Start Processing: rina/turok/bope/external/BopeEventBus.java
@@ -542,8 +545,9 @@ Import: org.spongepowered.asm.mixin.injection.Inject
 Import: org.spongepowered.asm.mixin.injection.At
 Import: org.spongepowered.asm.mixin.Mixin
 Import: java.io.IOException
-Import: rina.turok.bope.bopemod.events.BopeEventPacket
-Import: rina.turok.bope.external.BopeNoPacketKick
-Import: rina.turok.bope.external.BopeEventBus
+Adding 3 imports
+        rina.turok.bope.bopemod.events.BopeEventPacket
+        rina.turok.bope.external.BopeEventBus
+        rina.turok.bope.external.BopeNoPacketKick
 End  Processing: rina/turok/bope/mixins/BopeMixinNetworkManager.java
 

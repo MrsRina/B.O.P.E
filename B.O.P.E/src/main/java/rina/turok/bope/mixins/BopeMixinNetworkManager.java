@@ -12,7 +12,10 @@ import org.spongepowered.asm.mixin.Mixin;
 
 import java.io.IOException;
 
+// Events.
 import rina.turok.bope.bopemod.events.BopeEventPacket;
+
+// External.
 import rina.turok.bope.external.BopeNoPacketKick;
 import rina.turok.bope.external.BopeEventBus;
 

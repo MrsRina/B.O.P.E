@@ -21,12 +21,18 @@ public class BopeSettings extends BopeCommand {
 
 	public boolean get_message(String[] message) {
 		if (message.length > 1) {
+			ChatFormatting c = ChatFormatting.GRAY;
+
 			String what = message[1];
 
 			if (what.equals("save")) {
 				BopeConfig.save();
 
-				BopeMessage.send_client_message("Saved " + ChatFormatting.GREEN + "successful!");
+				BopeMessage.send_client_message(ChatFormatting.GREEN + "Successfully " + c + "saved!");
+			} else if (what.equals("load")) {
+				BopeConfig.load();
+
+				BopeMessage.send_client_message(ChatFormatting.GREEN + "Successfully " + c + "loaded!");
 			}
 		}
 

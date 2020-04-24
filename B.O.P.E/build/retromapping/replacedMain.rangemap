@@ -656,7 +656,7 @@ Class Start: rina.turok.bope.bopemod.BopeModule
 Class End  : rina.turok.bope.bopemod.BopeModule
 endProcessing "rina/turok/bope/bopemod/BopeModule.java"
 
-startProcessing "rina/turok/bope/bopemod/commands/BopeBind.java" md5: 928ab5624aa003a5b374a4f84d931408
+startProcessing "rina/turok/bope/bopemod/commands/BopeBind.java" md5: 952718f3f6fa949aeb7158e564b92217
 @|rina/turok/bope/bopemod/commands/BopeBind.java|8|40|rina.turok.bope.bopemod.commands|package|rina.turok.bope.bopemod.commands|(file)
 Class Start: rina.turok.bope.bopemod.commands.BopeBind
    @|rina/turok/bope/bopemod/commands/BopeBind.java|327|335|BopeBind|class|rina.turok.bope.bopemod.commands.BopeBind|false
@@ -668,28 +668,36 @@ Class Start: rina.turok.bope.bopemod.commands.BopeBind
       @|rina/turok/bope/bopemod/commands/BopeBind.java|457|464|message|param|rina.turok.bope.bopemod.commands.BopeBind|get_message|([Ljava/lang/String;)Z|message|0
       @|rina/turok/bope/bopemod/commands/BopeBind.java|436|447|get_message|method|rina.turok.bope.bopemod.BopeCommand|get_message|([Ljava/lang/String;)Z
       @|rina/turok/bope/bopemod/commands/BopeBind.java|448|454|String|class|java.lang.String|false
-      @|rina/turok/bope/bopemod/commands/BopeBind.java|474|481|message|param|rina.turok.bope.bopemod.commands.BopeBind|get_message|([Ljava/lang/String;)Z|message|0
+      @|rina/turok/bope/bopemod/commands/BopeBind.java|470|476|String|class|java.lang.String|false
+      @|rina/turok/bope/bopemod/commands/BopeBind.java|497|503|String|class|java.lang.String|false
+      @|rina/turok/bope/bopemod/commands/BopeBind.java|528|535|message|param|rina.turok.bope.bopemod.commands.BopeBind|get_message|([Ljava/lang/String;)Z|message|0
       Field: Array Length, skipping
-      @|rina/turok/bope/bopemod/commands/BopeBind.java|499|505|String|class|java.lang.String|false
-      @|rina/turok/bope/bopemod/commands/BopeBind.java|527|533|String|class|java.lang.String|false
-      @|rina/turok/bope/bopemod/commands/BopeBind.java|564|571|message|param|rina.turok.bope.bopemod.commands.BopeBind|get_message|([Ljava/lang/String;)Z|message|0
-      @|rina/turok/bope/bopemod/commands/BopeBind.java|588|595|message|param|rina.turok.bope.bopemod.commands.BopeBind|get_message|([Ljava/lang/String;)Z|message|0
-      @|rina/turok/bope/bopemod/commands/BopeBind.java|615|621|equals|method|java.lang.String|equals|(Ljava/lang/Object;)Z
-      @|rina/turok/bope/bopemod/commands/BopeBind.java|667|673|equals|method|java.lang.String|equals|(Ljava/lang/Object;)Z
-      @|rina/turok/bope/bopemod/commands/BopeBind.java|711|721|BopeModule|class|rina.turok.bope.bopemod.BopeModule|false
-      @|rina/turok/bope/bopemod/commands/BopeBind.java|741|745|Bope|class|rina.turok.bope.Bope|false
-      @|rina/turok/bope/bopemod/commands/BopeBind.java|746|764|get_module_manager|method|rina.turok.bope.Bope|get_module_manager|()Lrina/turok/bope/bopemod/manager/BopeModuleManager;
-      @|rina/turok/bope/bopemod/commands/BopeBind.java|767|786|get_module_with_tag|method|rina.turok.bope.bopemod.manager.BopeModuleManager|get_module_with_tag|(Ljava/lang/String;)Lrina/turok/bope/bopemod/BopeModule;
-      @|rina/turok/bope/bopemod/commands/BopeBind.java|851|859|Keyboard|class|org.lwjgl.input.Keyboard|false
-      @|rina/turok/bope/bopemod/commands/BopeBind.java|860|871|getKeyIndex|method|org.lwjgl.input.Keyboard|getKeyIndex|(Ljava/lang/String;)I
-      @|rina/turok/bope/bopemod/commands/BopeBind.java|876|887|toLowerCase|method|java.lang.String|toLowerCase|()Ljava/lang/String;
-      @|rina/turok/bope/bopemod/commands/BopeBind.java|914|922|set_bind|method|rina.turok.bope.bopemod.BopeModule|set_bind|(I)V
-      @|rina/turok/bope/bopemod/commands/BopeBind.java|939|950|BopeMessage|class|rina.turok.bope.bopemod.BopeMessage|false
-      @|rina/turok/bope/bopemod/commands/BopeBind.java|951|970|send_client_message|method|rina.turok.bope.bopemod.BopeMessage|send_client_message|(Ljava/lang/String;)V
-      @|rina/turok/bope/bopemod/commands/BopeBind.java|1012|1020|get_name|method|rina.turok.bope.bopemod.BopeModule|get_name|()Ljava/lang/String;
-      @|rina/turok/bope/bopemod/commands/BopeBind.java|1055|1063|get_bind|method|rina.turok.bope.bopemod.BopeModule|get_bind|(Ljava/lang/String;)Ljava/lang/String;
-      @|rina/turok/bope/bopemod/commands/BopeBind.java|1087|1098|BopeMessage|class|rina.turok.bope.bopemod.BopeMessage|false
-      @|rina/turok/bope/bopemod/commands/BopeBind.java|1099|1124|send_client_error_message|method|rina.turok.bope.bopemod.BopeMessage|send_client_error_message|(Ljava/lang/String;)V
+      @|rina/turok/bope/bopemod/commands/BopeBind.java|562|569|message|param|rina.turok.bope.bopemod.commands.BopeBind|get_message|([Ljava/lang/String;)Z|message|0
+      @|rina/turok/bope/bopemod/commands/BopeBind.java|585|592|message|param|rina.turok.bope.bopemod.commands.BopeBind|get_message|([Ljava/lang/String;)Z|message|0
+      Field: Array Length, skipping
+      @|rina/turok/bope/bopemod/commands/BopeBind.java|616|623|message|param|rina.turok.bope.bopemod.commands.BopeBind|get_message|([Ljava/lang/String;)Z|message|0
+      @|rina/turok/bope/bopemod/commands/BopeBind.java|646|652|equals|method|java.lang.String|equals|(Ljava/lang/Object;)Z
+      @|rina/turok/bope/bopemod/commands/BopeBind.java|667|678|BopeMessage|class|rina.turok.bope.bopemod.BopeMessage|false
+      @|rina/turok/bope/bopemod/commands/BopeBind.java|679|704|send_client_error_message|method|rina.turok.bope.bopemod.BopeMessage|send_client_error_message|(Ljava/lang/String;)V
+      @|rina/turok/bope/bopemod/commands/BopeBind.java|705|719|current_prefix|method|rina.turok.bope.bopemod.BopeCommand|current_prefix|()Ljava/lang/String;
+      @|rina/turok/bope/bopemod/commands/BopeBind.java|791|797|equals|method|java.lang.String|equals|(Ljava/lang/Object;)Z
+      @|rina/turok/bope/bopemod/commands/BopeBind.java|812|823|BopeMessage|class|rina.turok.bope.bopemod.BopeMessage|false
+      @|rina/turok/bope/bopemod/commands/BopeBind.java|824|849|send_client_error_message|method|rina.turok.bope.bopemod.BopeMessage|send_client_error_message|(Ljava/lang/String;)V
+      @|rina/turok/bope/bopemod/commands/BopeBind.java|850|864|current_prefix|method|rina.turok.bope.bopemod.BopeCommand|current_prefix|()Ljava/lang/String;
+      @|rina/turok/bope/bopemod/commands/BopeBind.java|928|938|BopeModule|class|rina.turok.bope.bopemod.BopeModule|false
+      @|rina/turok/bope/bopemod/commands/BopeBind.java|958|962|Bope|class|rina.turok.bope.Bope|false
+      @|rina/turok/bope/bopemod/commands/BopeBind.java|963|981|get_module_manager|method|rina.turok.bope.Bope|get_module_manager|()Lrina/turok/bope/bopemod/manager/BopeModuleManager;
+      @|rina/turok/bope/bopemod/commands/BopeBind.java|984|1003|get_module_with_tag|method|rina.turok.bope.bopemod.manager.BopeModuleManager|get_module_with_tag|(Ljava/lang/String;)Lrina/turok/bope/bopemod/BopeModule;
+      @|rina/turok/bope/bopemod/commands/BopeBind.java|1066|1074|Keyboard|class|org.lwjgl.input.Keyboard|false
+      @|rina/turok/bope/bopemod/commands/BopeBind.java|1075|1086|getKeyIndex|method|org.lwjgl.input.Keyboard|getKeyIndex|(Ljava/lang/String;)I
+      @|rina/turok/bope/bopemod/commands/BopeBind.java|1091|1102|toUpperCase|method|java.lang.String|toUpperCase|()Ljava/lang/String;
+      @|rina/turok/bope/bopemod/commands/BopeBind.java|1128|1136|set_bind|method|rina.turok.bope.bopemod.BopeModule|set_bind|(I)V
+      @|rina/turok/bope/bopemod/commands/BopeBind.java|1152|1163|BopeMessage|class|rina.turok.bope.bopemod.BopeMessage|false
+      @|rina/turok/bope/bopemod/commands/BopeBind.java|1164|1183|send_client_message|method|rina.turok.bope.bopemod.BopeMessage|send_client_message|(Ljava/lang/String;)V
+      @|rina/turok/bope/bopemod/commands/BopeBind.java|1225|1233|get_name|method|rina.turok.bope.bopemod.BopeModule|get_name|()Ljava/lang/String;
+      @|rina/turok/bope/bopemod/commands/BopeBind.java|1268|1276|get_bind|method|rina.turok.bope.bopemod.BopeModule|get_bind|(Ljava/lang/String;)Ljava/lang/String;
+      @|rina/turok/bope/bopemod/commands/BopeBind.java|1298|1309|BopeMessage|class|rina.turok.bope.bopemod.BopeMessage|false
+      @|rina/turok/bope/bopemod/commands/BopeBind.java|1310|1335|send_client_error_message|method|rina.turok.bope.bopemod.BopeMessage|send_client_error_message|(Ljava/lang/String;)V
    Method End: get_message([Ljava/lang/String;)Z
 Class End  : rina.turok.bope.bopemod.commands.BopeBind
 endProcessing "rina/turok/bope/bopemod/commands/BopeBind.java"
@@ -3593,7 +3601,7 @@ Class Start: rina.turok.bope.framework.TurokString
 Class End  : rina.turok.bope.framework.TurokString
 endProcessing "rina/turok/bope/framework/TurokString.java"
 
-startProcessing "rina/turok/bope/mixins/BopeMixinMinecraft.java" md5: 7630fde63ee7af9866b32dffdb26e352
+startProcessing "rina/turok/bope/mixins/BopeMixinMinecraft.java" md5: 7113675abc34edcb445c937e0a9ee642
 @|rina/turok/bope/mixins/BopeMixinMinecraft.java|8|30|rina.turok.bope.mixins|package|rina.turok.bope.mixins|(file)
 Class Start: rina.turok.bope.mixins.BopeMixinMinecraft
    @|rina/turok/bope/mixins/BopeMixinMinecraft.java|1006|1011|Mixin|class|org.spongepowered.asm.mixin.Mixin|false
@@ -3609,46 +3617,46 @@ Class Start: rina.turok.bope.mixins.BopeMixinMinecraft
       @|rina/turok/bope/mixins/BopeMixinMinecraft.java|1136|1148|CallbackInfo|class|org.spongepowered.asm.mixin.injection.callback.CallbackInfo|false
       @|rina/turok/bope/mixins/BopeMixinMinecraft.java|1160|1164|Bope|class|rina.turok.bope.Bope|false
       @|rina/turok/bope/mixins/BopeMixinMinecraft.java|1165|1180|send_client_log|method|rina.turok.bope.Bope|send_client_log|(Ljava/lang/String;)V
-      @|rina/turok/bope/mixins/BopeMixinMinecraft.java|1215|1219|Bope|class|rina.turok.bope.Bope|false
-      @|rina/turok/bope/mixins/BopeMixinMinecraft.java|1220|1238|get_config_manager|method|rina.turok.bope.Bope|get_config_manager|()Lrina/turok/bope/bopemod/manager/BopeConfigManager;
-      @|rina/turok/bope/mixins/BopeMixinMinecraft.java|1241|1245|save|method|rina.turok.bope.bopemod.manager.BopeConfigManager|save|()V
+      @|rina/turok/bope/mixins/BopeMixinMinecraft.java|1213|1217|Bope|class|rina.turok.bope.Bope|false
+      @|rina/turok/bope/mixins/BopeMixinMinecraft.java|1218|1236|get_config_manager|method|rina.turok.bope.Bope|get_config_manager|()Lrina/turok/bope/bopemod/manager/BopeConfigManager;
+      @|rina/turok/bope/mixins/BopeMixinMinecraft.java|1239|1243|save|method|rina.turok.bope.bopemod.manager.BopeConfigManager|save|()V
    Method End: shutdown(Lorg/spongepowered/asm/mixin/injection/callback/CallbackInfo;)V
    Method Start: crash(Lnet/minecraft/client/Minecraft;Lnet/minecraft/crash/CrashReport;)V
-      @|rina/turok/bope/mixins/BopeMixinMinecraft.java|1440|1449|minecraft|param|rina.turok.bope.mixins.BopeMixinMinecraft|crash|(Lnet/minecraft/client/Minecraft;Lnet/minecraft/crash/CrashReport;)V|minecraft|0
-      @|rina/turok/bope/mixins/BopeMixinMinecraft.java|1463|1474|crashReport|param|rina.turok.bope.mixins.BopeMixinMinecraft|crash|(Lnet/minecraft/client/Minecraft;Lnet/minecraft/crash/CrashReport;)V|crashReport|1
-      @|rina/turok/bope/mixins/BopeMixinMinecraft.java|1258|1266|Redirect|class|org.spongepowered.asm.mixin.injection.Redirect|false
-      @|rina/turok/bope/mixins/BopeMixinMinecraft.java|1267|1273|method|method|org.spongepowered.asm.mixin.injection.Redirect|method|()[Ljava/lang/String;
-      @|rina/turok/bope/mixins/BopeMixinMinecraft.java|1283|1285|at|method|org.spongepowered.asm.mixin.injection.Redirect|at|()Lorg/spongepowered/asm/mixin/injection/At;
-      @|rina/turok/bope/mixins/BopeMixinMinecraft.java|1289|1291|At|class|org.spongepowered.asm.mixin.injection.At|false
-      @|rina/turok/bope/mixins/BopeMixinMinecraft.java|1292|1297|value|method|org.spongepowered.asm.mixin.injection.At|value|()Ljava/lang/String;
-      @|rina/turok/bope/mixins/BopeMixinMinecraft.java|1310|1316|target|method|org.spongepowered.asm.mixin.injection.At|target|()Ljava/lang/String;
-      @|rina/turok/bope/mixins/BopeMixinMinecraft.java|1424|1429|crash|method|rina.turok.bope.mixins.BopeMixinMinecraft|crash|(Lnet/minecraft/client/Minecraft;Lnet/minecraft/crash/CrashReport;)V
-      @|rina/turok/bope/mixins/BopeMixinMinecraft.java|1430|1439|Minecraft|class|net.minecraft.client.Minecraft|false
-      @|rina/turok/bope/mixins/BopeMixinMinecraft.java|1451|1462|CrashReport|class|net.minecraft.crash.CrashReport|false
-      @|rina/turok/bope/mixins/BopeMixinMinecraft.java|1481|1485|Bope|class|rina.turok.bope.Bope|false
-      @|rina/turok/bope/mixins/BopeMixinMinecraft.java|1486|1501|send_client_log|method|rina.turok.bope.Bope|send_client_log|(Ljava/lang/String;)V
-      @|rina/turok/bope/mixins/BopeMixinMinecraft.java|1549|1553|Bope|class|rina.turok.bope.Bope|false
-      @|rina/turok/bope/mixins/BopeMixinMinecraft.java|1554|1572|get_config_manager|method|rina.turok.bope.Bope|get_config_manager|()Lrina/turok/bope/bopemod/manager/BopeConfigManager;
-      @|rina/turok/bope/mixins/BopeMixinMinecraft.java|1575|1579|save|method|rina.turok.bope.bopemod.manager.BopeConfigManager|save|()V
+      @|rina/turok/bope/mixins/BopeMixinMinecraft.java|1438|1447|minecraft|param|rina.turok.bope.mixins.BopeMixinMinecraft|crash|(Lnet/minecraft/client/Minecraft;Lnet/minecraft/crash/CrashReport;)V|minecraft|0
+      @|rina/turok/bope/mixins/BopeMixinMinecraft.java|1461|1472|crashReport|param|rina.turok.bope.mixins.BopeMixinMinecraft|crash|(Lnet/minecraft/client/Minecraft;Lnet/minecraft/crash/CrashReport;)V|crashReport|1
+      @|rina/turok/bope/mixins/BopeMixinMinecraft.java|1256|1264|Redirect|class|org.spongepowered.asm.mixin.injection.Redirect|false
+      @|rina/turok/bope/mixins/BopeMixinMinecraft.java|1265|1271|method|method|org.spongepowered.asm.mixin.injection.Redirect|method|()[Ljava/lang/String;
+      @|rina/turok/bope/mixins/BopeMixinMinecraft.java|1281|1283|at|method|org.spongepowered.asm.mixin.injection.Redirect|at|()Lorg/spongepowered/asm/mixin/injection/At;
+      @|rina/turok/bope/mixins/BopeMixinMinecraft.java|1287|1289|At|class|org.spongepowered.asm.mixin.injection.At|false
+      @|rina/turok/bope/mixins/BopeMixinMinecraft.java|1290|1295|value|method|org.spongepowered.asm.mixin.injection.At|value|()Ljava/lang/String;
+      @|rina/turok/bope/mixins/BopeMixinMinecraft.java|1308|1314|target|method|org.spongepowered.asm.mixin.injection.At|target|()Ljava/lang/String;
+      @|rina/turok/bope/mixins/BopeMixinMinecraft.java|1422|1427|crash|method|rina.turok.bope.mixins.BopeMixinMinecraft|crash|(Lnet/minecraft/client/Minecraft;Lnet/minecraft/crash/CrashReport;)V
+      @|rina/turok/bope/mixins/BopeMixinMinecraft.java|1428|1437|Minecraft|class|net.minecraft.client.Minecraft|false
+      @|rina/turok/bope/mixins/BopeMixinMinecraft.java|1449|1460|CrashReport|class|net.minecraft.crash.CrashReport|false
+      @|rina/turok/bope/mixins/BopeMixinMinecraft.java|1479|1483|Bope|class|rina.turok.bope.Bope|false
+      @|rina/turok/bope/mixins/BopeMixinMinecraft.java|1484|1499|send_client_log|method|rina.turok.bope.Bope|send_client_log|(Ljava/lang/String;)V
+      @|rina/turok/bope/mixins/BopeMixinMinecraft.java|1545|1549|Bope|class|rina.turok.bope.Bope|false
+      @|rina/turok/bope/mixins/BopeMixinMinecraft.java|1550|1568|get_config_manager|method|rina.turok.bope.Bope|get_config_manager|()Lrina/turok/bope/bopemod/manager/BopeConfigManager;
+      @|rina/turok/bope/mixins/BopeMixinMinecraft.java|1571|1575|save|method|rina.turok.bope.bopemod.manager.BopeConfigManager|save|()V
    Method End: crash(Lnet/minecraft/client/Minecraft;Lnet/minecraft/crash/CrashReport;)V
    Method Start: title(Ljava/lang/String;)V
-      @|rina/turok/bope/mixins/BopeMixinMinecraft.java|1750|1754|name|param|rina.turok.bope.mixins.BopeMixinMinecraft|title|(Ljava/lang/String;)V|name|0
-      @|rina/turok/bope/mixins/BopeMixinMinecraft.java|1592|1600|Redirect|class|org.spongepowered.asm.mixin.injection.Redirect|false
-      @|rina/turok/bope/mixins/BopeMixinMinecraft.java|1601|1607|method|method|org.spongepowered.asm.mixin.injection.Redirect|method|()[Ljava/lang/String;
-      @|rina/turok/bope/mixins/BopeMixinMinecraft.java|1627|1629|at|method|org.spongepowered.asm.mixin.injection.Redirect|at|()Lorg/spongepowered/asm/mixin/injection/At;
-      @|rina/turok/bope/mixins/BopeMixinMinecraft.java|1633|1635|At|class|org.spongepowered.asm.mixin.injection.At|false
-      @|rina/turok/bope/mixins/BopeMixinMinecraft.java|1636|1641|value|method|org.spongepowered.asm.mixin.injection.At|value|()Ljava/lang/String;
-      @|rina/turok/bope/mixins/BopeMixinMinecraft.java|1654|1660|target|method|org.spongepowered.asm.mixin.injection.At|target|()Ljava/lang/String;
-      @|rina/turok/bope/mixins/BopeMixinMinecraft.java|1737|1742|title|method|rina.turok.bope.mixins.BopeMixinMinecraft|title|(Ljava/lang/String;)V
-      @|rina/turok/bope/mixins/BopeMixinMinecraft.java|1743|1749|String|class|java.lang.String|false
-      @|rina/turok/bope/mixins/BopeMixinMinecraft.java|1761|1768|Display|class|org.lwjgl.opengl.Display|false
-      @|rina/turok/bope/mixins/BopeMixinMinecraft.java|1769|1777|setTitle|method|org.lwjgl.opengl.Display|setTitle|(Ljava/lang/String;)V
-      @|rina/turok/bope/mixins/BopeMixinMinecraft.java|1778|1782|Bope|class|rina.turok.bope.Bope|false
-      @|rina/turok/bope/mixins/BopeMixinMinecraft.java|1783|1791|get_name|method|rina.turok.bope.Bope|get_name|()Ljava/lang/String;
-      @|rina/turok/bope/mixins/BopeMixinMinecraft.java|1796|1800|Bope|class|rina.turok.bope.Bope|false
-      @|rina/turok/bope/mixins/BopeMixinMinecraft.java|1801|1811|BOPE_SPACE|field|rina.turok.bope.Bope|BOPE_SPACE
-      @|rina/turok/bope/mixins/BopeMixinMinecraft.java|1814|1818|Bope|class|rina.turok.bope.Bope|false
-      @|rina/turok/bope/mixins/BopeMixinMinecraft.java|1819|1830|get_version|method|rina.turok.bope.Bope|get_version|()Ljava/lang/String;
+      @|rina/turok/bope/mixins/BopeMixinMinecraft.java|1746|1750|name|param|rina.turok.bope.mixins.BopeMixinMinecraft|title|(Ljava/lang/String;)V|name|0
+      @|rina/turok/bope/mixins/BopeMixinMinecraft.java|1588|1596|Redirect|class|org.spongepowered.asm.mixin.injection.Redirect|false
+      @|rina/turok/bope/mixins/BopeMixinMinecraft.java|1597|1603|method|method|org.spongepowered.asm.mixin.injection.Redirect|method|()[Ljava/lang/String;
+      @|rina/turok/bope/mixins/BopeMixinMinecraft.java|1623|1625|at|method|org.spongepowered.asm.mixin.injection.Redirect|at|()Lorg/spongepowered/asm/mixin/injection/At;
+      @|rina/turok/bope/mixins/BopeMixinMinecraft.java|1629|1631|At|class|org.spongepowered.asm.mixin.injection.At|false
+      @|rina/turok/bope/mixins/BopeMixinMinecraft.java|1632|1637|value|method|org.spongepowered.asm.mixin.injection.At|value|()Ljava/lang/String;
+      @|rina/turok/bope/mixins/BopeMixinMinecraft.java|1650|1656|target|method|org.spongepowered.asm.mixin.injection.At|target|()Ljava/lang/String;
+      @|rina/turok/bope/mixins/BopeMixinMinecraft.java|1733|1738|title|method|rina.turok.bope.mixins.BopeMixinMinecraft|title|(Ljava/lang/String;)V
+      @|rina/turok/bope/mixins/BopeMixinMinecraft.java|1739|1745|String|class|java.lang.String|false
+      @|rina/turok/bope/mixins/BopeMixinMinecraft.java|1757|1764|Display|class|org.lwjgl.opengl.Display|false
+      @|rina/turok/bope/mixins/BopeMixinMinecraft.java|1765|1773|setTitle|method|org.lwjgl.opengl.Display|setTitle|(Ljava/lang/String;)V
+      @|rina/turok/bope/mixins/BopeMixinMinecraft.java|1774|1778|Bope|class|rina.turok.bope.Bope|false
+      @|rina/turok/bope/mixins/BopeMixinMinecraft.java|1779|1787|get_name|method|rina.turok.bope.Bope|get_name|()Ljava/lang/String;
+      @|rina/turok/bope/mixins/BopeMixinMinecraft.java|1792|1796|Bope|class|rina.turok.bope.Bope|false
+      @|rina/turok/bope/mixins/BopeMixinMinecraft.java|1797|1807|BOPE_SPACE|field|rina.turok.bope.Bope|BOPE_SPACE
+      @|rina/turok/bope/mixins/BopeMixinMinecraft.java|1810|1814|Bope|class|rina.turok.bope.Bope|false
+      @|rina/turok/bope/mixins/BopeMixinMinecraft.java|1815|1826|get_version|method|rina.turok.bope.Bope|get_version|()Ljava/lang/String;
    Method End: title(Ljava/lang/String;)V
 Class End  : rina.turok.bope.mixins.BopeMixinMinecraft
 endProcessing "rina/turok/bope/mixins/BopeMixinMinecraft.java"

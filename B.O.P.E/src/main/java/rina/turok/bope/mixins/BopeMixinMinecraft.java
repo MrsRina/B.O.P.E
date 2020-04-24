@@ -36,14 +36,14 @@ import rina.turok.bope.Bope;
 public class BopeMixinMinecraft {
 	@Inject(method = "shutdown", at = @At("HEAD"))
 	public void shutdown(CallbackInfo info) {
-		Bope.send_client_log("The settings were saved.");
+		Bope.send_client_log("The client were saved.");
 
 		Bope.get_config_manager().save();
 	}
 
 	@Redirect(method = "run", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/Minecraft;displayCrashReport(Lnet/minecraft/crash/CrashReport;)V"))
 	public void crash(Minecraft minecraft, CrashReport crashReport) {
-		Bope.send_client_log("The settings were saved before crash.");
+		Bope.send_client_log("The client were saved before crash.");
 
 		Bope.get_config_manager().save();
 	}

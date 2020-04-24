@@ -111,20 +111,20 @@ public class BopeEventManager {
 				Bope.send_client_log(mc.player.getName() + ": " + message);
 			}
 
+			event.setCanceled(true);
+
+			mc.ingameGUI.getChatGUI().addToSentMessages(event.getMessage());
+
 			for (BopeCommand command : Bope.get_command_manager().command_list.get_pure_command_list()) {
 				try {
 					if (Bope.get_command_manager().command_list.get_message(event.getMessage())[0].equalsIgnoreCase(command.get_name())) {
-						event.setCanceled(true);
-
-						mc.ingameGUI.getChatGUI().addToSentMessages(event.getMessage());
-
 						true_command = command.get_message(Bope.get_command_manager().command_list.get_message(event.getMessage()));
 					}
 				} catch (Exception exc) {} // Somes gays problems.
 			}
 
 			if (!true_command && Bope.get_command_manager().command_list.has_prefix(event.getMessage())) {
-				BopeMessage.send_client_message("Try use .help or talk with Rina or Cyro.");
+				BopeMessage.send_client_message("Try use .help to get list of commands.");
 
 				true_command = false;
 			}

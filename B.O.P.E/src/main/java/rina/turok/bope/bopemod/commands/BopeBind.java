@@ -1,8 +1,13 @@
 package rina.turok.bope.bopemod.commands;
 
+import org.lwjgl.input.Keyboard;
+
+// Data.
 import rina.turok.bope.bopemod.BopeCommand;
 import rina.turok.bope.bopemod.BopeMessage;
 import rina.turok.bope.bopemod.BopeModule;
+
+// Core.
 import rina.turok.bope.Bope;
 
 /**
@@ -14,18 +19,31 @@ import rina.turok.bope.Bope;
 */
 public class BopeBind extends BopeCommand {
 	public BopeBind() {
-		super("bind", "For bind key.");
+		super("bind", "For bind module.");
 	}
 
 	public boolean get_message(String[] message) {
 		if (message.length > 2) {
-			String module = message[1];
-			String key    = message[2];
+			String module = "null;";
+			String key    = "null";
+
+			module = message[1];
+			key    = message[2];
+
+			if (module.equals("null")) {
+				return true;
+			}
+
+			if (key.equals("null")) {
+				return true;
+			}
 
 			BopeModule module_requested = Bope.get_module_manager().get_module_with_tag(module);
 
 			if (module_requested != null) {
-				module_requested.set_bind(key.toUpperCase());
+				int new_bind = Keyboard.getKeyIndex(key.toLowerCase());
+
+				module_requested.set_bind(new_bind);
 
 				BopeMessage.send_client_message("The bind of module " + module_requested.get_name() + " is now " + module_requested.get_bind("0"));
 			} else {

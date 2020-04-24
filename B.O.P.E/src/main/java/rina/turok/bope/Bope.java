@@ -81,6 +81,8 @@ public class Bope {
 
 		send_minecraft_log("Events registered.");
 		send_minecraft_log("Client started.");
+
+		config_manager.load();
 	}
 
 	public void init_log(String name) {

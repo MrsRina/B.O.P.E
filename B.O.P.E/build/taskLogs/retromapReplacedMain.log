@@ -2,11 +2,11 @@ Processing 39 files
 Start Processing: rina/turok/bope/Bope.java
 New Key: class net/minecraftforge/fml/common/Mod
 New Key: class net/minecraftforge/fml/common/Mod
-Rename method net/minecraft/client/Minecraft/getMinecraft ()Lnet/minecraft/client/Minecraft;[3565,3577]::getMinecraft->func_71410_x
-Rename field net/minecraft/client/Minecraft/player[3580,3586]::player->field_71439_g
-Rename method net/minecraft/client/Minecraft/getMinecraft ()Lnet/minecraft/client/Minecraft;[3637,3649]::getMinecraft->func_71410_x
-Rename field net/minecraft/client/Minecraft/player[3652,3658]::player->field_71439_g
-Rename method net/minecraft/command/ICommandSender/getName ()Ljava/lang/String;[3666,3673]::getName->func_70005_c_
+Rename method net/minecraft/client/Minecraft/getMinecraft ()Lnet/minecraft/client/Minecraft;[3591,3603]::getMinecraft->func_71410_x
+Rename field net/minecraft/client/Minecraft/player[3606,3612]::player->field_71439_g
+Rename method net/minecraft/client/Minecraft/getMinecraft ()Lnet/minecraft/client/Minecraft;[3663,3675]::getMinecraft->func_71410_x
+Rename field net/minecraft/client/Minecraft/player[3678,3684]::player->field_71439_g
+Rename method net/minecraft/command/ICommandSender/getName ()Ljava/lang/String;[3692,3699]::getName->func_70005_c_
 Import: net.minecraftforge.fml.common.event.FMLPreInitializationEvent
 Import: net.minecraftforge.fml.common.event.FMLInitializationEvent
 Import: net.minecraftforge.common.MinecraftForge
@@ -95,10 +95,12 @@ End  Processing: rina/turok/bope/bopemod/BopeModule.java
 
 Start Processing: rina/turok/bope/bopemod/commands/BopeBind.java
 FOUND CONSTR method rina/turok/bope/bopemod/commands/BopeBind/BopeBind ()V rina/turok/bope/bopemod/commands/BopeBind
-Import: rina.turok.bope.bopemod.BopeCommand
-Import: rina.turok.bope.bopemod.BopeMessage
-Import: rina.turok.bope.bopemod.BopeModule
-Import: rina.turok.bope.Bope
+Import: org.lwjgl.input.Keyboard
+Adding 4 imports
+        rina.turok.bope.Bope
+        rina.turok.bope.bopemod.BopeCommand
+        rina.turok.bope.bopemod.BopeMessage
+        rina.turok.bope.bopemod.BopeModule
 End  Processing: rina/turok/bope/bopemod/commands/BopeBind.java
 
 Start Processing: rina/turok/bope/bopemod/commands/BopeListCommand.java
@@ -279,9 +281,9 @@ New Key: class net/minecraftforge/fml/common/gameevent/InputEvent
 Rename field net/minecraft/client/Minecraft/player[2725,2731]::player->field_71439_g
 Rename field net/minecraft/client/Minecraft/player[2778,2784]::player->field_71439_g
 Rename method net/minecraft/command/ICommandSender/getName ()Ljava/lang/String;[2792,2799]::getName->func_70005_c_
-Rename field net/minecraft/client/Minecraft/ingameGUI[3105,3114]::ingameGUI->field_71456_v
-Rename method net/minecraft/client/gui/GuiIngame/getChatGUI ()Lnet/minecraft/client/gui/GuiNewChat;[3119,3129]::getChatGUI->func_146158_b
-Rename method net/minecraft/client/gui/GuiNewChat/addToSentMessages (Ljava/lang/String;)V[3135,3152]::addToSentMessages->func_146239_a
+Rename field net/minecraft/client/Minecraft/ingameGUI[2868,2877]::ingameGUI->field_71456_v
+Rename method net/minecraft/client/gui/GuiIngame/getChatGUI ()Lnet/minecraft/client/gui/GuiNewChat;[2882,2892]::getChatGUI->func_146158_b
+Rename method net/minecraft/client/gui/GuiNewChat/addToSentMessages (Ljava/lang/String;)V[2898,2915]::addToSentMessages->func_146239_a
 Import: net.minecraftforge.fml.common.eventhandler.SubscribeEvent
 Import: net.minecraftforge.fml.common.eventhandler.EventPriority
 Import: net.minecraftforge.event.entity.living.LivingEvent

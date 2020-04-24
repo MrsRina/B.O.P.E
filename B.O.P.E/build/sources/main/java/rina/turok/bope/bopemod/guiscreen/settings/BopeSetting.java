@@ -13,9 +13,9 @@ import rina.turok.bope.bopemod.BopeModule;
  * 22/04/2020.
  *
  * - I used like reference the code from Finzo.
- * - and the code from Finzo is herocode....
+ * - and the code from Finzo is Herocode...
  * - 
- * - Thanks hero code and Finzo. :)
+ * - Thanks Herocode and Finzo. :)
  *
  **/
 public class BopeSetting {

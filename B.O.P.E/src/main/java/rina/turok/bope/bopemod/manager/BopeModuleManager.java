@@ -57,7 +57,7 @@ public class BopeModuleManager {
 		// init_bope_combat_modules();
 
 		// Exploit.
-		array_module.add(new BopeExtraInventory());
+		array_module.add(new BopeXCarry());
 
 		// Render.
 		// init_bope_render_modules();
@@ -78,7 +78,7 @@ public class BopeModuleManager {
 		return new Vec3d(entity.lastTickPosX, entity.lastTickPosY, entity.lastTickPosZ).add(process(entity, ticks, ticks, ticks)); // x, y, z.
 	}
 
-	public void onWorldRender(RenderWorldLastEvent event) {
+	public void render(RenderWorldLastEvent event) {
 		mc.profiler.startSection("bope");
 		mc.profiler.startSection("setup");
 
@@ -99,13 +99,15 @@ public class BopeModuleManager {
 
 		mc.profiler.endSection();
 
-		get_array_modules().stream().filter(module -> module.is_active()).forEach(module -> {
-			mc.profiler.startSection(module.get_name());
+		for (BopeModule modules : get_array_modules()) {
+			if (modules.is_active()) {
+				mc.profiler.startSection(modules.get_name());
 
-			module.onWorldRender(event_render);
+				modules.render(event_render);
 
-			mc.profiler.endSection();
-		});
+				mc.profiler.endSection();
+			}
+		}
 
 		mc.profiler.startSection("release");
 
@@ -124,28 +126,32 @@ public class BopeModuleManager {
 		mc.profiler.endSection();
 	}
 
-	public void onUpdate() {
-		get_array_modules().stream().filter(BopeModule::is_active).forEach(BopeModule::onUpdate);
+	public void update() {
+		for (BopeModule modules : get_array_modules()) {
+			if (modules.is_active()) {
+				modules.update();
+			}
+		}
 	}
 
-	public void onRender() {
-		get_array_modules().stream().filter(BopeModule::is_active).forEach(BopeModule::onRender);
+	public void render() {
+		for (BopeModule modules : get_array_modules()) {
+			if (modules.is_active()) {
+				modules.render();
+			}
+		}
 	}
 
-	public String get_tag() {
-		return this.tag;
-	}
-
-	public void onBind(int event_key) {
+	public void bind(int event_key) {
 		if (event_key == 0) {
 			return;
 		}
 
-		get_array_modules().forEach(module -> {
-			if (module.get_bind().pressed(event_key)) {
-				module.toggle();
+		for (BopeModule modules : get_array_modules()) {
+			if (modules.get_bind(0) == event_key) {
+				modules.toggle();
 			}
-		});
+		}
 	}
 
 	public BopeModule get_module_with_tag(String tag) {
@@ -158,5 +164,9 @@ public class BopeModuleManager {
 		}
 
 		return module_requested;
+	}
+
+	public String get_tag() {
+		return this.tag;
 	}
 }

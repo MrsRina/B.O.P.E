@@ -4,11 +4,17 @@ import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.Mod;
+import net.minecraft.client.Minecraft;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.lwjgl.input.Keyboard;
+
 import org.lwjgl.opengl.Display;
+import org.lwjgl.input.Keyboard;
+
+import java.text.SimpleDateFormat;
+import java.time.*;
+import java.util.*;
 
 // Managers.
 import rina.turok.bope.bopemod.manager.BopeCommandManager;
@@ -47,7 +53,7 @@ public class Bope {
 	// Starting managers.
 	public static BopeCommandManager command_manager;
 	public static BopeSettingManager setting_manager;
-	public static BopeConfigManager  configs_manager;
+	public static BopeConfigManager  config_manager;
 	public static BopeModuleManager  module_manager;
 	public static BopeEventManager   event_manager;
 
@@ -55,7 +61,7 @@ public class Bope {
 	public void BopeStarting(FMLInitializationEvent event) {
 		init_log(BOPE_NAME);
 
-		send_log("Loading packages initializing in main class. [Bope.class]");
+		send_minecraft_log("Loading packages initializing in main class. [Bope.class]");
 
 		// Init BopeEventHandler.
 		BopeEventHandler.INSTANCE = new BopeEventHandler();
@@ -63,32 +69,39 @@ public class Bope {
 		// Init managers.
 		setting_manager = new BopeSettingManager("<4><3><4><4><2><4><5><9><4><3><1>");
 		command_manager = new BopeCommandManager("<4><3><4><4><2><4><5><9><4><3><1>");
-		configs_manager = new BopeConfigManager ("<4><3><4><4><2><4><5><9><4><3><1>");
+		config_manager  = new BopeConfigManager ("<4><3><4><4><2><4><5><9><4><3><1>");
 		module_manager  = new BopeModuleManager ("<4><3><4><4><2><4><5><9><4><3><1>");
 		event_manager   = new BopeEventManager  ("<4><3><4><4><2><4><5><9><4><3><1>");
 
-		send_log("Managers are initialed.");
+		send_minecraft_log("Managers are initialed.");
 
 		// Register event modules and manager.
 		BopeEventRegister.register_command_manager(command_manager);
 		BopeEventRegister.register_module_manager(event_manager);
 
-		send_log("Events registered.");
-		send_log("Client started.");
+		send_minecraft_log("Events registered.");
+		send_minecraft_log("Client started.");
 	}
 
 	public void init_log(String name) {
 		bope_register_log = LogManager.getLogger(name);
 
-		send_log("...");
+		send_minecraft_log("...");
 	}
 
 	public static Bope get_instance() {
 		return MASTER; // A function for get INSTANCE from all client.
 	}
 
-	public static void send_log(String log) {
+	public static void send_minecraft_log(String log) {
 		bope_register_log.info(log);
+	}
+
+	public static void send_client_log(String log) {
+		Date   hora = new Date();
+		String data = new SimpleDateFormat("HH:mm:ss:").format(hora);
+
+		get_instance().config_manager.send_log("<" + BOPE_NAME + "><" + data + "> " + log);
 	}
 
 	public static String get_name() {
@@ -99,8 +112,22 @@ public class Bope {
 		return BOPE_VERSION;
 	}
 
+	public static String get_actual_user() {
+		String player_requested = "NoName";
+
+		if (Minecraft.getMinecraft().player != null) {
+			player_requested = Minecraft.getMinecraft().player.getName();
+		}
+
+		return player_requested;
+	}
+
 	public static BopeCommandManager get_command_manager() {
 		return get_instance().command_manager;
+	}
+
+	public static BopeConfigManager get_config_manager() {
+		return get_instance().config_manager;
 	}
 
 	public static BopeModuleManager get_module_manager() {

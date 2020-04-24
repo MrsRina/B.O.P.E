@@ -25,7 +25,6 @@ import rina.turok.bope.bopemod.guiscreen.settings.BopeSetting;
 import rina.turok.bope.framework.TurokBoolean;
 import rina.turok.bope.framework.TurokString;
 import rina.turok.bope.framework.TurokEnum;
-import rina.turok.bope.framework.TurokBind;
 import rina.turok.bope.framework.TurokInt;
 
 // External:
@@ -42,118 +41,105 @@ import rina.turok.bope.Bope;
 *
 */
 public class BopeModule {
+	public BopeCategory category;
+
 	public String name;
-	public String name_tag;
+	public String tag;
 	public String description;
 
-	public BopeCategory category;
+	public int bind;
 
 	public boolean state_module;
 
-	public TurokBind bind;
-
 	public final Minecraft mc = Minecraft.getMinecraft();
 
-	public BopeModule(String name, BopeCategory category_module) {
-		name     = name;
-		bind     = new TurokBind(name, "tag", -1);
-		category = category_module;
+	public BopeModule(BopeCategory category) {
+		this.name        = "";
+		this.tag         = "";
+		this.description = "";
+		this.bind        = -1;
+
+		// Category.
+		this.category = category;
 	}
 
-	public void module_info(String tag, String description) {
-		name_tag     = tag;
-		description  = description;
-		state_module = false;
+	public void release(String tag) {}
+
+	public void set_bind(int key) {
+		this.bind = (key);
 	}
 
-	public void onWorldRender(BopeEventRender event) {} // Render event into module.
+	public void set_bind(String key) {
+		this.bind = Keyboard.getKeyIndex(key.toLowerCase());
+	}
 
-	public void onUpdate() {} // While module.
+	public boolean is_active() {
+		return this.state_module;
+	}
 
-	public void onRender() {} // While render.
+	public String get_name() {
+		return this.name;
+	}
 
-	protected void onDisable() {} // Disable effect.
+	public String get_tag() {
+		return this.tag;
+	}
 
-	protected void onEnable() {} // While actived.
+	public String get_description() {
+		return this.description;
+	}
 
-	public void set_active(boolean value) {
-		boolean is = state_module;
+	public int get_bind(int type) {
+		return this.bind;
+	}
 
-		if (is != value) {
-			if (value) {
-				enable();
-			} else {
-				disable();
-			}
+	public String get_bind(String type) {
+		String converted_bind = "null";
+
+		if (get_bind(0) < 0) {
+			converted_bind = "NONE";
 		}
+
+		if (!(converted_bind.equals("NONE"))) {
+			String key     = Keyboard.getKeyName(get_bind(0));
+			converted_bind = Character.toUpperCase(key.charAt(0)) + (key.length() != 1 ? key.substring(1).toLowerCase() : "");
+		}
+
+		return converted_bind;
 	}
 
-	public void set_int_bind(int key) {
-		bind.set_key(key);
+	public BopeCategory get_category() {
+		return this.category;
 	}
 
-	public void set_string_bind(String key) {
-		int new_bind = Keyboard.getKeyIndex(key.toLowerCase());
+	public void set_disable() {
+		this.state_module = false;
 
-		bind.set_key(new_bind);
-	}
-
-	public void toggle() {
-		set_active(!is_active());
-	}
-
-	public void disable() {
-		state_module = false;
-
-		onDisable();
+		disable();
 
 		BopeEventBus.ZERO_ALPINE_EVENT_BUS.unsubscribe(this);
 	}
 
-	public void enable() {
-		state_module = true;
+	public void set_enable() {
+		this.state_module = true;
 
-		onEnable();
+		enable();
 
 		BopeEventBus.ZERO_ALPINE_EVENT_BUS.subscribe(this);
 	}
 
-	public boolean is_active() {
-		return state_module;
-	}
-
-	public String get_name() {
-		return name;
-	}
-
-	public String get_tag() {
-		return name_tag;
-	}
-
-	public String get_description() {
-		return description;
-	}
-
-	public TurokBind get_bind() {
-		return bind;
-	}
-
-	public int get_int_bind() {
-		return bind.get_key();
-	}
-
-	public String get_string_bind() {
-		if (get_int_bind() < 0) {
-			return ("null");
-		} else {
-			String key = Keyboard.getKeyName(get_int_bind());
-
-			return (Character.toUpperCase(key.charAt(0)) + (key.length() != 1 ? key.substring(1).toLowerCase() : ""));
+	public void set_active(boolean value) {
+		if (this.state_module != value) {
+			if (value) {
+				set_enable();
+			} else {
+				set_disable();
+			}
 		}
 	}
 
-	public BopeCategory get_category() {
-		return category;
+	public void toggle() {
+		set_active(!is_active());
 	}
 
 	protected BopeSetting create(String name, String tag, int value, int min, int max) {
@@ -184,5 +170,25 @@ public class BopeModule {
 		Bope.get_setting_manager().register(tag, new BopeSetting(this, name, tag, values, value));
 
 		return Bope.get_setting_manager().get_setting_with_tag(this, tag);
+	}
+
+	public void render(BopeEventRender event) {
+		// For draw 3D.
+	}
+
+	public void render() {
+		// For draw 2D.
+	}
+
+	public void update() {
+		// Update main tick to modules when enabled.
+	}
+
+	protected void disable() {
+		// Disable, like the modules have disabled.
+	}
+
+	protected void enable() {
+		// If module enbled, before tick it will run one time only, like onDisable()
 	}
 }

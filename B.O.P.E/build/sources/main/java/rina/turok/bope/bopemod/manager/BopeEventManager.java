@@ -52,7 +52,7 @@ public class BopeEventManager {
 			return;
 		}
 
-		Bope.get_instance().module_manager.onUpdate();
+		Bope.get_instance().module_manager.update();
 	}
 
 	@SubscribeEvent
@@ -61,7 +61,7 @@ public class BopeEventManager {
 			return;
 		}
 
-		Bope.get_instance().module_manager.onWorldRender(event);
+		Bope.get_instance().module_manager.render(event);
 	}
 
 	@SubscribeEvent
@@ -77,7 +77,7 @@ public class BopeEventManager {
 		}
 
 		if (event.getType() == target) {
-			Bope.get_instance().module_manager.onRender();
+			Bope.get_instance().module_manager.render();
 
 			GL11.glPushMatrix();
 
@@ -95,7 +95,7 @@ public class BopeEventManager {
 	@SubscribeEvent(priority = EventPriority.NORMAL, receiveCanceled = true)
 	public void onKeyInput(InputEvent.KeyInputEvent event) {
 		if (Keyboard.getEventKeyState()) {
-			Bope.get_instance().module_manager.onBind(Keyboard.getEventKey());
+			Bope.get_instance().module_manager.bind(Keyboard.getEventKey());
 		}
 	}
 
@@ -106,7 +106,11 @@ public class BopeEventManager {
 
 		boolean true_command = false;
 
-		if (message_args.length > 0) {		
+		if (message_args.length > 0) {
+			if (mc.player != null) {
+				Bope.send_client_log(mc.player.getName() + ": " + message);
+			}
+
 			for (BopeCommand command : Bope.get_command_manager().command_list.get_pure_command_list()) {
 				try {
 					if (Bope.get_command_manager().command_list.get_message(event.getMessage())[0].equalsIgnoreCase(command.get_name())) {

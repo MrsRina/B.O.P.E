@@ -22,26 +22,29 @@ import rina.turok.bope.Bope;
 */
 public class BopeFinderModule extends BopeModule {
 	public BopeFinderModule() {
-		super("B.O.PE", BopeCategory.BOPE_HIDDEN);
+		super(BopeCategory.BOPE_HIDDEN);
+		
+		// Info.
+		this.name        = "B.O.P.E";
+		this.tag         = "bope";
+		this.description = "A client no?";
 
-		module_info (
-			"B.O.P.E",
-			"B.O.P.E official client."
-		);
+		// Release or launch the module. release(String tag); -> You can place what you want in tag.
+		release("B.O.P.E - BOPE - B.O.P.E");
 	}
 
 	@Override
-	public void onEnable() {}
+	public void enable() {}
 
 	@Override
-	public void onDisable() {}
+	public void disable() {}
 
 	@Override
-	public void onUpdate() {}
+	public void update() {}
 
 	@Override
-	public void onRender() {}
+	public void render() {}
 
 	@Override
-	public void onWorldRender(BopeEventRender funtion_for_get_world_event_with_tessallator) {}
+	public void render(BopeEventRender funtion_for_get_world_event_with_tessallator) {}
 }

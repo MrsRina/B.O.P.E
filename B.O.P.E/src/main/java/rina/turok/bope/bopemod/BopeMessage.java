@@ -32,15 +32,19 @@ public class BopeMessage {
 	public static void client_message(String message) {
 		if (mc.player != null) {
 			mc.player.sendMessage(new ChatMessage(message));
+
 		}
 	}
 
 	public static void send_client_message(String message) {
 		client_message(ChatFormatting.BLUE + Bope.BOPE_NAME + ChatFormatting.GRAY + " > " + message);
+
+		Bope.send_client_log(" > " +  message);
 	}
 
 	public static void send_client_error_message(String message) {
 		client_message(ChatFormatting.RED + Bope.BOPE_NAME + ChatFormatting.GRAY +  " < " + message);
+		Bope.send_client_log(" < " +  message);
 	}
 
 	public static class ChatMessage extends TextComponentBase {

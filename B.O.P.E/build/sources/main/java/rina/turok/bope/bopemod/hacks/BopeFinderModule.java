@@ -26,7 +26,7 @@ public class BopeFinderModule extends BopeModule {
 		
 		// Info.
 		this.name        = "B.O.P.E";
-		this.tag         = "bope";
+		this.tag         = "B.O.P.E";
 		this.description = "A client no?";
 
 		// Release or launch the module. release(String tag); -> You can place what you want in tag.

@@ -82,7 +82,9 @@ public class Bope {
 		send_minecraft_log("Events registered.");
 		send_minecraft_log("Client started.");
 
-		config_manager.load();
+		try {
+			config_manager.load();
+		} catch (Exception exc) {}
 	}
 
 	public void init_log(String name) {

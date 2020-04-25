@@ -117,6 +117,7 @@ public class BopeConfigManager {
 		for (BopeSetting buttons : Bope.get_setting_manager().get_array_settings()) {
 			boolean button = false;
 
+			JsonObject BOPE_MODULE_BUTTON  = new JsonObject();
 			JsonObject BOPE_BUTTON_SETTING = new JsonObject();
 
 			if (is(buttons, "label")          ||
@@ -133,11 +134,13 @@ public class BopeConfigManager {
 			BOPE_BUTTON_SETTING.add("type",   new JsonPrimitive(buttons.get_type()));
 
 			BOPE_MAIN_BUTTONS.add(buttons.get_tag(), BOPE_BUTTON_SETTING);
+			BOPE_MODULE_BUTTON.add(buttons.get_master().get_tag(), BOPE_MAIN_BUTTONS);
 
-			BOPE_MAIN_OBJECT.add("buttons", BOPE_MAIN_BUTTONS);
+			BOPE_MAIN_OBJECT.add("buttons", BOPE_MODULE_BUTTON);
 		}
 
 		for (BopeSetting comboboxs : Bope.get_setting_manager().get_array_settings()) {
+			JsonObject BOPE_MODULE_COMBOBOX  = new JsonObject();
 			JsonObject BOPE_COMBOBOX_SETTING = new JsonObject();
 
 			if (is(comboboxs, "button")         ||
@@ -155,12 +158,15 @@ public class BopeConfigManager {
 
 			BOPE_MAIN_COMBOBOXS.add(comboboxs.get_tag(), BOPE_COMBOBOX_SETTING);
 
-			BOPE_MAIN_OBJECT.add("comboboxs", BOPE_MAIN_COMBOBOXS);
+			BOPE_MODULE_COMBOBOX.add(comboboxs.get_master().get_tag(), BOPE_MAIN_COMBOBOXS);
+
+			BOPE_MAIN_OBJECT.add("comboboxs", BOPE_MODULE_COMBOBOX);
 		}
 
 		for (BopeSetting labels : Bope.get_setting_manager().get_array_settings()) {
 			String label = "ue";
 
+			JsonObject BOPE_MODULE_LABEL   = new JsonObject();
 			JsonObject BOPE_LABELS_SETTING = new JsonObject();
 
 			if (is(labels, "button")         ||
@@ -177,8 +183,9 @@ public class BopeConfigManager {
 			BOPE_LABELS_SETTING.add("type",   new JsonPrimitive(labels.get_type()));
 
 			BOPE_MAIN_LABELS.add(labels.get_tag(), BOPE_LABELS_SETTING);
+			BOPE_MODULE_LABEL.add(labels.get_master().get_tag(), BOPE_MAIN_LABELS);
 
-			BOPE_MAIN_OBJECT.add("labels", BOPE_MAIN_LABELS);
+			BOPE_MAIN_OBJECT.add("labels", BOPE_MODULE_LABEL);
 		}
 
 		for (BopeSetting slider_doubles : Bope.get_setting_manager().get_array_settings()) {
@@ -191,7 +198,8 @@ public class BopeConfigManager {
 				continue;
 			}
 
-			JsonObject BOPE_SLIDER_DOUBLES_SETTING = new JsonObject();
+			JsonObject BOPE_MODULE_LABEL_DOUBLE    = new JsonObject();
+			JsonObject BOPE_SLIDER_DOUBLES_SETTING = new JsonObject();			
 
 			BOPE_SLIDER_DOUBLES_SETTING.add("master", new JsonPrimitive(slider_doubles.get_master().get_tag()));
 			BOPE_SLIDER_DOUBLES_SETTING.add("name",   new JsonPrimitive(slider_doubles.get_name()));
@@ -200,14 +208,16 @@ public class BopeConfigManager {
 			BOPE_SLIDER_DOUBLES_SETTING.add("type",   new JsonPrimitive(slider_doubles.get_type()));
 
 			BOPE_MAIN_SLIDERS_D.add(slider_doubles.get_tag(), BOPE_SLIDER_DOUBLES_SETTING);
+			BOPE_MODULE_LABEL_DOUBLE.add(slider_doubles.get_master().get_tag(), BOPE_MAIN_SLIDERS_D);
 
-			BOPE_MAIN_OBJECT.add("slidersD", BOPE_MAIN_SLIDERS_D);
+			BOPE_MAIN_OBJECT.add("slidersD", BOPE_MODULE_LABEL_DOUBLE);
 		}
 
 		for (BopeSetting slider_integers : Bope.get_setting_manager().get_array_settings()) {
 			double integer = 1;
 
-			JsonObject BOPE_SLIDER_INTEGERS_SETTING  = new JsonObject();
+			JsonObject BOPE_MODULE_SLIDER_INTEGER   = new JsonObject();
+			JsonObject BOPE_SLIDER_INTEGERS_SETTING = new JsonObject();
 
 			if (is(slider_integers, "button")         ||
 				is(slider_integers, "combobox")       ||
@@ -223,8 +233,9 @@ public class BopeConfigManager {
 			BOPE_SLIDER_INTEGERS_SETTING.add("type",   new JsonPrimitive(slider_integers.get_type()));
 
 			BOPE_MAIN_SLIDERS_I.add(slider_integers.get_tag(), BOPE_SLIDER_INTEGERS_SETTING);
+			BOPE_MODULE_SLIDER_INTEGER.add(slider_integers.get_master().get_tag(), BOPE_MAIN_SLIDERS_I);
 
-			BOPE_MAIN_OBJECT.add("slidersI", BOPE_MAIN_SLIDERS_I);
+			BOPE_MAIN_OBJECT.add("slidersI", BOPE_MODULE_SLIDER_INTEGER);
 		}
 
 		return BOPE_MAIN_OBJECT;
@@ -271,59 +282,65 @@ public class BopeConfigManager {
 				continue;
 			}
 
-			JsonObject BOPE_BUTTONS_INFO = BOPE_MAIN_BUTTONS.get(buttons.get_tag()).getAsJsonObject();
+			JsonObject BOPE_BUTTONS_MAIN = BOPE_MAIN_BUTTONS.get(buttons.get_master().get_tag()).getAsJsonObject();
+
+			JsonObject BOPE_BUTTONS_INFO = BOPE_BUTTONS_MAIN.get(buttons.get_tag()).getAsJsonObject();
 			
 			Bope.get_setting_manager().get_setting_with_tag(BOPE_BUTTONS_INFO.get("master").getAsString(), BOPE_BUTTONS_INFO.get("tag").getAsString()).set_value(BOPE_BUTTONS_INFO.get("value").getAsBoolean());
 		}
 
 		for (BopeSetting comboboxs : Bope.get_setting_manager().get_array_settings()) {
 			if (is(comboboxs, "label")          ||
-				is(comboboxs, "button")        ||
+				is(comboboxs, "button")         ||
 				is(comboboxs, "doubleslider")   ||
 				is(comboboxs, "integerslider")) {
 				continue;
 			}
 
-			JsonObject BOPE_COMBOBOXS_INFO = BOPE_MAIN_COMBOBOXS.get(comboboxs.get_tag()).getAsJsonObject();
+			JsonObject BOPE_COMBOBOXS_MAIN = BOPE_MAIN_COMBOBOXS.get(comboboxs.get_master().get_tag()).getAsJsonObject();
+			JsonObject BOPE_COMBOBOXS_INFO = BOPE_COMBOBOXS_MAIN.get(comboboxs.get_tag()).getAsJsonObject();
 		
 			Bope.get_setting_manager().get_setting_with_tag(BOPE_COMBOBOXS_INFO.get("master").getAsString(), BOPE_COMBOBOXS_INFO.get("tag").getAsString()).set_current_value(BOPE_COMBOBOXS_INFO.get("value").getAsString());
 		}
 
 		for (BopeSetting labels : Bope.get_setting_manager().get_array_settings()) {
 			if (is(labels, "combobox")       ||
-				is(labels, "button")        ||
+				is(labels, "button")         ||
 				is(labels, "doubleslider")   ||
 				is(labels, "integerslider")) {
 				continue;
 			}
 
-			JsonObject BOPE_LABELS_INFO = BOPE_MAIN_LABELS.get(labels.get_tag()).getAsJsonObject();
+			JsonObject BOPE_LABELS_MAIN = BOPE_MAIN_LABELS.get(labels.get_master().get_tag()).getAsJsonObject();
+			JsonObject BOPE_LABELS_INFO = BOPE_LABELS_MAIN.get(labels.get_tag()).getAsJsonObject();
 		
 			Bope.get_setting_manager().get_setting_with_tag(BOPE_LABELS_INFO.get("master").getAsString(), BOPE_LABELS_INFO.get("tag").getAsString()).set_value(BOPE_LABELS_INFO.get("value").getAsString());
 		}
 
 		for (BopeSetting slider_doubles : Bope.get_setting_manager().get_array_settings()) {
 			if (is(slider_doubles, "combobox")       ||
-				is(slider_doubles, "button")        ||
+				is(slider_doubles, "button")         ||
 				is(slider_doubles, "label")          ||
 				is(slider_doubles, "integerslider")) {
 				continue;
 			}
 
-			JsonObject BOPE_SLIDER_D_INFO = BOPE_MAIN_SLIDERS_D.get(slider_doubles.get_tag()).getAsJsonObject();
+			JsonObject BOPE_SLIDER_D_MAIN = BOPE_MAIN_SLIDERS_D.get(slider_doubles.get_master().get_tag()).getAsJsonObject();
+			JsonObject BOPE_SLIDER_D_INFO = BOPE_SLIDER_D_MAIN.get(slider_doubles.get_tag()).getAsJsonObject();
 		
 			Bope.get_setting_manager().get_setting_with_tag(BOPE_SLIDER_D_INFO.get("master").getAsString(), BOPE_SLIDER_D_INFO.get("tag").getAsString()).set_value(BOPE_SLIDER_D_INFO.get("value").getAsDouble());
 		}
 
 		for (BopeSetting slider_integers : Bope.get_setting_manager().get_array_settings()) {
 			if (is(slider_integers, "combobox")       ||
-				is(slider_integers, "button")        ||
+				is(slider_integers, "button")         ||
 				is(slider_integers, "label")          ||
 				is(slider_integers, "doubleslider")) {
 				continue;
 			}
 
-			JsonObject BOPE_SLIDER_I_INFO = BOPE_MAIN_SLIDERS_I.get(slider_integers.get_tag()).getAsJsonObject();
+			JsonObject BOPE_SLIDER_I_MAIN = BOPE_MAIN_SLIDERS_I.get(slider_integers.get_master().get_tag()).getAsJsonObject();
+			JsonObject BOPE_SLIDER_I_INFO = BOPE_SLIDER_I_MAIN.get(slider_integers.get_tag()).getAsJsonObject();
 		
 			Bope.get_setting_manager().get_setting_with_tag(BOPE_SLIDER_I_INFO.get("master").getAsString(), BOPE_SLIDER_I_INFO.get("tag").getAsString()).set_value(BOPE_SLIDER_I_INFO.get("value").getAsInt());
 		}

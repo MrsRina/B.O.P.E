@@ -31,7 +31,13 @@ public class BopeBind extends BopeCommand {
 		}
 
 		if (message.length > 2) {
-			key = message[2];
+			key = message[2].toUpperCase();
+		}
+
+		if (message.length > 3) {
+			BopeMessage.send_client_error_message(current_prefix() + "bind <ModuleNameNoSpace> <key>");
+
+			return true;
 		}
 
 		if (module.equals("null")) {
@@ -49,13 +55,27 @@ public class BopeBind extends BopeCommand {
 		BopeModule module_requested = Bope.get_module_manager().get_module_with_tag(module);
 
 		if (module_requested != null) {
-			int new_bind = Keyboard.getKeyIndex(key.toUpperCase());
+			if (!(key.equals("NONE"))) {
+				int new_bind = Keyboard.getKeyIndex(key.toUpperCase());
 
-			module_requested.set_bind(new_bind);
+				if (new_bind != 0) {
+					if (!(new_bind == module_requested.get_bind(0))) {
+						module_requested.set_bind(new_bind);
 
-			BopeMessage.send_client_message("The bind of module " + module_requested.get_name() + " is now " + module_requested.get_bind("0"));
+						BopeMessage.send_client_message(module_requested.get_tag() +  " is bound to " + module_requested.get_bind(""));
+					} else {
+						BopeMessage.send_client_error_message("The " + module_requested.get_tag() + " already have it key.");
+					}
+				} else {
+					BopeMessage.send_client_error_message("Key does not exist.");
+				}
+			} else {
+				module_requested.set_bind(0);
+
+				BopeMessage.send_client_message(module_requested.get_tag() + " is bound to None.");
+			}
 		} else {
-			BopeMessage.send_client_error_message("It key not exist.");
+			BopeMessage.send_client_error_message("Module does not exist.");
 		}
 
 		return true;

@@ -36,11 +36,11 @@ public class BopeMessage {
 	}
 
 	public static void send_client_message(String message) {
-		client_message(ChatFormatting.BLUE + Bope.BOPE_NAME + ChatFormatting.GRAY + " - " + message);
+		client_message(ChatFormatting.BLUE + Bope.BOPE_NAME + ChatFormatting.GRAY + " > " + message);
 	}
 
 	public static void send_client_error_message(String message) {
-		client_message(ChatFormatting.RED + Bope.BOPE_NAME + ChatFormatting.GRAY +  " - " + message);
+		client_message(ChatFormatting.RED + Bope.BOPE_NAME + ChatFormatting.GRAY +  " < " + message);
 	}
 
 	public static class ChatMessage extends TextComponentBase {

@@ -16,6 +16,9 @@ import java.text.SimpleDateFormat;
 import java.time.*;
 import java.util.*;
 
+// Guiscreen;
+import rina.turok.bope.bopemod.guiscreen.BopeGUI;
+
 // Managers.
 import rina.turok.bope.bopemod.manager.BopeCommandManager;
 import rina.turok.bope.bopemod.manager.BopeSettingManager;
@@ -47,6 +50,10 @@ public class Bope {
 	public static final String BOPE_VERSION = "0.1";
 	public static final String BOPE_SPACE   = " ";
 
+	// GUI.
+	public static final int BOPE_KEY_GUI /*  */ = Keyboard.KEY_RSHIFT;
+	public static final int BOPE_KEY_GUI_ESCAPE = Keyboard.KEY_ESCAPE;
+
 	// A just log for initializing and if get a error show in log Minecraft.
 	public static Logger bope_register_log;
 
@@ -56,6 +63,9 @@ public class Bope {
 	public static BopeConfigManager  config_manager;
 	public static BopeModuleManager  module_manager;
 	public static BopeEventManager   event_manager;
+
+	// Cick GUI.
+	public static BopeGUI click_gui;
 
 	@Mod.EventHandler
 	public void BopeStarting(FMLInitializationEvent event) {
@@ -82,9 +92,11 @@ public class Bope {
 		send_minecraft_log("Events registered.");
 		send_minecraft_log("Client started.");
 
-		try {
-			config_manager.load();
-		} catch (Exception exc) {}
+		config_manager.load();
+
+		if (module_manager.get_module_with_tag("GUI").is_active()) {
+			module_manager.get_module_with_tag("GUI").set_active(false);
+		}
 	}
 
 	public void init_log(String name) {

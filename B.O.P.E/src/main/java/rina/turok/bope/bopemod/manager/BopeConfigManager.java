@@ -482,11 +482,15 @@ public class BopeConfigManager {
 	public void load() {
 		try {
 			BOPE_LOAD_CONFIGS();
+		} catch (IOException exc) {}
+
+		try {
 			BOPE_LOAD_BINDS();
+		} catch (Exception exc) {}
+
+		try {
 			BOPE_LOAD_CLIENT();
-		} catch (IOException exc) {
-			exc.printStackTrace();
-		}		
+		} catch (IOException exc) {}		
 	}
 
 	public boolean is(BopeSetting setting, String type) {

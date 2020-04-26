@@ -26,12 +26,17 @@ import rina.turok.bope.bopemod.hacks.exploit.*;
 
 // Modules.
 import rina.turok.bope.bopemod.hacks.BopeFinderModule;
+import rina.turok.bope.bopemod.hacks.BopeCategory;
+import rina.turok.bope.bopemod.hacks.BopeClickGUI;
 
 // Data.
 import rina.turok.bope.bopemod.BopeModule;
 
 // Framework.
 import rina.turok.bope.framework.TurokRenderHelp;
+
+// Core.
+import rina.turok.bope.Bope;
 
 /**
 * @author Rina
@@ -50,17 +55,24 @@ public class BopeModuleManager {
 	public BopeModuleManager(String tag) {
 		this.tag = tag;
 
+		// GUI.
+		add_module(new BopeClickGUI());
+
 		// Chat.
-		array_module.add(new BopeModuleTest());
+		add_module(new BopeModuleTest());
 
 		// Combat.
 		// init_bope_combat_modules();
 
 		// Exploit.
-		array_module.add(new BopeXCarry());
+		add_module(new BopeXCarry());
 
 		// Render.
 		// init_bope_render_modules();
+	}
+
+	public void add_module(BopeModule module) {
+		array_module.add(module);
 	}
 
 	public ArrayList<BopeModule> get_array_modules() {
@@ -148,6 +160,12 @@ public class BopeModuleManager {
 		}
 
 		for (BopeModule modules : get_array_modules()) {
+			if (modules.get_tag().equals("GUI") && modules.is_active() == true) {
+				if (event_key == Bope.BOPE_KEY_GUI_ESCAPE) {
+					modules.toggle();
+				}
+			}
+
 			if (modules.get_bind(0) == event_key) {
 				modules.toggle();
 			}
@@ -164,6 +182,18 @@ public class BopeModuleManager {
 		}
 
 		return module_requested;
+	}
+
+	public ArrayList<BopeModule> get_modules_with_category(BopeCategory category) {
+		ArrayList<BopeModule> module_requesteds = new ArrayList<>();
+
+		for (BopeModule modules : get_array_modules()) {
+			if (modules.get_category().equals(category)) {
+				module_requesteds.add(modules);
+			}
+		}
+
+		return module_requesteds;
 	}
 
 	public String get_tag() {

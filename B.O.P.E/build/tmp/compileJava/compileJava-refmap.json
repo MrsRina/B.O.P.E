@@ -8,7 +8,6 @@
     "rina/turok/bope/mixins/BopeMixinMinecraft": {
       "Lnet/minecraft/client/Minecraft;displayCrashReport(Lnet/minecraft/crash/CrashReport;)V": "Lnet/minecraft/client/Minecraft;func_71377_b(Lnet/minecraft/crash/CrashReport;)V",
       "run": "Lnet/minecraft/client/Minecraft;func_99999_d()V",
-      "createDisplay": "Lnet/minecraft/client/Minecraft;func_175609_am()V",
       "shutdown": "Lnet/minecraft/client/Minecraft;func_71400_g()V"
     }
   },
@@ -22,7 +21,6 @@
       "rina/turok/bope/mixins/BopeMixinMinecraft": {
         "Lnet/minecraft/client/Minecraft;displayCrashReport(Lnet/minecraft/crash/CrashReport;)V": "Lbib;c(Lb;)V",
         "run": "Lbib;a()V",
-        "createDisplay": "Lbib;at()V",
         "shutdown": "Lbib;n()V"
       }
     },
@@ -35,7 +33,6 @@
       "rina/turok/bope/mixins/BopeMixinMinecraft": {
         "Lnet/minecraft/client/Minecraft;displayCrashReport(Lnet/minecraft/crash/CrashReport;)V": "Lnet/minecraft/client/Minecraft;func_71377_b(Lnet/minecraft/crash/CrashReport;)V",
         "run": "Lnet/minecraft/client/Minecraft;func_99999_d()V",
-        "createDisplay": "Lnet/minecraft/client/Minecraft;func_175609_am()V",
         "shutdown": "Lnet/minecraft/client/Minecraft;func_71400_g()V"
       }
     }

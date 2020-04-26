@@ -47,9 +47,4 @@ public class BopeMixinMinecraft {
 
 		Bope.get_config_manager().save();
 	}
-
-	@Redirect(method = "createDisplay", at = @At(value = "INVOKE", target = "Lorg/lwjgl/opengl/Display;setTitle(Ljava/lang/String;)V"))
-	public void title(String name) {
-		Display.setTitle(Bope.get_name() + Bope.BOPE_SPACE + Bope.get_version());
-	}
 }

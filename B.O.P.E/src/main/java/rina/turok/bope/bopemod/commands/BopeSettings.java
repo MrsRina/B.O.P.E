@@ -22,20 +22,30 @@ public class BopeSettings extends BopeCommand {
 	}
 
 	public boolean get_message(String[] message) {
+		String what = "null";
+
 		if (message.length > 1) {
-			ChatFormatting c = ChatFormatting.GRAY;
+			what = message[1];
+		}
 
-			String what = message[1];
+		if (what.equals("null")) {
+			BopeMessage.send_client_error_message(current_prefix() + "settigns <save/load>");
 
-			if (what.equals("save")) {
-				Bope.get_config_manager().save();
+			return true;
+		}
 
-				BopeMessage.send_client_message(ChatFormatting.GREEN + "Successfully " + c + "saved!");
-			} else if (what.equals("load")) {
-				Bope.get_config_manager().load();
+		ChatFormatting c = ChatFormatting.GRAY;
 
-				BopeMessage.send_client_message(ChatFormatting.GREEN + "Successfully " + c + "loaded!");
-			}
+		if (what.equalsIgnoreCase("save")) {
+			Bope.get_config_manager().save();
+
+			BopeMessage.send_client_message(ChatFormatting.GREEN + "Successfully " + c + "saved!");
+		}
+		
+		if (what.equalsIgnoreCase("load")) {
+			Bope.get_config_manager().load();
+
+			BopeMessage.send_client_message(ChatFormatting.GREEN + "Successfully " + c + "loaded!");
 		}
 
 		return true;

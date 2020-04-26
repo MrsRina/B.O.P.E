@@ -52,6 +52,15 @@ public class BopeBind extends BopeCommand {
 			return true;
 		}
 
+		module = module.toUpperCase();
+
+
+		if (module.equals("GUI")) {
+			BopeMessage.send_client_error_message("The module called GUI cannot be bound.");
+
+			return true;
+		}
+
 		BopeModule module_requested = Bope.get_module_manager().get_module_with_tag(module);
 
 		if (module_requested != null) {

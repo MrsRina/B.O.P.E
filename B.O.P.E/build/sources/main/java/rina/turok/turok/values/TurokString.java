@@ -1,4 +1,4 @@
-package rina.turok.bope.framework;
+package rina.turok.turok.values;
 
 /**
 * @author Rina
@@ -8,9 +8,9 @@ package rina.turok.bope.framework;
 *
 */
 public class TurokString {
-	String name;
-	String tag;
-	String value;
+	private String name;
+	private String tag;
+	private String value;
 
 	public TurokString(String name, String tag, String string) {
 		this.name  = name;

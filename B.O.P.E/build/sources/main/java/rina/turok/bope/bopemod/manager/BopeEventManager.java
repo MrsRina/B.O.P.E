@@ -17,11 +17,11 @@ import org.lwjgl.opengl.GL11;
 import rina.turok.bope.bopemod.BopeCommand;
 import rina.turok.bope.bopemod.BopeMessage;
 
-// Framework.
-import rina.turok.bope.framework.TurokRenderHelp;
-
 // Core.
 import rina.turok.bope.Bope;
+
+// Turok.
+import rina.turok.turok.draw.TurokRenderHelp;
 
 /**
 * @author Rina

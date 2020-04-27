@@ -1,4 +1,4 @@
-package rina.turok.bope.framework;
+package rina.turok.turok.values;
 
 /**
 * @author Rina
@@ -8,12 +8,12 @@ package rina.turok.bope.framework;
 *
 */
 public class TurokFloat {
-	String name;
-	String tag;
+	private String name;
+	private String tag;
 
-	float value;
-	float max;
-	float min;
+	private float value;
+	private float max;
+	private float min;
 
 	public TurokFloat(String name, String tag, float turok_float, float min, float max) {
 		this.name  = name;

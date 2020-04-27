@@ -22,9 +22,6 @@ import rina.turok.bope.bopemod.guiscreen.settings.BopeSetting;
 // Data.
 import rina.turok.bope.bopemod.BopeModule;
 
-// Framework.
-import rina.turok.bope.framework.TurokString;
-
 // Core.
 import rina.turok.bope.Bope;
 
@@ -134,13 +131,11 @@ public class BopeConfigManager {
 			BOPE_BUTTON_SETTING.add("type",   new JsonPrimitive(buttons.get_type()));
 
 			BOPE_MAIN_BUTTONS.add(buttons.get_tag(), BOPE_BUTTON_SETTING);
-			BOPE_MODULE_BUTTON.add(buttons.get_master().get_tag(), BOPE_MAIN_BUTTONS);
 
-			BOPE_MAIN_OBJECT.add("buttons", BOPE_MODULE_BUTTON);
+			BOPE_MAIN_OBJECT.add("buttons", BOPE_MAIN_BUTTONS);
 		}
 
 		for (BopeSetting comboboxs : Bope.get_setting_manager().get_array_settings()) {
-			JsonObject BOPE_MODULE_COMBOBOX  = new JsonObject();
 			JsonObject BOPE_COMBOBOX_SETTING = new JsonObject();
 
 			if (is(comboboxs, "button")         ||
@@ -158,15 +153,12 @@ public class BopeConfigManager {
 
 			BOPE_MAIN_COMBOBOXS.add(comboboxs.get_tag(), BOPE_COMBOBOX_SETTING);
 
-			BOPE_MODULE_COMBOBOX.add(comboboxs.get_master().get_tag(), BOPE_MAIN_COMBOBOXS);
-
-			BOPE_MAIN_OBJECT.add("comboboxs", BOPE_MODULE_COMBOBOX);
+			BOPE_MAIN_OBJECT.add("comboboxs", BOPE_MAIN_COMBOBOXS);
 		}
 
 		for (BopeSetting labels : Bope.get_setting_manager().get_array_settings()) {
 			String label = "ue";
 
-			JsonObject BOPE_MODULE_LABEL   = new JsonObject();
 			JsonObject BOPE_LABELS_SETTING = new JsonObject();
 
 			if (is(labels, "button")         ||
@@ -183,9 +175,8 @@ public class BopeConfigManager {
 			BOPE_LABELS_SETTING.add("type",   new JsonPrimitive(labels.get_type()));
 
 			BOPE_MAIN_LABELS.add(labels.get_tag(), BOPE_LABELS_SETTING);
-			BOPE_MODULE_LABEL.add(labels.get_master().get_tag(), BOPE_MAIN_LABELS);
 
-			BOPE_MAIN_OBJECT.add("labels", BOPE_MODULE_LABEL);
+			BOPE_MAIN_OBJECT.add("labels", BOPE_MAIN_LABELS);
 		}
 
 		for (BopeSetting slider_doubles : Bope.get_setting_manager().get_array_settings()) {
@@ -198,7 +189,6 @@ public class BopeConfigManager {
 				continue;
 			}
 
-			JsonObject BOPE_MODULE_LABEL_DOUBLE    = new JsonObject();
 			JsonObject BOPE_SLIDER_DOUBLES_SETTING = new JsonObject();			
 
 			BOPE_SLIDER_DOUBLES_SETTING.add("master", new JsonPrimitive(slider_doubles.get_master().get_tag()));
@@ -208,15 +198,13 @@ public class BopeConfigManager {
 			BOPE_SLIDER_DOUBLES_SETTING.add("type",   new JsonPrimitive(slider_doubles.get_type()));
 
 			BOPE_MAIN_SLIDERS_D.add(slider_doubles.get_tag(), BOPE_SLIDER_DOUBLES_SETTING);
-			BOPE_MODULE_LABEL_DOUBLE.add(slider_doubles.get_master().get_tag(), BOPE_MAIN_SLIDERS_D);
 
-			BOPE_MAIN_OBJECT.add("slidersD", BOPE_MODULE_LABEL_DOUBLE);
+			BOPE_MAIN_OBJECT.add("slidersD", BOPE_MAIN_SLIDERS_D);
 		}
 
 		for (BopeSetting slider_integers : Bope.get_setting_manager().get_array_settings()) {
 			double integer = 1;
 
-			JsonObject BOPE_MODULE_SLIDER_INTEGER   = new JsonObject();
 			JsonObject BOPE_SLIDER_INTEGERS_SETTING = new JsonObject();
 
 			if (is(slider_integers, "button")         ||
@@ -233,9 +221,8 @@ public class BopeConfigManager {
 			BOPE_SLIDER_INTEGERS_SETTING.add("type",   new JsonPrimitive(slider_integers.get_type()));
 
 			BOPE_MAIN_SLIDERS_I.add(slider_integers.get_tag(), BOPE_SLIDER_INTEGERS_SETTING);
-			BOPE_MODULE_SLIDER_INTEGER.add(slider_integers.get_master().get_tag(), BOPE_MAIN_SLIDERS_I);
 
-			BOPE_MAIN_OBJECT.add("slidersI", BOPE_MODULE_SLIDER_INTEGER);
+			BOPE_MAIN_OBJECT.add("slidersI", BOPE_MAIN_SLIDERS_I);
 		}
 
 		return BOPE_MAIN_OBJECT;
@@ -282,9 +269,7 @@ public class BopeConfigManager {
 				continue;
 			}
 
-			JsonObject BOPE_BUTTONS_MAIN = BOPE_MAIN_BUTTONS.get(buttons.get_master().get_tag()).getAsJsonObject();
-
-			JsonObject BOPE_BUTTONS_INFO = BOPE_BUTTONS_MAIN.get(buttons.get_tag()).getAsJsonObject();
+			JsonObject BOPE_BUTTONS_INFO = BOPE_MAIN_BUTTONS.get(buttons.get_tag()).getAsJsonObject();
 			
 			Bope.get_setting_manager().get_setting_with_tag(BOPE_BUTTONS_INFO.get("master").getAsString(), BOPE_BUTTONS_INFO.get("tag").getAsString()).set_value(BOPE_BUTTONS_INFO.get("value").getAsBoolean());
 		}
@@ -297,10 +282,9 @@ public class BopeConfigManager {
 				continue;
 			}
 
-			JsonObject BOPE_COMBOBOXS_MAIN = BOPE_MAIN_COMBOBOXS.get(comboboxs.get_master().get_tag()).getAsJsonObject();
-			JsonObject BOPE_COMBOBOXS_INFO = BOPE_COMBOBOXS_MAIN.get(comboboxs.get_tag()).getAsJsonObject();
+			JsonObject BOPE_COMBOBOXS_MAIN = BOPE_MAIN_COMBOBOXS.get(comboboxs.get_tag()).getAsJsonObject();
 		
-			Bope.get_setting_manager().get_setting_with_tag(BOPE_COMBOBOXS_INFO.get("master").getAsString(), BOPE_COMBOBOXS_INFO.get("tag").getAsString()).set_current_value(BOPE_COMBOBOXS_INFO.get("value").getAsString());
+			Bope.get_setting_manager().get_setting_with_tag(BOPE_COMBOBOXS_MAIN.get("master").getAsString(), BOPE_COMBOBOXS_MAIN.get("tag").getAsString()).set_current_value(BOPE_COMBOBOXS_MAIN.get("value").getAsString());
 		}
 
 		for (BopeSetting labels : Bope.get_setting_manager().get_array_settings()) {
@@ -311,10 +295,9 @@ public class BopeConfigManager {
 				continue;
 			}
 
-			JsonObject BOPE_LABELS_MAIN = BOPE_MAIN_LABELS.get(labels.get_master().get_tag()).getAsJsonObject();
-			JsonObject BOPE_LABELS_INFO = BOPE_LABELS_MAIN.get(labels.get_tag()).getAsJsonObject();
+			JsonObject BOPE_LABELS_MAIN = BOPE_MAIN_LABELS.get(labels.get_tag()).getAsJsonObject();
 		
-			Bope.get_setting_manager().get_setting_with_tag(BOPE_LABELS_INFO.get("master").getAsString(), BOPE_LABELS_INFO.get("tag").getAsString()).set_value(BOPE_LABELS_INFO.get("value").getAsString());
+			Bope.get_setting_manager().get_setting_with_tag(BOPE_LABELS_MAIN.get("master").getAsString(), BOPE_LABELS_MAIN.get("tag").getAsString()).set_value(BOPE_LABELS_MAIN.get("value").getAsString());
 		}
 
 		for (BopeSetting slider_doubles : Bope.get_setting_manager().get_array_settings()) {
@@ -325,10 +308,9 @@ public class BopeConfigManager {
 				continue;
 			}
 
-			JsonObject BOPE_SLIDER_D_MAIN = BOPE_MAIN_SLIDERS_D.get(slider_doubles.get_master().get_tag()).getAsJsonObject();
-			JsonObject BOPE_SLIDER_D_INFO = BOPE_SLIDER_D_MAIN.get(slider_doubles.get_tag()).getAsJsonObject();
+			JsonObject BOPE_SLIDER_D_MAIN = BOPE_MAIN_SLIDERS_D.get(slider_doubles.get_tag()).getAsJsonObject();
 		
-			Bope.get_setting_manager().get_setting_with_tag(BOPE_SLIDER_D_INFO.get("master").getAsString(), BOPE_SLIDER_D_INFO.get("tag").getAsString()).set_value(BOPE_SLIDER_D_INFO.get("value").getAsDouble());
+			Bope.get_setting_manager().get_setting_with_tag(BOPE_SLIDER_D_MAIN.get("master").getAsString(), BOPE_SLIDER_D_MAIN.get("tag").getAsString()).set_value(BOPE_SLIDER_D_MAIN.get("value").getAsDouble());
 		}
 
 		for (BopeSetting slider_integers : Bope.get_setting_manager().get_array_settings()) {
@@ -339,10 +321,9 @@ public class BopeConfigManager {
 				continue;
 			}
 
-			JsonObject BOPE_SLIDER_I_MAIN = BOPE_MAIN_SLIDERS_I.get(slider_integers.get_master().get_tag()).getAsJsonObject();
-			JsonObject BOPE_SLIDER_I_INFO = BOPE_SLIDER_I_MAIN.get(slider_integers.get_tag()).getAsJsonObject();
+			JsonObject BOPE_SLIDER_I_MAIN = BOPE_MAIN_SLIDERS_I.get(slider_integers.get_tag()).getAsJsonObject();
 		
-			Bope.get_setting_manager().get_setting_with_tag(BOPE_SLIDER_I_INFO.get("master").getAsString(), BOPE_SLIDER_I_INFO.get("tag").getAsString()).set_value(BOPE_SLIDER_I_INFO.get("value").getAsInt());
+			Bope.get_setting_manager().get_setting_with_tag(BOPE_SLIDER_I_MAIN.get("master").getAsString(), BOPE_SLIDER_I_MAIN.get("tag").getAsString()).set_value(BOPE_SLIDER_I_MAIN.get("value").getAsInt());
 		}
 
 		BOPE_JSON_FILE.close();
@@ -482,7 +463,7 @@ public class BopeConfigManager {
 	public void load() {
 		try {
 			BOPE_LOAD_CONFIGS();
-		} catch (IOException exc) {}
+		} catch (Exception exc) {}
 
 		try {
 			BOPE_LOAD_BINDS();
@@ -490,7 +471,7 @@ public class BopeConfigManager {
 
 		try {
 			BOPE_LOAD_CLIENT();
-		} catch (IOException exc) {}		
+		} catch (Exception exc) {}		
 	}
 
 	public boolean is(BopeSetting setting, String type) {

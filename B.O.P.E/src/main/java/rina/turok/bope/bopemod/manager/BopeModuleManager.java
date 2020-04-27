@@ -32,11 +32,11 @@ import rina.turok.bope.bopemod.hacks.BopeClickGUI;
 // Data.
 import rina.turok.bope.bopemod.BopeModule;
 
-// Framework.
-import rina.turok.bope.framework.TurokRenderHelp;
-
 // Core.
 import rina.turok.bope.Bope;
+
+// Turok.
+import rina.turok.turok.draw.TurokRenderHelp;
 
 /**
 * @author Rina
@@ -60,6 +60,8 @@ public class BopeModuleManager {
 
 		// Chat.
 		add_module(new BopeModuleTest());
+		add_module(new BopeModule3());
+		add_module(new BopeModule2());
 
 		// Combat.
 		// init_bope_combat_modules();

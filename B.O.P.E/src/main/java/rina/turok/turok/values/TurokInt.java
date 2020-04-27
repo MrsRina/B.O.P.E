@@ -1,4 +1,4 @@
-package rina.turok.bope.framework;
+package rina.turok.turok.values;
 
 /**
 * @author Rina
@@ -8,12 +8,12 @@ package rina.turok.bope.framework;
 *
 */
 public class TurokInt {
-	String name;
-	String tag;
+	private String name;
+	private String tag;
 
-	int value;
-	int max;
-	int min;
+	private int value;
+	private int max;
+	private int min;
 
 	public TurokInt(String name, String tag, int turok_int, int min, int max) {
 		this.name  = name;

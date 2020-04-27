@@ -85,6 +85,8 @@ public class Bope {
 
 		send_minecraft_log("Managers are initialed.");
 
+		click_gui = new BopeGUI();
+
 		// Register event modules and manager.
 		BopeEventRegister.register_command_manager(command_manager);
 		BopeEventRegister.register_module_manager(event_manager);

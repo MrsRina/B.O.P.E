@@ -25,12 +25,12 @@ import rina.turok.bope.Bope;
 *
 */
 public class BopeModuleTest extends BopeModule {
-	BopeSetting button_1   = create("Button 1", "", true);
-	BopeSetting button_2   = create("Button 2", "button2", true);
-	BopeSetting label_1    = create("Label 1", "label1", "ok");
-	BopeSetting combobox_1 = create("Types Combobox 1", "combobox1", Arrays.asList("1", "2", "3"), "3");
-	BopeSetting double_1   = create("Double 1", "double1", 1.0, 0.5, 2.0);
-	BopeSetting integer_1  = create("Integer 1", "integer1", 7, 5, 10);
+	BopeSetting button_1   = create("Button 1", "ModuleTestButton1", true);
+	BopeSetting button_2   = create("Button 2", "ModuleTestButton2", true);
+	BopeSetting label_1    = create("Label 1", "ModuleTestLabel1", "ok");
+	BopeSetting combobox_1 = create("Combobox 1", "ModuleTestCombobox1", Arrays.asList("1", "2", "3"), "3");
+	BopeSetting double_1   = create("Double 1", "ModuleTestDouble1", 1.0, 0.5, 2.0);
+	BopeSetting integer_1  = create("Integer 1", "ModuleTestInteger", 7, 5, 10);
 
 	public BopeModuleTest() {
 		super(BopeCategory.BOPE_CHAT);

@@ -1,4 +1,4 @@
-package rina.turok.bope.framework;
+package rina.turok.turok.draw;
 
 import net.minecraft.client.renderer.vertex.DefaultVertexFormats;
 import net.minecraft.client.renderer.GlStateManager;
@@ -8,8 +8,8 @@ import net.minecraft.util.math.BlockPos;
 
 import org.lwjgl.opengl.GL11;
 
-// Framework.
-import rina.turok.bope.framework.TurokGL;
+// Draw.
+import rina.turok.turok.draw.TurokGL;
 
 /**
 * @author Rina

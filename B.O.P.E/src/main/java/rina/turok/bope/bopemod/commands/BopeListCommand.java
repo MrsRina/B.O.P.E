@@ -7,9 +7,14 @@ import net.minecraft.util.text.Style;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-import rina.turok.bope.framework.TurokString;
-import rina.turok.bope.bopemod.BopeCommand;
+// Commands.
 import rina.turok.bope.bopemod.commands.*;
+
+// Data.
+import rina.turok.bope.bopemod.BopeCommand;
+
+// Turok.
+import rina.turok.turok.values.TurokString;
 
 /**
 * @author Rina
@@ -19,7 +24,7 @@ import rina.turok.bope.bopemod.commands.*;
 *
 */
 public class BopeListCommand {
-	public static ArrayList<BopeCommand> command_list = new ArrayList<BopeCommand>();
+	public static ArrayList<BopeCommand> command_list = new ArrayList<>();
 	static HashMap<String, BopeCommand> list_command  = new HashMap<>();
 
 	public static final TurokString prefix = new TurokString("Prefix", "Prefix", ".");
@@ -75,7 +80,7 @@ public class BopeListCommand {
 		return command_list;
 	}
 
-	public static BopeCommand get_command_by_name(String command) {
-		return list_command.get(command.toLowerCase());
+	public static BopeCommand get_command_with_name(String name) {
+		return list_command.get(name.toLowerCase());
 	}
 }

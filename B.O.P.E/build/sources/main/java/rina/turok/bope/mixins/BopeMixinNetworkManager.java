@@ -19,6 +19,9 @@ import rina.turok.bope.bopemod.events.BopeEventPacket;
 import rina.turok.bope.external.BopeNoPacketKick;
 import rina.turok.bope.external.BopeEventBus;
 
+// Core.
+import rina.turok.bope.Bope;
+
 /**
 * @author Rina
 *

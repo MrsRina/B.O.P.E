@@ -1,4 +1,4 @@
-package rina.turok.bope.framework;
+package rina.turok.turok.values;
 
 /**
 * @author Rina
@@ -8,10 +8,10 @@ package rina.turok.bope.framework;
 *
 */
 public class TurokBoolean {
-	String name;
-	String tag;
+	private String name;
+	private String tag;
 
-	boolean value;
+	private boolean value;
 
 	public TurokBoolean(String name, String tag, boolean turok_bool) {
 		this.name  = name;

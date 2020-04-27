@@ -57,4 +57,16 @@ public class BopeSettingManager {
 
 		return setting_requested;
 	}
+
+	public ArrayList<BopeSetting> get_settings_with_module(BopeModule module) {
+		ArrayList<BopeSetting> setting_requesteds = new ArrayList<>();
+
+		for (BopeSetting settings : get_array_settings()) {
+			if (settings.get_master().equals(module)) {
+				setting_requesteds.add(settings);
+			}
+		}
+
+		return setting_requesteds;
+	}
 }

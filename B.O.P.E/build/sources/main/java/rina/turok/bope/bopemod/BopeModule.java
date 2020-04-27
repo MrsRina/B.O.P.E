@@ -21,12 +21,6 @@ import rina.turok.bope.bopemod.hacks.BopeCategory;
 // Guiscreen.
 import rina.turok.bope.bopemod.guiscreen.settings.BopeSetting;
 
-// Framework.
-import rina.turok.bope.framework.TurokBoolean;
-import rina.turok.bope.framework.TurokString;
-import rina.turok.bope.framework.TurokEnum;
-import rina.turok.bope.framework.TurokInt;
-
 // External:
 import rina.turok.bope.external.BopeEventBus;
 

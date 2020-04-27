@@ -1,4 +1,4 @@
-package rina.turok.bope.framework;
+package rina.turok.turok.values;
 
 /**
 * @author Rina
@@ -8,12 +8,12 @@ package rina.turok.bope.framework;
 *
 */
 public class TurokDouble {
-	String name;
-	String tag;
+	private String name;
+	private String tag;
 
-	double value;
-	double max;
-	double min;
+	private double value;
+	private double max;
+	private double min;
 
 	public TurokDouble(String name, String tag, double turok_double, double min, double max) {
 		this.name  = name;

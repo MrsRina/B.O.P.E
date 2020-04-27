@@ -42,14 +42,18 @@ public class BopeGUI extends GuiScreen {
 		this.frame_x = 10;
 		this.frame_y = 30;
 
-		for (BopeModule modules : Bope.get_module_manager().get_array_modules()) {
-			if (modules.get_category().is_hidden()) {
+		for (BopeCategory modules_category : BopeCategory.values()) {
+			if (modules_category.is_hidden()) {
 				continue;
 			}
 
-			BopeFrame frames = new BopeFrame(modules.get_category());
+			if (Bope.get_module_manager().get_modules_with_category(modules_category) == null) {
+				continue;
+			}
 
-			this.frame_x += frames.get_width() + 10;
+			BopeFrame frames = new BopeFrame(modules_category);
+
+			this.frame_x += 10;
 
 			frames.set_x(this.frame_x);
 

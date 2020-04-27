@@ -50,13 +50,13 @@ endProcessing "rina/turok/bope/bopemod/events/BopeEventPacket.java"
 startProcessing "rina/turok/bope/bopemod/events/BopeEventRender.java" md5: 24f83ebfcb19e2bad8f1d2d402893520
 endProcessing "rina/turok/bope/bopemod/events/BopeEventRender.java"
 
-startProcessing "rina/turok/bope/bopemod/guiscreen/BopeGUI.java" md5: cf10eea8e1397174d66b7478759b5ffd
+startProcessing "rina/turok/bope/bopemod/guiscreen/BopeGUI.java" md5: d8c8d75266c8d77d1a48213b3fdf4564
 endProcessing "rina/turok/bope/bopemod/guiscreen/BopeGUI.java"
 
 startProcessing "rina/turok/bope/bopemod/guiscreen/render/BopeDraw.java" md5: 0d4302ec8fb73d15682d3b251d7b9175
 endProcessing "rina/turok/bope/bopemod/guiscreen/render/BopeDraw.java"
 
-startProcessing "rina/turok/bope/bopemod/guiscreen/render/components/BopeFrame.java" md5: 98d88adb74f7f19ca5f0d05ae0c9b00e
+startProcessing "rina/turok/bope/bopemod/guiscreen/render/components/BopeFrame.java" md5: 767526ae7956a59c563c377da02c9e05
 endProcessing "rina/turok/bope/bopemod/guiscreen/render/components/BopeFrame.java"
 
 startProcessing "rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java" md5: c42f3f1e68290b5ffba67f3a53c7e158
@@ -122,11 +122,11 @@ endProcessing "rina/turok/bope/mixins/BopeMixinNetworkManager.java"
 startProcessing "rina/turok/turok/Turok.java" md5: 008129ccf837516ebbc6ded2a8aa58cf
 endProcessing "rina/turok/turok/Turok.java"
 
-startProcessing "rina/turok/turok/draw/TurokGL.java" md5: 484d7fb67e26c3728eedf1044bfe1c69
-endProcessing "rina/turok/turok/draw/TurokGL.java"
+startProcessing "rina/turok/turok/TurokGL.java" md5: 484d7fb67e26c3728eedf1044bfe1c69
+endProcessing "rina/turok/turok/TurokGL.java"
 
-startProcessing "rina/turok/turok/draw/TurokRenderHelp.java" md5: 03758bd408c335f0403dd6ca71173b46
-endProcessing "rina/turok/turok/draw/TurokRenderHelp.java"
+startProcessing "rina/turok/turok/TurokRenderHelp.java" md5: 03758bd408c335f0403dd6ca71173b46
+endProcessing "rina/turok/turok/TurokRenderHelp.java"
 
 startProcessing "rina/turok/turok/task/TurokRect.java" md5: 9907f3d98a8cc011156f528074b9ba29
 endProcessing "rina/turok/turok/task/TurokRect.java"

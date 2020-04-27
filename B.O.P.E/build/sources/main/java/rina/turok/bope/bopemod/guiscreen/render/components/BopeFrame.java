@@ -17,6 +17,8 @@ import rina.turok.bope.Bope;
 
 // Turok.
 import rina.turok.turok.task.TurokRect;
+import rina.turok.turok.draw.TurokGL;
+import rina.turok.turok.Turok;
 
 /**
 * @author Rina
@@ -54,25 +56,28 @@ public class BopeFrame {
 		this.width_abs     = this.width_name;
 		this.frame_name    = category.get_name();
 
-		for (BopeModule modules : Bope.get_module_manager().get_array_modules()) {
-			if (modules.get_category().is_hidden()) {
-				continue;
-			}
 
+		int button_y = this.x + 10;
+
+		for (BopeModule modules : Bope.get_module_manager().get_modules_with_category(this.category)) {
 			BopeModuleButton module_buttons = new BopeModuleButton(modules, this);
+
+			module_buttons.set_y(button_y);
+
+			set_height(module_buttons.get_y());
 
 			this.module_button.add(module_buttons);
 
-			this.height += 10;
+			button_y += 10;
 		}
 	}
 
 	public void set_width(int width) {
-		this.width = this.y + width;
+		this.width = width;
 	}
 
 	public void set_height(int height) {
-		this.height = this.x + height;
+		this.height = height;
 	}
 
 	public void set_x(int x) {
@@ -121,6 +126,9 @@ public class BopeFrame {
 		}
 
 		this.frame_name = this.category.get_name();
+
+		TurokGL.color(255, 255, 255, 255);
+		TurokGL.draw_rect(this.x, this.y, this.width, this.height);
 
 		font.draw_string(this.frame_name, this.x + 2, this.y + 1, 0, 0, 0);
 

@@ -192,10 +192,10 @@ End  Processing: rina/turok/bope/bopemod/events/BopeEventRender.java
 Start Processing: rina/turok/bope/bopemod/guiscreen/BopeGUI.java
 Rename method net/minecraft/client/Minecraft/getMinecraft ()Lnet/minecraft/client/Minecraft;[796,808]::getMinecraft->func_71410_x
 FOUND CONSTR method rina/turok/bope/bopemod/guiscreen/BopeGUI/BopeGUI ()V rina/turok/bope/bopemod/guiscreen/BopeGUI
-Rename method net/minecraft/client/gui/GuiScreen/initGui ()V[1275,1282]::initGui->func_73866_w_
-Rename method net/minecraft/client/gui/GuiScreen/doesGuiPauseGame ()Z[1325,1341]::doesGuiPauseGame->func_73868_f
-Rename method net/minecraft/client/gui/GuiScreen/drawScreen (IIF)V[1391,1401]::drawScreen->func_73863_a
-Rename method net/minecraft/client/gui/GuiScreen/keyTyped (CI)V[1535,1543]::keyTyped->func_73869_a
+Rename method net/minecraft/client/gui/GuiScreen/initGui ()V[1341,1348]::initGui->func_73866_w_
+Rename method net/minecraft/client/gui/GuiScreen/doesGuiPauseGame ()Z[1391,1407]::doesGuiPauseGame->func_73868_f
+Rename method net/minecraft/client/gui/GuiScreen/drawScreen (IIF)V[1457,1467]::drawScreen->func_73863_a
+Rename method net/minecraft/client/gui/GuiScreen/keyTyped (CI)V[1601,1609]::keyTyped->func_73869_a
 Import: net.minecraft.client.gui.ScaledResolution
 Import: net.minecraft.client.gui.GuiScreen
 Import: net.minecraft.client.Minecraft
@@ -203,8 +203,8 @@ Import: net.minecraft.client.gui.Gui
 Adding 4 imports
         java.util.ArrayList
         rina.turok.bope.Bope
-        rina.turok.bope.bopemod.BopeModule
         rina.turok.bope.bopemod.guiscreen.render.components.BopeFrame
+        rina.turok.bope.bopemod.hacks.BopeCategory
 End  Processing: rina/turok/bope/bopemod/guiscreen/BopeGUI.java
 
 Start Processing: rina/turok/bope/bopemod/guiscreen/render/BopeDraw.java
@@ -234,11 +234,12 @@ End  Processing: rina/turok/bope/bopemod/guiscreen/render/BopeDraw.java
 Start Processing: rina/turok/bope/bopemod/guiscreen/render/components/BopeFrame.java
 FOUND CONSTR method rina/turok/bope/bopemod/guiscreen/render/components/BopeFrame/BopeFrame (Lrina/turok/bope/bopemod/hacks/BopeCategory;)V rina/turok/bope/bopemod/guiscreen/render/components/BopeFrame
 Import: java.util.*
-Adding 4 imports
+Adding 5 imports
         rina.turok.bope.Bope
         rina.turok.bope.bopemod.BopeModule
         rina.turok.bope.bopemod.guiscreen.render.BopeDraw
         rina.turok.bope.bopemod.hacks.BopeCategory
+        rina.turok.turok.draw.TurokGL
 End  Processing: rina/turok/bope/bopemod/guiscreen/render/components/BopeFrame.java
 
 Start Processing: rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java
@@ -552,7 +553,7 @@ FOUND CONSTR method rina/turok/turok/Turok/Turok (Ljava/lang/String;)V rina/turo
 Import: rina.turok.turok.draw.TurokGL
 End  Processing: rina/turok/turok/Turok.java
 
-Start Processing: rina/turok/turok/draw/TurokGL.java
+Start Processing: rina/turok/turok/TurokGL.java
 Rename method net/minecraft/client/renderer/GlStateManager/tryBlendFuncSeparate (Lnet/minecraft/client/renderer/GlStateManager$SourceFactor;Lnet/minecraft/client/renderer/GlStateManager$DestFactor;Lnet/minecraft/client/renderer/GlStateManager$SourceFactor;Lnet/minecraft/client/renderer/GlStateManager$DestFactor;)V[617,637]::tryBlendFuncSeparate->func_187428_a
 New Key: class net/minecraft/client/renderer/GlStateManager
 New Key: class net/minecraft/client/renderer/GlStateManager
@@ -574,9 +575,11 @@ Rename method net/minecraft/client/renderer/GlStateManager/enableBlend ()V[1264,
 Rename method net/minecraft/client/renderer/GlStateManager/enableDepth ()V[1298,1309]::enableDepth->func_179126_j
 Import: net.minecraft.client.renderer.GlStateManager
 Import: org.lwjgl.opengl.GL11
-End  Processing: rina/turok/turok/draw/TurokGL.java
+Adding 1 imports
+        rina.turok.turok.draw.TurokGL
+End  Processing: rina/turok/turok/TurokGL.java
 
-Start Processing: rina/turok/turok/draw/TurokRenderHelp.java
+Start Processing: rina/turok/turok/TurokRenderHelp.java
 FOUND CONSTR method rina/turok/turok/draw/TurokRenderHelp/TurokRenderHelp ()V rina/turok/turok/draw/TurokRenderHelp
 Rename method net/minecraft/client/renderer/Tessellator/getBuffer ()Lnet/minecraft/client/renderer/BufferBuilder;[684,693]::getBuffer->func_178180_c
 Rename method net/minecraft/client/renderer/BufferBuilder/begin (ILnet/minecraft/client/renderer/vertex/VertexFormat;)V[700,705]::begin->func_181668_a
@@ -664,7 +667,10 @@ Import: net.minecraft.client.renderer.BufferBuilder
 Import: net.minecraft.client.renderer.Tessellator
 Import: net.minecraft.util.math.BlockPos
 Import: org.lwjgl.opengl.GL11
-End  Processing: rina/turok/turok/draw/TurokRenderHelp.java
+Adding 2 imports
+        rina.turok.turok.draw.TurokGL
+        rina.turok.turok.draw.TurokRenderHelp
+End  Processing: rina/turok/turok/TurokRenderHelp.java
 
 Start Processing: rina/turok/turok/task/TurokRect.java
 FOUND CONSTR method rina/turok/turok/task/TurokRect/TurokRect (Ljava/lang/String;II)V rina/turok/turok/task/TurokRect

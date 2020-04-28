@@ -43,32 +43,38 @@ public class BopeFrame {
 
 	private String frame_name;
 
-	private BopeDraw font = new BopeDraw(0.75f);
+	private BopeDraw font = new BopeDraw(1);
+
+	private boolean first = false;
 
 	public BopeFrame(BopeCategory category) {
-		this.x             = 10;
-		this.y             = 10;
-		this.width         = 100;
-		this.height        = 20;
-		this.category      = category;
+		// Why space and not aligned? Sorry, was dirty.
+		this.x = 10;
+		this.y = 10;
+
+		this.width  = 100;
+		this.height = 25;
+
+		this.category = category;
+
 		this.module_button = new ArrayList<>();
-		this.width_name    = font.get_string_width(this.category.get_name());
-		this.width_abs     = this.width_name;
-		this.frame_name    = category.get_name();
 
+		this.width_name = font.get_string_width(this.category.get_name());
+		this.width_abs  = this.width_name;
+		this.frame_name = category.get_name();
 
-		int button_y = this.x + 10;
+		int count = 0;
 
-		for (BopeModule modules : Bope.get_module_manager().get_modules_with_category(this.category)) {
-			BopeModuleButton module_buttons = new BopeModuleButton(modules, this);
+		for (BopeModule modules : Bope.get_module_manager().get_modules_with_category(category)) {
+			BopeModuleButton buttons = new BopeModuleButton(modules, this);
 
-			module_buttons.set_y(button_y);
+			buttons.set_y(this.height);
 
-			set_height(module_buttons.get_y());
+			this.module_button.add(buttons);
 
-			this.module_button.add(module_buttons);
+			count++;
 
-			button_y += 10;
+			this.height += 10;
 		}
 	}
 
@@ -121,16 +127,16 @@ public class BopeFrame {
 	}
 
 	public void render() {
-		for (BopeModuleButton module_buttons : this.module_button) {
-			module_buttons.render(2);
+		for (BopeModuleButton buttons : this.module_button) {
+			buttons.set_x(this.x + 2);
+
+			buttons.render(2);
 		}
 
 		this.frame_name = this.category.get_name();
 
-		TurokGL.color(255, 255, 255, 255);
-		TurokGL.draw_rect(this.x, this.y, this.width, this.height);
-
-		font.draw_string(this.frame_name, this.x + 2, this.y + 1, 0, 0, 0);
+		BopeDraw.draw_rect(this.x, this.y, this.x + this.width, this.y + this.height, 190, 190, 190, 55);
+		BopeDraw.draw_string(this.frame_name, this.x + 5, this.y + 1, 0, 0, 0);
 
 		this.width_name = font.get_string_width(this.category.get_name());
 	}

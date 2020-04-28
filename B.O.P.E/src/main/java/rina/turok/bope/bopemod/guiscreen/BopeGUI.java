@@ -9,6 +9,7 @@ import org.lwjgl.input.Keyboard;
 import org.lwjgl.opengl.GL11;
 
 import java.util.*;
+import java.io.*;
 
 // Guiscreen;
 import rina.turok.bope.bopemod.guiscreen.render.components.BopeFrame;
@@ -33,36 +34,27 @@ public class BopeGUI extends GuiScreen {
 	private ArrayList<BopeFrame> frame;
 
 	private int frame_x;
-	private int frame_y;
 
 	private final Minecraft mc = Minecraft.getMinecraft();
 
 	public BopeGUI() {
 		this.frame   = new ArrayList<>();
-		this.frame_x = 10;
-		this.frame_y = 30;
+		this.frame_x = 10; 
 
-		for (BopeCategory modules_category : BopeCategory.values()) {
-			if (modules_category.is_hidden()) {
+		for (BopeCategory categorys : BopeCategory.values()) {
+			if (categorys.is_hidden()) {
 				continue;
 			}
 
-			if (Bope.get_module_manager().get_modules_with_category(modules_category) == null) {
-				continue;
-			}
-
-			BopeFrame frames = new BopeFrame(modules_category);
+			BopeFrame frames = new BopeFrame(categorys);
 
 			frames.set_x(this.frame_x);
 
-			this.frame_x += 10;
-
 			this.frame.add(frames);
+
+			this.frame_x += frames.get_width() + 5;
 		}
 	}
-
-	@Override
-	public void initGui() {}
 
 	@Override
 	public boolean doesGuiPauseGame() {
@@ -70,12 +62,21 @@ public class BopeGUI extends GuiScreen {
 	}
 
 	@Override
-	public void drawScreen(int x, int y, float tick) {	
+	public void mouseClicked(int x, int y, int mouse) throws IOException {
+		for (BopeFrame frames : this.frame) {
+			if (frames.on_widget_name(x, y) && mouse == 1) {
+				frames.set_x(x - frames.get_x());
+				frames.set_y(y - frames.get_y());
+			}
+		}
+
+		super.mouseClicked(x, y, mouse);
+	}
+
+	@Override
+	public void drawScreen(int x, int y, float tick) {
 		for (BopeFrame frames : this.frame) {
 			frames.render();
 		}
 	}
-
-	@Override
-	protected void keyTyped(char char_, int key) {}
 }

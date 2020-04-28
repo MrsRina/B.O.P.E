@@ -190,19 +190,19 @@ Adding 1 imports
 End  Processing: rina/turok/bope/bopemod/events/BopeEventRender.java
 
 Start Processing: rina/turok/bope/bopemod/guiscreen/BopeGUI.java
-Rename method net/minecraft/client/Minecraft/getMinecraft ()Lnet/minecraft/client/Minecraft;[796,808]::getMinecraft->func_71410_x
+Rename method net/minecraft/client/Minecraft/getMinecraft ()Lnet/minecraft/client/Minecraft;[792,804]::getMinecraft->func_71410_x
 FOUND CONSTR method rina/turok/bope/bopemod/guiscreen/BopeGUI/BopeGUI ()V rina/turok/bope/bopemod/guiscreen/BopeGUI
-Rename method net/minecraft/client/gui/GuiScreen/initGui ()V[1341,1348]::initGui->func_73866_w_
-Rename method net/minecraft/client/gui/GuiScreen/doesGuiPauseGame ()Z[1391,1407]::doesGuiPauseGame->func_73868_f
-Rename method net/minecraft/client/gui/GuiScreen/drawScreen (IIF)V[1457,1467]::drawScreen->func_73863_a
-Rename method net/minecraft/client/gui/GuiScreen/keyTyped (CI)V[1601,1609]::keyTyped->func_73869_a
+Rename method net/minecraft/client/gui/GuiScreen/doesGuiPauseGame ()Z[1206,1222]::doesGuiPauseGame->func_73868_f
+Rename method net/minecraft/client/gui/GuiScreen/mouseClicked (III)V[1272,1284]::mouseClicked->func_73864_a
+Rename method net/minecraft/client/gui/GuiScreen/mouseClicked (III)V[1525,1537]::mouseClicked->func_73864_a
+Rename method net/minecraft/client/gui/GuiScreen/drawScreen (IIF)V[1584,1594]::drawScreen->func_73863_a
 Import: net.minecraft.client.gui.ScaledResolution
 Import: net.minecraft.client.gui.GuiScreen
 Import: net.minecraft.client.Minecraft
 Import: net.minecraft.client.gui.Gui
 Adding 4 imports
+        java.io.IOException
         java.util.ArrayList
-        rina.turok.bope.Bope
         rina.turok.bope.bopemod.guiscreen.render.components.BopeFrame
         rina.turok.bope.bopemod.hacks.BopeCategory
 End  Processing: rina/turok/bope/bopemod/guiscreen/BopeGUI.java
@@ -213,10 +213,11 @@ Rename field net/minecraft/client/Minecraft/fontRenderer[678,690]::fontRenderer-
 FOUND CONSTR method rina/turok/bope/bopemod/guiscreen/render/BopeDraw/BopeDraw (F)V rina/turok/bope/bopemod/guiscreen/render/BopeDraw
 Rename method net/minecraft/client/gui/Gui/drawRect (IIIII)V[874,882]::drawRect->func_73734_a
 Rename method net/minecraft/client/gui/Gui/drawRect (IIIII)V[1024,1032]::drawRect->func_73734_a
-Rename method net/minecraft/client/gui/FontRenderer/drawString (Ljava/lang/String;III)I[1336,1346]::drawString->func_78276_b
-Rename method net/minecraft/client/renderer/GlStateManager/enableBlend ()V[1561,1572]::enableBlend->func_179147_l
-Rename field net/minecraft/client/gui/FontRenderer/FONT_HEIGHT[1770,1781]::FONT_HEIGHT->field_78288_b
-Rename method net/minecraft/client/gui/FontRenderer/getStringWidth (Ljava/lang/String;)I[1929,1943]::getStringWidth->func_78256_a
+Rename method net/minecraft/client/gui/FontRenderer/drawString (Ljava/lang/String;III)I[1259,1269]::drawString->func_78276_b
+Rename method net/minecraft/client/gui/FontRenderer/drawString (Ljava/lang/String;III)I[1506,1516]::drawString->func_78276_b
+Rename method net/minecraft/client/renderer/GlStateManager/enableBlend ()V[1731,1742]::enableBlend->func_179147_l
+Rename field net/minecraft/client/gui/FontRenderer/FONT_HEIGHT[1940,1951]::FONT_HEIGHT->field_78288_b
+Rename method net/minecraft/client/gui/FontRenderer/getStringWidth (Ljava/lang/String;)I[2099,2113]::getStringWidth->func_78256_a
 FOUND CONSTR method rina/turok/bope/bopemod/guiscreen/render/BopeDraw/TurokColor/TurokColor (IIII)V rina/turok/bope/bopemod/guiscreen/render/BopeDraw/TurokColor
 FOUND CONSTR method rina/turok/bope/bopemod/guiscreen/render/BopeDraw/TurokColor/TurokColor (III)V rina/turok/bope/bopemod/guiscreen/render/BopeDraw/TurokColor
 Import: java.awt.*
@@ -234,12 +235,11 @@ End  Processing: rina/turok/bope/bopemod/guiscreen/render/BopeDraw.java
 Start Processing: rina/turok/bope/bopemod/guiscreen/render/components/BopeFrame.java
 FOUND CONSTR method rina/turok/bope/bopemod/guiscreen/render/components/BopeFrame/BopeFrame (Lrina/turok/bope/bopemod/hacks/BopeCategory;)V rina/turok/bope/bopemod/guiscreen/render/components/BopeFrame
 Import: java.util.*
-Adding 5 imports
+Adding 4 imports
         rina.turok.bope.Bope
         rina.turok.bope.bopemod.BopeModule
         rina.turok.bope.bopemod.guiscreen.render.BopeDraw
         rina.turok.bope.bopemod.hacks.BopeCategory
-        rina.turok.turok.draw.TurokGL
 End  Processing: rina/turok/bope/bopemod/guiscreen/render/components/BopeFrame.java
 
 Start Processing: rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java

@@ -44,7 +44,11 @@ public class BopeDraw {
 		Gui.drawRect(rect.get_x(), rect.get_y(), rect.get_screen_width(), rect.get_screen_height(), new TurokColor(r, g, b, a).hex());
 	}
 
-	public void draw_string(String string, int x, int y, int r, int g, int b) {
+	public static void draw_string(String string, int x, int y, int r, int g, int b) {
+		font_renderer.drawString(string, x, y, new TurokColor(r, g, b).hex());
+	}
+
+	public void draw_string_gl(String string, int x, int y, int r, int g, int b) {
 		Turok resize_gl = new Turok("Resize");
 
 		resize_gl.resize(x, y, this.size);

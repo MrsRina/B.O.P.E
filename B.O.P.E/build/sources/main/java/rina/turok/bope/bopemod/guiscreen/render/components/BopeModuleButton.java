@@ -43,8 +43,8 @@ public class BopeModuleButton {
 		this.module  = module;
 		this.master  = master;
 		this.setting = new ArrayList<>();
-		this.x       = master.get_x() + 5;
-		this.y       = master.get_y() + 15;
+		this.x       = 0;
+		this.y       = 0;
 		this.width   = font.get_string_width(module.get_name()) + 5;
 		this.height  = 15;
 		this.pressed = false;
@@ -94,9 +94,6 @@ public class BopeModuleButton {
 		}
 
 		this.width = font.get_string_width(module.get_name());
-
-		this.x = this.master.get_x();
-		this.y = this.master.get_y() + 10;
 
 		font.draw_string(this.module.get_name(), this.x + separe, this.y, 255, 255, 255);
 	}

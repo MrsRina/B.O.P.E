@@ -56,6 +56,12 @@ public class BopeModuleButton {
 		return this.module;
 	}
 
+	public void set_pressed(boolean value) {
+		this.pressed = value;
+
+		this.module.set_active(value);
+	}
+
 	public void set_width(int width) {
 		this.width = width;
 	}
@@ -70,6 +76,10 @@ public class BopeModuleButton {
 
 	public void set_y(int y) {
 		this.y = y;
+	}
+
+	public boolean get_state() {
+		return this.pressed;
 	}
 
 	public int get_width() {
@@ -88,13 +98,33 @@ public class BopeModuleButton {
 		return this.y;
 	}
 
-	public void render(int separe) {
-		if (this.pressed) {
-			this.pressed = false;
+	public boolean motion(int x, int y) {
+		if (x >= get_x() && y >= get_y() && x <= get_x() + get_width() && y <= get_y() + get_height()) {
+			return true;
 		}
 
-		this.width = font.get_string_width(module.get_name());
+		return false;
+	}
 
-		font.draw_string(this.module.get_name(), this.x + separe, this.y, 255, 255, 255);
+	public void mouse(int x, int y, int mouse) {
+		if (mouse == 0) {
+			if (motion(x, y)) {
+				set_pressed(!get_state());
+			}
+		}
+	}
+
+	public void render(int master_y, int separe) {
+		int y_master = master_y + this.y;
+
+		if (this.pressed) {
+			font.draw_string(this.module.get_name(), this.x + separe, y_master, 0, 255, 0);
+		} else {
+			font.draw_string(this.module.get_name(), this.x + separe, y_master, 255, 255, 255);
+		}
+
+		BopeDraw.draw_rect(this.x, this.y, this.x + this.width, this.y + this.height, 255, 255, 0, 150);
+
+		this.width = font.get_string_width(module.get_name());
 	}
 }

@@ -62,21 +62,26 @@ public class BopeGUI extends GuiScreen {
 	}
 
 	@Override
-	public void mouseClicked(int x, int y, int mouse) throws IOException {
+	protected void mouseClicked(int x, int y, int mouse) {
 		for (BopeFrame frames : this.frame) {
-			if (frames.on_widget_name(x, y) && mouse == 1) {
-				frames.set_x(x - frames.get_x());
-				frames.set_y(y - frames.get_y());
+			frames.mouse(x, y, mouse);
+
+
+			if (mouse == 0 && frames.can) {
+				if (frames.motion("name", x, y)) {
+					frames.set_move(true);
+
+					frames.set_move_x(x - frames.get_x());
+					frames.set_move_y(y - frames.get_y());
+				}
 			}
 		}
-
-		super.mouseClicked(x, y, mouse);
 	}
 
 	@Override
 	public void drawScreen(int x, int y, float tick) {
 		for (BopeFrame frames : this.frame) {
-			frames.render();
+			frames.render(x, y);
 		}
 	}
 }

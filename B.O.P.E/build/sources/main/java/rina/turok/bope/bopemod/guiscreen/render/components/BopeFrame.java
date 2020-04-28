@@ -46,6 +46,10 @@ public class BopeFrame {
 	private BopeDraw font = new BopeDraw(1);
 
 	private boolean first = false;
+	private boolean move;
+
+	private int move_x;
+	private int move_y;
 
 	public BopeFrame(BopeCategory category) {
 		// Why space and not aligned? Sorry, was dirty.
@@ -63,6 +67,10 @@ public class BopeFrame {
 		this.width_abs  = this.width_name;
 		this.frame_name = category.get_name();
 
+		this.move_x = 0;
+		this.move_y = 0;
+
+		int size  = Bope.get_module_manager().get_modules_with_category(category).size();
 		int count = 0;
 
 		for (BopeModule modules : Bope.get_module_manager().get_modules_with_category(category)) {
@@ -74,8 +82,26 @@ public class BopeFrame {
 
 			count++;
 
-			this.height += 10;
+			if (count >= size) {
+				this.height += 5;
+			} else {
+				this.height += 10 + 2;
+			}
 		}
+
+		this.move = false;
+	}
+
+	public void set_move(boolean value) {
+		this.move = value;
+	}
+
+	public void set_move_x(int x) {
+		this.move_x = x;
+	}
+
+	public void set_move_y(int y) {
+		this.move_y = y;
 	}
 
 	public void set_width(int width) {
@@ -94,6 +120,10 @@ public class BopeFrame {
 		this.y = y;
 	}
 
+	public boolean is_moving() {
+		return this.move;
+	}
+
 	public int get_width() {
 		return this.width;
 	}
@@ -110,7 +140,7 @@ public class BopeFrame {
 		return this.y;
 	}
 
-	public boolean on_widget(int mx, int my) {
+	public boolean motion(int mx, int my) {
 		if (mx >= get_x() && my >= get_y() && mx <= get_x() + get_width() && my <= get_y() + get_height()) {
 			return true;
 		}
@@ -118,7 +148,7 @@ public class BopeFrame {
 		return false;
 	}
 
-	public boolean on_widget_name(int mx, int my) {
+	public boolean motion(String tag, int mx, int my) {
 		if (mx >= get_x() && my >= get_y() && mx <= get_x() + get_width() && my <= get_y() + font.get_string_height(this.frame_name)) {
 			return true;
 		}
@@ -126,18 +156,35 @@ public class BopeFrame {
 		return false;
 	}
 
-	public void render() {
+	public void mouse(int x, int y, int mouse) {
+		for (BopeModuleButton buttons : this.module_button) {
+			buttons.mouse(x, y, mouse);
+		}
+	}
+
+	public void update(int x, int y) {
+		String values = "0x0FF3";
+
+		if (is_moving()) {
+			set_x(x - this.move_x);
+			set_y(y -this.move_y);
+		}
+	}
+
+	public void render(int x, int y) {
 		for (BopeModuleButton buttons : this.module_button) {
 			buttons.set_x(this.x + 2);
 
-			buttons.render(2);
+			buttons.render(this.y, 2);
 		}
 
 		this.frame_name = this.category.get_name();
 
-		BopeDraw.draw_rect(this.x, this.y, this.x + this.width, this.y + this.height, 190, 190, 190, 55);
-		BopeDraw.draw_string(this.frame_name, this.x + 5, this.y + 1, 0, 0, 0);
+		BopeDraw.draw_rect(this.x, this.y, this.x + this.width, this.y + this.height, 0, 0, 0, 150);
+		BopeDraw.draw_string(this.frame_name, this.x + 5, this.y + 2, 255, 255, 255);
 
 		this.width_name = font.get_string_width(this.category.get_name());
+
+		update(x, y);
 	}
 }

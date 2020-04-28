@@ -24,7 +24,16 @@ public class BopeClickGUI extends BopeModule {
 	}
 
 	@Override
-	public void update() {
-		mc.displayGuiScreen(Bope.click_gui);
+	public void enable() {
+		if (mc.world != null && mc.player != null) {
+			mc.displayGuiScreen(Bope.click_gui);
+		}
+	}
+
+	@Override
+	public void disable() {
+		if (mc.world != null && mc.player != null) {
+			mc.displayGuiScreen(null);
+		}
 	}
 }

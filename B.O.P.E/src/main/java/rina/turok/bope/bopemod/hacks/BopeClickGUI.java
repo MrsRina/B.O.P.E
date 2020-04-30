@@ -29,11 +29,4 @@ public class BopeClickGUI extends BopeModule {
 			mc.displayGuiScreen(Bope.click_gui);
 		}
 	}
-
-	@Override
-	public void disable() {
-		if (mc.world != null && mc.player != null) {
-			mc.displayGuiScreen(null);
-		}
-	}
 }

@@ -55,8 +55,9 @@ public class BopeMixinMinecraft {
 	}
 
 	@Redirect(method = "run", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/Minecraft;displayCrashReport(Lnet/minecraft/crash/CrashReport;)V"))
-	private void crash(Minecraft minecraft, CrashReport crashReport) {
+	private void crash(Minecraft minecraft, CrashReport crash) {
 		Bope.send_client_log("The client were saved before crash.");
+		Bope.send_client_log(crash.getCrashCause() + ": " + crash.getDescription());
 
 		Bope.get_config_manager().save();
 	}

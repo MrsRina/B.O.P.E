@@ -1,5 +1,6 @@
 package rina.turok.bope.bopemod.guiscreen.render;
 
+import java.util.*;
 import java.awt.*;
 
 import net.minecraft.client.renderer.GlStateManager;
@@ -38,6 +39,24 @@ public class BopeDraw {
 
 	public static void draw_rect(int x, int y, int w, int h, int r, int g, int b, int a) {
 		Gui.drawRect(x, y, w, h, new TurokColor(r, g, b, a).hex());
+	}
+
+	public static void draw_rect(int x, int y, int w, int h, int r, int g, int b, int a, int size, String type) {
+		if (((boolean) Arrays.asList(type.split("-")).contains("up"))) {
+			draw_rect(x, y, x + w, y + size, r, g, b, a);
+		}
+
+		if (((boolean) Arrays.asList(type.split("-")).contains("down"))) {
+			draw_rect(x, y + h - size, x + w, y + h, r, g, b, a);
+		}
+
+		if (((boolean) Arrays.asList(type.split("-")).contains("left"))) {
+			draw_rect(x, y, x + size, y + h, r, g, b, a);
+		}
+
+		if (((boolean) Arrays.asList(type.split("-")).contains("right"))) {
+			draw_rect(x + w - size, y, x + w, y + h, r, g, b, a);
+		}
 	}
 
 	public static void draw_rect(TurokRect rect, int r, int g, int b, int a) {

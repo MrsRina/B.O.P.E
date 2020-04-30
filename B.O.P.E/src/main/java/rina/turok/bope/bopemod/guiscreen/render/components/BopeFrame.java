@@ -42,6 +42,7 @@ public class BopeFrame {
 	private int width_abs;
 
 	private String frame_name;
+	private String frame_tag;
 
 	private BopeDraw font = new BopeDraw(1);
 
@@ -52,6 +53,21 @@ public class BopeFrame {
 	private int move_y;
 	
 	private boolean can;
+
+	private int bd_r = 0;
+	private int bd_g = 0;
+	private int bd_b = 255;
+	private int bd_a = 150;
+
+	private int bg_r = 0;
+	private int bg_g = 0;
+	private int bg_b = 0;
+	private int bg_a = 255;
+
+	private int nc_r = 0;
+	private int nc_g = 0;
+	private int nc_b = 255;
+	private int nc_a = 255;
 
 	public BopeFrame(BopeCategory category) {
 		// Why space and not aligned? Sorry, was dirty.
@@ -67,7 +83,9 @@ public class BopeFrame {
 
 		this.width_name = font.get_string_width(this.category.get_name());
 		this.width_abs  = this.width_name;
+		
 		this.frame_name = category.get_name();
+		this.frame_tag  = category.get_tag();
 
 		this.move_x = 0;
 		this.move_y = 0;
@@ -93,6 +111,10 @@ public class BopeFrame {
 
 		this.move = false;
 		this.can  = true;
+	}
+
+	public void does_can(boolean value) {
+		this.can = value;
 	}
 
 	public void set_move(boolean value) {
@@ -123,6 +145,14 @@ public class BopeFrame {
 		this.y = y;
 	}
 
+	public String get_name() {
+		return this.frame_name;
+	}
+
+	public String get_tag() {
+		return this.frame_tag;
+	}
+
 	public boolean is_moving() {
 		return this.move;
 	}
@@ -141,6 +171,10 @@ public class BopeFrame {
 
 	public int get_y() {
 		return this.y;
+	}
+
+	public boolean can() {
+		return this.can;
 	}
 
 	public boolean motion(int mx, int my) {
@@ -165,29 +199,41 @@ public class BopeFrame {
 		}
 	}
 
-	public void update(int x, int y) {
-		String values = "0x0FF3";
-
-		if (is_moving()) {
-			set_x(x - this.move_x);
-			set_y(y -this.move_y);
+	public void mouse_release(int x, int y, int mouse) {
+		for (BopeModuleButton buttons : this.module_button) {
+			buttons.button_release(x, y, mouse);
 		}
 	}
 
 	public void render(int x, int y) {
+		this.frame_name = this.category.get_name();
+		this.width_name = font.get_string_width(this.category.get_name());
+
+		draw_background(this.bg_r, this.bg_g, this.bg_b, this.bg_a);
+		draw_border(this.bd_r, this.bd_g, this.bd_b, this.bd_a, 2, "left-right");
+		draw_name(this.frame_name, this.nc_r, this.nc_g, this.nc_b);
+
+		if (is_moving()) {
+			set_x(x - this.move_x);
+			set_y(y - this.move_y);
+		}
+
 		for (BopeModuleButton buttons : this.module_button) {
 			buttons.set_x(this.x + 2);
 
-			buttons.render(this.y, 2);
+			buttons.render(2);
 		}
+	}
 
-		this.frame_name = this.category.get_name();
+	public void draw_background(int r, int g, int b, int a) {
+		BopeDraw.draw_rect(this.x, this.y, this.x + this.width, this.y + this.height, r, g, b, a);
+	}
 
-		BopeDraw.draw_rect(this.x, this.y, this.x + this.width, this.y + this.height, 0, 0, 0, 150);
-		BopeDraw.draw_string(this.frame_name, this.x + 5, this.y + 2, 255, 255, 255);
+	public void draw_border(int r, int g, int b, int a, int size, String coords) {
+		BopeDraw.draw_rect(this.x - 1, this.y, this.width + 1, this.height, r, g, b, a, size, coords);
+	}
 
-		this.width_name = font.get_string_width(this.category.get_name());
-
-		update(x, y);
+	public void draw_name(String name, int r, int g, int b) {
+		BopeDraw.draw_string(name, this.x + 5, this.y + 2, r, g, b);
 	}
 }

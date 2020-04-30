@@ -27,7 +27,9 @@ public class BopeModuleButton {
 	private BopeModule module;
 	private BopeFrame  master;
 
-	private ArrayList<BopeSetting> setting;
+	//private ArrayList<BopeAbstractWidget> widget;
+
+	private String module_name;
 
 	private int x;
 	private int y;
@@ -35,21 +37,52 @@ public class BopeModuleButton {
 	private int width;
 	private int height;
 
-	private boolean pressed;
+	private int save_y;
 
-	private BopeDraw font = new BopeDraw(0.75f);
+	private BopeDraw font = new BopeDraw(1);
+
+	private int bg_r = 0;
+	private int bg_g = 0;
+	private int bg_b = 42;
+	private int bg_a = 255;
+
+	private int bd_r = 0;
+	private int bd_g = 0;
+	private int bd_b = 255;
+	private int bd_a = 255;
 
 	public BopeModuleButton(BopeModule module, BopeFrame master) {
-		this.module  = module;
-		this.master  = master;
-		this.setting = new ArrayList<>();
-		this.x       = 0;
-		this.y       = 0;
-		this.width   = font.get_string_width(module.get_name()) + 5;
-		this.height  = 15;
-		this.pressed = false;
+		/**
+		 * A value to save the y. When move the frame the save_y does the work.
+		 * @param save_y;
+		 **/
 
-		// for (BopeSetting settings : Bope.get_setting_manager().get_settings_with_module(module)) {}
+		this.module = module;
+		this.master = master;
+
+		this.module_name = module.get_name();
+
+		this.x = 0;
+		this.y = 0;
+
+		this.width  = font.get_string_width(module.get_name()) + 5;
+		this.height = font.get_string_height(module.get_name());
+
+		this.save_y = 0;
+
+		int widgets_y = this.y + 10;
+
+//		for (BopeSetting settings : Bope.get_setting_manager().get_settings_with_module(module)) {
+//			if (settings.get_type().equals("button")) {
+//				buttons = new BopeButton(this, settings.get_name(), settings.get_tag(), settings.get_value(false));
+
+//				buttons.set_y(widgets_y);
+
+//				this.widget.add(buttons);
+
+//				widgets_y += 10;
+//			}
+//		}
 	}
 
 	public BopeModule get_module() {
@@ -57,8 +90,6 @@ public class BopeModuleButton {
 	}
 
 	public void set_pressed(boolean value) {
-		this.pressed = value;
-
 		this.module.set_active(value);
 	}
 
@@ -79,7 +110,7 @@ public class BopeModuleButton {
 	}
 
 	public boolean get_state() {
-		return this.pressed;
+		return this.module.is_active();
 	}
 
 	public int get_width() {
@@ -98,8 +129,12 @@ public class BopeModuleButton {
 		return this.y;
 	}
 
+	public int get_save_y() {
+		return this.save_y;
+	}
+
 	public boolean motion(int x, int y) {
-		if (x >= get_x() && y >= get_y() && x <= get_x() + get_width() && y <= get_y() + get_height()) {
+		if (x >= get_x() && y >= get_save_y() && x <= get_x() + get_width() && y <= get_save_y() + get_height()) {
 			return true;
 		}
 
@@ -109,22 +144,37 @@ public class BopeModuleButton {
 	public void mouse(int x, int y, int mouse) {
 		if (mouse == 0) {
 			if (motion(x, y)) {
+				this.master.does_can(false);
+
 				set_pressed(!get_state());
 			}
 		}
 	}
 
-	public void render(int master_y, int separe) {
-		int y_master = master_y + this.y;
+	public void button_release(int x, int y, int mouse) {
+		this.master.does_can(true);
+	}
 
-		if (this.pressed) {
-			font.draw_string(this.module.get_name(), this.x + separe, y_master, 0, 255, 0);
+	public void render(int separe) {
+		set_width(this.master.get_width() - separe);
+
+		this.save_y = this.y + this.master.get_y() - 10;
+
+		if (this.module.is_active()) {
+			draw_background(separe, this.bg_r, this.bg_g, this.bg_b, this.bg_a);
+			draw_border(this.bd_r, this.bd_g, this.bd_b, this.bd_a, 2, "right-left");
+
+			font.draw_string(this.module_name, this.x + separe, this.save_y, 255, 255, 255);
 		} else {
-			font.draw_string(this.module.get_name(), this.x + separe, y_master, 255, 255, 255);
+			font.draw_string(this.module_name, this.x + separe, this.save_y, 255, 255, 255);
 		}
+	}
 
-		BopeDraw.draw_rect(this.x, this.y, this.x + this.width, this.y + this.height, 255, 255, 0, 150);
+	public void draw_background(int separe, int r, int g, int b, int a) {
+		BopeDraw.draw_rect(this.x, this.save_y, this.x + this.width - separe, this.save_y + this.height, r, g, b, a);
+	}
 
-		this.width = font.get_string_width(module.get_name());
+	public void draw_border(int r, int g, int b, int a, int size, String coords) {
+		BopeDraw.draw_rect(this.master.get_x() - 1, this.save_y, this.master.get_width() + 1, this.height, r, g, b, a, size, coords);
 	}
 }

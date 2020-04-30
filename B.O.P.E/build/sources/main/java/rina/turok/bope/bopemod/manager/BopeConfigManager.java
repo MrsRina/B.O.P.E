@@ -17,6 +17,7 @@ import rina.turok.bope.bopemod.manager.BopeSettingManager;
 import rina.turok.bope.bopemod.manager.BopeModuleManager;
 
 // Guiscreen.
+import rina.turok.bope.bopemod.guiscreen.render.components.BopeFrame;
 import rina.turok.bope.bopemod.guiscreen.settings.BopeSetting;
 
 // Data.
@@ -389,13 +390,26 @@ public class BopeConfigManager {
 		JsonObject BOPE_MAIN_JSON = new JsonObject();
 
 		JsonObject BOPE_MAIN_CONFIGS = new JsonObject();
+		JsonObject BOPE_MAIN_GUI     = new JsonObject();
 
 		BOPE_MAIN_CONFIGS.add("name",    new JsonPrimitive(Bope.get_name()));
 		BOPE_MAIN_CONFIGS.add("version", new JsonPrimitive(Bope.get_version()));
 		BOPE_MAIN_CONFIGS.add("user",    new JsonPrimitive(Bope.get_actual_user()));
 		BOPE_MAIN_CONFIGS.add("prefix",  new JsonPrimitive(Bope.get_command_manager().get_prefix()));
 
+		for (BopeFrame frames : Bope.click_gui.get_array_frames()) {
+			JsonObject BOPE_FRAMES_INFO = new JsonObject();
+
+			BOPE_FRAMES_INFO.add("name", new JsonPrimitive(frames.get_name()));
+			BOPE_FRAMES_INFO.add("tag",  new JsonPrimitive(frames.get_tag()));
+			BOPE_FRAMES_INFO.add("x",    new JsonPrimitive(frames.get_x()));
+			BOPE_FRAMES_INFO.add("y",    new JsonPrimitive(frames.get_y()));
+
+			BOPE_MAIN_GUI.add(frames.get_tag(), BOPE_FRAMES_INFO);
+		}
+
 		BOPE_MAIN_JSON.add("configuration", BOPE_MAIN_CONFIGS);
+		BOPE_MAIN_JSON.add("guiscreen", BOPE_MAIN_GUI);
 
 		JsonElement BOPE_MAIN_PRETTY_JSON = BOPE_PARSER.parse(BOPE_MAIN_JSON.toString());
 
@@ -416,8 +430,18 @@ public class BopeConfigManager {
 		InputStream BOPE_JSON_FILE          = Files.newInputStream(PATH_CLIENT);
 		JsonObject  BOPE_MAIN_CLIENT        = new JsonParser().parse(new InputStreamReader(BOPE_JSON_FILE)).getAsJsonObject();
 		JsonObject  BOPE_MAIN_CONFIGURATION = BOPE_MAIN_CLIENT.get("configuration").getAsJsonObject();
+		JsonObject  BOPE_MAIN_GUISCREEN     = BOPE_MAIN_CLIENT.get("guiscreen").getAsJsonObject();
 
 		Bope.get_command_manager().set_prefix(BOPE_MAIN_CONFIGURATION.get("prefix").getAsString());
+
+		for (BopeFrame frames : Bope.click_gui.get_array_frames()) {
+			JsonObject BOPE_FRAME_INFO = BOPE_MAIN_GUISCREEN.get(frames.get_tag()).getAsJsonObject();
+
+			BopeFrame frame_requested = Bope.click_gui.get_frame_with_tag(BOPE_FRAME_INFO.get("tag").getAsString());
+
+			frame_requested.set_x(BOPE_FRAME_INFO.get("x").getAsInt());
+			frame_requested.set_y(BOPE_FRAME_INFO.get("y").getAsInt());
+		}
 
 		BOPE_JSON_FILE.close();
 	}

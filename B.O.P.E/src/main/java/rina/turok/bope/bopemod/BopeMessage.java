@@ -37,7 +37,7 @@ public class BopeMessage {
 	}
 
 	public static void send_client_message(String message) {
-		client_message(ChatFormatting.BLUE + Bope.BOPE_NAME + ChatFormatting.GRAY + " > " + message);
+		client_message(ChatFormatting.DARK_BLUE + Bope.BOPE_NAME + ChatFormatting.GRAY + " > " + message);
 
 		Bope.send_client_log(" > " +  message);
 	}

@@ -69,6 +69,8 @@ public class BopeFrame {
 	private int nc_b = 255;
 	private int nc_a = 255;
 
+	private int border_size = 1;
+
 	public BopeFrame(BopeCategory category) {
 		// Why space and not aligned? Sorry, was dirty.
 		this.x = 10;
@@ -111,6 +113,33 @@ public class BopeFrame {
 
 		this.move = false;
 		this.can  = true;
+	}
+
+	public void refresh_frame(BopeModuleButton button) {
+		this.height = 25;
+
+		int size  = Bope.get_module_manager().get_modules_with_category(this.category).size();
+		int count = 0;
+
+		for (BopeModuleButton buttons : this.module_button) {
+			buttons.set_y(this.height);
+
+			count++;
+
+			int compare = 0;
+
+			if (count >= size) {
+				compare = 5;
+			} else {
+				compare = 10;
+			}
+
+			if (buttons.is_open()) {
+				this.height += buttons.get_settings_height();
+			} else {
+				this.height += compare;
+			}
+		}
 	}
 
 	public void does_can(boolean value) {
@@ -209,9 +238,10 @@ public class BopeFrame {
 		this.frame_name = this.category.get_name();
 		this.width_name = font.get_string_width(this.category.get_name());
 
-		draw_background(this.bg_r, this.bg_g, this.bg_b, this.bg_a);
-		draw_border(this.bd_r, this.bd_g, this.bd_b, this.bd_a, 2, "left-right");
-		draw_name(this.frame_name, this.nc_r, this.nc_g, this.nc_b);
+		BopeDraw.draw_rect(this.x, this.y, this.x + this.width, this.y + this.height, this.bg_r, this.bg_g, this.bg_b, this.bg_a);
+		BopeDraw.draw_rect(this.x - 1, this.y, this.width + 1, this.height, this.bd_r, this.bd_g, this.bd_b, this.bd_a, this.border_size, "left-right");
+		
+		BopeDraw.draw_string(this.frame_name, this.x + 5, this.y + 4, this.nc_r, this.nc_g, this.nc_b);
 
 		if (is_moving()) {
 			set_x(x - this.move_x);
@@ -223,17 +253,5 @@ public class BopeFrame {
 
 			buttons.render(2);
 		}
-	}
-
-	public void draw_background(int r, int g, int b, int a) {
-		BopeDraw.draw_rect(this.x, this.y, this.x + this.width, this.y + this.height, r, g, b, a);
-	}
-
-	public void draw_border(int r, int g, int b, int a, int size, String coords) {
-		BopeDraw.draw_rect(this.x - 1, this.y, this.width + 1, this.height, r, g, b, a, size, coords);
-	}
-
-	public void draw_name(String name, int r, int g, int b) {
-		BopeDraw.draw_string(name, this.x + 5, this.y + 2, r, g, b);
 	}
 }

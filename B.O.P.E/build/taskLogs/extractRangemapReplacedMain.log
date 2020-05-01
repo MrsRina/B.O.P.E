@@ -1,7 +1,7 @@
 Unsupposrted library path: C:\Users\SrRina\Documents\B.O.P.E\B.O.P.E\build\classes\api
 Unsupposrted library path: C:\Users\SrRina\Documents\B.O.P.E\B.O.P.E\build\resources\api
 Symbol range map extraction starting
-Processing 49 files
+Processing 50 files
 startProcessing "rina/turok/bope/Bope.java" md5: 10a4d70a5c9a760f6fcd7d08a2af8e8a
 endProcessing "rina/turok/bope/Bope.java"
 
@@ -56,11 +56,14 @@ endProcessing "rina/turok/bope/bopemod/guiscreen/BopeGUI.java"
 startProcessing "rina/turok/bope/bopemod/guiscreen/render/BopeDraw.java" md5: 4aece524f979d67680cd9a59e152f20d
 endProcessing "rina/turok/bope/bopemod/guiscreen/render/BopeDraw.java"
 
-startProcessing "rina/turok/bope/bopemod/guiscreen/render/components/BopeFrame.java" md5: 2372dd34f45cf4299c2f6be2bfa97895
+startProcessing "rina/turok/bope/bopemod/guiscreen/render/components/BopeFrame.java" md5: 8dcbaa40c2946ead7c65f87d72d705cb
 endProcessing "rina/turok/bope/bopemod/guiscreen/render/components/BopeFrame.java"
 
-startProcessing "rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java" md5: 19e36df6183054c515d38d82cde0a51b
+startProcessing "rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java" md5: a3c6c3e5bfbea0ab42135a4c956435b6
 endProcessing "rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java"
+
+startProcessing "rina/turok/bope/bopemod/guiscreen/render/components/widgets/BopeWidget.java" md5: 3e3a76c42b5905d2488b5bc7b918967a
+endProcessing "rina/turok/bope/bopemod/guiscreen/render/components/widgets/BopeWidget.java"
 
 startProcessing "rina/turok/bope/bopemod/guiscreen/settings/BopeSetting.java" md5: 25d992b3f9f9b9e093438243708a6980
 endProcessing "rina/turok/bope/bopemod/guiscreen/settings/BopeSetting.java"

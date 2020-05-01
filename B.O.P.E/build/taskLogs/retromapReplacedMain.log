@@ -1,4 +1,4 @@
-Processing 49 files
+Processing 50 files
 Start Processing: rina/turok/bope/Bope.java
 New Key: class net/minecraftforge/fml/common/Mod
 New Key: class net/minecraftforge/fml/common/Mod
@@ -247,10 +247,22 @@ End  Processing: rina/turok/bope/bopemod/guiscreen/render/components/BopeFrame.j
 Start Processing: rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java
 FOUND CONSTR method rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton/BopeModuleButton (Lrina/turok/bope/bopemod/BopeModule;Lrina/turok/bope/bopemod/guiscreen/render/components/BopeFrame;)V rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton
 Import: java.util.*
-Adding 2 imports
+Adding 5 imports
+        rina.turok.bope.Bope
         rina.turok.bope.bopemod.BopeModule
         rina.turok.bope.bopemod.guiscreen.render.BopeDraw
+        rina.turok.bope.bopemod.guiscreen.render.components.widgets.BopeWidget
+        rina.turok.bope.bopemod.guiscreen.settings.BopeSetting
 End  Processing: rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java
+
+Start Processing: rina/turok/bope/bopemod/guiscreen/render/components/widgets/BopeWidget.java
+FOUND CONSTR method rina/turok/bope/bopemod/guiscreen/render/components/widgets/BopeWidget/BopeWidget (Lrina/turok/bope/bopemod/guiscreen/render/components/BopeFrame;Lrina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton;Lrina/turok/bope/bopemod/guiscreen/settings/BopeSetting;I)V rina/turok/bope/bopemod/guiscreen/render/components/widgets/BopeWidget
+Import: rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton
+Import: rina.turok.bope.bopemod.guiscreen.render.components.BopeFrame
+Import: rina.turok.bope.bopemod.guiscreen.render.BopeDraw
+Adding 1 imports
+        rina.turok.bope.bopemod.guiscreen.settings.BopeSetting
+End  Processing: rina/turok/bope/bopemod/guiscreen/render/components/widgets/BopeWidget.java
 
 Start Processing: rina/turok/bope/bopemod/guiscreen/settings/BopeSetting.java
 FOUND CONSTR method rina/turok/bope/bopemod/guiscreen/settings/BopeSetting/BopeSetting (Lrina/turok/bope/bopemod/BopeModule;Ljava/lang/String;Ljava/lang/String;Z)V rina/turok/bope/bopemod/guiscreen/settings/BopeSetting

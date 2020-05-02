@@ -2595,7 +2595,7 @@ Class Start: rina.turok.bope.bopemod.guiscreen.render.components.widgets.BopeBut
 Class End  : rina.turok.bope.bopemod.guiscreen.render.components.widgets.BopeButton
 endProcessing "rina/turok/bope/bopemod/guiscreen/render/components/widgets/BopeButton.java"
 
-startProcessing "rina/turok/bope/bopemod/guiscreen/render/components/widgets/BopeCombobox.java" md5: c5a8fe33a80c5a5786dc0b00918fb6fd
+startProcessing "rina/turok/bope/bopemod/guiscreen/render/components/widgets/BopeCombobox.java" md5: 2a1f5d52396ba5365517086dda7afda8
 @|rina/turok/bope/bopemod/guiscreen/render/components/widgets/BopeCombobox.java|8|67|rina.turok.bope.bopemod.guiscreen.render.components.widgets|package|rina.turok.bope.bopemod.guiscreen.render.components.widgets|(file)
 Class Start: rina.turok.bope.bopemod.guiscreen.render.components.widgets.BopeCombobox
    @|rina/turok/bope/bopemod/guiscreen/render/components/widgets/BopeCombobox.java|678|690|BopeCombobox|class|rina.turok.bope.bopemod.guiscreen.render.components.widgets.BopeCombobox|false
@@ -2797,51 +2797,42 @@ Class Start: rina.turok.bope.bopemod.guiscreen.render.components.widgets.BopeCom
       @|rina/turok/bope/bopemod/guiscreen/render/components/widgets/BopeCombobox.java|3382|3385|can|method|rina.turok.bope.bopemod.guiscreen.render.components.widgets.BopeCombobox|can|()Z
       @|rina/turok/bope/bopemod/guiscreen/render/components/widgets/BopeCombobox.java|3401|3406|frame|field|rina.turok.bope.bopemod.guiscreen.render.components.widgets.BopeCombobox|frame
       @|rina/turok/bope/bopemod/guiscreen/render/components/widgets/BopeCombobox.java|3407|3415|does_can|method|rina.turok.bope.bopemod.guiscreen.render.components.BopeFrame|does_can|(Z)V
-      @|rina/turok/bope/bopemod/guiscreen/render/components/widgets/BopeCombobox.java|3444|3449|mouse|param|rina.turok.bope.bopemod.guiscreen.render.components.widgets.BopeCombobox|mouse|(III)V|mouse|2
-      @|rina/turok/bope/bopemod/guiscreen/render/components/widgets/BopeCombobox.java|3466|3472|motion|method|rina.turok.bope.bopemod.guiscreen.render.components.widgets.BopeCombobox|motion|(II)Z
-      @|rina/turok/bope/bopemod/guiscreen/render/components/widgets/BopeCombobox.java|3473|3475|mx|param|rina.turok.bope.bopemod.guiscreen.render.components.widgets.BopeCombobox|mouse|(III)V|mx|0
-      @|rina/turok/bope/bopemod/guiscreen/render/components/widgets/BopeCombobox.java|3477|3479|my|param|rina.turok.bope.bopemod.guiscreen.render.components.widgets.BopeCombobox|mouse|(III)V|my|1
-      @|rina/turok/bope/bopemod/guiscreen/render/components/widgets/BopeCombobox.java|3489|3495|master|field|rina.turok.bope.bopemod.guiscreen.render.components.widgets.BopeCombobox|master
-      @|rina/turok/bope/bopemod/guiscreen/render/components/widgets/BopeCombobox.java|3496|3503|is_open|method|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|is_open|()Z
-      @|rina/turok/bope/bopemod/guiscreen/render/components/widgets/BopeCombobox.java|3509|3512|can|method|rina.turok.bope.bopemod.guiscreen.render.components.widgets.BopeCombobox|can|()Z
-      @|rina/turok/bope/bopemod/guiscreen/render/components/widgets/BopeCombobox.java|3528|3533|frame|field|rina.turok.bope.bopemod.guiscreen.render.components.widgets.BopeCombobox|frame
-      @|rina/turok/bope/bopemod/guiscreen/render/components/widgets/BopeCombobox.java|3534|3542|does_can|method|rina.turok.bope.bopemod.guiscreen.render.components.BopeFrame|does_can|(Z)V
-      @|rina/turok/bope/bopemod/guiscreen/render/components/widgets/BopeCombobox.java|3563|3570|setting|field|rina.turok.bope.bopemod.guiscreen.render.components.widgets.BopeCombobox|setting
-      @|rina/turok/bope/bopemod/guiscreen/render/components/widgets/BopeCombobox.java|3571|3588|set_current_value|method|rina.turok.bope.bopemod.guiscreen.settings.BopeSetting|set_current_value|(Ljava/lang/String;)V
-      @|rina/turok/bope/bopemod/guiscreen/render/components/widgets/BopeCombobox.java|3594|3600|values|field|rina.turok.bope.bopemod.guiscreen.render.components.widgets.BopeCombobox|values
-      @|rina/turok/bope/bopemod/guiscreen/render/components/widgets/BopeCombobox.java|3601|3604|get|method|java.util.List|get|(I)Ljava/lang/Object;
-      @|rina/turok/bope/bopemod/guiscreen/render/components/widgets/BopeCombobox.java|3610|3631|combobox_actual_value|field|rina.turok.bope.bopemod.guiscreen.render.components.widgets.BopeCombobox|combobox_actual_value
-      @|rina/turok/bope/bopemod/guiscreen/render/components/widgets/BopeCombobox.java|3647|3668|combobox_actual_value|field|rina.turok.bope.bopemod.guiscreen.render.components.widgets.BopeCombobox|combobox_actual_value
+      @|rina/turok/bope/bopemod/guiscreen/render/components/widgets/BopeCombobox.java|3436|3443|setting|field|rina.turok.bope.bopemod.guiscreen.render.components.widgets.BopeCombobox|setting
+      @|rina/turok/bope/bopemod/guiscreen/render/components/widgets/BopeCombobox.java|3444|3461|set_current_value|method|rina.turok.bope.bopemod.guiscreen.settings.BopeSetting|set_current_value|(Ljava/lang/String;)V
+      @|rina/turok/bope/bopemod/guiscreen/render/components/widgets/BopeCombobox.java|3467|3473|values|field|rina.turok.bope.bopemod.guiscreen.render.components.widgets.BopeCombobox|values
+      @|rina/turok/bope/bopemod/guiscreen/render/components/widgets/BopeCombobox.java|3474|3477|get|method|java.util.List|get|(I)Ljava/lang/Object;
+      @|rina/turok/bope/bopemod/guiscreen/render/components/widgets/BopeCombobox.java|3483|3504|combobox_actual_value|field|rina.turok.bope.bopemod.guiscreen.render.components.widgets.BopeCombobox|combobox_actual_value
+      @|rina/turok/bope/bopemod/guiscreen/render/components/widgets/BopeCombobox.java|3520|3541|combobox_actual_value|field|rina.turok.bope.bopemod.guiscreen.render.components.widgets.BopeCombobox|combobox_actual_value
    Method End: mouse(III)V
    Method Start: render(IIII)V
-      @|rina/turok/bope/bopemod/guiscreen/render/components/widgets/BopeCombobox.java|3726|3734|master_y|param|rina.turok.bope.bopemod.guiscreen.render.components.widgets.BopeCombobox|render|(IIII)V|master_y|0
-      @|rina/turok/bope/bopemod/guiscreen/render/components/widgets/BopeCombobox.java|3740|3746|separe|param|rina.turok.bope.bopemod.guiscreen.render.components.widgets.BopeCombobox|render|(IIII)V|separe|1
-      @|rina/turok/bope/bopemod/guiscreen/render/components/widgets/BopeCombobox.java|3752|3762|absolute_x|param|rina.turok.bope.bopemod.guiscreen.render.components.widgets.BopeCombobox|render|(IIII)V|absolute_x|2
-      @|rina/turok/bope/bopemod/guiscreen/render/components/widgets/BopeCombobox.java|3768|3778|absolute_y|param|rina.turok.bope.bopemod.guiscreen.render.components.widgets.BopeCombobox|render|(IIII)V|absolute_y|3
-      @|rina/turok/bope/bopemod/guiscreen/render/components/widgets/BopeCombobox.java|3692|3700|Override|class|java.lang.Override|false
-      @|rina/turok/bope/bopemod/guiscreen/render/components/widgets/BopeCombobox.java|3715|3721|render|method|rina.turok.bope.bopemod.guiscreen.render.components.BopeAbstractWidget|render|(IIII)V
-      @|rina/turok/bope/bopemod/guiscreen/render/components/widgets/BopeCombobox.java|3785|3794|set_width|method|rina.turok.bope.bopemod.guiscreen.render.components.BopeAbstractWidget|set_width|(I)V
-      @|rina/turok/bope/bopemod/guiscreen/render/components/widgets/BopeCombobox.java|3800|3806|master|field|rina.turok.bope.bopemod.guiscreen.render.components.widgets.BopeCombobox|master
-      @|rina/turok/bope/bopemod/guiscreen/render/components/widgets/BopeCombobox.java|3807|3816|get_width|method|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|get_width|()I
-      @|rina/turok/bope/bopemod/guiscreen/render/components/widgets/BopeCombobox.java|3821|3827|separe|param|rina.turok.bope.bopemod.guiscreen.render.components.widgets.BopeCombobox|render|(IIII)V|separe|1
-      @|rina/turok/bope/bopemod/guiscreen/render/components/widgets/BopeCombobox.java|3835|3841|String|class|java.lang.String|false
-      @|rina/turok/bope/bopemod/guiscreen/render/components/widgets/BopeCombobox.java|3867|3873|save_y|field|rina.turok.bope.bopemod.guiscreen.render.components.widgets.BopeCombobox|save_y
-      @|rina/turok/bope/bopemod/guiscreen/render/components/widgets/BopeCombobox.java|3881|3882|y|field|rina.turok.bope.bopemod.guiscreen.render.components.widgets.BopeCombobox|y
-      @|rina/turok/bope/bopemod/guiscreen/render/components/widgets/BopeCombobox.java|3885|3893|master_y|param|rina.turok.bope.bopemod.guiscreen.render.components.widgets.BopeCombobox|render|(IIII)V|master_y|0
-      @|rina/turok/bope/bopemod/guiscreen/render/components/widgets/BopeCombobox.java|3900|3908|BopeDraw|class|rina.turok.bope.bopemod.guiscreen.render.BopeDraw|false
-      @|rina/turok/bope/bopemod/guiscreen/render/components/widgets/BopeCombobox.java|3909|3920|draw_string|method|rina.turok.bope.bopemod.guiscreen.render.BopeDraw|draw_string|(Ljava/lang/String;IIIII)V
-      @|rina/turok/bope/bopemod/guiscreen/render/components/widgets/BopeCombobox.java|3926|3939|combobox_name|field|rina.turok.bope.bopemod.guiscreen.render.components.widgets.BopeCombobox|combobox_name
-      @|rina/turok/bope/bopemod/guiscreen/render/components/widgets/BopeCombobox.java|3955|3962|setting|field|rina.turok.bope.bopemod.guiscreen.render.components.widgets.BopeCombobox|setting
-      @|rina/turok/bope/bopemod/guiscreen/render/components/widgets/BopeCombobox.java|3963|3980|get_current_value|method|rina.turok.bope.bopemod.guiscreen.settings.BopeSetting|get_current_value|()Ljava/lang/String;
-      @|rina/turok/bope/bopemod/guiscreen/render/components/widgets/BopeCombobox.java|3989|3990|x|field|rina.turok.bope.bopemod.guiscreen.render.components.widgets.BopeCombobox|x
-      @|rina/turok/bope/bopemod/guiscreen/render/components/widgets/BopeCombobox.java|4001|4007|save_y|field|rina.turok.bope.bopemod.guiscreen.render.components.widgets.BopeCombobox|save_y
-      @|rina/turok/bope/bopemod/guiscreen/render/components/widgets/BopeCombobox.java|4014|4018|nc_r|field|rina.turok.bope.bopemod.guiscreen.render.components.widgets.BopeCombobox|nc_r
-      @|rina/turok/bope/bopemod/guiscreen/render/components/widgets/BopeCombobox.java|4025|4029|nc_g|field|rina.turok.bope.bopemod.guiscreen.render.components.widgets.BopeCombobox|nc_g
-      @|rina/turok/bope/bopemod/guiscreen/render/components/widgets/BopeCombobox.java|4036|4040|nc_b|field|rina.turok.bope.bopemod.guiscreen.render.components.widgets.BopeCombobox|nc_b
-      @|rina/turok/bope/bopemod/guiscreen/render/components/widgets/BopeCombobox.java|4057|4078|combobox_actual_value|field|rina.turok.bope.bopemod.guiscreen.render.components.widgets.BopeCombobox|combobox_actual_value
-      @|rina/turok/bope/bopemod/guiscreen/render/components/widgets/BopeCombobox.java|4087|4093|values|field|rina.turok.bope.bopemod.guiscreen.render.components.widgets.BopeCombobox|values
-      @|rina/turok/bope/bopemod/guiscreen/render/components/widgets/BopeCombobox.java|4094|4098|size|method|java.util.Collection|size|()I
-      @|rina/turok/bope/bopemod/guiscreen/render/components/widgets/BopeCombobox.java|4113|4134|combobox_actual_value|field|rina.turok.bope.bopemod.guiscreen.render.components.widgets.BopeCombobox|combobox_actual_value
+      @|rina/turok/bope/bopemod/guiscreen/render/components/widgets/BopeCombobox.java|3599|3607|master_y|param|rina.turok.bope.bopemod.guiscreen.render.components.widgets.BopeCombobox|render|(IIII)V|master_y|0
+      @|rina/turok/bope/bopemod/guiscreen/render/components/widgets/BopeCombobox.java|3613|3619|separe|param|rina.turok.bope.bopemod.guiscreen.render.components.widgets.BopeCombobox|render|(IIII)V|separe|1
+      @|rina/turok/bope/bopemod/guiscreen/render/components/widgets/BopeCombobox.java|3625|3635|absolute_x|param|rina.turok.bope.bopemod.guiscreen.render.components.widgets.BopeCombobox|render|(IIII)V|absolute_x|2
+      @|rina/turok/bope/bopemod/guiscreen/render/components/widgets/BopeCombobox.java|3641|3651|absolute_y|param|rina.turok.bope.bopemod.guiscreen.render.components.widgets.BopeCombobox|render|(IIII)V|absolute_y|3
+      @|rina/turok/bope/bopemod/guiscreen/render/components/widgets/BopeCombobox.java|3565|3573|Override|class|java.lang.Override|false
+      @|rina/turok/bope/bopemod/guiscreen/render/components/widgets/BopeCombobox.java|3588|3594|render|method|rina.turok.bope.bopemod.guiscreen.render.components.BopeAbstractWidget|render|(IIII)V
+      @|rina/turok/bope/bopemod/guiscreen/render/components/widgets/BopeCombobox.java|3658|3667|set_width|method|rina.turok.bope.bopemod.guiscreen.render.components.BopeAbstractWidget|set_width|(I)V
+      @|rina/turok/bope/bopemod/guiscreen/render/components/widgets/BopeCombobox.java|3673|3679|master|field|rina.turok.bope.bopemod.guiscreen.render.components.widgets.BopeCombobox|master
+      @|rina/turok/bope/bopemod/guiscreen/render/components/widgets/BopeCombobox.java|3680|3689|get_width|method|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|get_width|()I
+      @|rina/turok/bope/bopemod/guiscreen/render/components/widgets/BopeCombobox.java|3694|3700|separe|param|rina.turok.bope.bopemod.guiscreen.render.components.widgets.BopeCombobox|render|(IIII)V|separe|1
+      @|rina/turok/bope/bopemod/guiscreen/render/components/widgets/BopeCombobox.java|3708|3714|String|class|java.lang.String|false
+      @|rina/turok/bope/bopemod/guiscreen/render/components/widgets/BopeCombobox.java|3740|3746|save_y|field|rina.turok.bope.bopemod.guiscreen.render.components.widgets.BopeCombobox|save_y
+      @|rina/turok/bope/bopemod/guiscreen/render/components/widgets/BopeCombobox.java|3754|3755|y|field|rina.turok.bope.bopemod.guiscreen.render.components.widgets.BopeCombobox|y
+      @|rina/turok/bope/bopemod/guiscreen/render/components/widgets/BopeCombobox.java|3758|3766|master_y|param|rina.turok.bope.bopemod.guiscreen.render.components.widgets.BopeCombobox|render|(IIII)V|master_y|0
+      @|rina/turok/bope/bopemod/guiscreen/render/components/widgets/BopeCombobox.java|3773|3781|BopeDraw|class|rina.turok.bope.bopemod.guiscreen.render.BopeDraw|false
+      @|rina/turok/bope/bopemod/guiscreen/render/components/widgets/BopeCombobox.java|3782|3793|draw_string|method|rina.turok.bope.bopemod.guiscreen.render.BopeDraw|draw_string|(Ljava/lang/String;IIIII)V
+      @|rina/turok/bope/bopemod/guiscreen/render/components/widgets/BopeCombobox.java|3799|3812|combobox_name|field|rina.turok.bope.bopemod.guiscreen.render.components.widgets.BopeCombobox|combobox_name
+      @|rina/turok/bope/bopemod/guiscreen/render/components/widgets/BopeCombobox.java|3828|3835|setting|field|rina.turok.bope.bopemod.guiscreen.render.components.widgets.BopeCombobox|setting
+      @|rina/turok/bope/bopemod/guiscreen/render/components/widgets/BopeCombobox.java|3836|3853|get_current_value|method|rina.turok.bope.bopemod.guiscreen.settings.BopeSetting|get_current_value|()Ljava/lang/String;
+      @|rina/turok/bope/bopemod/guiscreen/render/components/widgets/BopeCombobox.java|3862|3863|x|field|rina.turok.bope.bopemod.guiscreen.render.components.widgets.BopeCombobox|x
+      @|rina/turok/bope/bopemod/guiscreen/render/components/widgets/BopeCombobox.java|3874|3880|save_y|field|rina.turok.bope.bopemod.guiscreen.render.components.widgets.BopeCombobox|save_y
+      @|rina/turok/bope/bopemod/guiscreen/render/components/widgets/BopeCombobox.java|3887|3891|nc_r|field|rina.turok.bope.bopemod.guiscreen.render.components.widgets.BopeCombobox|nc_r
+      @|rina/turok/bope/bopemod/guiscreen/render/components/widgets/BopeCombobox.java|3898|3902|nc_g|field|rina.turok.bope.bopemod.guiscreen.render.components.widgets.BopeCombobox|nc_g
+      @|rina/turok/bope/bopemod/guiscreen/render/components/widgets/BopeCombobox.java|3909|3913|nc_b|field|rina.turok.bope.bopemod.guiscreen.render.components.widgets.BopeCombobox|nc_b
+      @|rina/turok/bope/bopemod/guiscreen/render/components/widgets/BopeCombobox.java|3930|3951|combobox_actual_value|field|rina.turok.bope.bopemod.guiscreen.render.components.widgets.BopeCombobox|combobox_actual_value
+      @|rina/turok/bope/bopemod/guiscreen/render/components/widgets/BopeCombobox.java|3960|3966|values|field|rina.turok.bope.bopemod.guiscreen.render.components.widgets.BopeCombobox|values
+      @|rina/turok/bope/bopemod/guiscreen/render/components/widgets/BopeCombobox.java|3967|3971|size|method|java.util.Collection|size|()I
+      @|rina/turok/bope/bopemod/guiscreen/render/components/widgets/BopeCombobox.java|3986|4007|combobox_actual_value|field|rina.turok.bope.bopemod.guiscreen.render.components.widgets.BopeCombobox|combobox_actual_value
    Method End: render(IIII)V
 Class End  : rina.turok.bope.bopemod.guiscreen.render.components.widgets.BopeCombobox
 endProcessing "rina/turok/bope/bopemod/guiscreen/render/components/widgets/BopeCombobox.java"

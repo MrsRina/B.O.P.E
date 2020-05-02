@@ -164,12 +164,6 @@ public class BopeCombobox extends BopeAbstractWidget {
 		if (mouse == 0) {
 			if (motion(mx, my) && this.master.is_open() && can()) {
 				this.frame.does_can(false);
-			}
-		}
-
-		if (mouse == 1) {
-			if (motion(mx, my) && this.master.is_open() && can()) {
-				this.frame.does_can(false);
 
 				this.setting.set_current_value(this.values.get(this.combobox_actual_value));
 

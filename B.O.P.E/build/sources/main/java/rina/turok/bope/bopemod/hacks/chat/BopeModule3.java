@@ -45,7 +45,7 @@ public class BopeModule3 extends BopeModule {
 	@Override
 	public void update() {
 		if (button_1.get_value(true)) {
-			BopeMessage.send_client_message("The string value is " + label_1.get_value("") + " and button 2 is " + Boolean.toString(button_2.get_value(true)));
+			BopeMessage.send_client_message("The string value is " + label_1.get_value("") + " and integer 1 is " + Integer.toString(integer_1.get_value(1)));
 		}
 	}
 }

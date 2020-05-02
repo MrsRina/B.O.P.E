@@ -1,4 +1,4 @@
-Processing 50 files
+Processing 54 files
 Start Processing: rina/turok/bope/Bope.java
 New Key: class net/minecraftforge/fml/common/Mod
 New Key: class net/minecraftforge/fml/common/Mod
@@ -195,8 +195,8 @@ FOUND CONSTR method rina/turok/bope/bopemod/guiscreen/BopeGUI/BopeGUI ()V rina/t
 Rename method net/minecraft/client/gui/GuiScreen/doesGuiPauseGame ()Z[1391,1407]::doesGuiPauseGame->func_73868_f
 Rename method net/minecraft/client/gui/GuiScreen/onGuiClosed ()V[1457,1468]::onGuiClosed->func_146281_b
 Rename method net/minecraft/client/gui/GuiScreen/mouseClicked (III)V[1642,1654]::mouseClicked->func_73864_a
-Rename method net/minecraft/client/gui/GuiScreen/mouseReleased (III)V[2061,2074]::mouseReleased->func_146286_b
-Rename method net/minecraft/client/gui/GuiScreen/drawScreen (IIF)V[2279,2289]::drawScreen->func_73863_a
+Rename method net/minecraft/client/gui/GuiScreen/mouseReleased (III)V[2182,2195]::mouseReleased->func_146286_b
+Rename method net/minecraft/client/gui/GuiScreen/drawScreen (IIF)V[2453,2463]::drawScreen->func_73863_a
 Import: net.minecraft.client.gui.ScaledResolution
 Import: net.minecraft.client.gui.GuiScreen
 Import: net.minecraft.client.Minecraft
@@ -211,14 +211,16 @@ End  Processing: rina/turok/bope/bopemod/guiscreen/BopeGUI.java
 Start Processing: rina/turok/bope/bopemod/guiscreen/render/BopeDraw.java
 Rename method net/minecraft/client/Minecraft/getMinecraft ()Lnet/minecraft/client/Minecraft;[684,696]::getMinecraft->func_71410_x
 Rename field net/minecraft/client/Minecraft/fontRenderer[699,711]::fontRenderer->field_71466_p
+Rename method net/minecraft/client/Minecraft/getMinecraft ()Lnet/minecraft/client/Minecraft;[770,782]::getMinecraft->func_71410_x
+Rename field net/minecraft/client/Minecraft/fontRenderer[785,797]::fontRenderer->field_71466_p
 FOUND CONSTR method rina/turok/bope/bopemod/guiscreen/render/BopeDraw/BopeDraw (F)V rina/turok/bope/bopemod/guiscreen/render/BopeDraw
-Rename method net/minecraft/client/gui/Gui/drawRect (IIIII)V[895,903]::drawRect->func_73734_a
-Rename method net/minecraft/client/gui/Gui/drawRect (IIIII)V[1684,1692]::drawRect->func_73734_a
-Rename method net/minecraft/client/gui/FontRenderer/drawString (Ljava/lang/String;III)I[1919,1929]::drawString->func_78276_b
-Rename method net/minecraft/client/gui/FontRenderer/drawString (Ljava/lang/String;III)I[2166,2176]::drawString->func_78276_b
-Rename method net/minecraft/client/renderer/GlStateManager/enableBlend ()V[2391,2402]::enableBlend->func_179147_l
-Rename field net/minecraft/client/gui/FontRenderer/FONT_HEIGHT[2600,2611]::FONT_HEIGHT->field_78288_b
-Rename method net/minecraft/client/gui/FontRenderer/getStringWidth (Ljava/lang/String;)I[2759,2773]::getStringWidth->func_78256_a
+Rename method net/minecraft/client/gui/Gui/drawRect (IIIII)V[982,990]::drawRect->func_73734_a
+Rename method net/minecraft/client/gui/Gui/drawRect (IIIII)V[1771,1779]::drawRect->func_73734_a
+Rename method net/minecraft/client/gui/FontRenderer/drawString (Ljava/lang/String;III)I[2006,2016]::drawString->func_78276_b
+Rename method net/minecraft/client/gui/FontRenderer/drawString (Ljava/lang/String;III)I[2253,2263]::drawString->func_78276_b
+Rename method net/minecraft/client/renderer/GlStateManager/enableBlend ()V[2478,2489]::enableBlend->func_179147_l
+Rename field net/minecraft/client/gui/FontRenderer/FONT_HEIGHT[2687,2698]::FONT_HEIGHT->field_78288_b
+Rename method net/minecraft/client/gui/FontRenderer/getStringWidth (Ljava/lang/String;)I[2846,2860]::getStringWidth->func_78256_a
 FOUND CONSTR method rina/turok/bope/bopemod/guiscreen/render/BopeDraw/TurokColor/TurokColor (IIII)V rina/turok/bope/bopemod/guiscreen/render/BopeDraw/TurokColor
 FOUND CONSTR method rina/turok/bope/bopemod/guiscreen/render/BopeDraw/TurokColor/TurokColor (III)V rina/turok/bope/bopemod/guiscreen/render/BopeDraw/TurokColor
 Import: java.util.*
@@ -234,9 +236,13 @@ Adding 8 imports
         rina.turok.turok.task.TurokRect
 End  Processing: rina/turok/bope/bopemod/guiscreen/render/BopeDraw.java
 
+Start Processing: rina/turok/bope/bopemod/guiscreen/render/components/BopeAbstractWidget.java
+End  Processing: rina/turok/bope/bopemod/guiscreen/render/components/BopeAbstractWidget.java
+
 Start Processing: rina/turok/bope/bopemod/guiscreen/render/components/BopeFrame.java
 FOUND CONSTR method rina/turok/bope/bopemod/guiscreen/render/components/BopeFrame/BopeFrame (Lrina/turok/bope/bopemod/hacks/BopeCategory;)V rina/turok/bope/bopemod/guiscreen/render/components/BopeFrame
 Import: java.util.*
+Import: java.awt.*
 Adding 4 imports
         rina.turok.bope.Bope
         rina.turok.bope.bopemod.BopeModule
@@ -247,22 +253,64 @@ End  Processing: rina/turok/bope/bopemod/guiscreen/render/components/BopeFrame.j
 Start Processing: rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java
 FOUND CONSTR method rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton/BopeModuleButton (Lrina/turok/bope/bopemod/BopeModule;Lrina/turok/bope/bopemod/guiscreen/render/components/BopeFrame;)V rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton
 Import: java.util.*
-Adding 5 imports
+Adding 8 imports
         rina.turok.bope.Bope
         rina.turok.bope.bopemod.BopeModule
         rina.turok.bope.bopemod.guiscreen.render.BopeDraw
-        rina.turok.bope.bopemod.guiscreen.render.components.widgets.BopeWidget
+        rina.turok.bope.bopemod.guiscreen.render.components.widgets.BopeButton
+        rina.turok.bope.bopemod.guiscreen.render.components.widgets.BopeCombobox
+        rina.turok.bope.bopemod.guiscreen.render.components.widgets.BopeLabel
+        rina.turok.bope.bopemod.guiscreen.render.components.widgets.BopeSlider
         rina.turok.bope.bopemod.guiscreen.settings.BopeSetting
 End  Processing: rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java
 
-Start Processing: rina/turok/bope/bopemod/guiscreen/render/components/widgets/BopeWidget.java
-FOUND CONSTR method rina/turok/bope/bopemod/guiscreen/render/components/widgets/BopeWidget/BopeWidget (Lrina/turok/bope/bopemod/guiscreen/render/components/BopeFrame;Lrina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton;Lrina/turok/bope/bopemod/guiscreen/settings/BopeSetting;I)V rina/turok/bope/bopemod/guiscreen/render/components/widgets/BopeWidget
+Start Processing: rina/turok/bope/bopemod/guiscreen/render/components/widgets/BopeButton.java
+FOUND CONSTR method rina/turok/bope/bopemod/guiscreen/render/components/widgets/BopeButton/BopeButton (Lrina/turok/bope/bopemod/guiscreen/render/components/BopeFrame;Lrina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton;Ljava/lang/String;I)V rina/turok/bope/bopemod/guiscreen/render/components/widgets/BopeButton
+Import: rina.turok.bope.bopemod.guiscreen.render.components.BopeAbstractWidget
 Import: rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton
 Import: rina.turok.bope.bopemod.guiscreen.render.components.BopeFrame
 Import: rina.turok.bope.bopemod.guiscreen.render.BopeDraw
-Adding 1 imports
+Adding 2 imports
+        rina.turok.bope.Bope
         rina.turok.bope.bopemod.guiscreen.settings.BopeSetting
-End  Processing: rina/turok/bope/bopemod/guiscreen/render/components/widgets/BopeWidget.java
+End  Processing: rina/turok/bope/bopemod/guiscreen/render/components/widgets/BopeButton.java
+
+Start Processing: rina/turok/bope/bopemod/guiscreen/render/components/widgets/BopeCombobox.java
+FOUND CONSTR method rina/turok/bope/bopemod/guiscreen/render/components/widgets/BopeCombobox/BopeCombobox (Lrina/turok/bope/bopemod/guiscreen/render/components/BopeFrame;Lrina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton;Ljava/lang/String;I)V rina/turok/bope/bopemod/guiscreen/render/components/widgets/BopeCombobox
+Import: java.util.*
+Adding 6 imports
+        rina.turok.bope.Bope
+        rina.turok.bope.bopemod.guiscreen.render.BopeDraw
+        rina.turok.bope.bopemod.guiscreen.render.components.BopeAbstractWidget
+        rina.turok.bope.bopemod.guiscreen.render.components.BopeFrame
+        rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton
+        rina.turok.bope.bopemod.guiscreen.settings.BopeSetting
+End  Processing: rina/turok/bope/bopemod/guiscreen/render/components/widgets/BopeCombobox.java
+
+Start Processing: rina/turok/bope/bopemod/guiscreen/render/components/widgets/BopeLabel.java
+FOUND CONSTR method rina/turok/bope/bopemod/guiscreen/render/components/widgets/BopeLabel/BopeLabel (Lrina/turok/bope/bopemod/guiscreen/render/components/BopeFrame;Lrina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton;Ljava/lang/String;I)V rina/turok/bope/bopemod/guiscreen/render/components/widgets/BopeLabel
+Import: rina.turok.bope.bopemod.guiscreen.render.components.widgets.BopeCombobox
+Import: rina.turok.bope.bopemod.guiscreen.render.components.BopeAbstractWidget
+Import: rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton
+Import: rina.turok.bope.bopemod.guiscreen.render.components.BopeFrame
+Import: rina.turok.bope.bopemod.guiscreen.render.BopeDraw
+Adding 2 imports
+        rina.turok.bope.Bope
+        rina.turok.bope.bopemod.guiscreen.settings.BopeSetting
+End  Processing: rina/turok/bope/bopemod/guiscreen/render/components/widgets/BopeLabel.java
+
+Start Processing: rina/turok/bope/bopemod/guiscreen/render/components/widgets/BopeSlider.java
+FOUND CONSTR method rina/turok/bope/bopemod/guiscreen/render/components/widgets/BopeSlider/BopeSlider (Lrina/turok/bope/bopemod/guiscreen/render/components/BopeFrame;Lrina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton;Ljava/lang/String;I)V rina/turok/bope/bopemod/guiscreen/render/components/widgets/BopeSlider
+Import: net.minecraft.util.math.MathHelper
+Adding 7 imports
+        rina.turok.bope.Bope
+        rina.turok.bope.bopemod.guiscreen.render.BopeDraw
+        rina.turok.bope.bopemod.guiscreen.render.components.BopeAbstractWidget
+        rina.turok.bope.bopemod.guiscreen.render.components.BopeFrame
+        rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton
+        rina.turok.bope.bopemod.guiscreen.settings.BopeSetting
+        rina.turok.turok.values.TurokDouble
+End  Processing: rina/turok/bope/bopemod/guiscreen/render/components/widgets/BopeSlider.java
 
 Start Processing: rina/turok/bope/bopemod/guiscreen/settings/BopeSetting.java
 FOUND CONSTR method rina/turok/bope/bopemod/guiscreen/settings/BopeSetting/BopeSetting (Lrina/turok/bope/bopemod/BopeModule;Ljava/lang/String;Ljava/lang/String;Z)V rina/turok/bope/bopemod/guiscreen/settings/BopeSetting
@@ -695,6 +743,7 @@ End  Processing: rina/turok/turok/values/TurokBoolean.java
 
 Start Processing: rina/turok/turok/values/TurokDouble.java
 FOUND CONSTR method rina/turok/turok/values/TurokDouble/TurokDouble (Ljava/lang/String;Ljava/lang/String;DDD)V rina/turok/turok/values/TurokDouble
+Import: java.math.*
 End  Processing: rina/turok/turok/values/TurokDouble.java
 
 Start Processing: rina/turok/turok/values/TurokEnum.java

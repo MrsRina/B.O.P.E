@@ -30,6 +30,7 @@ import rina.turok.turok.Turok;
 */
 public class BopeDraw {
 	private static FontRenderer font_renderer = Minecraft.getMinecraft().fontRenderer;
+	private static FontRenderer custom_font   = Minecraft.getMinecraft().fontRenderer; 
 
 	private float size;
 

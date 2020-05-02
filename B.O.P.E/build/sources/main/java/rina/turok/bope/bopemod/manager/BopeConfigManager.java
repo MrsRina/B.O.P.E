@@ -272,7 +272,13 @@ public class BopeConfigManager {
 
 			JsonObject BOPE_BUTTONS_INFO = BOPE_MAIN_BUTTONS.get(buttons.get_tag()).getAsJsonObject();
 			
-			Bope.get_setting_manager().get_setting_with_tag(BOPE_BUTTONS_INFO.get("master").getAsString(), BOPE_BUTTONS_INFO.get("tag").getAsString()).set_value(BOPE_BUTTONS_INFO.get("value").getAsBoolean());
+			BopeSetting button_requested = Bope.get_setting_manager().get_setting_with_tag(BOPE_BUTTONS_INFO.get("master").getAsString(), BOPE_BUTTONS_INFO.get("tag").getAsString());
+
+			if (button_requested == null) {
+				continue;
+			}
+
+			button_requested.set_value(BOPE_BUTTONS_INFO.get("value").getAsBoolean());
 		}
 
 		for (BopeSetting comboboxs : Bope.get_setting_manager().get_array_settings()) {
@@ -284,8 +290,14 @@ public class BopeConfigManager {
 			}
 
 			JsonObject BOPE_COMBOBOXS_MAIN = BOPE_MAIN_COMBOBOXS.get(comboboxs.get_tag()).getAsJsonObject();
-		
-			Bope.get_setting_manager().get_setting_with_tag(BOPE_COMBOBOXS_MAIN.get("master").getAsString(), BOPE_COMBOBOXS_MAIN.get("tag").getAsString()).set_current_value(BOPE_COMBOBOXS_MAIN.get("value").getAsString());
+
+			BopeSetting combobox_requested = Bope.get_setting_manager().get_setting_with_tag(BOPE_COMBOBOXS_MAIN.get("master").getAsString(), BOPE_COMBOBOXS_MAIN.get("tag").getAsString());
+
+			if (combobox_requested == null) {
+				continue;
+			}
+
+			combobox_requested.set_current_value(BOPE_COMBOBOXS_MAIN.get("value").getAsString());
 		}
 
 		for (BopeSetting labels : Bope.get_setting_manager().get_array_settings()) {
@@ -297,8 +309,14 @@ public class BopeConfigManager {
 			}
 
 			JsonObject BOPE_LABELS_MAIN = BOPE_MAIN_LABELS.get(labels.get_tag()).getAsJsonObject();
-		
-			Bope.get_setting_manager().get_setting_with_tag(BOPE_LABELS_MAIN.get("master").getAsString(), BOPE_LABELS_MAIN.get("tag").getAsString()).set_value(BOPE_LABELS_MAIN.get("value").getAsString());
+
+			BopeSetting label_requested = Bope.get_setting_manager().get_setting_with_tag(BOPE_LABELS_MAIN.get("master").getAsString(), BOPE_LABELS_MAIN.get("tag").getAsString());
+
+			if (label_requested == null) {
+				continue;
+			}
+
+			label_requested.set_value(BOPE_LABELS_MAIN.get("value").getAsString());
 		}
 
 		for (BopeSetting slider_doubles : Bope.get_setting_manager().get_array_settings()) {
@@ -310,8 +328,14 @@ public class BopeConfigManager {
 			}
 
 			JsonObject BOPE_SLIDER_D_MAIN = BOPE_MAIN_SLIDERS_D.get(slider_doubles.get_tag()).getAsJsonObject();
-		
-			Bope.get_setting_manager().get_setting_with_tag(BOPE_SLIDER_D_MAIN.get("master").getAsString(), BOPE_SLIDER_D_MAIN.get("tag").getAsString()).set_value(BOPE_SLIDER_D_MAIN.get("value").getAsDouble());
+
+			BopeSetting slider_double_requested = Bope.get_setting_manager().get_setting_with_tag(BOPE_SLIDER_D_MAIN.get("master").getAsString(), BOPE_SLIDER_D_MAIN.get("tag").getAsString());
+
+			if (slider_double_requested == null) {
+				continue;
+			}
+
+			slider_double_requested.set_value(BOPE_SLIDER_D_MAIN.get("value").getAsDouble());
 		}
 
 		for (BopeSetting slider_integers : Bope.get_setting_manager().get_array_settings()) {
@@ -323,8 +347,14 @@ public class BopeConfigManager {
 			}
 
 			JsonObject BOPE_SLIDER_I_MAIN = BOPE_MAIN_SLIDERS_I.get(slider_integers.get_tag()).getAsJsonObject();
-		
-			Bope.get_setting_manager().get_setting_with_tag(BOPE_SLIDER_I_MAIN.get("master").getAsString(), BOPE_SLIDER_I_MAIN.get("tag").getAsString()).set_value(BOPE_SLIDER_I_MAIN.get("value").getAsInt());
+
+			BopeSetting slider_integer_requested = Bope.get_setting_manager().get_setting_with_tag(BOPE_SLIDER_I_MAIN.get("master").getAsString(), BOPE_SLIDER_I_MAIN.get("tag").getAsString());
+
+			if (slider_integer_requested == null) {
+				continue;
+			}
+
+			slider_integer_requested.set_value(BOPE_SLIDER_I_MAIN.get("value").getAsInt());
 		}
 
 		BOPE_JSON_FILE.close();
@@ -375,7 +405,11 @@ public class BopeConfigManager {
 			JsonObject BOPE_MODULES_JSON = BOPE_MAIN_MODULES.get(modules.get_tag()).getAsJsonObject();
 
 			BopeModule module_requested = Bope.get_module_manager().get_module_with_tag(BOPE_MODULES_JSON.get("tag").getAsString());
-			
+
+			if (module_requested == null) {
+				continue;
+			}
+
 			module_requested.set_bind(BOPE_MODULES_JSON.get("int").getAsInt());
 			module_requested.set_active(BOPE_MODULES_JSON.get("state").getAsBoolean());
 		}

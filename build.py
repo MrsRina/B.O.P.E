@@ -3,7 +3,7 @@ class Compile:
 		self.run()
 
 	def run(self):
-		import os
+		import os	
 		#os.system("cd B.O.P.E && gradlew setupDecompWorkspace --stop && gradlew clean build")
 		os.system("cd B.O.P.E && gradlew runClient --stop && gradlew clean build")
 

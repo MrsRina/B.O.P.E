@@ -1,5 +1,7 @@
 package rina.turok.turok.values;
 
+import java.math.*;
+
 /**
 * @author Rina
 *
@@ -47,5 +49,48 @@ public class TurokDouble {
 
 	public double get_value() {
 		return this.value;
+	}
+
+	public static double round(double abs_1) {
+		if (2 < 0) {
+			throw new IllegalArgumentException();
+		}
+
+		BigDecimal decimal = new BigDecimal(abs_1);
+
+		decimal = decimal.setScale(2, RoundingMode.HALF_UP);
+
+		return decimal.doubleValue();
+	}
+
+	// With reference in KAMI.
+	public static double floor(double abs_1, double abs_2) {
+		abs_1 = Math.floor(abs_1);
+		abs_2 = Math.floor(abs_2);
+
+		if (abs_1 == 0 || abs_2 == 0) {
+			return abs_1 + abs_2;
+		}
+
+		// If not.
+		return floor(abs_1, abs_1 % abs_2);
+	}
+
+	public static double step(double abs_1, double abs_2) {
+		double floor_requested = floor(abs_1, abs_2);
+
+		if (floor_requested > abs_2) {
+			floor_requested = abs_2 / 20;
+		}
+
+		if (abs_2 > 10) {
+			floor_requested = Math.round(floor_requested);
+		}
+
+		if (floor_requested == 0) {
+			floor_requested = abs_2;
+		}
+
+		return floor_requested;
 	}
 }

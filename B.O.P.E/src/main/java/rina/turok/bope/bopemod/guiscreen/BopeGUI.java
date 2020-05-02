@@ -78,27 +78,31 @@ public class BopeGUI extends GuiScreen {
 	}
 
 	@Override
-	protected void mouseClicked(int x, int y, int mouse) {
+	protected void mouseClicked(int mx, int my, int mouse) {
 		for (BopeFrame frames : this.frame) {
-			frames.mouse(x, y, mouse);
+			frames.mouse(mx, my, mouse);
 
 			if (mouse == 0) {
-				if (frames.motion(x, y) && frames.can()) {
+				if (frames.motion(mx, my) && frames.can()) {
+					// Just a conenction in module buttons with widgets.
+					frames.does_button_for_do_widgets_can(false);
+
 					this.current = frames;
 
 					this.current.set_move(true);
 
-					this.current.set_move_x(x - this.current.get_x());
-					this.current.set_move_y(y - this.current.get_y());
+					this.current.set_move_x(mx - this.current.get_x());
+					this.current.set_move_y(my - this.current.get_y());
 				}
 			}
 		}
 	}
 
 	@Override
-	protected void mouseReleased(int x, int y, int state) {
+	protected void mouseReleased(int mx, int my, int state) {
 		for (BopeFrame frames : this.frame) {
-			frames.mouse_release(x, y, state);
+			frames.does_button_for_do_widgets_can(true);
+			frames.mouse_release(mx, my, state);
 			frames.set_move(false);
 		}
 
@@ -106,9 +110,9 @@ public class BopeGUI extends GuiScreen {
 	}
 
 	@Override
-	public void drawScreen(int x, int y, float tick) {
+	public void drawScreen(int mx, int my, float tick) {
 		for (BopeFrame frames : this.frame) {
-			frames.render(x, y);
+			frames.render(mx, my);
 		}
 	}
 

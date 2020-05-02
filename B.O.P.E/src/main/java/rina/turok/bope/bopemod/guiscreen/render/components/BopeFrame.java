@@ -1,6 +1,7 @@
 package rina.turok.bope.bopemod.guiscreen.render.components;
 
 import java.util.*;
+import java.awt.*;
 
 // Guiscreen.
 import rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton;
@@ -56,7 +57,7 @@ public class BopeFrame {
 
 	private int bd_r = 0;
 	private int bd_g = 0;
-	private int bd_b = 255;
+	private int bd_b = 42;
 	private int bd_a = 150;
 
 	private int bg_r = 0;
@@ -115,7 +116,7 @@ public class BopeFrame {
 		this.can  = true;
 	}
 
-	public void refresh_frame(BopeModuleButton button) {
+	public void refresh_frame(BopeModuleButton button, int combo_height) {
 		this.height = 25;
 
 		int size  = Bope.get_module_manager().get_modules_with_category(this.category).size();
@@ -135,7 +136,11 @@ public class BopeFrame {
 			}
 
 			if (buttons.is_open()) {
-				this.height += buttons.get_settings_height();
+				if (compare == 5) {
+					this.height += buttons.get_settings_height() - compare;
+				} else {
+					this.height += buttons.get_settings_height();
+				}
 			} else {
 				this.height += compare;
 			}
@@ -222,19 +227,37 @@ public class BopeFrame {
 		return false;
 	}
 
-	public void mouse(int x, int y, int mouse) {
+	public void does_button_for_do_widgets_can(boolean can) {
 		for (BopeModuleButton buttons : this.module_button) {
-			buttons.mouse(x, y, mouse);
+			buttons.does_widgets_can(can);
 		}
 	}
 
-	public void mouse_release(int x, int y, int mouse) {
+	public void mouse(int mx, int my, int mouse) {
 		for (BopeModuleButton buttons : this.module_button) {
-			buttons.button_release(x, y, mouse);
+			buttons.mouse(mx, my, mouse);
 		}
 	}
 
-	public void render(int x, int y) {
+	public void mouse_release(int mx, int my, int mouse) {
+		for (BopeModuleButton buttons : this.module_button) {
+			buttons.button_release(mx, my, mouse);
+		}
+	}
+
+	public void render(int mx, int my) {
+		float[] tick_color = {
+			(System.currentTimeMillis() % (360 * 32)) / (360f * 32)
+		};
+
+		int color_b = Color.HSBtoRGB(tick_color[0], 1, 1);
+
+		if ((color_b & 0xFF) <= 50) {
+			this.bd_b = 50;
+		} else {
+			this.bd_b = (color_b & 0xFF);
+		}
+
 		this.frame_name = this.category.get_name();
 		this.width_name = font.get_string_width(this.category.get_name());
 
@@ -244,14 +267,16 @@ public class BopeFrame {
 		BopeDraw.draw_string(this.frame_name, this.x + 5, this.y + 4, this.nc_r, this.nc_g, this.nc_b);
 
 		if (is_moving()) {
-			set_x(x - this.move_x);
-			set_y(y - this.move_y);
+			set_x(mx - this.move_x);
+			set_y(my - this.move_y);
 		}
 
 		for (BopeModuleButton buttons : this.module_button) {
 			buttons.set_x(this.x + 2);
 
-			buttons.render(2);
+			buttons.render(mx, my, 2);
 		}
+
+		tick_color[0] += 1;
 	}
 }

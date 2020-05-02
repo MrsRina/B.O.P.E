@@ -107,11 +107,23 @@ public class BopeSetting {
 	}
 
 	public void set_value(double value) {
-		this.slider = value;
+		if (value >= get_max(value)) {
+			this.slider = get_max(value);
+		} else if (value <= get_min(value)) {
+			this.slider = get_min(value);
+		} else {
+			this.slider = value;
+		}
 	}
 
 	public void set_value(int value) {
-		this.slider = (double) value;
+		if (value >= get_max(value)) {
+			this.slider = (double) get_max(value);
+		} else if (value <= get_min(value)) {
+			this.slider = (double) get_min(value);
+		} else {
+			this.slider = (double) value;
+		}
 	}
 
 	public boolean get_value(boolean type) {

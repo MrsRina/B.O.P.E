@@ -40,7 +40,7 @@ public class BopeButton extends BopeAbstractWidget {
 
 	private int bg_r = 0;
 	private int bg_g = 0;
-	private int bg_b = 42;
+	private int bg_b = 100;
 	private int bg_a = 255;
 
 	private int nb_r = 255;

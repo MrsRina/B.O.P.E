@@ -97,6 +97,8 @@ public class BopeModule {
 		if (!(converted_bind.equals("NONE"))) {
 			String key     = Keyboard.getKeyName(get_bind(0));
 			converted_bind = Character.toUpperCase(key.charAt(0)) + (key.length() != 1 ? key.substring(1).toLowerCase() : "");
+		} else {
+			converted_bind = "None";
 		}
 
 		return converted_bind;

@@ -227,9 +227,27 @@ public class BopeFrame {
 		return false;
 	}
 
+	public boolean is_binding() {
+		boolean value_requested = false;
+
+		for (BopeModuleButton buttons : this.module_button) {
+			if (buttons.is_binding()) {
+				value_requested = true;
+			}
+		}
+
+		return value_requested;
+	}
+
 	public void does_button_for_do_widgets_can(boolean can) {
 		for (BopeModuleButton buttons : this.module_button) {
 			buttons.does_widgets_can(can);
+		}
+	}
+
+	public void bind(char char_, int key) {
+		for (BopeModuleButton buttons : this.module_button) {
+			buttons.bind(char_, key);
 		}
 	}
 
@@ -254,6 +272,8 @@ public class BopeFrame {
 
 		if ((color_b & 0xFF) <= 50) {
 			this.bd_b = 50;
+		} else if ((color_b & 0xFF) >= 120) {
+			this.bd_b = 120;
 		} else {
 			this.bd_b = (color_b & 0xFF);
 		}

@@ -1,12 +1,12 @@
-Processing 54 files
+Processing 55 files
 Start Processing: rina/turok/bope/Bope.java
 New Key: class net/minecraftforge/fml/common/Mod
 New Key: class net/minecraftforge/fml/common/Mod
-Rename method net/minecraft/client/Minecraft/getMinecraft ()Lnet/minecraft/client/Minecraft;[4013,4025]::getMinecraft->func_71410_x
-Rename field net/minecraft/client/Minecraft/player[4028,4034]::player->field_71439_g
-Rename method net/minecraft/client/Minecraft/getMinecraft ()Lnet/minecraft/client/Minecraft;[4085,4097]::getMinecraft->func_71410_x
-Rename field net/minecraft/client/Minecraft/player[4100,4106]::player->field_71439_g
-Rename method net/minecraft/command/ICommandSender/getName ()Ljava/lang/String;[4114,4121]::getName->func_70005_c_
+Rename method net/minecraft/client/Minecraft/getMinecraft ()Lnet/minecraft/client/Minecraft;[4081,4093]::getMinecraft->func_71410_x
+Rename field net/minecraft/client/Minecraft/player[4096,4102]::player->field_71439_g
+Rename method net/minecraft/client/Minecraft/getMinecraft ()Lnet/minecraft/client/Minecraft;[4153,4165]::getMinecraft->func_71410_x
+Rename field net/minecraft/client/Minecraft/player[4168,4174]::player->field_71439_g
+Rename method net/minecraft/command/ICommandSender/getName ()Ljava/lang/String;[4182,4189]::getName->func_70005_c_
 Import: net.minecraftforge.fml.common.event.FMLPreInitializationEvent
 Import: net.minecraftforge.fml.common.event.FMLInitializationEvent
 Import: net.minecraftforge.common.MinecraftForge
@@ -192,11 +192,13 @@ End  Processing: rina/turok/bope/bopemod/events/BopeEventRender.java
 Start Processing: rina/turok/bope/bopemod/guiscreen/BopeGUI.java
 Rename method net/minecraft/client/Minecraft/getMinecraft ()Lnet/minecraft/client/Minecraft;[888,900]::getMinecraft->func_71410_x
 FOUND CONSTR method rina/turok/bope/bopemod/guiscreen/BopeGUI/BopeGUI ()V rina/turok/bope/bopemod/guiscreen/BopeGUI
-Rename method net/minecraft/client/gui/GuiScreen/doesGuiPauseGame ()Z[1391,1407]::doesGuiPauseGame->func_73868_f
-Rename method net/minecraft/client/gui/GuiScreen/onGuiClosed ()V[1457,1468]::onGuiClosed->func_146281_b
-Rename method net/minecraft/client/gui/GuiScreen/mouseClicked (III)V[1642,1654]::mouseClicked->func_73864_a
-Rename method net/minecraft/client/gui/GuiScreen/mouseReleased (III)V[2182,2195]::mouseReleased->func_146286_b
-Rename method net/minecraft/client/gui/GuiScreen/drawScreen (IIF)V[2453,2463]::drawScreen->func_73863_a
+Rename method net/minecraft/client/gui/GuiScreen/doesGuiPauseGame ()Z[1644,1660]::doesGuiPauseGame->func_73868_f
+Rename method net/minecraft/client/gui/GuiScreen/onGuiClosed ()V[1744,1755]::onGuiClosed->func_146281_b
+Rename method net/minecraft/client/gui/GuiScreen/keyTyped (CI)V[1929,1937]::keyTyped->func_73869_a
+Rename method net/minecraft/client/Minecraft/displayGuiScreen (Lnet/minecraft/client/gui/GuiScreen;)V[2143,2159]::displayGuiScreen->func_147108_a
+Rename method net/minecraft/client/gui/GuiScreen/mouseClicked (III)V[2210,2222]::mouseClicked->func_73864_a
+Rename method net/minecraft/client/gui/GuiScreen/mouseReleased (III)V[2960,2973]::mouseReleased->func_146286_b
+Rename method net/minecraft/client/gui/GuiScreen/drawScreen (IIF)V[3296,3306]::drawScreen->func_73863_a
 Import: net.minecraft.client.gui.ScaledResolution
 Import: net.minecraft.client.gui.GuiScreen
 Import: net.minecraft.client.Minecraft
@@ -253,11 +255,12 @@ End  Processing: rina/turok/bope/bopemod/guiscreen/render/components/BopeFrame.j
 Start Processing: rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java
 FOUND CONSTR method rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton/BopeModuleButton (Lrina/turok/bope/bopemod/BopeModule;Lrina/turok/bope/bopemod/guiscreen/render/components/BopeFrame;)V rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton
 Import: java.util.*
-Adding 8 imports
+Adding 9 imports
         rina.turok.bope.Bope
         rina.turok.bope.bopemod.BopeModule
         rina.turok.bope.bopemod.guiscreen.render.BopeDraw
         rina.turok.bope.bopemod.guiscreen.render.components.widgets.BopeButton
+        rina.turok.bope.bopemod.guiscreen.render.components.widgets.BopeButtonBind
         rina.turok.bope.bopemod.guiscreen.render.components.widgets.BopeCombobox
         rina.turok.bope.bopemod.guiscreen.render.components.widgets.BopeLabel
         rina.turok.bope.bopemod.guiscreen.render.components.widgets.BopeSlider
@@ -274,6 +277,17 @@ Adding 2 imports
         rina.turok.bope.Bope
         rina.turok.bope.bopemod.guiscreen.settings.BopeSetting
 End  Processing: rina/turok/bope/bopemod/guiscreen/render/components/widgets/BopeButton.java
+
+Start Processing: rina/turok/bope/bopemod/guiscreen/render/components/widgets/BopeButtonBind.java
+FOUND CONSTR method rina/turok/bope/bopemod/guiscreen/render/components/widgets/BopeButtonBind/BopeButtonBind (Lrina/turok/bope/bopemod/guiscreen/render/components/BopeFrame;Lrina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton;Ljava/lang/String;I)V rina/turok/bope/bopemod/guiscreen/render/components/widgets/BopeButtonBind
+Import: java.awt.*
+Adding 5 imports
+        rina.turok.bope.Bope
+        rina.turok.bope.bopemod.guiscreen.render.BopeDraw
+        rina.turok.bope.bopemod.guiscreen.render.components.BopeAbstractWidget
+        rina.turok.bope.bopemod.guiscreen.render.components.BopeFrame
+        rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton
+End  Processing: rina/turok/bope/bopemod/guiscreen/render/components/widgets/BopeButtonBind.java
 
 Start Processing: rina/turok/bope/bopemod/guiscreen/render/components/widgets/BopeCombobox.java
 FOUND CONSTR method rina/turok/bope/bopemod/guiscreen/render/components/widgets/BopeCombobox/BopeCombobox (Lrina/turok/bope/bopemod/guiscreen/render/components/BopeFrame;Lrina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton;Ljava/lang/String;I)V rina/turok/bope/bopemod/guiscreen/render/components/widgets/BopeCombobox

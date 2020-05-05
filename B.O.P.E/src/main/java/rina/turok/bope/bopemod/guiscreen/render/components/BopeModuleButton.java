@@ -3,6 +3,7 @@ package rina.turok.bope.bopemod.guiscreen.render.components;
 import java.util.*;
 
 // Guiscreen.
+import rina.turok.bope.bopemod.guiscreen.render.components.widgets.BopeButtonBind;
 import rina.turok.bope.bopemod.guiscreen.render.components.widgets.BopeCombobox;
 import rina.turok.bope.bopemod.guiscreen.render.components.widgets.BopeSlider;
 import rina.turok.bope.bopemod.guiscreen.render.components.widgets.BopeButton;
@@ -52,7 +53,7 @@ public class BopeModuleButton {
 
 	private int bg_r = 0;
 	private int bg_g = 0;
-	private int bg_b = 42;
+	private int bg_b = 100;
 	private int bg_a = 255;
 
 	private int bd_r = 0;
@@ -70,6 +71,8 @@ public class BopeModuleButton {
 	private int master_height_cache;
 
 	public int settings_height;
+
+	private int count;
 
 	public BopeModuleButton(BopeModule module, BopeFrame master) {
 		/**
@@ -100,30 +103,48 @@ public class BopeModuleButton {
 
 		this.settings_height = this.y + 10;
 
+		this.count = 0;
+
 		for (BopeSetting settings : Bope.get_setting_manager().get_settings_with_module(module)) {
 			if (settings.get_type().equals("button")) {
 				this.widget.add(new BopeButton(master, this, settings.get_tag(), this.settings_height));
 
 				this.settings_height += 10;
+
+				this.count++;
 			}
 
 			if (settings.get_type().equals("combobox")) {
 				this.widget.add(new BopeCombobox(master, this, settings.get_tag(), this.settings_height));
 
 				this.settings_height += 10;
+
+				this.count++;
 			}
 
 			if (settings.get_type().equals("label")) {
 				this.widget.add(new BopeLabel(master, this, settings.get_tag(), this.settings_height));
 
 				this.settings_height += 10;
+
+				this.count++;
 			}
 
 			if (settings.get_type().equals("doubleslider") || settings.get_type().equals("integerslider")) {
 				this.widget.add(new BopeSlider(master, this, settings.get_tag(), this.settings_height));
 
 				this.settings_height += 10;
+
+				this.count++;
 			}
+		}
+
+		int size = Bope.get_setting_manager().get_settings_with_module(module).size();
+
+		if (this.count >= size) {
+			this.widget.add(new BopeButtonBind(master, this, "bind", this.settings_height));
+
+			this.settings_height += 10;
 		}
 	}
 
@@ -191,6 +212,18 @@ public class BopeModuleButton {
 		return this.opened;
 	}
 
+	public boolean is_binding() {
+		boolean value_requested = false;
+
+		for (BopeAbstractWidget widgets : this.widget) {
+			if (widgets.is_binding()) {
+				value_requested = true;
+			}
+		}
+
+		return value_requested;
+	}
+
 	public boolean motion(int mx, int my) {
 		if (mx >= get_x() && my >= get_save_y() && mx <= get_x() + get_width() && my <= get_save_y() + get_height()) {
 			return true;
@@ -202,6 +235,12 @@ public class BopeModuleButton {
 	public void does_widgets_can(boolean can) {
 		for (BopeAbstractWidget widgets : this.widget) {
 			widgets.does_can(can);
+		}
+	}
+
+	public void bind(char char_, int key) {
+		for (BopeAbstractWidget widgets : this.widget) {
+			widgets.bind(char_, key);
 		}
 	}
 

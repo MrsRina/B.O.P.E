@@ -51,7 +51,8 @@ public class Bope {
 	public static final String BOPE_SPACE   = " ";
 
 	// GUI.
-	public static final int BOPE_KEY_GUI /*  */ = Keyboard.KEY_RSHIFT;
+	public static final int BOPE_KEY_GUI /****/ = Keyboard.KEY_RSHIFT;
+	public static final int BOPE_KEY_DELETE     = Keyboard.KEY_DELETE;
 	public static final int BOPE_KEY_GUI_ESCAPE = Keyboard.KEY_ESCAPE;
 
 	// A just log for initializing and if get a error show in log Minecraft.

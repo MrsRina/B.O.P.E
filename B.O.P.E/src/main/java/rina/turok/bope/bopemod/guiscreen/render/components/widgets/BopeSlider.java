@@ -50,7 +50,7 @@ public class BopeSlider extends BopeAbstractWidget {
 
 	private int bg_r = 0;
 	private int bg_g = 0;
-	private int bg_b = 42;
+	private int bg_b = 100;
 	private int bg_a = 255;
 
 	private int ns_r = 255;
@@ -60,7 +60,7 @@ public class BopeSlider extends BopeAbstractWidget {
 
 	private int bd_r = 0;
 	private int bd_g = 0;
-	private int bd_b = 42;
+	private int bd_b = 200;
 	private int bd_a = 150;
 
 	private int border_size = 0;
@@ -82,8 +82,8 @@ public class BopeSlider extends BopeAbstractWidget {
 
 		this.can = true;
 
-		this.double_  = 256;
-		this.intenger = 256;
+		this.double_  = 8192;
+		this.intenger = 8192;
 
 		if (this.setting.get_type().equals("doubleslider")) {
 			this.double_ = this.setting.get_value(1.0);
@@ -184,11 +184,11 @@ public class BopeSlider extends BopeAbstractWidget {
 
 		this.save_y = this.y + master_y;
 
-		if (this.double_ != 256 && this.intenger == 256) {
+		if (this.double_ != 8192 && this.intenger == 8192) {
 			this.compare = false;
 		}
 
-		if (this.double_ == 256 && this.intenger != 256) {
+		if (this.double_ == 8192 && this.intenger != 8192) {
 			this.compare = true;
 		}
 

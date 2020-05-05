@@ -51,7 +51,7 @@ public class BopeLabel extends BopeAbstractWidget {
 
 	private int bd_r = 0;
 	private int bd_g = 0;
-	private int bd_b = 42;
+	private int bd_b = 100;
 	private int bd_a = 150;
 
 	private int border_size = 0;

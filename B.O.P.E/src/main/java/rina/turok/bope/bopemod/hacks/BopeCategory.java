@@ -13,7 +13,7 @@ public enum BopeCategory {
 	BOPE_MOVEMENT ("B.O.P.E Movement", "BopeMovement", "y_sw", "y_bt"),
 	BOPE_RENDER   ("B.O.P.E Render"  , "BopeRender"  , "y_sw", "y_bt"),
 	BOPE_EXPLOIT  ("B.O.P.E Exploit" , "BopeExploit" , "y_sw", "y_bt"),
-	BOPE_GUI      ("B.O.P.E GUI"     , "BopeGUI"     , "y_sw", "y_bt"),
+	BOPE_HUD      ("B.O.P.E HUD"     , "BopeHUD"     , "y_sw", "y_bt"),
 	BOPE_BETA     ("B.O.P.E Beta"    , "BopeBeta"    , "y_sw", "n_bt"),
 	BOPE_HIDDEN   ("B.O.P.E Hidden"  , "BopeHidden"  , "n_sw", "y_bt");
 

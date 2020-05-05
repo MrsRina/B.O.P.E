@@ -32,10 +32,18 @@ public abstract class BopeAbstractWidget {
 		return 0;
 	}
 
+	// Binding.
+	public boolean is_binding() {
+		return false;
+	}
+
 	// Motion.
 	public boolean motion_pass(int mx, int my) {
 		return false;
 	}
+
+	// Keyboard.
+	public void bind(char char_, int key) {}
 
 	// Can.
 	public void does_can(boolean value) {}

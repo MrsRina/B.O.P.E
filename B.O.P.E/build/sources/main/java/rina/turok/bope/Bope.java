@@ -1,8 +1,6 @@
 package rina.turok.bope;
 
-import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
-import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraft.client.Minecraft;
 
@@ -18,6 +16,7 @@ import java.util.*;
 
 // Guiscreen;
 import rina.turok.bope.bopemod.guiscreen.BopeGUI;
+import rina.turok.bope.bopemod.guiscreen.BopeHUD;
 
 // Managers.
 import rina.turok.bope.bopemod.manager.BopeCommandManager;
@@ -25,6 +24,7 @@ import rina.turok.bope.bopemod.manager.BopeSettingManager;
 import rina.turok.bope.bopemod.manager.BopeConfigManager;
 import rina.turok.bope.bopemod.manager.BopeModuleManager;
 import rina.turok.bope.bopemod.manager.BopeEventManager;
+import rina.turok.bope.bopemod.manager.BopeHUDManager;
 
 // External.
 import rina.turok.bope.external.BopeEventHandler;
@@ -37,6 +37,9 @@ import rina.turok.bope.BopeEventRegister;
  * 
  * The ZeroAlpine event manager is compatible with license MIT.
  * All Rights for Rina.
+ *
+ * Created by Rina.
+ * 05/04/20.
  *
  */
 @Mod(modid = "bope", version = Bope.BOPE_VERSION)
@@ -64,9 +67,11 @@ public class Bope {
 	public static BopeConfigManager  config_manager;
 	public static BopeModuleManager  module_manager;
 	public static BopeEventManager   event_manager;
+	public static BopeHUDManager     hud_manager;
 
-	// Cick GUI.
+	// Cick GUI and HUD.
 	public static BopeGUI click_gui;
+	public static BopeHUD click_hud;
 
 	@Mod.EventHandler
 	public void BopeStarting(FMLInitializationEvent event) {
@@ -83,10 +88,14 @@ public class Bope {
 		config_manager  = new BopeConfigManager ("<4><3><4><4><2><4><5><9><4><3><1>");
 		module_manager  = new BopeModuleManager ("<4><3><4><4><2><4><5><9><4><3><1>");
 		event_manager   = new BopeEventManager  ("<4><3><4><4><2><4><5><9><4><3><1>");
+		hud_manager     = new BopeHUDManager    ("000000000000000000000000000000000");
 
 		send_minecraft_log("Managers are initialed.");
 
 		click_gui = new BopeGUI();
+		click_hud = new BopeHUD();
+
+		send_minecraft_log("GUI and HUD initialed.");
 
 		// Register event modules and manager.
 		BopeEventRegister.register_command_manager(command_manager);
@@ -95,10 +104,17 @@ public class Bope {
 		send_minecraft_log("Events registered.");
 		send_minecraft_log("Client started.");
 
+		// Load all config.
 		config_manager.load();
 
+		// For just fix the GUI.
 		if (module_manager.get_module_with_tag("GUI").is_active()) {
 			module_manager.get_module_with_tag("GUI").set_active(false);
+		}
+
+		// And fix the HUD.
+		if (module_manager.get_module_with_tag("HUD").is_active()) {
+			module_manager.get_module_with_tag("HUD").set_active(false);
 		}
 	}
 
@@ -155,5 +171,9 @@ public class Bope {
 
 	public static BopeSettingManager get_setting_manager() {
 		return get_instance().setting_manager;
+	}
+
+	public static BopeHUDManager get_hud_manager() {
+		return get_instance().hud_manager;
 	}
 }

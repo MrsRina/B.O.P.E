@@ -9,6 +9,13 @@ import rina.turok.bope.bopemod.BopeModule;
 // Core.
 import rina.turok.bope.Bope;
 
+/**
+ * @author Rina
+ *
+ * Created by Rina.
+ * 05/05/20.
+ *
+ */
 public class BopeClickGUI extends BopeModule {
 	public BopeClickGUI() {
 		super(BopeCategory.BOPE_HIDDEN);

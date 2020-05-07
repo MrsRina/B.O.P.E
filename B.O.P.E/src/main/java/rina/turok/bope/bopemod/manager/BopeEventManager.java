@@ -52,7 +52,7 @@ public class BopeEventManager {
 			return;
 		}
 
-		Bope.get_instance().module_manager.update();
+		Bope.get_module_manager().update();
 	}
 
 	@SubscribeEvent
@@ -61,7 +61,7 @@ public class BopeEventManager {
 			return;
 		}
 
-		Bope.get_instance().module_manager.render(event);
+		Bope.get_module_manager().render(event);
 	}
 
 	@SubscribeEvent
@@ -77,7 +77,11 @@ public class BopeEventManager {
 		}
 
 		if (event.getType() == target) {
-			Bope.get_instance().module_manager.render();
+			Bope.get_module_manager().render();
+
+			if (Bope.get_module_manager().get_module_with_tag("GUI").is_active() == false) {
+				Bope.get_hud_manager().render();
+			}
 
 			GL11.glPushMatrix();
 
@@ -95,7 +99,7 @@ public class BopeEventManager {
 	@SubscribeEvent(priority = EventPriority.NORMAL, receiveCanceled = true)
 	public void onKeyInput(InputEvent.KeyInputEvent event) {
 		if (Keyboard.getEventKeyState()) {
-			Bope.get_instance().module_manager.bind(Keyboard.getEventKey());
+			Bope.get_module_manager().bind(Keyboard.getEventKey());
 		}
 	}
 

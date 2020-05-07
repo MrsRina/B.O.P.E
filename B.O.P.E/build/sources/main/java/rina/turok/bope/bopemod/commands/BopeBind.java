@@ -54,38 +54,39 @@ public class BopeBind extends BopeCommand {
 
 		module = module.toUpperCase();
 
+		BopeModule module_requested = Bope.get_module_manager().get_module_with_tag(module);
 
-		if (module.equals("GUI")) {
-			BopeMessage.send_client_error_message("The module called GUI cannot be bound.");
+		if (module_requested == null) {
+			BopeMessage.send_client_error_message("Module does not exist.");
 
 			return true;
 		}
 
-		BopeModule module_requested = Bope.get_module_manager().get_module_with_tag(module);
+		if (key.equalsIgnoreCase("NONE")) {
+			module_requested.set_bind(0);
 
-		if (module_requested != null) {
-			if (!(key.equals("NONE"))) {
-				int new_bind = Keyboard.getKeyIndex(key.toUpperCase());
+			BopeMessage.send_client_message(module_requested.get_tag() + " is bound to None.");
 
-				if (new_bind != 0) {
-					if (!(new_bind == module_requested.get_bind(0))) {
-						module_requested.set_bind(new_bind);
-
-						BopeMessage.send_client_message(module_requested.get_tag() +  " is bound to " + module_requested.get_bind(""));
-					} else {
-						BopeMessage.send_client_error_message("The " + module_requested.get_tag() + " already have it key.");
-					}
-				} else {
-					BopeMessage.send_client_error_message("Key does not exist.");
-				}
-			} else {
-				module_requested.set_bind(0);
-
-				BopeMessage.send_client_message(module_requested.get_tag() + " is bound to None.");
-			}
-		} else {
-			BopeMessage.send_client_error_message("Module does not exist.");
+			return true;
 		}
+
+		int new_bind = Keyboard.getKeyIndex(key.toUpperCase());
+
+		if (new_bind == 0) {
+			BopeMessage.send_client_error_message("Key does not exist.");
+
+			return true;
+		}
+
+		if (new_bind == module_requested.get_bind(0)) {
+			BopeMessage.send_client_error_message("The " + module_requested.get_tag() + " already have it key.");
+
+			return true;
+		}
+
+		module_requested.set_bind(new_bind);
+
+		BopeMessage.send_client_message(module_requested.get_tag() +  " is bound to " + module_requested.get_bind(""));
 
 		return true;
 	}

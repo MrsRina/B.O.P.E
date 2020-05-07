@@ -29,7 +29,7 @@ public class BopeSettings extends BopeCommand {
 		}
 
 		if (what.equals("null")) {
-			BopeMessage.send_client_error_message(current_prefix() + "settigns <save/load>");
+			BopeMessage.send_client_error_message(current_prefix() + "settings <save/load>");
 
 			return true;
 		}
@@ -40,12 +40,14 @@ public class BopeSettings extends BopeCommand {
 			Bope.get_config_manager().save();
 
 			BopeMessage.send_client_message(ChatFormatting.GREEN + "Successfully " + c + "saved!");
-		}
-		
-		if (what.equalsIgnoreCase("load")) {
+		} else if (what.equalsIgnoreCase("load")) {
 			Bope.get_config_manager().load();
 
 			BopeMessage.send_client_message(ChatFormatting.GREEN + "Successfully " + c + "loaded!");
+		} else {
+			BopeMessage.send_client_error_message(current_prefix() + "settings <save/load>");
+
+			return true;
 		}
 
 		return true;

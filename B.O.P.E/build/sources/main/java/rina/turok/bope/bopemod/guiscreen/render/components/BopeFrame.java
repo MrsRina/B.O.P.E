@@ -86,7 +86,7 @@ public class BopeFrame {
 
 		this.width_name = font.get_string_width(this.category.get_name());
 		this.width_abs  = this.width_name;
-		
+
 		this.frame_name = category.get_name();
 		this.frame_tag  = category.get_tag();
 
@@ -284,7 +284,7 @@ public class BopeFrame {
 		BopeDraw.draw_rect(this.x, this.y, this.x + this.width, this.y + this.height, this.bg_r, this.bg_g, this.bg_b, this.bg_a);
 		BopeDraw.draw_rect(this.x - 1, this.y, this.width + 1, this.height, this.bd_r, this.bd_g, this.bd_b, this.bd_a, this.border_size, "left-right");
 		
-		BopeDraw.draw_string(this.frame_name, this.x + 5, this.y + 4, this.nc_r, this.nc_g, this.nc_b);
+		BopeDraw.draw_string(this.frame_name, this.x + 4, this.y + 4, this.nc_r, this.nc_g, this.nc_b);
 
 		if (is_moving()) {
 			set_x(mx - this.move_x);

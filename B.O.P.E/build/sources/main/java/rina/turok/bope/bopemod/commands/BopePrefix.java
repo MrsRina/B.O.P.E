@@ -1,7 +1,10 @@
 package rina.turok.bope.bopemod.commands;
 
+// Data.
 import rina.turok.bope.bopemod.BopeCommand;
 import rina.turok.bope.bopemod.BopeMessage;
+
+// Core.
 import rina.turok.bope.Bope;
 
 /**
@@ -10,7 +13,8 @@ import rina.turok.bope.Bope;
 * Created by Rina.
 * 08/04/20.
 *
-*/public class BopePrefix extends BopeCommand {
+*/
+public class BopePrefix extends BopeCommand {
 	public BopePrefix() {
 		super("prefix", "Change prefix.");
 	}

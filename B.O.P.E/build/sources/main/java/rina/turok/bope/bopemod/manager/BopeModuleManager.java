@@ -28,6 +28,7 @@ import rina.turok.bope.bopemod.hacks.exploit.*;
 import rina.turok.bope.bopemod.hacks.BopeFinderModule;
 import rina.turok.bope.bopemod.hacks.BopeCategory;
 import rina.turok.bope.bopemod.hacks.BopeClickGUI;
+import rina.turok.bope.bopemod.hacks.BopeClickHUD;
 
 // Data.
 import rina.turok.bope.bopemod.BopeModule;
@@ -55,8 +56,9 @@ public class BopeModuleManager {
 	public BopeModuleManager(String tag) {
 		this.tag = tag;
 
-		// GUI.
+		// CLICK GUI.
 		add_module(new BopeClickGUI());
+		add_module(new BopeClickHUD());
 
 		// Chat.
 		add_module(new BopeModuleTest());

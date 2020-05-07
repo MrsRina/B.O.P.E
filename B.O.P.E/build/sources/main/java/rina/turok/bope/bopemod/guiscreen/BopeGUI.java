@@ -144,6 +144,7 @@ public class BopeGUI extends GuiScreen {
 		}
 	}
 
+	// Set the current.
 	public void set_current(BopeFrame current) {
 		/*
 		 * I dont found a good thing to replace,
@@ -155,6 +156,7 @@ public class BopeGUI extends GuiScreen {
 		this.frame.add(current);
 	}
 
+	// Get the current.
 	public BopeFrame get_current() {
 		return this.current;
 	}
@@ -168,6 +170,7 @@ public class BopeGUI extends GuiScreen {
 	 * 29/04/2020.
 	 *
 	 **/
+	// public static class BopeGUIManager {
 
 	public ArrayList<BopeFrame> get_array_frames() {
 		// Get array frames.
@@ -187,4 +190,6 @@ public class BopeGUI extends GuiScreen {
 
 		return frame_requested;
 	}
+
+	// }
 }

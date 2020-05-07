@@ -16,24 +16,26 @@ import rina.turok.bope.Bope;
  * 05/05/20.
  *
  */
-public class BopeClickGUI extends BopeModule {
-	public BopeClickGUI() {
-		super(BopeCategory.BOPE_HIDDEN);
+public class BopeClickHUD extends BopeModule {
+	public BopeClickHUD() {
+		super(BopeCategory.BOPE_GUI);
 
 		// Info.
-		this.name        = "B.O.P.E GUI";
-		this.tag         = "GUI";
-		this.description = "B.O.P.E GUI for enbable or disable modules.";
+		this.name        = "HUD";
+		this.tag         = "HUD";
+		this.description = "B.O.P.E HUD for setting pinnables.";
 
 		release("B.O.P.E");
-
-		set_bind(Bope.BOPE_KEY_GUI);
 	}
 
 	@Override
 	public void enable() {
 		if (mc.world != null && mc.player != null) {
-			mc.displayGuiScreen(Bope.click_gui);
+			Bope.get_module_manager().get_module_with_tag("GUI").set_active(false);
+				
+			Bope.click_hud.back = false;
+
+			mc.displayGuiScreen(Bope.click_hud);
 		}
 	}
 }

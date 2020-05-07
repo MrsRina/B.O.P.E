@@ -28,8 +28,8 @@ public class BopePinnable {
 
 	private int x;
 	private int y;
-	private int w;
-	private int h;
+	private int width;
+	private int height;
 
 	private int move_x;
 	private int move_y;
@@ -44,10 +44,28 @@ public class BopePinnable {
 
 		this.x = x;
 		this.y = y;
-		this.w = font.get_string_width(title) + 50;
-		this.h = font.get_string_height(title);
+
+		this.width  = 1;
+		this.height = 10;
 
 		this.move = false;
+	}
+
+	public void refresh_pinnable() {
+		this.height = 10;
+
+		int size  = this.label.size();
+		int count = 0;
+
+		for (BopeLabel labels : this.label) {
+			count++;
+
+			if (count >= size) {
+				labels.set_x(this.x + this.height + 2);
+			} else {
+				labels.set_x(this.x + this.height);
+			}
+		}
 	}
 
 	public void set_move(boolean value) {
@@ -66,12 +84,12 @@ public class BopePinnable {
 		this.y = y;
 	}
 
-	public void set_width(int w) {
-		this.w = w;
+	public void set_width(int width) {
+		this.width = width;
 	}
 
-	public void set_height(int h) {
-		this.h = h;
+	public void set_height(int height) {
+		this.height = height;
 	}
 
 	public void set_move_x(int x) {
@@ -107,11 +125,11 @@ public class BopePinnable {
 	}
 
 	public int get_width() {
-		return this.w;
+		return this.width;
 	}
 
 	public int get_height() {
-		return this.h;
+		return this.height;
 	}
 
 	public boolean is_active() {
@@ -145,15 +163,12 @@ public class BopePinnable {
 
 	public void render(int mx, int my, int tick) {
 		for (BopeLabel labels : this.label) {
-			labels.set_save_y(this.y + 14 + labels.get_y() - (this.h + this.h));
 
-			set_width(labels.get_width() + 5);
+			if (is_active() && motion(mx, my)) {
+				BopeDraw.draw_rect(this.x, this.y, this.width, this.height - 5, 0, 0, 0, 50, 2, "right-left-down-up");
+			}
 
 			labels.update(2);
-		}
-
-		if (is_active()) {
-			BopeDraw.draw_rect(this.x, this.y, this.x + this.w, this.y + this.h, 190, 190, 190, 100);
 		}
 
 		if (is_moving()) {
@@ -168,12 +183,15 @@ public class BopePinnable {
 		}
 	}
 
-	protected BopeLabel create_line(String line_to_add) {
-		BopeLabel label_created = new BopeLabel(this, line_to_add, 1, this.x + 2, this.h);
+	protected BopeLabel create_line(String line_to_add, String tag) {
+		BopeLabel label_created = new BopeLabel(this, line_to_add, tag, 1);
+
+		label_created.set_x(this.x + 2);
+		label_created.set_y(this.y + this.height + 2);
 
 		this.label.add(label_created);
 
-		this.h += 10;
+		this.height += 10;
 
 		return label_created;
 	}
@@ -183,6 +201,6 @@ public class BopePinnable {
 	}
 
 	protected void draw_rect(int pos_x, int pos_y, int width, int height, int r, int g, int b, int a) {
-		BopeDraw.draw_rect(this.x + pos_x, this.y + pos_y, this.x + this.w + width, this.y + this.h + height, r, g, b, a);
+		BopeDraw.draw_rect(this.x + pos_x, this.y + pos_y, this.x + this.width + width, this.y + this.height + height, r, g, b, a);
 	}
 }

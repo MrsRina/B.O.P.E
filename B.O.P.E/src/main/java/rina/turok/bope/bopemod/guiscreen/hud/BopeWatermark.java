@@ -17,10 +17,10 @@ import rina.turok.bope.Bope;
 *
 */
 public class BopeWatermark extends BopePinnable {
-	BopeLabel welcome = create_line("");
+	BopeLabel welcome = create_line("", "coords");
 
 	public BopeWatermark() {
-		super("BOPE Watermark", "BopeWatermark", 1, 20, 20);
+		super("Watermark", "BopeWatermark", 1, 0, 0);
 	}
 
 	@Override

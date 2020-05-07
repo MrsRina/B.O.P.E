@@ -17,10 +17,10 @@ import rina.turok.bope.Bope;
 *
 */
 public class BopeUser extends BopePinnable {
-	BopeLabel user = create_line("");
+	BopeLabel user = create_line("", "coords");
 
 	public BopeUser() {
-		super("BOPE User", "BopeUser", 1, 20, 20);
+		super("User", "BopeUser", 1, 0, 0);
 	}
 
 	@Override

@@ -11,6 +11,7 @@ public class BopeLabel {
 	private BopePinnable master;
 
 	private String label;
+	private String tag;
 
 	private int x;
 	private int y;
@@ -22,12 +23,13 @@ public class BopeLabel {
 
 	private BopeDraw font = new BopeDraw(1);
 
-	public BopeLabel(BopePinnable master, String label, float size, int initial_x, int initial_y) {
+	public BopeLabel(BopePinnable master, String label, String tag, float size) {
 		this.master = master;
 		this.label  = label;
+		this.tag    = tag;
 		
-		this.x = initial_x;
-		this.y = master.get_y() + master.get_title_height() + 10 + initial_y;
+		this.x = 0;
+		this.y = 0;
 
 		this.save_y = this.y;
 
@@ -59,6 +61,10 @@ public class BopeLabel {
 		return this.label;
 	}
 
+	public String get_tag() {
+		return this.tag;
+	}
+
 	public int get_x() {
 		return this.x;
 	}
@@ -86,15 +92,18 @@ public class BopeLabel {
 
 		return false;
 	}
+
 	public void update(String label) {
 		this.label = label;
 	}
 
 	public void update(int separate) {
-		this.x = this.master.get_x() + separate;
+		this.width  = font.get_string_width(this.label);
+		this.x      = this.master.get_x() + separate;
+		this.save_y = this.master.get_y() + this.master.get_height() - (this.y + this.height) + 4;
 
-		if (this.width > this.master.get_width()) {
-			this.master.set_width(this.width + 50);
+		if (this.master.get_width() < this.width) {
+			this.master.set_width(this.width + 2 + separate);
 		}
 	}
 

@@ -52,6 +52,7 @@ public class Bope {
 	public static final String BOPE_NAME    = "B.O.P.E";
 	public static final String BOPE_VERSION = "0.1";
 	public static final String BOPE_SPACE   = " ";
+	public static final String BOPE_SIGN    = " \u23D0 ";
 
 	// GUI.
 	public static final int BOPE_KEY_GUI /****/ = Keyboard.KEY_RSHIFT;
@@ -176,4 +177,8 @@ public class Bope {
 	public static BopeHUDManager get_hud_manager() {
 		return get_instance().hud_manager;
 	}
-}
+
+	public String convert_to_smoth_font(String base) {
+		String new_base = base;
+	}
+}                                                    

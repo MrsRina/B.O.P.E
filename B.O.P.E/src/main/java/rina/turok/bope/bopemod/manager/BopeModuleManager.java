@@ -16,7 +16,7 @@ import rina.turok.bope.bopemod.events.BopeEventRender;
 import rina.turok.bope.bopemod.hacks.chat.*;
 
 // Modules combat.
-// import rina.turok.bope.bopemod.hacks.combat.*;
+import rina.turok.bope.bopemod.hacks.combat.*;
 
 // Modules exploit.
 import rina.turok.bope.bopemod.hacks.exploit.*;
@@ -56,17 +56,16 @@ public class BopeModuleManager {
 	public BopeModuleManager(String tag) {
 		this.tag = tag;
 
-		// CLICK GUI.
+		// CLick GUI and HUD.
 		add_module(new BopeClickGUI());
 		add_module(new BopeClickHUD());
 
 		// Chat.
-		add_module(new BopeModuleTest());
-		add_module(new BopeModule3());
-		add_module(new BopeModule2());
+		add_module(new BopeChatSuffix());
 
 		// Combat.
-		// init_bope_combat_modules();
+		add_module(new BopeAutoGapple());
+		add_module(new BopeAutoTotem());
 
 		// Exploit.
 		add_module(new BopeXCarry());

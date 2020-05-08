@@ -1,6 +1,7 @@
 package rina.turok.bope.bopemod.guiscreen.render.pinnables;
 
 import java.util.*;
+import java.awt.*;
 
 // Guiscreen.
 import rina.turok.bope.bopemod.guiscreen.render.pinnables.BopePinnableButton;
@@ -178,14 +179,29 @@ public class BopeFrame {
 	}
 
 	public void render(int mx, int my, int separate) {
+		float[] tick_color = {
+			(System.currentTimeMillis() % (360 * 32)) / (360f * 32)
+		};
+
+		int color_b = Color.HSBtoRGB(tick_color[0], 1, 1);
+
+		if ((color_b & 0xFF) <= 50) {
+			this.bd_b = 50;
+		} else if ((color_b & 0xFF) >= 120) {
+			this.bd_b = 120;
+		} else {
+			this.bd_b = (color_b & 0xFF);
+		}
+
+		BopeDraw.draw_rect(this.x, this.y, this.x + this.width, this.y + this.height, this.bg_r, this.bg_g, this.bg_b, this.bg_a);
+		BopeDraw.draw_rect(this.x - 1, this.y, this.width + 1, this.height, this.bd_r, this.bd_g, this.bd_b, this.bd_a, this.border_size, "left-right");		
+
+		BopeDraw.draw_string(this.name, this.x + 4, this.y + 4, this.fn_r, this.fn_g, this.fn_b);
+
 		if (is_moving()) {
 			set_x(mx - this.move_x);
 			set_y(my - this.move_y);
 		}
-
-		BopeDraw.draw_rect(this.x, this.y, this.x + this.width, this.y + this.height, this.bg_r, this.bg_g, this.bg_b, this.bg_a);
-
-		BopeDraw.draw_string(this.name, this.x + 4, this.y + 4, this.fn_r, this.fn_g, this.fn_b);
 	
 		for (BopePinnableButton pinnables_buttons : this.pinnable_button) {
 			pinnables_buttons.set_x(this.x + separate);

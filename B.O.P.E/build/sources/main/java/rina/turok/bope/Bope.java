@@ -52,6 +52,7 @@ public class Bope {
 	public static final String BOPE_NAME    = "B.O.P.E";
 	public static final String BOPE_VERSION = "0.1";
 	public static final String BOPE_SPACE   = " ";
+	public static final String BOPE_SIGN    = " \u23D0 ";
 
 	// GUI.
 	public static final int BOPE_KEY_GUI /****/ = Keyboard.KEY_RSHIFT;

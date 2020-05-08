@@ -31,6 +31,8 @@ public class BopeLabel extends BopeCommand {
 
 		int syntax = 3;
 
+		boolean is_to_suffix = false;
+
 		if (message.length > 1) {
 			module = message[1];
 		}
@@ -90,7 +92,11 @@ public class BopeLabel extends BopeCommand {
 			return true;
 		}
 
-		label = label.toLowerCase();
+		if (module_requested.get_tag().equalsIgnoreCase("BopeChatSuffix")) {
+			is_to_suffix = true;
+		}
+
+		label = module_requested.get_tag().toLowerCase() + label.toLowerCase();
 
 		BopeSetting setting_requested = Bope.get_setting_manager().get_setting_with_tag(module, label);
 
@@ -101,6 +107,14 @@ public class BopeLabel extends BopeCommand {
 		}
 
 		String new_value = syntax == 4 ? change_1 : change_1 + " " + change_2;
+
+		if (is_to_suffix) {
+			if (change_1.length() >= 8) {
+				change_1.substring(0, 8);
+			}
+
+			new_value = change_1;
+		}
 
 		setting_requested.set_value(new_value);
 

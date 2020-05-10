@@ -36,23 +36,9 @@ public class BopeLabel extends BopeAbstractWidget {
 	private int save_y;
 
 	private boolean can;
+	private boolean info;
 
 	private BopeDraw font = new BopeDraw(1);
-
-	private int bg_r = 0;
-	private int bg_g = 0;
-	private int bg_b = 0;
-	private int bg_a = 255;
-
-	private int nl_r = 255;
-	private int nl_g = 255;
-	private int nl_b = 255;
-	private int nl_a = 255;
-
-	private int bd_r = 0;
-	private int bd_g = 0;
-	private int bd_b = 100;
-	private int bd_a = 150;
 
 	private int border_size = 0;
 
@@ -71,7 +57,11 @@ public class BopeLabel extends BopeAbstractWidget {
 
 		this.label_name = this.setting.get_name();
 
-		this.can = true;
+		if (this.setting.get_name().equalsIgnoreCase("info")) {
+			this.info = true;
+		}
+
+		this.can  = true;
 	}
 
 	public BopeSetting get_setting() {
@@ -161,6 +151,24 @@ public class BopeLabel extends BopeAbstractWidget {
 
 		this.save_y = this.y + master_y;
 
-		BopeDraw.draw_string(this.label_name + " \"" + this.setting.get_value(zbob) + "\"", this.x + 2, this.save_y, this.nl_r, this.nl_g, this.nl_b);
+		int ns_r = Bope.click_gui.theme_widget_name_r;
+		int ns_g = Bope.click_gui.theme_widget_name_g;
+		int ns_b = Bope.click_gui.theme_widget_name_b;
+
+		int bg_r = Bope.click_gui.theme_widget_background_r;
+		int bg_g = Bope.click_gui.theme_widget_background_g;
+		int bg_b = Bope.click_gui.theme_widget_background_b;
+		int bg_a = Bope.click_gui.theme_widget_background_a;
+
+		int bd_r = Bope.click_gui.theme_widget_border_r;
+		int bd_g = Bope.click_gui.theme_widget_border_g;
+		int bd_b = Bope.click_gui.theme_widget_border_b;
+		int bd_a = 100;
+
+		if (this.info) {
+			BopeDraw.draw_string(this.setting.get_value(zbob), this.x + 2, this.save_y, ns_r, ns_g, ns_b);
+		} else {
+			BopeDraw.draw_string(this.label_name + " \"" + this.setting.get_value(zbob) + "\"", this.x + 2, this.save_y, ns_r, ns_g, ns_b);
+		}
 	}
 }

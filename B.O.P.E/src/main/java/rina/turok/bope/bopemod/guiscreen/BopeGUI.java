@@ -40,6 +40,34 @@ public class BopeGUI extends GuiScreen {
 	private boolean event_start;
 	private boolean event_finish;
 
+	// Frame.
+	public int theme_frame_name_r = 0;
+	public int theme_frame_name_g = 0;
+	public int theme_frame_name_b = 0;
+
+	public int theme_frame_background_r = 0;
+	public int theme_frame_background_g = 0;
+	public int theme_frame_background_b = 0;
+	public int theme_frame_background_a = 0;
+
+	public int theme_frame_border_r = 0;
+	public int theme_frame_border_g = 0;
+	public int theme_frame_border_b = 0;
+
+	// Module.
+	public int theme_widget_name_r = 0;
+	public int theme_widget_name_g = 0;
+	public int theme_widget_name_b = 0;
+
+	public int theme_widget_background_r = 0;
+	public int theme_widget_background_g = 0;
+	public int theme_widget_background_b = 0;
+	public int theme_widget_background_a = 0;
+
+	public int theme_widget_border_r = 0;
+	public int theme_widget_border_g = 0;
+	public int theme_widget_border_b = 0;
+
 	private final Minecraft mc = Minecraft.getMinecraft();
 
 	public BopeGUI() {

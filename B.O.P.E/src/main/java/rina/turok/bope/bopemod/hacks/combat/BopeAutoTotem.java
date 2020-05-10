@@ -26,7 +26,7 @@ import rina.turok.bope.Bope;
 */
 public class BopeAutoTotem extends BopeModule {
 	BopeSetting button_inventory = create("Inventory", "AutoTotemInventory", false);
-	BopeSetting slider_health    = create("Health", "AutoTotemLife", 2, 1, 18);
+	BopeSetting slider_health    = create("Health", "AutoTotemLife", 18, 1, 18);
 
 	boolean find_totem = false;
 	boolean move_totem = false;

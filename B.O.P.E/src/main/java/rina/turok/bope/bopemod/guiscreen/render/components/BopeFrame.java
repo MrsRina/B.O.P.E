@@ -55,21 +55,7 @@ public class BopeFrame {
 	
 	private boolean can;
 
-	private int bd_r = 0;
-	private int bd_g = 0;
-	private int bd_b = 42;
-	private int bd_a = 150;
-
-	private int bg_r = 0;
-	private int bg_g = 0;
-	private int bg_b = 0;
-	private int bg_a = 255;
-
-	private int nc_r = 0;
-	private int nc_g = 0;
-	private int nc_b = 255;
-	private int nc_a = 255;
-
+	private int border_a    = 0;
 	private int border_size = 1;
 
 	public BopeFrame(BopeCategory category) {
@@ -268,23 +254,37 @@ public class BopeFrame {
 			(System.currentTimeMillis() % (360 * 32)) / (360f * 32)
 		};
 
-		int color_b = Color.HSBtoRGB(tick_color[0], 1, 1);
+		int color_a = Color.HSBtoRGB(tick_color[0], 1, 1);
 
-		if ((color_b & 0xFF) <= 50) {
-			this.bd_b = 50;
-		} else if ((color_b & 0xFF) >= 120) {
-			this.bd_b = 120;
+		if ((color_a) <= 50) {
+			border_a = 50;
+		} else if ((color_a) >= 120) {
+			border_a = 120;
 		} else {
-			this.bd_b = (color_b & 0xFF);
+			border_a = (color_a);
 		}
+
+		int nc_r = Bope.click_gui.theme_frame_name_r;
+		int nc_g = Bope.click_gui.theme_frame_name_g;
+		int nc_b = Bope.click_gui.theme_frame_name_b;
+
+		int bg_r = Bope.click_gui.theme_frame_background_r;
+		int bg_g = Bope.click_gui.theme_frame_background_g;
+		int bg_b = Bope.click_gui.theme_frame_background_b;
+		int bg_a = Bope.click_gui.theme_frame_background_a;
+
+		int bd_r = Bope.click_gui.theme_frame_border_r;
+		int bd_g = Bope.click_gui.theme_frame_border_g;
+		int bd_b = Bope.click_gui.theme_frame_border_b;
+		int bd_a = border_a;
 
 		this.frame_name = this.category.get_name();
 		this.width_name = font.get_string_width(this.category.get_name());
 
-		BopeDraw.draw_rect(this.x, this.y, this.x + this.width, this.y + this.height, this.bg_r, this.bg_g, this.bg_b, this.bg_a);
-		BopeDraw.draw_rect(this.x - 1, this.y, this.width + 1, this.height, this.bd_r, this.bd_g, this.bd_b, this.bd_a, this.border_size, "left-right");
+		BopeDraw.draw_rect(this.x, this.y, this.x + this.width, this.y + this.height, bg_r, bg_g, bg_b, border_a);
+		BopeDraw.draw_rect(this.x - 1, this.y, this.width + 1, this.height, bd_r, bd_g, bd_b, bd_a, this.border_size, "left-right");
 		
-		BopeDraw.draw_string(this.frame_name, this.x + 4, this.y + 4, this.nc_r, this.nc_g, this.nc_b);
+		BopeDraw.draw_string(this.frame_name, this.x + 4, this.y + 4, nc_r, nc_g, nc_b);
 
 		if (is_moving()) {
 			set_x(mx - this.move_x);

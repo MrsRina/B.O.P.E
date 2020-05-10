@@ -3,7 +3,6 @@ package rina.turok.bope.bopemod.guiscreen.hud;
 import com.mojang.realmsclient.gui.ChatFormatting;
 
 // Guiscreen.
-import rina.turok.bope.bopemod.guiscreen.render.pinnables.label.BopeLabel;
 import rina.turok.bope.bopemod.guiscreen.render.pinnables.BopePinnable;
 
 // Core.
@@ -17,8 +16,6 @@ import rina.turok.bope.Bope;
 *
 */
 public class BopeOverworldCoords extends BopePinnable {
-	BopeLabel coords = create_line("", "coords");
-
 	public BopeOverworldCoords() {
 		super("Overworld Coords", "BopeOverworldCoords", 1, 0, 0);
 	}
@@ -29,8 +26,11 @@ public class BopeOverworldCoords extends BopePinnable {
 		String y = " " + Integer.toString((int) (mc.player.posY));
 		String z = " " + Integer.toString((int) (mc.player.posZ));
 
-		coords.update(ChatFormatting.DARK_BLUE + x + "x" + y + "y" + z + "z");
+		String line = ChatFormatting.DARK_BLUE + x + "x" + y + "y" + z + "z";
 
-		this.draw();
+		create_line(line, 2, 2);
+
+		this.set_width(this.get(line, "width"));
+		this.set_height(this.get(line, "height"));
 	}
 }

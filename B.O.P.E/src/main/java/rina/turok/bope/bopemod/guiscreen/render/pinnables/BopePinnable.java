@@ -5,8 +5,10 @@ import net.minecraft.client.Minecraft;
 import java.util.*;
 
 // Guiscreen;
-import rina.turok.bope.bopemod.guiscreen.render.pinnables.label.BopeLabel;
 import rina.turok.bope.bopemod.guiscreen.render.BopeDraw;
+
+// Core.
+import rina.turok.bope.Bope;
 
 /**
 * @author Rina
@@ -19,12 +21,10 @@ public class BopePinnable {
 	private String title;
 	private String tag;
 
-	private ArrayList<BopeLabel> label;
-
 	private boolean state;
 	private boolean move;
 
-	private BopeDraw font;
+	public BopeDraw font;
 
 	private int x;
 	private int y;
@@ -39,7 +39,6 @@ public class BopePinnable {
 	public BopePinnable(String title, String tag, float font_, int x, int y) {
 		this.title = title;
 		this.tag   = tag;
-		this.label = new ArrayList<>();
 		this.font  = new BopeDraw(font_);
 
 		this.x = x;
@@ -49,23 +48,6 @@ public class BopePinnable {
 		this.height = 10;
 
 		this.move = false;
-	}
-
-	public void refresh_pinnable() {
-		this.height = 10;
-
-		int size  = this.label.size();
-		int count = 0;
-
-		for (BopeLabel labels : this.label) {
-			count++;
-
-			if (count >= size) {
-				labels.set_x(this.x + this.height + 2);
-			} else {
-				labels.set_x(this.x + this.height);
-			}
-		}
 	}
 
 	public void set_move(boolean value) {
@@ -162,45 +144,43 @@ public class BopePinnable {
 	}
 
 	public void render(int mx, int my, int tick) {
-		for (BopeLabel labels : this.label) {
-
-			if (is_active() && motion(mx, my)) {
-				BopeDraw.draw_rect(this.x, this.y, this.width, this.height - 5, 0, 0, 0, 50, 2, "right-left-down-up");
-			}
-
-			labels.update(2);
-		}
-
 		if (is_moving()) {
 			set_x(mx - this.move_x);
 			set_y(my - this.move_y);
 		}
-	}
 
-	protected void draw() {
-		for (BopeLabel labels : this.label) {
-			labels.render();
+		if (is_active() && motion(mx, my)) {
+			BopeDraw.draw_rect(this.x - 1, this.y - 1, this.width + 1, this.height - 2, 0, 0, 0, 50, 2, "right-left-down-up");
 		}
 	}
 
-	protected BopeLabel create_line(String line_to_add, String tag) {
-		BopeLabel label_created = new BopeLabel(this, line_to_add, tag, 1);
-
-		label_created.set_x(this.x + 2);
-		label_created.set_y(this.y + this.height + 2);
-
-		this.label.add(label_created);
-
-		this.height += 10;
-
-		return label_created;
+	protected void create_line(String string, int pos_x, int pos_y) {
+		BopeDraw.draw_string(string, this.x + pos_x, this.y + pos_y, 255, 255, 255);
 	}
 
-	protected void draw_string(String string, int pos_x, int pos_y, int r, int g, int b) {
+	protected void create_line(String string, int pos_x, int pos_y, int r, int g, int b) {
 		BopeDraw.draw_string(string, this.x + pos_x, this.y + pos_y, r, g, b);
 	}
 
-	protected void draw_rect(int pos_x, int pos_y, int width, int height, int r, int g, int b, int a) {
-		BopeDraw.draw_rect(this.x + pos_x, this.y + pos_y, this.x + this.width + width, this.y + this.height + height, r, g, b, a);
+	protected void create_rect(int pos_x, int pos_y, int width, int height, int r, int g, int b, int a) {
+		BopeDraw.draw_rect(this.x + pos_x, this.y + pos_y, this.x + width, this.y + height, r, g, b, a);
+	}
+
+	protected int get(String string, String type) {
+		int value_to_request = 0;
+
+		if (type.equals("width")) {
+			value_to_request = this.font.get_string_width(string);
+		}
+
+		if (type.equals("height")) {
+			value_to_request = this.font.get_string_height(string);
+		}
+
+		return value_to_request;
+	}
+
+	protected boolean is_on_gui() {
+		return Bope.click_hud.on_gui;
 	}
 }

@@ -14,6 +14,9 @@ import java.text.SimpleDateFormat;
 import java.time.*;
 import java.util.*;
 
+// Framework.
+import rina.turok.turok.Turok;
+
 // Guiscreen;
 import rina.turok.bope.bopemod.guiscreen.BopeGUI;
 import rina.turok.bope.bopemod.guiscreen.BopeHUD;
@@ -74,6 +77,9 @@ public class Bope {
 	public static BopeGUI click_gui;
 	public static BopeHUD click_hud;
 
+	// Framework Turok.
+	public static Turok turok;
+
 	@Mod.EventHandler
 	public void BopeStarting(FMLInitializationEvent event) {
 		init_log(BOPE_NAME);
@@ -97,6 +103,10 @@ public class Bope {
 		click_hud = new BopeHUD();
 
 		send_minecraft_log("GUI and HUD initialed.");
+
+		turok = new Turok("Turok");
+
+		send_minecraft_log("Turok framework initialed.");
 
 		// Register event modules and manager.
 		BopeEventRegister.register_command_manager(command_manager);
@@ -176,5 +186,13 @@ public class Bope {
 
 	public static BopeHUDManager get_hud_manager() {
 		return get_instance().hud_manager;
+	}
+
+	public static Turok get_turok() {
+		return get_instance().turok;
+	}
+
+	public static String smoth(String base) {
+		return Bope.get_turok().get_font_manager().smoth(base);
 	}
 }

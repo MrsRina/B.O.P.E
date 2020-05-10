@@ -34,16 +34,6 @@ public class BopePinnableButton {
 
 	private BopeDraw font = new BopeDraw(1);
 
-	private int bg_r = 0;
-	private int bg_g = 0;
-	private int bg_b = 100;
-	private int bg_a = 255;
-
-	private int nb_r = 255;
-	private int nb_g = 255;
-	private int nb_b = 255;
-	private int nb_a = 255;
-
 	public BopePinnableButton(BopeFrame master, String name, String tag) {
 		this.master = master;
 
@@ -140,12 +130,25 @@ public class BopePinnableButton {
 
 		this.save_y = this.y + this.master.get_y() - 10;
 
+		int nc_r = Bope.click_gui.theme_frame_name_r;
+		int nc_g = Bope.click_gui.theme_frame_name_g;
+		int nc_b = Bope.click_gui.theme_frame_name_b;
+
+		int bg_r = Bope.click_gui.theme_frame_background_r;
+		int bg_g = Bope.click_gui.theme_frame_background_g;
+		int bg_b = Bope.click_gui.theme_frame_background_b;
+		int bg_a = Bope.click_gui.theme_frame_background_a;
+
+		int bd_r = Bope.click_gui.theme_frame_border_r;
+		int bd_g = Bope.click_gui.theme_frame_border_g;
+		int bd_b = Bope.click_gui.theme_frame_border_b;
+
 		if (this.pinnable.is_active()) {
-			BopeDraw.draw_rect(this.x, this.save_y, this.x + this.width - separate, this.save_y + this.height, this.bg_r, this.bg_g, this.bg_b, this.bg_a);
+			BopeDraw.draw_rect(this.x, this.save_y, this.x + this.width - separate, this.save_y + this.height, bg_r, bg_g, bg_b, bg_a);
 		
-			BopeDraw.draw_string(this.pinnable.get_title(), this.x + separate, this.save_y, this.nb_r, this.nb_g, this.nb_b);
+			BopeDraw.draw_string(this.pinnable.get_title(), this.x + separate, this.save_y, nc_r, nc_g, nc_b);
 		} else {
-			BopeDraw.draw_string(this.pinnable.get_title(), this.x + separate, this.save_y, this.nb_r, this.nb_g, this.nb_b);
+			BopeDraw.draw_string(this.pinnable.get_title(), this.x + separate, this.save_y, nc_r, nc_g, nc_b);
 		}
 
 		this.pinnable.render(mx, my, 0);

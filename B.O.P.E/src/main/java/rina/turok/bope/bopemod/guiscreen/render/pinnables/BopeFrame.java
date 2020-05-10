@@ -36,21 +36,6 @@ public class BopeFrame {
 	private boolean move;
 	private boolean can;
 
-	private int bg_r = 0;
-	private int bg_g = 0;
-	private int bg_b = 0;
-	private int bg_a = 255;
-
-	private int fn_r = 0;
-	private int fn_g = 0;
-	private int fn_b = 255;
-	private int fn_a = 255;
-
-	private int bd_r = 0;
-	private int bd_g = 0;
-	private int bd_b = 255;
-	private int bd_a = 255;
-
 	private int border_size = 1;
 
 	private BopeDraw font = new BopeDraw(1);
@@ -184,19 +169,39 @@ public class BopeFrame {
 		};
 
 		int color_b = Color.HSBtoRGB(tick_color[0], 1, 1);
+		int color   = (color_b);
 
-		if ((color_b & 0xFF) <= 50) {
-			this.bd_b = 50;
-		} else if ((color_b & 0xFF) >= 120) {
-			this.bd_b = 120;
+		if ((color_b) <= 50) {
+			color = 50;
+		} else if ((color_b) >= 120) {
+			color = 120;
 		} else {
-			this.bd_b = (color_b & 0xFF);
+			color = (color_b);
 		}
 
-		BopeDraw.draw_rect(this.x, this.y, this.x + this.width, this.y + this.height, this.bg_r, this.bg_g, this.bg_b, this.bg_a);
-		BopeDraw.draw_rect(this.x - 1, this.y, this.width + 1, this.height, this.bd_r, this.bd_g, this.bd_b, this.bd_a, this.border_size, "left-right");		
+		int nc_r = Bope.click_gui.theme_frame_name_r;
+		int nc_g = Bope.click_gui.theme_frame_name_g;
+		int nc_b = Bope.click_gui.theme_frame_name_b;
 
-		BopeDraw.draw_string(this.name, this.x + 4, this.y + 4, this.fn_r, this.fn_g, this.fn_b);
+		int bg_r = Bope.click_gui.theme_frame_background_r;
+		int bg_g = Bope.click_gui.theme_frame_background_g;
+		int bg_b = Bope.click_gui.theme_frame_background_b;
+		int bg_a = Bope.click_gui.theme_frame_background_a;
+
+		int bd_r = Bope.click_gui.theme_frame_border_r;
+		int bd_g = Bope.click_gui.theme_frame_border_g;
+		int bd_b = Bope.click_gui.theme_frame_border_b;
+		int bd_a = color;
+
+		int bdw_r = Bope.click_gui.theme_widget_border_r;
+		int bdw_g = Bope.click_gui.theme_widget_border_g;
+		int bdw_b = Bope.click_gui.theme_widget_border_b;
+		int bdw_a = 255;
+
+		BopeDraw.draw_rect(this.x, this.y, this.x + this.width, this.y + this.height, bg_r, bg_g, bg_b, bg_a);
+		BopeDraw.draw_rect(this.x - 1, this.y, this.width + 1, this.height, bd_r, bd_g, bd_b, bd_a, this.border_size, "left-right");		
+
+		BopeDraw.draw_string(this.name, this.x + 4, this.y + 4, nc_r, nc_g, nc_b);
 
 		if (is_moving()) {
 			set_x(mx - this.move_x);
@@ -209,7 +214,7 @@ public class BopeFrame {
 			pinnables_buttons.render(mx, my, separate);
 
 			if (pinnables_buttons.motion(mx, my)) {
-				BopeDraw.draw_rect(get_x() - 1, pinnables_buttons.get_save_y(), get_width() + 1, pinnables_buttons.get_height(), this.bd_r, this.bd_g, this.bd_b, this.bd_a, this.border_size, "right-left");
+				BopeDraw.draw_rect(get_x() - 1, pinnables_buttons.get_save_y(), get_width() + 1, pinnables_buttons.get_height(), bdw_r, bdw_g, bdw_b, bdw_a, this.border_size, "right-left");
 			}
 		}
 	}

@@ -35,11 +35,17 @@ public class BopeHUD extends GuiScreen {
 
 	private final Minecraft mc = Minecraft.getMinecraft();
 
+	public boolean on_gui;
 	public boolean back;
 
+	public int theme_arraylist_r = 0;
+	public int theme_arraylist_g = 0;
+	public int theme_arraylist_b = 0;
+
 	public BopeHUD() {
-		this.frame = new BopeFrame("B.O.P.E HUD", "BopeHUD", 40, 40);
-		this.back  = false;
+		this.frame  = new BopeFrame("B.O.P.E HUD", "BopeHUD", 40, 40);
+		this.back   = false;
+		this.on_gui = false;
 	}
 
 	public BopeFrame get_frame_hud() {
@@ -53,6 +59,11 @@ public class BopeHUD extends GuiScreen {
 	}
 
 	@Override
+	public void initGui() {
+		this.on_gui = true;
+	}
+
+	@Override
 	public void onGuiClosed() {
 		if (this.back) {
 			Bope.get_module_manager().get_module_with_tag("GUI").set_active(true);
@@ -61,6 +72,8 @@ public class BopeHUD extends GuiScreen {
 			Bope.get_module_manager().get_module_with_tag("HUD").set_active(false);
 			Bope.get_module_manager().get_module_with_tag("GUI").set_active(false);
 		}
+
+		this.on_gui = false;
 	}
 
 	@Override

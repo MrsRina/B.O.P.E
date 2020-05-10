@@ -109,16 +109,16 @@ public class BopeLabel extends BopeCommand {
 		String new_value = syntax == 4 ? change_1 : change_1 + " " + change_2;
 
 		if (is_to_suffix) {
-			if (change_1.length() >= 8) {
-				change_1.substring(0, 8);
+			if (change_1.length() >= 16) {
+				change_1.substring(0, 16); // 16 bits.
 			}
 
-			new_value = change_1;
+			new_value = change_1.toLowerCase();
 		}
 
 		setting_requested.set_value(new_value);
 
-		BopeMessage.send_client_message("The label" + setting_requested.get_value("") + " is now " + setting_requested.get_value("") + ".");
+		BopeMessage.send_client_message("The label " + setting_requested.get_name() + " is now " + setting_requested.get_value("") + ".");
 
 		return true;
 	}

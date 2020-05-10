@@ -3,7 +3,6 @@ package rina.turok.bope.bopemod.guiscreen.hud;
 import com.mojang.realmsclient.gui.ChatFormatting;
 
 // Guiscreen.
-import rina.turok.bope.bopemod.guiscreen.render.pinnables.label.BopeLabel;
 import rina.turok.bope.bopemod.guiscreen.render.pinnables.BopePinnable;
 
 // Core.
@@ -17,16 +16,17 @@ import rina.turok.bope.Bope;
 *
 */
 public class BopeWatermark extends BopePinnable {
-	BopeLabel welcome = create_line("", "coords");
-
 	public BopeWatermark() {
 		super("Watermark", "BopeWatermark", 1, 0, 0);
 	}
 
 	@Override
 	public void render() {
-		welcome.update(ChatFormatting.DARK_GRAY + "Welcome to " + ChatFormatting.DARK_BLUE + "B.O.P.E. " + ChatFormatting.DARK_GRAY + "[" + Bope.get_version() + "]");
+		String line = ChatFormatting.DARK_GRAY + "Welcome to " + ChatFormatting.DARK_BLUE + "B.O.P.E. " + ChatFormatting.DARK_GRAY + "[" + Bope.get_version() + "]";
+	
+		create_line(line, 2, 2);
 
-		this.draw();
+		this.set_width(this.get(line, "width"));
+		this.set_height(this.get(line, "height"));
 	}
 }

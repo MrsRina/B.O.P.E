@@ -1,5 +1,8 @@
 package rina.turok.bope.bopemod.hacks;
 
+// Guiscreen.
+import rina.turok.bope.bopemod.guiscreen.settings.BopeSetting;
+
 // Hacks.
 import rina.turok.bope.bopemod.hacks.BopeCategory;
 
@@ -17,6 +20,10 @@ import rina.turok.bope.Bope;
  *
  */
 public class BopeClickHUD extends BopeModule {
+	BopeSetting arraylist_r = create("Array Color R", "HUDArrayListColorR", 0, 0, 255);
+	BopeSetting arraylist_g = create("Array Color G", "HUDArrayListColorG", 0, 0, 255);
+	BopeSetting arraylist_b = create("Array Color B", "HUDArrayListColorB", 0, 0, 255);
+
 	public BopeClickHUD() {
 		super(BopeCategory.BOPE_GUI);
 

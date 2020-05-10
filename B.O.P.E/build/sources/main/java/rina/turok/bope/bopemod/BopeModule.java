@@ -40,6 +40,7 @@ public class BopeModule {
 	public String name;
 	public String tag;
 	public String description;
+	public String detail_option;
 
 	public int bind;
 
@@ -48,10 +49,11 @@ public class BopeModule {
 	public final Minecraft mc = Minecraft.getMinecraft();
 
 	public BopeModule(BopeCategory category) {
-		this.name        = "";
-		this.tag         = "";
-		this.description = "";
-		this.bind        = -1;
+		this.name          = "";
+		this.tag           = "";
+		this.description   = "";
+		this.bind          = -1;
+		this.detail_option = "null";
 
 		// Category.
 		this.category = category;
@@ -65,6 +67,10 @@ public class BopeModule {
 
 	public void set_bind(String key) {
 		this.bind = Keyboard.getKeyIndex(key.toLowerCase());
+	}
+
+	public void detail_option(String option) {
+		this.detail_option = option;
 	}
 
 	public boolean is_active() {
@@ -81,6 +87,14 @@ public class BopeModule {
 
 	public String get_description() {
 		return this.description;
+	}
+
+	public String get_detail_option() {
+		if (this.detail_option.equals("null")) {
+			return null;
+		}
+
+		return this.detail_option;
 	}
 
 	public int get_bind(int type) {

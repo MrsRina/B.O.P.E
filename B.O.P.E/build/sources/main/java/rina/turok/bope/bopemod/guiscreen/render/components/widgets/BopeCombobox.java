@@ -45,21 +45,6 @@ public class BopeCombobox extends BopeAbstractWidget {
 
 	private BopeDraw font = new BopeDraw(1);
 
-	private int bg_r = 0;
-	private int bg_g = 0;
-	private int bg_b = 0;
-	private int bg_a = 255;
-
-	private int nc_r = 255;
-	private int nc_g = 255;
-	private int nc_b = 255;
-	private int nc_a = 255;
-
-	private int bd_r = 0;
-	private int bd_g = 0;
-	private int bd_b = 200;
-	private int bd_a = 150;
-
 	private int border_size = 0;
 
 	public BopeCombobox(BopeFrame frame, BopeModuleButton master, String tag, int update_postion) {
@@ -80,12 +65,20 @@ public class BopeCombobox extends BopeAbstractWidget {
 
 		this.can = true;
 
-		this.combobox_actual_value = 0;
+		int count = 0;
 
 		for (String values : this.setting.get_values()) {
 			this.values.add(values);
 
-			this.combobox_actual_value++;
+			count++;
+		}
+
+		for (int i = 0; i >= this.values.size(); i++) {
+			if (this.values.get(i).equals(this.setting.get_current_value())) {
+				this.combobox_actual_value = i;
+
+				break;
+			}
 		}
 	}
 
@@ -180,7 +173,21 @@ public class BopeCombobox extends BopeAbstractWidget {
 
 		this.save_y = this.y + master_y;
 
-		BopeDraw.draw_string(this.combobox_name + " > " + this.setting.get_current_value(), this.x + 2, this.save_y, this.nc_r, this.nc_g, this.nc_b);
+		int ns_r = Bope.click_gui.theme_widget_name_r;
+		int ns_g = Bope.click_gui.theme_widget_name_g;
+		int ns_b = Bope.click_gui.theme_widget_name_b;
+
+		int bg_r = Bope.click_gui.theme_widget_background_r;
+		int bg_g = Bope.click_gui.theme_widget_background_g;
+		int bg_b = Bope.click_gui.theme_widget_background_b;
+		int bg_a = Bope.click_gui.theme_widget_background_a;
+
+		int bd_r = Bope.click_gui.theme_widget_border_r;
+		int bd_g = Bope.click_gui.theme_widget_border_g;
+		int bd_b = Bope.click_gui.theme_widget_border_b;
+		int bd_a = 100;
+
+		BopeDraw.draw_string(this.combobox_name + " " + this.setting.get_current_value(), this.x + 2, this.save_y, ns_r, ns_g, ns_b);
 
 		if (this.combobox_actual_value >= this.values.size()) {
 			this.combobox_actual_value = 0;

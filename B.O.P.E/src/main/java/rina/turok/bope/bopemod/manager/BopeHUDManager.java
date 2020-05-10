@@ -24,11 +24,13 @@ public class BopeHUDManager {
 	public BopeHUDManager(String tag) {
 		this.tag = tag;
 
-		add_component_pinnable(new BopeArrayList());
-		add_component_pinnable(new BopeUser());
-		add_component_pinnable(new BopeOverworldCoords());
-		add_component_pinnable(new BopeNetherCoords());
 		add_component_pinnable(new BopeWatermark());
+		add_component_pinnable(new BopeArrayList());
+		add_component_pinnable(new BopeNetherCoords());
+		add_component_pinnable(new BopeOverworldCoords());
+		add_component_pinnable(new BopeInventoryPreview());
+		add_component_pinnable(new BopeArmorPreview());
+		add_component_pinnable(new BopeUser());
 	}
 
 	public void add_component_pinnable(BopePinnable module) {

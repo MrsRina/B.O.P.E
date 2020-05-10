@@ -21,6 +21,9 @@ import rina.turok.bope.bopemod.hacks.combat.*;
 // Modules exploit.
 import rina.turok.bope.bopemod.hacks.exploit.*;
 
+// Modules movement.
+import rina.turok.bope.bopemod.hacks.movement.*;
+
 // Modules render.
 // import rina.turok.bope.bopemod.hacks.render.*;
 
@@ -70,6 +73,9 @@ public class BopeModuleManager {
 		// Exploit.
 		add_module(new BopeXCarry());
 
+		// Movement.
+		add_module(new BopeStrafe());
+
 		// Render.
 		// init_bope_render_modules();
 	}
@@ -80,6 +86,18 @@ public class BopeModuleManager {
 
 	public ArrayList<BopeModule> get_array_modules() {
 		return array_module;
+	}
+
+	public ArrayList<BopeModule> get_array_active_modules() {
+		ArrayList<BopeModule> actived_modules = new ArrayList<>();
+
+		for (BopeModule modules : get_array_modules()) {
+			if (modules.is_active()) {
+				actived_modules.add(modules);
+			}
+		}
+
+		return actived_modules;
 	}
 
 	public Vec3d process(Entity entity, double x, double y, double z) {

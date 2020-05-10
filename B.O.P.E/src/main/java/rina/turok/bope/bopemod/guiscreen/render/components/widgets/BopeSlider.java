@@ -48,21 +48,6 @@ public class BopeSlider extends BopeAbstractWidget {
 
 	private BopeDraw font = new BopeDraw(1);
 
-	private int bg_r = 0;
-	private int bg_g = 0;
-	private int bg_b = 100;
-	private int bg_a = 255;
-
-	private int ns_r = 255;
-	private int ns_g = 255;
-	private int ns_b = 255;
-	private int ns_a = 255;
-
-	private int bd_r = 0;
-	private int bd_g = 0;
-	private int bd_b = 200;
-	private int bd_a = 150;
-
 	private int border_size = 0;
 
 	public BopeSlider(BopeFrame frame, BopeModuleButton master, String tag, int update_postion) {
@@ -184,6 +169,20 @@ public class BopeSlider extends BopeAbstractWidget {
 
 		this.save_y = this.y + master_y;
 
+		int ns_r = Bope.click_gui.theme_widget_name_r;
+		int ns_g = Bope.click_gui.theme_widget_name_g;
+		int ns_b = Bope.click_gui.theme_widget_name_b;
+
+		int bg_r = Bope.click_gui.theme_widget_background_r;
+		int bg_g = Bope.click_gui.theme_widget_background_g;
+		int bg_b = Bope.click_gui.theme_widget_background_b;
+		int bg_a = Bope.click_gui.theme_widget_background_a;
+
+		int bd_r = Bope.click_gui.theme_widget_border_r;
+		int bd_g = Bope.click_gui.theme_widget_border_g;
+		int bd_b = Bope.click_gui.theme_widget_border_b;
+		int bd_a = 100;
+
 		if (this.double_ != 8192 && this.intenger == 8192) {
 			this.compare = false;
 		}
@@ -204,9 +203,9 @@ public class BopeSlider extends BopeAbstractWidget {
 
 		String slider_value = this.compare == false ? Double.toString(this.setting.get_value(this.double_)) : Integer.toString((int) this.setting.get_value(this.intenger));
 
-		BopeDraw.draw_rect(this.x, this.save_y, this.x + (this.width) * (this.setting.get_value(1) - this.setting.get_min(1)) / (this.setting.get_max(1) - this.setting.get_min(1)), this.save_y + this.height, this.bg_r, this.bg_g, this.bg_b, this.bg_a);
+		BopeDraw.draw_rect(this.x, this.save_y, this.x + (this.width) * (this.setting.get_value(1) - this.setting.get_min(1)) / (this.setting.get_max(1) - this.setting.get_min(1)), this.save_y + this.height, bg_r, bg_g, bg_b, bg_a);
 
-		BopeDraw.draw_string(this.slider_name, this.x + 2, this.save_y, this.ns_r, this.ns_g, this.ns_b);
-		BopeDraw.draw_string(slider_value, this.x + this.width - separe - font.get_string_width(slider_value) + 2, this.save_y, this.ns_r, this.ns_g, this.ns_b);
+		BopeDraw.draw_string(this.slider_name, this.x + 2, this.save_y, ns_r, ns_g, ns_b);
+		BopeDraw.draw_string(slider_value, this.x + this.width - separe - font.get_string_width(slider_value) + 2, this.save_y, ns_r, ns_g, ns_b);
 	}
 }

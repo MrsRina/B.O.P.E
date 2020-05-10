@@ -46,21 +46,6 @@ public class BopeButtonBind extends BopeAbstractWidget {
 
 	private BopeDraw font = new BopeDraw(1);
 
-	private int bg_r = 0;
-	private int bg_g = 0;
-	private int bg_b = 100;
-	private int bg_a = 255;
-
-	private int nb_r = 255;
-	private int nb_g = 255;
-	private int nb_b = 255;
-	private int nb_a = 255;
-
-	private int bd_r = 0;
-	private int bd_g = 0;
-	private int bd_b = 200;
-	private int bd_a = 150;
-
 	private int border_size = 0;
 
 	public BopeButtonBind(BopeFrame frame, BopeModuleButton master, String tag, int update_postion) {
@@ -201,14 +186,16 @@ public class BopeButtonBind extends BopeAbstractWidget {
 			(System.currentTimeMillis() % (360 * 32)) / (360f * 32)
 		};
 
-		int color_b = Color.HSBtoRGB(tick_color[0], 1, 1);
+		int color_a = Color.HSBtoRGB(tick_color[0], 1, 1);
 
-		if ((color_b & 0xFF) <= 100) {
-			this.bg_a = 100;
-		} else if ((color_b & 0xFF) >= 200) {
-			this.bg_a = 200;
+		int bd_a = (color_a);
+
+		if ((color_a) <= 100) {
+			bd_a = 100;
+		} else if ((color_a) >= 200) {
+			bd_a = 200;
 		} else {
-			this.bg_a = (color_b & 0xFF);
+			bd_a = (color_a);
 		}
 
 		if (this.waiting) {
@@ -230,14 +217,27 @@ public class BopeButtonBind extends BopeAbstractWidget {
 
 		this.save_y = this.y + master_y;
 
+		int ns_r = Bope.click_gui.theme_widget_name_r;
+		int ns_g = Bope.click_gui.theme_widget_name_g;
+		int ns_b = Bope.click_gui.theme_widget_name_b;
+
+		int bg_r = Bope.click_gui.theme_widget_background_r;
+		int bg_g = Bope.click_gui.theme_widget_background_g;
+		int bg_b = Bope.click_gui.theme_widget_background_b;
+		int bg_a = Bope.click_gui.theme_widget_background_a;
+
+		int bd_r = Bope.click_gui.theme_widget_border_r;
+		int bd_g = Bope.click_gui.theme_widget_border_g;
+		int bd_b = Bope.click_gui.theme_widget_border_b;
+
 		if (this.waiting) {
-			BopeDraw.draw_rect(get_x(), this.save_y, get_x() + this.width, this.save_y + this.height, this.bg_r, this.bg_g, this.bg_b, this.bg_a);
+			BopeDraw.draw_rect(get_x(), this.save_y, get_x() + this.width, this.save_y + this.height, bg_r, bg_g, bg_b, bg_a);
 
 			this.tick += 0.1f;
 
-			BopeDraw.draw_string("Listening " + this.points, this.x + 2, this.save_y, this.nb_r, this.nb_g, this.nb_b);
+			BopeDraw.draw_string("Listening " + this.points, this.x + 2, this.save_y, ns_r, ns_g, ns_b);
 		} else {
-			BopeDraw.draw_string("Bind <" + this.master.get_module().get_bind("string") + ">", this.x + 2, this.save_y, this.nb_r, this.nb_g, this.nb_b);
+			BopeDraw.draw_string("Bind <" + this.master.get_module().get_bind("string") + ">", this.x + 2, this.save_y, ns_r, ns_g, ns_b);
 		}
 
 		tick_color[0] += 5;

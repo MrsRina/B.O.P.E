@@ -150,7 +150,7 @@ public class BopePinnable {
 		}
 
 		if (is_active() && motion(mx, my)) {
-			BopeDraw.draw_rect(this.x - 1, this.y - 1, this.width + 1, this.height - 2, 0, 0, 0, 50, 2, "right-left-down-up");
+			BopeDraw.draw_rect(this.x - 1, this.y - 1, this.width + 1, this.height + 1, 0, 0, 0, 50, 2, "right-left-down-up");
 		}
 	}
 

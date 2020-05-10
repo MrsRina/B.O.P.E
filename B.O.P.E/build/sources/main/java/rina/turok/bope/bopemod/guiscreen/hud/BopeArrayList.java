@@ -51,7 +51,7 @@ public class BopeArrayList extends BopePinnable {
 
 			create_line(modules.get_name(), 2, position_update_y, nl_r, nl_g, nl_b);
 
-			position_update_y += mc.fontRenderer.FONT_HEIGHT * scaled_resolution.getScaleFactor();
+			position_update_y += get(module_name, "height") + 2;
 
 			if (get(modules.get_name(), "width") > this.get_width()) {
 				this.set_width(get(modules.get_name(), "width") + 5);

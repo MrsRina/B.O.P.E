@@ -106,6 +106,12 @@ public class BopeLabel extends BopeCommand {
 			return true;
 		}
 
+		if (setting_requested.is_info()) {
+			BopeMessage.send_client_error_message("You can't change a info.");
+
+			return true;
+		}
+
 		String new_value = syntax == 4 ? change_1 : change_1 + " " + change_2;
 
 		if (is_to_suffix) {

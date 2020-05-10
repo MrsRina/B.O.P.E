@@ -200,6 +200,11 @@ public class BopeChatSuffix extends BopeModule {
 		((CPacketChatMessage) event.get_packet()).message = message;
 	});
 
+	@Override
+	public void update() {
+		detail_option(type.get_current_value());
+	}
+
 	public boolean compare(String requested) {
 		if (type.get_current_value().equalsIgnoreCase(requested)) {
 			return true;

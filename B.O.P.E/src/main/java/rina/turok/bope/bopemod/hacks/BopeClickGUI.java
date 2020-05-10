@@ -22,39 +22,39 @@ import rina.turok.bope.Bope;
 public class BopeClickGUI extends BopeModule {
 	BopeSetting label_frame = create("info", "ClickGUIInfoFrame", "frame");
 
-	BopeSetting name_frame_r = create("Name Color R", "ClickGUINameFrameR", 255, 0, 255);
-	BopeSetting name_frame_g = create("Name Color G", "ClickGUINameFrameG", 255, 0, 255);
-	BopeSetting name_frame_b = create("Name Color B", "ClickGUINameFrameB", 255, 0, 255);
+	BopeSetting name_frame_r = create("Name R", "ClickGUINameFrameR", 255, 0, 255);
+	BopeSetting name_frame_g = create("Name G", "ClickGUINameFrameG", 255, 0, 255);
+	BopeSetting name_frame_b = create("Name B", "ClickGUINameFrameB", 255, 0, 255);
 
-	BopeSetting background_frame_r = create("Background Color R", "ClickGUIBackgroundFrameR", 0, 0, 255);
-	BopeSetting background_frame_g = create("Background Color G", "ClickGUIBackgroundFrameG", 0, 0, 255);
-	BopeSetting background_frame_b = create("Background Color B", "ClickGUIBackgroundFrameB", 0, 0, 255);
-	BopeSetting background_frame_a = create("Background Color A", "ClickGUIBackgroundFrameA", 242, 0, 255);
+	BopeSetting background_frame_r = create("Background R", "ClickGUIBackgroundFrameR", 0, 0, 255);
+	BopeSetting background_frame_g = create("Background G", "ClickGUIBackgroundFrameG", 0, 0, 255);
+	BopeSetting background_frame_b = create("Background B", "ClickGUIBackgroundFrameB", 0, 0, 255);
+	BopeSetting background_frame_a = create("Background A", "ClickGUIBackgroundFrameA", 242, 0, 255);
 
-	BopeSetting border_frame_r = create("Border Color R", "ClickGUIBackgroundFrameR", 255, 0, 255);
-	BopeSetting border_frame_g = create("Border Color G", "ClickGUIBackgroundFrameG", 255, 0, 255);
-	BopeSetting border_frame_b = create("Border Color B", "ClickGUIBackgroundFrameB", 255, 0, 255);
+	BopeSetting border_frame_r = create("Border R", "ClickGUIBorderFrameR", 255, 0, 255);
+	BopeSetting border_frame_g = create("Border G", "ClickGUIBorderFrameG", 255, 0, 255);
+	BopeSetting border_frame_b = create("Border B", "ClickGUIBorderFrameB", 255, 0, 255);
 
 	BopeSetting label_widget = create("info", "ClickGUIInfoWidget", "widget");
 
-	BopeSetting name_widget_r = create("Name Color R", "ClickGUINameWidgetR", 0, 0, 255);
-	BopeSetting name_widget_g = create("Name Color G", "ClickGUINameWidgetG", 0, 0, 255);
-	BopeSetting name_widget_b = create("Name Color B", "ClickGUINameWidgetB", 242, 0, 255);
+	BopeSetting name_widget_r = create("Name R", "ClickGUINameWidgetR", 255, 0, 255);
+	BopeSetting name_widget_g = create("Name G", "ClickGUINameWidgetG", 255, 0, 255);
+	BopeSetting name_widget_b = create("Name B", "ClickGUINameWidgetB", 255, 0, 255);
 
-	BopeSetting background_widget_r = create("Background Color R", "ClickGUIBackgroundWidgetR", 255, 0, 255);
-	BopeSetting background_widget_g = create("Background Color G", "ClickGUIBackgroundWidgetG", 255, 0, 255);
-	BopeSetting background_widget_b = create("Background Color B", "ClickGUIBackgroundWidgetB", 255, 0, 255);
-	BopeSetting background_widget_a = create("Background Color A", "ClickGUIBackgroundWidgetA", 100, 0, 200);
+	BopeSetting background_widget_r = create("Background R", "ClickGUIBackgroundWidgetR", 255, 0, 255);
+	BopeSetting background_widget_g = create("Background G", "ClickGUIBackgroundWidgetG", 255, 0, 255);
+	BopeSetting background_widget_b = create("Background B", "ClickGUIBackgroundWidgetB", 255, 0, 255);
+	BopeSetting background_widget_a = create("Background A", "ClickGUIBackgroundWidgetA", 100, 0, 255);
 
-	BopeSetting border_widget_r = create("Border Color R", "ClickGUIBackgroundWidgetR", 255, 0, 255);
-	BopeSetting border_widget_g = create("Border Color G", "ClickGUIBackgroundWidgetG", 255, 0, 255);
-	BopeSetting border_widget_b = create("Border Color B", "ClickGUIBackgroundWidgetB", 255, 0, 255);
+	BopeSetting border_widget_r = create("Border R", "ClickGUIBorderWidgetR", 255, 0, 255);
+	BopeSetting border_widget_g = create("Border G", "ClickGUIBorderWidgetG", 255, 0, 255);
+	BopeSetting border_widget_b = create("Border B", "ClickGUIBorderWidgetB", 255, 0, 255);
 
 	public BopeClickGUI() {
 		super(BopeCategory.BOPE_GUI);
 
 		// Info.
-		this.name        = "B.O.P.E GUI";
+		this.name        = "GUI";
 		this.tag         = "GUI";
 		this.description = "B.O.P.E GUI for enbable or disable modules.";
 
@@ -98,6 +98,13 @@ public class BopeClickGUI extends BopeModule {
 	public void enable() {
 		if (mc.world != null && mc.player != null) {
 			mc.displayGuiScreen(Bope.click_gui);
+		}
+	}
+
+	@Override
+	public void disable() {
+		if (mc.world != null && mc.player != null) {
+			mc.displayGuiScreen(null);
 		}
 	}
 }

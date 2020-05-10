@@ -126,6 +126,14 @@ public class BopeSetting {
 		}
 	}
 
+	public boolean is_info() {
+		if (this.name.equalsIgnoreCase("info")) {
+			return true;
+		}
+
+		return false;
+	}
+
 	public boolean get_value(boolean type) {
 		return this.button;
 	}

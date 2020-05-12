@@ -1,16 +1,9 @@
 package rina.turok.bope.bopemod.hacks.combat;
 
 import net.minecraft.network.play.client.CPacketPlayerDigging;
-import net.minecraft.entity.projectile.EntityShulkerBullet;
 import net.minecraft.network.play.client.CPacketUseEntity;
-import net.minecraft.entity.item.EntityMinecartContainer;
-import net.minecraft.network.play.client.CPacketPlayer;
-import net.minecraft.entity.projectile.EntityFireball;
-import net.minecraft.entity.item.EntityMinecart;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.EntityLivingBase;
-import net.minecraft.entity.passive.IAnimals;
-import net.minecraft.entity.item.EntityBoat;
 import net.minecraft.entity.monster.IMob;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.item.ItemStack;

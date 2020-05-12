@@ -706,33 +706,23 @@ public class BopeConfigManager {
 	public void load() {
 		try {
 			BOPE_LOAD_BUTTONS();
-		} catch (Exception exc) {
-			exc.printStackTrace();
-		}
+		} catch (Exception exc) {}
 
 		try {
 			BOPE_LOAD_COMBOBOXS();
-		} catch (Exception exc) {
-			exc.printStackTrace();
-		}
+		} catch (Exception exc) {}
 
 		try {
 			BOPE_LOAD_LABELS();
-		} catch (Exception exc) {
-			exc.printStackTrace();
-		}
+		} catch (Exception exc) {}
 
 		try {
 			BOPE_LOAD_DOUBLES();
-		} catch (Exception exc) {
-			exc.printStackTrace();
-		}
+		} catch (Exception exc) {}
 
 		try {
 			BOPE_LOAD_INTEGERS();
-		} catch (Exception exc) {
-			exc.printStackTrace();
-		}
+		} catch (Exception exc) {}
 
 		try {
 			BOPE_LOAD_BINDS();

@@ -31,6 +31,6 @@ public class BopeNetherCoords extends BopePinnable {
 		create_line(line, 2, 2);
 
 		this.set_width(this.get(line, "width") + 10);
-		this.set_height(this.get(line, "height"));
+		this.set_height(this.get(line, "height") + 2);
 	}
 }

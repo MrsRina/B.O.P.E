@@ -24,9 +24,9 @@ public class BopeUser extends BopePinnable {
 	public void render() {
 		String line = ChatFormatting.DARK_BLUE + mc.player.getName();
 
-		create_line(line, 2, 2);
+		create_line("Welcome " + line + " :^)", 2, 2);
 
-		this.set_width(this.get(line, "width") + 10);
-		this.set_height(this.get(line, "height"));
+		this.set_width(this.get("Welcome " + line + " :^)", "width") + 2);
+		this.set_height(this.get(line, "height") + 2);
 	}
 }

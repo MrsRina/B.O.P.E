@@ -64,7 +64,7 @@ public class BopeFrame {
 		this.y = 10;
 
 		this.width  = 100;
-		this.height = 25;
+		this.height = 25 + 2;
 
 		this.category = category;
 
@@ -281,7 +281,7 @@ public class BopeFrame {
 		this.frame_name = this.category.get_name();
 		this.width_name = font.get_string_width(this.category.get_name());
 
-		BopeDraw.draw_rect(this.x, this.y, this.x + this.width, this.y + this.height, bg_r, bg_g, bg_b, border_a);
+		BopeDraw.draw_rect(this.x, this.y, this.x + this.width, this.y + this.height, bg_r, bg_g, bg_b, bg_a);
 		BopeDraw.draw_rect(this.x - 1, this.y, this.width + 1, this.height, bd_r, bd_g, bd_b, bd_a, this.border_size, "left-right");
 		
 		BopeDraw.draw_string(this.frame_name, this.x + 4, this.y + 4, nc_r, nc_g, nc_b);

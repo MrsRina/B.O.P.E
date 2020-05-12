@@ -12,6 +12,7 @@ import rina.turok.bope.bopemod.guiscreen.settings.BopeSetting;
 import rina.turok.bope.bopemod.hacks.BopeCategory;
 
 // Data.
+import rina.turok.bope.bopemod.BopeMessage;
 import rina.turok.bope.bopemod.BopeModule;
 
 // Core.

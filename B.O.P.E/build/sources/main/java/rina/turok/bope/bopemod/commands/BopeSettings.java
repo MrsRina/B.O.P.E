@@ -37,7 +37,9 @@ public class BopeSettings extends BopeCommand {
 		ChatFormatting c = ChatFormatting.GRAY;
 
 		if (what.equalsIgnoreCase("save")) {
-			Bope.get_config_manager().save();
+			Bope.get_config_manager().save_values();
+			Bope.get_config_manager().save_binds();
+			Bope.get_config_manager().save_client();
 
 			BopeMessage.send_client_message(ChatFormatting.GREEN + "Successfully " + c + "saved!");
 		} else if (what.equalsIgnoreCase("load")) {

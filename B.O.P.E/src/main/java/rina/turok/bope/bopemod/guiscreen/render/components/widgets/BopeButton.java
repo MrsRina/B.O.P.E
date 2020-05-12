@@ -154,7 +154,7 @@ public class BopeButton extends BopeAbstractWidget {
 		int bg_r = Bope.click_gui.theme_widget_background_r;
 		int bg_g = Bope.click_gui.theme_widget_background_g;
 		int bg_b = Bope.click_gui.theme_widget_background_b;
-		int bg_a = 100;
+		int bg_a = Bope.click_gui.theme_widget_background_a;
 
 		int bd_r = Bope.click_gui.theme_widget_border_r;
 		int bd_g = Bope.click_gui.theme_widget_border_g;

@@ -155,7 +155,7 @@ public class BopeSetting {
 	}
 
 	public int get_value(int type) {
-		int converted = ((int) this.slider);
+		int converted = ((int) Math.round(this.slider));
 
 		return converted;
 	}

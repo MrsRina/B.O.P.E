@@ -90,11 +90,11 @@ public class BopeModule {
 	}
 
 	public String get_detail_option() {
-		if (this.detail_option.equals("null")) {
-			return null;
+		if (!(this.detail_option.equals("null"))) {
+			return this.detail_option;
 		}
 
-		return this.detail_option;
+		return null;
 	}
 
 	public int get_bind(int type) {

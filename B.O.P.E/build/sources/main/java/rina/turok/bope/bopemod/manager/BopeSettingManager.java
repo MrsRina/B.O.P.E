@@ -52,6 +52,8 @@ public class BopeSettingManager {
 		for (BopeSetting settings : get_array_settings()) {
 			if (settings.get_master().get_tag().equalsIgnoreCase(tag) && settings.get_tag().equalsIgnoreCase(tag_)) {
 				setting_requested = settings;
+
+				break;
 			}
 		}
 

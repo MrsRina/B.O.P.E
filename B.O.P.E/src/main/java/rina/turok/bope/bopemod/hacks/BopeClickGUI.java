@@ -20,7 +20,7 @@ import rina.turok.bope.Bope;
  *
  */
 public class BopeClickGUI extends BopeModule {
-	BopeSetting label_frame = create("info", "ClickGUIInfoFrame", "frame");
+	BopeSetting label_frame = create("info", "ClickGUIInfoFrame", "Frames");
 
 	BopeSetting name_frame_r = create("Name R", "ClickGUINameFrameR", 255, 0, 255);
 	BopeSetting name_frame_g = create("Name G", "ClickGUINameFrameG", 255, 0, 255);
@@ -29,13 +29,13 @@ public class BopeClickGUI extends BopeModule {
 	BopeSetting background_frame_r = create("Background R", "ClickGUIBackgroundFrameR", 0, 0, 255);
 	BopeSetting background_frame_g = create("Background G", "ClickGUIBackgroundFrameG", 0, 0, 255);
 	BopeSetting background_frame_b = create("Background B", "ClickGUIBackgroundFrameB", 0, 0, 255);
-	BopeSetting background_frame_a = create("Background A", "ClickGUIBackgroundFrameA", 242, 0, 255);
+	BopeSetting background_frame_a = create("Background A", "ClickGUIBackgroundFrameA", 50, 0, 255);
 
 	BopeSetting border_frame_r = create("Border R", "ClickGUIBorderFrameR", 255, 0, 255);
 	BopeSetting border_frame_g = create("Border G", "ClickGUIBorderFrameG", 255, 0, 255);
 	BopeSetting border_frame_b = create("Border B", "ClickGUIBorderFrameB", 255, 0, 255);
 
-	BopeSetting label_widget = create("info", "ClickGUIInfoWidget", "widget");
+	BopeSetting label_widget = create("info", "ClickGUIInfoWidget", "Widgets");
 
 	BopeSetting name_widget_r = create("Name R", "ClickGUINameWidgetR", 255, 0, 255);
 	BopeSetting name_widget_g = create("Name G", "ClickGUINameWidgetG", 255, 0, 255);

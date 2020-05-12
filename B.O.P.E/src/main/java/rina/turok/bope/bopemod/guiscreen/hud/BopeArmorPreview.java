@@ -58,7 +58,7 @@ public class BopeArmorPreview extends BopePinnable {
 				width_compare += 16;
 
 				this.set_height(19);
-				this.set_width(66); // 16 * 4 + 2;
+				this.set_width(64); // 16 * 4;
 			}
 
 			mc.getRenderItem().zLevel = 0.0f;

@@ -64,7 +64,7 @@ public class BopeFrame {
 		this.y = 10;
 
 		this.width  = 100;
-		this.height = 25;
+		this.height = 25 + 2;
 
 		this.category = category;
 

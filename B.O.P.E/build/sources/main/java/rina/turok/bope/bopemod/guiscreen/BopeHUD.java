@@ -74,6 +74,8 @@ public class BopeHUD extends GuiScreen {
 		}
 
 		this.on_gui = false;
+
+		Bope.get_config_manager().save_client();
 	}
 
 	@Override

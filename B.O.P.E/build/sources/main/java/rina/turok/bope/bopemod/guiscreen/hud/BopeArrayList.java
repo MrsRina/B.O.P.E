@@ -22,7 +22,7 @@ import rina.turok.bope.Bope;
 *
 */
 public class BopeArrayList extends BopePinnable {
-	ChatFormatting g = ChatFormatting.GRAY;
+	ChatFormatting g = ChatFormatting.DARK_GRAY;
 	ChatFormatting r = ChatFormatting.RESET;
 
 	public BopeArrayList() {
@@ -54,9 +54,7 @@ public class BopeArrayList extends BopePinnable {
 			position_update_y += get(module_name, "height") + 2;
 
 			if (get(modules.get_name(), "width") > this.get_width()) {
-				this.set_width(get(modules.get_name(), "width") + get(modules.get_name(), "width") - 5);
-			} else {
-				this.set_width(50);
+				this.set_width(get(module_name, "width") + 5);
 			}
 
 			this.set_height(position_update_y);

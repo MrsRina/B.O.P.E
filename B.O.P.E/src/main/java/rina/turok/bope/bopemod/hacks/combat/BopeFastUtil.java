@@ -34,16 +34,22 @@ public class BopeFastUtil extends BopeModule {
 	public BopeFastUtil() {
 		super(BopeCategory.BOPE_COMBAT);
 
+		// Info.
 		this.name        = "Fast Util"; 
 		this.tag         = "FastUtil";
 		this.description = "Fast util for events and things in Minecraft.";
+
+		// Release the module.
+		release("B.O.P.E - Module - B.O.P.E");
 	}
 
 	@Override
 	public void update() {
+		// Get the main actual items.
 		Item main = mc.player.getHeldItemMainhand().getItem();
 		Item off  = mc.player.getHeldItemOffhand().getItem();
 
+		// Insteaof with the actual item if.
 		boolean main_exp = main instanceof ItemExpBottle;
 		boolean off_exp  = off instanceof ItemExpBottle;
 		boolean main_cry = main instanceof ItemEndCrystal;

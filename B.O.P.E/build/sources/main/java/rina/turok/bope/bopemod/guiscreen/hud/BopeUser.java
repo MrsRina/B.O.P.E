@@ -16,7 +16,7 @@ import rina.turok.bope.Bope;
 *
 */
 public class BopeUser extends BopePinnable {
-	ChatFormatting g = ChatFormatting.GRAY;
+	ChatFormatting g = ChatFormatting.DARK_GRAY;
 
 	public BopeUser() {
 		super("User", "BopeUser", 1, 0, 0);

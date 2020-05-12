@@ -188,6 +188,10 @@ public class Bope {
 		return get_instance().hud_manager;
 	}
 
+	public static BopeEventHandler get_event_handler() {
+		return BopeEventHandler.INSTANCE;
+	}
+
 	public static Turok get_turok() {
 		return get_instance().turok;
 	}

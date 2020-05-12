@@ -49,9 +49,11 @@ public class BopeAutoGapple extends BopeModule {
 
 	@Override
 	public void disable() {
+		// If auto disable totem on, just desactive with the actual value.
 		if (auto_totem_d.get_value(true)) {
 			Bope.get_module_manager().get_module_with_tag("AutoTotem").set_active(!is_active());
 		} else {
+			// If the smast on active totem.
 			if (is_smart_ev) {
 				Bope.get_module_manager().get_module_with_tag("AutoTotem").set_active(!is_active());
 
@@ -63,6 +65,7 @@ public class BopeAutoGapple extends BopeModule {
 	@Override
 	public void enable() {
 		if (auto_totem_d.get_value(true)) {
+			// Disable auto totem.
 			Bope.get_module_manager().get_module_with_tag("AutoTotem").set_active(!is_active());
 		}
 	}
@@ -70,21 +73,26 @@ public class BopeAutoGapple extends BopeModule {
 	@Override
 	public void update() {
 		if (mc.player != null && mc.world != null) {
+			// If health is < of limit smart, disable and start event is_smart_ev.
 			if (mc.player.getHealth() <= slider_smart.get_value(1) * 2) {
 				is_smart_ev = true;
 
 				set_active(!is_active());
 			}
 
+			// Get gapple stack.
 			gapple_stack = mc.player.inventory.mainInventory.stream().filter(item -> item.getItem() == Items.GOLDEN_APPLE).mapToInt(ItemStack::getCount).sum();
 
+			// Ignore if in inventory.
 			if (mc.currentScreen instanceof GuiContainer) {
 				return;
 			}
 
+			// If find gapples.
 			if (find_gapple) {
 				int gapples = - 1;
 
+				// Search on stack.
 				for (int items = 0; items < 45; items++) {
 					if (mc.player.inventory.getStackInSlot(items).isEmpty) {
 						gapples = items;
@@ -97,6 +105,7 @@ public class BopeAutoGapple extends BopeModule {
 					return;
 				}
 
+				// Move to off hand.
 				mc.playerController.windowClick(0, gapples < 9 ? gapples + 36 : gapples, 0, ClickType.PICKUP, mc.player);
 
 				find_gapple = false;
@@ -134,6 +143,7 @@ public class BopeAutoGapple extends BopeModule {
 						return;
 					}
 
+					// Move.
 					mc.playerController.windowClick(0, item < 9 ? item + 36 : item, 0, ClickType.PICKUP, mc.player);
 
 					move_gapple = true;

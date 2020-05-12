@@ -38,14 +38,14 @@ import rina.turok.bope.Bope;
 public class BopeConfigManager {
 	public String tag;
 
-	public String BOPE_FILE_COMBOBOXS = "combobox_settings.json";
-	public String BOPE_FILE_INTEGERS  = "integer_settings.json";
+	public String BOPE_FILE_COMBOBOXS = "settings_2.bin";
+	public String BOPE_FILE_INTEGERS  = "settings_5.bin";
 	public String BOPE_FOLDER_CONFIG  = "B.O.P.E/";
 	public String BOPE_FILE_FRIENDS   = "friends.json";
-	public String BOPE_FILE_BUTTONS   = "button_settings.json";
-	public String BOPE_FILE_DOUBLES   = "double_settings.json";
+	public String BOPE_FILE_BUTTONS   = "settings_1.bin";
+	public String BOPE_FILE_DOUBLES   = "settings_4.bin";
 	public String BOPE_FILE_CLIENT    = "client.json";
-	public String BOPE_FILE_LABELS    = "label_settings.json";
+	public String BOPE_FILE_LABELS    = "settings_3.bin";
 	public String BOPE_FOLDER_LOG     = "logs/";
 	public String BOPE_FILE_BINDS     = "binds.json";
 	public String BOPE_FILE_HUD       = "HUD.json";

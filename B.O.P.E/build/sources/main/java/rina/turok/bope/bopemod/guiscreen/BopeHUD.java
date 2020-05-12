@@ -43,11 +43,13 @@ public class BopeHUD extends GuiScreen {
 	public int theme_arraylist_b = 0;
 
 	public BopeHUD() {
+		// First I created a simple HUD frame.
 		this.frame  = new BopeFrame("B.O.P.E HUD", "BopeHUD", 40, 40);
 		this.back   = false;
 		this.on_gui = false;
 	}
 
+	// For get the master frame used and created.
 	public BopeFrame get_frame_hud() {
 		return this.frame;
 	}
@@ -58,11 +60,13 @@ public class BopeHUD extends GuiScreen {
 		return false;
 	}
 
+	// Just a sync a event.
 	@Override
 	public void initGui() {
 		this.on_gui = true;
 	}
 
+	// When close save the client HUD.
 	@Override
 	public void onGuiClosed() {
 		if (this.back) {
@@ -75,13 +79,16 @@ public class BopeHUD extends GuiScreen {
 
 		this.on_gui = false;
 
+		// For save the client with the HUD.
 		Bope.get_config_manager().save_client();
 	}
 
 	@Override
 	protected void mouseClicked(int mx, int my, int mouse) {
+		// A event to mouse click.		
 		this.frame.mouse(mx, my, mouse);
 
+		// Just if click move.
 		if (mouse == 0) {
 			if (this.frame.motion(mx, my) && this.frame.can()) {
 				this.frame.set_move(true);
@@ -94,6 +101,7 @@ public class BopeHUD extends GuiScreen {
 
 	@Override
 	protected void mouseReleased(int mx, int my, int state) {
+		// Release mouse.
 		this.frame.release(mx, my, state);
 
 		this.frame.set_move(false);
@@ -101,6 +109,7 @@ public class BopeHUD extends GuiScreen {
 
 	@Override
 	public void drawScreen(int mx, int my, float tick) {
+		// To render frames.
 		this.frame.render(mx, my, 2);
 	}
 }

@@ -53,7 +53,6 @@ public class BopeModule {
 		this.tag           = "";
 		this.description   = "";
 		this.bind          = -1;
-		this.detail_option = "null";
 
 		// Category.
 		this.category = category;
@@ -67,10 +66,6 @@ public class BopeModule {
 
 	public void set_bind(String key) {
 		this.bind = Keyboard.getKeyIndex(key.toLowerCase());
-	}
-
-	public void detail_option(String option) {
-		this.detail_option = option;
 	}
 
 	public boolean is_active() {
@@ -87,14 +82,6 @@ public class BopeModule {
 
 	public String get_description() {
 		return this.description;
-	}
-
-	public String get_detail_option() {
-		if (!(this.detail_option.equals("null"))) {
-			return this.detail_option;
-		}
-
-		return null;
 	}
 
 	public int get_bind(int type) {
@@ -200,5 +187,10 @@ public class BopeModule {
 
 	protected void enable() {
 		// If module enbled, before tick it will run one time only, like onDisable()
+	}
+
+	// If have a detail option.
+	public String detail_option() {
+		return null;
 	}
 }

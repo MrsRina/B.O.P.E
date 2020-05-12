@@ -16,6 +16,8 @@ import rina.turok.bope.Bope;
 *
 */
 public class BopeUser extends BopePinnable {
+	ChatFormatting g = ChatFormatting.DARK_GRAY;
+
 	public BopeUser() {
 		super("User", "BopeUser", 1, 0, 0);
 	}
@@ -24,7 +26,7 @@ public class BopeUser extends BopePinnable {
 	public void render() {
 		String line = ChatFormatting.DARK_BLUE + mc.player.getName();
 
-		create_line("Welcome " + line + " :^)", 2, 2);
+		create_line(g + "Welcome " + line + g + " :^)", 2, 2);
 
 		this.set_width(this.get("Welcome " + line + " :^)", "width") + 2);
 		this.set_height(this.get(line, "height") + 2);

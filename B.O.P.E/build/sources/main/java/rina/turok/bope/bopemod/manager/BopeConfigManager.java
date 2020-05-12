@@ -399,7 +399,7 @@ public class BopeConfigManager {
 		JsonObject  BOPE_SLIDER_D_MAIN = BOPE_JSON.get("sliders").getAsJsonObject();
 
 		for (BopeSetting slider_doubles : Bope.get_setting_manager().get_array_settings()) {
-			if (!(is(slider_doubles, "combobox"))) {
+			if (!(is(slider_doubles, "doubleslider"))) {
 				continue;
 			}
 
@@ -706,33 +706,23 @@ public class BopeConfigManager {
 	public void load() {
 		try {
 			BOPE_LOAD_BUTTONS();
-		} catch (Exception exc) {
-			exc.printStackTrace();
-		}
+		} catch (Exception exc) {}
 
 		try {
 			BOPE_LOAD_COMBOBOXS();
-		} catch (Exception exc) {
-			exc.printStackTrace();
-		}
+		} catch (Exception exc) {}
 
 		try {
 			BOPE_LOAD_LABELS();
-		} catch (Exception exc) {
-			exc.printStackTrace();
-		}
+		} catch (Exception exc) {}
 
 		try {
 			BOPE_LOAD_DOUBLES();
-		} catch (Exception exc) {
-			exc.printStackTrace();
-		}
+		} catch (Exception exc) {}
 
 		try {
 			BOPE_LOAD_INTEGERS();
-		} catch (Exception exc) {
-			exc.printStackTrace();
-		}
+		} catch (Exception exc) {}
 
 		try {
 			BOPE_LOAD_BINDS();

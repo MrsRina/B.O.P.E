@@ -70,8 +70,6 @@ public class BopeAutoGapple extends BopeModule {
 	@Override
 	public void update() {
 		if (mc.player != null && mc.world != null) {
-			BopeMessage.send_client_message(Integer.toString(slider_smart.get_value(1)));
-
 			if (mc.player.getHealth() <= slider_smart.get_value(1) * 2) {
 				is_smart_ev = true;
 

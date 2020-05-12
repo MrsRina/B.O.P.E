@@ -399,7 +399,7 @@ public class BopeConfigManager {
 		JsonObject  BOPE_SLIDER_D_MAIN = BOPE_JSON.get("sliders").getAsJsonObject();
 
 		for (BopeSetting slider_doubles : Bope.get_setting_manager().get_array_settings()) {
-			if (!(is(slider_doubles, "combobox"))) {
+			if (!(is(slider_doubles, "doubleslider"))) {
 				continue;
 			}
 

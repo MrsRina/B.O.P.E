@@ -69,6 +69,8 @@ public class BopeModuleManager {
 		// Combat.
 		add_module(new BopeAutoGapple());
 		add_module(new BopeAutoTotem());
+		add_module(new BopeFastUtil());
+		add_module(new BopeKillAura());
 
 		// Exploit.
 		add_module(new BopeXCarry());

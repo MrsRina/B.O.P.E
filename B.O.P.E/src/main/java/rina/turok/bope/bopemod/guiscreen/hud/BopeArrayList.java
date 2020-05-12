@@ -22,7 +22,7 @@ import rina.turok.bope.Bope;
 *
 */
 public class BopeArrayList extends BopePinnable {
-	ChatFormatting g = ChatFormatting.GRAY;
+	ChatFormatting g = ChatFormatting.DARK_GRAY;
 	ChatFormatting r = ChatFormatting.RESET;
 
 	public BopeArrayList() {
@@ -45,11 +45,11 @@ public class BopeArrayList extends BopePinnable {
 			}
 
 			String module_name = (
-				modules.get_name() + modules.get_detail_option() == null ? "" :
-				g + " [" + r + modules.get_detail_option() + g + "]" + r
+				modules.detail_option() == null ? modules.get_name() :
+				modules.get_name() + g + " [" + r + modules.detail_option() + g + "]" + r
 			);
 
-			create_line(modules.get_name(), 2, position_update_y, nl_r, nl_g, nl_b);
+			create_line(module_name, 2, position_update_y, nl_r, nl_g, nl_b);
 
 			position_update_y += get(module_name, "height") + 2;
 

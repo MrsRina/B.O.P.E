@@ -33,11 +33,11 @@ import rina.turok.bope.Bope;
 *
 */
 public class BopeKillAura extends BopeModule {
-	BopeSetting player    = create("Player",    "KillAuraPlayer",   true);
-	BopeSetting hostile   = create("Hostile",   "KillAuraHostile",  false);
-	BopeSetting sword     = create("Sword",     "KillAuraSword",    true);
-	BopeSetting sync_tps  = create("Sync TPS",  "KillAuraSyncTps",  true);
-	BopeSetting range     = create("Range",     "KillAuraRange",    5.0, 0.5, 6.0);
+	BopeSetting player    = create("Player",    "KillAuraPlayer",  true);
+	BopeSetting hostile   = create("Hostile",   "KillAuraHostile", false);
+	BopeSetting sword     = create("Sword",     "KillAuraSword",   true);
+	BopeSetting sync_tps  = create("Sync TPS",  "KillAuraSyncTps", true);
+	BopeSetting range     = create("Range",     "KillAuraRange",   5.0, 0.5, 6.0);
 
 	boolean start_verify = true;
 
@@ -128,17 +128,21 @@ public class BopeKillAura extends BopeModule {
 		return entity_requested;
 	}
 
+	// Compatible or no.
 	public boolean is_compatible(Entity entity) {
+		// Instend entity with some type entity to continue or no.
 		if (player.get_value(true) && entity instanceof EntityPlayer) {
 			if (entity != mc.player && !(entity.getName().equals(mc.player.getName())) /* && BopeFriendManager.is_friend(entity) == false */) {
 				return true;
 			}
 		}
 
+		// If is hostile.
 		if (hostile.get_value(true) && entity instanceof IMob) {
 			return true;
 		}
 
+		// If entity requested die.
 		if (entity instanceof EntityLivingBase) {
 			EntityLivingBase entity_living_base = (EntityLivingBase) entity;
 
@@ -147,6 +151,7 @@ public class BopeKillAura extends BopeModule {
 			}
 		}
 
+		// Return false.
 		return false;
 	}
 }

@@ -1,5 +1,8 @@
 package rina.turok.turok.values;
 
+// Values.
+import rina.turok.turok.values.TurokGeneric;
+
 /**
 * @author Rina
 *
@@ -11,16 +14,16 @@ public class TurokBoolean {
 	private String name;
 	private String tag;
 
-	private boolean value;
+	private TurokGeneric<Boolean> value;
 
 	public TurokBoolean(String name, String tag, boolean turok_bool) {
 		this.name  = name;
 		this.tag   = tag;
-		this.value = turok_bool;
+		this.value = new TurokGeneric(turok_bool);
 	}
 
 	public void set_value(boolean turok_bool) {
-		this.value = turok_bool;
+		this.value.set_value(turok_bool);
 	}
 
 	public String get_name() {
@@ -32,6 +35,6 @@ public class TurokBoolean {
 	}
 
 	public boolean get_value() {
-		return this.value;
+		return this.value.get_value();
 	}
 }

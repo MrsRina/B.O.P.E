@@ -1,4 +1,4 @@
-Processing 77 files
+Processing 79 files
 Start Processing: rina/turok/bope/Bope.java
 New Key: class net/minecraftforge/fml/common/Mod
 New Key: class net/minecraftforge/fml/common/Mod
@@ -609,6 +609,14 @@ Adding 4 imports
         rina.turok.bope.bopemod.hacks.BopeCategory
 End  Processing: rina/turok/bope/bopemod/hacks/combat/BopeAutoGapple.java
 
+Start Processing: rina/turok/bope/bopemod/hacks/combat/BopeAutoReplace.java
+FOUND CONSTR method rina/turok/bope/bopemod/hacks/combat/BopeAutoReplace/BopeAutoReplace ()V rina/turok/bope/bopemod/hacks/combat/BopeAutoReplace
+Import: rina.turok.bope.bopemod.guiscreen.settings.BopeSetting
+Adding 2 imports
+        rina.turok.bope.bopemod.BopeModule
+        rina.turok.bope.bopemod.hacks.BopeCategory
+End  Processing: rina/turok/bope/bopemod/hacks/combat/BopeAutoReplace.java
+
 Start Processing: rina/turok/bope/bopemod/hacks/combat/BopeAutoTotem.java
 FOUND CONSTR method rina/turok/bope/bopemod/hacks/combat/BopeAutoTotem/BopeAutoTotem ()V rina/turok/bope/bopemod/hacks/combat/BopeAutoTotem
 Rename field net/minecraft/client/Minecraft/player[1195,1201]::player->field_71439_g
@@ -1207,6 +1215,7 @@ End  Processing: rina/turok/turok/task/TurokRect.java
 
 Start Processing: rina/turok/turok/values/TurokBoolean.java
 FOUND CONSTR method rina/turok/turok/values/TurokBoolean/TurokBoolean (Ljava/lang/String;Ljava/lang/String;Z)V rina/turok/turok/values/TurokBoolean
+Import: rina.turok.turok.values.TurokGeneric
 End  Processing: rina/turok/turok/values/TurokBoolean.java
 
 Start Processing: rina/turok/turok/values/TurokDouble.java
@@ -1221,6 +1230,10 @@ End  Processing: rina/turok/turok/values/TurokEnum.java
 Start Processing: rina/turok/turok/values/TurokFloat.java
 FOUND CONSTR method rina/turok/turok/values/TurokFloat/TurokFloat (Ljava/lang/String;Ljava/lang/String;FFF)V rina/turok/turok/values/TurokFloat
 End  Processing: rina/turok/turok/values/TurokFloat.java
+
+Start Processing: rina/turok/turok/values/TurokGeneric.java
+FOUND CONSTR method rina/turok/turok/values/TurokGeneric/TurokGeneric (Ljava/lang/Object;)V rina/turok/turok/values/TurokGeneric
+End  Processing: rina/turok/turok/values/TurokGeneric.java
 
 Start Processing: rina/turok/turok/values/TurokInt.java
 FOUND CONSTR method rina/turok/turok/values/TurokInt/TurokInt (Ljava/lang/String;Ljava/lang/String;III)V rina/turok/turok/values/TurokInt

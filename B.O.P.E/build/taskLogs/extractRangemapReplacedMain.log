@@ -1,7 +1,7 @@
 Unsupposrted library path: C:\Users\SrRina\Documents\B.O.P.E\B.O.P.E\build\classes\api
 Unsupposrted library path: C:\Users\SrRina\Documents\B.O.P.E\B.O.P.E\build\resources\api
 Symbol range map extraction starting
-Processing 77 files
+Processing 79 files
 startProcessing "rina/turok/bope/Bope.java" md5: 4ae8ff2e20eb05bc927d6930810023cf
 endProcessing "rina/turok/bope/Bope.java"
 
@@ -17,7 +17,7 @@ endProcessing "rina/turok/bope/bopemod/BopeCommand.java"
 startProcessing "rina/turok/bope/bopemod/BopeMessage.java" md5: ee06384cc9fcb74f5d523d0434d46435
 endProcessing "rina/turok/bope/bopemod/BopeMessage.java"
 
-startProcessing "rina/turok/bope/bopemod/BopeModule.java" md5: 00512d6eb13802864e2b1d912a71a591
+startProcessing "rina/turok/bope/bopemod/BopeModule.java" md5: aadd22978e99bcf9eda41adb1674b130
 endProcessing "rina/turok/bope/bopemod/BopeModule.java"
 
 startProcessing "rina/turok/bope/bopemod/commands/BopeBind.java" md5: e7cb4aa5c543ab0670f02ba723e64995
@@ -116,7 +116,7 @@ endProcessing "rina/turok/bope/bopemod/guiscreen/render/pinnables/BopePinnable.j
 startProcessing "rina/turok/bope/bopemod/guiscreen/render/pinnables/BopePinnableButton.java" md5: eaf9e04fa008e5827d00f8ed0b6dd5d5
 endProcessing "rina/turok/bope/bopemod/guiscreen/render/pinnables/BopePinnableButton.java"
 
-startProcessing "rina/turok/bope/bopemod/guiscreen/settings/BopeSetting.java" md5: 07a2f71780bbb4d83971f14161bdeca2
+startProcessing "rina/turok/bope/bopemod/guiscreen/settings/BopeSetting.java" md5: f0c9b4f732348ff86fa6969dcdc235ce
 endProcessing "rina/turok/bope/bopemod/guiscreen/settings/BopeSetting.java"
 
 startProcessing "rina/turok/bope/bopemod/hacks/BopeCategory.java" md5: 7c9674032311549ced9261c30533442f
@@ -136,6 +136,9 @@ endProcessing "rina/turok/bope/bopemod/hacks/chat/BopeChatSuffix.java"
 
 startProcessing "rina/turok/bope/bopemod/hacks/combat/BopeAutoGapple.java" md5: 72d4816def5b4e2271df93ba810c4242
 endProcessing "rina/turok/bope/bopemod/hacks/combat/BopeAutoGapple.java"
+
+startProcessing "rina/turok/bope/bopemod/hacks/combat/BopeAutoReplace.java" md5: 0dba8d84b7fc4fa6a655a21301fe5189
+endProcessing "rina/turok/bope/bopemod/hacks/combat/BopeAutoReplace.java"
 
 startProcessing "rina/turok/bope/bopemod/hacks/combat/BopeAutoTotem.java" md5: 3c27e9aaa01840739109d3267439a7bf
 endProcessing "rina/turok/bope/bopemod/hacks/combat/BopeAutoTotem.java"
@@ -215,7 +218,7 @@ endProcessing "rina/turok/turok/task/TurokFont.java"
 startProcessing "rina/turok/turok/task/TurokRect.java" md5: 5f18c9b3de446a318895e43bb8b35e24
 endProcessing "rina/turok/turok/task/TurokRect.java"
 
-startProcessing "rina/turok/turok/values/TurokBoolean.java" md5: e8123c4cfb62b613c01fb920be72359b
+startProcessing "rina/turok/turok/values/TurokBoolean.java" md5: 9b7f6f172e289a314cc73d5534c6fea0
 endProcessing "rina/turok/turok/values/TurokBoolean.java"
 
 startProcessing "rina/turok/turok/values/TurokDouble.java" md5: ebe7e08a0f338b01b4aa1c30ef21953a
@@ -226,6 +229,9 @@ endProcessing "rina/turok/turok/values/TurokEnum.java"
 
 startProcessing "rina/turok/turok/values/TurokFloat.java" md5: b39575c88d786f525af1904d050a7fe1
 endProcessing "rina/turok/turok/values/TurokFloat.java"
+
+startProcessing "rina/turok/turok/values/TurokGeneric.java" md5: 7d172c077cc615cb70f6afa8de9f6491
+endProcessing "rina/turok/turok/values/TurokGeneric.java"
 
 startProcessing "rina/turok/turok/values/TurokInt.java" md5: 94bc2e3dd8b1b02c225aa3df552720ea
 endProcessing "rina/turok/turok/values/TurokInt.java"

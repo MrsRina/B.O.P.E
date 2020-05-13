@@ -139,18 +139,21 @@ public class BopeModule {
 		set_active(!is_active());
 	}
 
+	// To create intenger slider.
 	protected BopeSetting create(String name, String tag, int value, int min, int max) {
 		Bope.get_setting_manager().register(tag, new BopeSetting(this, name, tag, value, min, max));
 
 		return Bope.get_setting_manager().get_setting_with_tag(this, tag);
 	}
 
+	// To create double slider.
 	protected BopeSetting create(String name, String tag, double value, double min, double max) {
 		Bope.get_setting_manager().register(tag, new BopeSetting(this, name, tag, value, min, max));
 
 		return Bope.get_setting_manager().get_setting_with_tag(this, tag);
 	}
 
+	// To create button.
 	protected BopeSetting create(String name, String tag, boolean value) {
 		Bope.get_setting_manager().register(tag, new BopeSetting(this, name, tag, value));
 

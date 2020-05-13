@@ -171,7 +171,7 @@ public class BopeModule {
 
 	// Comobobox values.
 	protected List<String> combobox(String... item) {
-		ArrayList<String> item_requested = null;
+		ArrayList<String> item_requested = new ArrayList<>();
 
 		for (String items : item) {
 			item_requested.add(items);

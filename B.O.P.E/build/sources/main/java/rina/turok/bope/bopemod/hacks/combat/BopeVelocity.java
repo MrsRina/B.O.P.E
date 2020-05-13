@@ -31,7 +31,7 @@ import rina.turok.bope.Bope;
 * @author Rina
 *
 * Created by Rina.
-* 11/05/20.
+* 12/05/20.
 *
 */
 public class BopeVelocity extends BopeModule {
@@ -80,9 +80,4 @@ public class BopeVelocity extends BopeModule {
 			return;
 		}
 	});
-
-	@Override
-	public String detail_option() {
-		return "w0, h0";
-	}
 }

@@ -134,6 +134,16 @@ public class BopeSetting {
 		return false;
 	}
 
+	public boolean in(String value) {
+		for (String values : this.combobox) {
+			if (values.equalsIgnoreCase(value)) {
+				return true;
+			}
+		}
+
+		return false;
+	}
+
 	public boolean get_value(boolean type) {
 		return this.button;
 	}

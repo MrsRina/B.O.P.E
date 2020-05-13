@@ -32,7 +32,7 @@ import rina.turok.bope.Bope;
 */
 public class BopeChatSuffix extends BopeModule {
 	BopeSetting ignore = create("Ignore", "ChatSuffixIgnore", true);
-	BopeSetting type   = create("Type", "ChatSuffixType", Arrays.asList("Default", "Random", "Custom"), "Default");
+	BopeSetting type   = create("Type", "ChatSuffixType", "Default", combobox("Default", "Random", "Custom"));
 	BopeSetting custom = create("Custom", "ChatSuffixCustom", "bope");
 
 	boolean accept_suffix;
@@ -165,19 +165,19 @@ public class BopeChatSuffix extends BopeModule {
 		if (message.startsWith(")")  && ignore_prefix) accept_suffix = false;
 
 		// Compare the values type.
-		if (compare("Default")) {
+		if (type.in("Default")) {
 			suffix_default = true;
 			suffix_random  = false;
 			suffix_custom  = false;
 		}
 
-		if (compare("Random")) {
+		if (type.in("Random")) {
 			suffix_default = false;
 			suffix_random  = true;
 			suffix_custom  = false;
 		}
 
-		if (compare("Custom")) {
+		if (type.in("Custom")) {
 			suffix_default = false;
 			suffix_random  = false;
 			suffix_custom  = true;
@@ -215,15 +215,6 @@ public class BopeChatSuffix extends BopeModule {
 		// Send the message.
 		((CPacketChatMessage) event.get_packet()).message = message;
 	});
-
-	// Compare the types.
-	public boolean compare(String requested) {
-		if (type.get_current_value().equalsIgnoreCase(requested)) {
-			return true;
-		}
-
-		return false;
-	}
 
 	// Get the random values string.
 	public String random_string(String[] list) {

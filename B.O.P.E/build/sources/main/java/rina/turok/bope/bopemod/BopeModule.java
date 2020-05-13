@@ -163,10 +163,21 @@ public class BopeModule {
 		return Bope.get_setting_manager().get_setting_with_tag(this, tag);
 	}
 
-	protected BopeSetting create(String name, String tag, List<String> values, String value) {
+	protected BopeSetting create(String name, String tag, String value, List<String> values) {
 		Bope.get_setting_manager().register(tag, new BopeSetting(this, name, tag, values, value));
 
 		return Bope.get_setting_manager().get_setting_with_tag(this, tag);
+	}
+
+	// Comobobox values.
+	protected List<String> combobox(String... item) {
+		ArrayList<String> item_requested = null;
+
+		for (String items : item) {
+			item_requested.add(items);
+		}
+
+		return item_requested;
 	}
 
 	public void render(BopeEventRender event) {

@@ -5,11 +5,18 @@
       "exceptionCaught": "Lnet/minecraft/network/NetworkManager;exceptionCaught(Lio/netty/channel/ChannelHandlerContext;Ljava/lang/Throwable;)V",
       "channelRead0": "Lnet/minecraft/network/NetworkManager;channelRead0(Lio/netty/channel/ChannelHandlerContext;Lnet/minecraft/network/Packet;)V"
     },
+    "rina/turok/bope/mixins/BopeMixinEntitySP": {
+      "move": "Lnet/minecraft/client/entity/EntityPlayerSP;func_70091_d(Lnet/minecraft/entity/MoverType;DDD)V"
+    },
     "rina/turok/bope/mixins/BopeMixinMinecraft": {
       "Lnet/minecraft/client/Minecraft;displayCrashReport(Lnet/minecraft/crash/CrashReport;)V": "Lnet/minecraft/client/Minecraft;func_71377_b(Lnet/minecraft/crash/CrashReport;)V",
       "run": "Lnet/minecraft/client/Minecraft;func_99999_d()V",
       "shutdown": "Lnet/minecraft/client/Minecraft;func_71400_g()V",
       "displayGuiScreen": "Lnet/minecraft/client/Minecraft;func_147108_a(Lnet/minecraft/client/gui/GuiScreen;)V"
+    },
+    "rina/turok/bope/mixins/BopeMixinEntity": {
+      "applyEntityCollision": "Lnet/minecraft/entity/Entity;func_70108_f(Lnet/minecraft/entity/Entity;)V",
+      "Lnet/minecraft/entity/Entity;addVelocity(DDD)V": "Lnet/minecraft/entity/Entity;func_70024_g(DDD)V"
     }
   },
   "data": {
@@ -19,11 +26,18 @@
         "exceptionCaught": "Lgw;exceptionCaught(Lio/netty/channel/ChannelHandlerContext;Ljava/lang/Throwable;)V",
         "channelRead0": "Lgw;a(Lio/netty/channel/ChannelHandlerContext;Lht;)V"
       },
+      "rina/turok/bope/mixins/BopeMixinEntitySP": {
+        "move": "Lbud;a(Lvv;DDD)V"
+      },
       "rina/turok/bope/mixins/BopeMixinMinecraft": {
         "Lnet/minecraft/client/Minecraft;displayCrashReport(Lnet/minecraft/crash/CrashReport;)V": "Lbib;c(Lb;)V",
         "run": "Lbib;a()V",
         "shutdown": "Lbib;n()V",
         "displayGuiScreen": "Lbib;a(Lblk;)V"
+      },
+      "rina/turok/bope/mixins/BopeMixinEntity": {
+        "applyEntityCollision": "Lvg;i(Lvg;)V",
+        "Lnet/minecraft/entity/Entity;addVelocity(DDD)V": "Lvg;f(DDD)V"
       }
     },
     "searge": {
@@ -32,11 +46,18 @@
         "exceptionCaught": "Lnet/minecraft/network/NetworkManager;exceptionCaught(Lio/netty/channel/ChannelHandlerContext;Ljava/lang/Throwable;)V",
         "channelRead0": "Lnet/minecraft/network/NetworkManager;channelRead0(Lio/netty/channel/ChannelHandlerContext;Lnet/minecraft/network/Packet;)V"
       },
+      "rina/turok/bope/mixins/BopeMixinEntitySP": {
+        "move": "Lnet/minecraft/client/entity/EntityPlayerSP;func_70091_d(Lnet/minecraft/entity/MoverType;DDD)V"
+      },
       "rina/turok/bope/mixins/BopeMixinMinecraft": {
         "Lnet/minecraft/client/Minecraft;displayCrashReport(Lnet/minecraft/crash/CrashReport;)V": "Lnet/minecraft/client/Minecraft;func_71377_b(Lnet/minecraft/crash/CrashReport;)V",
         "run": "Lnet/minecraft/client/Minecraft;func_99999_d()V",
         "shutdown": "Lnet/minecraft/client/Minecraft;func_71400_g()V",
         "displayGuiScreen": "Lnet/minecraft/client/Minecraft;func_147108_a(Lnet/minecraft/client/gui/GuiScreen;)V"
+      },
+      "rina/turok/bope/mixins/BopeMixinEntity": {
+        "applyEntityCollision": "Lnet/minecraft/entity/Entity;func_70108_f(Lnet/minecraft/entity/Entity;)V",
+        "Lnet/minecraft/entity/Entity;addVelocity(DDD)V": "Lnet/minecraft/entity/Entity;func_70024_g(DDD)V"
       }
     }
   }

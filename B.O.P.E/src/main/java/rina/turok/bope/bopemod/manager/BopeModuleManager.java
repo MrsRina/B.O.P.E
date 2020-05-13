@@ -71,6 +71,7 @@ public class BopeModuleManager {
 		add_module(new BopeAutoTotem());
 		add_module(new BopeFastUtil());
 		add_module(new BopeKillAura());
+		add_module(new BopeVelocity());
 
 		// Exploit.
 		add_module(new BopeXCarry());

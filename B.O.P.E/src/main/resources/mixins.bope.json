@@ -5,6 +5,8 @@
 	"refmap"             : "mixins.bope.refmap.json",
 	"mixins"             : [
 		"BopeMixinNetworkManager",
-		"BopeMixinMinecraft"
+		"BopeMixinMinecraft",
+		"BopeMixinEntitySP",
+		"BopeMixinEntity"
 	]
 }

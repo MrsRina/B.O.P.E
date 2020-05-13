@@ -46,7 +46,7 @@ public class BopeArrayList extends BopePinnable {
 
 			String module_name = (
 				modules.detail_option() == null ? modules.get_name() :
-				modules.get_name() + g + " [" + r + modules.detail_option() + g + "]" + r
+				modules.get_name() + r + " [" + g + modules.detail_option() + r + "]"
 			);
 
 			create_line(module_name, 2, position_update_y, nl_r, nl_g, nl_b);

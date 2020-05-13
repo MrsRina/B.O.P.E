@@ -4,7 +4,7 @@ import net.minecraft.network.play.client.CPacketChatMessage;
 
 import java.util.*;
 
-// Zero alpine.
+// Zero alpine manager.
 import me.zero.alpine.listener.EventHandler;
 import me.zero.alpine.listener.Listener;
 
@@ -35,10 +35,10 @@ public class BopeChatSuffix extends BopeModule {
 	BopeSetting type   = create("Type", "ChatSuffixType", Arrays.asList("Default", "Random", "Custom"), "Default");
 	BopeSetting custom = create("Custom", "ChatSuffixCustom", "bope");
 
-	boolean accept_suffix  = true;
-	boolean suffix_default = false;
-	boolean suffix_random  = false;
-	boolean suffix_custom  = false;
+	boolean accept_suffix;
+	boolean suffix_default;
+	boolean suffix_random;
+	boolean suffix_custom;
 
 	StringBuilder suffix;
 
@@ -139,6 +139,9 @@ public class BopeChatSuffix extends BopeModule {
 		if (!(event.get_packet() instanceof CPacketChatMessage)) {
 			return;
 		}
+
+		// Start event suffix.
+		accept_suffix = true;
 
 		// Get value.
 		boolean ignore_prefix = ignore.get_value(true);

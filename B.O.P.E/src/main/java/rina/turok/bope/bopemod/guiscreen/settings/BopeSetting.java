@@ -135,10 +135,8 @@ public class BopeSetting {
 	}
 
 	public boolean in(String value) {
-		for (String values : this.combobox) {
-			if (values.equalsIgnoreCase(value)) {
-				return true;
-			}
+		if (this.current.equalsIgnoreCase(value)) {
+			return true;
 		}
 
 		return false;

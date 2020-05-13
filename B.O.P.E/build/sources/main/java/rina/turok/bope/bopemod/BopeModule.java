@@ -157,12 +157,14 @@ public class BopeModule {
 		return Bope.get_setting_manager().get_setting_with_tag(this, tag);
 	}
 
+	// To create label.
 	protected BopeSetting create(String name, String tag, String value) {
 		Bope.get_setting_manager().register(tag, new BopeSetting(this, name, tag, value));
 
 		return Bope.get_setting_manager().get_setting_with_tag(this, tag);
 	}
 
+	// To create the combobox.
 	protected BopeSetting create(String name, String tag, String value, List<String> values) {
 		Bope.get_setting_manager().register(tag, new BopeSetting(this, name, tag, values, value));
 
@@ -171,7 +173,7 @@ public class BopeModule {
 
 	// Comobobox values.
 	protected List<String> combobox(String... item) {
-		ArrayList<String> item_requested = null;
+		ArrayList<String> item_requested = new ArrayList<>();
 
 		for (String items : item) {
 			item_requested.add(items);

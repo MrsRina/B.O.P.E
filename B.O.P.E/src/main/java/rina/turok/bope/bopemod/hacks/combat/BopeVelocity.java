@@ -48,7 +48,7 @@ public class BopeVelocity extends BopeModule {
 	}
 
 	@EventHandler
-	private Listener<BopeEventPacket.SendPacket> damage = new Listener<>(event -> {
+	private Listener<BopeEventPacket.ReceivePacket> damage = new Listener<>(event -> {
 		if (event.get_era() == BopeEventCancellable.Era.EVENT_PRE) {
 			if (event.get_packet() instanceof SPacketEntityVelocity) {
 				SPacketEntityVelocity knockback = (SPacketEntityVelocity) event.get_packet();

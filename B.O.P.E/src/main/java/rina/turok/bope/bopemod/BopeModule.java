@@ -45,14 +45,17 @@ public class BopeModule {
 	public int bind;
 
 	public boolean state_module;
+	public boolean toggle_message;
 
 	public final Minecraft mc = Minecraft.getMinecraft();
 
 	public BopeModule(BopeCategory category) {
-		this.name          = "";
-		this.tag           = "";
-		this.description   = "";
-		this.bind          = -1;
+		this.name           = "";
+		this.tag            = "";
+		this.description    = "";
+		this.bind           = -1;
+		this.toggle_message = true;
+
 
 		// Category.
 		this.category = category;
@@ -66,6 +69,10 @@ public class BopeModule {
 
 	public void set_bind(String key) {
 		this.bind = Keyboard.getKeyIndex(key.toLowerCase());
+	}
+
+	public void set_if_can_send_message_toggle(boolean value) {
+		this.toggle_message = value;
 	}
 
 	public boolean is_active() {
@@ -107,6 +114,10 @@ public class BopeModule {
 
 	public BopeCategory get_category() {
 		return this.category;
+	}
+
+	public boolean can_send_message_when_toggle() {
+		return this.toggle_message;
 	}
 
 	public void set_disable() {

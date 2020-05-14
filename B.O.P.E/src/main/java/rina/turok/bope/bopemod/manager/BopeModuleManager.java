@@ -34,6 +34,7 @@ import rina.turok.bope.bopemod.hacks.BopeClickGUI;
 import rina.turok.bope.bopemod.hacks.BopeClickHUD;
 
 // Data.
+import rina.turok.bope.bopemod.BopeMessage;
 import rina.turok.bope.bopemod.BopeModule;
 
 // Core.
@@ -184,14 +185,12 @@ public class BopeModuleManager {
 		}
 
 		for (BopeModule modules : get_array_modules()) {
-			if (modules.get_tag().equals("GUI") && modules.is_active() == true) {
-				if (event_key == Bope.BOPE_KEY_GUI_ESCAPE) {
-					modules.toggle();
-				}
-			}
-
 			if (modules.get_bind(0) == event_key) {
 				modules.toggle();
+
+				if (modules.can_send_message_when_toggle()) {
+					BopeMessage.toggle_message(modules);
+				}
 			}
 		}
 	}

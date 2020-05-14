@@ -10,6 +10,9 @@ import com.mojang.realmsclient.gui.ChatFormatting;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+// Data.
+import rina.turok.bope.bopemod.BopeModule;
+
 // Core.
 import rina.turok.bope.Bope;
 
@@ -23,6 +26,17 @@ import rina.turok.bope.Bope;
 public class BopeMessage {
 	public static Minecraft mc = Minecraft.getMinecraft();
 
+	public static ChatFormatting db = ChatFormatting.DARK_BLUE;
+	public static ChatFormatting dg = ChatFormatting.DARK_GRAY;
+
+	public static void toggle_message(BopeModule module) {
+		if (module.is_active()) {
+			client_message(dg + "[" + db + module.get_name() + dg + "] -> " + ChatFormatting.DARK_GREEN + "True.");
+		} else {
+			client_message(dg + "[" + db + module.get_name() + dg + "] -> " + ChatFormatting.RED + "False.");
+		}
+	}
+
 	public static void user_send_message(String message) {
 		if (mc.player != null) {
 			mc.player.connection.sendPacket(new CPacketChatMessage(message));
@@ -32,7 +46,6 @@ public class BopeMessage {
 	public static void client_message(String message) {
 		if (mc.player != null) {
 			mc.player.sendMessage(new ChatMessage(message));
-
 		}
 	}
 

@@ -456,6 +456,7 @@ public class BopeConfigManager {
 			BOPE_MODULE_INFO.add("int",    new JsonPrimitive(modules.get_bind(0)));
 			BOPE_MODULE_INFO.add("string", new JsonPrimitive(modules.get_bind("0")));
 			BOPE_MODULE_INFO.add("state",  new JsonPrimitive(modules.is_active()));
+			BOPE_MODULE_INFO.add("alert",  new JsonPrimitive(modules.can_send_message_when_toggle()));
 
 			BOPE_MODULE_JSON.add(modules.get_tag(), BOPE_MODULE_INFO);
 		}
@@ -493,6 +494,7 @@ public class BopeConfigManager {
 
 			module_requested.set_bind(BOPE_MODULES_JSON.get("int").getAsInt());
 			module_requested.set_active(BOPE_MODULES_JSON.get("state").getAsBoolean());
+			module_requested.set_if_can_send_message_toggle(BOPE_MODULES_JSON.get("alert").getAsBoolean());
 		}
 
 		BOPE_JSON_FILE.close();

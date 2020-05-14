@@ -39,6 +39,7 @@ public class BopeListCommand {
 		add_command(new BopePrefix());
 		add_command(new BopeSettings());
 		add_command(new BopeToggle());
+		add_command(new BopeToggleMessage());
 	}
 
 	public static void init_bope_command_lookup() {

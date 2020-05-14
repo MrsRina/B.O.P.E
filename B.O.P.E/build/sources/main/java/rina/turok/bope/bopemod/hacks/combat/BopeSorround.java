@@ -24,6 +24,10 @@ import rina.turok.bope.Bope;
 *
 */
 public class BopeSorround extends BopeModule {
+	BopeSetting slider_mode     = create("Blocks", "SorroundBlocks", 3, 3, 4);
+	BopeSetting placing_tick    = create("Placing Tick", "SorroundPlacingTick", 13, 1, 30);
+	BopeSetting blocks_per_tick = create("Blocks Per Tick", "SorroundBlocksPerTick", 4, 1, 6);
+
 	public BopeSorround() {
 		super(BopeCategory.BOPE_COMBAT);
 

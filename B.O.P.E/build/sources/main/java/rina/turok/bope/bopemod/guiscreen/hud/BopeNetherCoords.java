@@ -17,7 +17,7 @@ import rina.turok.bope.Bope;
 */
 public class BopeNetherCoords extends BopePinnable {
 	public BopeNetherCoords() {
-		super("Nether Coords", "BopeNetherCoords", 1, 0, 0);
+		super("Nether Coords", "NetherCoords", 1, 0, 0);
 	}
 
 	@Override
@@ -28,9 +28,9 @@ public class BopeNetherCoords extends BopePinnable {
 
 		String line = ChatFormatting.DARK_RED + x + "x" + y + "y" + z + "z";
 
-		create_line(line, 2, 2);
+		create_line(line, this.docking(1, line), 2);
 
-		this.set_width(this.get(line, "width") + 10);
+		this.set_width(this.get(line, "width") + 2);
 		this.set_height(this.get(line, "height") + 2);
 	}
 }

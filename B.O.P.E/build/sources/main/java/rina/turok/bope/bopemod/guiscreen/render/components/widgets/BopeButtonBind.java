@@ -233,7 +233,7 @@ public class BopeButtonBind extends BopeAbstractWidget {
 		if (this.waiting) {
 			BopeDraw.draw_rect(get_x(), this.save_y, get_x() + this.width, this.save_y + this.height, bg_r, bg_g, bg_b, bg_a);
 
-			this.tick += 0.1f;
+			this.tick += 0.5f;
 
 			BopeDraw.draw_string("Listening " + this.points, this.x + 2, this.save_y, ns_r, ns_g, ns_b);
 		} else {

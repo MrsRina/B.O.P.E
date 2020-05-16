@@ -7,6 +7,7 @@ import net.minecraft.util.math.Vec3d;
 import net.minecraft.entity.Entity;
 import org.lwjgl.opengl.GL11;
 
+import java.util.Comparator;
 import java.util.*;
 
 // Events.
@@ -78,10 +79,13 @@ public class BopeModuleManager {
 		add_module(new BopeXCarry());
 
 		// Movement.
+		add_module(new BopeEatMovement());
 		add_module(new BopeStrafe());
 
 		// Render.
 		// init_bope_render_modules();
+
+		array_module.sort(Comparator.comparing(BopeModule::get_name));
 	}
 
 	public void add_module(BopeModule module) {

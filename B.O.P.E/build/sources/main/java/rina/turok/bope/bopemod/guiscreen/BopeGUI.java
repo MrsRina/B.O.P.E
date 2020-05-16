@@ -171,6 +171,9 @@ public class BopeGUI extends GuiScreen {
 
 	@Override
 	public void drawScreen(int mx, int my, float tick) {
+		// For draw backscreen.
+		this.drawDefaultBackground();
+
 		// For draw in screen.
 		for (BopeFrame frames : this.frame) {
 			frames.render(mx, my);

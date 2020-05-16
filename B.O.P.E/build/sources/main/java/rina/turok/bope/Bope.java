@@ -32,6 +32,9 @@ import rina.turok.bope.bopemod.manager.BopeHUDManager;
 // External.
 import rina.turok.bope.external.BopeEventHandler;
 
+// Data.
+import rina.turok.bope.bopemod.BopeMessage;
+
 // Core.
 import rina.turok.bope.BopeEventRegister;
 
@@ -133,6 +136,10 @@ public class Bope {
 		bope_register_log = LogManager.getLogger(name);
 
 		send_minecraft_log("...");
+	}
+
+	public static void dev(String message) {
+		BopeMessage.send_client_message(message);
 	}
 
 	public static Bope get_instance() {

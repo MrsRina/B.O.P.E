@@ -165,6 +165,12 @@ public class BopeLabel extends BopeAbstractWidget {
 		int bd_b = Bope.click_gui.theme_widget_border_b;
 		int bd_a = 100;
 
+		if (motion(absolute_x, absolute_y)) {
+			if (this.setting.get_master().using_widget()) {
+				this.setting.get_master().event_widget();
+			}
+		}
+
 		if (this.info) {
 			BopeDraw.draw_string(this.setting.get_value(zbob), this.x + 2, this.save_y, ns_r, ns_g, ns_b);
 		} else {

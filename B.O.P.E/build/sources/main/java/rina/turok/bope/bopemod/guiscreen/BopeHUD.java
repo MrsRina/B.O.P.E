@@ -12,8 +12,12 @@ import java.util.*;
 import java.io.*;
 
 // Guiscreen;
+import rina.turok.bope.bopemod.guiscreen.render.pinnables.BopePinnableButton;
 import rina.turok.bope.bopemod.guiscreen.render.pinnables.BopePinnable;
 import rina.turok.bope.bopemod.guiscreen.render.pinnables.BopeFrame;
+
+// Modules.
+import rina.turok.bope.bopemod.hacks.BopeClickGUI;
 
 // Managers.
 import rina.turok.bope.bopemod.manager.BopeHUDManager;
@@ -38,10 +42,6 @@ public class BopeHUD extends GuiScreen {
 	public boolean on_gui;
 	public boolean back;
 
-	public int theme_arraylist_r = 0;
-	public int theme_arraylist_g = 0;
-	public int theme_arraylist_b = 0;
-
 	public BopeHUD() {
 		// First I created a simple HUD frame.
 		this.frame  = new BopeFrame("B.O.P.E HUD", "BopeHUD", 40, 40);
@@ -64,6 +64,40 @@ public class BopeHUD extends GuiScreen {
 	@Override
 	public void initGui() {
 		this.on_gui = true;
+
+		// Rinnaaaaaaaaaaaa noooo!. yes/ ^^
+		BopeFrame.nc_r = Bope.get_setting_manager().get_setting_with_tag("GUI", "ClickGUINameFrameR").get_value(1);
+		BopeFrame.nc_g = Bope.get_setting_manager().get_setting_with_tag("GUI", "ClickGUINameFrameG").get_value(1);
+		BopeFrame.nc_b = Bope.get_setting_manager().get_setting_with_tag("GUI", "ClickGUINameFrameB").get_value(1);
+		
+		BopeFrame.bg_r = Bope.get_setting_manager().get_setting_with_tag("GUI", "ClickGUIBackgroundFrameR").get_value(1);
+		BopeFrame.bg_g = Bope.get_setting_manager().get_setting_with_tag("GUI", "ClickGUIBackgroundFrameG").get_value(1);
+		BopeFrame.bg_b = Bope.get_setting_manager().get_setting_with_tag("GUI", "ClickGUIBackgroundFrameB").get_value(1);
+		BopeFrame.bg_a = Bope.get_setting_manager().get_setting_with_tag("GUI", "ClickGUIBackgroundFrameA").get_value(1);
+		
+		BopeFrame.bd_r = Bope.get_setting_manager().get_setting_with_tag("GUI", "ClickGUIBorderFrameR").get_value(1);
+		BopeFrame.bd_g = Bope.get_setting_manager().get_setting_with_tag("GUI", "ClickGUIBorderFrameG").get_value(1);
+		BopeFrame.bd_b = Bope.get_setting_manager().get_setting_with_tag("GUI", "ClickGUIBorderFrameB").get_value(1);
+		BopeFrame.bd_a = 0;
+		
+		BopeFrame.bdw_r = Bope.get_setting_manager().get_setting_with_tag("GUI", "ClickGUIBorderWidgetR").get_value(1);
+		BopeFrame.bdw_g = Bope.get_setting_manager().get_setting_with_tag("GUI", "ClickGUIBorderWidgetG").get_value(1);
+		BopeFrame.bdw_b = Bope.get_setting_manager().get_setting_with_tag("GUI", "ClickGUIBorderWidgetB").get_value(1);
+		BopeFrame.bdw_a = 255;
+
+		// A?
+		BopePinnableButton.nc_r = Bope.get_setting_manager().get_setting_with_tag("GUI", "ClickGUINameWidgetR").get_value(1);
+		BopePinnableButton.nc_g = Bope.get_setting_manager().get_setting_with_tag("GUI", "ClickGUINameWidgetG").get_value(1);
+		BopePinnableButton.nc_b = Bope.get_setting_manager().get_setting_with_tag("GUI", "ClickGUINameWidgetB").get_value(1);
+	
+		BopePinnableButton.bg_r = Bope.get_setting_manager().get_setting_with_tag("GUI", "ClickGUIBackgroundWidgetR").get_value(1);
+		BopePinnableButton.bg_g = Bope.get_setting_manager().get_setting_with_tag("GUI", "ClickGUIBackgroundWidgetG").get_value(1);
+		BopePinnableButton.bg_b = Bope.get_setting_manager().get_setting_with_tag("GUI", "ClickGUIBackgroundWidgetB").get_value(1);
+		BopePinnableButton.bg_a = Bope.get_setting_manager().get_setting_with_tag("GUI", "ClickGUIBackgroundWidgetA").get_value(1);
+	
+		BopePinnableButton.bd_r = Bope.get_setting_manager().get_setting_with_tag("GUI", "ClickGUIBorderWidgetR").get_value(1);
+		BopePinnableButton.bd_g = Bope.get_setting_manager().get_setting_with_tag("GUI", "ClickGUIBorderWidgetG").get_value(1);
+		BopePinnableButton.bd_b = Bope.get_setting_manager().get_setting_with_tag("GUI", "ClickGUIBorderWidgetB").get_value(1);
 	}
 
 	// When close save the client HUD.
@@ -109,6 +143,9 @@ public class BopeHUD extends GuiScreen {
 
 	@Override
 	public void drawScreen(int mx, int my, float tick) {
+		// For draw backscreen.
+		this.drawDefaultBackground();
+
 		// To render frames.
 		this.frame.render(mx, my, 2);
 	}

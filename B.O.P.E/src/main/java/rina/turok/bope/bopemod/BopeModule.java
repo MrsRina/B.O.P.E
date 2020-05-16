@@ -46,6 +46,7 @@ public class BopeModule {
 
 	public boolean state_module;
 	public boolean toggle_message;
+	public boolean widget_usage;
 
 	public final Minecraft mc = Minecraft.getMinecraft();
 
@@ -55,7 +56,7 @@ public class BopeModule {
 		this.description    = "";
 		this.bind           = -1;
 		this.toggle_message = true;
-
+		this.widget_usage   = false;
 
 		// Category.
 		this.category = category;
@@ -75,8 +76,16 @@ public class BopeModule {
 		this.toggle_message = value;
 	}
 
+	public void set_usage_widget(boolean value) {
+		this.widget_usage = value;
+	}
+
 	public boolean is_active() {
 		return this.state_module;
+	}
+
+	public boolean using_widget() {
+		return this.widget_usage;
 	}
 
 	public String get_name() {
@@ -206,6 +215,10 @@ public class BopeModule {
 
 	public void update() {
 		// Update main tick to modules when enabled.
+	}
+
+	public void event_widget() {
+		// If use some widget.
 	}
 
 	protected void disable() {

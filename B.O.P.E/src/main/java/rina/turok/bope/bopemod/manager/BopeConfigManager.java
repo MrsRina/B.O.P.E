@@ -583,6 +583,7 @@ public class BopeConfigManager {
 			BOPE_FRAMES_INFO.add("title", new JsonPrimitive(pinnables_hud.get_title()));
 			BOPE_FRAMES_INFO.add("tag",   new JsonPrimitive(pinnables_hud.get_tag()));
 			BOPE_FRAMES_INFO.add("state", new JsonPrimitive(pinnables_hud.is_active()));
+			BOPE_FRAMES_INFO.add("dock",  new JsonPrimitive(pinnables_hud.get_dock()));
 			BOPE_FRAMES_INFO.add("x",     new JsonPrimitive(pinnables_hud.get_x()));
 			BOPE_FRAMES_INFO.add("y",     new JsonPrimitive(pinnables_hud.get_y()));
 
@@ -622,6 +623,7 @@ public class BopeConfigManager {
 			BopePinnable pinnable_requested = Bope.get_hud_manager().get_pinnable_with_tag(BOPE_HUD_INFO.get("tag").getAsString());
 
 			pinnable_requested.set_active(BOPE_HUD_INFO.get("state").getAsBoolean());
+			pinnable_requested.set_dock(BOPE_HUD_INFO.get("dock").getAsBoolean());
 
 			pinnable_requested.set_x(BOPE_HUD_INFO.get("x").getAsInt());
 			pinnable_requested.set_y(BOPE_HUD_INFO.get("y").getAsInt());

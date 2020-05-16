@@ -3,6 +3,9 @@ package rina.turok.bope.bopemod.guiscreen.hud;
 import com.mojang.realmsclient.gui.ChatFormatting;
 import net.minecraft.client.gui.ScaledResolution;
 
+
+import java.util.function.Function;
+import java.util.stream.Collectors;
 import java.util.*;
 
 // Guiscreen.
@@ -26,7 +29,7 @@ public class BopeArrayList extends BopePinnable {
 	ChatFormatting r = ChatFormatting.RESET;
 
 	public BopeArrayList() {
-		super("Array List", "BopeArrayList", 1, 0, 0);
+		super("Array List", "ArrayList", 1, 0, 0);
 	}
 
 	@Override
@@ -39,22 +42,26 @@ public class BopeArrayList extends BopePinnable {
 		int nl_g = Bope.get_setting_manager().get_setting_with_tag("HUD", "HUDArrayListColorG").get_value(1);
 		int nl_b = Bope.get_setting_manager().get_setting_with_tag("HUD", "HUDArrayListColorB").get_value(1);
 
-		for (BopeModule modules : Bope.get_module_manager().get_array_active_modules()) {
+		List<BopeModule> pretty_modules = Bope.get_module_manager().get_array_active_modules().stream()
+			.sorted(Comparator.comparing(modules -> get(modules.detail_option() == null ? modules.get_tag() : modules.get_tag() + r + " [" + g + modules.detail_option() + r + "]", "width")))
+			.collect(Collectors.toList());
+
+		for (BopeModule modules : pretty_modules) {
 			if (modules.get_category().get_tag().equals("BopeGUI")) {
 				continue;
 			}
 
 			String module_name = (
-				modules.detail_option() == null ? modules.get_name() :
-				modules.get_name() + r + " [" + g + modules.detail_option() + r + "]"
+				modules.detail_option() == null ? modules.get_tag() :
+				modules.get_tag() + r + " [" + g + modules.detail_option() + r + "]"
 			);
 
-			create_line(module_name, 2, position_update_y, nl_r, nl_g, nl_b);
+			create_line(module_name, this.docking(2, module_name), position_update_y, nl_r, nl_g, nl_b);
 
 			position_update_y += get(module_name, "height") + 2;
 
-			if (get(modules.get_name(), "width") > this.get_width()) {
-				this.set_width(get(module_name, "width") + 5);
+			if (get(module_name, "width") > this.get_width()) {
+				this.set_width(get(module_name, "width") + 2);
 			}
 
 			this.set_height(position_update_y);

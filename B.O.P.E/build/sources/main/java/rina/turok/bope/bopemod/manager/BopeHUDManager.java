@@ -31,6 +31,8 @@ public class BopeHUDManager {
 		add_component_pinnable(new BopeInventoryPreview());
 		add_component_pinnable(new BopeArmorPreview());
 		add_component_pinnable(new BopeUser());
+
+		array_hud.sort(Comparator.comparing(BopePinnable::get_title));
 	}
 
 	public void add_component_pinnable(BopePinnable module) {

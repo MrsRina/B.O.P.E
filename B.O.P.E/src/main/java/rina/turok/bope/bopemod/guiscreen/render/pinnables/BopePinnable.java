@@ -1,6 +1,10 @@
 package rina.turok.bope.bopemod.guiscreen.render.pinnables;
 
+import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.Minecraft;
+
+import org.lwjgl.opengl.GL11;
+import org.lwjgl.input.Mouse;
 
 import java.util.*;
 
@@ -9,6 +13,9 @@ import rina.turok.bope.bopemod.guiscreen.render.BopeDraw;
 
 // Core.
 import rina.turok.bope.Bope;
+
+// Turok.
+import rina.turok.turok.draw.TurokRenderHelp;
 
 /**
 * @author Rina
@@ -28,11 +35,14 @@ public class BopePinnable {
 
 	private int x;
 	private int y;
+
 	private int width;
 	private int height;
 
 	private int move_x;
 	private int move_y;
+
+	private boolean dock = true;
 
 	public final Minecraft mc = Minecraft.getMinecraft();
 
@@ -82,6 +92,10 @@ public class BopePinnable {
 		this.move_y = y;
 	}
 
+	public void set_dock(boolean value) {
+		this.dock = value;
+	}
+
 	public boolean is_moving() {
 		return this.move;
 	}
@@ -112,6 +126,10 @@ public class BopePinnable {
 
 	public int get_height() {
 		return this.height;
+	}
+
+	public boolean get_dock() {
+		return this.dock;
 	}
 
 	public boolean is_active() {
@@ -149,8 +167,29 @@ public class BopePinnable {
 			set_y(my - this.move_y);
 		}
 
-		if (is_active() && motion(mx, my)) {
-			BopeDraw.draw_rect(this.x - 1, this.y - 1, this.width + 1, this.height + 1, 0, 0, 0, 50, 2, "right-left-down-up");
+		if (this.x + this.width <= (mc.displayWidth / 2) / 2) {
+			set_dock(true);
+		} else if (this.x + this.width >= (mc.displayWidth / 2) / 2) {
+			set_dock(false);
+		}
+
+		if (is_active()) {
+			render();
+
+			GL11.glPushMatrix();
+
+			GL11.glEnable(GL11.GL_TEXTURE_2D);
+			GL11.glEnable(GL11.GL_BLEND);
+
+			GlStateManager.enableBlend();
+
+			GL11.glPopMatrix();
+
+			TurokRenderHelp.release_gl();
+
+			if (motion(mx, my)) {
+				BopeDraw.draw_rect(this.x - 1, this.y - 1, this.width + 1, this.height + 1, 0, 0, 0, 90, 2, "right-left-down-up");
+			}
 		}
 	}
 
@@ -178,6 +217,14 @@ public class BopePinnable {
 		}
 
 		return value_to_request;
+	}
+
+	public int docking(int position_x, String string) {
+		if (this.dock) {
+			return position_x;
+		} else {
+			return (this.width - get(string, "width")) - position_x; 
+		}
 	}
 
 	protected boolean is_on_gui() {

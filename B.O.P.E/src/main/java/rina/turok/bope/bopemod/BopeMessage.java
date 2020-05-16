@@ -31,9 +31,9 @@ public class BopeMessage {
 
 	public static void toggle_message(BopeModule module) {
 		if (module.is_active()) {
-			client_message(dg + "[" + db + module.get_name() + dg + "] -> " + ChatFormatting.DARK_GREEN + "True.");
+			client_message(dg + "[" + db + module.get_name() + dg + "] > " + ChatFormatting.DARK_GREEN + "True.");
 		} else {
-			client_message(dg + "[" + db + module.get_name() + dg + "] -> " + ChatFormatting.RED + "False.");
+			client_message(dg + "[" + db + module.get_name() + dg + "] < " + ChatFormatting.RED + "False.");
 		}
 	}
 

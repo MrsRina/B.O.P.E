@@ -38,7 +38,7 @@ public class BopeInventoryPreview extends BopePinnable {
 			GlStateManager.pushMatrix();
 			RenderHelper.enableGUIStandardItemLighting();
 
-			create_rect(0, 0, this.get_width(), this.get_height(), 0, 0, 0, 50);
+			create_rect(0, 0, this.get_width(), this.get_height(), 0, 0, 0, 60);
 
 			this.set_width(16 * 9);
 			this.set_height(16 * 3 + 4);

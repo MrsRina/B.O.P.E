@@ -40,6 +40,25 @@ public class BopeFrame {
 
 	private BopeDraw font = new BopeDraw(1);
 
+	public static int nc_r = 0;
+	public static int nc_g = 0;
+	public static int nc_b = 0;
+
+	public static int bg_r = 0;
+	public static int bg_g = 0;
+	public static int bg_b = 0;
+	public static int bg_a = 0;
+
+	public static int bd_r = 0;
+	public static int bd_g = 0;
+	public static int bd_b = 0;
+	public static int bd_a = 0;
+
+	public static int bdw_r = 0;
+	public static int bdw_g = 0;
+	public static int bdw_b = 0;
+	public static int bdw_a = 255;
+
 	public BopeFrame(String name, String tag, int initial_x, int initial_y) {
 		this.pinnable_button = new ArrayList<>();
 
@@ -179,29 +198,13 @@ public class BopeFrame {
 			color = (color_b);
 		}
 
-		int nc_r = Bope.click_gui.theme_frame_name_r;
-		int nc_g = Bope.click_gui.theme_frame_name_g;
-		int nc_b = Bope.click_gui.theme_frame_name_b;
+		this.bd_a  = color;
+		this.bdw_a = 255;
 
-		int bg_r = Bope.click_gui.theme_frame_background_r;
-		int bg_g = Bope.click_gui.theme_frame_background_g;
-		int bg_b = Bope.click_gui.theme_frame_background_b;
-		int bg_a = Bope.click_gui.theme_frame_background_a;
+		BopeDraw.draw_rect(this.x, this.y, this.x + this.width, this.y + this.height, this.bg_r, this.bg_g, this.bg_b, this.bg_a);
+		BopeDraw.draw_rect(this.x - 1, this.y, this.width + 1, this.height, this.bd_r, this.bd_g, this.bd_b, this.bd_a, this.border_size, "left-right");		
 
-		int bd_r = Bope.click_gui.theme_frame_border_r;
-		int bd_g = Bope.click_gui.theme_frame_border_g;
-		int bd_b = Bope.click_gui.theme_frame_border_b;
-		int bd_a = color;
-
-		int bdw_r = Bope.click_gui.theme_widget_border_r;
-		int bdw_g = Bope.click_gui.theme_widget_border_g;
-		int bdw_b = Bope.click_gui.theme_widget_border_b;
-		int bdw_a = 255;
-
-		BopeDraw.draw_rect(this.x, this.y, this.x + this.width, this.y + this.height, bg_r, bg_g, bg_b, bg_a);
-		BopeDraw.draw_rect(this.x - 1, this.y, this.width + 1, this.height, bd_r, bd_g, bd_b, bd_a, this.border_size, "left-right");		
-
-		BopeDraw.draw_string(this.name, this.x + 4, this.y + 4, nc_r, nc_g, nc_b);
+		BopeDraw.draw_string(this.name, this.x + 4, this.y + 4, this.nc_r, this.nc_g, this.nc_b);
 
 		if (is_moving()) {
 			set_x(mx - this.move_x);
@@ -214,7 +217,7 @@ public class BopeFrame {
 			pinnables_buttons.render(mx, my, separate);
 
 			if (pinnables_buttons.motion(mx, my)) {
-				BopeDraw.draw_rect(get_x() - 1, pinnables_buttons.get_save_y(), get_width() + 1, pinnables_buttons.get_height(), bdw_r, bdw_g, bdw_b, bdw_a, this.border_size, "right-left");
+				BopeDraw.draw_rect(get_x() - 1, pinnables_buttons.get_save_y(), get_width() + 1, pinnables_buttons.get_height(), this.bdw_r, this.bdw_g, this.bdw_b, this.bdw_a, this.border_size, "right-left");
 			}
 		}
 	}

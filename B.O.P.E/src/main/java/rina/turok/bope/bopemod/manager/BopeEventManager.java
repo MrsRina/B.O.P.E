@@ -17,6 +17,9 @@ import org.lwjgl.opengl.GL11;
 import rina.turok.bope.bopemod.BopeCommand;
 import rina.turok.bope.bopemod.BopeMessage;
 
+// External.
+import rina.turok.bope.external.BopeEventBus;
+
 // Core.
 import rina.turok.bope.Bope;
 
@@ -133,6 +136,11 @@ public class BopeEventManager {
 				true_command = false;
 			}
 		}
+	}
+
+	@SubscribeEvent
+	public void onInputUpdate(InputUpdateEvent event) {
+		BopeEventBus.ZERO_ALPINE_EVENT_BUS.post(event);
 	}
 
 	public String get_tag() {

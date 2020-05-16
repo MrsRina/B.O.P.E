@@ -1,5 +1,9 @@
 package rina.turok.bope.bopemod.guiscreen.render.components.widgets;
 
+import net.minecraft.client.renderer.GlStateManager;
+
+import org.lwjgl.opengl.GL11;
+
 // Guiscreen.
 import rina.turok.bope.bopemod.guiscreen.render.components.widgets.BopeCombobox;
 import rina.turok.bope.bopemod.guiscreen.render.components.BopeAbstractWidget;
@@ -12,6 +16,9 @@ import rina.turok.bope.bopemod.guiscreen.settings.BopeSetting;
 
 // Core.
 import rina.turok.bope.Bope;
+
+// Turok.
+import rina.turok.turok.draw.TurokRenderHelp;
 
 /**
 * @author Rina
@@ -168,6 +175,17 @@ public class BopeLabel extends BopeAbstractWidget {
 		if (motion(absolute_x, absolute_y)) {
 			if (this.setting.get_master().using_widget()) {
 				this.setting.get_master().event_widget();
+
+				GL11.glPushMatrix();
+
+				GL11.glEnable(GL11.GL_TEXTURE_2D);
+				GL11.glEnable(GL11.GL_BLEND);
+
+				GlStateManager.enableBlend();
+
+				GL11.glPopMatrix();
+
+				TurokRenderHelp.release_gl();
 			}
 		}
 

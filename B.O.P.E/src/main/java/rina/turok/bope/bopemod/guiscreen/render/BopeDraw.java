@@ -65,7 +65,7 @@ public class BopeDraw {
 	}
 
 	public static void draw_string(String string, int x, int y, int r, int g, int b) {
-		font_renderer.drawString(string, x, y, new TurokColor(r, g, b).hex());
+		font_renderer.drawStringWithShadow(string, x, y, new TurokColor(r, g, b).hex());
 	}
 
 	public void draw_string_gl(String string, int x, int y, int r, int g, int b) {

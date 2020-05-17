@@ -41,7 +41,7 @@ public class BopeInventoryPreview extends BopePinnable {
 			create_rect(0, 0, this.get_width(), this.get_height(), 0, 0, 0, 60);
 
 			this.set_width(16 * 9);
-			this.set_height(16 * 3 + 4);
+			this.set_height(16 * 3);
 
 			for (int i = 0; i < 27; i++) {
 				ItemStack item_stack = mc.player.inventory.mainInventory.get(i + 9);

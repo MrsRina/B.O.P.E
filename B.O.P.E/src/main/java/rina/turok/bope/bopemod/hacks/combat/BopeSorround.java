@@ -2,10 +2,12 @@ package rina.turok.bope.bopemod.hacks.combat;
 
 import net.minecraft.network.play.client.CPacketEntityAction;
 import net.minecraft.network.play.client.CPacketAnimation;
+import net.minecraft.network.play.client.CPacketPlayer;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.item.EntityXPOrb;
 import net.minecraft.entity.item.EntityItem;
+import net.minecraft.util.math.MathHelper;
 import net.minecraft.block.BlockObsidian;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.block.BlockLiquid;
@@ -17,6 +19,9 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.EnumHand;
 import net.minecraft.entity.Entity;
 import net.minecraft.block.Block;
+import net.minecraft.init.Blocks;
+
+import java.util.*;
 
 // Guiscreen.
 import rina.turok.bope.bopemod.guiscreen.settings.BopeSetting;
@@ -40,15 +45,17 @@ import rina.turok.bope.Bope;
 * Created by Rina.
 * 13/05/20.
 *
+* - For the first version is it, I have REFERENCED like KAMI.
+* - I did somes things to be better.
+*
 */
 public class BopeSorround extends BopeModule {
-	BopeSetting smoth           = create("Smoth", "SorroundSmoth", true);
-	BopeSetting slider_mode     = create("Blocks", "SorroundBlocks", 3, 3, 4);
-	BopeSetting ticks           = create("Ticks", "SorroundTicks", 0, 0, 10);
-	BopeSetting placing_tick    = create("Placing Tick", "SorroundPlacingTick", 13, 1, 30);
-	BopeSetting blocks_per_tick = create("Blocks Per Tick", "SorroundBlocksPerTick", 4, 1, 6);
+	//BopeSetting animation   = create("Animation", "SorroundAnimation", false);
+	BopeSetting smoth       = create("Smoth",     "SorroundSmoth",     true);
+	BopeSetting slider_mode = create("Blocks",    "SorroundBlocks",    3, 3, 4);
+	BopeSetting ticks       = create("Ticks",     "SorroundTicks",     2, 0, 10);
 
-	int places_tick = 0; 
+	int places_tick = 0;
 	int place_tick  = 0;
 	int wait_tick   = 0;
 	int new_slot    = 0;
@@ -81,6 +88,39 @@ public class BopeSorround extends BopeModule {
 		new Vec3d(  0, - 1,   0)
 	};
 
+	List<Block> not_true_blocks = Arrays.asList(
+		Blocks.ENCHANTING_TABLE,
+		Blocks.CRAFTING_TABLE,
+		Blocks.BREWING_STAND,
+		Blocks.TRAPPED_CHEST,
+		Blocks.ENDER_CHEST,
+		Blocks.DISPENSER,
+		Blocks.TRAPDOOR,
+		Blocks.DROPPER,
+		Blocks.HOPPER,
+		Blocks.CHEST,
+		Blocks.ANVIL
+	);
+
+	List<Block> not_true_entitys_blocks = Arrays.asList(
+		Blocks.LIGHT_BLUE_SHULKER_BOX,
+		Blocks.MAGENTA_SHULKER_BOX,
+		Blocks.PURPLE_SHULKER_BOX,
+		Blocks.YELLOW_SHULKER_BOX,
+		Blocks.ORANGE_SHULKER_BOX,
+		Blocks.SILVER_SHULKER_BOX,
+		Blocks.WHITE_SHULKER_BOX,
+		Blocks.BLACK_SHULKER_BOX,
+		Blocks.BROWN_SHULKER_BOX,
+		Blocks.GREEN_SHULKER_BOX,
+		Blocks.LIME_SHULKER_BOX,
+		Blocks.PINK_SHULKER_BOX,
+		Blocks.CYAN_SHULKER_BOX,
+		Blocks.GRAY_SHULKER_BOX,
+		Blocks.BLUE_SHULKER_BOX,
+		Blocks.RED_SHULKER_BOX
+	);
+
 	public BopeSorround() {
 		super(BopeCategory.BOPE_COMBAT);
 
@@ -93,106 +133,242 @@ public class BopeSorround extends BopeModule {
 		release("B.O.P.E - Module - B.O.P.E");
 	}
 
-//	@Override
-//	public void update() {
-//		if (mc.player != null && place_tick >= placing_tick.get_value(1)) {
-//			if (!verify) {
-//				if (wait_tick < ticks.get_value(1)) {
-//					wait_tick++;
-//					return;
-//				} else {
-//					wait_tick = 0;
-//				}
-//			}
+	@Override
+	public void enable() {
+		if (mc.player != null) {
+			verify = true;
 
-//			if (verify) {
-//				verify = false;
+			old_slot = mc.player.inventory.currentItem;
+			new_slot = - 1;
+		}
+	}
 
-//				if (find_in_hotbar() == -1) {
-//					disable();
-//				}
-//			}
+	@Override
+	public void disable() {
+		if (mc.player != null) {
+			if (new_slot != old_slot && old_slot != - 1) {
+				mc.player.inventory.currentItem = old_slot;
+			}
 
-//			Vec3d[] many_blocks = new Vec3d[0];
+			if (sneak) {
+				mc.player.connection.sendPacket(new CPacketEntityAction(mc.player, CPacketEntityAction.Action.STOP_SNEAKING));
 
-//			int blocks_length = 0;
-//			int places        = 0;
+				sneak = false;
+			}
 
-//			if (slider_mode.get_value(1) >= 3) {
-//				many_blocks   = sorround_with_8_blocks;
-//				blocks_length = 8;
-//			}
+			old_slot = - 1;
+			new_slot = - 1;
 
-//			if (slider_mode.get_value(1) >= 4) {
-//				many_blocks   = sorround_with_9_blocks;
-//				blocks_length = 9;
-//			}
+			missing = false;
+		}
+	}
 
-//			while (places < blocks_per_tick.get_value(1)) {
-//				if (places_tick > blocks_length) {
-//					places_tick = 0;
+	@Override
+	public void update() {
+		if (mc.player != null) {
+			if (place_tick >= 10) {
+				place_tick = 0;
 
-//					break;
-//				}
+				set_active(!is_active());
 
-//				BlockPos off_place    = new BlockPos(many_blocks[places_tick]);
-//				BlockPos target_place = new BlockPos(mc.payer.getPositionVector()).addBlock(off_place.x, off_place.y, off_place.z);
+				return;
+			}
 
+			if (!verify) {
+				if (wait_tick < ticks.get_value(1)) {
+					wait_tick++;
+					return;
+				} else {
+					wait_tick = 0;
+				}
+			}
 
-//				if (place_blocks(target_place)) {
-//					places = 0;
-//				}
+			if (verify) {
+				verify = false;
 
-//				places_tick++;
-//			}
-//		}
-//	}
+				if (find_in_hotbar() == -1) {
+					missing = true;
+				}
+			}
 
-//	public void place_blocks(BlockPos pos) {
-//		Block block = mc.world.getBlockState(pos).getBlock();
+			Vec3d[] many_blocks = new Vec3d[0];
 
-//		if (!(blocks_length instanceof BlockAir) && !(block instanceof BlockLiquid)) {
-//			return false;
-//		}
+			int blocks_length = 0;
+			int places        = 0;
 
-//		for (Entity entitys : mc.world.getEntitiesWithinAABBExcludingEntity(null, new AxisAlignedBB(pos))) {
-//			if (!(entitys instanceof EntityItem) && !(entitys instanceof EntityXPOrb)) {
-//				return false;
-//			}
-//		}
+			if (slider_mode.get_value(1) >= 3) {
+				many_blocks   = sorround_with_8_blocks;
+				blocks_length = 7; // 0 == 1; 0 + 1, 1, 2, 3, 4...
+			}
 
-//		EnumFacing side = get_placeale_side(pos);
+			if (slider_mode.get_value(1) >= 4) {
+				many_blocks   = sorround_with_9_blocks;
+				blocks_length = 8; // 0 == 1; 0 + 1, 1, 2, 3, 4...
+			}
 
-//		if (side == null) {
-//			return false;
-//		}
+			while (places < 4) {
+				if (places_tick > blocks_length) {
+					places_tick = 0;
 
-//		BlockPos left_side = pos.offset(side);
+					break;
+				}
 
-//		EnumFacing opposite = side.getOpposite();
+				BlockPos off_place    = new BlockPos(many_blocks[places_tick]);
+				BlockPos target_place = new BlockPos(mc.player.getPositionVector()).add(off_place.x, off_place.y, off_place.z);
 
-//		if (!(is_possible(left_side))) {
-//			return false;
-//		}
+				if (place_blocks(target_place)) {
+					places = 0;
+				}
 
-//		BlockPos vect = new Vec3d()
-//	}
+				places_tick++;
+			}
 
-//	public EnumFacing get_placeale_side(BlockPos pos) {
-//		for (EnumFacing sides : EnumFacing.values()) {
-//			BlockPos left_side = pos.offSet(sides);
+			if (places > 0) {
+				if (new_slot != old_slot && old_slot != - 1) {
+					mc.player.inventory.currentItem = old_slot;
 
-//			if (!(mc.world.getBlockState(left_side).getBlock().canCollideCheck(mc.world.getBlockState(left_side), false))) {
-//				continue;
-//			}
+					new_slot = old_slot;
+				}
 
-//			IBlockState state_block = mc.world.getBlockState(left_side);
+				if (sneak) {
+					mc.player.connection.sendPacket(new CPacketEntityAction(mc.player, CPacketEntityAction.Action.STOP_SNEAKING));
 
-//			if (!(state_block.getMaterial().isReplaceable())) {
-//				return sides;
-//			}
-//		}
+					sneak = false;
+				}
+			}
 
-//		return null;
-//	}
+			place_tick++;
+
+			if (missing) {
+				missing = false;
+
+				set_active(!is_active());
+			}
+		}
+	}
+
+	public boolean place_blocks(BlockPos pos) {
+		Block block = mc.world.getBlockState(pos).getBlock();
+
+		if (!(block instanceof BlockAir) && !(block instanceof BlockLiquid)) {
+			return false;
+		}
+
+		for (Entity entitys : mc.world.getEntitiesWithinAABBExcludingEntity(null, new AxisAlignedBB(pos))) {
+			if (!(entitys instanceof EntityItem) && !(entitys instanceof EntityXPOrb)) {
+				return false;
+			}
+		}
+
+		EnumFacing side = get_placeale_side(pos);
+
+		if (side == null) {
+			return false;
+		}
+
+		BlockPos left_side = pos.offset(side);
+
+		EnumFacing opposite = side.getOpposite();
+
+		if (!(is_possible(left_side))) {
+			return false;
+		}
+
+		Vec3d hit = new Vec3d(left_side).add(0.5, 0.5, 0.5).add(new Vec3d(opposite.getDirectionVec()).scale(0.5));
+
+		Block left_block = mc.world.getBlockState(left_side).getBlock();
+
+		int obi_slot = find_in_hotbar();
+
+		if (obi_slot == - 1) {
+			missing = true;
+
+			return false;
+		}
+
+		if (new_slot != obi_slot) {
+			mc.player.inventory.currentItem = obi_slot;
+
+			new_slot = obi_slot;
+		}
+
+		if (!(sneak && not_true_blocks.contains(left_block) || not_true_entitys_blocks.contains(left_block))) {
+			mc.player.connection.sendPacket(new CPacketEntityAction(mc.player, CPacketEntityAction.Action.START_SNEAKING));
+
+			sneak = true;
+		}
+
+		reset_rotate(hit);
+
+		mc.playerController.processRightClickBlock(mc.player, mc.world, left_side, opposite, hit, EnumHand.MAIN_HAND);
+		mc.player.swingArm(EnumHand.MAIN_HAND);
+
+		mc.rightClickDelayTimer = smoth.get_value(true) == true ? 4 : 0;
+
+		return true;
+	}
+
+	public void reset_rotate(Vec3d pos) {
+		Vec3d eye_pos = new Vec3d(mc.player.posX, mc.player.posY + mc.player.getEyeHeight(), mc.player.posZ);
+
+		double diff_x = pos.x - eye_pos.x;
+		double diff_y = pos.y - eye_pos.y;
+		double diff_z = pos.z - eye_pos.z;
+
+		double diff_x_z = Math.sqrt(diff_x * diff_x + diff_z * diff_z);
+
+		float player_yaw   = (float)   Math.toDegrees(Math.atan2(diff_z, diff_x)) - 90f;
+		float player_pitch = (float) - Math.toDegrees(Math.atan2(diff_z, diff_x));
+
+		float[] rotations = {
+			mc.player.rotationYaw   + MathHelper.wrapDegrees(player_yaw   - mc.player.rotationYaw),
+			mc.player.rotationPitch + MathHelper.wrapDegrees(player_pitch - mc.player.rotationPitch)
+		};
+
+		mc.player.connection.sendPacket(new CPacketPlayer.Rotation(rotations[0], rotations[1], mc.player.onGround));
+	}
+
+	public EnumFacing get_placeale_side(BlockPos pos) {
+		for (EnumFacing sides : EnumFacing.values()) {
+			BlockPos left_side = pos.offset(sides);
+
+			if (!(mc.world.getBlockState(left_side).getBlock().canCollideCheck(mc.world.getBlockState(left_side), false))) {
+				continue;
+			}
+
+			IBlockState state_block = mc.world.getBlockState(left_side);
+
+			if (!(state_block.getMaterial().isReplaceable())) {
+				return sides;
+			}
+		}
+
+		return null;
+	}
+
+	public int find_in_hotbar() {
+		int slot = - 1;
+
+		for (int i = 0; i < 9; i++) {
+			ItemStack stack = mc.player.inventory.getStackInSlot(i);
+
+			if (stack != ItemStack.EMPTY) {
+				if (stack.getItem() instanceof ItemBlock) {
+					Block type_block = ((ItemBlock) stack.getItem()).getBlock();
+
+					if (type_block instanceof BlockObsidian) {
+						slot = i;
+
+						break;
+					}
+				}
+			}
+		}
+
+		return slot;
+	}
+
+	public boolean is_possible(BlockPos pos) {
+		return mc.world.getBlockState(pos).getBlock().canCollideCheck(mc.world.getBlockState(pos), false);
+	}
 }

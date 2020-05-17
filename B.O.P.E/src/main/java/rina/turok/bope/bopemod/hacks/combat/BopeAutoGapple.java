@@ -27,7 +27,7 @@ import rina.turok.bope.Bope;
 */
 public class BopeAutoGapple extends BopeModule {
 	BopeSetting auto_totem_d = create("Disable Auto Totem", "AutoGappleDisableAutoTotem", true);
-	BopeSetting slider_smart = create("Smart", "AutoGappleSmart", 2, 1, 18);
+	BopeSetting slider_smart = create("Smart",              "AutoGappleSmart",            2, 1, 18);
 
 	boolean find_gapple = false;
 	boolean move_gapple = false;

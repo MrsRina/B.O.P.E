@@ -74,6 +74,7 @@ public class BopeModuleManager {
 		add_module(new BopeCriticals());
 		add_module(new BopeFastUtil());
 		add_module(new BopeKillAura());
+		add_module(new BopeSorround());
 		add_module(new BopeVelocity());
 
 		// Exploit.
@@ -192,10 +193,6 @@ public class BopeModuleManager {
 		for (BopeModule modules : get_array_modules()) {
 			if (modules.get_bind(0) == event_key) {
 				modules.toggle();
-
-				if (modules.can_send_message_when_toggle()) {
-					BopeMessage.toggle_message(modules);
-				}
 			}
 		}
 	}

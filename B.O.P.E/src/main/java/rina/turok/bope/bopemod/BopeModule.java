@@ -153,6 +153,10 @@ public class BopeModule {
 				set_disable();
 			}
 		}
+
+		if (!(this.tag.equals("GUI") || this.tag.equals("HUD")) && this.toggle_message) {
+			BopeMessage.toggle_message(this);
+		}
 	}
 
 	public void toggle() {

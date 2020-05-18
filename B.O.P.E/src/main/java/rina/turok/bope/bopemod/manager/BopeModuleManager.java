@@ -26,7 +26,7 @@ import rina.turok.bope.bopemod.hacks.exploit.*;
 import rina.turok.bope.bopemod.hacks.movement.*;
 
 // Modules render.
-// import rina.turok.bope.bopemod.hacks.render.*;
+import rina.turok.bope.bopemod.hacks.render.*;
 
 // Modules.
 import rina.turok.bope.bopemod.hacks.BopeFinderModule;
@@ -86,7 +86,7 @@ public class BopeModuleManager {
 		add_module(new BopeStrafe());
 
 		// Render.
-		// init_bope_render_modules();
+		add_module(new BopeHighlight());
 
 		array_module.sort(Comparator.comparing(BopeModule::get_name));
 	}

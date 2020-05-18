@@ -8,6 +8,8 @@ import net.minecraft.util.math.BlockPos;
 
 import org.lwjgl.opengl.GL11;
 
+import java.util.*;
+
 // Draw.
 import rina.turok.turok.draw.TurokGL;
 
@@ -56,42 +58,42 @@ public class TurokRenderHelp extends Tessellator {
 		float y = pos.y;
 		float z = pos.z;
 
-		if (((boolean) Arrays.asList(type.split("-")).contains("down"))) {
+		if (((boolean) Arrays.asList(faces.split("-")).contains("down"))) {
 			buffer.pos(x + w, y, z).color(r, g, b, a).endVertex();
 			buffer.pos(x + w, y, z + d).color(r, g, b, a).endVertex();
 			buffer.pos(x, y, z + d).color(r, g, b, a).endVertex();
 			buffer.pos(x, y, z).color(r, g, b, a).endVertex();
 		}
 
-		if (((boolean) Arrays.asList(type.split("-")).contains("up"))) {
+		if (((boolean) Arrays.asList(faces.split("-")).contains("up"))) {
 			buffer.pos(x + w, y + h, z).color(r, g, b, a).endVertex();
 			buffer.pos(x, y + h, z).color(r, g, b, a).endVertex();
 			buffer.pos(x, y + h, z + d).color(r, g, b, a).endVertex();
 			buffer.pos(x + w, y + h, z + d).color(r, g, b, a).endVertex();
 		}
 
-		if (((boolean) Arrays.asList(type.split("-")).contains("north"))) {
+		if (((boolean) Arrays.asList(faces.split("-")).contains("north"))) {
 			buffer.pos(x + w, y, z).color(r, g, b, a).endVertex();
 			buffer.pos(x, y, z).color(r, g, b, a).endVertex();
 			buffer.pos(x, y + h, z).color(r, g, b, a).endVertex();
 			buffer.pos(x + w, y + h, z).color(r, g, b, a).endVertex();
 		}
 
-		if (((boolean) Arrays.asList(type.split("-")).contains("south"))) {
+		if (((boolean) Arrays.asList(faces.split("-")).contains("south"))) {
 			buffer.pos(x, y, z).color(r, g, b, a).endVertex();
 			buffer.pos(x, y, z + d).color(r, g, b, a).endVertex();
 			buffer.pos(x, y + h, z + d).color(r, g, b, a).endVertex();
 			buffer.pos(x, y + h, z).color(r, g, b, a).endVertex();
 		}
 
-		if (((boolean) Arrays.asList(type.split("-")).contains("west"))) {
+		if (((boolean) Arrays.asList(faces.split("-")).contains("west"))) {
 			buffer.pos(x, y, z).color(r, g, b, a).endVertex();
 			buffer.pos(x, y, z + d).color(r, g, b, a).endVertex();
 			buffer.pos(x, y + h, z + d).color(r, g, b, a).endVertex();
 			buffer.pos(x, y + h, z).color(r, g, b, a).endVertex();
 		}
 
-		if (((boolean) Arrays.asList(type.split("-")).contains("east"))) {
+		if (((boolean) Arrays.asList(faces.split("-")).contains("east"))) {
 			buffer.pos(x + w, y, z + d).color(r, g, b, a).endVertex();
 			buffer.pos(x + w, y, z).color(r, g, b, a).endVertex();
 			buffer.pos(x + w, y + h, z).color(r, g, b, a).endVertex();

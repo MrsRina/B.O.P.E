@@ -4,6 +4,7 @@
 	"package"            : "rina.turok.bope.mixins",
 	"refmap"             : "mixins.bope.refmap.json",
 	"mixins"             : [
+		"BopeMixinPlayerControllerMP",
 		"BopeMixinNetworkManager",
 		"BopeMixinMinecraft",
 		"BopeMixinEntitySP",

@@ -50,10 +50,11 @@ import rina.turok.bope.Bope;
 *
 */
 public class BopeSorround extends BopeModule {
-	BopeSetting animation   = create("Animation", "SorroundAnimation", false);
-	BopeSetting smoth       = create("Smoth",     "SorroundSmoth",     true);
-	BopeSetting slider_mode = create("Blocks",    "SorroundBlocks",    3, 3, 4);
-	BopeSetting ticks       = create("Ticks",     "SorroundTicks",     2, 0, 10);
+	//BopeSetting animation   = create("Animation", "SorroundAnimation", false);
+	BopeSetting smoth          = create("Smoth",            "SorroundSmoth",       true);
+	BopeSetting slider_mode    = create("Blocks",           "SorroundBlocks",      3, 3, 4);
+	BopeSetting tick_for_place = create("Tick to place",    "SorroundTickToPlace", 13, 1, 20);
+	BopeSetting ticks          = create("Ticks",            "SorroundTicks",       2, 0, 10);
 
 	int places_tick = 0;
 	int place_tick  = 0;
@@ -166,7 +167,7 @@ public class BopeSorround extends BopeModule {
 	@Override
 	public void update() {
 		if (mc.player != null) {
-			if (place_tick >= 10) {
+			if (place_tick >= tick_for_place.get_value(1)) {
 				place_tick = 0;
 
 				set_active(!is_active());
@@ -196,17 +197,17 @@ public class BopeSorround extends BopeModule {
 			int blocks_length = 0;
 			int places        = 0;
 
-			if (slider_mode.get_value(1) >= 3) {
+			if (slider_mode.get_value(1) == 3) {
 				many_blocks   = sorround_with_8_blocks;
 				blocks_length = 7; // 0 == 1; 0 + 1, 1, 2, 3, 4...
 			}
 
-			if (slider_mode.get_value(1) >= 4) {
+			if (slider_mode.get_value(1) == 4) {
 				many_blocks   = sorround_with_9_blocks;
 				blocks_length = 8; // 0 == 1; 0 + 1, 1, 2, 3, 4...
 			}
 
-			while (places < 4) {
+			while (places < slider_mode.get_value(1)) {
 				if (places_tick > blocks_length) {
 					places_tick = 0;
 

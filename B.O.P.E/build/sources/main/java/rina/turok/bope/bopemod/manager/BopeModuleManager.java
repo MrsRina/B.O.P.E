@@ -79,6 +79,7 @@ public class BopeModuleManager {
 
 		// Exploit.
 		add_module(new BopeXCarry());
+		add_module(new BopePushMiner());
 
 		// Movement.
 		add_module(new BopeEatMovement());

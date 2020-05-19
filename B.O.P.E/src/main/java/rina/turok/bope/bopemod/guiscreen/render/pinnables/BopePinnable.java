@@ -144,7 +144,32 @@ public class BopePinnable {
 		return false;
 	}
 
+	public void crush(int mx, int my) {
+		// Get current screen real length.
+		int screen_x = (mc.displayWidth / 2);
+		int screen_y = (mc.displayHeight / 2);
+
+		// Screen math for x.
+		if (this.x >= screen_x - 5) {
+			this.x = screen_x - 1;
+		} else if (this.x <= 5) {
+			this.x = 1;
+		} else {
+			set_x(mx - this.move_x);
+		}
+
+		// Math for y.
+		if (this.y >= screen_y - 5) {
+			this.y = screen_y - 1;
+		} else if (this.y <= 5) {
+			this.y = 1;
+		} else {
+			set_y(my - this.move_y);
+		}
+	}
+
 	public void render() {}
+	public void update() {}
 
 	public void click(int mx, int my, int mouse) {
 		if (mouse == 0) {
@@ -163,8 +188,7 @@ public class BopePinnable {
 
 	public void render(int mx, int my, int tick) {
 		if (is_moving()) {
-			set_x(mx - this.move_x);
-			set_y(my - this.move_y);
+			crush(mx, my);
 		}
 
 		if (this.x + this.width <= (mc.displayWidth / 2) / 2) {

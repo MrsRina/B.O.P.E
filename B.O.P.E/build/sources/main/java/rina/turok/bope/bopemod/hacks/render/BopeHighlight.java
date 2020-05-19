@@ -22,6 +22,13 @@ import rina.turok.bope.bopemod.BopeModule;
 // Turok.
 import rina.turok.turok.draw.TurokRenderHelp;
 
+/**
+* @author Rina
+*
+* Created by Rina.
+* 18/05/2020. -> 00:25 AM. :sunglass:
+*
+*/
 public class BopeHighlight extends BopeModule {
 	BopeSetting rgb = create("RGB Effect", "HighlightRGBEffect", true);
 	BopeSetting r   = create("R", "HighlightR", 255, 1, 255);

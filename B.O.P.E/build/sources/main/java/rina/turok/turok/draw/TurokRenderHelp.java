@@ -28,35 +28,54 @@ public class TurokRenderHelp extends Tessellator {
 	}
 
 	public static void prepare(int mode) {
-		TurokGL.prepare(); // Prepare.
+		prepare_gl();
 
 		INSTANCE.getBuffer().begin(mode, DefaultVertexFormats.POSITION_COLOR);
 	}
 
 	public static void release() {
-		TurokGL.release(); // Buffer //
-
 		INSTANCE.draw();
+
+		release_gl();
 	}
 
 	public static void prepare_gl() {
-		TurokGL.prepare();
+		GL11.glBlendFunc(GL11.GL_SRC_ALPHA, GL11.GL_ONE_MINUS_SRC_ALPHA);
+		
+		GlStateManager.tryBlendFuncSeparate(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA, GlStateManager.SourceFactor.ONE, GlStateManager.DestFactor.ZERO);
+		GlStateManager.glLineWidth(1.5F);
+		GlStateManager.disableTexture2D();
+		GlStateManager.depthMask(false);
+		GlStateManager.enableBlend();
+		GlStateManager.disableDepth();
+		GlStateManager.disableLighting();
+		GlStateManager.disableCull();
+		GlStateManager.enableAlpha();
+		GlStateManager.color(1, 1, 1);
 	}
 
 	public static void release_gl() {
-		TurokGL.release();
+		GlStateManager.enableCull();
+		GlStateManager.depthMask(true);
+		GlStateManager.enableTexture2D();
+		GlStateManager.enableBlend();
+		GlStateManager.enableDepth();
 	}
 
-	public static void draw_cube(BlockPos pos, float r, float g, float b, float a, String faces) {
+	public static void draw_cube(BlockPos block_pos, int r, int g, int b, int a, String faces) {
+		draw_cube(block_pos.x, block_pos.y, block_pos.z, 1, 1, 1, r, g, b, a, faces);
+	}
+
+	public static void draw_cube(BlockPos block_pos, int w, int h, int d, int r, int g, int b, int a, String faces) {
+		draw_cube(block_pos.x, block_pos.y, block_pos.z, w, h, d, r, g, b, a, faces);
+	}
+
+	public static void draw_cube(int x, int y, int z, int r, int g, int b, int a, String faces) {
+		draw_cube(x, y, z, 1, 1, 1, r, g, b, a, faces);
+	}
+
+	public static void draw_cube(int x, int y, int z, int w, int h, int d, int r, int g, int b, int a, String faces) {
 		BufferBuilder buffer = INSTANCE.getBuffer();
-
-		float w = 1;
-		float h = 1;
-		float d = 1;
-
-		float x = pos.x;
-		float y = pos.y;
-		float z = pos.z;
 
 		if (((boolean) Arrays.asList(faces.split("-")).contains("down"))) {
 			buffer.pos(x + w, y, z).color(r, g, b, a).endVertex();

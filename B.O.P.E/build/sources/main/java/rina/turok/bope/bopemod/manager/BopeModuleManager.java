@@ -87,6 +87,7 @@ public class BopeModuleManager {
 
 		// Render.
 		add_module(new BopeHighlight());
+		add_module(new BopePlayerESP());
 
 		array_module.sort(Comparator.comparing(BopeModule::get_name));
 	}

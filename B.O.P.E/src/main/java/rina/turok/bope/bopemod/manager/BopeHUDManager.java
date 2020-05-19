@@ -31,6 +31,10 @@ public class BopeHUDManager {
 		add_component_pinnable(new BopeInventoryPreview());
 		add_component_pinnable(new BopeArmorPreview());
 		add_component_pinnable(new BopeUser());
+		add_component_pinnable(new BopeTotemCount());
+		add_component_pinnable(new BopeCrystalCount());
+		add_component_pinnable(new BopeEXPCount());
+		add_component_pinnable(new BopeGappleCount());
 
 		array_hud.sort(Comparator.comparing(BopePinnable::get_title));
 	}

@@ -327,7 +327,7 @@ public class BopeConfigManager {
 		JsonObject  BOPE_MAIN_BUTTONS = BOPE_JSON.get("buttons").getAsJsonObject();
 
 		for (BopeSetting buttons : Bope.get_setting_manager().get_array_settings()) {
-			if (!(is(buttons, "buttons"))) {
+			if (!(is(buttons, "button"))) {
 				continue;
 			}
 

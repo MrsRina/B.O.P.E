@@ -33,11 +33,11 @@ import rina.turok.bope.Bope;
 *
 */
 public class BopeKillAura extends BopeModule {
-	BopeSetting player    = create("Player",    "KillAuraPlayer",  true);
-	BopeSetting hostile   = create("Hostile",   "KillAuraHostile", false);
-	BopeSetting sword     = create("Sword",     "KillAuraSword",   true);
-	BopeSetting sync_tps  = create("Sync TPS",  "KillAuraSyncTps", true);
-	BopeSetting range     = create("Range",     "KillAuraRange",   5.0, 0.5, 6.0);
+	BopeSetting player    = create("Player",   "KillAuraPlayer",  true);
+	BopeSetting hostile   = create("Hostile",  "KillAuraHostile", false);
+	BopeSetting sword     = create("Sword",    "KillAuraSword",   true);
+	BopeSetting sync_tps  = create("Sync TPS", "KillAuraSyncTps", true);
+	BopeSetting range     = create("Range",    "KillAuraRange",   5.0, 0.5, 6.0);
 
 	boolean start_verify = true;
 

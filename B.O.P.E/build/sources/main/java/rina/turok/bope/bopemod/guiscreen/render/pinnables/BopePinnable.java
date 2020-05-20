@@ -149,22 +149,31 @@ public class BopePinnable {
 		int screen_x = (mc.displayWidth / 2);
 		int screen_y = (mc.displayHeight / 2);
 
-		// Screen math for x.
-		if (this.x >= screen_x - 5) {
-			this.x = screen_x - 1;
-		} else if (this.x <= 5) {
-			this.x = 1;
-		} else {
-			set_x(mx - this.move_x);
+		set_x(mx - this.move_x);
+		set_y(my - this.move_y);
+
+		if (this.x + this.width >= screen_x) {
+			this.x = screen_x - this.width - 1;
 		}
 
-		// Math for y.
-		if (this.y >= screen_y - 5) {
-			this.y = screen_y - 1;
-		} else if (this.y <= 5) {
+		if (this.x <= 0) {
+			this.x = 1;
+		}
+
+		if (this.y + this.height >= screen_y) {
+			this.y = screen_y - this.height - 1;
+		}
+
+		if (this.y <= 0) {
 			this.y = 1;
-		} else {
-			set_y(my - this.move_y);
+		}
+
+		if (this.x % 2 != 0) {
+			this.x += this.x % 2;
+		}
+
+		if (this.y % 2 != 0) {
+			this.y += this.y % 2;
 		}
 	}
 

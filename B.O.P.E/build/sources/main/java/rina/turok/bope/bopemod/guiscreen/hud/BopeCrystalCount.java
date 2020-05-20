@@ -57,7 +57,7 @@ public class BopeCrystalCount extends BopePinnable {
 				if (stack.getItem() == Items.END_CRYSTAL) {
 					mc.getRenderItem().renderItemAndEffectIntoGUI(stack, this.get_x(), this.get_y());
 					
-					create_line(Integer.toString(crystals + off), 16 + 2, 19 / 2);
+					create_line(Integer.toString(crystals + off), 16 + 2, 16 - get(Integer.toString(crystals + off), "height"));
 				}
 			}
 
@@ -68,7 +68,7 @@ public class BopeCrystalCount extends BopePinnable {
 			GlStateManager.popMatrix();
 
 			this.set_width(16 + get(Integer.toString(crystals + off), "width") + 2);
-			this.set_height(19);
+			this.set_height(16);
 		}
 	}
 }

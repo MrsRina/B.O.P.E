@@ -67,6 +67,7 @@ public class BopeModuleManager {
 
 		// Chat.
 		add_module(new BopeChatSuffix());
+		add_module(new BopeVisualRange());
 
 		// Combat.
 		add_module(new BopeAutoGapple());
@@ -88,6 +89,7 @@ public class BopeModuleManager {
 		// Render.
 		add_module(new BopeHighlight());
 		add_module(new BopePlayerESP());
+		add_module(new BopeSwing());
 
 		array_module.sort(Comparator.comparing(BopeModule::get_name));
 	}

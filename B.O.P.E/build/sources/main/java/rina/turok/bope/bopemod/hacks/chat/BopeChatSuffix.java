@@ -118,6 +118,7 @@ public class BopeChatSuffix extends BopeModule {
 		" on top",
 		" a",
 		" powerful",
+		" auto",
 		""
 	};
 

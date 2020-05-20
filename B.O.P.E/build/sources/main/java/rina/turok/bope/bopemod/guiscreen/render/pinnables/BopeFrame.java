@@ -1,5 +1,7 @@
 package rina.turok.bope.bopemod.guiscreen.render.pinnables;
 
+import net.minecraft.client.Minecraft;
+
 import java.util.*;
 import java.awt.*;
 
@@ -58,6 +60,8 @@ public class BopeFrame {
 	public static int bdw_g = 0;
 	public static int bdw_b = 0;
 	public static int bdw_a = 255;
+
+	public final Minecraft mc = Minecraft.getMinecraft();
 
 	public BopeFrame(String name, String tag, int initial_x, int initial_y) {
 		this.pinnable_button = new ArrayList<>();
@@ -168,6 +172,39 @@ public class BopeFrame {
 		return false;
 	}
 
+	public void crush(int mx, int my) {
+		// Get current screen real length.
+		int screen_x = (mc.displayWidth / 2);
+		int screen_y = (mc.displayHeight / 2);
+
+		set_x(mx - this.move_x);
+		set_y(my - this.move_y);
+
+		if (this.x + this.width >= screen_x) {
+			this.x = screen_x - this.width - 1;
+		}
+
+		if (this.x <= 0) {
+			this.x = 1;
+		}
+
+		if (this.y + this.height >= screen_y) {
+			this.y = screen_y - this.height - 1;
+		}
+
+		if (this.y <= 0) {
+			this.y = 1;
+		}
+
+		if (this.x % 2 != 0) {
+			this.x += this.x % 2;
+		}
+
+		if (this.y % 2 != 0) {
+			this.y += this.y % 2;
+		}
+	}
+
 	public void mouse(int mx, int my, int mouse) {
 		for (BopePinnableButton pinnables_buttons : this.pinnable_button) {
 			pinnables_buttons.click(mx, my, mouse);
@@ -207,8 +244,7 @@ public class BopeFrame {
 		BopeDraw.draw_string(this.name, this.x + 4, this.y + 4, this.nc_r, this.nc_g, this.nc_b);
 
 		if (is_moving()) {
-			set_x(mx - this.move_x);
-			set_y(my - this.move_y);
+			crush(mx, my);
 		}
 	
 		for (BopePinnableButton pinnables_buttons : this.pinnable_button) {

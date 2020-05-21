@@ -38,10 +38,10 @@ public class BopeEventRender extends BopeEventCancellable {
 	}
 
 	public void set_translation(Vec3d pos) {
-		this.tessellator.getBuffer().setTranslation(- pos.x, - pos.y, - pos.z);
+		get_buffer_build().setTranslation(- pos.x, - pos.y, - pos.z);
 	}
 
 	public void reset_translation() {
-		this.tessellator.getBuffer().setTranslation(render_pos.x, render_pos.y, render_pos.z);
+		set_translation(render_pos);
 	}
 }

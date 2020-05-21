@@ -30,14 +30,23 @@ import rina.turok.turok.draw.TurokRenderHelp;
 *
 */
 public class BopeHighlight extends BopeModule {
-	BopeSetting rgb = create("RGB Effect", "HighlightRGBEffect", true);
-	BopeSetting r   = create("R", "HighlightR", 255, 1, 255);
-	BopeSetting g   = create("G", "HighlightG", 255, 1, 255);
-	BopeSetting b   = create("B", "HighlightB", 255, 1, 255);
+	BopeSetting mode = create("Mode", "HighlightMode", "Pretty", combobox("Pretty", "Solid", "Outline"));
+	
+	BopeSetting rgb  = create("RGB Effect", "HighlightRGBEffect", true);
+	
+	BopeSetting r = create("R", "HighlightR", 255, 1, 255);
+	BopeSetting g = create("G", "HighlightG", 255, 1, 255);
+	BopeSetting b = create("B", "HighlightB", 255, 1, 255);
+	BopeSetting a = create("A", "HighlightA", 255, 1, 255);
+	
+	BopeSetting l_a = create("Outline A", "HighlightLineA", 255, 1, 255);
 
 	int color_r;
 	int color_g;
 	int color_b;
+
+	boolean outline = false;
+	boolean solid   = false;
 
 	public BopeHighlight() {
 		super(BopeCategory.BOPE_RENDER);
@@ -49,6 +58,12 @@ public class BopeHighlight extends BopeModule {
 
 		// Release or launch the module.
 		release("B.O.P.E - Module - B.O.P.E");
+	}
+
+	@Override
+	public void disable() {
+		outline = false;
+		solid   = false;
 	}
 
 	@Override
@@ -73,20 +88,40 @@ public class BopeHighlight extends BopeModule {
 			color_b = b.get_value(3);
 		}
 
+		if (mode.in("Pretty")) {
+			outline = true;
+			solid   = true;
+		}
+
+		if (mode.in("Solid")) {
+			outline = false;
+			solid   = true;
+		}
+
+		if (mode.in("Outline")) {
+			outline = true;
+			solid   = false;
+		}
+
 		RayTraceResult result = mc.objectMouseOver;
 
 		if (result != null) {
 			if (result.typeOfHit == RayTraceResult.Type.BLOCK) {
 				BlockPos block_pos = result.getBlockPos();
 
-				// Prepare.
-				TurokRenderHelp.prepare(GL11.GL_QUADS);
+				// Solid.
+				if (solid) {
+					TurokRenderHelp.prepare(GL11.GL_QUADS);
+					TurokRenderHelp.draw_cube(block_pos, color_r, color_g, color_b, a.get_value(1), "all");
+					TurokRenderHelp.release();
+				}
 
-				// Draw;
-				TurokRenderHelp.draw_cube(block_pos, color_r, color_g, color_b, 255, "down-up-north-south-west-east");
-
-				// Release;
-				TurokRenderHelp.release();
+				// Outline.
+				if (outline) {
+					TurokRenderHelp.prepare(GL11.GL_LINES);
+					TurokRenderHelp.draw_cube_line(block_pos, color_r, color_g, color_b, l_a.get_value(1), "all");
+					TurokRenderHelp.release();
+				}
 			}
 		}
 	}

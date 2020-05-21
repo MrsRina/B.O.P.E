@@ -148,7 +148,7 @@ public class BopeModuleManager {
 
 		for (BopeModule modules : get_array_modules()) {
 			if (modules.is_active()) {
-				mc.profiler.startSection(modules.get_name());
+				mc.profiler.startSection(modules.get_tag());
 
 				modules.render(event_render);
 

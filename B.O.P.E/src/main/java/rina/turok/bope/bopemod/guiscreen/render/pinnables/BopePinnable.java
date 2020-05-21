@@ -178,7 +178,6 @@ public class BopePinnable {
 	}
 
 	public void render() {}
-	public void update() {}
 
 	public void click(int mx, int my, int mouse) {
 		if (mouse == 0) {

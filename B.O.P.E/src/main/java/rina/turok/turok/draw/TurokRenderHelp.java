@@ -6,117 +6,211 @@ import net.minecraft.client.renderer.BufferBuilder;
 import net.minecraft.client.renderer.Tessellator;
 import net.minecraft.util.math.BlockPos;
 
-import org.lwjgl.opengl.GL11;
-
 import java.util.*;
 
-// Draw.
-import rina.turok.turok.draw.TurokGL;
+import static org.lwjgl.opengl.GL11.*;
 
 /**
-* @author Rina
+* @author 086
 *
-* Created by Rina.
+* Update by Rina.
 * 08/04/20.
 *
 */
 public class TurokRenderHelp extends Tessellator {
-	public static TurokRenderHelp INSTANCE = new TurokRenderHelp();
+    public static TurokRenderHelp INSTANCE = new TurokRenderHelp();
 
-	public TurokRenderHelp() {
-		super(0x200000);
-	}
+    public TurokRenderHelp() {
+        super(0x200000);
+    }
 
-	public static void prepare(int mode) {
-		prepare_gl();
+    public static void prepare(int mode) {
+        prepare_gl();
+        begin(mode);
+    }
 
-		INSTANCE.getBuffer().begin(mode, DefaultVertexFormats.POSITION_COLOR);
-	}
+    public static void prepare_gl() {
+        glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+        GlStateManager.tryBlendFuncSeparate(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA, GlStateManager.SourceFactor.ONE, GlStateManager.DestFactor.ZERO);
+        GlStateManager.glLineWidth(1.5F);
+        GlStateManager.disableTexture2D();
+        GlStateManager.depthMask(false);
+        GlStateManager.enableBlend();
+        GlStateManager.disableDepth();
+        GlStateManager.disableLighting();
+        GlStateManager.disableCull();
+        GlStateManager.enableAlpha();
+        GlStateManager.color(1,1,1);
+    }
 
-	public static void release() {
-		INSTANCE.draw();
+    public static void begin(int mode) {
+        INSTANCE.getBuffer().begin(mode, DefaultVertexFormats.POSITION_COLOR);
+    }
 
-		release_gl();
-	}
+    public static void release() {
+        render();
+        release_gl();
+    }
 
-	public static void prepare_gl() {
-		GL11.glBlendFunc(GL11.GL_SRC_ALPHA, GL11.GL_ONE_MINUS_SRC_ALPHA);
-		
-		GlStateManager.tryBlendFuncSeparate(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA, GlStateManager.SourceFactor.ONE, GlStateManager.DestFactor.ZERO);
-		GlStateManager.glLineWidth(1.5F);
-		GlStateManager.disableTexture2D();
-		GlStateManager.depthMask(false);
-		GlStateManager.enableBlend();
-		GlStateManager.disableDepth();
-		GlStateManager.disableLighting();
-		GlStateManager.disableCull();
-		GlStateManager.enableAlpha();
-		GlStateManager.color(1, 1, 1);
-	}
+    public static void render() {
+        INSTANCE.draw();
+    }
 
-	public static void release_gl() {
-		GlStateManager.enableCull();
-		GlStateManager.depthMask(true);
-		GlStateManager.enableTexture2D();
-		GlStateManager.enableBlend();
-		GlStateManager.enableDepth();
-	}
+    public static void release_gl() {
+        GlStateManager.enableCull();
+        GlStateManager.depthMask(true);
+        GlStateManager.enableTexture2D();
+        GlStateManager.enableBlend();
+        GlStateManager.enableDepth();
+    }
 
-	public static void draw_cube(BlockPos block_pos, int r, int g, int b, int a, String faces) {
-		draw_cube(block_pos.x, block_pos.y, block_pos.z, 1, 1, 1, r, g, b, a, faces);
-	}
+    public static void draw_cube(BlockPos blockPos, int argb, String sides) {
+        final int a = (argb >>> 24) & 0xFF;
+        final int r = (argb >>> 16) & 0xFF;
+        final int g = (argb >>> 8) & 0xFF;
+        final int b = argb & 0xFF;
+        draw_cube(blockPos, r, g, b, a, sides);
+    }
 
-	public static void draw_cube(BlockPos block_pos, int w, int h, int d, int r, int g, int b, int a, String faces) {
-		draw_cube(block_pos.x, block_pos.y, block_pos.z, w, h, d, r, g, b, a, faces);
-	}
+    public static void draw_cube(float x, float y, float z, int argb, String sides) {
+        final int a = (argb >>> 24) & 0xFF;
+        final int r = (argb >>> 16) & 0xFF;
+        final int g = (argb >>> 8) & 0xFF;
+        final int b = argb & 0xFF;
+        draw_cube(INSTANCE.getBuffer(), x, y, z, 1, 1, 1, r, g, b, a, sides);
+    }
 
-	public static void draw_cube(int x, int y, int z, int r, int g, int b, int a, String faces) {
-		draw_cube(x, y, z, 1, 1, 1, r, g, b, a, faces);
-	}
+    public static void draw_cube(BlockPos blockPos, int r, int g, int b, int a, String sides) {
+        draw_cube(INSTANCE.getBuffer(), blockPos.x, blockPos.y, blockPos.z, 1, 1, 1, r, g, b, a, sides);
+    }
 
-	public static void draw_cube(int x, int y, int z, int w, int h, int d, int r, int g, int b, int a, String faces) {
-		BufferBuilder buffer = INSTANCE.getBuffer();
+    public static void draw_cube_line(BlockPos blockPos, int argb, String sides) {
+        final int a = (argb >>> 24) & 0xFF;
+        final int r = (argb >>> 16) & 0xFF;
+        final int g = (argb >>> 8) & 0xFF;
+        final int b = argb & 0xFF;
+        draw_cube_line(blockPos, r, g, b, a, sides);
+    }
 
-		if (((boolean) Arrays.asList(faces.split("-")).contains("down"))) {
-			buffer.pos(x + w, y, z).color(r, g, b, a).endVertex();
-			buffer.pos(x + w, y, z + d).color(r, g, b, a).endVertex();
-			buffer.pos(x, y, z + d).color(r, g, b, a).endVertex();
-			buffer.pos(x, y, z).color(r, g, b, a).endVertex();
-		}
+    public static void draw_cube_line(float x, float y, float z, int argb, String sides) {
+        final int a = (argb >>> 24) & 0xFF;
+        final int r = (argb >>> 16) & 0xFF;
+        final int g = (argb >>> 8) & 0xFF;
+        final int b = argb & 0xFF;
+        draw_cube_line(INSTANCE.getBuffer(), x, y, z, 1, 1, 1, r, g, b, a, sides);
+    }
 
-		if (((boolean) Arrays.asList(faces.split("-")).contains("up"))) {
-			buffer.pos(x + w, y + h, z).color(r, g, b, a).endVertex();
-			buffer.pos(x, y + h, z).color(r, g, b, a).endVertex();
-			buffer.pos(x, y + h, z + d).color(r, g, b, a).endVertex();
-			buffer.pos(x + w, y + h, z + d).color(r, g, b, a).endVertex();
-		}
+    public static void draw_cube_line(BlockPos blockPos, int r, int g, int b, int a, String sides) {
+        draw_cube_line(INSTANCE.getBuffer(), blockPos.x, blockPos.y, blockPos.z, 1, 1, 1, r, g, b, a, sides);
+    }
 
-		if (((boolean) Arrays.asList(faces.split("-")).contains("north"))) {
-			buffer.pos(x + w, y, z).color(r, g, b, a).endVertex();
-			buffer.pos(x, y, z).color(r, g, b, a).endVertex();
-			buffer.pos(x, y + h, z).color(r, g, b, a).endVertex();
-			buffer.pos(x + w, y + h, z).color(r, g, b, a).endVertex();
-		}
+    public static BufferBuilder get_buffer_build() {
+        return INSTANCE.getBuffer();
+    }
 
-		if (((boolean) Arrays.asList(faces.split("-")).contains("south"))) {
-			buffer.pos(x, y, z).color(r, g, b, a).endVertex();
-			buffer.pos(x, y, z + d).color(r, g, b, a).endVertex();
-			buffer.pos(x, y + h, z + d).color(r, g, b, a).endVertex();
-			buffer.pos(x, y + h, z).color(r, g, b, a).endVertex();
-		}
+    public static void draw_cube(final BufferBuilder buffer, float x, float y, float z, float w, float h, float d, int r, int g, int b, int a, String sides) {
+        if (((boolean) Arrays.asList(sides.split("-")).contains("down")) || sides.equalsIgnoreCase("all")) {
+            buffer.pos(x + w, y, z).color(r, g, b, a).endVertex();
+            buffer.pos(x + w, y, z + d).color(r, g, b, a).endVertex();
+            buffer.pos(x, y, z + d).color(r, g, b, a).endVertex();
+            buffer.pos(x, y, z).color(r, g, b, a).endVertex();
+        }
 
-		if (((boolean) Arrays.asList(faces.split("-")).contains("west"))) {
-			buffer.pos(x, y, z).color(r, g, b, a).endVertex();
-			buffer.pos(x, y, z + d).color(r, g, b, a).endVertex();
-			buffer.pos(x, y + h, z + d).color(r, g, b, a).endVertex();
-			buffer.pos(x, y + h, z).color(r, g, b, a).endVertex();
-		}
+        if (((boolean) Arrays.asList(sides.split("-")).contains("up")) || sides.equalsIgnoreCase("all")) {
+            buffer.pos(x + w, y + h, z).color(r, g, b, a).endVertex();
+            buffer.pos(x, y + h, z).color(r, g, b, a).endVertex();
+            buffer.pos(x, y + h, z + d).color(r, g, b, a).endVertex();
+            buffer.pos(x + w, y + h, z + d).color(r, g, b, a).endVertex();
+        }
 
-		if (((boolean) Arrays.asList(faces.split("-")).contains("east"))) {
-			buffer.pos(x + w, y, z + d).color(r, g, b, a).endVertex();
-			buffer.pos(x + w, y, z).color(r, g, b, a).endVertex();
-			buffer.pos(x + w, y + h, z).color(r, g, b, a).endVertex();
-			buffer.pos(x + w, y + h, z + d).color(r, g, b, a).endVertex();
-		}
-	}
+        if (((boolean) Arrays.asList(sides.split("-")).contains("north")) || sides.equalsIgnoreCase("all")) {
+            buffer.pos(x + w, y, z).color(r, g, b, a).endVertex();
+            buffer.pos(x, y, z).color(r, g, b, a).endVertex();
+            buffer.pos(x, y + h, z).color(r, g, b, a).endVertex();
+            buffer.pos(x + w, y + h, z).color(r, g, b, a).endVertex();
+        }
+
+        if (((boolean) Arrays.asList(sides.split("-")).contains("south")) || sides.equalsIgnoreCase("all")) {
+            buffer.pos(x, y, z + d).color(r, g, b, a).endVertex();
+            buffer.pos(x + w, y, z + d).color(r, g, b, a).endVertex();
+            buffer.pos(x + w, y + h, z + d).color(r, g, b, a).endVertex();
+            buffer.pos(x, y + h, z + d).color(r, g, b, a).endVertex();
+        }
+
+        if (((boolean) Arrays.asList(sides.split("-")).contains("south")) || sides.equalsIgnoreCase("all")) {
+            buffer.pos(x, y, z).color(r, g, b, a).endVertex();
+            buffer.pos(x, y, z + d).color(r, g, b, a).endVertex();
+            buffer.pos(x, y + h, z + d).color(r, g, b, a).endVertex();
+            buffer.pos(x, y + h, z).color(r, g, b, a).endVertex();
+        }
+
+        if (((boolean) Arrays.asList(sides.split("-")).contains("south")) || sides.equalsIgnoreCase("all")) {
+            buffer.pos(x + w, y, z + d).color(r, g, b, a).endVertex();
+            buffer.pos(x + w, y, z).color(r, g, b, a).endVertex();
+            buffer.pos(x + w, y + h, z).color(r, g, b, a).endVertex();
+            buffer.pos(x + w, y + h, z + d).color(r, g, b, a).endVertex();
+        }
+    }
+
+    public static void draw_cube_line(final BufferBuilder buffer, float x, float y, float z, float w, float h, float d, int r, int g, int b, int a, String sides) {
+        if (((boolean) Arrays.asList(sides.split("-")).contains("downwest")) || sides.equalsIgnoreCase("all")) {
+            buffer.pos(x, y, z).color(r, g, b, a).endVertex();
+            buffer.pos(x, y, z + d).color(r, g, b, a).endVertex();
+        }
+
+        if (((boolean) Arrays.asList(sides.split("-")).contains("upwest")) || sides.equalsIgnoreCase("all")) {
+            buffer.pos(x, y + h, z).color(r, g, b, a).endVertex();
+            buffer.pos(x, y + h, z + d).color(r, g, b, a).endVertex();
+        }
+
+        if (((boolean) Arrays.asList(sides.split("-")).contains("downeast")) || sides.equalsIgnoreCase("all")) {
+            buffer.pos(x + w, y, z).color(r, g, b, a).endVertex();
+            buffer.pos(x + w, y, z + d).color(r, g, b, a).endVertex();
+        }
+
+        if (((boolean) Arrays.asList(sides.split("-")).contains("upeast")) || sides.equalsIgnoreCase("all")) {
+            buffer.pos(x + w, y + h, z).color(r, g, b, a).endVertex();
+            buffer.pos(x + w, y + h, z + d).color(r, g, b, a).endVertex();
+        }
+
+       if (((boolean) Arrays.asList(sides.split("-")).contains("downnorth")) || sides.equalsIgnoreCase("all")) {
+            buffer.pos(x, y, z).color(r, g, b, a).endVertex();
+            buffer.pos(x + w, y, z).color(r, g, b, a).endVertex();
+        }
+
+        if (((boolean) Arrays.asList(sides.split("-")).contains("upnorth")) || sides.equalsIgnoreCase("all")) {
+            buffer.pos(x, y + h, z).color(r, g, b, a).endVertex();
+            buffer.pos(x + w, y + h, z).color(r, g, b, a).endVertex();
+        }
+
+        if (((boolean) Arrays.asList(sides.split("-")).contains("downsouth")) || sides.equalsIgnoreCase("all")) {
+            buffer.pos(x, y, z + d).color(r, g, b, a).endVertex();
+            buffer.pos(x + w, y, z + d).color(r, g, b, a).endVertex();
+        }
+
+        if (((boolean) Arrays.asList(sides.split("-")).contains("upsouth")) || sides.equalsIgnoreCase("all")) {
+            buffer.pos(x, y + h, z + d).color(r, g, b, a).endVertex();
+            buffer.pos(x + w, y + h, z + d).color(r, g, b, a).endVertex();
+        }
+
+        if (((boolean) Arrays.asList(sides.split("-")).contains("nortwest")) || sides.equalsIgnoreCase("all")) {
+            buffer.pos(x, y, z).color(r, g, b, a).endVertex();
+            buffer.pos(x, y + h, z).color(r, g, b, a).endVertex();
+        }
+
+        if (((boolean) Arrays.asList(sides.split("-")).contains("norteast")) || sides.equalsIgnoreCase("all")) {
+            buffer.pos(x + w, y, z).color(r, g, b, a).endVertex();
+            buffer.pos(x + w, y + h, z).color(r, g, b, a).endVertex();
+        }
+
+        if (((boolean) Arrays.asList(sides.split("-")).contains("southweast")) || sides.equalsIgnoreCase("all")) {
+            buffer.pos(x, y, z + d).color(r, g, b, a).endVertex();
+            buffer.pos(x, y + h, z + d).color(r, g, b, a).endVertex();
+        }
+
+        if (((boolean) Arrays.asList(sides.split("-")).contains("southeast")) || sides.equalsIgnoreCase("all")) {
+            buffer.pos(x + w, y, z + d).color(r, g, b, a).endVertex();
+            buffer.pos(x + w, y + h, z + d).color(r, g, b, a).endVertex();
+        }
+    }
 }

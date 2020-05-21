@@ -146,15 +146,14 @@ public class BopeModuleManager {
 
 		mc.profiler.endSection();
 
-		for (BopeModule modules : get_array_modules()) {
-			if (modules.is_active()) {
-				mc.profiler.startSection(modules.get_name());
+		get_array_modules().stream().filter(modules -> modules.is_active()).forEach(modules -> {
+			mc.profiler.startSection(modules.get_tag());
 
-				modules.render(event_render);
+			modules.render(event_render);
 
-				mc.profiler.endSection();
-			}
-		}
+			mc.profiler.endSection();
+			
+		});
 
 		mc.profiler.startSection("release");
 

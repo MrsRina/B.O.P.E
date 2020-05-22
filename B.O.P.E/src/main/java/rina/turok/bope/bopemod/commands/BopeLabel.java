@@ -20,7 +20,7 @@ import rina.turok.bope.Bope;
 */
 public class BopeLabel extends BopeCommand {
 	public BopeLabel() {
-		super("label", "Change label from a module.");
+		super("label", "For change a custom label widget from a module.");
 	}
 
 	public boolean get_message(String[] message) {

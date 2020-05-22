@@ -18,7 +18,7 @@ import rina.turok.bope.Bope;
 */
 public class BopeSettings extends BopeCommand {
 	public BopeSettings() {
-		super("settings", "Save/load settings.");
+		super("settings", "To save/load settings.");
 	}
 
 	public boolean get_message(String[] message) {

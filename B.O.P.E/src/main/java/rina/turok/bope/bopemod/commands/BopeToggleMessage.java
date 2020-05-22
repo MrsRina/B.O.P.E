@@ -17,7 +17,7 @@ import rina.turok.bope.Bope;
 */
 public class BopeToggleMessage extends BopeCommand {
 	public BopeToggleMessage() {
-		super("alert", "alert if a module does active.");
+		super("alert", "For set alert if a module does active.");
 	}
 
 	public boolean get_message(String[] message) {

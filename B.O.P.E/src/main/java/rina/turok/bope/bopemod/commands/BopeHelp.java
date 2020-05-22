@@ -19,7 +19,7 @@ import rina.turok.bope.Bope;
 */
 public class BopeHelp extends BopeCommand {
 	public BopeHelp() {
-		super("help", "To get list of commands.");
+		super("help", "A help util.");
 	}
 
 	public boolean get_message(String[] message) {

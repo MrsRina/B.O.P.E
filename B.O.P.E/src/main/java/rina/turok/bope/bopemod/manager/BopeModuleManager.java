@@ -88,6 +88,7 @@ public class BopeModuleManager {
 
 		// Render.
 		add_module(new BopeHighlight());
+		add_module(new BopeHoleColor());
 		add_module(new BopePlayerESP());
 		add_module(new BopeSwing());
 

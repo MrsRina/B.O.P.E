@@ -1,13 +1,14 @@
-Processing 92 files
+Processing 93 files
 Start Processing: rina/turok/bope/Bope.java
 New Key: class net/minecraftforge/fml/common/Mod
 New Key: class net/minecraftforge/fml/common/Mod
-Rename method net/minecraft/client/Minecraft/getMinecraft ()Lnet/minecraft/client/Minecraft;[4933,4945]::getMinecraft->func_71410_x
-Rename field net/minecraft/client/Minecraft/player[4948,4954]::player->field_71439_g
-Rename method net/minecraft/client/Minecraft/getMinecraft ()Lnet/minecraft/client/Minecraft;[5005,5017]::getMinecraft->func_71410_x
-Rename field net/minecraft/client/Minecraft/player[5020,5026]::player->field_71439_g
-Rename method net/minecraft/command/ICommandSender/getName ()Ljava/lang/String;[5034,5041]::getName->func_70005_c_
+Rename method net/minecraft/client/Minecraft/getMinecraft ()Lnet/minecraft/client/Minecraft;[5121,5133]::getMinecraft->func_71410_x
+Rename field net/minecraft/client/Minecraft/player[5136,5142]::player->field_71439_g
+Rename method net/minecraft/client/Minecraft/getMinecraft ()Lnet/minecraft/client/Minecraft;[5193,5205]::getMinecraft->func_71410_x
+Rename field net/minecraft/client/Minecraft/player[5208,5214]::player->field_71439_g
+Rename method net/minecraft/command/ICommandSender/getName ()Ljava/lang/String;[5222,5229]::getName->func_70005_c_
 Import: net.minecraftforge.fml.common.event.FMLInitializationEvent
+Import: com.mojang.realmsclient.gui.ChatFormatting
 Import: net.minecraftforge.fml.common.Mod
 Import: net.minecraft.client.Minecraft
 Import: org.apache.logging.log4j.LogManager
@@ -106,6 +107,14 @@ Adding 4 imports
         rina.turok.bope.bopemod.BopeModule
 End  Processing: rina/turok/bope/bopemod/commands/BopeBind.java
 
+Start Processing: rina/turok/bope/bopemod/commands/BopeHelp.java
+FOUND CONSTR method rina/turok/bope/bopemod/commands/BopeHelp/BopeHelp ()V rina/turok/bope/bopemod/commands/BopeHelp
+Import: rina.turok.bope.bopemod.commands.BopeListCommand
+Adding 2 imports
+        rina.turok.bope.bopemod.BopeCommand
+        rina.turok.bope.bopemod.BopeMessage
+End  Processing: rina/turok/bope/bopemod/commands/BopeHelp.java
+
 Start Processing: rina/turok/bope/bopemod/commands/BopeLabel.java
 FOUND CONSTR method rina/turok/bope/bopemod/commands/BopeLabel/BopeLabel ()V rina/turok/bope/bopemod/commands/BopeLabel
 Import: rina.turok.bope.bopemod.guiscreen.settings.BopeSetting
@@ -121,8 +130,8 @@ FOUND CONSTR method rina/turok/bope/bopemod/commands/BopeListCommand/BopeListCom
 Import: net.minecraft.util.text.TextComponentString
 Import: net.minecraft.util.text.TextFormatting
 Import: net.minecraft.util.text.Style
-Import: java.util.ArrayList
-Import: java.util.HashMap
+Import: java.util.Comparator
+Import: java.util.*
 Adding 2 imports
         rina.turok.bope.bopemod.BopeCommand
         rina.turok.turok.values.TurokString
@@ -291,111 +300,130 @@ Adding 6 imports
         rina.turok.bope.bopemod.guiscreen.render.pinnables.BopePinnable
 End  Processing: rina/turok/bope/bopemod/guiscreen/hud/BopeArrayList.java
 
+Start Processing: rina/turok/bope/bopemod/guiscreen/hud/BopeCoordinates.java
+FOUND CONSTR method rina/turok/bope/bopemod/guiscreen/hud/BopeCoordinates/BopeCoordinates ()V rina/turok/bope/bopemod/guiscreen/hud/BopeCoordinates
+Rename field net/minecraft/client/Minecraft/player[994,1000]::player->field_71439_g
+Rename field net/minecraft/entity/Entity/posX[1008,1012]::posX->field_70165_t
+Rename field net/minecraft/client/Minecraft/player[1114,1120]::player->field_71439_g
+Rename field net/minecraft/entity/Entity/posY[1128,1132]::posY->field_70163_u
+Rename field net/minecraft/client/Minecraft/player[1234,1240]::player->field_71439_g
+Rename field net/minecraft/entity/Entity/posZ[1248,1252]::posZ->field_70161_v
+Rename field net/minecraft/client/Minecraft/player[1363,1369]::player->field_71439_g
+Rename field net/minecraft/entity/Entity/posX[1377,1381]::posX->field_70165_t
+Rename field net/minecraft/client/Minecraft/player[1499,1505]::player->field_71439_g
+Rename field net/minecraft/entity/Entity/posZ[1513,1517]::posZ->field_70161_v
+Import: com.mojang.realmsclient.gui.ChatFormatting
+Adding 2 imports
+        rina.turok.bope.Bope
+        rina.turok.bope.bopemod.guiscreen.render.pinnables.BopePinnable
+End  Processing: rina/turok/bope/bopemod/guiscreen/hud/BopeCoordinates.java
+
 Start Processing: rina/turok/bope/bopemod/guiscreen/hud/BopeCrystalCount.java
 FOUND CONSTR method rina/turok/bope/bopemod/guiscreen/hud/BopeCrystalCount/BopeCrystalCount ()V rina/turok/bope/bopemod/guiscreen/hud/BopeCrystalCount
-Rename field net/minecraft/client/Minecraft/player[788,794]::player->field_71439_g
-Rename method net/minecraft/client/renderer/GlStateManager/pushMatrix ()V[937,947]::pushMatrix->func_179094_E
-Rename method net/minecraft/client/renderer/RenderHelper/enableGUIStandardItemLighting ()V[971,1000]::enableGUIStandardItemLighting->func_74520_c
-Rename field net/minecraft/client/Minecraft/player[1007,1013]::player->field_71439_g
-Rename field net/minecraft/entity/player/EntityPlayer/inventory[1021,1030]::inventory->field_71071_by
-Rename field net/minecraft/entity/player/InventoryPlayer/mainInventory[1036,1049]::mainInventory->field_70462_a
-Rename method net/minecraft/item/ItemStack/getItem ()Lnet/minecraft/item/Item;[1081,1088]::getItem->func_77973_b
-Rename field net/minecraft/init/Items/END_CRYSTAL[1105,1116]::END_CRYSTAL->field_185158_cP
-Rename method net/minecraft/item/ItemStack/getCount ()I[1142,1150]::getCount->func_190916_E
-Rename field net/minecraft/client/Minecraft/player[1246,1252]::player->field_71439_g
-Rename field net/minecraft/entity/player/EntityPlayer/inventory[1260,1269]::inventory->field_71071_by
-Rename method net/minecraft/inventory/IInventory/getStackInSlot (I)Lnet/minecraft/item/ItemStack;[1275,1289]::getStackInSlot->func_70301_a
-Rename field net/minecraft/client/Minecraft/player[1318,1324]::player->field_71439_g
-Rename method net/minecraft/entity/EntityLivingBase/getHeldItemOffhand ()Lnet/minecraft/item/ItemStack;[1332,1350]::getHeldItemOffhand->func_184592_cb
-Rename method net/minecraft/item/ItemStack/getItem ()Lnet/minecraft/item/Item;[1367,1374]::getItem->func_77973_b
-Rename field net/minecraft/init/Items/END_CRYSTAL[1391,1402]::END_CRYSTAL->field_185158_cP
-Rename field net/minecraft/item/ItemStack/stackSize[1428,1437]::stackSize->field_77994_a
-Rename method net/minecraft/item/ItemStack/getItem ()Lnet/minecraft/item/Item;[1496,1503]::getItem->func_77973_b
-Rename field net/minecraft/init/Items/END_CRYSTAL[1520,1531]::END_CRYSTAL->field_185158_cP
-Rename method net/minecraft/client/Minecraft/getRenderItem ()Lnet/minecraft/client/renderer/RenderItem;[1548,1561]::getRenderItem->func_175599_af
-Rename method net/minecraft/client/renderer/RenderItem/renderItemAndEffectIntoGUI (Lnet/minecraft/item/ItemStack;II)V[1565,1591]::renderItemAndEffectIntoGUI->func_180450_b
-Rename method net/minecraft/client/Minecraft/getRenderItem ()Lnet/minecraft/client/renderer/RenderItem;[1759,1772]::getRenderItem->func_175599_af
-Rename field net/minecraft/client/renderer/RenderItem/zLevel[1776,1782]::zLevel->field_77023_b
-Rename method net/minecraft/client/renderer/RenderHelper/disableStandardItemLighting ()V[1817,1844]::disableStandardItemLighting->func_74518_a
-Rename method net/minecraft/client/renderer/GlStateManager/popMatrix ()V[1859,1868]::popMatrix->func_179121_F
+Rename field net/minecraft/client/Minecraft/player[1001,1007]::player->field_71439_g
+Rename method net/minecraft/client/renderer/GlStateManager/pushMatrix ()V[1150,1160]::pushMatrix->func_179094_E
+Rename method net/minecraft/client/renderer/RenderHelper/enableGUIStandardItemLighting ()V[1184,1213]::enableGUIStandardItemLighting->func_74520_c
+Rename field net/minecraft/client/Minecraft/player[1220,1226]::player->field_71439_g
+Rename field net/minecraft/entity/player/EntityPlayer/inventory[1234,1243]::inventory->field_71071_by
+Rename field net/minecraft/entity/player/InventoryPlayer/mainInventory[1249,1262]::mainInventory->field_70462_a
+Rename method net/minecraft/item/ItemStack/getItem ()Lnet/minecraft/item/Item;[1294,1301]::getItem->func_77973_b
+Rename field net/minecraft/init/Items/END_CRYSTAL[1318,1329]::END_CRYSTAL->field_185158_cP
+Rename method net/minecraft/item/ItemStack/getCount ()I[1355,1363]::getCount->func_190916_E
+Rename field net/minecraft/client/Minecraft/player[1459,1465]::player->field_71439_g
+Rename field net/minecraft/entity/player/EntityPlayer/inventory[1473,1482]::inventory->field_71071_by
+Rename method net/minecraft/inventory/IInventory/getStackInSlot (I)Lnet/minecraft/item/ItemStack;[1488,1502]::getStackInSlot->func_70301_a
+Rename field net/minecraft/client/Minecraft/player[1531,1537]::player->field_71439_g
+Rename method net/minecraft/entity/EntityLivingBase/getHeldItemOffhand ()Lnet/minecraft/item/ItemStack;[1545,1563]::getHeldItemOffhand->func_184592_cb
+Rename method net/minecraft/item/ItemStack/getItem ()Lnet/minecraft/item/Item;[1580,1587]::getItem->func_77973_b
+Rename field net/minecraft/init/Items/END_CRYSTAL[1604,1615]::END_CRYSTAL->field_185158_cP
+Rename field net/minecraft/item/ItemStack/stackSize[1641,1650]::stackSize->field_77994_a
+Rename method net/minecraft/item/ItemStack/getItem ()Lnet/minecraft/item/Item;[1709,1716]::getItem->func_77973_b
+Rename field net/minecraft/init/Items/END_CRYSTAL[1733,1744]::END_CRYSTAL->field_185158_cP
+Rename method net/minecraft/client/Minecraft/getRenderItem ()Lnet/minecraft/client/renderer/RenderItem;[1761,1774]::getRenderItem->func_175599_af
+Rename method net/minecraft/client/renderer/RenderItem/renderItemAndEffectIntoGUI (Lnet/minecraft/item/ItemStack;II)V[1778,1804]::renderItemAndEffectIntoGUI->func_180450_b
+Rename method net/minecraft/client/Minecraft/getRenderItem ()Lnet/minecraft/client/renderer/RenderItem;[1990,2003]::getRenderItem->func_175599_af
+Rename field net/minecraft/client/renderer/RenderItem/zLevel[2007,2013]::zLevel->field_77023_b
+Rename method net/minecraft/client/renderer/RenderHelper/disableStandardItemLighting ()V[2048,2075]::disableStandardItemLighting->func_74518_a
+Rename method net/minecraft/client/renderer/GlStateManager/popMatrix ()V[2090,2099]::popMatrix->func_179121_F
 Import: net.minecraft.client.renderer.GlStateManager
 Import: net.minecraft.client.renderer.RenderHelper
 Import: net.minecraft.item.ItemStack
 Import: net.minecraft.init.Items
 Adding 2 imports
-        com.mojang.realmsclient.gui.ChatFormatting
+        rina.turok.bope.Bope
         rina.turok.bope.bopemod.guiscreen.render.pinnables.BopePinnable
 End  Processing: rina/turok/bope/bopemod/guiscreen/hud/BopeCrystalCount.java
 
 Start Processing: rina/turok/bope/bopemod/guiscreen/hud/BopeEXPCount.java
 FOUND CONSTR method rina/turok/bope/bopemod/guiscreen/hud/BopeEXPCount/BopeEXPCount ()V rina/turok/bope/bopemod/guiscreen/hud/BopeEXPCount
-Rename field net/minecraft/client/Minecraft/player[767,773]::player->field_71439_g
-Rename method net/minecraft/client/renderer/GlStateManager/pushMatrix ()V[916,926]::pushMatrix->func_179094_E
-Rename method net/minecraft/client/renderer/RenderHelper/enableGUIStandardItemLighting ()V[950,979]::enableGUIStandardItemLighting->func_74520_c
-Rename field net/minecraft/client/Minecraft/player[981,987]::player->field_71439_g
-Rename field net/minecraft/entity/player/EntityPlayer/inventory[995,1004]::inventory->field_71071_by
-Rename field net/minecraft/entity/player/InventoryPlayer/mainInventory[1010,1023]::mainInventory->field_70462_a
-Rename method net/minecraft/item/ItemStack/getItem ()Lnet/minecraft/item/Item;[1055,1062]::getItem->func_77973_b
-Rename field net/minecraft/init/Items/EXPERIENCE_BOTTLE[1079,1096]::EXPERIENCE_BOTTLE->field_151062_by
-Rename method net/minecraft/item/ItemStack/getCount ()I[1116,1124]::getCount->func_190916_E
-Rename field net/minecraft/client/Minecraft/player[1220,1226]::player->field_71439_g
-Rename field net/minecraft/entity/player/EntityPlayer/inventory[1234,1243]::inventory->field_71071_by
-Rename method net/minecraft/inventory/IInventory/getStackInSlot (I)Lnet/minecraft/item/ItemStack;[1249,1263]::getStackInSlot->func_70301_a
+Rename field net/minecraft/client/Minecraft/player[1078,1084]::player->field_71439_g
+Rename method net/minecraft/client/renderer/GlStateManager/pushMatrix ()V[1227,1237]::pushMatrix->func_179094_E
+Rename method net/minecraft/client/renderer/RenderHelper/enableGUIStandardItemLighting ()V[1261,1290]::enableGUIStandardItemLighting->func_74520_c
 Rename field net/minecraft/client/Minecraft/player[1292,1298]::player->field_71439_g
-Rename method net/minecraft/entity/EntityLivingBase/getHeldItemOffhand ()Lnet/minecraft/item/ItemStack;[1306,1324]::getHeldItemOffhand->func_184592_cb
-Rename method net/minecraft/item/ItemStack/getItem ()Lnet/minecraft/item/Item;[1341,1348]::getItem->func_77973_b
-Rename field net/minecraft/init/Items/EXPERIENCE_BOTTLE[1365,1382]::EXPERIENCE_BOTTLE->field_151062_by
-Rename field net/minecraft/item/ItemStack/stackSize[1402,1411]::stackSize->field_77994_a
-Rename method net/minecraft/item/ItemStack/getItem ()Lnet/minecraft/item/Item;[1470,1477]::getItem->func_77973_b
-Rename field net/minecraft/init/Items/EXPERIENCE_BOTTLE[1494,1511]::EXPERIENCE_BOTTLE->field_151062_by
-Rename method net/minecraft/client/Minecraft/getRenderItem ()Lnet/minecraft/client/renderer/RenderItem;[1522,1535]::getRenderItem->func_175599_af
-Rename method net/minecraft/client/renderer/RenderItem/renderItemAndEffectIntoGUI (Lnet/minecraft/item/ItemStack;II)V[1539,1565]::renderItemAndEffectIntoGUI->func_180450_b
-Rename method net/minecraft/client/Minecraft/getRenderItem ()Lnet/minecraft/client/renderer/RenderItem;[1718,1731]::getRenderItem->func_175599_af
-Rename field net/minecraft/client/renderer/RenderItem/zLevel[1735,1741]::zLevel->field_77023_b
-Rename method net/minecraft/client/renderer/RenderHelper/disableStandardItemLighting ()V[1776,1803]::disableStandardItemLighting->func_74518_a
-Rename method net/minecraft/client/renderer/GlStateManager/popMatrix ()V[1818,1827]::popMatrix->func_179121_F
+Rename field net/minecraft/entity/player/EntityPlayer/inventory[1306,1315]::inventory->field_71071_by
+Rename field net/minecraft/entity/player/InventoryPlayer/mainInventory[1321,1334]::mainInventory->field_70462_a
+Rename method net/minecraft/item/ItemStack/getItem ()Lnet/minecraft/item/Item;[1366,1373]::getItem->func_77973_b
+Rename field net/minecraft/init/Items/EXPERIENCE_BOTTLE[1390,1407]::EXPERIENCE_BOTTLE->field_151062_by
+Rename method net/minecraft/item/ItemStack/getCount ()I[1427,1435]::getCount->func_190916_E
+Rename field net/minecraft/client/Minecraft/player[1531,1537]::player->field_71439_g
+Rename field net/minecraft/entity/player/EntityPlayer/inventory[1545,1554]::inventory->field_71071_by
+Rename method net/minecraft/inventory/IInventory/getStackInSlot (I)Lnet/minecraft/item/ItemStack;[1560,1574]::getStackInSlot->func_70301_a
+Rename field net/minecraft/client/Minecraft/player[1603,1609]::player->field_71439_g
+Rename method net/minecraft/entity/EntityLivingBase/getHeldItemOffhand ()Lnet/minecraft/item/ItemStack;[1617,1635]::getHeldItemOffhand->func_184592_cb
+Rename method net/minecraft/item/ItemStack/getItem ()Lnet/minecraft/item/Item;[1652,1659]::getItem->func_77973_b
+Rename field net/minecraft/init/Items/EXPERIENCE_BOTTLE[1676,1693]::EXPERIENCE_BOTTLE->field_151062_by
+Rename field net/minecraft/item/ItemStack/stackSize[1713,1722]::stackSize->field_77994_a
+Rename method net/minecraft/item/ItemStack/getItem ()Lnet/minecraft/item/Item;[1781,1788]::getItem->func_77973_b
+Rename field net/minecraft/init/Items/EXPERIENCE_BOTTLE[1805,1822]::EXPERIENCE_BOTTLE->field_151062_by
+Rename method net/minecraft/client/Minecraft/getRenderItem ()Lnet/minecraft/client/renderer/RenderItem;[1833,1846]::getRenderItem->func_175599_af
+Rename method net/minecraft/client/renderer/RenderItem/renderItemAndEffectIntoGUI (Lnet/minecraft/item/ItemStack;II)V[1850,1876]::renderItemAndEffectIntoGUI->func_180450_b
+Rename method net/minecraft/client/Minecraft/getRenderItem ()Lnet/minecraft/client/renderer/RenderItem;[2047,2060]::getRenderItem->func_175599_af
+Rename field net/minecraft/client/renderer/RenderItem/zLevel[2064,2070]::zLevel->field_77023_b
+Rename method net/minecraft/client/renderer/RenderHelper/disableStandardItemLighting ()V[2105,2132]::disableStandardItemLighting->func_74518_a
+Rename method net/minecraft/client/renderer/GlStateManager/popMatrix ()V[2147,2156]::popMatrix->func_179121_F
 Import: net.minecraft.client.renderer.GlStateManager
 Import: net.minecraft.client.renderer.RenderHelper
 Import: net.minecraft.item.ItemStack
 Import: net.minecraft.init.Items
-Adding 2 imports
+Adding 3 imports
         com.mojang.realmsclient.gui.ChatFormatting
+        rina.turok.bope.Bope
         rina.turok.bope.bopemod.guiscreen.render.pinnables.BopePinnable
 End  Processing: rina/turok/bope/bopemod/guiscreen/hud/BopeEXPCount.java
 
 Start Processing: rina/turok/bope/bopemod/guiscreen/hud/BopeGappleCount.java
 FOUND CONSTR method rina/turok/bope/bopemod/guiscreen/hud/BopeGappleCount/BopeGappleCount ()V rina/turok/bope/bopemod/guiscreen/hud/BopeGappleCount
-Rename field net/minecraft/client/Minecraft/player[783,789]::player->field_71439_g
-Rename method net/minecraft/client/renderer/GlStateManager/pushMatrix ()V[932,942]::pushMatrix->func_179094_E
-Rename method net/minecraft/client/renderer/RenderHelper/enableGUIStandardItemLighting ()V[966,995]::enableGUIStandardItemLighting->func_74520_c
-Rename field net/minecraft/client/Minecraft/player[1001,1007]::player->field_71439_g
-Rename field net/minecraft/entity/player/EntityPlayer/inventory[1015,1024]::inventory->field_71071_by
-Rename field net/minecraft/entity/player/InventoryPlayer/mainInventory[1030,1043]::mainInventory->field_70462_a
-Rename method net/minecraft/item/ItemStack/getItem ()Lnet/minecraft/item/Item;[1075,1082]::getItem->func_77973_b
-Rename field net/minecraft/init/Items/GOLDEN_APPLE[1099,1111]::GOLDEN_APPLE->field_151153_ao
-Rename method net/minecraft/item/ItemStack/getCount ()I[1136,1144]::getCount->func_190916_E
-Rename field net/minecraft/client/Minecraft/player[1240,1246]::player->field_71439_g
-Rename field net/minecraft/entity/player/EntityPlayer/inventory[1254,1263]::inventory->field_71071_by
-Rename method net/minecraft/inventory/IInventory/getStackInSlot (I)Lnet/minecraft/item/ItemStack;[1269,1283]::getStackInSlot->func_70301_a
-Rename field net/minecraft/client/Minecraft/player[1312,1318]::player->field_71439_g
-Rename method net/minecraft/entity/EntityLivingBase/getHeldItemOffhand ()Lnet/minecraft/item/ItemStack;[1326,1344]::getHeldItemOffhand->func_184592_cb
-Rename method net/minecraft/item/ItemStack/getItem ()Lnet/minecraft/item/Item;[1361,1368]::getItem->func_77973_b
-Rename field net/minecraft/init/Items/GOLDEN_APPLE[1385,1397]::GOLDEN_APPLE->field_151153_ao
-Rename field net/minecraft/item/ItemStack/stackSize[1422,1431]::stackSize->field_77994_a
-Rename method net/minecraft/item/ItemStack/getItem ()Lnet/minecraft/item/Item;[1490,1497]::getItem->func_77973_b
-Rename field net/minecraft/init/Items/GOLDEN_APPLE[1514,1526]::GOLDEN_APPLE->field_151153_ao
-Rename method net/minecraft/client/Minecraft/getRenderItem ()Lnet/minecraft/client/renderer/RenderItem;[1542,1555]::getRenderItem->func_175599_af
-Rename method net/minecraft/client/renderer/RenderItem/renderItemAndEffectIntoGUI (Lnet/minecraft/item/ItemStack;II)V[1559,1585]::renderItemAndEffectIntoGUI->func_180450_b
-Rename method net/minecraft/client/Minecraft/getRenderItem ()Lnet/minecraft/client/renderer/RenderItem;[1751,1764]::getRenderItem->func_175599_af
-Rename field net/minecraft/client/renderer/RenderItem/zLevel[1768,1774]::zLevel->field_77023_b
-Rename method net/minecraft/client/renderer/RenderHelper/disableStandardItemLighting ()V[1809,1836]::disableStandardItemLighting->func_74518_a
-Rename method net/minecraft/client/renderer/GlStateManager/popMatrix ()V[1851,1860]::popMatrix->func_179121_F
+Rename field net/minecraft/client/Minecraft/player[996,1002]::player->field_71439_g
+Rename method net/minecraft/client/renderer/GlStateManager/pushMatrix ()V[1145,1155]::pushMatrix->func_179094_E
+Rename method net/minecraft/client/renderer/RenderHelper/enableGUIStandardItemLighting ()V[1179,1208]::enableGUIStandardItemLighting->func_74520_c
+Rename field net/minecraft/client/Minecraft/player[1214,1220]::player->field_71439_g
+Rename field net/minecraft/entity/player/EntityPlayer/inventory[1228,1237]::inventory->field_71071_by
+Rename field net/minecraft/entity/player/InventoryPlayer/mainInventory[1243,1256]::mainInventory->field_70462_a
+Rename method net/minecraft/item/ItemStack/getItem ()Lnet/minecraft/item/Item;[1288,1295]::getItem->func_77973_b
+Rename field net/minecraft/init/Items/GOLDEN_APPLE[1312,1324]::GOLDEN_APPLE->field_151153_ao
+Rename method net/minecraft/item/ItemStack/getCount ()I[1349,1357]::getCount->func_190916_E
+Rename field net/minecraft/client/Minecraft/player[1453,1459]::player->field_71439_g
+Rename field net/minecraft/entity/player/EntityPlayer/inventory[1467,1476]::inventory->field_71071_by
+Rename method net/minecraft/inventory/IInventory/getStackInSlot (I)Lnet/minecraft/item/ItemStack;[1482,1496]::getStackInSlot->func_70301_a
+Rename field net/minecraft/client/Minecraft/player[1525,1531]::player->field_71439_g
+Rename method net/minecraft/entity/EntityLivingBase/getHeldItemOffhand ()Lnet/minecraft/item/ItemStack;[1539,1557]::getHeldItemOffhand->func_184592_cb
+Rename method net/minecraft/item/ItemStack/getItem ()Lnet/minecraft/item/Item;[1574,1581]::getItem->func_77973_b
+Rename field net/minecraft/init/Items/GOLDEN_APPLE[1598,1610]::GOLDEN_APPLE->field_151153_ao
+Rename field net/minecraft/item/ItemStack/stackSize[1635,1644]::stackSize->field_77994_a
+Rename method net/minecraft/item/ItemStack/getItem ()Lnet/minecraft/item/Item;[1703,1710]::getItem->func_77973_b
+Rename field net/minecraft/init/Items/GOLDEN_APPLE[1727,1739]::GOLDEN_APPLE->field_151153_ao
+Rename method net/minecraft/client/Minecraft/getRenderItem ()Lnet/minecraft/client/renderer/RenderItem;[1755,1768]::getRenderItem->func_175599_af
+Rename method net/minecraft/client/renderer/RenderItem/renderItemAndEffectIntoGUI (Lnet/minecraft/item/ItemStack;II)V[1772,1798]::renderItemAndEffectIntoGUI->func_180450_b
+Rename method net/minecraft/client/Minecraft/getRenderItem ()Lnet/minecraft/client/renderer/RenderItem;[1982,1995]::getRenderItem->func_175599_af
+Rename field net/minecraft/client/renderer/RenderItem/zLevel[1999,2005]::zLevel->field_77023_b
+Rename method net/minecraft/client/renderer/RenderHelper/disableStandardItemLighting ()V[2040,2067]::disableStandardItemLighting->func_74518_a
+Rename method net/minecraft/client/renderer/GlStateManager/popMatrix ()V[2082,2091]::popMatrix->func_179121_F
 Import: net.minecraft.client.renderer.GlStateManager
 Import: net.minecraft.client.renderer.RenderHelper
 Import: net.minecraft.item.ItemStack
 Import: net.minecraft.init.Items
 Adding 2 imports
-        com.mojang.realmsclient.gui.ChatFormatting
+        rina.turok.bope.Bope
         rina.turok.bope.bopemod.guiscreen.render.pinnables.BopePinnable
 End  Processing: rina/turok/bope/bopemod/guiscreen/hud/BopeGappleCount.java
 
@@ -423,74 +451,49 @@ Adding 1 imports
         rina.turok.bope.bopemod.guiscreen.render.pinnables.BopePinnable
 End  Processing: rina/turok/bope/bopemod/guiscreen/hud/BopeInventoryPreview.java
 
-Start Processing: rina/turok/bope/bopemod/guiscreen/hud/BopeNetherCoords.java
-FOUND CONSTR method rina/turok/bope/bopemod/guiscreen/hud/BopeNetherCoords/BopeNetherCoords ()V rina/turok/bope/bopemod/guiscreen/hud/BopeNetherCoords
-Rename field net/minecraft/client/Minecraft/player[525,531]::player->field_71439_g
-Rename field net/minecraft/entity/Entity/posX[539,543]::posX->field_70165_t
-Rename field net/minecraft/client/Minecraft/player[612,618]::player->field_71439_g
-Rename field net/minecraft/entity/Entity/posY[626,630]::posY->field_70163_u
-Rename field net/minecraft/client/Minecraft/player[690,696]::player->field_71439_g
-Rename field net/minecraft/entity/Entity/posZ[704,708]::posZ->field_70161_v
-Import: com.mojang.realmsclient.gui.ChatFormatting
-Adding 1 imports
-        rina.turok.bope.bopemod.guiscreen.render.pinnables.BopePinnable
-End  Processing: rina/turok/bope/bopemod/guiscreen/hud/BopeNetherCoords.java
-
-Start Processing: rina/turok/bope/bopemod/guiscreen/hud/BopeOverworldCoords.java
-FOUND CONSTR method rina/turok/bope/bopemod/guiscreen/hud/BopeOverworldCoords/BopeOverworldCoords ()V rina/turok/bope/bopemod/guiscreen/hud/BopeOverworldCoords
-Rename field net/minecraft/client/Minecraft/player[537,543]::player->field_71439_g
-Rename field net/minecraft/entity/Entity/posX[551,555]::posX->field_70165_t
-Rename field net/minecraft/client/Minecraft/player[615,621]::player->field_71439_g
-Rename field net/minecraft/entity/Entity/posY[629,633]::posY->field_70163_u
-Rename field net/minecraft/client/Minecraft/player[693,699]::player->field_71439_g
-Rename field net/minecraft/entity/Entity/posZ[707,711]::posZ->field_70161_v
-Import: com.mojang.realmsclient.gui.ChatFormatting
-Adding 1 imports
-        rina.turok.bope.bopemod.guiscreen.render.pinnables.BopePinnable
-End  Processing: rina/turok/bope/bopemod/guiscreen/hud/BopeOverworldCoords.java
-
 Start Processing: rina/turok/bope/bopemod/guiscreen/hud/BopeTotemCount.java
 FOUND CONSTR method rina/turok/bope/bopemod/guiscreen/hud/BopeTotemCount/BopeTotemCount ()V rina/turok/bope/bopemod/guiscreen/hud/BopeTotemCount
-Rename field net/minecraft/client/Minecraft/player[778,784]::player->field_71439_g
-Rename method net/minecraft/client/renderer/GlStateManager/pushMatrix ()V[927,937]::pushMatrix->func_179094_E
-Rename method net/minecraft/client/renderer/RenderHelper/enableGUIStandardItemLighting ()V[961,990]::enableGUIStandardItemLighting->func_74520_c
-Rename field net/minecraft/client/Minecraft/player[995,1001]::player->field_71439_g
-Rename field net/minecraft/entity/player/EntityPlayer/inventory[1009,1018]::inventory->field_71071_by
-Rename field net/minecraft/entity/player/InventoryPlayer/mainInventory[1024,1037]::mainInventory->field_70462_a
-Rename method net/minecraft/item/ItemStack/getItem ()Lnet/minecraft/item/Item;[1069,1076]::getItem->func_77973_b
-Rename field net/minecraft/init/Items/TOTEM_OF_UNDYING[1093,1109]::TOTEM_OF_UNDYING->field_190929_cY
-Rename method net/minecraft/item/ItemStack/getCount ()I[1130,1138]::getCount->func_190916_E
-Rename field net/minecraft/client/Minecraft/player[1234,1240]::player->field_71439_g
-Rename field net/minecraft/entity/player/EntityPlayer/inventory[1248,1257]::inventory->field_71071_by
-Rename method net/minecraft/inventory/IInventory/getStackInSlot (I)Lnet/minecraft/item/ItemStack;[1263,1277]::getStackInSlot->func_70301_a
-Rename field net/minecraft/client/Minecraft/player[1306,1312]::player->field_71439_g
-Rename method net/minecraft/entity/EntityLivingBase/getHeldItemOffhand ()Lnet/minecraft/item/ItemStack;[1320,1338]::getHeldItemOffhand->func_184592_cb
-Rename method net/minecraft/item/ItemStack/getItem ()Lnet/minecraft/item/Item;[1355,1362]::getItem->func_77973_b
-Rename field net/minecraft/init/Items/TOTEM_OF_UNDYING[1379,1395]::TOTEM_OF_UNDYING->field_190929_cY
-Rename field net/minecraft/item/ItemStack/stackSize[1416,1425]::stackSize->field_77994_a
-Rename method net/minecraft/item/ItemStack/getItem ()Lnet/minecraft/item/Item;[1484,1491]::getItem->func_77973_b
-Rename field net/minecraft/init/Items/TOTEM_OF_UNDYING[1508,1524]::TOTEM_OF_UNDYING->field_190929_cY
-Rename method net/minecraft/client/Minecraft/getRenderItem ()Lnet/minecraft/client/renderer/RenderItem;[1536,1549]::getRenderItem->func_175599_af
-Rename method net/minecraft/client/renderer/RenderItem/renderItemAndEffectIntoGUI (Lnet/minecraft/item/ItemStack;II)V[1553,1579]::renderItemAndEffectIntoGUI->func_180450_b
-Rename method net/minecraft/client/Minecraft/getRenderItem ()Lnet/minecraft/client/renderer/RenderItem;[1743,1756]::getRenderItem->func_175599_af
-Rename field net/minecraft/client/renderer/RenderItem/zLevel[1760,1766]::zLevel->field_77023_b
-Rename method net/minecraft/client/renderer/RenderHelper/disableStandardItemLighting ()V[1801,1828]::disableStandardItemLighting->func_74518_a
-Rename method net/minecraft/client/renderer/GlStateManager/popMatrix ()V[1843,1852]::popMatrix->func_179121_F
+Rename field net/minecraft/client/Minecraft/player[991,997]::player->field_71439_g
+Rename method net/minecraft/client/renderer/GlStateManager/pushMatrix ()V[1140,1150]::pushMatrix->func_179094_E
+Rename method net/minecraft/client/renderer/RenderHelper/enableGUIStandardItemLighting ()V[1174,1203]::enableGUIStandardItemLighting->func_74520_c
+Rename field net/minecraft/client/Minecraft/player[1208,1214]::player->field_71439_g
+Rename field net/minecraft/entity/player/EntityPlayer/inventory[1222,1231]::inventory->field_71071_by
+Rename field net/minecraft/entity/player/InventoryPlayer/mainInventory[1237,1250]::mainInventory->field_70462_a
+Rename method net/minecraft/item/ItemStack/getItem ()Lnet/minecraft/item/Item;[1282,1289]::getItem->func_77973_b
+Rename field net/minecraft/init/Items/TOTEM_OF_UNDYING[1306,1322]::TOTEM_OF_UNDYING->field_190929_cY
+Rename method net/minecraft/item/ItemStack/getCount ()I[1343,1351]::getCount->func_190916_E
+Rename field net/minecraft/client/Minecraft/player[1447,1453]::player->field_71439_g
+Rename field net/minecraft/entity/player/EntityPlayer/inventory[1461,1470]::inventory->field_71071_by
+Rename method net/minecraft/inventory/IInventory/getStackInSlot (I)Lnet/minecraft/item/ItemStack;[1476,1490]::getStackInSlot->func_70301_a
+Rename field net/minecraft/client/Minecraft/player[1519,1525]::player->field_71439_g
+Rename method net/minecraft/entity/EntityLivingBase/getHeldItemOffhand ()Lnet/minecraft/item/ItemStack;[1533,1551]::getHeldItemOffhand->func_184592_cb
+Rename method net/minecraft/item/ItemStack/getItem ()Lnet/minecraft/item/Item;[1568,1575]::getItem->func_77973_b
+Rename field net/minecraft/init/Items/TOTEM_OF_UNDYING[1592,1608]::TOTEM_OF_UNDYING->field_190929_cY
+Rename field net/minecraft/item/ItemStack/stackSize[1629,1638]::stackSize->field_77994_a
+Rename method net/minecraft/item/ItemStack/getItem ()Lnet/minecraft/item/Item;[1697,1704]::getItem->func_77973_b
+Rename field net/minecraft/init/Items/TOTEM_OF_UNDYING[1721,1737]::TOTEM_OF_UNDYING->field_190929_cY
+Rename method net/minecraft/client/Minecraft/getRenderItem ()Lnet/minecraft/client/renderer/RenderItem;[1749,1762]::getRenderItem->func_175599_af
+Rename method net/minecraft/client/renderer/RenderItem/renderItemAndEffectIntoGUI (Lnet/minecraft/item/ItemStack;II)V[1766,1792]::renderItemAndEffectIntoGUI->func_180450_b
+Rename method net/minecraft/client/Minecraft/getRenderItem ()Lnet/minecraft/client/renderer/RenderItem;[1974,1987]::getRenderItem->func_175599_af
+Rename field net/minecraft/client/renderer/RenderItem/zLevel[1991,1997]::zLevel->field_77023_b
+Rename method net/minecraft/client/renderer/RenderHelper/disableStandardItemLighting ()V[2032,2059]::disableStandardItemLighting->func_74518_a
+Rename method net/minecraft/client/renderer/GlStateManager/popMatrix ()V[2074,2083]::popMatrix->func_179121_F
 Import: net.minecraft.client.renderer.GlStateManager
 Import: net.minecraft.client.renderer.RenderHelper
 Import: net.minecraft.item.ItemStack
 Import: net.minecraft.init.Items
 Adding 2 imports
-        com.mojang.realmsclient.gui.ChatFormatting
+        rina.turok.bope.Bope
         rina.turok.bope.bopemod.guiscreen.render.pinnables.BopePinnable
 End  Processing: rina/turok/bope/bopemod/guiscreen/hud/BopeTotemCount.java
 
 Start Processing: rina/turok/bope/bopemod/guiscreen/hud/BopeUser.java
 FOUND CONSTR method rina/turok/bope/bopemod/guiscreen/hud/BopeUser/BopeUser ()V rina/turok/bope/bopemod/guiscreen/hud/BopeUser
-Rename field net/minecraft/client/Minecraft/player[586,592]::player->field_71439_g
-Rename method net/minecraft/command/ICommandSender/getName ()Ljava/lang/String;[600,607]::getName->func_70005_c_
+Rename field net/minecraft/client/Minecraft/player[789,795]::player->field_71439_g
+Rename method net/minecraft/command/ICommandSender/getName ()Ljava/lang/String;[803,810]::getName->func_70005_c_
 Import: com.mojang.realmsclient.gui.ChatFormatting
-Adding 1 imports
+Adding 2 imports
+        rina.turok.bope.Bope
         rina.turok.bope.bopemod.guiscreen.render.pinnables.BopePinnable
 End  Processing: rina/turok/bope/bopemod/guiscreen/hud/BopeUser.java
 
@@ -694,9 +697,9 @@ End  Processing: rina/turok/bope/bopemod/hacks/BopeClickGUI.java
 
 Start Processing: rina/turok/bope/bopemod/hacks/BopeClickHUD.java
 FOUND CONSTR method rina/turok/bope/bopemod/hacks/BopeClickHUD/BopeClickHUD ()V rina/turok/bope/bopemod/hacks/BopeClickHUD
-Rename field net/minecraft/client/Minecraft/world[1108,1113]::world->field_71441_e
-Rename field net/minecraft/client/Minecraft/player[1136,1142]::player->field_71439_g
-Rename method net/minecraft/client/Minecraft/displayGuiScreen (Lnet/minecraft/client/gui/GuiScreen;)V[1285,1301]::displayGuiScreen->func_147108_a
+Rename field net/minecraft/client/Minecraft/world[978,983]::world->field_71441_e
+Rename field net/minecraft/client/Minecraft/player[1006,1012]::player->field_71439_g
+Rename method net/minecraft/client/Minecraft/displayGuiScreen (Lnet/minecraft/client/gui/GuiScreen;)V[1155,1171]::displayGuiScreen->func_147108_a
 Import: rina.turok.bope.bopemod.guiscreen.settings.BopeSetting
 Adding 2 imports
         rina.turok.bope.Bope
@@ -1255,21 +1258,77 @@ End  Processing: rina/turok/bope/bopemod/hacks/movement/BopeStrafe.java
 
 Start Processing: rina/turok/bope/bopemod/hacks/render/BopeHighlight.java
 FOUND CONSTR method rina/turok/bope/bopemod/hacks/render/BopeHighlight/BopeHighlight ()V rina/turok/bope/bopemod/hacks/render/BopeHighlight
-Rename field net/minecraft/client/Minecraft/objectMouseOver[2427,2442]::objectMouseOver->field_71476_x
-Rename field net/minecraft/util/math/RayTraceResult/typeOfHit[2484,2493]::typeOfHit->field_72313_a
+Rename field net/minecraft/client/Minecraft/player[1658,1664]::player->field_71439_g
+Rename field net/minecraft/client/Minecraft/world[1686,1691]::world->field_71441_e
+Rename field net/minecraft/client/Minecraft/objectMouseOver[2492,2507]::objectMouseOver->field_71476_x
+Rename field net/minecraft/util/math/RayTraceResult/typeOfHit[2552,2561]::typeOfHit->field_72313_a
 New Key: class net/minecraft/util/math/RayTraceResult
-Rename method net/minecraft/util/math/RayTraceResult/getBlockPos ()Lnet/minecraft/util/math/BlockPos;[2563,2574]::getBlockPos->func_178782_a
+Rename method net/minecraft/util/math/RayTraceResult/getBlockPos ()Lnet/minecraft/util/math/BlockPos;[2632,2643]::getBlockPos->func_178782_a
 Import: net.minecraft.util.math.RayTraceResult
 Import: net.minecraft.util.math.BlockPos
-Adding 7 imports
+Adding 6 imports
         java.awt.Color
-        org.lwjgl.opengl.GL11
         rina.turok.bope.bopemod.BopeModule
         rina.turok.bope.bopemod.events.BopeEventRender
         rina.turok.bope.bopemod.guiscreen.settings.BopeSetting
         rina.turok.bope.bopemod.hacks.BopeCategory
         rina.turok.turok.draw.TurokRenderHelp
 End  Processing: rina/turok/bope/bopemod/hacks/render/BopeHighlight.java
+
+Start Processing: rina/turok/bope/bopemod/hacks/render/BopeHoleColor.java
+FOUND CONSTR method rina/turok/bope/bopemod/hacks/render/BopeHoleColor/BopeHoleColor ()V rina/turok/bope/bopemod/hacks/render/BopeHoleColor
+Rename field net/minecraft/client/Minecraft/player[2425,2431]::player->field_71439_g
+Rename field net/minecraft/client/Minecraft/world[2453,2458]::world->field_71441_e
+Rename field net/minecraft/client/Minecraft/world[2919,2924]::world->field_71441_e
+Rename method net/minecraft/world/IBlockAccess/getBlockState (Lnet/minecraft/util/math/BlockPos;)Lnet/minecraft/block/state/IBlockState;[2933,2946]::getBlockState->func_180495_p
+Rename method net/minecraft/block/state/IBlockState/getBlock ()Lnet/minecraft/block/Block;[2952,2960]::getBlock->func_177230_c
+Rename field net/minecraft/init/Blocks/AIR[2982,2985]::AIR->field_150350_a
+Rename field net/minecraft/client/Minecraft/world[3039,3044]::world->field_71441_e
+Rename method net/minecraft/world/IBlockAccess/getBlockState (Lnet/minecraft/util/math/BlockPos;)Lnet/minecraft/block/state/IBlockState;[3053,3066]::getBlockState->func_180495_p
+Rename method net/minecraft/util/math/BlockPos/add (III)Lnet/minecraft/util/math/BlockPos;[3071,3074]::add->func_177982_a
+Rename method net/minecraft/block/state/IBlockState/getBlock ()Lnet/minecraft/block/Block;[3095,3103]::getBlock->func_177230_c
+Rename field net/minecraft/init/Blocks/AIR[3125,3128]::AIR->field_150350_a
+Rename field net/minecraft/client/Minecraft/world[3182,3187]::world->field_71441_e
+Rename method net/minecraft/world/IBlockAccess/getBlockState (Lnet/minecraft/util/math/BlockPos;)Lnet/minecraft/block/state/IBlockState;[3196,3209]::getBlockState->func_180495_p
+Rename method net/minecraft/util/math/BlockPos/add (III)Lnet/minecraft/util/math/BlockPos;[3214,3217]::add->func_177982_a
+Rename method net/minecraft/block/state/IBlockState/getBlock ()Lnet/minecraft/block/Block;[3238,3246]::getBlock->func_177230_c
+Rename field net/minecraft/init/Blocks/AIR[3268,3271]::AIR->field_150350_a
+Rename field net/minecraft/client/Minecraft/world[3727,3732]::world->field_71441_e
+Rename method net/minecraft/world/IBlockAccess/getBlockState (Lnet/minecraft/util/math/BlockPos;)Lnet/minecraft/block/state/IBlockState;[3741,3754]::getBlockState->func_180495_p
+Rename method net/minecraft/util/math/BlockPos/add (Lnet/minecraft/util/math/Vec3i;)Lnet/minecraft/util/math/BlockPos;[3759,3762]::add->func_177971_a
+Rename method net/minecraft/block/state/IBlockState/getBlock ()Lnet/minecraft/block/Block;[3788,3796]::getBlock->func_177230_c
+Rename field net/minecraft/init/Blocks/BEDROCK[3833,3840]::BEDROCK->field_150357_h
+Rename field net/minecraft/init/Blocks/OBSIDIAN[3867,3875]::OBSIDIAN->field_150343_Z
+Rename field net/minecraft/init/Blocks/ENDER_CHEST[3901,3912]::ENDER_CHEST->field_150477_bB
+Rename field net/minecraft/init/Blocks/ANVIL[3936,3941]::ANVIL->field_150467_bQ
+Rename field net/minecraft/util/math/Vec3i/x[4429,4430]::x->field_177962_a
+Rename field net/minecraft/util/math/Vec3i/y[4451,4452]::y->field_177960_b
+Rename field net/minecraft/util/math/Vec3i/z[4473,4474]::z->field_177961_c
+Rename field net/minecraft/util/math/Vec3i/x[4775,4776]::x->field_177962_a
+Rename field net/minecraft/util/math/Vec3i/y[4797,4798]::y->field_177960_b
+Rename field net/minecraft/util/math/Vec3i/z[4819,4820]::z->field_177961_c
+Rename method net/minecraft/util/math/Vec3i/getX ()I[5239,5243]::getX->func_177958_n
+Rename method net/minecraft/util/math/Vec3i/getY ()I[5272,5276]::getY->func_177956_o
+Rename method net/minecraft/util/math/Vec3i/getZ ()I[5305,5309]::getZ->func_177952_p
+Rename field net/minecraft/client/Minecraft/player[5937,5943]::player->field_71439_g
+Rename field net/minecraft/entity/Entity/posX[5951,5955]::posX->field_70165_t
+Rename field net/minecraft/client/Minecraft/player[5990,5996]::player->field_71439_g
+Rename field net/minecraft/entity/Entity/posY[6004,6008]::posY->field_70163_u
+Rename field net/minecraft/client/Minecraft/player[6043,6049]::player->field_71439_g
+Rename field net/minecraft/entity/Entity/posZ[6057,6061]::posZ->field_70161_v
+Import: net.minecraft.util.math.BlockPos
+Import: net.minecraft.block.Block
+Import: net.minecraft.init.Blocks
+Adding 8 imports
+        java.awt.Color
+        java.util.ArrayList
+        java.util.List
+        rina.turok.bope.bopemod.BopeModule
+        rina.turok.bope.bopemod.events.BopeEventRender
+        rina.turok.bope.bopemod.guiscreen.settings.BopeSetting
+        rina.turok.bope.bopemod.hacks.BopeCategory
+        rina.turok.turok.draw.TurokRenderHelp
+End  Processing: rina/turok/bope/bopemod/hacks/render/BopeHoleColor.java
 
 Start Processing: rina/turok/bope/bopemod/hacks/render/BopePlayerESP.java
 FOUND CONSTR method rina/turok/bope/bopemod/hacks/render/BopePlayerESP/BopePlayerESP ()V rina/turok/bope/bopemod/hacks/render/BopePlayerESP
@@ -1390,15 +1449,14 @@ End  Processing: rina/turok/bope/bopemod/manager/BopeEventManager.java
 Start Processing: rina/turok/bope/bopemod/manager/BopeHUDManager.java
 FOUND CONSTR method rina/turok/bope/bopemod/manager/BopeHUDManager/BopeHUDManager (Ljava/lang/String;)V rina/turok/bope/bopemod/manager/BopeHUDManager
 Import: java.util.*
-Adding 12 imports
+Adding 11 imports
         rina.turok.bope.bopemod.guiscreen.hud.BopeArmorPreview
         rina.turok.bope.bopemod.guiscreen.hud.BopeArrayList
+        rina.turok.bope.bopemod.guiscreen.hud.BopeCoordinates
         rina.turok.bope.bopemod.guiscreen.hud.BopeCrystalCount
         rina.turok.bope.bopemod.guiscreen.hud.BopeEXPCount
         rina.turok.bope.bopemod.guiscreen.hud.BopeGappleCount
         rina.turok.bope.bopemod.guiscreen.hud.BopeInventoryPreview
-        rina.turok.bope.bopemod.guiscreen.hud.BopeNetherCoords
-        rina.turok.bope.bopemod.guiscreen.hud.BopeOverworldCoords
         rina.turok.bope.bopemod.guiscreen.hud.BopeTotemCount
         rina.turok.bope.bopemod.guiscreen.hud.BopeUser
         rina.turok.bope.bopemod.guiscreen.hud.BopeWatermark
@@ -1408,47 +1466,47 @@ End  Processing: rina/turok/bope/bopemod/manager/BopeHUDManager.java
 Start Processing: rina/turok/bope/bopemod/manager/BopeModuleManager.java
 Rename method net/minecraft/client/Minecraft/getMinecraft ()Lnet/minecraft/client/Minecraft;[1402,1414]::getMinecraft->func_71410_x
 FOUND CONSTR method rina/turok/bope/bopemod/manager/BopeModuleManager/BopeModuleManager (Ljava/lang/String;)V rina/turok/bope/bopemod/manager/BopeModuleManager
-Rename field net/minecraft/entity/Entity/posX[2795,2799]::posX->field_70165_t
-Rename field net/minecraft/entity/Entity/lastTickPosX[2818,2830]::lastTickPosX->field_70142_S
-Rename field net/minecraft/entity/Entity/posY[2849,2853]::posY->field_70163_u
-Rename field net/minecraft/entity/Entity/lastTickPosY[2872,2884]::lastTickPosY->field_70137_T
-Rename field net/minecraft/entity/Entity/posZ[2903,2907]::posZ->field_70161_v
-Rename field net/minecraft/entity/Entity/lastTickPosZ[2926,2938]::lastTickPosZ->field_70136_U
-Rename field net/minecraft/entity/Entity/lastTickPosX[3043,3055]::lastTickPosX->field_70142_S
-Rename field net/minecraft/entity/Entity/lastTickPosY[3065,3077]::lastTickPosY->field_70137_T
-Rename field net/minecraft/entity/Entity/lastTickPosZ[3087,3099]::lastTickPosZ->field_70136_U
-Rename method net/minecraft/util/math/Vec3d/add (Lnet/minecraft/util/math/Vec3d;)Lnet/minecraft/util/math/Vec3d;[3102,3105]::add->func_178787_e
-Rename field net/minecraft/client/Minecraft/profiler[3226,3234]::profiler->field_71424_I
-Rename method net/minecraft/profiler/Profiler/startSection (Ljava/lang/String;)V[3240,3252]::startSection->func_76320_a
-Rename field net/minecraft/client/Minecraft/profiler[3267,3275]::profiler->field_71424_I
-Rename method net/minecraft/profiler/Profiler/startSection (Ljava/lang/String;)V[3281,3293]::startSection->func_76320_a
-Rename method net/minecraft/client/renderer/GlStateManager/disableTexture2D ()V[3322,3338]::disableTexture2D->func_179090_x
-Rename method net/minecraft/client/renderer/GlStateManager/enableBlend ()V[3356,3367]::enableBlend->func_179147_l
-Rename method net/minecraft/client/renderer/GlStateManager/disableAlpha ()V[3390,3402]::disableAlpha->func_179118_c
-Rename method net/minecraft/client/renderer/GlStateManager/tryBlendFuncSeparate (IIII)V[3424,3444]::tryBlendFuncSeparate->func_179120_a
-Rename method net/minecraft/client/renderer/GlStateManager/shadeModel (I)V[3510,3520]::shadeModel->func_179103_j
-Rename method net/minecraft/client/renderer/GlStateManager/disableDepth ()V[3558,3570]::disableDepth->func_179097_i
-Rename method net/minecraft/client/renderer/GlStateManager/glLineWidth (F)V[3593,3604]::glLineWidth->func_187441_d
-Rename field net/minecraft/client/Minecraft/player[3651,3657]::player->field_71439_g
-Rename field net/minecraft/client/Minecraft/profiler[3821,3829]::profiler->field_71424_I
-Rename method net/minecraft/profiler/Profiler/endSection ()V[3835,3845]::endSection->func_76319_b
-Rename field net/minecraft/client/Minecraft/profiler[3949,3957]::profiler->field_71424_I
-Rename method net/minecraft/profiler/Profiler/startSection (Ljava/lang/String;)V[3963,3975]::startSection->func_76320_a
-Rename field net/minecraft/client/Minecraft/profiler[4037,4045]::profiler->field_71424_I
-Rename method net/minecraft/profiler/Profiler/endSection ()V[4051,4061]::endSection->func_76319_b
-Rename field net/minecraft/client/Minecraft/profiler[4083,4091]::profiler->field_71424_I
-Rename method net/minecraft/profiler/Profiler/startSection (Ljava/lang/String;)V[4097,4109]::startSection->func_76320_a
-Rename method net/minecraft/client/renderer/GlStateManager/glLineWidth (F)V[4140,4151]::glLineWidth->func_187441_d
-Rename method net/minecraft/client/renderer/GlStateManager/shadeModel (I)V[4177,4187]::shadeModel->func_179103_j
-Rename method net/minecraft/client/renderer/GlStateManager/disableBlend ()V[4223,4235]::disableBlend->func_179084_k
-Rename method net/minecraft/client/renderer/GlStateManager/enableAlpha ()V[4257,4268]::enableAlpha->func_179141_d
-Rename method net/minecraft/client/renderer/GlStateManager/enableTexture2D ()V[4291,4306]::enableTexture2D->func_179098_w
-Rename method net/minecraft/client/renderer/GlStateManager/enableDepth ()V[4325,4336]::enableDepth->func_179126_j
-Rename method net/minecraft/client/renderer/GlStateManager/enableCull ()V[4359,4369]::enableCull->func_179089_o
-Rename field net/minecraft/client/Minecraft/profiler[4415,4423]::profiler->field_71424_I
-Rename method net/minecraft/profiler/Profiler/endSection ()V[4429,4439]::endSection->func_76319_b
-Rename field net/minecraft/client/Minecraft/profiler[4450,4458]::profiler->field_71424_I
-Rename method net/minecraft/profiler/Profiler/endSection ()V[4464,4474]::endSection->func_76319_b
+Rename field net/minecraft/entity/Entity/posX[2830,2834]::posX->field_70165_t
+Rename field net/minecraft/entity/Entity/lastTickPosX[2853,2865]::lastTickPosX->field_70142_S
+Rename field net/minecraft/entity/Entity/posY[2884,2888]::posY->field_70163_u
+Rename field net/minecraft/entity/Entity/lastTickPosY[2907,2919]::lastTickPosY->field_70137_T
+Rename field net/minecraft/entity/Entity/posZ[2938,2942]::posZ->field_70161_v
+Rename field net/minecraft/entity/Entity/lastTickPosZ[2961,2973]::lastTickPosZ->field_70136_U
+Rename field net/minecraft/entity/Entity/lastTickPosX[3078,3090]::lastTickPosX->field_70142_S
+Rename field net/minecraft/entity/Entity/lastTickPosY[3100,3112]::lastTickPosY->field_70137_T
+Rename field net/minecraft/entity/Entity/lastTickPosZ[3122,3134]::lastTickPosZ->field_70136_U
+Rename method net/minecraft/util/math/Vec3d/add (Lnet/minecraft/util/math/Vec3d;)Lnet/minecraft/util/math/Vec3d;[3137,3140]::add->func_178787_e
+Rename field net/minecraft/client/Minecraft/profiler[3261,3269]::profiler->field_71424_I
+Rename method net/minecraft/profiler/Profiler/startSection (Ljava/lang/String;)V[3275,3287]::startSection->func_76320_a
+Rename field net/minecraft/client/Minecraft/profiler[3302,3310]::profiler->field_71424_I
+Rename method net/minecraft/profiler/Profiler/startSection (Ljava/lang/String;)V[3316,3328]::startSection->func_76320_a
+Rename method net/minecraft/client/renderer/GlStateManager/disableTexture2D ()V[3357,3373]::disableTexture2D->func_179090_x
+Rename method net/minecraft/client/renderer/GlStateManager/enableBlend ()V[3391,3402]::enableBlend->func_179147_l
+Rename method net/minecraft/client/renderer/GlStateManager/disableAlpha ()V[3425,3437]::disableAlpha->func_179118_c
+Rename method net/minecraft/client/renderer/GlStateManager/tryBlendFuncSeparate (IIII)V[3459,3479]::tryBlendFuncSeparate->func_179120_a
+Rename method net/minecraft/client/renderer/GlStateManager/shadeModel (I)V[3545,3555]::shadeModel->func_179103_j
+Rename method net/minecraft/client/renderer/GlStateManager/disableDepth ()V[3593,3605]::disableDepth->func_179097_i
+Rename method net/minecraft/client/renderer/GlStateManager/glLineWidth (F)V[3628,3639]::glLineWidth->func_187441_d
+Rename field net/minecraft/client/Minecraft/player[3686,3692]::player->field_71439_g
+Rename field net/minecraft/client/Minecraft/profiler[3856,3864]::profiler->field_71424_I
+Rename method net/minecraft/profiler/Profiler/endSection ()V[3870,3880]::endSection->func_76319_b
+Rename field net/minecraft/client/Minecraft/profiler[3975,3983]::profiler->field_71424_I
+Rename method net/minecraft/profiler/Profiler/startSection (Ljava/lang/String;)V[3989,4001]::startSection->func_76320_a
+Rename field net/minecraft/client/Minecraft/profiler[4065,4073]::profiler->field_71424_I
+Rename method net/minecraft/profiler/Profiler/endSection ()V[4079,4089]::endSection->func_76319_b
+Rename field net/minecraft/client/Minecraft/profiler[4110,4118]::profiler->field_71424_I
+Rename method net/minecraft/profiler/Profiler/startSection (Ljava/lang/String;)V[4124,4136]::startSection->func_76320_a
+Rename method net/minecraft/client/renderer/GlStateManager/glLineWidth (F)V[4167,4178]::glLineWidth->func_187441_d
+Rename method net/minecraft/client/renderer/GlStateManager/shadeModel (I)V[4204,4214]::shadeModel->func_179103_j
+Rename method net/minecraft/client/renderer/GlStateManager/disableBlend ()V[4250,4262]::disableBlend->func_179084_k
+Rename method net/minecraft/client/renderer/GlStateManager/enableAlpha ()V[4284,4295]::enableAlpha->func_179141_d
+Rename method net/minecraft/client/renderer/GlStateManager/enableTexture2D ()V[4318,4333]::enableTexture2D->func_179098_w
+Rename method net/minecraft/client/renderer/GlStateManager/enableDepth ()V[4352,4363]::enableDepth->func_179126_j
+Rename method net/minecraft/client/renderer/GlStateManager/enableCull ()V[4386,4396]::enableCull->func_179089_o
+Rename field net/minecraft/client/Minecraft/profiler[4442,4450]::profiler->field_71424_I
+Rename method net/minecraft/profiler/Profiler/endSection ()V[4456,4466]::endSection->func_76319_b
+Rename field net/minecraft/client/Minecraft/profiler[4477,4485]::profiler->field_71424_I
+Rename method net/minecraft/profiler/Profiler/endSection ()V[4491,4501]::endSection->func_76319_b
 Import: net.minecraftforge.client.event.RenderWorldLastEvent
 Import: net.minecraft.client.renderer.GlStateManager
 Import: net.minecraft.client.Minecraft
@@ -1457,7 +1515,7 @@ Import: net.minecraft.entity.Entity
 Import: org.lwjgl.opengl.GL11
 Import: java.util.Comparator
 Import: java.util.*
-Adding 22 imports
+Adding 23 imports
         rina.turok.bope.bopemod.BopeModule
         rina.turok.bope.bopemod.events.BopeEventRender
         rina.turok.bope.bopemod.hacks.BopeCategory
@@ -1477,6 +1535,7 @@ Adding 22 imports
         rina.turok.bope.bopemod.hacks.movement.BopeEatMovement
         rina.turok.bope.bopemod.hacks.movement.BopeStrafe
         rina.turok.bope.bopemod.hacks.render.BopeHighlight
+        rina.turok.bope.bopemod.hacks.render.BopeHoleColor
         rina.turok.bope.bopemod.hacks.render.BopePlayerESP
         rina.turok.bope.bopemod.hacks.render.BopeSwing
         rina.turok.turok.draw.TurokRenderHelp
@@ -1624,184 +1683,184 @@ End  Processing: rina/turok/turok/draw/TurokGL.java
 
 Start Processing: rina/turok/turok/draw/TurokRenderHelp.java
 FOUND CONSTR method rina/turok/turok/draw/TurokRenderHelp/TurokRenderHelp ()V rina/turok/turok/draw/TurokRenderHelp
-Rename method net/minecraft/client/renderer/GlStateManager/tryBlendFuncSeparate (Lnet/minecraft/client/renderer/GlStateManager$SourceFactor;Lnet/minecraft/client/renderer/GlStateManager$DestFactor;Lnet/minecraft/client/renderer/GlStateManager$SourceFactor;Lnet/minecraft/client/renderer/GlStateManager$DestFactor;)V[807,827]::tryBlendFuncSeparate->func_187428_a
+Rename method net/minecraft/client/renderer/GlStateManager/tryBlendFuncSeparate (Lnet/minecraft/client/renderer/GlStateManager$SourceFactor;Lnet/minecraft/client/renderer/GlStateManager$DestFactor;Lnet/minecraft/client/renderer/GlStateManager$SourceFactor;Lnet/minecraft/client/renderer/GlStateManager$DestFactor;)V[1007,1027]::tryBlendFuncSeparate->func_187428_a
 New Key: class net/minecraft/client/renderer/GlStateManager
 New Key: class net/minecraft/client/renderer/GlStateManager
 New Key: class net/minecraft/client/renderer/GlStateManager
 New Key: class net/minecraft/client/renderer/GlStateManager
-Rename method net/minecraft/client/renderer/GlStateManager/glLineWidth (F)V[996,1007]::glLineWidth->func_187441_d
-Rename method net/minecraft/client/renderer/GlStateManager/disableTexture2D ()V[1040,1056]::disableTexture2D->func_179090_x
-Rename method net/minecraft/client/renderer/GlStateManager/depthMask (Z)V[1080,1089]::depthMask->func_179132_a
-Rename method net/minecraft/client/renderer/GlStateManager/enableBlend ()V[1125,1136]::enableBlend->func_179147_l
-Rename method net/minecraft/client/renderer/GlStateManager/disableDepth ()V[1165,1177]::disableDepth->func_179097_i
-Rename method net/minecraft/client/renderer/GlStateManager/disableLighting ()V[1205,1220]::disableLighting->func_179140_f
-Rename method net/minecraft/client/renderer/GlStateManager/disableCull ()V[1245,1256]::disableCull->func_179129_p
-Rename method net/minecraft/client/renderer/GlStateManager/enableAlpha ()V[1285,1296]::enableAlpha->func_179141_d
-Rename method net/minecraft/client/renderer/GlStateManager/color (FFF)V[1325,1330]::color->func_179124_c
-Rename method net/minecraft/client/renderer/Tessellator/getBuffer ()Lnet/minecraft/client/renderer/BufferBuilder;[1412,1421]::getBuffer->func_178180_c
-Rename method net/minecraft/client/renderer/BufferBuilder/begin (ILnet/minecraft/client/renderer/vertex/VertexFormat;)V[1428,1433]::begin->func_181668_a
-Rename field net/minecraft/client/renderer/vertex/DefaultVertexFormats/POSITION_COLOR[1469,1483]::POSITION_COLOR->field_181706_f
-Rename method net/minecraft/client/renderer/Tessellator/draw ()V[1626,1630]::draw->func_78381_a
-Rename method net/minecraft/client/renderer/GlStateManager/enableCull ()V[1710,1720]::enableCull->func_179089_o
-Rename method net/minecraft/client/renderer/GlStateManager/depthMask (Z)V[1750,1759]::depthMask->func_179132_a
-Rename method net/minecraft/client/renderer/GlStateManager/enableTexture2D ()V[1794,1809]::enableTexture2D->func_179098_w
-Rename method net/minecraft/client/renderer/GlStateManager/enableBlend ()V[1834,1845]::enableBlend->func_179147_l
-Rename method net/minecraft/client/renderer/GlStateManager/enableDepth ()V[1874,1885]::enableDepth->func_179126_j
-Rename method net/minecraft/client/renderer/Tessellator/getBuffer ()Lnet/minecraft/client/renderer/BufferBuilder;[2476,2485]::getBuffer->func_178180_c
-Rename method net/minecraft/client/renderer/Tessellator/getBuffer ()Lnet/minecraft/client/renderer/BufferBuilder;[2661,2670]::getBuffer->func_178180_c
-Rename field net/minecraft/util/math/Vec3i/x[2687,2688]::x->field_177962_a
-Rename field net/minecraft/util/math/Vec3i/y[2712,2713]::y->field_177960_b
-Rename field net/minecraft/util/math/Vec3i/z[2737,2738]::z->field_177961_c
-Rename method net/minecraft/client/renderer/Tessellator/getBuffer ()Lnet/minecraft/client/renderer/BufferBuilder;[3387,3396]::getBuffer->func_178180_c
-Rename method net/minecraft/client/renderer/Tessellator/getBuffer ()Lnet/minecraft/client/renderer/BufferBuilder;[3582,3591]::getBuffer->func_178180_c
-Rename field net/minecraft/util/math/Vec3i/x[3608,3609]::x->field_177962_a
-Rename field net/minecraft/util/math/Vec3i/y[3633,3634]::y->field_177960_b
-Rename field net/minecraft/util/math/Vec3i/z[3658,3659]::z->field_177961_c
-Rename method net/minecraft/client/renderer/Tessellator/getBuffer ()Lnet/minecraft/client/renderer/BufferBuilder;[3787,3796]::getBuffer->func_178180_c
-Rename method net/minecraft/client/renderer/BufferBuilder/pos (DDD)Lnet/minecraft/client/renderer/BufferBuilder;[4098,4101]::pos->func_181662_b
-Rename method net/minecraft/client/renderer/BufferBuilder/color (IIII)Lnet/minecraft/client/renderer/BufferBuilder;[4125,4130]::color->func_181669_b
-Rename method net/minecraft/client/renderer/BufferBuilder/endVertex ()V[4151,4160]::endVertex->func_181675_d
-Rename method net/minecraft/client/renderer/BufferBuilder/pos (DDD)Lnet/minecraft/client/renderer/BufferBuilder;[4187,4190]::pos->func_181662_b
-Rename method net/minecraft/client/renderer/BufferBuilder/color (IIII)Lnet/minecraft/client/renderer/BufferBuilder;[4218,4223]::color->func_181669_b
-Rename method net/minecraft/client/renderer/BufferBuilder/endVertex ()V[4244,4253]::endVertex->func_181675_d
-Rename method net/minecraft/client/renderer/BufferBuilder/pos (DDD)Lnet/minecraft/client/renderer/BufferBuilder;[4280,4283]::pos->func_181662_b
-Rename method net/minecraft/client/renderer/BufferBuilder/color (IIII)Lnet/minecraft/client/renderer/BufferBuilder;[4307,4312]::color->func_181669_b
-Rename method net/minecraft/client/renderer/BufferBuilder/endVertex ()V[4333,4342]::endVertex->func_181675_d
-Rename method net/minecraft/client/renderer/BufferBuilder/pos (DDD)Lnet/minecraft/client/renderer/BufferBuilder;[4369,4372]::pos->func_181662_b
-Rename method net/minecraft/client/renderer/BufferBuilder/color (IIII)Lnet/minecraft/client/renderer/BufferBuilder;[4392,4397]::color->func_181669_b
-Rename method net/minecraft/client/renderer/BufferBuilder/endVertex ()V[4418,4427]::endVertex->func_181675_d
-Rename method net/minecraft/client/renderer/BufferBuilder/pos (DDD)Lnet/minecraft/client/renderer/BufferBuilder;[4572,4575]::pos->func_181662_b
-Rename method net/minecraft/client/renderer/BufferBuilder/color (IIII)Lnet/minecraft/client/renderer/BufferBuilder;[4603,4608]::color->func_181669_b
-Rename method net/minecraft/client/renderer/BufferBuilder/endVertex ()V[4629,4638]::endVertex->func_181675_d
-Rename method net/minecraft/client/renderer/BufferBuilder/pos (DDD)Lnet/minecraft/client/renderer/BufferBuilder;[4665,4668]::pos->func_181662_b
-Rename method net/minecraft/client/renderer/BufferBuilder/color (IIII)Lnet/minecraft/client/renderer/BufferBuilder;[4692,4697]::color->func_181669_b
-Rename method net/minecraft/client/renderer/BufferBuilder/endVertex ()V[4718,4727]::endVertex->func_181675_d
-Rename method net/minecraft/client/renderer/BufferBuilder/pos (DDD)Lnet/minecraft/client/renderer/BufferBuilder;[4754,4757]::pos->func_181662_b
-Rename method net/minecraft/client/renderer/BufferBuilder/color (IIII)Lnet/minecraft/client/renderer/BufferBuilder;[4785,4790]::color->func_181669_b
-Rename method net/minecraft/client/renderer/BufferBuilder/endVertex ()V[4811,4820]::endVertex->func_181675_d
-Rename method net/minecraft/client/renderer/BufferBuilder/pos (DDD)Lnet/minecraft/client/renderer/BufferBuilder;[4847,4850]::pos->func_181662_b
-Rename method net/minecraft/client/renderer/BufferBuilder/color (IIII)Lnet/minecraft/client/renderer/BufferBuilder;[4882,4887]::color->func_181669_b
-Rename method net/minecraft/client/renderer/BufferBuilder/endVertex ()V[4908,4917]::endVertex->func_181675_d
-Rename method net/minecraft/client/renderer/BufferBuilder/pos (DDD)Lnet/minecraft/client/renderer/BufferBuilder;[5065,5068]::pos->func_181662_b
-Rename method net/minecraft/client/renderer/BufferBuilder/color (IIII)Lnet/minecraft/client/renderer/BufferBuilder;[5092,5097]::color->func_181669_b
-Rename method net/minecraft/client/renderer/BufferBuilder/endVertex ()V[5118,5127]::endVertex->func_181675_d
-Rename method net/minecraft/client/renderer/BufferBuilder/pos (DDD)Lnet/minecraft/client/renderer/BufferBuilder;[5154,5157]::pos->func_181662_b
-Rename method net/minecraft/client/renderer/BufferBuilder/color (IIII)Lnet/minecraft/client/renderer/BufferBuilder;[5177,5182]::color->func_181669_b
-Rename method net/minecraft/client/renderer/BufferBuilder/endVertex ()V[5203,5212]::endVertex->func_181675_d
-Rename method net/minecraft/client/renderer/BufferBuilder/pos (DDD)Lnet/minecraft/client/renderer/BufferBuilder;[5239,5242]::pos->func_181662_b
-Rename method net/minecraft/client/renderer/BufferBuilder/color (IIII)Lnet/minecraft/client/renderer/BufferBuilder;[5266,5271]::color->func_181669_b
-Rename method net/minecraft/client/renderer/BufferBuilder/endVertex ()V[5292,5301]::endVertex->func_181675_d
-Rename method net/minecraft/client/renderer/BufferBuilder/pos (DDD)Lnet/minecraft/client/renderer/BufferBuilder;[5328,5331]::pos->func_181662_b
-Rename method net/minecraft/client/renderer/BufferBuilder/color (IIII)Lnet/minecraft/client/renderer/BufferBuilder;[5359,5364]::color->func_181669_b
-Rename method net/minecraft/client/renderer/BufferBuilder/endVertex ()V[5385,5394]::endVertex->func_181675_d
-Rename method net/minecraft/client/renderer/BufferBuilder/pos (DDD)Lnet/minecraft/client/renderer/BufferBuilder;[5542,5545]::pos->func_181662_b
-Rename method net/minecraft/client/renderer/BufferBuilder/color (IIII)Lnet/minecraft/client/renderer/BufferBuilder;[5569,5574]::color->func_181669_b
-Rename method net/minecraft/client/renderer/BufferBuilder/endVertex ()V[5595,5604]::endVertex->func_181675_d
-Rename method net/minecraft/client/renderer/BufferBuilder/pos (DDD)Lnet/minecraft/client/renderer/BufferBuilder;[5631,5634]::pos->func_181662_b
-Rename method net/minecraft/client/renderer/BufferBuilder/color (IIII)Lnet/minecraft/client/renderer/BufferBuilder;[5662,5667]::color->func_181669_b
-Rename method net/minecraft/client/renderer/BufferBuilder/endVertex ()V[5688,5697]::endVertex->func_181675_d
-Rename method net/minecraft/client/renderer/BufferBuilder/pos (DDD)Lnet/minecraft/client/renderer/BufferBuilder;[5724,5727]::pos->func_181662_b
-Rename method net/minecraft/client/renderer/BufferBuilder/color (IIII)Lnet/minecraft/client/renderer/BufferBuilder;[5759,5764]::color->func_181669_b
-Rename method net/minecraft/client/renderer/BufferBuilder/endVertex ()V[5785,5794]::endVertex->func_181675_d
-Rename method net/minecraft/client/renderer/BufferBuilder/pos (DDD)Lnet/minecraft/client/renderer/BufferBuilder;[5821,5824]::pos->func_181662_b
-Rename method net/minecraft/client/renderer/BufferBuilder/color (IIII)Lnet/minecraft/client/renderer/BufferBuilder;[5852,5857]::color->func_181669_b
-Rename method net/minecraft/client/renderer/BufferBuilder/endVertex ()V[5878,5887]::endVertex->func_181675_d
-Rename method net/minecraft/client/renderer/BufferBuilder/pos (DDD)Lnet/minecraft/client/renderer/BufferBuilder;[6035,6038]::pos->func_181662_b
-Rename method net/minecraft/client/renderer/BufferBuilder/color (IIII)Lnet/minecraft/client/renderer/BufferBuilder;[6058,6063]::color->func_181669_b
-Rename method net/minecraft/client/renderer/BufferBuilder/endVertex ()V[6084,6093]::endVertex->func_181675_d
-Rename method net/minecraft/client/renderer/BufferBuilder/pos (DDD)Lnet/minecraft/client/renderer/BufferBuilder;[6120,6123]::pos->func_181662_b
-Rename method net/minecraft/client/renderer/BufferBuilder/color (IIII)Lnet/minecraft/client/renderer/BufferBuilder;[6147,6152]::color->func_181669_b
-Rename method net/minecraft/client/renderer/BufferBuilder/endVertex ()V[6173,6182]::endVertex->func_181675_d
-Rename method net/minecraft/client/renderer/BufferBuilder/pos (DDD)Lnet/minecraft/client/renderer/BufferBuilder;[6209,6212]::pos->func_181662_b
-Rename method net/minecraft/client/renderer/BufferBuilder/color (IIII)Lnet/minecraft/client/renderer/BufferBuilder;[6240,6245]::color->func_181669_b
-Rename method net/minecraft/client/renderer/BufferBuilder/endVertex ()V[6266,6275]::endVertex->func_181675_d
-Rename method net/minecraft/client/renderer/BufferBuilder/pos (DDD)Lnet/minecraft/client/renderer/BufferBuilder;[6302,6305]::pos->func_181662_b
-Rename method net/minecraft/client/renderer/BufferBuilder/color (IIII)Lnet/minecraft/client/renderer/BufferBuilder;[6329,6334]::color->func_181669_b
-Rename method net/minecraft/client/renderer/BufferBuilder/endVertex ()V[6355,6364]::endVertex->func_181675_d
-Rename method net/minecraft/client/renderer/BufferBuilder/pos (DDD)Lnet/minecraft/client/renderer/BufferBuilder;[6512,6515]::pos->func_181662_b
-Rename method net/minecraft/client/renderer/BufferBuilder/color (IIII)Lnet/minecraft/client/renderer/BufferBuilder;[6543,6548]::color->func_181669_b
-Rename method net/minecraft/client/renderer/BufferBuilder/endVertex ()V[6569,6578]::endVertex->func_181675_d
-Rename method net/minecraft/client/renderer/BufferBuilder/pos (DDD)Lnet/minecraft/client/renderer/BufferBuilder;[6605,6608]::pos->func_181662_b
-Rename method net/minecraft/client/renderer/BufferBuilder/color (IIII)Lnet/minecraft/client/renderer/BufferBuilder;[6632,6637]::color->func_181669_b
-Rename method net/minecraft/client/renderer/BufferBuilder/endVertex ()V[6658,6667]::endVertex->func_181675_d
-Rename method net/minecraft/client/renderer/BufferBuilder/pos (DDD)Lnet/minecraft/client/renderer/BufferBuilder;[6694,6697]::pos->func_181662_b
-Rename method net/minecraft/client/renderer/BufferBuilder/color (IIII)Lnet/minecraft/client/renderer/BufferBuilder;[6725,6730]::color->func_181669_b
-Rename method net/minecraft/client/renderer/BufferBuilder/endVertex ()V[6751,6760]::endVertex->func_181675_d
-Rename method net/minecraft/client/renderer/BufferBuilder/pos (DDD)Lnet/minecraft/client/renderer/BufferBuilder;[6787,6790]::pos->func_181662_b
-Rename method net/minecraft/client/renderer/BufferBuilder/color (IIII)Lnet/minecraft/client/renderer/BufferBuilder;[6822,6827]::color->func_181669_b
-Rename method net/minecraft/client/renderer/BufferBuilder/endVertex ()V[6848,6857]::endVertex->func_181675_d
-Rename method net/minecraft/client/renderer/BufferBuilder/pos (DDD)Lnet/minecraft/client/renderer/BufferBuilder;[7178,7181]::pos->func_181662_b
-Rename method net/minecraft/client/renderer/BufferBuilder/color (IIII)Lnet/minecraft/client/renderer/BufferBuilder;[7201,7206]::color->func_181669_b
-Rename method net/minecraft/client/renderer/BufferBuilder/endVertex ()V[7227,7236]::endVertex->func_181675_d
-Rename method net/minecraft/client/renderer/BufferBuilder/pos (DDD)Lnet/minecraft/client/renderer/BufferBuilder;[7263,7266]::pos->func_181662_b
-Rename method net/minecraft/client/renderer/BufferBuilder/color (IIII)Lnet/minecraft/client/renderer/BufferBuilder;[7290,7295]::color->func_181669_b
-Rename method net/minecraft/client/renderer/BufferBuilder/endVertex ()V[7316,7325]::endVertex->func_181675_d
-Rename method net/minecraft/client/renderer/BufferBuilder/pos (DDD)Lnet/minecraft/client/renderer/BufferBuilder;[7474,7477]::pos->func_181662_b
-Rename method net/minecraft/client/renderer/BufferBuilder/color (IIII)Lnet/minecraft/client/renderer/BufferBuilder;[7501,7506]::color->func_181669_b
-Rename method net/minecraft/client/renderer/BufferBuilder/endVertex ()V[7527,7536]::endVertex->func_181675_d
-Rename method net/minecraft/client/renderer/BufferBuilder/pos (DDD)Lnet/minecraft/client/renderer/BufferBuilder;[7563,7566]::pos->func_181662_b
-Rename method net/minecraft/client/renderer/BufferBuilder/color (IIII)Lnet/minecraft/client/renderer/BufferBuilder;[7594,7599]::color->func_181669_b
-Rename method net/minecraft/client/renderer/BufferBuilder/endVertex ()V[7620,7629]::endVertex->func_181675_d
-Rename method net/minecraft/client/renderer/BufferBuilder/pos (DDD)Lnet/minecraft/client/renderer/BufferBuilder;[7780,7783]::pos->func_181662_b
-Rename method net/minecraft/client/renderer/BufferBuilder/color (IIII)Lnet/minecraft/client/renderer/BufferBuilder;[7807,7812]::color->func_181669_b
-Rename method net/minecraft/client/renderer/BufferBuilder/endVertex ()V[7833,7842]::endVertex->func_181675_d
-Rename method net/minecraft/client/renderer/BufferBuilder/pos (DDD)Lnet/minecraft/client/renderer/BufferBuilder;[7869,7872]::pos->func_181662_b
-Rename method net/minecraft/client/renderer/BufferBuilder/color (IIII)Lnet/minecraft/client/renderer/BufferBuilder;[7900,7905]::color->func_181669_b
-Rename method net/minecraft/client/renderer/BufferBuilder/endVertex ()V[7926,7935]::endVertex->func_181675_d
-Rename method net/minecraft/client/renderer/BufferBuilder/pos (DDD)Lnet/minecraft/client/renderer/BufferBuilder;[8084,8087]::pos->func_181662_b
-Rename method net/minecraft/client/renderer/BufferBuilder/color (IIII)Lnet/minecraft/client/renderer/BufferBuilder;[8115,8120]::color->func_181669_b
-Rename method net/minecraft/client/renderer/BufferBuilder/endVertex ()V[8141,8150]::endVertex->func_181675_d
-Rename method net/minecraft/client/renderer/BufferBuilder/pos (DDD)Lnet/minecraft/client/renderer/BufferBuilder;[8177,8180]::pos->func_181662_b
-Rename method net/minecraft/client/renderer/BufferBuilder/color (IIII)Lnet/minecraft/client/renderer/BufferBuilder;[8212,8217]::color->func_181669_b
-Rename method net/minecraft/client/renderer/BufferBuilder/endVertex ()V[8238,8247]::endVertex->func_181675_d
-Rename method net/minecraft/client/renderer/BufferBuilder/pos (DDD)Lnet/minecraft/client/renderer/BufferBuilder;[8398,8401]::pos->func_181662_b
-Rename method net/minecraft/client/renderer/BufferBuilder/color (IIII)Lnet/minecraft/client/renderer/BufferBuilder;[8421,8426]::color->func_181669_b
-Rename method net/minecraft/client/renderer/BufferBuilder/endVertex ()V[8447,8456]::endVertex->func_181675_d
-Rename method net/minecraft/client/renderer/BufferBuilder/pos (DDD)Lnet/minecraft/client/renderer/BufferBuilder;[8483,8486]::pos->func_181662_b
-Rename method net/minecraft/client/renderer/BufferBuilder/color (IIII)Lnet/minecraft/client/renderer/BufferBuilder;[8510,8515]::color->func_181669_b
-Rename method net/minecraft/client/renderer/BufferBuilder/endVertex ()V[8536,8545]::endVertex->func_181675_d
-Rename method net/minecraft/client/renderer/BufferBuilder/pos (DDD)Lnet/minecraft/client/renderer/BufferBuilder;[8695,8698]::pos->func_181662_b
-Rename method net/minecraft/client/renderer/BufferBuilder/color (IIII)Lnet/minecraft/client/renderer/BufferBuilder;[8722,8727]::color->func_181669_b
-Rename method net/minecraft/client/renderer/BufferBuilder/endVertex ()V[8748,8757]::endVertex->func_181675_d
-Rename method net/minecraft/client/renderer/BufferBuilder/pos (DDD)Lnet/minecraft/client/renderer/BufferBuilder;[8784,8787]::pos->func_181662_b
-Rename method net/minecraft/client/renderer/BufferBuilder/color (IIII)Lnet/minecraft/client/renderer/BufferBuilder;[8815,8820]::color->func_181669_b
-Rename method net/minecraft/client/renderer/BufferBuilder/endVertex ()V[8841,8850]::endVertex->func_181675_d
-Rename method net/minecraft/client/renderer/BufferBuilder/pos (DDD)Lnet/minecraft/client/renderer/BufferBuilder;[9002,9005]::pos->func_181662_b
-Rename method net/minecraft/client/renderer/BufferBuilder/color (IIII)Lnet/minecraft/client/renderer/BufferBuilder;[9029,9034]::color->func_181669_b
-Rename method net/minecraft/client/renderer/BufferBuilder/endVertex ()V[9055,9064]::endVertex->func_181675_d
-Rename method net/minecraft/client/renderer/BufferBuilder/pos (DDD)Lnet/minecraft/client/renderer/BufferBuilder;[9091,9094]::pos->func_181662_b
-Rename method net/minecraft/client/renderer/BufferBuilder/color (IIII)Lnet/minecraft/client/renderer/BufferBuilder;[9122,9127]::color->func_181669_b
-Rename method net/minecraft/client/renderer/BufferBuilder/endVertex ()V[9148,9157]::endVertex->func_181675_d
-Rename method net/minecraft/client/renderer/BufferBuilder/pos (DDD)Lnet/minecraft/client/renderer/BufferBuilder;[9307,9310]::pos->func_181662_b
-Rename method net/minecraft/client/renderer/BufferBuilder/color (IIII)Lnet/minecraft/client/renderer/BufferBuilder;[9338,9343]::color->func_181669_b
-Rename method net/minecraft/client/renderer/BufferBuilder/endVertex ()V[9364,9373]::endVertex->func_181675_d
-Rename method net/minecraft/client/renderer/BufferBuilder/pos (DDD)Lnet/minecraft/client/renderer/BufferBuilder;[9400,9403]::pos->func_181662_b
-Rename method net/minecraft/client/renderer/BufferBuilder/color (IIII)Lnet/minecraft/client/renderer/BufferBuilder;[9435,9440]::color->func_181669_b
-Rename method net/minecraft/client/renderer/BufferBuilder/endVertex ()V[9461,9470]::endVertex->func_181675_d
-Rename method net/minecraft/client/renderer/BufferBuilder/pos (DDD)Lnet/minecraft/client/renderer/BufferBuilder;[9621,9624]::pos->func_181662_b
-Rename method net/minecraft/client/renderer/BufferBuilder/color (IIII)Lnet/minecraft/client/renderer/BufferBuilder;[9644,9649]::color->func_181669_b
-Rename method net/minecraft/client/renderer/BufferBuilder/endVertex ()V[9670,9679]::endVertex->func_181675_d
-Rename method net/minecraft/client/renderer/BufferBuilder/pos (DDD)Lnet/minecraft/client/renderer/BufferBuilder;[9706,9709]::pos->func_181662_b
-Rename method net/minecraft/client/renderer/BufferBuilder/color (IIII)Lnet/minecraft/client/renderer/BufferBuilder;[9733,9738]::color->func_181669_b
-Rename method net/minecraft/client/renderer/BufferBuilder/endVertex ()V[9759,9768]::endVertex->func_181675_d
-Rename method net/minecraft/client/renderer/BufferBuilder/pos (DDD)Lnet/minecraft/client/renderer/BufferBuilder;[9919,9922]::pos->func_181662_b
-Rename method net/minecraft/client/renderer/BufferBuilder/color (IIII)Lnet/minecraft/client/renderer/BufferBuilder;[9946,9951]::color->func_181669_b
-Rename method net/minecraft/client/renderer/BufferBuilder/endVertex ()V[9972,9981]::endVertex->func_181675_d
-Rename method net/minecraft/client/renderer/BufferBuilder/pos (DDD)Lnet/minecraft/client/renderer/BufferBuilder;[10008,10011]::pos->func_181662_b
-Rename method net/minecraft/client/renderer/BufferBuilder/color (IIII)Lnet/minecraft/client/renderer/BufferBuilder;[10039,10044]::color->func_181669_b
-Rename method net/minecraft/client/renderer/BufferBuilder/endVertex ()V[10065,10074]::endVertex->func_181675_d
-Rename method net/minecraft/client/renderer/BufferBuilder/pos (DDD)Lnet/minecraft/client/renderer/BufferBuilder;[10227,10230]::pos->func_181662_b
-Rename method net/minecraft/client/renderer/BufferBuilder/color (IIII)Lnet/minecraft/client/renderer/BufferBuilder;[10254,10259]::color->func_181669_b
-Rename method net/minecraft/client/renderer/BufferBuilder/endVertex ()V[10280,10289]::endVertex->func_181675_d
-Rename method net/minecraft/client/renderer/BufferBuilder/pos (DDD)Lnet/minecraft/client/renderer/BufferBuilder;[10316,10319]::pos->func_181662_b
-Rename method net/minecraft/client/renderer/BufferBuilder/color (IIII)Lnet/minecraft/client/renderer/BufferBuilder;[10347,10352]::color->func_181669_b
-Rename method net/minecraft/client/renderer/BufferBuilder/endVertex ()V[10373,10382]::endVertex->func_181675_d
-Rename method net/minecraft/client/renderer/BufferBuilder/pos (DDD)Lnet/minecraft/client/renderer/BufferBuilder;[10534,10537]::pos->func_181662_b
-Rename method net/minecraft/client/renderer/BufferBuilder/color (IIII)Lnet/minecraft/client/renderer/BufferBuilder;[10565,10570]::color->func_181669_b
-Rename method net/minecraft/client/renderer/BufferBuilder/endVertex ()V[10591,10600]::endVertex->func_181675_d
-Rename method net/minecraft/client/renderer/BufferBuilder/pos (DDD)Lnet/minecraft/client/renderer/BufferBuilder;[10627,10630]::pos->func_181662_b
-Rename method net/minecraft/client/renderer/BufferBuilder/color (IIII)Lnet/minecraft/client/renderer/BufferBuilder;[10662,10667]::color->func_181669_b
-Rename method net/minecraft/client/renderer/BufferBuilder/endVertex ()V[10688,10697]::endVertex->func_181675_d
+Rename method net/minecraft/client/renderer/GlStateManager/glLineWidth (F)V[1196,1207]::glLineWidth->func_187441_d
+Rename method net/minecraft/client/renderer/GlStateManager/disableTexture2D ()V[1240,1256]::disableTexture2D->func_179090_x
+Rename method net/minecraft/client/renderer/GlStateManager/depthMask (Z)V[1280,1289]::depthMask->func_179132_a
+Rename method net/minecraft/client/renderer/GlStateManager/enableBlend ()V[1325,1336]::enableBlend->func_179147_l
+Rename method net/minecraft/client/renderer/GlStateManager/disableDepth ()V[1365,1377]::disableDepth->func_179097_i
+Rename method net/minecraft/client/renderer/GlStateManager/disableLighting ()V[1405,1420]::disableLighting->func_179140_f
+Rename method net/minecraft/client/renderer/GlStateManager/disableCull ()V[1445,1456]::disableCull->func_179129_p
+Rename method net/minecraft/client/renderer/GlStateManager/enableAlpha ()V[1485,1496]::enableAlpha->func_179141_d
+Rename method net/minecraft/client/renderer/GlStateManager/color (FFF)V[1525,1530]::color->func_179124_c
+Rename method net/minecraft/client/renderer/Tessellator/getBuffer ()Lnet/minecraft/client/renderer/BufferBuilder;[1614,1623]::getBuffer->func_178180_c
+Rename method net/minecraft/client/renderer/BufferBuilder/begin (ILnet/minecraft/client/renderer/vertex/VertexFormat;)V[1630,1635]::begin->func_181668_a
+Rename field net/minecraft/client/renderer/vertex/DefaultVertexFormats/POSITION_COLOR[1671,1685]::POSITION_COLOR->field_181706_f
+Rename method net/minecraft/client/renderer/Tessellator/draw ()V[1828,1832]::draw->func_78381_a
+Rename method net/minecraft/client/renderer/GlStateManager/enableCull ()V[1912,1922]::enableCull->func_179089_o
+Rename method net/minecraft/client/renderer/GlStateManager/depthMask (Z)V[1952,1961]::depthMask->func_179132_a
+Rename method net/minecraft/client/renderer/GlStateManager/enableTexture2D ()V[1996,2011]::enableTexture2D->func_179098_w
+Rename method net/minecraft/client/renderer/GlStateManager/enableBlend ()V[2036,2047]::enableBlend->func_179147_l
+Rename method net/minecraft/client/renderer/GlStateManager/enableDepth ()V[2076,2087]::enableDepth->func_179126_j
+Rename method net/minecraft/client/renderer/Tessellator/getBuffer ()Lnet/minecraft/client/renderer/BufferBuilder;[2678,2687]::getBuffer->func_178180_c
+Rename method net/minecraft/client/renderer/Tessellator/getBuffer ()Lnet/minecraft/client/renderer/BufferBuilder;[2863,2872]::getBuffer->func_178180_c
+Rename field net/minecraft/util/math/Vec3i/x[2889,2890]::x->field_177962_a
+Rename field net/minecraft/util/math/Vec3i/y[2914,2915]::y->field_177960_b
+Rename field net/minecraft/util/math/Vec3i/z[2939,2940]::z->field_177961_c
+Rename method net/minecraft/client/renderer/Tessellator/getBuffer ()Lnet/minecraft/client/renderer/BufferBuilder;[3589,3598]::getBuffer->func_178180_c
+Rename method net/minecraft/client/renderer/Tessellator/getBuffer ()Lnet/minecraft/client/renderer/BufferBuilder;[3784,3793]::getBuffer->func_178180_c
+Rename field net/minecraft/util/math/Vec3i/x[3810,3811]::x->field_177962_a
+Rename field net/minecraft/util/math/Vec3i/y[3835,3836]::y->field_177960_b
+Rename field net/minecraft/util/math/Vec3i/z[3860,3861]::z->field_177961_c
+Rename method net/minecraft/client/renderer/Tessellator/getBuffer ()Lnet/minecraft/client/renderer/BufferBuilder;[3989,3998]::getBuffer->func_178180_c
+Rename method net/minecraft/client/renderer/BufferBuilder/pos (DDD)Lnet/minecraft/client/renderer/BufferBuilder;[4300,4303]::pos->func_181662_b
+Rename method net/minecraft/client/renderer/BufferBuilder/color (IIII)Lnet/minecraft/client/renderer/BufferBuilder;[4327,4332]::color->func_181669_b
+Rename method net/minecraft/client/renderer/BufferBuilder/endVertex ()V[4353,4362]::endVertex->func_181675_d
+Rename method net/minecraft/client/renderer/BufferBuilder/pos (DDD)Lnet/minecraft/client/renderer/BufferBuilder;[4389,4392]::pos->func_181662_b
+Rename method net/minecraft/client/renderer/BufferBuilder/color (IIII)Lnet/minecraft/client/renderer/BufferBuilder;[4420,4425]::color->func_181669_b
+Rename method net/minecraft/client/renderer/BufferBuilder/endVertex ()V[4446,4455]::endVertex->func_181675_d
+Rename method net/minecraft/client/renderer/BufferBuilder/pos (DDD)Lnet/minecraft/client/renderer/BufferBuilder;[4482,4485]::pos->func_181662_b
+Rename method net/minecraft/client/renderer/BufferBuilder/color (IIII)Lnet/minecraft/client/renderer/BufferBuilder;[4509,4514]::color->func_181669_b
+Rename method net/minecraft/client/renderer/BufferBuilder/endVertex ()V[4535,4544]::endVertex->func_181675_d
+Rename method net/minecraft/client/renderer/BufferBuilder/pos (DDD)Lnet/minecraft/client/renderer/BufferBuilder;[4571,4574]::pos->func_181662_b
+Rename method net/minecraft/client/renderer/BufferBuilder/color (IIII)Lnet/minecraft/client/renderer/BufferBuilder;[4594,4599]::color->func_181669_b
+Rename method net/minecraft/client/renderer/BufferBuilder/endVertex ()V[4620,4629]::endVertex->func_181675_d
+Rename method net/minecraft/client/renderer/BufferBuilder/pos (DDD)Lnet/minecraft/client/renderer/BufferBuilder;[4774,4777]::pos->func_181662_b
+Rename method net/minecraft/client/renderer/BufferBuilder/color (IIII)Lnet/minecraft/client/renderer/BufferBuilder;[4805,4810]::color->func_181669_b
+Rename method net/minecraft/client/renderer/BufferBuilder/endVertex ()V[4831,4840]::endVertex->func_181675_d
+Rename method net/minecraft/client/renderer/BufferBuilder/pos (DDD)Lnet/minecraft/client/renderer/BufferBuilder;[4867,4870]::pos->func_181662_b
+Rename method net/minecraft/client/renderer/BufferBuilder/color (IIII)Lnet/minecraft/client/renderer/BufferBuilder;[4894,4899]::color->func_181669_b
+Rename method net/minecraft/client/renderer/BufferBuilder/endVertex ()V[4920,4929]::endVertex->func_181675_d
+Rename method net/minecraft/client/renderer/BufferBuilder/pos (DDD)Lnet/minecraft/client/renderer/BufferBuilder;[4956,4959]::pos->func_181662_b
+Rename method net/minecraft/client/renderer/BufferBuilder/color (IIII)Lnet/minecraft/client/renderer/BufferBuilder;[4987,4992]::color->func_181669_b
+Rename method net/minecraft/client/renderer/BufferBuilder/endVertex ()V[5013,5022]::endVertex->func_181675_d
+Rename method net/minecraft/client/renderer/BufferBuilder/pos (DDD)Lnet/minecraft/client/renderer/BufferBuilder;[5049,5052]::pos->func_181662_b
+Rename method net/minecraft/client/renderer/BufferBuilder/color (IIII)Lnet/minecraft/client/renderer/BufferBuilder;[5084,5089]::color->func_181669_b
+Rename method net/minecraft/client/renderer/BufferBuilder/endVertex ()V[5110,5119]::endVertex->func_181675_d
+Rename method net/minecraft/client/renderer/BufferBuilder/pos (DDD)Lnet/minecraft/client/renderer/BufferBuilder;[5267,5270]::pos->func_181662_b
+Rename method net/minecraft/client/renderer/BufferBuilder/color (IIII)Lnet/minecraft/client/renderer/BufferBuilder;[5294,5299]::color->func_181669_b
+Rename method net/minecraft/client/renderer/BufferBuilder/endVertex ()V[5320,5329]::endVertex->func_181675_d
+Rename method net/minecraft/client/renderer/BufferBuilder/pos (DDD)Lnet/minecraft/client/renderer/BufferBuilder;[5356,5359]::pos->func_181662_b
+Rename method net/minecraft/client/renderer/BufferBuilder/color (IIII)Lnet/minecraft/client/renderer/BufferBuilder;[5379,5384]::color->func_181669_b
+Rename method net/minecraft/client/renderer/BufferBuilder/endVertex ()V[5405,5414]::endVertex->func_181675_d
+Rename method net/minecraft/client/renderer/BufferBuilder/pos (DDD)Lnet/minecraft/client/renderer/BufferBuilder;[5441,5444]::pos->func_181662_b
+Rename method net/minecraft/client/renderer/BufferBuilder/color (IIII)Lnet/minecraft/client/renderer/BufferBuilder;[5468,5473]::color->func_181669_b
+Rename method net/minecraft/client/renderer/BufferBuilder/endVertex ()V[5494,5503]::endVertex->func_181675_d
+Rename method net/minecraft/client/renderer/BufferBuilder/pos (DDD)Lnet/minecraft/client/renderer/BufferBuilder;[5530,5533]::pos->func_181662_b
+Rename method net/minecraft/client/renderer/BufferBuilder/color (IIII)Lnet/minecraft/client/renderer/BufferBuilder;[5561,5566]::color->func_181669_b
+Rename method net/minecraft/client/renderer/BufferBuilder/endVertex ()V[5587,5596]::endVertex->func_181675_d
+Rename method net/minecraft/client/renderer/BufferBuilder/pos (DDD)Lnet/minecraft/client/renderer/BufferBuilder;[5744,5747]::pos->func_181662_b
+Rename method net/minecraft/client/renderer/BufferBuilder/color (IIII)Lnet/minecraft/client/renderer/BufferBuilder;[5771,5776]::color->func_181669_b
+Rename method net/minecraft/client/renderer/BufferBuilder/endVertex ()V[5797,5806]::endVertex->func_181675_d
+Rename method net/minecraft/client/renderer/BufferBuilder/pos (DDD)Lnet/minecraft/client/renderer/BufferBuilder;[5833,5836]::pos->func_181662_b
+Rename method net/minecraft/client/renderer/BufferBuilder/color (IIII)Lnet/minecraft/client/renderer/BufferBuilder;[5864,5869]::color->func_181669_b
+Rename method net/minecraft/client/renderer/BufferBuilder/endVertex ()V[5890,5899]::endVertex->func_181675_d
+Rename method net/minecraft/client/renderer/BufferBuilder/pos (DDD)Lnet/minecraft/client/renderer/BufferBuilder;[5926,5929]::pos->func_181662_b
+Rename method net/minecraft/client/renderer/BufferBuilder/color (IIII)Lnet/minecraft/client/renderer/BufferBuilder;[5961,5966]::color->func_181669_b
+Rename method net/minecraft/client/renderer/BufferBuilder/endVertex ()V[5987,5996]::endVertex->func_181675_d
+Rename method net/minecraft/client/renderer/BufferBuilder/pos (DDD)Lnet/minecraft/client/renderer/BufferBuilder;[6023,6026]::pos->func_181662_b
+Rename method net/minecraft/client/renderer/BufferBuilder/color (IIII)Lnet/minecraft/client/renderer/BufferBuilder;[6054,6059]::color->func_181669_b
+Rename method net/minecraft/client/renderer/BufferBuilder/endVertex ()V[6080,6089]::endVertex->func_181675_d
+Rename method net/minecraft/client/renderer/BufferBuilder/pos (DDD)Lnet/minecraft/client/renderer/BufferBuilder;[6237,6240]::pos->func_181662_b
+Rename method net/minecraft/client/renderer/BufferBuilder/color (IIII)Lnet/minecraft/client/renderer/BufferBuilder;[6260,6265]::color->func_181669_b
+Rename method net/minecraft/client/renderer/BufferBuilder/endVertex ()V[6286,6295]::endVertex->func_181675_d
+Rename method net/minecraft/client/renderer/BufferBuilder/pos (DDD)Lnet/minecraft/client/renderer/BufferBuilder;[6322,6325]::pos->func_181662_b
+Rename method net/minecraft/client/renderer/BufferBuilder/color (IIII)Lnet/minecraft/client/renderer/BufferBuilder;[6349,6354]::color->func_181669_b
+Rename method net/minecraft/client/renderer/BufferBuilder/endVertex ()V[6375,6384]::endVertex->func_181675_d
+Rename method net/minecraft/client/renderer/BufferBuilder/pos (DDD)Lnet/minecraft/client/renderer/BufferBuilder;[6411,6414]::pos->func_181662_b
+Rename method net/minecraft/client/renderer/BufferBuilder/color (IIII)Lnet/minecraft/client/renderer/BufferBuilder;[6442,6447]::color->func_181669_b
+Rename method net/minecraft/client/renderer/BufferBuilder/endVertex ()V[6468,6477]::endVertex->func_181675_d
+Rename method net/minecraft/client/renderer/BufferBuilder/pos (DDD)Lnet/minecraft/client/renderer/BufferBuilder;[6504,6507]::pos->func_181662_b
+Rename method net/minecraft/client/renderer/BufferBuilder/color (IIII)Lnet/minecraft/client/renderer/BufferBuilder;[6531,6536]::color->func_181669_b
+Rename method net/minecraft/client/renderer/BufferBuilder/endVertex ()V[6557,6566]::endVertex->func_181675_d
+Rename method net/minecraft/client/renderer/BufferBuilder/pos (DDD)Lnet/minecraft/client/renderer/BufferBuilder;[6714,6717]::pos->func_181662_b
+Rename method net/minecraft/client/renderer/BufferBuilder/color (IIII)Lnet/minecraft/client/renderer/BufferBuilder;[6745,6750]::color->func_181669_b
+Rename method net/minecraft/client/renderer/BufferBuilder/endVertex ()V[6771,6780]::endVertex->func_181675_d
+Rename method net/minecraft/client/renderer/BufferBuilder/pos (DDD)Lnet/minecraft/client/renderer/BufferBuilder;[6807,6810]::pos->func_181662_b
+Rename method net/minecraft/client/renderer/BufferBuilder/color (IIII)Lnet/minecraft/client/renderer/BufferBuilder;[6834,6839]::color->func_181669_b
+Rename method net/minecraft/client/renderer/BufferBuilder/endVertex ()V[6860,6869]::endVertex->func_181675_d
+Rename method net/minecraft/client/renderer/BufferBuilder/pos (DDD)Lnet/minecraft/client/renderer/BufferBuilder;[6896,6899]::pos->func_181662_b
+Rename method net/minecraft/client/renderer/BufferBuilder/color (IIII)Lnet/minecraft/client/renderer/BufferBuilder;[6927,6932]::color->func_181669_b
+Rename method net/minecraft/client/renderer/BufferBuilder/endVertex ()V[6953,6962]::endVertex->func_181675_d
+Rename method net/minecraft/client/renderer/BufferBuilder/pos (DDD)Lnet/minecraft/client/renderer/BufferBuilder;[6989,6992]::pos->func_181662_b
+Rename method net/minecraft/client/renderer/BufferBuilder/color (IIII)Lnet/minecraft/client/renderer/BufferBuilder;[7024,7029]::color->func_181669_b
+Rename method net/minecraft/client/renderer/BufferBuilder/endVertex ()V[7050,7059]::endVertex->func_181675_d
+Rename method net/minecraft/client/renderer/BufferBuilder/pos (DDD)Lnet/minecraft/client/renderer/BufferBuilder;[7380,7383]::pos->func_181662_b
+Rename method net/minecraft/client/renderer/BufferBuilder/color (IIII)Lnet/minecraft/client/renderer/BufferBuilder;[7403,7408]::color->func_181669_b
+Rename method net/minecraft/client/renderer/BufferBuilder/endVertex ()V[7429,7438]::endVertex->func_181675_d
+Rename method net/minecraft/client/renderer/BufferBuilder/pos (DDD)Lnet/minecraft/client/renderer/BufferBuilder;[7465,7468]::pos->func_181662_b
+Rename method net/minecraft/client/renderer/BufferBuilder/color (IIII)Lnet/minecraft/client/renderer/BufferBuilder;[7492,7497]::color->func_181669_b
+Rename method net/minecraft/client/renderer/BufferBuilder/endVertex ()V[7518,7527]::endVertex->func_181675_d
+Rename method net/minecraft/client/renderer/BufferBuilder/pos (DDD)Lnet/minecraft/client/renderer/BufferBuilder;[7676,7679]::pos->func_181662_b
+Rename method net/minecraft/client/renderer/BufferBuilder/color (IIII)Lnet/minecraft/client/renderer/BufferBuilder;[7703,7708]::color->func_181669_b
+Rename method net/minecraft/client/renderer/BufferBuilder/endVertex ()V[7729,7738]::endVertex->func_181675_d
+Rename method net/minecraft/client/renderer/BufferBuilder/pos (DDD)Lnet/minecraft/client/renderer/BufferBuilder;[7765,7768]::pos->func_181662_b
+Rename method net/minecraft/client/renderer/BufferBuilder/color (IIII)Lnet/minecraft/client/renderer/BufferBuilder;[7796,7801]::color->func_181669_b
+Rename method net/minecraft/client/renderer/BufferBuilder/endVertex ()V[7822,7831]::endVertex->func_181675_d
+Rename method net/minecraft/client/renderer/BufferBuilder/pos (DDD)Lnet/minecraft/client/renderer/BufferBuilder;[7982,7985]::pos->func_181662_b
+Rename method net/minecraft/client/renderer/BufferBuilder/color (IIII)Lnet/minecraft/client/renderer/BufferBuilder;[8009,8014]::color->func_181669_b
+Rename method net/minecraft/client/renderer/BufferBuilder/endVertex ()V[8035,8044]::endVertex->func_181675_d
+Rename method net/minecraft/client/renderer/BufferBuilder/pos (DDD)Lnet/minecraft/client/renderer/BufferBuilder;[8071,8074]::pos->func_181662_b
+Rename method net/minecraft/client/renderer/BufferBuilder/color (IIII)Lnet/minecraft/client/renderer/BufferBuilder;[8102,8107]::color->func_181669_b
+Rename method net/minecraft/client/renderer/BufferBuilder/endVertex ()V[8128,8137]::endVertex->func_181675_d
+Rename method net/minecraft/client/renderer/BufferBuilder/pos (DDD)Lnet/minecraft/client/renderer/BufferBuilder;[8286,8289]::pos->func_181662_b
+Rename method net/minecraft/client/renderer/BufferBuilder/color (IIII)Lnet/minecraft/client/renderer/BufferBuilder;[8317,8322]::color->func_181669_b
+Rename method net/minecraft/client/renderer/BufferBuilder/endVertex ()V[8343,8352]::endVertex->func_181675_d
+Rename method net/minecraft/client/renderer/BufferBuilder/pos (DDD)Lnet/minecraft/client/renderer/BufferBuilder;[8379,8382]::pos->func_181662_b
+Rename method net/minecraft/client/renderer/BufferBuilder/color (IIII)Lnet/minecraft/client/renderer/BufferBuilder;[8414,8419]::color->func_181669_b
+Rename method net/minecraft/client/renderer/BufferBuilder/endVertex ()V[8440,8449]::endVertex->func_181675_d
+Rename method net/minecraft/client/renderer/BufferBuilder/pos (DDD)Lnet/minecraft/client/renderer/BufferBuilder;[8600,8603]::pos->func_181662_b
+Rename method net/minecraft/client/renderer/BufferBuilder/color (IIII)Lnet/minecraft/client/renderer/BufferBuilder;[8623,8628]::color->func_181669_b
+Rename method net/minecraft/client/renderer/BufferBuilder/endVertex ()V[8649,8658]::endVertex->func_181675_d
+Rename method net/minecraft/client/renderer/BufferBuilder/pos (DDD)Lnet/minecraft/client/renderer/BufferBuilder;[8685,8688]::pos->func_181662_b
+Rename method net/minecraft/client/renderer/BufferBuilder/color (IIII)Lnet/minecraft/client/renderer/BufferBuilder;[8712,8717]::color->func_181669_b
+Rename method net/minecraft/client/renderer/BufferBuilder/endVertex ()V[8738,8747]::endVertex->func_181675_d
+Rename method net/minecraft/client/renderer/BufferBuilder/pos (DDD)Lnet/minecraft/client/renderer/BufferBuilder;[8897,8900]::pos->func_181662_b
+Rename method net/minecraft/client/renderer/BufferBuilder/color (IIII)Lnet/minecraft/client/renderer/BufferBuilder;[8924,8929]::color->func_181669_b
+Rename method net/minecraft/client/renderer/BufferBuilder/endVertex ()V[8950,8959]::endVertex->func_181675_d
+Rename method net/minecraft/client/renderer/BufferBuilder/pos (DDD)Lnet/minecraft/client/renderer/BufferBuilder;[8986,8989]::pos->func_181662_b
+Rename method net/minecraft/client/renderer/BufferBuilder/color (IIII)Lnet/minecraft/client/renderer/BufferBuilder;[9017,9022]::color->func_181669_b
+Rename method net/minecraft/client/renderer/BufferBuilder/endVertex ()V[9043,9052]::endVertex->func_181675_d
+Rename method net/minecraft/client/renderer/BufferBuilder/pos (DDD)Lnet/minecraft/client/renderer/BufferBuilder;[9204,9207]::pos->func_181662_b
+Rename method net/minecraft/client/renderer/BufferBuilder/color (IIII)Lnet/minecraft/client/renderer/BufferBuilder;[9231,9236]::color->func_181669_b
+Rename method net/minecraft/client/renderer/BufferBuilder/endVertex ()V[9257,9266]::endVertex->func_181675_d
+Rename method net/minecraft/client/renderer/BufferBuilder/pos (DDD)Lnet/minecraft/client/renderer/BufferBuilder;[9293,9296]::pos->func_181662_b
+Rename method net/minecraft/client/renderer/BufferBuilder/color (IIII)Lnet/minecraft/client/renderer/BufferBuilder;[9324,9329]::color->func_181669_b
+Rename method net/minecraft/client/renderer/BufferBuilder/endVertex ()V[9350,9359]::endVertex->func_181675_d
+Rename method net/minecraft/client/renderer/BufferBuilder/pos (DDD)Lnet/minecraft/client/renderer/BufferBuilder;[9509,9512]::pos->func_181662_b
+Rename method net/minecraft/client/renderer/BufferBuilder/color (IIII)Lnet/minecraft/client/renderer/BufferBuilder;[9540,9545]::color->func_181669_b
+Rename method net/minecraft/client/renderer/BufferBuilder/endVertex ()V[9566,9575]::endVertex->func_181675_d
+Rename method net/minecraft/client/renderer/BufferBuilder/pos (DDD)Lnet/minecraft/client/renderer/BufferBuilder;[9602,9605]::pos->func_181662_b
+Rename method net/minecraft/client/renderer/BufferBuilder/color (IIII)Lnet/minecraft/client/renderer/BufferBuilder;[9637,9642]::color->func_181669_b
+Rename method net/minecraft/client/renderer/BufferBuilder/endVertex ()V[9663,9672]::endVertex->func_181675_d
+Rename method net/minecraft/client/renderer/BufferBuilder/pos (DDD)Lnet/minecraft/client/renderer/BufferBuilder;[9823,9826]::pos->func_181662_b
+Rename method net/minecraft/client/renderer/BufferBuilder/color (IIII)Lnet/minecraft/client/renderer/BufferBuilder;[9846,9851]::color->func_181669_b
+Rename method net/minecraft/client/renderer/BufferBuilder/endVertex ()V[9872,9881]::endVertex->func_181675_d
+Rename method net/minecraft/client/renderer/BufferBuilder/pos (DDD)Lnet/minecraft/client/renderer/BufferBuilder;[9908,9911]::pos->func_181662_b
+Rename method net/minecraft/client/renderer/BufferBuilder/color (IIII)Lnet/minecraft/client/renderer/BufferBuilder;[9935,9940]::color->func_181669_b
+Rename method net/minecraft/client/renderer/BufferBuilder/endVertex ()V[9961,9970]::endVertex->func_181675_d
+Rename method net/minecraft/client/renderer/BufferBuilder/pos (DDD)Lnet/minecraft/client/renderer/BufferBuilder;[10121,10124]::pos->func_181662_b
+Rename method net/minecraft/client/renderer/BufferBuilder/color (IIII)Lnet/minecraft/client/renderer/BufferBuilder;[10148,10153]::color->func_181669_b
+Rename method net/minecraft/client/renderer/BufferBuilder/endVertex ()V[10174,10183]::endVertex->func_181675_d
+Rename method net/minecraft/client/renderer/BufferBuilder/pos (DDD)Lnet/minecraft/client/renderer/BufferBuilder;[10210,10213]::pos->func_181662_b
+Rename method net/minecraft/client/renderer/BufferBuilder/color (IIII)Lnet/minecraft/client/renderer/BufferBuilder;[10241,10246]::color->func_181669_b
+Rename method net/minecraft/client/renderer/BufferBuilder/endVertex ()V[10267,10276]::endVertex->func_181675_d
+Rename method net/minecraft/client/renderer/BufferBuilder/pos (DDD)Lnet/minecraft/client/renderer/BufferBuilder;[10429,10432]::pos->func_181662_b
+Rename method net/minecraft/client/renderer/BufferBuilder/color (IIII)Lnet/minecraft/client/renderer/BufferBuilder;[10456,10461]::color->func_181669_b
+Rename method net/minecraft/client/renderer/BufferBuilder/endVertex ()V[10482,10491]::endVertex->func_181675_d
+Rename method net/minecraft/client/renderer/BufferBuilder/pos (DDD)Lnet/minecraft/client/renderer/BufferBuilder;[10518,10521]::pos->func_181662_b
+Rename method net/minecraft/client/renderer/BufferBuilder/color (IIII)Lnet/minecraft/client/renderer/BufferBuilder;[10549,10554]::color->func_181669_b
+Rename method net/minecraft/client/renderer/BufferBuilder/endVertex ()V[10575,10584]::endVertex->func_181675_d
+Rename method net/minecraft/client/renderer/BufferBuilder/pos (DDD)Lnet/minecraft/client/renderer/BufferBuilder;[10736,10739]::pos->func_181662_b
+Rename method net/minecraft/client/renderer/BufferBuilder/color (IIII)Lnet/minecraft/client/renderer/BufferBuilder;[10767,10772]::color->func_181669_b
+Rename method net/minecraft/client/renderer/BufferBuilder/endVertex ()V[10793,10802]::endVertex->func_181675_d
+Rename method net/minecraft/client/renderer/BufferBuilder/pos (DDD)Lnet/minecraft/client/renderer/BufferBuilder;[10829,10832]::pos->func_181662_b
+Rename method net/minecraft/client/renderer/BufferBuilder/color (IIII)Lnet/minecraft/client/renderer/BufferBuilder;[10864,10869]::color->func_181669_b
+Rename method net/minecraft/client/renderer/BufferBuilder/endVertex ()V[10890,10899]::endVertex->func_181675_d
 Import: net.minecraft.client.renderer.vertex.DefaultVertexFormats
 Import: net.minecraft.client.renderer.GlStateManager
 Import: net.minecraft.client.renderer.BufferBuilder

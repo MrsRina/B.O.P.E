@@ -22,9 +22,13 @@ public class BopeWatermark extends BopePinnable {
 
 	@Override
 	public void render() {
-		String line = ChatFormatting.DARK_GRAY + "Welcome to " + ChatFormatting.DARK_BLUE + "B.O.P.E. " + ChatFormatting.DARK_GRAY + "[" + Bope.get_version() + "]";
-	
-		create_line(line, this.docking(1, line), 2);
+		int nl_r = Bope.get_setting_manager().get_setting_with_tag("HUD", "HUDStringsColorR").get_value(1);
+		int nl_g = Bope.get_setting_manager().get_setting_with_tag("HUD", "HUDStringsColorG").get_value(1);
+		int nl_b = Bope.get_setting_manager().get_setting_with_tag("HUD", "HUDStringsColorB").get_value(1);
+
+		String line = "Welcome to B.O.P.E. " + Bope.g + "[" + Bope.r + Bope.get_version() + Bope.g + "]" + Bope.r;
+
+		create_line(line, this.docking(1, line), 2, nl_r, nl_g, nl_b);
 
 		this.set_width(this.get(line, "width") + 2);
 		this.set_height(this.get(line, "height") + 2);

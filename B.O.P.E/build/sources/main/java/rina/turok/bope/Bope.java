@@ -1,6 +1,7 @@
 package rina.turok.bope;
 
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
+import com.mojang.realmsclient.gui.ChatFormatting;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraft.client.Minecraft;
 
@@ -82,6 +83,10 @@ public class Bope {
 
 	// Framework Turok.
 	public static Turok turok;
+
+	// Strings detail.
+	public static ChatFormatting g = ChatFormatting.DARK_GRAY;
+	public static ChatFormatting r = ChatFormatting.RESET;
 
 	@Mod.EventHandler
 	public void BopeStarting(FMLInitializationEvent event) {

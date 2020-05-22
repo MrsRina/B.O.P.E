@@ -20,10 +20,11 @@ import rina.turok.bope.Bope;
  *
  */
 public class BopeClickHUD extends BopeModule {
-	BopeSetting frame_view  = create("info", "HUDArrayList", "Array List");
-	BopeSetting arraylist_r = create("Color R", "HUDArrayListColorR", 0, 0, 255);
-	BopeSetting arraylist_g = create("Color G", "HUDArrayListColorG", 0, 0, 255);
-	BopeSetting arraylist_b = create("Color B", "HUDArrayListColorB", 0, 0, 255);
+	BopeSetting frame_view = create("info", "HUDStringsList", "Strings");
+
+	BopeSetting strings_r = create("Color R", "HUDStringsColorR", 0, 0, 255);
+	BopeSetting strings_g = create("Color G", "HUDStringsColorG", 0, 0, 255);
+	BopeSetting strings_b = create("Color B", "HUDStringsColorB", 200, 0, 255);
 
 	public BopeClickHUD() {
 		super(BopeCategory.BOPE_GUI);
@@ -34,11 +35,6 @@ public class BopeClickHUD extends BopeModule {
 		this.description = "B.O.P.E HUD for setting pinnables.";
 
 		release("B.O.P.E");
-	}
-
-	@Override
-	public void event_widget() {
-		Bope.get_hud_manager().get_pinnable_with_tag("ArrayList").render();
 	}
 
 	@Override

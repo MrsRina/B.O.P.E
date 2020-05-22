@@ -24,7 +24,15 @@ public class TurokRenderHelp extends Tessellator {
         super(0x200000);
     }
 
-    public static void prepare(int mode) {
+    public static void prepare(String mode_requested) {
+    	int mode = 0;
+
+    	if (mode_requested.equalsIgnoreCase("quads")) {
+    		mode = GL_QUADS;
+    	} else if (mode_requested.equalsIgnoreCase("lines")) {
+    		mode = GL_LINES;
+    	}
+
         prepare_gl();
         begin(mode);
     }
@@ -40,7 +48,7 @@ public class TurokRenderHelp extends Tessellator {
         GlStateManager.disableLighting();
         GlStateManager.disableCull();
         GlStateManager.enableAlpha();
-        GlStateManager.color(1,1,1);
+        GlStateManager.color(1, 1, 1);
     }
 
     public static void begin(int mode) {

@@ -32,9 +32,7 @@ public class BopeCommandManager {
 		command_list = new BopeListCommand(new Style().setColor(TextFormatting.BLUE));
 	}
 
-	public void init_commands() {
-		command_list.init_bope_command_lookup();
-	}
+	public void init_commands() {}
 
 	public static void set_prefix(String new_prefix) {
 		command_list.set_prefix(new_prefix);

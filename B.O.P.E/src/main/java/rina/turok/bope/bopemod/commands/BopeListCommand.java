@@ -4,8 +4,8 @@ import net.minecraft.util.text.TextComponentString;
 import net.minecraft.util.text.TextFormatting;
 import net.minecraft.util.text.Style;
 
-import java.util.ArrayList;
-import java.util.HashMap;
+import java.util.Comparator;
+import java.util.*;
 
 // Commands.
 import rina.turok.bope.bopemod.commands.*;
@@ -40,18 +40,15 @@ public class BopeListCommand {
 		add_command(new BopeSettings());
 		add_command(new BopeToggle());
 		add_command(new BopeToggleMessage());
-	}
+		add_command(new BopeHelp());
 
-	public static void init_bope_command_lookup() {
-		list_command.clear();
-
-		for (BopeCommand commands : command_list) {
-			list_command.put(commands.get_name().toLowerCase(), commands);
-		}
+		command_list.sort(Comparator.comparing(BopeCommand::get_name));
 	}
 
 	public static void add_command(BopeCommand command) {
 		command_list.add(command);
+
+		list_command.put(command.get_name().toLowerCase(), command);
 	}
 
 	public String[] get_message(String message) {
@@ -76,7 +73,7 @@ public class BopeListCommand {
 		return prefix.get_value();
 	}
 
-	public ArrayList<BopeCommand> get_pure_command_list() {
+	public static ArrayList<BopeCommand> get_pure_command_list() {
 		return command_list;
 	}
 

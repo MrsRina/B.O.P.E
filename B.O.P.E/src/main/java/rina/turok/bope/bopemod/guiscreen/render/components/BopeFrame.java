@@ -51,6 +51,7 @@ public class BopeFrame {
 
 	private boolean first = false;
 	private boolean move;
+	private boolean smoth = Bope.get_setting_manager().get_setting_with_tag("GUISmothFont").get_value(true);
 
 	private int move_x;
 	private int move_y;
@@ -74,7 +75,7 @@ public class BopeFrame {
 
 		this.module_button = new ArrayList<>();
 
-		this.width_name = font.get_string_width(this.category.get_name());
+		this.width_name = font.get_string_width(this.category.get_name(), this.smoth);
 		this.width_abs  = this.width_name;
 
 		this.frame_name = category.get_name();
@@ -210,7 +211,7 @@ public class BopeFrame {
 	}
 
 	public boolean motion(String tag, int mx, int my) {
-		if (mx >= get_x() && my >= get_y() && mx <= get_x() + get_width() && my <= get_y() + font.get_string_height(this.frame_name)) {
+		if (mx >= get_x() && my >= get_y() && mx <= get_x() + get_width() && my <= get_y() + font.get_string_height(this.frame_name, this.smoth)) {
 			return true;
 		}
 
@@ -287,6 +288,8 @@ public class BopeFrame {
 	}
 
 	public void render(int mx, int my) {
+		this.smoth = Bope.get_setting_manager().get_setting_with_tag("GUISmothFont").get_value(true);
+
 		float[] tick_color = {
 			(System.currentTimeMillis() % (360 * 32)) / (360f * 32)
 		};
@@ -316,12 +319,12 @@ public class BopeFrame {
 		int bd_a = border_a;
 
 		this.frame_name = this.category.get_name();
-		this.width_name = font.get_string_width(this.category.get_name());
+		this.width_name = font.get_string_width(this.category.get_name(), this.smoth);
 
 		BopeDraw.draw_rect(this.x, this.y, this.x + this.width, this.y + this.height, bg_r, bg_g, bg_b, bg_a);
 		BopeDraw.draw_rect(this.x - 1, this.y, this.width + 1, this.height, bd_r, bd_g, bd_b, bd_a, this.border_size, "left-right");
 		
-		BopeDraw.draw_string(this.frame_name, this.x + 4, this.y + 4, nc_r, nc_g, nc_b);
+		BopeDraw.draw_string(this.frame_name, this.x + 4, this.y + 4, nc_r, nc_g, nc_b, this.smoth);
 
 		if (is_moving()) {
 			crush(mx, my);

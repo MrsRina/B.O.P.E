@@ -38,6 +38,7 @@ public class BopeModuleButton {
 	private String module_name;
 
 	private boolean opened;
+	private boolean smoth = Bope.get_setting_manager().get_setting_with_tag("GUISmothFont").get_value(true);
 
 	private int x;
 	private int y;
@@ -76,8 +77,8 @@ public class BopeModuleButton {
 		this.x = 0;
 		this.y = 0;
 
-		this.width  = font.get_string_width(module.get_name()) + 5;
-		this.height = font.get_string_height(module.get_name());
+		this.width  = font.get_string_width(module.get_name(), this.smoth) + 5;
+		this.height = font.get_string_height(module.get_name(), this.smoth);
 
 		this.opened_height = this.height;
 
@@ -267,6 +268,8 @@ public class BopeModuleButton {
 	}
 
 	public void render(int mx, int my, int separe) {
+		this.smoth = Bope.get_setting_manager().get_setting_with_tag("GUISmothFont").get_value(true);
+
 		set_width(this.master.get_width() - separe);
 
 		this.save_y = this.y + this.master.get_y() - 10;
@@ -287,9 +290,9 @@ public class BopeModuleButton {
 		if (this.module.is_active()) {
 			BopeDraw.draw_rect(this.x, this.save_y, this.x + this.width - separe, this.save_y + this.height, bg_r, bg_g, bg_b, bg_a);
 
-			font.draw_string(this.module_name, this.x + separe, this.save_y, nm_r, nm_g, nm_b);
+			font.draw_string(this.module_name, this.x + separe, this.save_y, nm_r, nm_g, nm_b, this.smoth);
 		} else {
-			font.draw_string(this.module_name, this.x + separe, this.save_y, nm_r, nm_g, nm_b);
+			font.draw_string(this.module_name, this.x + separe, this.save_y, nm_r, nm_g, nm_b, this.smoth);
 		}
 
 		for (BopeAbstractWidget widgets : this.widget) {

@@ -19,7 +19,7 @@ import rina.turok.bope.Bope;
 */
 public class BopeBind extends BopeCommand {
 	public BopeBind() {
-		super("bind", "For bind module.");
+		super("bind", "To bind module.");
 	}
 
 	public boolean get_message(String[] message) {

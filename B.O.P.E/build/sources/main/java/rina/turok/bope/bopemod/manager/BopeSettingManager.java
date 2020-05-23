@@ -46,6 +46,20 @@ public class BopeSettingManager {
 		return setting_requested;
 	}
 
+	public BopeSetting get_setting_with_tag(String tag) {
+		BopeSetting setting_requested = null;
+
+		for (BopeSetting settings : get_array_settings()) {
+			if (settings.get_tag().equalsIgnoreCase(tag)) {
+				setting_requested = settings;
+
+				break;
+			}
+		}
+
+		return setting_requested;
+	}
+
 	public BopeSetting get_setting_with_tag(String tag, String tag_) {
 		BopeSetting setting_requested = null;
 

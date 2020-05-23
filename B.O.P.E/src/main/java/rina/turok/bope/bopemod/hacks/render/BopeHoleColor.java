@@ -70,26 +70,6 @@ public class BopeHoleColor extends BopeModule {
 
 	@Override
 	public void update() {
-		float[] tick_color = {
-			(System.currentTimeMillis() % (360 * 32)) / (360f * 32)
-		};
-	
-		int color_rgb = Color.HSBtoRGB(tick_color[0], 1, 1);
-	
-		if (rgb.get_value(true)) {
-			color_r = ((color_rgb >> 16) & 0xFF);
-			color_g = ((color_rgb >> 8) & 0xFF);
-			color_b = (color_rgb & 0xFF);
-	
-			r.set_value(color_r);
-			g.set_value(color_g);
-			b.set_value(color_b);
-		} else {
-			color_r = r.get_value(1);
-			color_g = g.get_value(2);
-			color_b = b.get_value(3);
-		}
-
 		if (hole == null) {
 			hole = new ArrayList<>();
 		} else {
@@ -156,9 +136,29 @@ public class BopeHoleColor extends BopeModule {
 
 	@Override
 	public void render(BopeEventRender event) {
+		float[] tick_color = {
+			(System.currentTimeMillis() % (360 * 32)) / (360f * 32)
+		};
+	
+		int color_rgb = Color.HSBtoRGB(tick_color[0], 1, 1);
+	
+		if (rgb.get_value(true)) {
+			color_r = ((color_rgb >> 16) & 0xFF);
+			color_g = ((color_rgb >> 8) & 0xFF);
+			color_b = (color_rgb & 0xFF);
+	
+			r.set_value(color_r);
+			g.set_value(color_g);
+			b.set_value(color_b);
+		} else {
+			color_r = r.get_value(1);
+			color_g = g.get_value(2);
+			color_b = b.get_value(3);
+		}
+
 		float off_set_h = 0;
 
-		if (!hole.isEmpty() || safe != false) {
+		if (hole != null && !hole.isEmpty() || safe != false) {
 			off_set_h = (float) off_set.get_value(1.0);
 
 			for (BlockPos holes : hole) {

@@ -33,6 +33,7 @@ public class BopePinnableButton {
 	private int height;
 
 	private boolean first;
+	private boolean smoth = Bope.get_setting_manager().get_setting_with_tag("GUISmothFont").get_value(true);
 
 	private BopeDraw font = new BopeDraw(1);
 
@@ -63,7 +64,7 @@ public class BopePinnableButton {
 		this.save_y = this.y;
 
 		this.width  = this.master.get_width();
-		this.height = font.get_string_height(this.pinnable.get_title());
+		this.height = font.get_string_height(this.pinnable.get_title(), this.smoth);
 
 		this.first = true;
 	}
@@ -143,6 +144,8 @@ public class BopePinnableButton {
 	}
 
 	public void render(int mx, int my, int separate) {
+		this.smoth = Bope.get_setting_manager().get_setting_with_tag("GUISmothFont").get_value(true);
+
 		set_width(this.master.get_width() - separate);
 
 		this.save_y = this.y + this.master.get_y() - 10;
@@ -150,9 +153,9 @@ public class BopePinnableButton {
 		if (this.pinnable.is_active()) {
 			BopeDraw.draw_rect(this.x, this.save_y, this.x + this.width - separate, this.save_y + this.height, this.bg_r, this.bg_g, this.bg_b, this.bg_a);
 		
-			BopeDraw.draw_string(this.pinnable.get_title(), this.x + separate, this.save_y, this.nc_r, this.nc_g, this.nc_b);
+			BopeDraw.draw_string(this.pinnable.get_title(), this.x + separate, this.save_y, this.nc_r, this.nc_g, this.nc_b, this.smoth);
 		} else {
-			BopeDraw.draw_string(this.pinnable.get_title(), this.x + separate, this.save_y, this.nc_r, this.nc_g, this.nc_b);
+			BopeDraw.draw_string(this.pinnable.get_title(), this.x + separate, this.save_y, this.nc_r, this.nc_g, this.nc_b, this.smoth);
 		}
 
 		this.pinnable.render(mx, my, 0);

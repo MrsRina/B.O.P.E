@@ -35,6 +35,7 @@ public class BopeButton extends BopeAbstractWidget {
 	private int save_y;
 
 	private boolean can;
+	private boolean smoth = Bope.get_setting_manager().get_setting_with_tag("GUISmothFont").get_value(true);
 
 	private BopeDraw font = new BopeDraw(1);
 
@@ -51,7 +52,7 @@ public class BopeButton extends BopeAbstractWidget {
 		this.save_y = this.y;
 
 		this.width  = master.get_width();
-		this.height = font.get_string_height(this.setting.get_name());
+		this.height = font.get_string_height(this.setting.get_name(), this.smoth);
 
 		this.button_name = this.setting.get_name();
 
@@ -141,6 +142,8 @@ public class BopeButton extends BopeAbstractWidget {
 
 	@Override
 	public void render(int master_y, int separe, int absolute_x, int absolute_y) {
+		this.smoth = Bope.get_setting_manager().get_setting_with_tag("GUISmothFont").get_value(true);
+
 		set_width(this.master.get_width() - separe);
 
 		boolean zbob = true;
@@ -163,9 +166,9 @@ public class BopeButton extends BopeAbstractWidget {
 		if (this.setting.get_value(zbob)) {
 			BopeDraw.draw_rect(get_x(), this.save_y, get_x() + this.width, this.save_y + this.height, bg_r, bg_g, bg_b, bg_a);
 
-			BopeDraw.draw_string(this.button_name, this.x + 2, this.save_y, ns_r, ns_g, ns_b);
+			BopeDraw.draw_string(this.button_name, this.x + 2, this.save_y, ns_r, ns_g, ns_b, this.smoth);
 		} else {
-			BopeDraw.draw_string(this.button_name, this.x + 2, this.save_y, ns_r, ns_g, ns_b);
+			BopeDraw.draw_string(this.button_name, this.x + 2, this.save_y, ns_r, ns_g, ns_b, this.smoth);
 		}
 	}
 }

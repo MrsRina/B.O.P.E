@@ -42,6 +42,7 @@ public class BopeCombobox extends BopeAbstractWidget {
 	private int save_y;
 
 	private boolean can;
+	private boolean smoth = Bope.get_setting_manager().get_setting_with_tag("GUISmothFont").get_value(true);
 
 	private BopeDraw font = new BopeDraw(1);
 
@@ -59,7 +60,7 @@ public class BopeCombobox extends BopeAbstractWidget {
 		this.save_y = this.y;
 
 		this.width  = master.get_width();
-		this.height = font.get_string_height(this.setting.get_name());
+		this.height = font.get_string_height(this.setting.get_name(), this.smoth);
 
 		this.combobox_name = this.setting.get_name();
 
@@ -167,6 +168,8 @@ public class BopeCombobox extends BopeAbstractWidget {
 
 	@Override
 	public void render(int master_y, int separe, int absolute_x, int absolute_y) {
+		this.smoth = Bope.get_setting_manager().get_setting_with_tag("GUISmothFont").get_value(true);
+		
 		set_width(this.master.get_width() - separe);
 
 		String zbob = "rina";
@@ -187,7 +190,8 @@ public class BopeCombobox extends BopeAbstractWidget {
 		int bd_b = Bope.click_gui.theme_widget_border_b;
 		int bd_a = 100;
 
-		BopeDraw.draw_string(this.combobox_name + " " + this.setting.get_current_value(), this.x + 2, this.save_y, ns_r, ns_g, ns_b);
+		BopeDraw.draw_string(this.combobox_name, this.x + 2, this.save_y, ns_r, ns_g, ns_b, this.smoth);
+		BopeDraw.draw_string(this.setting.get_current_value(), this.width - separe  - this.font.get_string_width(this.setting.get_current_value(), this.smoth) + 2, this.save_y, ns_r, ns_g, ns_b, this.smoth);
 
 		if (this.combobox_actual_value >= this.values.size()) {
 			this.combobox_actual_value = 0;

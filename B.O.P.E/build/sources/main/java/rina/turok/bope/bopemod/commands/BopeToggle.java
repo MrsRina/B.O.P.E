@@ -17,7 +17,7 @@ import rina.turok.bope.Bope;
 */
 public class BopeToggle extends BopeCommand {
 	public BopeToggle() {
-		super("t", "Toggle module.");
+		super("t", "For toggle module.");
 	}
 
 	public boolean get_message(String[] message) {

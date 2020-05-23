@@ -52,11 +52,11 @@ public class BopeArrayList extends BopePinnable {
 				modules.get_tag() + Bope.g + " [" + Bope.r + modules.detail_option() + Bope.g + "]" + Bope.r
 			);
 
-			create_line(module_name, this.docking(2, module_name), position_update_y, nl_r, nl_g, nl_b);
+			create_line(module_name, this.docking(1, module_name), position_update_y, nl_r, nl_g, nl_b);
 
 			position_update_y += get(module_name, "height") + 2;
 
-			if (get(module_name, "width") > this.get_width()) {
+			if (get(module_name, "width") >= this.get_width()) {
 				this.set_width(get(module_name, "width") + 2);
 			}
 

@@ -43,14 +43,15 @@ public class BopeButtonBind extends BopeAbstractWidget {
 
 	private boolean can;
 	private boolean waiting;
+	private boolean smoth = Bope.get_setting_manager().get_setting_with_tag("GUISmothFont").get_value(true);
 
 	private BopeDraw font = new BopeDraw(1);
 
 	private int border_size = 0;
 
 	public BopeButtonBind(BopeFrame frame, BopeModuleButton master, String tag, int update_postion) {
-		this.frame   = frame;
-		this.master  = master;
+		this.frame  = frame;
+		this.master = master;
 
 		this.x = master.get_x();
 		this.y = update_postion;
@@ -58,7 +59,7 @@ public class BopeButtonBind extends BopeAbstractWidget {
 		this.save_y = this.y;
 
 		this.width  = master.get_width();
-		this.height = font.get_string_height(tag);
+		this.height = font.get_string_height(tag, smoth);
 
 		this.button_name = tag;
 
@@ -180,6 +181,8 @@ public class BopeButtonBind extends BopeAbstractWidget {
 
 	@Override
 	public void render(int master_y, int separe, int absolute_x, int absolute_y) {
+		this.smoth = Bope.get_setting_manager().get_setting_with_tag("GUISmothFont").get_value(true);
+
 		set_width(this.master.get_width() - separe);
 
 		float[] tick_color = {
@@ -235,9 +238,9 @@ public class BopeButtonBind extends BopeAbstractWidget {
 
 			this.tick += 0.5f;
 
-			BopeDraw.draw_string("Listening " + this.points, this.x + 2, this.save_y, ns_r, ns_g, ns_b);
+			BopeDraw.draw_string("Listening " + this.points, this.x + 2, this.save_y, ns_r, ns_g, ns_b, this.smoth);
 		} else {
-			BopeDraw.draw_string("Bind <" + this.master.get_module().get_bind("string") + ">", this.x + 2, this.save_y, ns_r, ns_g, ns_b);
+			BopeDraw.draw_string("Bind <" + this.master.get_module().get_bind("string") + ">", this.x + 2, this.save_y, ns_r, ns_g, ns_b, smoth);
 		}
 
 		tick_color[0] += 5;

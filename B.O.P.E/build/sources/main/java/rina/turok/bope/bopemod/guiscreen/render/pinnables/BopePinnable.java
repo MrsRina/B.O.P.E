@@ -42,7 +42,8 @@ public class BopePinnable {
 	private int move_x;
 	private int move_y;
 
-	private boolean dock = true;
+	private boolean dock  = true;
+	public  boolean smoth = Bope.get_setting_manager().get_setting_with_tag("HUDSmothFont").get_value(true);
 
 	public final Minecraft mc = Minecraft.getMinecraft();
 
@@ -109,7 +110,7 @@ public class BopePinnable {
 	}
 
 	public int get_title_height() {
-		return this.font.get_string_height(this.title);
+		return this.font.get_string_height(this.title, this.smoth);
 	}
 
 	public int get_x() {
@@ -161,7 +162,7 @@ public class BopePinnable {
 		}
 
 		if (this.y + this.height >= screen_y) {
-			this.y = screen_y - this.height - 1;
+			this.y = screen_y - this.height - (this.smoth == true ? 4 : 1);
 		}
 
 		if (this.y <= 0) {
@@ -226,11 +227,15 @@ public class BopePinnable {
 	}
 
 	protected void create_line(String string, int pos_x, int pos_y) {
-		BopeDraw.draw_string(string, this.x + pos_x, this.y + pos_y, 255, 255, 255);
+		this.smoth = Bope.get_setting_manager().get_setting_with_tag("HUDSmothFont").get_value(true);
+
+		BopeDraw.draw_string(string, this.x + pos_x, this.y + pos_y, 255, 255, 255, this.smoth);
 	}
 
 	protected void create_line(String string, int pos_x, int pos_y, int r, int g, int b) {
-		BopeDraw.draw_string(string, this.x + pos_x, this.y + pos_y, r, g, b);
+		this.smoth = Bope.get_setting_manager().get_setting_with_tag("HUDSmothFont").get_value(true);
+
+		BopeDraw.draw_string(string, this.x + pos_x, this.y + pos_y, r, g, b, this.smoth);
 	}
 
 	protected void create_rect(int pos_x, int pos_y, int width, int height, int r, int g, int b, int a) {
@@ -241,11 +246,11 @@ public class BopePinnable {
 		int value_to_request = 0;
 
 		if (type.equals("width")) {
-			value_to_request = this.font.get_string_width(string);
+			value_to_request = this.font.get_string_width(string, this.smoth);
 		}
 
 		if (type.equals("height")) {
-			value_to_request = this.font.get_string_height(string);
+			value_to_request = this.font.get_string_height(string, this.smoth);
 		}
 
 		return value_to_request;

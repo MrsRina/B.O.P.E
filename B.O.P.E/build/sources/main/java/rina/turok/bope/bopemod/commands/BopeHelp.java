@@ -19,7 +19,7 @@ import rina.turok.bope.Bope;
 */
 public class BopeHelp extends BopeCommand {
 	public BopeHelp() {
-		super("help", "To get list of commands.");
+		super("help", "A help util.");
 	}
 
 	public boolean get_message(String[] message) {
@@ -36,7 +36,7 @@ public class BopeHelp extends BopeCommand {
 		}
 
 		if (type.equals("null")) {
-			BopeMessage.send_client_error_message(current_prefix() + "help <character>");
+			BopeMessage.send_client_error_message(current_prefix() + "help <List/NameCommand>");
 
 			return true;
 		}
@@ -61,7 +61,7 @@ public class BopeHelp extends BopeCommand {
 			return true;
 		}
 
-		BopeMessage.send_client_message("Name " + command_requested.get_name() + " - Description " + command_requested.get_description());
+		BopeMessage.send_client_message(command_requested.get_name() + " - " + command_requested.get_description());
 
 		return true;
 	}

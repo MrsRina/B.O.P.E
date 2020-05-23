@@ -44,6 +44,7 @@ public class BopeLabel extends BopeAbstractWidget {
 
 	private boolean can;
 	private boolean info;
+	private boolean smoth = Bope.get_setting_manager().get_setting_with_tag("GUISmothFont").get_value(true);
 
 	private BopeDraw font = new BopeDraw(1);
 
@@ -60,7 +61,7 @@ public class BopeLabel extends BopeAbstractWidget {
 		this.save_y = this.y;
 
 		this.width  = master.get_width();
-		this.height = font.get_string_height(this.setting.get_name());
+		this.height = font.get_string_height(this.setting.get_name(), this.smoth);
 
 		this.label_name = this.setting.get_name();
 
@@ -152,6 +153,8 @@ public class BopeLabel extends BopeAbstractWidget {
 
 	@Override
 	public void render(int master_y, int separe, int absolute_x, int absolute_y) {
+		this.smoth = Bope.get_setting_manager().get_setting_with_tag("GUISmothFont").get_value(true);
+
 		set_width(this.master.get_width() - separe);
 
 		String zbob = "rina";
@@ -190,9 +193,9 @@ public class BopeLabel extends BopeAbstractWidget {
 		}
 
 		if (this.info) {
-			BopeDraw.draw_string(this.setting.get_value(zbob), this.x + 2, this.save_y, ns_r, ns_g, ns_b);
+			BopeDraw.draw_string(this.setting.get_value(zbob), this.x + 2, this.save_y, ns_r, ns_g, ns_b, this.smoth);
 		} else {
-			BopeDraw.draw_string(this.label_name + " \"" + this.setting.get_value(zbob) + "\"", this.x + 2, this.save_y, ns_r, ns_g, ns_b);
+			BopeDraw.draw_string(this.label_name + " \"" + this.setting.get_value(zbob) + "\"", this.x + 2, this.save_y, ns_r, ns_g, ns_b, this.smoth);
 		}
 	}
 }

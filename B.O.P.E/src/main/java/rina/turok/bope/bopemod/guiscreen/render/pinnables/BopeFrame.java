@@ -221,7 +221,7 @@ public class BopeFrame {
 	}
 
 	public void render(int mx, int my, int separate) {
-		this.smoth = Bope.get_setting_manager().get_setting_with_tag("HUDSmothFont").get_value(true);
+		this.smoth = Bope.get_setting_manager().get_setting_with_tag("GUISmothFont").get_value(true);
 
 		float[] tick_color = {
 			(System.currentTimeMillis() % (360 * 32)) / (360f * 32)

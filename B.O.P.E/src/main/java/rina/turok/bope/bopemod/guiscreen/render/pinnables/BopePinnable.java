@@ -43,7 +43,7 @@ public class BopePinnable {
 	private int move_y;
 
 	private boolean dock  = true;
-	public  boolean smoth = Bope.get_setting_manager().get_setting_with_tag("HUDSmothFont").get_value(true);
+	public  boolean smoth = false; // Bope.get_setting_manager().get_setting_with_tag("HUDSmothFont").get_value(true);
 
 	public final Minecraft mc = Minecraft.getMinecraft();
 
@@ -227,13 +227,15 @@ public class BopePinnable {
 	}
 
 	protected void create_line(String string, int pos_x, int pos_y) {
-		this.smoth = Bope.get_setting_manager().get_setting_with_tag("HUDSmothFont").get_value(true);
+		// this.smoth = Bope.get_setting_manager().get_setting_with_tag("HUDSmothFont").get_value(true);
+		this.smoth = false;
 
 		BopeDraw.draw_string(string, this.x + pos_x, this.y + pos_y, 255, 255, 255, this.smoth);
 	}
 
 	protected void create_line(String string, int pos_x, int pos_y, int r, int g, int b) {
-		this.smoth = Bope.get_setting_manager().get_setting_with_tag("HUDSmothFont").get_value(true);
+		// this.smoth = Bope.get_setting_manager().get_setting_with_tag("HUDSmothFont").get_value(true);
+		this.smoth = false;
 
 		BopeDraw.draw_string(string, this.x + pos_x, this.y + pos_y, r, g, b, this.smoth);
 	}

@@ -22,8 +22,6 @@ import rina.turok.bope.Bope;
 public class BopeClickHUD extends BopeModule {
 	BopeSetting frame_view = create("info", "HUDStringsList", "Strings");
 
-	BopeSetting smoth_font = create("Smoth Font", "HUDSmothFont", false);
-
 	BopeSetting strings_r = create("Color R", "HUDStringsColorR", 0, 0, 255);
 	BopeSetting strings_g = create("Color G", "HUDStringsColorG", 0, 0, 255);
 	BopeSetting strings_b = create("Color B", "HUDStringsColorB", 200, 0, 255);

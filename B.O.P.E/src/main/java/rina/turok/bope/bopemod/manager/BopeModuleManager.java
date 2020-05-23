@@ -80,7 +80,7 @@ public class BopeModuleManager {
 
 		// Exploit.
 		add_module(new BopeXCarry());
-		add_module(new BopePushMiner());
+		add_module(new BopeNoEntityTrace());
 
 		// Movement.
 		add_module(new BopeEatMovement());

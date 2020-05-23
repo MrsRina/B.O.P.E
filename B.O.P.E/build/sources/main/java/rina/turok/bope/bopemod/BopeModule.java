@@ -237,4 +237,24 @@ public class BopeModule {
 	public String detail_option() {
 		return null;
 	}
+
+	// Event to state type boolean.
+	public String string_state() {
+		return null;
+	}
+
+	// Event to state type boolean.
+	public boolean boolean_state() {
+		return false;
+	}
+
+	// Event to state type double.
+	public double double_state() {
+		return 0.0;
+	}
+
+	// Event to state type int.
+	public int int_state() {
+		return 0;
+	}
 }

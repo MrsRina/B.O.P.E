@@ -191,7 +191,7 @@ public class BopeCombobox extends BopeAbstractWidget {
 		int bd_a = 100;
 
 		BopeDraw.draw_string(this.combobox_name, this.x + 2, this.save_y, ns_r, ns_g, ns_b, this.smoth);
-		BopeDraw.draw_string(this.setting.get_current_value(), this.width - separe  - this.font.get_string_width(this.setting.get_current_value(), this.smoth) + 2, this.save_y, ns_r, ns_g, ns_b, this.smoth);
+		BopeDraw.draw_string(this.setting.get_current_value(), this.x + this.width - separe  - this.font.get_string_width(this.setting.get_current_value(), this.smoth) + 2, this.save_y, ns_r, ns_g, ns_b, this.smoth);
 
 		if (this.combobox_actual_value >= this.values.size()) {
 			this.combobox_actual_value = 0;

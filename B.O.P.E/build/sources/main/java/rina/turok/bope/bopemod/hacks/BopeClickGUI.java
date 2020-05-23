@@ -20,7 +20,7 @@ import rina.turok.bope.Bope;
  *
  */
 public class BopeClickGUI extends BopeModule {
-	BopeSetting smoth_font = create("Smoth Font", "GUISmothFont", false);
+	BopeSetting smoth_font = create("Smoth Font", "GUISmothFont", true);
 
 	BopeSetting label_frame = create("info", "ClickGUIInfoFrame", "Frames");
 

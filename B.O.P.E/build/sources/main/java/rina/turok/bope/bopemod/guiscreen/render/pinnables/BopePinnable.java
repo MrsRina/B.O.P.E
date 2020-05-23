@@ -162,7 +162,7 @@ public class BopePinnable {
 		}
 
 		if (this.y + this.height >= screen_y) {
-			this.y = screen_y - this.height - (this.smoth == true ? 4 : 1);
+			this.y = screen_y - this.height - 1;
 		}
 
 		if (this.y <= 0) {
@@ -260,7 +260,7 @@ public class BopePinnable {
 		if (this.dock) {
 			return position_x;
 		} else {
-			return (this.width - get(string, "width")) - position_x; 
+			return (this.width - get(string, "width") - position_x); 
 		}
 	}
 

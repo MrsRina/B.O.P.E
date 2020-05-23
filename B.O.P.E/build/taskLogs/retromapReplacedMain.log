@@ -660,9 +660,9 @@ Rename method net/minecraft/client/Minecraft/getMinecraft ()Lnet/minecraft/clien
 FOUND CONSTR method rina/turok/bope/bopemod/guiscreen/render/pinnables/BopePinnable/BopePinnable (Ljava/lang/String;Ljava/lang/String;FII)V rina/turok/bope/bopemod/guiscreen/render/pinnables/BopePinnable
 Rename field net/minecraft/client/Minecraft/displayWidth[2679,2691]::displayWidth->field_71443_c
 Rename field net/minecraft/client/Minecraft/displayHeight[2721,2734]::displayHeight->field_71440_d
-Rename field net/minecraft/client/Minecraft/displayWidth[3669,3681]::displayWidth->field_71443_c
-Rename field net/minecraft/client/Minecraft/displayWidth[3756,3768]::displayWidth->field_71443_c
-Rename method net/minecraft/client/renderer/GlStateManager/enableBlend ()V[3969,3980]::enableBlend->func_179147_l
+Rename field net/minecraft/client/Minecraft/displayWidth[3642,3654]::displayWidth->field_71443_c
+Rename field net/minecraft/client/Minecraft/displayWidth[3729,3741]::displayWidth->field_71443_c
+Rename method net/minecraft/client/renderer/GlStateManager/enableBlend ()V[3942,3953]::enableBlend->func_179147_l
 Import: net.minecraft.client.renderer.GlStateManager
 Import: net.minecraft.client.Minecraft
 Adding 4 imports
@@ -697,12 +697,12 @@ End  Processing: rina/turok/bope/bopemod/hacks/BopeCategory.java
 
 Start Processing: rina/turok/bope/bopemod/hacks/BopeClickGUI.java
 FOUND CONSTR method rina/turok/bope/bopemod/hacks/BopeClickGUI/BopeClickGUI ()V rina/turok/bope/bopemod/hacks/BopeClickGUI
-Rename field net/minecraft/client/Minecraft/world[4359,4364]::world->field_71441_e
-Rename field net/minecraft/client/Minecraft/player[4387,4393]::player->field_71439_g
-Rename method net/minecraft/client/Minecraft/displayGuiScreen (Lnet/minecraft/client/gui/GuiScreen;)V[4419,4435]::displayGuiScreen->func_147108_a
-Rename field net/minecraft/client/Minecraft/world[4509,4514]::world->field_71441_e
-Rename field net/minecraft/client/Minecraft/player[4537,4543]::player->field_71439_g
-Rename method net/minecraft/client/Minecraft/displayGuiScreen (Lnet/minecraft/client/gui/GuiScreen;)V[4569,4585]::displayGuiScreen->func_147108_a
+Rename field net/minecraft/client/Minecraft/world[4358,4363]::world->field_71441_e
+Rename field net/minecraft/client/Minecraft/player[4386,4392]::player->field_71439_g
+Rename method net/minecraft/client/Minecraft/displayGuiScreen (Lnet/minecraft/client/gui/GuiScreen;)V[4418,4434]::displayGuiScreen->func_147108_a
+Rename field net/minecraft/client/Minecraft/world[4508,4513]::world->field_71441_e
+Rename field net/minecraft/client/Minecraft/player[4536,4542]::player->field_71439_g
+Rename method net/minecraft/client/Minecraft/displayGuiScreen (Lnet/minecraft/client/gui/GuiScreen;)V[4568,4584]::displayGuiScreen->func_147108_a
 Import: rina.turok.bope.bopemod.guiscreen.settings.BopeSetting
 Adding 2 imports
         rina.turok.bope.Bope

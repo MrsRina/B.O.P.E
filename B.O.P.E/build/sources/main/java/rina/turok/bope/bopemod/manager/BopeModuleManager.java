@@ -83,7 +83,7 @@ public class BopeModuleManager {
 		add_module(new BopeXCarry());
 
 		// Movement.
-		add_module(new BopeEatMovement());
+		add_module(new BopeNoSlowDown());
 		add_module(new BopeStrafe());
 
 		// Render.

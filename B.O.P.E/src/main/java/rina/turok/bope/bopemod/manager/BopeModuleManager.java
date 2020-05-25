@@ -66,8 +66,8 @@ public class BopeModuleManager {
 		add_module(new BopeClickHUD());
 
 		// Chat.
-		add_module(new BopeChatSuffix());
 		add_module(new BopeVisualRange());
+		add_module(new BopeChatSuffix());
 
 		// Combat.
 		add_module(new BopeAutoGapple());
@@ -79,19 +79,21 @@ public class BopeModuleManager {
 		add_module(new BopeVelocity());
 
 		// Exploit.
-		add_module(new BopeXCarry());
 		add_module(new BopeNoEntityTrace());
+		add_module(new BopeXCarry());
 
 		// Movement.
 		add_module(new BopeEatMovement());
 		add_module(new BopeStrafe());
 
 		// Render.
+		add_module(new BopeBrightness());
 		add_module(new BopeHighlight());
+		add_module(new BopeNoHurtCam());
 		add_module(new BopeHoleColor());
-		add_module(new BopePlayerESP());
 		add_module(new BopeSwing());
 
+		// Configure.
 		array_module.sort(Comparator.comparing(BopeModule::get_name));
 	}
 

@@ -13,6 +13,7 @@ import net.minecraft.client.Minecraft;
 */
 public class BopeEventCancellable extends Cancellable {
 	private Era era_switch = Era.EVENT_PRE;
+
 	private final float partial_ticks;
 
 	public BopeEventCancellable() {
@@ -23,7 +24,7 @@ public class BopeEventCancellable extends Cancellable {
 		return era_switch;
 	}
 
-	public float get_partial_ticcks() {
+	public float get_partial_ticks() {
 		return partial_ticks;
 	}
 

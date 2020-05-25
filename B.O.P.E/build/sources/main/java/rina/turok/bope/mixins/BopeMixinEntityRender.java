@@ -36,13 +36,21 @@ import rina.turok.bope.Bope;
 public class BopeMixinEntityRender {
 	// Entity Trace.
 	@Redirect(method = "getMouseOver", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/multiplayer/WorldClient;getEntitiesInAABBexcluding(Lnet/minecraft/entity/Entity;Lnet/minecraft/util/math/AxisAlignedBB;Lcom/google/common/base/Predicate;)Ljava/util/List;"))
-	public List<Entity> getEntitiesInAABBexcluding(WorldClient world_client, Entity entity, AxisAlignedBB bouding_box, Predicate predicate) {
+	private List<Entity> getEntitiesInAABBexcluding(WorldClient world_client, Entity entity, AxisAlignedBB bouding_box, Predicate predicate) {
 		BopeModule module_requested = Bope.get_module_manager().get_module_with_tag("NoEntityTrace");
 
 		if (module_requested.is_active() && module_requested.boolean_state()) {
 			return new ArrayList<>();
 		} else {
 			return world_client.getEntitiesInAABBexcluding(entity, bouding_box, predicate);
+		}
+	}
+
+	// Camera effect.
+	@Inject(method = "hurtCameraEffect", at = @At("HEAD"), cancellable = true)
+	private void hurtCameraEffect(float ticks, CallbackInfo info) {
+		if (Bope.get_module_manager().get_module_with_tag("NoHurtCam").is_active()) {
+			info.cancel();
 		}
 	}
 }

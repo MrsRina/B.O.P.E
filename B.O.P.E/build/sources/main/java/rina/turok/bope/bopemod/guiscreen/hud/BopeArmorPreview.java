@@ -1,11 +1,9 @@
 package rina.turok.bope.bopemod.guiscreen.hud;
 
 import net.minecraft.client.renderer.GlStateManager;
+import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.client.renderer.RenderHelper;
-import net.minecraft.util.NonNullList;
 import net.minecraft.item.ItemStack;
-
-import com.mojang.realmsclient.gui.ChatFormatting;
 
 import java.util.*;
 
@@ -41,25 +39,39 @@ public class BopeArmorPreview extends BopePinnable {
 			RenderHelper.enableGUIStandardItemLighting();
 
 			int width_compare = 2;
+			int width         = 64;
 
-			NonNullList<ItemStack> reverse = mc.player.inventory.armorInventory;
+			InventoryPlayer inventory = mc.player.inventory;
 
-			for (ItemStack armor : reverse) {
-				if (armor.isEmpty()) {
-					continue;
-				}
+			ItemStack boots      = inventory.armorItemInSlot(0);
+			ItemStack leggings   = inventory.armorItemInSlot(1);
+			ItemStack chestplace = inventory.armorItemInSlot(2);
+			ItemStack helmet     = inventory.armorItemInSlot(3);
 
-				int update_position_item_x = this.get_x() + width_compare;
+			mc.getRenderItem().zLevel = 200f;
 
-				mc.getRenderItem().zLevel = 200f;
-				mc.getRenderItem().renderItemAndEffectIntoGUI(armor, update_position_item_x, this.get_y());
-				mc.getRenderItem().renderItemOverlayIntoGUI(mc.fontRenderer, armor, update_position_item_x, this.get_y(), "");
-
-				width_compare += 16;
-
-				this.set_height(19);
-				this.set_width(64 + 2); // 16 * 4;
+			if (helmet != null) {
+				mc.getRenderItem().renderItemAndEffectIntoGUI(helmet, this.get_x() + 48, this.get_y());
+				mc.getRenderItem().renderItemOverlayIntoGUI(mc.fontRenderer, helmet, this.get_x() + 48, this.get_y(), "");				
 			}
+
+			if (chestplace != null) {
+				mc.getRenderItem().renderItemAndEffectIntoGUI(chestplace, this.get_x() + 32, this.get_y());
+				mc.getRenderItem().renderItemOverlayIntoGUI(mc.fontRenderer, chestplace, this.get_x() + 32, this.get_y(), "");
+			}
+
+			if (leggings != null) {
+				mc.getRenderItem().renderItemAndEffectIntoGUI(leggings, this.get_x() + 16, this.get_y());
+				mc.getRenderItem().renderItemOverlayIntoGUI(mc.fontRenderer, leggings, this.get_x() + 16, this.get_y(), "");
+			}
+
+			if (boots != null) {
+				mc.getRenderItem().renderItemAndEffectIntoGUI(boots, this.get_x(), this.get_y());
+				mc.getRenderItem().renderItemOverlayIntoGUI(mc.fontRenderer, boots, this.get_x(), this.get_y(), "");
+			}
+
+			this.set_height(19);
+			this.set_width(width);
 
 			mc.getRenderItem().zLevel = 0.0f;
 

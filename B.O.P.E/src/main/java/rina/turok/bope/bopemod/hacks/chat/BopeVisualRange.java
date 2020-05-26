@@ -63,7 +63,7 @@ public class BopeVisualRange extends BopeModule {
 		if (peoplenew.size() > 0) {
 			for (String name : peoplenew) {
 				if (!people.contains(name)) {
-					BopeMessage.send_client_message(ChatFormatting.WHITE + name + ChatFormatting.BLUE + "  just entered visual range thanks to bope ^_^");
+					BopeMessage.send_client_message(ChatFormatting.WHITE + name + ChatFormatting.BLUE);
 					people.add(name);
 				}
 			}

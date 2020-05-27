@@ -46,7 +46,7 @@ import rina.turok.bope.Bope;
 public class BopeNameTag extends BopeModule {
 	BopeSetting name_ = create("Name",      "NameTagName",       true);
 	BopeSetting life_ = create("Health",    "NameTagHealth",     true);
-	BopeSetting ping_ = create(ChatFormatting.DARK_RED + "Ping",      "NameTagPing",       false); 
+	BopeSetting ping_ = create("Ping",      "NameTagPing",       false); 
 	BopeSetting armor = create("Armor",     "NameTagArmor",      true);
 	BopeSetting main_ = create("Main Hand", "NameTagMainHand",   true);
 	BopeSetting off_h = create("Off Hand",  "NameTagOffHand",    true);
@@ -241,8 +241,10 @@ public class BopeNameTag extends BopeModule {
 		String ping = "";
 
 		if (entity instanceof EntityPlayer) {
-			if (entity instanceof EntityPlayerMP) {
-				ping = Integer.toString(((EntityPlayerMP) entity).ping);
+			EntityPlayer player = (EntityPlayer) entity;
+
+			if (player instanceof EntityPlayerMP) {
+				ping = Integer.toString(((EntityPlayerMP) player).ping);
 			}
 		}
 

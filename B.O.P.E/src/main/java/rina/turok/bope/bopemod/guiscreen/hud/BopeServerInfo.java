@@ -28,7 +28,7 @@ public class BopeServerInfo extends BopePinnable {
 
 		String ms   = mc.getCurrentServerData() != null ? Long.toString(Long.valueOf(mc.getCurrentServerData().pingToServer)) : "-1";
 		String tps  = Integer.toString((int) Bope.get_event_handler().get_tick_rate());
-		String info = ms + " " + tps;
+		String info = "MS " + ms + " TPS " + tps;
 
 		create_line(info, 1, 1, nl_r, nl_g, nl_b);
 

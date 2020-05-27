@@ -241,8 +241,10 @@ public class BopeNameTag extends BopeModule {
 		String ping = "";
 
 		if (entity instanceof EntityPlayer) {
-			if (entity instanceof EntityPlayerMP) {
-				ping = Integer.toString(((EntityPlayerMP) entity).ping);
+			EntityPlayer player = (EntityPlayer) entity;
+
+			if (player instanceof EntityPlayerMP) {
+				ping = Integer.toString(((EntityPlayerMP) player).ping);
 			}
 		}
 

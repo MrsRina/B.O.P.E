@@ -75,6 +75,22 @@ public class BopeDraw {
 		}
 	}
 
+	public static void draw_string(String string, int x, int y, int r, int g, int b, boolean shadow, boolean smoth) {
+		if (smoth) {
+			if (shadow) {
+				custom_font.drawStringWithShadow(string, x, y, new TurokColor(r, g, b).hex());
+			} else {
+				custom_font.drawString(string, x, y, new TurokColor(r, g, b).hex());
+			}
+		} else {
+			if (shadow) {
+				font_renderer.drawStringWithShadow(string, x, y, new TurokColor(r, g, b).hex());
+			} else {
+				font_renderer.drawString(string, x, y, new TurokColor(r, g, b).hex());
+			}
+		}
+	}
+
 	public void draw_string_gl(String string, int x, int y, int r, int g, int b) {
 		Turok resize_gl = new Turok("Resize");
 

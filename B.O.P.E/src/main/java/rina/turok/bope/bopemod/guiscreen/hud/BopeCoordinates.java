@@ -32,12 +32,12 @@ public class BopeCoordinates extends BopePinnable {
 		int nl_g = Bope.get_setting_manager().get_setting_with_tag("HUD", "HUDStringsColorG").get_value(1);
 		int nl_b = Bope.get_setting_manager().get_setting_with_tag("HUD", "HUDStringsColorB").get_value(1);
 
-		String x = Bope.g + "[" + db + Integer.toString((int) (mc.player.posX)) + Bope.g + "]" + Bope.r;
-		String y = Bope.g + "[" + db + Integer.toString((int) (mc.player.posY)) + Bope.g + "]" + Bope.r;
-		String z = Bope.g + "[" + db + Integer.toString((int) (mc.player.posZ)) + Bope.g + "]" + Bope.r;
+		String x = Bope.g + "[" + db + Integer.toString((int) (mc.player.posX)) + Bope.g + " " + Bope.r;
+		String y = Bope.g + "," + db + Integer.toString((int) (mc.player.posY)) + Bope.g + " " + Bope.r;
+		String z = Bope.g + "," + db + Integer.toString((int) (mc.player.posZ)) + Bope.g + "]" + Bope.r;
 
-		String x_nether = Bope.g + "[" + dr + Integer.toString((int) (mc.player.posX * 0.125f)) + Bope.g + "]" + Bope.r;
-		String z_nether = Bope.g + "[" + dr + Integer.toString((int) (mc.player.posZ * 0.125f)) + Bope.g + "]" + Bope.r;
+		String x_nether = Bope.g + "[" + dr + Integer.toString((int) (mc.player.posX * 0.125f)) + Bope.g + " " + Bope.r;
+		String z_nether = Bope.g + "," + dr + Integer.toString((int) (mc.player.posZ * 0.125f)) + Bope.g + "]" + Bope.r;
 
 		String line = "XYZ " + x + y + z + x_nether + z_nether;
 

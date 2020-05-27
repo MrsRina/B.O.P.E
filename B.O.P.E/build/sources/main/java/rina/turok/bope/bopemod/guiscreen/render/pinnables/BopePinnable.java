@@ -230,14 +230,18 @@ public class BopePinnable {
 		// this.smoth = Bope.get_setting_manager().get_setting_with_tag("HUDSmothFont").get_value(true);
 		this.smoth = false;
 
-		BopeDraw.draw_string(string, this.x + pos_x, this.y + pos_y, 255, 255, 255, this.smoth);
+		boolean shadow = Bope.get_setting_manager().get_setting_with_tag("HUDStringsShadow").get_value(true);
+
+		BopeDraw.draw_string(string, this.x + pos_x, this.y + pos_y, 255, 255, 255, shadow, this.smoth);
 	}
 
 	protected void create_line(String string, int pos_x, int pos_y, int r, int g, int b) {
 		// this.smoth = Bope.get_setting_manager().get_setting_with_tag("HUDSmothFont").get_value(true);
 		this.smoth = false;
 
-		BopeDraw.draw_string(string, this.x + pos_x, this.y + pos_y, r, g, b, this.smoth);
+		boolean shadow = Bope.get_setting_manager().get_setting_with_tag("HUDStringsShadow").get_value(true);
+
+		BopeDraw.draw_string(string, this.x + pos_x, this.y + pos_y, r, g, b, shadow, this.smoth);
 	}
 
 	protected void create_rect(int pos_x, int pos_y, int width, int height, int r, int g, int b, int a) {

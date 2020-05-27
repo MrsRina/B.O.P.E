@@ -24,16 +24,17 @@ public class BopeHUDManager {
 	public BopeHUDManager(String tag) {
 		this.tag = tag;
 
-		add_component_pinnable(new BopeWatermark());
-		add_component_pinnable(new BopeArrayList());
-		add_component_pinnable(new BopeCoordinates());
 		add_component_pinnable(new BopeInventoryPreview());
 		add_component_pinnable(new BopeArmorPreview());
-		add_component_pinnable(new BopeUser());
-		add_component_pinnable(new BopeTotemCount());
-		add_component_pinnable(new BopeCrystalCount());
-		add_component_pinnable(new BopeEXPCount());
+		add_component_pinnable(new BopeCoordinates());
 		add_component_pinnable(new BopeGappleCount());
+		add_component_pinnable(new BopeCrystalCount());
+		add_component_pinnable(new BopeTotemCount());
+		add_component_pinnable(new BopeServerInfo());
+		add_component_pinnable(new BopeWatermark());
+		add_component_pinnable(new BopeArrayList());
+		add_component_pinnable(new BopeEXPCount());
+		add_component_pinnable(new BopeUser());
 
 		array_hud.sort(Comparator.comparing(BopePinnable::get_title));
 	}

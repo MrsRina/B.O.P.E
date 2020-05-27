@@ -110,9 +110,9 @@ public class BopeNameTag extends BopeModule {
 
 			String spac = " ";
 			String name = name_.get_value(true) == true ? entity.getName() + spac : "";
-			String life = life_.get_value(true) == true ? Bope.g + "[" + Bope.r + Math.round(((EntityLivingBase) entity).getHealth() / 2 + (entity instanceof EntityPlayer ? ((EntityPlayer) entity).getAbsorptionAmount() : 0)) + Bope.g + "]" + Bope.r + spac : "";
+			String life = life_.get_value(true) == true ? Math.round(((EntityLivingBase) entity).getHealth() / 2 + (entity instanceof EntityPlayer ? ((EntityPlayer) entity).getAbsorptionAmount() : 0)) + spac : "";
 			String ping = ping_.get_value(true) == true ? get_ping(entity) : "";
-			String tag  = name + life + ping;
+			String tag  = "[" + ping + "]" + "[" + life + "]" + name;
 
 			GlStateManager.pushMatrix();
 

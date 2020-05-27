@@ -207,7 +207,7 @@ public class BopeSorround extends BopeModule {
 			}
 
 			while (places < blocks_per_tick.get_value(1)) {
-				if (places_tick > blocks_length) {
+				if (places_tick >= blocks_length) {
 					places_tick = 0;
 
 					break;

@@ -46,7 +46,7 @@ import rina.turok.bope.Bope;
 public class BopeNameTag extends BopeModule {
 	BopeSetting name_ = create("Name",      "NameTagName",       true);
 	BopeSetting life_ = create("Health",    "NameTagHealth",     true);
-	BopeSetting ping_ = create("Ping",      "NameTagPing",       false); 
+	BopeSetting ping_ = create(ChatFormatting.DARK_RED + "Ping",      "NameTagPing",       false); 
 	BopeSetting armor = create("Armor",     "NameTagArmor",      true);
 	BopeSetting main_ = create("Main Hand", "NameTagMainHand",   true);
 	BopeSetting off_h = create("Off Hand",  "NameTagOffHand",    true);
@@ -110,9 +110,9 @@ public class BopeNameTag extends BopeModule {
 
 			String spac = " ";
 			String name = name_.get_value(true) == true ? entity.getName() + spac : "";
-			String life = life_.get_value(true) == true ? Bope.g + "[" + Bope.r + Math.round(((EntityLivingBase) entity).getHealth() / 2 + (entity instanceof EntityPlayer ? ((EntityPlayer) entity).getAbsorptionAmount() : 0)) + Bope.g + "]" + Bope.r + spac : "";
+			String life = life_.get_value(true) == true ? Math.round(((EntityLivingBase) entity).getHealth() / 2 + (entity instanceof EntityPlayer ? ((EntityPlayer) entity).getAbsorptionAmount() : 0)) + spac : "";
 			String ping = ping_.get_value(true) == true ? get_ping(entity) : "";
-			String tag  = name + life + ping;
+			String tag  = "[" + ping + "]" + "[" + life + "]" + name;
 
 			GlStateManager.pushMatrix();
 

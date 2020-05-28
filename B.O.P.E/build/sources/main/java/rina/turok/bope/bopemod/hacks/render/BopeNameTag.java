@@ -46,7 +46,7 @@ import rina.turok.bope.Bope;
 public class BopeNameTag extends BopeModule {
 	BopeSetting name_ = create("Name",      "NameTagName",       true);
 	BopeSetting life_ = create("Health",    "NameTagHealth",     true);
-	BopeSetting ping_ = create(ChatFormatting.DARK_RED + "Ping",      "NameTagPing",       false); 
+	BopeSetting ping_ = create("Ping",      "NameTagPing",       false); 
 	BopeSetting armor = create("Armor",     "NameTagArmor",      true);
 	BopeSetting main_ = create("Main Hand", "NameTagMainHand",   true);
 	BopeSetting off_h = create("Off Hand",  "NameTagOffHand",    true);
@@ -109,10 +109,10 @@ public class BopeNameTag extends BopeModule {
 			float viewer_yaw   = mc.getRenderManager().playerViewY;
 
 			String spac = " ";
-			String name = name_.get_value(true) == true ? entity.getName() + spac : "";
-			String life = life_.get_value(true) == true ? Math.round(((EntityLivingBase) entity).getHealth() / 2 + (entity instanceof EntityPlayer ? ((EntityPlayer) entity).getAbsorptionAmount() : 0)) + spac : "";
-			String ping = ping_.get_value(true) == true ? get_ping(entity) : "";
-			String tag  = "[" + ping + "]" + "[" + life + "]" + name;
+			String name = name_.get_value(true) == true ? (life_.get_value(true) || ping_.get_value(true) == true ? spac : "") + entity.getName() : "";
+			String life = life_.get_value(true) == true ? "[" + ChatFormatting.DARK_RED + Integer.toString(Math.round(((EntityLivingBase) entity).getHealth() / 2 + (entity instanceof EntityPlayer ? ((EntityPlayer) entity).getAbsorptionAmount() : 0))) + Bope.r + "]" : "";
+			String ping = ping_.get_value(true) == true ? "[" + ChatFormatting.DARK_BLUE + get_ping(entity) + Bope.r + "]" : "";
+			String tag  = ping + life + name;
 
 			GlStateManager.pushMatrix();
 
@@ -151,6 +151,7 @@ public class BopeNameTag extends BopeModule {
 				EntityPlayer player = (EntityPlayer) entity;
 
 				int off_set_x = 0;
+				int separator = 2;
 
 				for (ItemStack armor_slot_item : player.inventory.armorInventory) {
 					if (armor_slot_item != null && armor.get_value(true)) {
@@ -165,7 +166,7 @@ public class BopeNameTag extends BopeModule {
 
 					render_item(main_hand, off_set_x, -5);
 
-					off_set_x += 16;
+					off_set_x += 16 + separator;
 				}
 
 				for (int i = 0; i < 4; ++i) {
@@ -174,7 +175,7 @@ public class BopeNameTag extends BopeModule {
 					if (armor_slot_item != null && armor.get_value(true)) {
 						render_item(armor_slot_item, off_set_x, -5);
 
-						off_set_x += 16;
+						off_set_x += 16 + separator;
 					}
 				}
 
@@ -185,7 +186,7 @@ public class BopeNameTag extends BopeModule {
 
 					render_item(off_hand, off_set_x, -5);
 
-					off_set_x += 8;
+					off_set_x += 8 + separator;
 				}
 			}
 
@@ -220,7 +221,7 @@ public class BopeNameTag extends BopeModule {
 		GlStateManager.scale(1, 1, 0.01f);
 
 		mc.getRenderItem().renderItemAndEffectIntoGUI(item, x, (y / 2) - 12);
-		mc.getRenderItem().renderItemOverlays(mc.fontRenderer, item, x, (y / 2) - 12);
+		mc.getRenderItem().renderItemOverlays(mc.fontRenderer, item, x, (y / 2) - 12 - 2);
 		mc.getRenderItem().zLevel = 0.0f;
 
 		GlStateManager.scale(1, 1, 1);
@@ -243,9 +244,9 @@ public class BopeNameTag extends BopeModule {
 		if (entity instanceof EntityPlayer) {
 			EntityPlayer player = (EntityPlayer) entity;
 
-			if (player instanceof EntityPlayerMP) {
-				ping = Integer.toString(((EntityPlayerMP) player).ping);
-			}
+			try {
+				ping = Float.toString((int) mc.getConnection().getPlayerInfo(player.getUniqueID()).getResponseTime());
+			} catch(Exception exc) {}
 		}
 
 		return ping;

@@ -2,9 +2,8 @@ package rina.turok.turok.draw;
 
 import net.minecraft.client.renderer.vertex.DefaultVertexFormats;
 import net.minecraft.client.renderer.GlStateManager;
-import net.minecraft.client.renderer.BufferBuilder;
-import net.minecraft.client.renderer.Tessellator;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.client.renderer.*;
 
 import java.util.*;
 
@@ -71,6 +70,25 @@ public class TurokRenderHelp extends Tessellator {
         GlStateManager.enableBlend();
         GlStateManager.enableDepth();
     }
+
+//    public static void draw_quad_buffer(double x, double y, double w, double h, float r, float g, float b, float a) {
+//        Tessellator   tessellator   = Tessellator.getInstance();
+//        BufferBuilder bufferbuilder = tessellator.getBuffer();
+//
+//        bufferbuilder.begin(GL_QUADS, DefaultVertexFormats.POSITION_COLOR);
+//        bufferbuilder.pos(-x - 1, 8, 0.0).color(0.0f, 0.0f, 0.0f, 0.5f).endVertex();
+//        bufferbuilder.pos(-x - 1, 19, 0.0).color(0.0f, 0.0F, 0.0F, 0.5f).endVertex();
+//        bufferbuilder.pos(x + 1, 19, 0.0).color(0.0f, 0.0f, 0.0f, 0.5f).endVertex();
+//        bufferbuilder.pos(x + 1, 8, 0.0).color(0.0f, 0.0f, 0.0f, 0.5f).endVertex();
+//        tessellator.draw();
+//
+//        bufferbuilder.begin(GL_LINE_LOOP, DefaultVertexFormats.POSITION_COLOR);
+//        bufferbuilder.pos(-colapse_x - 1, 8, 0.0).color(0.1f, 0.1f, 0.1f, 0.1f).endVertex();
+//        bufferbuilder.pos(-colapse_x - 1, 19, 0.0).color(0.1f, 0.1f, 0.1f, 0.1f).endVertex();
+//        bufferbuilder.pos(colapse_x + 1, 19, 0.0).color(0.1f, 0.1f, 0.1f, 0.1f).endVertex();
+//        bufferbuilder.pos(colapse_x + 1, 8, 0.0).color(0.1f, 0.1f, 0.1f, 0.1f).endVertex();
+//        tessellator.draw();
+//    }
 
     public static void draw_cube(BlockPos blockPos, int argb, String sides) {
         final int a = (argb >>> 24) & 0xFF;

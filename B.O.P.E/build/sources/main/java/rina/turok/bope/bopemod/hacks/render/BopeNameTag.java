@@ -1,5 +1,6 @@
 package rina.turok.bope.bopemod.hacks.render;
 
+import net.minecraft.client.renderer.vertex.DefaultVertexFormats;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.entity.player.InventoryPlayer;
 import com.mojang.realmsclient.gui.ChatFormatting;
@@ -7,6 +8,7 @@ import net.minecraft.client.renderer.RenderHelper;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.EntityLivingBase;
+import net.minecraft.client.renderer.*;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.item.ItemStack;
 import net.minecraft.entity.Entity;
@@ -52,7 +54,6 @@ public class BopeNameTag extends BopeModule {
 	BopeSetting off_h = create("Off Hand",  "NameTagOffHand",    true);
 	BopeSetting range = create("Range",     "NameTagRange",      25, 0, 50);
 	BopeSetting size  = create("Size",      "NameTagSize",       4, 3, 4);
-	BopeSetting smoth = create("Smooth",    "NameTagSmoothFont", false);
 
 	float partial_ticks = 0.0f;
 
@@ -102,7 +103,7 @@ public class BopeNameTag extends BopeModule {
 
 	public void draw(Entity entity) {
 		if (mc.getRenderManager().options != null) {
-			boolean smooth      = smoth.get_value(true);
+			boolean smooth      = false;
 			boolean person_view = mc.getRenderManager().options.thirdPersonView == 2;
 
 			float viewer_pitch = mc.getRenderManager().playerViewX;
@@ -139,9 +140,7 @@ public class BopeNameTag extends BopeModule {
 
 			int colapse_x = font.get_string_width(tag, smooth) / 2;
 
-			GlStateManager.enableBlend();
-			GlStateManager.tryBlendFuncSeparate(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA, GlStateManager.SourceFactor.ONE, GlStateManager.DestFactor.ZERO);
-			GlStateManager.disableTexture2D();
+			draw_background(colapse_x);
 
 			GlStateManager.enableTexture2D();
 
@@ -150,7 +149,8 @@ public class BopeNameTag extends BopeModule {
 			if (entity instanceof EntityPlayer) {
 				EntityPlayer player = (EntityPlayer) entity;
 
-				int off_set_x = 0;
+				int off_set_x = -10;
+				int off_set_y = -5;
 				int separator = 2;
 
 				for (ItemStack armor_slot_item : player.inventory.armorInventory) {
@@ -164,7 +164,7 @@ public class BopeNameTag extends BopeModule {
 
 					ItemStack main_hand = player.getHeldItemMainhand();
 
-					render_item(main_hand, off_set_x, -5);
+					render_item(main_hand, off_set_x, -off_set_y);
 
 					off_set_x += 16 + separator;
 				}
@@ -173,7 +173,7 @@ public class BopeNameTag extends BopeModule {
 					ItemStack armor_slot_item = player.inventory.armorInventory.get(i);
 
 					if (armor_slot_item != null && armor.get_value(true)) {
-						render_item(armor_slot_item, off_set_x, -5);
+						render_item(armor_slot_item, off_set_x, -off_set_y);
 
 						off_set_x += 16 + separator;
 					}
@@ -184,7 +184,7 @@ public class BopeNameTag extends BopeModule {
 
 					ItemStack off_hand = player.getHeldItemOffhand();
 
-					render_item(off_hand, off_set_x, -5);
+					render_item(off_hand, off_set_x, -off_set_y);
 
 					off_set_x += 8 + separator;
 				}
@@ -216,12 +216,12 @@ public class BopeNameTag extends BopeModule {
 
 		RenderHelper.enableStandardItemLighting();
 
-		mc.getRenderItem().zLevel = -100.0f;
+		mc.getRenderItem().zLevel = -200.0f;
 
 		GlStateManager.scale(1, 1, 0.01f);
 
 		mc.getRenderItem().renderItemAndEffectIntoGUI(item, x, (y / 2) - 12);
-		mc.getRenderItem().renderItemOverlays(mc.fontRenderer, item, x, (y / 2) - 12 - 2);
+		mc.getRenderItem().renderItemOverlays(mc.fontRenderer, item, x, (y / 2) - 12  + 2);
 		mc.getRenderItem().zLevel = 0.0f;
 
 		GlStateManager.scale(1, 1, 1);
@@ -238,6 +238,30 @@ public class BopeNameTag extends BopeModule {
 		glPopMatrix();
 	}
 
+	public void draw_background(int colapse_x) {
+		GlStateManager.enableBlend();
+		GlStateManager.tryBlendFuncSeparate(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA, GlStateManager.SourceFactor.ONE, GlStateManager.DestFactor.ZERO);
+		GlStateManager.disableTexture2D();
+
+		Tessellator   tessellator   = Tessellator.getInstance();
+		BufferBuilder bufferbuilder = tessellator.getBuffer();
+
+		glTranslatef(0, -20, 0);
+		bufferbuilder.begin(GL_QUADS, DefaultVertexFormats.POSITION_COLOR);
+		bufferbuilder.pos(-colapse_x - 1, 8, 0.0).color(0.0f, 0.0f, 0.0f, 0.5f).endVertex();
+		bufferbuilder.pos(-colapse_x - 1, 19, 0.0).color(0.0f, 0.0F, 0.0F, 0.5f).endVertex();
+		bufferbuilder.pos(colapse_x + 1, 19, 0.0).color(0.0f, 0.0f, 0.0f, 0.5f).endVertex();
+		bufferbuilder.pos(colapse_x + 1, 8, 0.0).color(0.0f, 0.0f, 0.0f, 0.5f).endVertex();
+		tessellator.draw();
+
+		bufferbuilder.begin(GL_LINE_LOOP, DefaultVertexFormats.POSITION_COLOR);
+		bufferbuilder.pos(-colapse_x - 1, 8, 0.0).color(0.1f, 0.1f, 0.1f, 0.1f).endVertex();
+		bufferbuilder.pos(-colapse_x - 1, 19, 0.0).color(0.1f, 0.1f, 0.1f, 0.1f).endVertex();
+		bufferbuilder.pos(colapse_x + 1, 19, 0.0).color(0.1f, 0.1f, 0.1f, 0.1f).endVertex();
+		bufferbuilder.pos(colapse_x + 1, 8, 0.0).color(0.1f, 0.1f, 0.1f, 0.1f).endVertex();
+		tessellator.draw();
+	}
+
 	public String get_ping(Entity entity) {
 		String ping = "";
 
@@ -245,7 +269,7 @@ public class BopeNameTag extends BopeModule {
 			EntityPlayer player = (EntityPlayer) entity;
 
 			try {
-				ping = Float.toString((int) mc.getConnection().getPlayerInfo(player.getUniqueID()).getResponseTime());
+				ping = Integer.toString((int) mc.getConnection().getPlayerInfo(player.getUniqueID()).getResponseTime());
 			} catch(Exception exc) {}
 		}
 

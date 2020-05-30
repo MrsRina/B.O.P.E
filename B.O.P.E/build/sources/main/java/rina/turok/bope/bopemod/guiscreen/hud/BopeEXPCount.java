@@ -32,13 +32,9 @@ public class BopeEXPCount extends BopePinnable {
 
 	@Override
 	public void render() {
-		int nl_r = Bope.get_setting_manager().get_setting_with_tag("HUD", "HUDStringsColorR").get_value(1);
-		int nl_g = Bope.get_setting_manager().get_setting_with_tag("HUD", "HUDStringsColorG").get_value(1);
-		int nl_b = Bope.get_setting_manager().get_setting_with_tag("HUD", "HUDStringsColorB").get_value(1);
-
 		if (mc.player != null) {
 			if (is_on_gui()) {
-				create_rect(0, 0, this.get_width(), this.get_height(), 0, 0, 0, 50);
+				background();
 			}
 
 			GlStateManager.pushMatrix();
@@ -59,9 +55,9 @@ public class BopeEXPCount extends BopePinnable {
 				}
 
 				if (stack.getItem() == Items.EXPERIENCE_BOTTLE) {
-					mc.getRenderItem().renderItemAndEffectIntoGUI(stack, this.get_x(), this.get_y());
+					mc.getRenderItem().renderItemAndEffectIntoGUI(stack, get_x(), get_y());
 
-					create_line(Integer.toString(exp + off), 16 + 2, 16 - get(Integer.toString(exp + off), "height"), nl_r, nl_g, nl_b);
+					create_line(Integer.toString(exp + off), 16 + 2, 16 - get(Integer.toString(exp + off), "height"));
 				}
 			}
 
@@ -71,8 +67,8 @@ public class BopeEXPCount extends BopePinnable {
 			
 			GlStateManager.popMatrix();
 
-			this.set_width(16 + get(Integer.toString(exp) + off, "width") + 2);
-			this.set_height(16);
+			set_width(16 + get(Integer.toString(exp) + off, "width") + 2);
+			set_height(16);
 		}
 	}
 }

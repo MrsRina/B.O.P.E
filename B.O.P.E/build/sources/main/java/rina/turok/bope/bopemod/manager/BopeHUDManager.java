@@ -25,10 +25,11 @@ public class BopeHUDManager {
 		this.tag = tag;
 
 		add_component_pinnable(new BopeInventoryPreview());
+		add_component_pinnable(new BopeStoragePreview());
 		add_component_pinnable(new BopeArmorPreview());
+		add_component_pinnable(new BopeCrystalCount());
 		add_component_pinnable(new BopeCoordinates());
 		add_component_pinnable(new BopeGappleCount());
-		add_component_pinnable(new BopeCrystalCount());
 		add_component_pinnable(new BopeTotemCount());
 		add_component_pinnable(new BopeServerInfo());
 		add_component_pinnable(new BopeWatermark());
@@ -51,6 +52,12 @@ public class BopeHUDManager {
 		for (BopePinnable pinnables : get_array_huds()) {
 			if (pinnables.is_active()) {
 				pinnables.render();
+
+				// Update :)
+				pinnables.update();
+
+				// Sometimes I get resize problems it fix ;)
+				pinnables.fix_screen();
 			}
 		}
 	}

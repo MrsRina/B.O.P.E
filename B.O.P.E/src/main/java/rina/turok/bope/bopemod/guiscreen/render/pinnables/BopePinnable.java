@@ -39,11 +39,17 @@ public class BopePinnable {
 	private int width;
 	private int height;
 
+	public int screen_width;
+	public int screen_height;
+
 	private int move_x;
 	private int move_y;
 
-	private boolean dock  = true;
-	public  boolean smoth = false; // Bope.get_setting_manager().get_setting_with_tag("HUDSmothFont").get_value(true);
+	private int tolerance;
+
+	private boolean dock            = true;
+	public  boolean smoth           = false; // Bope.get_setting_manager().get_setting_with_tag("HUDSmothFont").get_value(true);
+	public  boolean event_is_resize = false;
 
 	public final Minecraft mc = Minecraft.getMinecraft();
 
@@ -59,6 +65,15 @@ public class BopePinnable {
 		this.height = 10;
 
 		this.move = false;
+
+		this.screen_width  = (mc.displayWidth / 2);
+		this.screen_height = (mc.displayHeight / 2);
+
+		this.tolerance = this.x;
+	}
+
+	public void background() {
+		create_rect(0, 0, this.get_width(), this.get_height(), 0, 0, 0, 60);
 	}
 
 	public void set_move(boolean value) {
@@ -75,6 +90,22 @@ public class BopePinnable {
 
 	public void set_y(int y) {
 		this.y = y;
+	}
+
+	public void set_x(int x, String mult) {
+		if (mult.equals("+")) {
+			this.x += x;
+		} else if (mult.equals("-")) {
+			this.x -= x;
+		}
+	}
+
+	public void set_y(int y, String mult) {
+		if (mult.equals("+")) {
+			this.y += y;
+		} else if (mult.equals("-")) {
+			this.y -= y;
+		}
 	}
 
 	public void set_width(int width) {
@@ -145,37 +176,46 @@ public class BopePinnable {
 		return false;
 	}
 
-	public void crush(int mx, int my) {
-		// Get current screen real length.
-		int screen_x = (mc.displayWidth / 2);
-		int screen_y = (mc.displayHeight / 2);
+	public void update() {
+		this.screen_width  = (mc.displayWidth / 2);
+		this.screen_height = (mc.displayHeight / 2);
+	}
 
+	public void fix_screen() {
+		if (get_x() <= 0) {
+			set_dock(true);
+			set_x(1);
+		}
+
+		if (get_x() + get_width() >= this.screen_width) {
+			set_dock(false);
+			set_x(this.screen_width - get_width() - 1);
+		}
+
+		if (get_y() <= 0) {
+			set_y(1);
+		}
+
+		if (get_y() + get_height() >= this.screen_height) {
+			set_y(this.screen_height - get_height() - 1);
+		}
+
+		if (get_x() % 2 != 0) {
+			set_x(get_x() % 2, "+");
+		}
+
+		if (get_y() % 2 != 0) {
+			set_y(get_y() % 2, "+");
+		}
+	}
+
+	public void crush(int mx, int my) {
 		set_x(mx - this.move_x);
 		set_y(my - this.move_y);
 
-		if (this.x + this.width >= screen_x) {
-			this.x = screen_x - this.width - 1;
-		}
+		this.tolerance = get_x() + get_width() - this.screen_width;
 
-		if (this.x <= 0) {
-			this.x = 1;
-		}
-
-		if (this.y + this.height >= screen_y) {
-			this.y = screen_y - this.height - 1;
-		}
-
-		if (this.y <= 0) {
-			this.y = 1;
-		}
-
-		if (this.x % 2 != 0) {
-			this.x += this.x % 2;
-		}
-
-		if (this.y % 2 != 0) {
-			this.y += this.y % 2;
-		}
+		fix_screen();
 	}
 
 	public void render() {}
@@ -198,12 +238,8 @@ public class BopePinnable {
 	public void render(int mx, int my, int tick) {
 		if (is_moving()) {
 			crush(mx, my);
-		}
 
-		if (this.x + this.width <= (mc.displayWidth / 2) / 2) {
-			set_dock(true);
-		} else if (this.x + this.width >= (mc.displayWidth / 2) / 2) {
-			set_dock(false);
+			event_is_resize = false;
 		}
 
 		if (is_active()) {
@@ -230,9 +266,13 @@ public class BopePinnable {
 		// this.smoth = Bope.get_setting_manager().get_setting_with_tag("HUDSmothFont").get_value(true);
 		this.smoth = false;
 
+		int nl_r = Bope.get_setting_manager().get_setting_with_tag("HUD", "HUDStringsColorR").get_value(1);
+		int nl_g = Bope.get_setting_manager().get_setting_with_tag("HUD", "HUDStringsColorG").get_value(1);
+		int nl_b = Bope.get_setting_manager().get_setting_with_tag("HUD", "HUDStringsColorB").get_value(1);
+
 		boolean shadow = Bope.get_setting_manager().get_setting_with_tag("HUDStringsShadow").get_value(true);
 
-		BopeDraw.draw_string(string, this.x + pos_x, this.y + pos_y, 255, 255, 255, shadow, this.smoth);
+		BopeDraw.draw_string(string, this.x + docking(pos_x, string), this.y + pos_y, nl_r, nl_g, nl_b, shadow, this.smoth);
 	}
 
 	protected void create_line(String string, int pos_x, int pos_y, int r, int g, int b) {
@@ -241,7 +281,7 @@ public class BopePinnable {
 
 		boolean shadow = Bope.get_setting_manager().get_setting_with_tag("HUDStringsShadow").get_value(true);
 
-		BopeDraw.draw_string(string, this.x + pos_x, this.y + pos_y, r, g, b, shadow, this.smoth);
+		BopeDraw.draw_string(string, this.x + docking(pos_x, string), this.y + pos_y, r, g, b, shadow, this.smoth);
 	}
 
 	protected void create_rect(int pos_x, int pos_y, int width, int height, int r, int g, int b, int a) {
@@ -263,7 +303,7 @@ public class BopePinnable {
 	}
 
 	public int docking(int position_x, String string) {
-		if (this.dock) {
+		if (get_dock()) {
 			return position_x;
 		} else {
 			return (this.width - get(string, "width") - position_x); 

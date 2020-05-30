@@ -34,10 +34,6 @@ public class BopeArrayList extends BopePinnable {
 
 		int position_update_y = 2;
 
-		int nl_r = Bope.get_setting_manager().get_setting_with_tag("HUD", "HUDStringsColorR").get_value(1);
-		int nl_g = Bope.get_setting_manager().get_setting_with_tag("HUD", "HUDStringsColorG").get_value(1);
-		int nl_b = Bope.get_setting_manager().get_setting_with_tag("HUD", "HUDStringsColorB").get_value(1);
-
 		List<BopeModule> pretty_modules = Bope.get_module_manager().get_array_active_modules().stream()
 			.sorted(Comparator.comparing(modules -> get(modules.detail_option() == null ? modules.get_tag() : modules.get_tag() + Bope.g + " [" + Bope.r + modules.detail_option() + Bope.g + "]" + Bope.r, "width")))
 			.collect(Collectors.toList());
@@ -52,15 +48,15 @@ public class BopeArrayList extends BopePinnable {
 				modules.get_tag() + Bope.g + " [" + Bope.r + modules.detail_option() + Bope.g + "]" + Bope.r
 			);
 
-			create_line(module_name, this.docking(1, module_name), position_update_y, nl_r, nl_g, nl_b);
+			create_line(module_name, 1, position_update_y);
 
 			position_update_y += get(module_name, "height") + 2;
 
-			if (get(module_name, "width") >= this.get_width()) {
-				this.set_width(get(module_name, "width") + 2);
+			if (get(module_name, "width") >= get_width()) {
+				set_width(get(module_name, "width") + 2);
 			}
 
-			this.set_height(position_update_y);
+			set_height(position_update_y);
 		}
 	}
 }

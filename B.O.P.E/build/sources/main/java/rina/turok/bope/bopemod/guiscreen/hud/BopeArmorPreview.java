@@ -31,8 +31,9 @@ public class BopeArmorPreview extends BopePinnable {
 	@Override
 	public void render() {
 		if (mc.player != null) {
+			// Draw background color.
 			if (is_on_gui()) {
-				create_rect(0, 0, this.get_width(), this.get_height(), 0, 0, 0, 50);
+				background();
 			}
 
 			GlStateManager.pushMatrix();
@@ -51,27 +52,27 @@ public class BopeArmorPreview extends BopePinnable {
 			mc.getRenderItem().zLevel = 200f;
 
 			if (helmet != null) {
-				mc.getRenderItem().renderItemAndEffectIntoGUI(helmet, this.get_x() + 48, this.get_y());
-				mc.getRenderItem().renderItemOverlayIntoGUI(mc.fontRenderer, helmet, this.get_x() + 48, this.get_y(), "");				
+				mc.getRenderItem().renderItemAndEffectIntoGUI(helmet, get_x() + 48, get_y());
+				mc.getRenderItem().renderItemOverlayIntoGUI(mc.fontRenderer, helmet, get_x() + 48, get_y(), "");				
 			}
 
 			if (chestplace != null) {
-				mc.getRenderItem().renderItemAndEffectIntoGUI(chestplace, this.get_x() + 32, this.get_y());
-				mc.getRenderItem().renderItemOverlayIntoGUI(mc.fontRenderer, chestplace, this.get_x() + 32, this.get_y(), "");
+				mc.getRenderItem().renderItemAndEffectIntoGUI(chestplace, get_x() + 32, get_y());
+				mc.getRenderItem().renderItemOverlayIntoGUI(mc.fontRenderer, chestplace, get_x() + 32, get_y(), "");
 			}
 
 			if (leggings != null) {
-				mc.getRenderItem().renderItemAndEffectIntoGUI(leggings, this.get_x() + 16, this.get_y());
-				mc.getRenderItem().renderItemOverlayIntoGUI(mc.fontRenderer, leggings, this.get_x() + 16, this.get_y(), "");
+				mc.getRenderItem().renderItemAndEffectIntoGUI(leggings, get_x() + 16, get_y());
+				mc.getRenderItem().renderItemOverlayIntoGUI(mc.fontRenderer, leggings, get_x() + 16, get_y(), "");
 			}
 
 			if (boots != null) {
-				mc.getRenderItem().renderItemAndEffectIntoGUI(boots, this.get_x(), this.get_y());
-				mc.getRenderItem().renderItemOverlayIntoGUI(mc.fontRenderer, boots, this.get_x(), this.get_y(), "");
+				mc.getRenderItem().renderItemAndEffectIntoGUI(boots, get_x(), get_y());
+				mc.getRenderItem().renderItemOverlayIntoGUI(mc.fontRenderer, boots, get_x(), get_y(), "");
 			}
 
-			this.set_height(19);
-			this.set_width(width);
+			set_height(19);
+			set_width(width);
 
 			mc.getRenderItem().zLevel = 0.0f;
 

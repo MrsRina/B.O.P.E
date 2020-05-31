@@ -36,7 +36,7 @@ public class BopeAutoGapple extends BopeModule {
 	int gapple_stack;
 
 	public BopeAutoGapple() {
-		super(BopeCategory.BOPE_COMBAT);
+		super(BopeCategory.BOPE_COMBAT, true);
 
 		// Info.
 		this.name        = "Auto Gapple";

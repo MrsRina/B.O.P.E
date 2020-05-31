@@ -8,7 +8,7 @@ package rina.turok.turok.task;
 *
 */
 public class TurokFont {
-	public static String smoth(String base) {
+	public static String smooth(String base) {
 		String new_base = base;
 
 		new_base = new_base.replace("a", "\u1d00");

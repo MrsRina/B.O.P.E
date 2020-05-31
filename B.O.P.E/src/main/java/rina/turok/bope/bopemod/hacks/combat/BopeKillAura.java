@@ -37,10 +37,10 @@ import rina.turok.bope.Bope;
 *
 */
 public class BopeKillAura extends BopeModule {
-	BopeSetting player    = create("Player",   "KillAuraPlayer",  true);
-	BopeSetting hostile   = create("Hostile",  "KillAuraHostile", false);
-	BopeSetting sword     = create("Sword",    "KillAuraSword",   true);
-	BopeSetting range     = create("Range",    "KillAuraRange",   6, 1, 10);
+	BopeSetting player    = create("Player", "KillAuraPlayer", true);
+	BopeSetting hostile   = create("Hostile", "KillAuraHostile", false);
+	BopeSetting sword     = create("Sword", "KillAuraSword", true);
+	BopeSetting range     = create("Range", "KillAuraRange", 6, 1, 10);
 
 	boolean with_sword = true;
 
@@ -67,6 +67,7 @@ public class BopeKillAura extends BopeModule {
 			/* RinaRinaRinaRinaRinaRinaRinaRinaRinaRinaR */ .filter(entity ->  entity != mc.player)
 			/* RinaRinaRinaRinaRinaRinaRinaRinaRinaRinaR */ .filter(entity ->  mc.player.getDistance(entity) <= range.get_value(1))
 			/* RinaRinaRinaRinaRinaRinaRinaRinaRinaRinaR */ .filter(entity -> !entity.isDead)
+			/* RinaRinaRinaRinaRinaRinaRinaRinaRinaRinaR */ .filter(entity -> !(Bope.get_friend_manager().is_friend(entity.getName())))
 			/* RinaRinaRinaRinaRinaRinaRinaRinaRinaRinaR */ .filter(entity ->  entity instanceof EntityPlayer || (entity instanceof IMob && hostile.get_value(true)))
 			/* RinaRinaRinaRinaRinaRinaRinaRinaRinaRinaR */ .filter(entity ->  ((EntityPlayer) entity).getHealth() > 0)
 			/* RinaRinaRinaRinaRinaRinaRinaRinaRinaRinaR */ .sorted(Comparator.comparing(distance -> mc.player.getDistance(distance)))

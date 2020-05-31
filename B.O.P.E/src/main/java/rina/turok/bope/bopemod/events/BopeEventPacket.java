@@ -11,7 +11,7 @@ import rina.turok.bope.external.BopeEventCancellable;
 * Created by Rina.
 * 08/04/20.
 *
-*/
+**/
 public class BopeEventPacket extends BopeEventCancellable {
 	private final Packet packet;
 

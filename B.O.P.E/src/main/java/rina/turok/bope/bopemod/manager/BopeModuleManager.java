@@ -129,6 +129,7 @@ public class BopeModuleManager {
 		return new Vec3d(entity.lastTickPosX, entity.lastTickPosY, entity.lastTickPosZ).add(process(entity, ticks, ticks, ticks)); // x, y, z.
 	}
 
+	// Actual.
 	public void render(RenderWorldLastEvent event) {
 		mc.profiler.startSection("bope");
 		mc.profiler.startSection("setup");

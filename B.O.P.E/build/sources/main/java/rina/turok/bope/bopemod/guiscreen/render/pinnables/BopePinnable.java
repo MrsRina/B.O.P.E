@@ -192,10 +192,6 @@ public class BopePinnable {
 			set_x(this.screen_width - get_width() - 1);
 		}
 
-		if (get_x() + get_width() >= this.screen_width - 1 && !is_moving()) {
-			set_x(this.screen_width - get_width() - 1);
-		}
-
 		if (get_y() <= 0) {
 			set_y(1);
 		}

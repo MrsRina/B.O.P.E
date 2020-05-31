@@ -17,7 +17,7 @@ public class BopeBrightness extends BopeModule {
 	float old_gamme_value;	
 
 	public BopeBrightness() {
-		super(BopeCategory.BOPE_RENDER);
+		super(BopeCategory.BOPE_RENDER, false);
 
 		// Info.
 		this.name        = "Brightness";

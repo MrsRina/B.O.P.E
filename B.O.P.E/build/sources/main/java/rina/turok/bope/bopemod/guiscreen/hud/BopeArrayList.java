@@ -35,6 +35,7 @@ public class BopeArrayList extends BopePinnable {
 		int position_update_y = 2;
 
 		List<BopeModule> pretty_modules = Bope.get_module_manager().get_array_active_modules().stream()
+			.filter(module -> module.to_show())
 			.sorted(Comparator.comparing(modules -> get(modules.detail_option() == null ? modules.get_tag() : modules.get_tag() + Bope.g + " [" + Bope.r + modules.detail_option() + Bope.g + "]" + Bope.r, "width")))
 			.collect(Collectors.toList());
 

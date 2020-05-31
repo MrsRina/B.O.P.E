@@ -51,6 +51,7 @@ public class BopeMixinMinecraft {
 	private void shutdown(CallbackInfo info) {
 		Bope.send_client_log("The client were saved.");
 
+		Bope.get_config_manager().save_friends();
 		Bope.get_config_manager().save_log();
 	}
 
@@ -59,6 +60,7 @@ public class BopeMixinMinecraft {
 		Bope.send_client_log("The client were saved before crash.");
 		Bope.send_client_log(crash.getCrashCause() + ": " + crash.getDescription());
 
+		Bope.get_config_manager().save_friends();
 		Bope.get_config_manager().save_log();
 	}
 }

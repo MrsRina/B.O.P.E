@@ -47,6 +47,7 @@ public class BopeModule {
 	public boolean state_module;
 	public boolean toggle_message;
 	public boolean widget_usage;
+	public boolean show_arraylist;
 
 	public final Minecraft mc = Minecraft.getMinecraft();
 
@@ -57,6 +58,20 @@ public class BopeModule {
 		this.bind           = -1;
 		this.toggle_message = true;
 		this.widget_usage   = false;
+		this.show_arraylist = true;
+
+		// Category.
+		this.category = category;
+	}
+
+	public BopeModule(BopeCategory category, boolean to_show) {
+		this.name           = "";
+		this.tag            = "";
+		this.description    = "";
+		this.bind           = -1;
+		this.toggle_message = true;
+		this.widget_usage   = false;
+		this.show_arraylist = to_show;
 
 		// Category.
 		this.category = category;
@@ -78,6 +93,10 @@ public class BopeModule {
 
 	public void set_usage_widget(boolean value) {
 		this.widget_usage = value;
+	}
+
+	public boolean to_show() {
+		return this.show_arraylist;
 	}
 
 	public boolean is_active() {

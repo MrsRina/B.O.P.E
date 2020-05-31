@@ -1,5 +1,7 @@
 package rina.turok.bope.bopemod;
 
+import net.minecraft.client.Minecraft;
+
 // Core.
 import rina.turok.bope.Bope;
 
@@ -11,6 +13,8 @@ import rina.turok.bope.Bope;
 *
 */
 public class BopeCommand {
+	public final Minecraft mc = Minecraft.getMinecraft();
+
 	String name;
 	String description;
 

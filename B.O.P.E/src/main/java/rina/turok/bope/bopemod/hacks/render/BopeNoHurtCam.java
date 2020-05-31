@@ -15,7 +15,7 @@ import rina.turok.bope.bopemod.BopeModule;
 */
 public class BopeNoHurtCam extends BopeModule {
 	public BopeNoHurtCam() {
-		super(BopeCategory.BOPE_RENDER);
+		super(BopeCategory.BOPE_RENDER, false);
 
 		// Info.
 		this.name        = "No Hurt Cam";

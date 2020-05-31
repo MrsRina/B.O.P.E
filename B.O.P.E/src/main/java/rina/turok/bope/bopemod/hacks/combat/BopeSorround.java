@@ -50,10 +50,10 @@ import rina.turok.bope.Bope;
 *
 */
 public class BopeSorround extends BopeModule {
-	BopeSetting mode            = create("Mode",            "SorroundMode",          "3", combobox("3", "4"));
+	BopeSetting mode            = create("Mode", "SorroundMode", "3", combobox("3", "4"));
 	BopeSetting blocks_per_tick = create("Blocks Per Tick", "SorroundBlocksPerTick", 4,  1, 6);
-	BopeSetting timeout_tick    = create("Time Out Tick",   "SorroundTimeOutTick",   10, 0, 30);
-	BopeSetting tick            = create("Tick",            "SorroundTick",          2,  0, 10);
+	BopeSetting timeout_tick    = create("Time Out Tick", "SorroundTimeOutTick", 10, 0, 30);
+	BopeSetting tick            = create("Tick", "SorroundTick", 2,  0, 10);
 
 	int places_tick = 0;
 	int place_tick  = 0;

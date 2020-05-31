@@ -24,6 +24,7 @@ import rina.turok.bope.bopemod.guiscreen.settings.BopeSetting;
 // Data.
 import rina.turok.bope.bopemod.BopeMessage;
 import rina.turok.bope.bopemod.BopeModule;
+import rina.turok.bope.bopemod.BopeFriend;
 
 // Core.
 import rina.turok.bope.Bope;
@@ -632,6 +633,46 @@ public class BopeConfigManager {
 		BOPE_JSON_FILE.close();
 	}
 
+	public void BOPE_SAVE_FRIEND() throws IOException {
+		Gson       BOPE_GSON   = new GsonBuilder().setPrettyPrinting().create();
+		JsonParser BOPE_PARSER = new JsonParser();
+
+		JsonObject BOPE_MAIN_JSON = new JsonObject();
+		JsonArray  BOPE_ARRAY_FRD = new JsonArray();
+
+		for (BopeFriend friends : Bope.get_friend_manager().get_array_friends()) {
+			BOPE_ARRAY_FRD.add(friends.get_name());
+		}
+
+		BOPE_MAIN_JSON.add("friends", BOPE_ARRAY_FRD);
+
+		JsonElement BOPE_MAIN_PRETTY_JSON = BOPE_PARSER.parse(BOPE_MAIN_JSON.toString());
+
+		String BOPE_JSON = BOPE_GSON.toJson(BOPE_MAIN_PRETTY_JSON);
+
+		BOPE_DELETE_FILES(BOPE_ABS_FRIENDS);
+		BOPE_VERIFY_FILES(PATH_FRIENDS);
+
+		OutputStreamWriter file;
+
+		file = new OutputStreamWriter(new FileOutputStream(BOPE_ABS_FRIENDS), "UTF-8");
+		file.write(BOPE_JSON);
+
+		file.close();
+	}
+
+	public void BOPE_LOAD_FRIENDS() throws IOException {
+		InputStream BOPE_JSON_FILE    = Files.newInputStream(PATH_FRIENDS);
+		JsonObject  BOPE_MAIN_FRD     = new JsonParser().parse(new InputStreamReader(BOPE_JSON_FILE)).getAsJsonObject();
+		JsonArray   BOPE_MAIN_FRIENDS = BOPE_MAIN_FRD.get("friends").getAsJsonArray();
+
+		for (JsonElement friends_name : BOPE_MAIN_FRIENDS) {
+			Bope.get_friend_manager().add_friend(friends_name.getAsString());
+		}
+
+		BOPE_JSON_FILE.close();
+	}
+
 	public void BOPE_SAVE_LOG() throws IOException {
 		Date hora = new Date();
 
@@ -696,6 +737,16 @@ public class BopeConfigManager {
 		}		
 	}
 
+	public void save_friends() {
+		try {
+			BOPE_VERIFY_FOLDER(PATH_FOLDER);
+
+			BOPE_SAVE_FRIEND();
+		} catch (IOException exc) {
+			exc.printStackTrace();
+		}
+	}
+
 	public void save_log() {
 		try {
 			BOPE_VERIFY_FOLDER(PATH_FOLDER);
@@ -738,6 +789,11 @@ public class BopeConfigManager {
 
 		try {
 			BOPE_LOAD_HUD();
+		} catch (Exception exc) {}
+
+
+		try {
+			BOPE_LOAD_FRIENDS();
 		} catch (Exception exc) {}
 	}
 

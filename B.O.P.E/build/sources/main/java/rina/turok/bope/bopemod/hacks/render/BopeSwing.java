@@ -32,7 +32,7 @@ public class BopeSwing extends BopeModule {
     BopeSetting sword = create("Only Sword", "BopeSwingOnlySword", false);
 
     public BopeSwing() {
-        super(BopeCategory.BOPE_RENDER);
+        super(BopeCategory.BOPE_RENDER, false);
 
         // Info.
         this.name        = "Swing";

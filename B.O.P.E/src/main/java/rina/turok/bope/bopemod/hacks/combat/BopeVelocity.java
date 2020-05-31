@@ -36,7 +36,7 @@ import rina.turok.bope.Bope;
 */
 public class BopeVelocity extends BopeModule {
 	public BopeVelocity() {
-		super(BopeCategory.BOPE_COMBAT);
+		super(BopeCategory.BOPE_COMBAT, false);
 
 		// Info.
 		this.name        = "Velocity";

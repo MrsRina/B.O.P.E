@@ -32,7 +32,7 @@ public class BopeVisualRange extends BopeModule {
 	private List<String> peoplenew;
 
 	public BopeVisualRange() {
-		super(BopeCategory.BOPE_CHAT);
+		super(BopeCategory.BOPE_CHAT, false);
 
 		// Info.
 		this.name        = "Visual Range";

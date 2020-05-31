@@ -123,7 +123,7 @@ public class BopeChatSuffix extends BopeModule {
 	};
 
 	public BopeChatSuffix() {
-		super(BopeCategory.BOPE_CHAT);
+		super(BopeCategory.BOPE_CHAT, false);
 
 		// Info.
 		this.name        = "Chat Suffix";
@@ -224,7 +224,7 @@ public class BopeChatSuffix extends BopeModule {
 
 	// Convert the base using the TurokFont.
 	public String convert_base(String base) {
-		return Bope.smoth(base);
+		return Bope.smooth(base);
 	}
 
 	@Override

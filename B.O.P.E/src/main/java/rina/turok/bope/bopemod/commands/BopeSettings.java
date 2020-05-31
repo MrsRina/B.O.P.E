@@ -40,6 +40,7 @@ public class BopeSettings extends BopeCommand {
 			Bope.get_config_manager().save_values();
 			Bope.get_config_manager().save_binds();
 			Bope.get_config_manager().save_client();
+			Bope.get_config_manager().save_friends();
 
 			BopeMessage.send_client_message(ChatFormatting.GREEN + "Successfully " + c + "saved!");
 		} else if (what.equalsIgnoreCase("load")) {

@@ -27,6 +27,7 @@ import rina.turok.bope.bopemod.manager.BopeCommandManager;
 import rina.turok.bope.bopemod.manager.BopeSettingManager;
 import rina.turok.bope.bopemod.manager.BopeConfigManager;
 import rina.turok.bope.bopemod.manager.BopeModuleManager;
+import rina.turok.bope.bopemod.manager.BopeFriendManager;
 import rina.turok.bope.bopemod.manager.BopeEventManager;
 import rina.turok.bope.bopemod.manager.BopeHUDManager;
 
@@ -74,6 +75,7 @@ public class Bope {
 	public static BopeSettingManager setting_manager;
 	public static BopeConfigManager  config_manager;
 	public static BopeModuleManager  module_manager;
+	public static BopeFriendManager  friend_manager;
 	public static BopeEventManager   event_manager;
 	public static BopeHUDManager     hud_manager;
 
@@ -97,13 +99,14 @@ public class Bope {
 		// Init BopeEventHandler.
 		BopeEventHandler.INSTANCE = new BopeEventHandler();
 
-		// Init managers.
-		setting_manager = new BopeSettingManager("<4><3><4><4><2><4><5><9><4><3><1>");
-		command_manager = new BopeCommandManager("<4><3><4><4><2><4><5><9><4><3><1>");
-		config_manager  = new BopeConfigManager ("<4><3><4><4><2><4><5><9><4><3><1>");
-		module_manager  = new BopeModuleManager ("<4><3><4><4><2><4><5><9><4><3><1>");
-		event_manager   = new BopeEventManager  ("<4><3><4><4><2><4><5><9><4><3><1>");
-		hud_manager     = new BopeHUDManager    ("000000000000000000000000000000000");
+		// Init managers. // systen a bit ant-deobf.
+		setting_manager = new BopeSettingManager("Commands manager.");
+		command_manager = new BopeCommandManager("Modules manager.");
+		config_manager  = new BopeConfigManager("Settings manager.");
+		module_manager  = new BopeModuleManager("Config manager.");
+		friend_manager  = new BopeFriendManager("Event manager.");
+		event_manager   = new BopeEventManager("HUD manager.");
+		hud_manager     = new BopeHUDManager("Friend manager");
 
 		send_minecraft_log("Managers are initialed.");
 
@@ -192,6 +195,10 @@ public class Bope {
 		return get_instance().module_manager;
 	}
 
+	public static BopeFriendManager get_friend_manager() {
+		return get_instance().friend_manager;
+	}
+
 	public static BopeSettingManager get_setting_manager() {
 		return get_instance().setting_manager;
 	}
@@ -208,7 +215,7 @@ public class Bope {
 		return get_instance().turok;
 	}
 
-	public static String smoth(String base) {
-		return Bope.get_turok().get_font_manager().smoth(base);
+	public static String smooth(String base) {
+		return Bope.get_turok().get_font_manager().smooth(base);
 	}
 }

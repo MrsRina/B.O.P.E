@@ -27,7 +27,7 @@ import rina.turok.bope.Bope;
 */
 public class BopeAutoGapple extends BopeModule {
 	BopeSetting auto_totem_d = create("Disable Auto Totem", "AutoGappleDisableAutoTotem", true);
-	BopeSetting slider_smart = create("Smart",              "AutoGappleSmart",            2, 1, 18);
+	BopeSetting slider_smart = create("Smart", "AutoGappleSmart", 2, 1, 18);
 
 	boolean find_gapple = false;
 	boolean move_gapple = false;
@@ -36,7 +36,7 @@ public class BopeAutoGapple extends BopeModule {
 	int gapple_stack;
 
 	public BopeAutoGapple() {
-		super(BopeCategory.BOPE_COMBAT);
+		super(BopeCategory.BOPE_COMBAT, true);
 
 		// Info.
 		this.name        = "Auto Gapple";

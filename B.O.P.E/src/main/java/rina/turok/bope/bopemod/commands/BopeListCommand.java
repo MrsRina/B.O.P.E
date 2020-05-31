@@ -34,12 +34,14 @@ public class BopeListCommand {
 	public BopeListCommand(Style style_) {
 		style = style_;
 
-		add_command(new BopeBind());
-		add_command(new BopeLabel());
-		add_command(new BopePrefix());
-		add_command(new BopeSettings());
-		add_command(new BopeToggle());
 		add_command(new BopeToggleMessage());
+		add_command(new BopeSettings());
+		add_command(new BopeFriends());
+		add_command(new BopeFriendC());
+		add_command(new BopePrefix());
+		add_command(new BopeToggle());
+		add_command(new BopeLabel());
+		add_command(new BopeBind());
 		add_command(new BopeHelp());
 
 		command_list.sort(Comparator.comparing(BopeCommand::get_name));

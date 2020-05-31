@@ -144,7 +144,19 @@ public class BopeNameTag extends BopeModule {
 
 			GlStateManager.enableTexture2D();
 
-			font.draw_string(tag, -colapse_x, 10, 255, 255, 255, smooth == true ? true : false, smooth);
+			int r = Bope.get_setting_manager().get_setting_with_tag("HUD", "HUDStringsColorR").get_value(1);
+			int g = Bope.get_setting_manager().get_setting_with_tag("HUD", "HUDStringsColorG").get_value(1);
+			int b = Bope.get_setting_manager().get_setting_with_tag("HUD", "HUDStringsColorB").get_value(1);
+
+			if (Bope.get_friend_manager().is_friend(entity.getName())) {
+				font.draw_string(tag, -colapse_x, 10, r, g, b, smooth == true ? true : false, smooth);
+			} else {
+				if (r > 225 && g > 225 && b > 225) {
+					font.draw_string(tag, -colapse_x, 10, 0, 0, 0, smooth == true ? true : false, smooth);
+				} else {
+					font.draw_string(tag, -colapse_x, 10, 190, 190, 150, smooth == true ? true : false, smooth);
+				}
+			}
 
 			if (entity instanceof EntityPlayer) {
 				EntityPlayer player = (EntityPlayer) entity;

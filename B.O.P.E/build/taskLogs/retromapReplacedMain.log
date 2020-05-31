@@ -854,6 +854,22 @@ Adding 2 imports
         rina.turok.bope.bopemod.events.BopeEventRender
 End  Processing: rina/turok/bope/bopemod/hacks/BopeFinderModule.java
 
+Start Processing: rina/turok/bope/bopemod/hacks/chat/BopeChatStyle.java
+FOUND CONSTR method rina/turok/bope/bopemod/hacks/chat/BopeChatStyle/BopeChatStyle ()V rina/turok/bope/bopemod/hacks/chat/BopeChatStyle
+Rename method net/minecraft/util/text/ITextComponent/appendSibling (Lnet/minecraft/util/text/ITextComponent;)Lnet/minecraft/util/text/ITextComponent;[1599,1612]::appendSibling->func_150257_a
+Import: net.minecraftforge.client.event.ClientChatReceivedEvent
+Import: net.minecraft.util.text.TextComponentString
+Import: com.mojang.realmsclient.gui.ChatFormatting
+Adding 7 imports
+        java.text.SimpleDateFormat
+        java.util.Date
+        me.zero.alpine.listener.EventHandler
+        me.zero.alpine.listener.Listener
+        rina.turok.bope.bopemod.BopeModule
+        rina.turok.bope.bopemod.guiscreen.settings.BopeSetting
+        rina.turok.bope.bopemod.hacks.BopeCategory
+End  Processing: rina/turok/bope/bopemod/hacks/chat/BopeChatStyle.java
+
 Start Processing: rina/turok/bope/bopemod/hacks/chat/BopeChatSuffix.java
 FOUND CONSTR method rina/turok/bope/bopemod/hacks/chat/BopeChatSuffix/BopeChatSuffix ()V rina/turok/bope/bopemod/hacks/chat/BopeChatSuffix
 New Key: class rina/turok/bope/bopemod/events/BopeEventPacket
@@ -870,15 +886,6 @@ Adding 8 imports
         rina.turok.bope.bopemod.guiscreen.settings.BopeSetting
         rina.turok.bope.bopemod.hacks.BopeCategory
 End  Processing: rina/turok/bope/bopemod/hacks/chat/BopeChatSuffix.java
-
-Start Processing: rina/turok/bope/bopemod/hacks/chat/BopeFriendM.java
-FOUND CONSTR method rina/turok/bope/bopemod/hacks/chat/BopeFriendM/BopeFriendM ()V rina/turok/bope/bopemod/hacks/chat/BopeFriendM
-Import: net.minecraftforge.client.event.ClientChatReceivedEvent
-Adding 3 imports
-        rina.turok.bope.bopemod.BopeModule
-        rina.turok.bope.bopemod.guiscreen.settings.BopeSetting
-        rina.turok.bope.bopemod.hacks.BopeCategory
-End  Processing: rina/turok/bope/bopemod/hacks/chat/BopeFriendM.java
 
 Start Processing: rina/turok/bope/bopemod/hacks/chat/BopeVisualRange.java
 FOUND CONSTR method rina/turok/bope/bopemod/hacks/chat/BopeVisualRange/BopeVisualRange ()V rina/turok/bope/bopemod/hacks/chat/BopeVisualRange
@@ -1135,143 +1142,143 @@ Adding 7 imports
 End  Processing: rina/turok/bope/bopemod/hacks/combat/BopeKillAura.java
 
 Start Processing: rina/turok/bope/bopemod/hacks/combat/BopeSorround.java
-Rename field net/minecraft/init/Blocks/ENCHANTING_TABLE[2641,2657]::ENCHANTING_TABLE->field_150381_bn
-Rename field net/minecraft/init/Blocks/CRAFTING_TABLE[2668,2682]::CRAFTING_TABLE->field_150462_ai
-Rename field net/minecraft/init/Blocks/BREWING_STAND[2695,2708]::BREWING_STAND->field_150382_bo
-Rename field net/minecraft/init/Blocks/TRAPPED_CHEST[2722,2735]::TRAPPED_CHEST->field_150447_bR
-Rename field net/minecraft/init/Blocks/ENDER_CHEST[2749,2760]::ENDER_CHEST->field_150477_bB
-Rename field net/minecraft/init/Blocks/DISPENSER[2776,2785]::DISPENSER->field_150367_z
-Rename field net/minecraft/init/Blocks/TRAPDOOR[2802,2810]::TRAPDOOR->field_150415_aT
-Rename field net/minecraft/init/Blocks/DROPPER[2829,2836]::DROPPER->field_150409_cd
-Rename field net/minecraft/init/Blocks/HOPPER[2856,2862]::HOPPER->field_150438_bZ
-Rename field net/minecraft/init/Blocks/CHEST[2883,2888]::CHEST->field_150486_ae
-Rename field net/minecraft/init/Blocks/ANVIL[2910,2915]::ANVIL->field_150467_bQ
-Rename field net/minecraft/init/Blocks/LIGHT_BLUE_SHULKER_BOX[2998,3020]::LIGHT_BLUE_SHULKER_BOX->field_190980_do
-Rename field net/minecraft/init/Blocks/MAGENTA_SHULKER_BOX[3025,3044]::MAGENTA_SHULKER_BOX->field_190979_dn
-Rename field net/minecraft/init/Blocks/PURPLE_SHULKER_BOX[3052,3070]::PURPLE_SHULKER_BOX->field_190987_dv
-Rename field net/minecraft/init/Blocks/YELLOW_SHULKER_BOX[3079,3097]::YELLOW_SHULKER_BOX->field_190981_dp
-Rename field net/minecraft/init/Blocks/ORANGE_SHULKER_BOX[3106,3124]::ORANGE_SHULKER_BOX->field_190978_dm
-Rename field net/minecraft/init/Blocks/SILVER_SHULKER_BOX[3133,3151]::SILVER_SHULKER_BOX->field_190985_dt
-Rename field net/minecraft/init/Blocks/WHITE_SHULKER_BOX[3160,3177]::WHITE_SHULKER_BOX->field_190977_dl
-Rename field net/minecraft/init/Blocks/BLACK_SHULKER_BOX[3187,3204]::BLACK_SHULKER_BOX->field_190975_dA
-Rename field net/minecraft/init/Blocks/BROWN_SHULKER_BOX[3214,3231]::BROWN_SHULKER_BOX->field_190989_dx
-Rename field net/minecraft/init/Blocks/GREEN_SHULKER_BOX[3241,3258]::GREEN_SHULKER_BOX->field_190990_dy
-Rename field net/minecraft/init/Blocks/LIME_SHULKER_BOX[3268,3284]::LIME_SHULKER_BOX->field_190982_dq
-Rename field net/minecraft/init/Blocks/PINK_SHULKER_BOX[3295,3311]::PINK_SHULKER_BOX->field_190983_dr
-Rename field net/minecraft/init/Blocks/CYAN_SHULKER_BOX[3322,3338]::CYAN_SHULKER_BOX->field_190986_du
-Rename field net/minecraft/init/Blocks/GRAY_SHULKER_BOX[3349,3365]::GRAY_SHULKER_BOX->field_190984_ds
-Rename field net/minecraft/init/Blocks/BLUE_SHULKER_BOX[3376,3392]::BLUE_SHULKER_BOX->field_190988_dw
-Rename field net/minecraft/init/Blocks/RED_SHULKER_BOX[3403,3418]::RED_SHULKER_BOX->field_190991_dz
+Rename field net/minecraft/init/Blocks/ENCHANTING_TABLE[2257,2273]::ENCHANTING_TABLE->field_150381_bn
+Rename field net/minecraft/init/Blocks/CRAFTING_TABLE[2284,2298]::CRAFTING_TABLE->field_150462_ai
+Rename field net/minecraft/init/Blocks/BREWING_STAND[2311,2324]::BREWING_STAND->field_150382_bo
+Rename field net/minecraft/init/Blocks/TRAPPED_CHEST[2338,2351]::TRAPPED_CHEST->field_150447_bR
+Rename field net/minecraft/init/Blocks/ENDER_CHEST[2365,2376]::ENDER_CHEST->field_150477_bB
+Rename field net/minecraft/init/Blocks/DISPENSER[2392,2401]::DISPENSER->field_150367_z
+Rename field net/minecraft/init/Blocks/TRAPDOOR[2418,2426]::TRAPDOOR->field_150415_aT
+Rename field net/minecraft/init/Blocks/DROPPER[2445,2452]::DROPPER->field_150409_cd
+Rename field net/minecraft/init/Blocks/HOPPER[2472,2478]::HOPPER->field_150438_bZ
+Rename field net/minecraft/init/Blocks/CHEST[2499,2504]::CHEST->field_150486_ae
+Rename field net/minecraft/init/Blocks/ANVIL[2526,2531]::ANVIL->field_150467_bQ
+Rename field net/minecraft/init/Blocks/LIGHT_BLUE_SHULKER_BOX[2614,2636]::LIGHT_BLUE_SHULKER_BOX->field_190980_do
+Rename field net/minecraft/init/Blocks/MAGENTA_SHULKER_BOX[2641,2660]::MAGENTA_SHULKER_BOX->field_190979_dn
+Rename field net/minecraft/init/Blocks/PURPLE_SHULKER_BOX[2668,2686]::PURPLE_SHULKER_BOX->field_190987_dv
+Rename field net/minecraft/init/Blocks/YELLOW_SHULKER_BOX[2695,2713]::YELLOW_SHULKER_BOX->field_190981_dp
+Rename field net/minecraft/init/Blocks/ORANGE_SHULKER_BOX[2722,2740]::ORANGE_SHULKER_BOX->field_190978_dm
+Rename field net/minecraft/init/Blocks/SILVER_SHULKER_BOX[2749,2767]::SILVER_SHULKER_BOX->field_190985_dt
+Rename field net/minecraft/init/Blocks/WHITE_SHULKER_BOX[2776,2793]::WHITE_SHULKER_BOX->field_190977_dl
+Rename field net/minecraft/init/Blocks/BLACK_SHULKER_BOX[2803,2820]::BLACK_SHULKER_BOX->field_190975_dA
+Rename field net/minecraft/init/Blocks/BROWN_SHULKER_BOX[2830,2847]::BROWN_SHULKER_BOX->field_190989_dx
+Rename field net/minecraft/init/Blocks/GREEN_SHULKER_BOX[2857,2874]::GREEN_SHULKER_BOX->field_190990_dy
+Rename field net/minecraft/init/Blocks/LIME_SHULKER_BOX[2884,2900]::LIME_SHULKER_BOX->field_190982_dq
+Rename field net/minecraft/init/Blocks/PINK_SHULKER_BOX[2911,2927]::PINK_SHULKER_BOX->field_190983_dr
+Rename field net/minecraft/init/Blocks/CYAN_SHULKER_BOX[2938,2954]::CYAN_SHULKER_BOX->field_190986_du
+Rename field net/minecraft/init/Blocks/GRAY_SHULKER_BOX[2965,2981]::GRAY_SHULKER_BOX->field_190984_ds
+Rename field net/minecraft/init/Blocks/BLUE_SHULKER_BOX[2992,3008]::BLUE_SHULKER_BOX->field_190988_dw
+Rename field net/minecraft/init/Blocks/RED_SHULKER_BOX[3019,3034]::RED_SHULKER_BOX->field_190991_dz
 FOUND CONSTR method rina/turok/bope/bopemod/hacks/combat/BopeSorround/BopeSorround ()V rina/turok/bope/bopemod/hacks/combat/BopeSorround
-Rename field net/minecraft/client/Minecraft/player[3756,3762]::player->field_71439_g
-Rename field net/minecraft/client/Minecraft/player[3820,3826]::player->field_71439_g
-Rename field net/minecraft/entity/player/EntityPlayer/inventory[3834,3843]::inventory->field_71071_by
-Rename field net/minecraft/entity/player/InventoryPlayer/currentItem[3849,3860]::currentItem->field_70461_c
-Rename field net/minecraft/client/Minecraft/player[3943,3949]::player->field_71439_g
-Rename field net/minecraft/client/Minecraft/player[4027,4033]::player->field_71439_g
-Rename field net/minecraft/entity/player/EntityPlayer/inventory[4041,4050]::inventory->field_71071_by
-Rename field net/minecraft/entity/player/InventoryPlayer/currentItem[4056,4067]::currentItem->field_70461_c
-Rename field net/minecraft/client/Minecraft/player[4115,4121]::player->field_71439_g
-Rename field net/minecraft/client/entity/EntityPlayerSP/connection[4129,4139]::connection->field_71174_a
-Rename method net/minecraft/client/network/NetHandlerPlayClient/sendPacket (Lnet/minecraft/network/Packet;)V[4143,4153]::sendPacket->func_147297_a
-Rename field net/minecraft/client/Minecraft/player[4184,4190]::player->field_71439_g
+Rename field net/minecraft/client/Minecraft/player[3372,3378]::player->field_71439_g
+Rename field net/minecraft/client/Minecraft/player[3436,3442]::player->field_71439_g
+Rename field net/minecraft/entity/player/EntityPlayer/inventory[3450,3459]::inventory->field_71071_by
+Rename field net/minecraft/entity/player/InventoryPlayer/currentItem[3465,3476]::currentItem->field_70461_c
+Rename field net/minecraft/client/Minecraft/player[3559,3565]::player->field_71439_g
+Rename field net/minecraft/client/Minecraft/player[3643,3649]::player->field_71439_g
+Rename field net/minecraft/entity/player/EntityPlayer/inventory[3657,3666]::inventory->field_71071_by
+Rename field net/minecraft/entity/player/InventoryPlayer/currentItem[3672,3683]::currentItem->field_70461_c
+Rename field net/minecraft/client/Minecraft/player[3731,3737]::player->field_71439_g
+Rename field net/minecraft/client/entity/EntityPlayerSP/connection[3745,3755]::connection->field_71174_a
+Rename method net/minecraft/client/network/NetHandlerPlayClient/sendPacket (Lnet/minecraft/network/Packet;)V[3759,3769]::sendPacket->func_147297_a
+Rename field net/minecraft/client/Minecraft/player[3800,3806]::player->field_71439_g
 New Key: class net/minecraft/network/play/client/CPacketEntityAction
-Rename field net/minecraft/client/Minecraft/player[4394,4400]::player->field_71439_g
-Rename field net/minecraft/client/Minecraft/player[5478,5484]::player->field_71439_g
-Rename method net/minecraft/command/ICommandSender/getPositionVector ()Lnet/minecraft/util/math/Vec3d;[5492,5509]::getPositionVector->func_174791_d
-Rename method net/minecraft/util/math/BlockPos/add (III)Lnet/minecraft/util/math/BlockPos;[5509,5512]::add->func_177982_a
-Rename field net/minecraft/util/math/Vec3i/x[5533,5534]::x->field_177962_a
-Rename field net/minecraft/util/math/Vec3i/y[5559,5560]::y->field_177960_b
-Rename field net/minecraft/util/math/Vec3i/z[5585,5586]::z->field_177961_c
-Rename field net/minecraft/client/Minecraft/player[5779,5785]::player->field_71439_g
-Rename field net/minecraft/entity/player/EntityPlayer/inventory[5793,5802]::inventory->field_71071_by
-Rename field net/minecraft/entity/player/InventoryPlayer/currentItem[5808,5819]::currentItem->field_70461_c
-Rename field net/minecraft/client/Minecraft/player[5899,5905]::player->field_71439_g
-Rename field net/minecraft/client/entity/EntityPlayerSP/connection[5913,5923]::connection->field_71174_a
-Rename method net/minecraft/client/network/NetHandlerPlayClient/sendPacket (Lnet/minecraft/network/Packet;)V[5927,5937]::sendPacket->func_147297_a
-Rename field net/minecraft/client/Minecraft/player[5968,5974]::player->field_71439_g
+Rename field net/minecraft/client/Minecraft/player[4010,4016]::player->field_71439_g
+Rename field net/minecraft/client/Minecraft/player[4774,4780]::player->field_71439_g
+Rename method net/minecraft/command/ICommandSender/getPositionVector ()Lnet/minecraft/util/math/Vec3d;[4788,4805]::getPositionVector->func_174791_d
+Rename method net/minecraft/util/math/BlockPos/add (III)Lnet/minecraft/util/math/BlockPos;[4805,4808]::add->func_177982_a
+Rename field net/minecraft/util/math/Vec3i/x[4829,4830]::x->field_177962_a
+Rename field net/minecraft/util/math/Vec3i/y[4855,4856]::y->field_177960_b
+Rename field net/minecraft/util/math/Vec3i/z[4881,4882]::z->field_177961_c
+Rename field net/minecraft/client/Minecraft/player[5075,5081]::player->field_71439_g
+Rename field net/minecraft/entity/player/EntityPlayer/inventory[5089,5098]::inventory->field_71071_by
+Rename field net/minecraft/entity/player/InventoryPlayer/currentItem[5104,5115]::currentItem->field_70461_c
+Rename field net/minecraft/client/Minecraft/player[5195,5201]::player->field_71439_g
+Rename field net/minecraft/client/entity/EntityPlayerSP/connection[5209,5219]::connection->field_71174_a
+Rename method net/minecraft/client/network/NetHandlerPlayClient/sendPacket (Lnet/minecraft/network/Packet;)V[5223,5233]::sendPacket->func_147297_a
+Rename field net/minecraft/client/Minecraft/player[5264,5270]::player->field_71439_g
 New Key: class net/minecraft/network/play/client/CPacketEntityAction
-Rename field net/minecraft/client/Minecraft/world[6242,6247]::world->field_71441_e
-Rename method net/minecraft/world/IBlockAccess/getBlockState (Lnet/minecraft/util/math/BlockPos;)Lnet/minecraft/block/state/IBlockState;[6256,6269]::getBlockState->func_180495_p
-Rename method net/minecraft/block/state/IBlockState/getBlock ()Lnet/minecraft/block/Block;[6275,6283]::getBlock->func_177230_c
-Rename field net/minecraft/client/Minecraft/world[6421,6426]::world->field_71441_e
-Rename method net/minecraft/world/World/getEntitiesWithinAABBExcludingEntity (Lnet/minecraft/entity/Entity;Lnet/minecraft/util/math/AxisAlignedBB;)Ljava/util/List;[6435,6471]::getEntitiesWithinAABBExcludingEntity->func_72839_b
-Rename method net/minecraft/util/math/BlockPos/offset (Lnet/minecraft/util/EnumFacing;)Lnet/minecraft/util/math/BlockPos;[6717,6723]::offset->func_177972_a
-Rename method net/minecraft/util/EnumFacing/getOpposite ()Lnet/minecraft/util/EnumFacing;[6770,6781]::getOpposite->func_176734_d
-Rename method net/minecraft/util/math/Vec3d/add (DDD)Lnet/minecraft/util/math/Vec3d;[6886,6889]::add->func_72441_c
-Rename method net/minecraft/util/math/Vec3d/add (Lnet/minecraft/util/math/Vec3d;)Lnet/minecraft/util/math/Vec3d;[6914,6917]::add->func_178787_e
-Rename method net/minecraft/util/EnumFacing/getDirectionVec ()Lnet/minecraft/util/math/Vec3i;[6947,6962]::getDirectionVec->func_176730_m
-Rename method net/minecraft/util/math/Vec3d/scale (D)Lnet/minecraft/util/math/Vec3d;[6964,6969]::scale->func_186678_a
-Rename field net/minecraft/client/Minecraft/world[7012,7017]::world->field_71441_e
-Rename method net/minecraft/world/IBlockAccess/getBlockState (Lnet/minecraft/util/math/BlockPos;)Lnet/minecraft/block/state/IBlockState;[7026,7039]::getBlockState->func_180495_p
-Rename method net/minecraft/block/state/IBlockState/getBlock ()Lnet/minecraft/block/Block;[7051,7059]::getBlock->func_177230_c
-Rename field net/minecraft/client/Minecraft/player[7219,7225]::player->field_71439_g
-Rename field net/minecraft/entity/player/EntityPlayer/inventory[7233,7242]::inventory->field_71071_by
-Rename field net/minecraft/entity/player/InventoryPlayer/currentItem[7248,7259]::currentItem->field_70461_c
-Rename field net/minecraft/client/Minecraft/player[7422,7428]::player->field_71439_g
-Rename field net/minecraft/client/entity/EntityPlayerSP/connection[7436,7446]::connection->field_71174_a
-Rename method net/minecraft/client/network/NetHandlerPlayClient/sendPacket (Lnet/minecraft/network/Packet;)V[7450,7460]::sendPacket->func_147297_a
-Rename field net/minecraft/client/Minecraft/player[7491,7497]::player->field_71439_g
+Rename field net/minecraft/client/Minecraft/world[5538,5543]::world->field_71441_e
+Rename method net/minecraft/world/IBlockAccess/getBlockState (Lnet/minecraft/util/math/BlockPos;)Lnet/minecraft/block/state/IBlockState;[5552,5565]::getBlockState->func_180495_p
+Rename method net/minecraft/block/state/IBlockState/getBlock ()Lnet/minecraft/block/Block;[5571,5579]::getBlock->func_177230_c
+Rename field net/minecraft/client/Minecraft/world[5717,5722]::world->field_71441_e
+Rename method net/minecraft/world/World/getEntitiesWithinAABBExcludingEntity (Lnet/minecraft/entity/Entity;Lnet/minecraft/util/math/AxisAlignedBB;)Ljava/util/List;[5731,5767]::getEntitiesWithinAABBExcludingEntity->func_72839_b
+Rename method net/minecraft/util/math/BlockPos/offset (Lnet/minecraft/util/EnumFacing;)Lnet/minecraft/util/math/BlockPos;[6013,6019]::offset->func_177972_a
+Rename method net/minecraft/util/EnumFacing/getOpposite ()Lnet/minecraft/util/EnumFacing;[6066,6077]::getOpposite->func_176734_d
+Rename method net/minecraft/util/math/Vec3d/add (DDD)Lnet/minecraft/util/math/Vec3d;[6182,6185]::add->func_72441_c
+Rename method net/minecraft/util/math/Vec3d/add (Lnet/minecraft/util/math/Vec3d;)Lnet/minecraft/util/math/Vec3d;[6210,6213]::add->func_178787_e
+Rename method net/minecraft/util/EnumFacing/getDirectionVec ()Lnet/minecraft/util/math/Vec3i;[6243,6258]::getDirectionVec->func_176730_m
+Rename method net/minecraft/util/math/Vec3d/scale (D)Lnet/minecraft/util/math/Vec3d;[6260,6265]::scale->func_186678_a
+Rename field net/minecraft/client/Minecraft/world[6308,6313]::world->field_71441_e
+Rename method net/minecraft/world/IBlockAccess/getBlockState (Lnet/minecraft/util/math/BlockPos;)Lnet/minecraft/block/state/IBlockState;[6322,6335]::getBlockState->func_180495_p
+Rename method net/minecraft/block/state/IBlockState/getBlock ()Lnet/minecraft/block/Block;[6347,6355]::getBlock->func_177230_c
+Rename field net/minecraft/client/Minecraft/player[6515,6521]::player->field_71439_g
+Rename field net/minecraft/entity/player/EntityPlayer/inventory[6529,6538]::inventory->field_71071_by
+Rename field net/minecraft/entity/player/InventoryPlayer/currentItem[6544,6555]::currentItem->field_70461_c
+Rename field net/minecraft/client/Minecraft/player[6718,6724]::player->field_71439_g
+Rename field net/minecraft/client/entity/EntityPlayerSP/connection[6732,6742]::connection->field_71174_a
+Rename method net/minecraft/client/network/NetHandlerPlayClient/sendPacket (Lnet/minecraft/network/Packet;)V[6746,6756]::sendPacket->func_147297_a
+Rename field net/minecraft/client/Minecraft/player[6787,6793]::player->field_71439_g
 New Key: class net/minecraft/network/play/client/CPacketEntityAction
-Rename field net/minecraft/client/Minecraft/playerController[7608,7624]::playerController->field_71442_b
-Rename method net/minecraft/client/multiplayer/PlayerControllerMP/processRightClickBlock (Lnet/minecraft/client/entity/EntityPlayerSP;Lnet/minecraft/client/multiplayer/WorldClient;Lnet/minecraft/util/math/BlockPos;Lnet/minecraft/util/EnumFacing;Lnet/minecraft/util/math/Vec3d;Lnet/minecraft/util/EnumHand;)Lnet/minecraft/util/EnumActionResult;[7622,7644]::processRightClickBlock->func_187099_a
-Rename field net/minecraft/client/Minecraft/player[7639,7645]::player->field_71439_g
-Rename field net/minecraft/client/Minecraft/world[7657,7662]::world->field_71441_e
-Rename field net/minecraft/client/Minecraft/player[7725,7731]::player->field_71439_g
-Rename method net/minecraft/entity/EntityLivingBase/swingArm (Lnet/minecraft/util/EnumHand;)V[7739,7747]::swingArm->func_184609_a
-Rename field net/minecraft/client/Minecraft/rightClickDelayTimer[7782,7802]::rightClickDelayTimer->field_71467_ac
-Rename field net/minecraft/client/Minecraft/player[7918,7924]::player->field_71439_g
-Rename field net/minecraft/client/entity/EntityPlayerSP/connection[7932,7942]::connection->field_71174_a
-Rename method net/minecraft/client/network/NetHandlerPlayClient/sendPacket (Lnet/minecraft/network/Packet;)V[7946,7956]::sendPacket->func_147297_a
+Rename field net/minecraft/client/Minecraft/playerController[6904,6920]::playerController->field_71442_b
+Rename method net/minecraft/client/multiplayer/PlayerControllerMP/processRightClickBlock (Lnet/minecraft/client/entity/EntityPlayerSP;Lnet/minecraft/client/multiplayer/WorldClient;Lnet/minecraft/util/math/BlockPos;Lnet/minecraft/util/EnumFacing;Lnet/minecraft/util/math/Vec3d;Lnet/minecraft/util/EnumHand;)Lnet/minecraft/util/EnumActionResult;[6918,6940]::processRightClickBlock->func_187099_a
+Rename field net/minecraft/client/Minecraft/player[6935,6941]::player->field_71439_g
+Rename field net/minecraft/client/Minecraft/world[6953,6958]::world->field_71441_e
+Rename field net/minecraft/client/Minecraft/player[7021,7027]::player->field_71439_g
+Rename method net/minecraft/entity/EntityLivingBase/swingArm (Lnet/minecraft/util/EnumHand;)V[7035,7043]::swingArm->func_184609_a
+Rename field net/minecraft/client/Minecraft/rightClickDelayTimer[7078,7098]::rightClickDelayTimer->field_71467_ac
+Rename field net/minecraft/client/Minecraft/player[7214,7220]::player->field_71439_g
+Rename field net/minecraft/client/entity/EntityPlayerSP/connection[7228,7238]::connection->field_71174_a
+Rename method net/minecraft/client/network/NetHandlerPlayClient/sendPacket (Lnet/minecraft/network/Packet;)V[7242,7252]::sendPacket->func_147297_a
 New Key: class net/minecraft/network/play/client/CPacketPlayer
-Rename field net/minecraft/client/Minecraft/player[8018,8024]::player->field_71439_g
-Rename field net/minecraft/entity/Entity/onGround[8032,8040]::onGround->field_70122_E
-Rename field net/minecraft/util/math/Vec3d/x[8159,8160]::x->field_72450_a
-Rename field net/minecraft/util/math/Vec3d/x[8183,8184]::x->field_72450_a
-Rename field net/minecraft/util/math/Vec3d/y[8221,8222]::y->field_72448_b
-Rename field net/minecraft/util/math/Vec3d/y[8245,8246]::y->field_72448_b
-Rename field net/minecraft/util/math/Vec3d/z[8283,8284]::z->field_72449_c
-Rename field net/minecraft/util/math/Vec3d/z[8307,8308]::z->field_72449_c
-Rename field net/minecraft/client/Minecraft/player[8590,8596]::player->field_71439_g
-Rename field net/minecraft/entity/Entity/rotationYaw[8604,8615]::rotationYaw->field_70177_z
-Rename method net/minecraft/util/math/MathHelper/wrapDegrees (F)F[8633,8644]::wrapDegrees->func_76142_g
-Rename field net/minecraft/client/Minecraft/player[8664,8670]::player->field_71439_g
-Rename field net/minecraft/entity/Entity/rotationYaw[8678,8689]::rotationYaw->field_70177_z
-Rename field net/minecraft/client/Minecraft/player[8701,8707]::player->field_71439_g
-Rename field net/minecraft/entity/Entity/rotationPitch[8715,8728]::rotationPitch->field_70125_A
-Rename method net/minecraft/util/math/MathHelper/wrapDegrees (F)F[8742,8753]::wrapDegrees->func_76142_g
-Rename field net/minecraft/client/Minecraft/player[8773,8779]::player->field_71439_g
-Rename field net/minecraft/entity/Entity/rotationPitch[8787,8800]::rotationPitch->field_70125_A
-Rename field net/minecraft/client/Minecraft/player[8868,8874]::player->field_71439_g
-Rename field net/minecraft/entity/Entity/posX[8882,8886]::posX->field_70165_t
-Rename field net/minecraft/client/Minecraft/player[8900,8906]::player->field_71439_g
-Rename field net/minecraft/entity/Entity/posY[8914,8918]::posY->field_70163_u
-Rename field net/minecraft/client/Minecraft/player[8933,8939]::player->field_71439_g
-Rename method net/minecraft/entity/Entity/getEyeHeight ()F[8947,8959]::getEyeHeight->func_70047_e
-Rename field net/minecraft/client/Minecraft/player[8966,8972]::player->field_71439_g
-Rename field net/minecraft/entity/Entity/posZ[8980,8984]::posZ->field_70161_v
-Rename method net/minecraft/util/math/BlockPos/offset (Lnet/minecraft/util/EnumFacing;)Lnet/minecraft/util/math/BlockPos;[9135,9141]::offset->func_177972_a
-Rename field net/minecraft/client/Minecraft/world[9172,9177]::world->field_71441_e
-Rename method net/minecraft/world/IBlockAccess/getBlockState (Lnet/minecraft/util/math/BlockPos;)Lnet/minecraft/block/state/IBlockState;[9186,9199]::getBlockState->func_180495_p
-Rename method net/minecraft/block/state/IBlockState/getBlock ()Lnet/minecraft/block/Block;[9211,9219]::getBlock->func_177230_c
-Rename method net/minecraft/block/Block/canCollideCheck (Lnet/minecraft/block/state/IBlockState;Z)Z[9227,9242]::canCollideCheck->func_176209_a
-Rename field net/minecraft/client/Minecraft/world[9244,9249]::world->field_71441_e
-Rename method net/minecraft/world/IBlockAccess/getBlockState (Lnet/minecraft/util/math/BlockPos;)Lnet/minecraft/block/state/IBlockState;[9258,9271]::getBlockState->func_180495_p
-Rename field net/minecraft/client/Minecraft/world[9351,9356]::world->field_71441_e
-Rename method net/minecraft/world/IBlockAccess/getBlockState (Lnet/minecraft/util/math/BlockPos;)Lnet/minecraft/block/state/IBlockState;[9365,9378]::getBlockState->func_180495_p
-Rename method net/minecraft/block/state/IBlockProperties/getMaterial ()Lnet/minecraft/block/material/Material;[9415,9426]::getMaterial->func_185904_a
-Rename method net/minecraft/block/material/Material/isReplaceable ()Z[9431,9444]::isReplaceable->func_76222_j
-Rename field net/minecraft/client/Minecraft/player[9615,9621]::player->field_71439_g
-Rename field net/minecraft/entity/player/EntityPlayer/inventory[9629,9638]::inventory->field_71071_by
-Rename method net/minecraft/inventory/IInventory/getStackInSlot (I)Lnet/minecraft/item/ItemStack;[9644,9658]::getStackInSlot->func_70301_a
-Rename field net/minecraft/item/ItemStack/EMPTY[9690,9695]::EMPTY->field_190927_a
-Rename method net/minecraft/item/ItemStack/getItem ()Lnet/minecraft/item/Item;[9723,9730]::getItem->func_77973_b
-Rename method net/minecraft/item/ItemStack/getItem ()Lnet/minecraft/item/Item;[9806,9813]::getItem->func_77973_b
-Rename method net/minecraft/item/ItemBlock/getBlock ()Lnet/minecraft/block/Block;[9822,9830]::getBlock->func_179223_d
-Rename method net/minecraft/block/state/IBlockState/getBlock ()Lnet/minecraft/block/Block;[10039,10047]::getBlock->func_177230_c
-Rename field net/minecraft/client/Minecraft/world[10122,10127]::world->field_71441_e
-Rename method net/minecraft/world/IBlockAccess/getBlockState (Lnet/minecraft/util/math/BlockPos;)Lnet/minecraft/block/state/IBlockState;[10136,10149]::getBlockState->func_180495_p
-Rename method net/minecraft/block/Block/canCollideCheck (Lnet/minecraft/block/state/IBlockState;Z)Z[10232,10247]::canCollideCheck->func_176209_a
+Rename field net/minecraft/client/Minecraft/player[7314,7320]::player->field_71439_g
+Rename field net/minecraft/entity/Entity/onGround[7328,7336]::onGround->field_70122_E
+Rename field net/minecraft/util/math/Vec3d/x[7455,7456]::x->field_72450_a
+Rename field net/minecraft/util/math/Vec3d/x[7479,7480]::x->field_72450_a
+Rename field net/minecraft/util/math/Vec3d/y[7517,7518]::y->field_72448_b
+Rename field net/minecraft/util/math/Vec3d/y[7541,7542]::y->field_72448_b
+Rename field net/minecraft/util/math/Vec3d/z[7579,7580]::z->field_72449_c
+Rename field net/minecraft/util/math/Vec3d/z[7603,7604]::z->field_72449_c
+Rename field net/minecraft/client/Minecraft/player[7886,7892]::player->field_71439_g
+Rename field net/minecraft/entity/Entity/rotationYaw[7900,7911]::rotationYaw->field_70177_z
+Rename method net/minecraft/util/math/MathHelper/wrapDegrees (F)F[7929,7940]::wrapDegrees->func_76142_g
+Rename field net/minecraft/client/Minecraft/player[7960,7966]::player->field_71439_g
+Rename field net/minecraft/entity/Entity/rotationYaw[7974,7985]::rotationYaw->field_70177_z
+Rename field net/minecraft/client/Minecraft/player[7997,8003]::player->field_71439_g
+Rename field net/minecraft/entity/Entity/rotationPitch[8011,8024]::rotationPitch->field_70125_A
+Rename method net/minecraft/util/math/MathHelper/wrapDegrees (F)F[8038,8049]::wrapDegrees->func_76142_g
+Rename field net/minecraft/client/Minecraft/player[8069,8075]::player->field_71439_g
+Rename field net/minecraft/entity/Entity/rotationPitch[8083,8096]::rotationPitch->field_70125_A
+Rename field net/minecraft/client/Minecraft/player[8164,8170]::player->field_71439_g
+Rename field net/minecraft/entity/Entity/posX[8178,8182]::posX->field_70165_t
+Rename field net/minecraft/client/Minecraft/player[8196,8202]::player->field_71439_g
+Rename field net/minecraft/entity/Entity/posY[8210,8214]::posY->field_70163_u
+Rename field net/minecraft/client/Minecraft/player[8229,8235]::player->field_71439_g
+Rename method net/minecraft/entity/Entity/getEyeHeight ()F[8243,8255]::getEyeHeight->func_70047_e
+Rename field net/minecraft/client/Minecraft/player[8262,8268]::player->field_71439_g
+Rename field net/minecraft/entity/Entity/posZ[8276,8280]::posZ->field_70161_v
+Rename method net/minecraft/util/math/BlockPos/offset (Lnet/minecraft/util/EnumFacing;)Lnet/minecraft/util/math/BlockPos;[8431,8437]::offset->func_177972_a
+Rename field net/minecraft/client/Minecraft/world[8468,8473]::world->field_71441_e
+Rename method net/minecraft/world/IBlockAccess/getBlockState (Lnet/minecraft/util/math/BlockPos;)Lnet/minecraft/block/state/IBlockState;[8482,8495]::getBlockState->func_180495_p
+Rename method net/minecraft/block/state/IBlockState/getBlock ()Lnet/minecraft/block/Block;[8507,8515]::getBlock->func_177230_c
+Rename method net/minecraft/block/Block/canCollideCheck (Lnet/minecraft/block/state/IBlockState;Z)Z[8523,8538]::canCollideCheck->func_176209_a
+Rename field net/minecraft/client/Minecraft/world[8540,8545]::world->field_71441_e
+Rename method net/minecraft/world/IBlockAccess/getBlockState (Lnet/minecraft/util/math/BlockPos;)Lnet/minecraft/block/state/IBlockState;[8554,8567]::getBlockState->func_180495_p
+Rename field net/minecraft/client/Minecraft/world[8647,8652]::world->field_71441_e
+Rename method net/minecraft/world/IBlockAccess/getBlockState (Lnet/minecraft/util/math/BlockPos;)Lnet/minecraft/block/state/IBlockState;[8661,8674]::getBlockState->func_180495_p
+Rename method net/minecraft/block/state/IBlockProperties/getMaterial ()Lnet/minecraft/block/material/Material;[8711,8722]::getMaterial->func_185904_a
+Rename method net/minecraft/block/material/Material/isReplaceable ()Z[8727,8740]::isReplaceable->func_76222_j
+Rename field net/minecraft/client/Minecraft/player[8911,8917]::player->field_71439_g
+Rename field net/minecraft/entity/player/EntityPlayer/inventory[8925,8934]::inventory->field_71071_by
+Rename method net/minecraft/inventory/IInventory/getStackInSlot (I)Lnet/minecraft/item/ItemStack;[8940,8954]::getStackInSlot->func_70301_a
+Rename field net/minecraft/item/ItemStack/EMPTY[8986,8991]::EMPTY->field_190927_a
+Rename method net/minecraft/item/ItemStack/getItem ()Lnet/minecraft/item/Item;[9019,9026]::getItem->func_77973_b
+Rename method net/minecraft/item/ItemStack/getItem ()Lnet/minecraft/item/Item;[9102,9109]::getItem->func_77973_b
+Rename method net/minecraft/item/ItemBlock/getBlock ()Lnet/minecraft/block/Block;[9118,9126]::getBlock->func_179223_d
+Rename method net/minecraft/block/state/IBlockState/getBlock ()Lnet/minecraft/block/Block;[9335,9343]::getBlock->func_177230_c
+Rename field net/minecraft/client/Minecraft/world[9418,9423]::world->field_71441_e
+Rename method net/minecraft/world/IBlockAccess/getBlockState (Lnet/minecraft/util/math/BlockPos;)Lnet/minecraft/block/state/IBlockState;[9432,9445]::getBlockState->func_180495_p
+Rename method net/minecraft/block/Block/canCollideCheck (Lnet/minecraft/block/state/IBlockState;Z)Z[9528,9543]::canCollideCheck->func_176209_a
 Import: net.minecraft.network.play.client.CPacketEntityAction
 Import: net.minecraft.network.play.client.CPacketAnimation
 Import: net.minecraft.network.play.client.CPacketPlayer
@@ -1779,47 +1786,47 @@ End  Processing: rina/turok/bope/bopemod/manager/BopeHUDManager.java
 Start Processing: rina/turok/bope/bopemod/manager/BopeModuleManager.java
 Rename method net/minecraft/client/Minecraft/getMinecraft ()Lnet/minecraft/client/Minecraft;[1402,1414]::getMinecraft->func_71410_x
 FOUND CONSTR method rina/turok/bope/bopemod/manager/BopeModuleManager/BopeModuleManager (Ljava/lang/String;)V rina/turok/bope/bopemod/manager/BopeModuleManager
-Rename field net/minecraft/entity/Entity/posX[2918,2922]::posX->field_70165_t
-Rename field net/minecraft/entity/Entity/lastTickPosX[2941,2953]::lastTickPosX->field_70142_S
-Rename field net/minecraft/entity/Entity/posY[2972,2976]::posY->field_70163_u
-Rename field net/minecraft/entity/Entity/lastTickPosY[2995,3007]::lastTickPosY->field_70137_T
-Rename field net/minecraft/entity/Entity/posZ[3026,3030]::posZ->field_70161_v
-Rename field net/minecraft/entity/Entity/lastTickPosZ[3049,3061]::lastTickPosZ->field_70136_U
-Rename field net/minecraft/entity/Entity/lastTickPosX[3166,3178]::lastTickPosX->field_70142_S
-Rename field net/minecraft/entity/Entity/lastTickPosY[3188,3200]::lastTickPosY->field_70137_T
-Rename field net/minecraft/entity/Entity/lastTickPosZ[3210,3222]::lastTickPosZ->field_70136_U
-Rename method net/minecraft/util/math/Vec3d/add (Lnet/minecraft/util/math/Vec3d;)Lnet/minecraft/util/math/Vec3d;[3225,3228]::add->func_178787_e
-Rename field net/minecraft/client/Minecraft/profiler[3361,3369]::profiler->field_71424_I
-Rename method net/minecraft/profiler/Profiler/startSection (Ljava/lang/String;)V[3375,3387]::startSection->func_76320_a
-Rename field net/minecraft/client/Minecraft/profiler[3402,3410]::profiler->field_71424_I
-Rename method net/minecraft/profiler/Profiler/startSection (Ljava/lang/String;)V[3416,3428]::startSection->func_76320_a
-Rename method net/minecraft/client/renderer/GlStateManager/disableTexture2D ()V[3457,3473]::disableTexture2D->func_179090_x
-Rename method net/minecraft/client/renderer/GlStateManager/enableBlend ()V[3491,3502]::enableBlend->func_179147_l
-Rename method net/minecraft/client/renderer/GlStateManager/disableAlpha ()V[3525,3537]::disableAlpha->func_179118_c
-Rename method net/minecraft/client/renderer/GlStateManager/tryBlendFuncSeparate (IIII)V[3559,3579]::tryBlendFuncSeparate->func_179120_a
-Rename method net/minecraft/client/renderer/GlStateManager/shadeModel (I)V[3645,3655]::shadeModel->func_179103_j
-Rename method net/minecraft/client/renderer/GlStateManager/disableDepth ()V[3693,3705]::disableDepth->func_179097_i
-Rename method net/minecraft/client/renderer/GlStateManager/glLineWidth (F)V[3728,3739]::glLineWidth->func_187441_d
-Rename field net/minecraft/client/Minecraft/player[3786,3792]::player->field_71439_g
-Rename field net/minecraft/client/Minecraft/profiler[3956,3964]::profiler->field_71424_I
-Rename method net/minecraft/profiler/Profiler/endSection ()V[3970,3980]::endSection->func_76319_b
-Rename field net/minecraft/client/Minecraft/profiler[4075,4083]::profiler->field_71424_I
-Rename method net/minecraft/profiler/Profiler/startSection (Ljava/lang/String;)V[4089,4101]::startSection->func_76320_a
-Rename field net/minecraft/client/Minecraft/profiler[4165,4173]::profiler->field_71424_I
-Rename method net/minecraft/profiler/Profiler/endSection ()V[4179,4189]::endSection->func_76319_b
-Rename field net/minecraft/client/Minecraft/profiler[4210,4218]::profiler->field_71424_I
-Rename method net/minecraft/profiler/Profiler/startSection (Ljava/lang/String;)V[4224,4236]::startSection->func_76320_a
-Rename method net/minecraft/client/renderer/GlStateManager/glLineWidth (F)V[4267,4278]::glLineWidth->func_187441_d
-Rename method net/minecraft/client/renderer/GlStateManager/shadeModel (I)V[4304,4314]::shadeModel->func_179103_j
-Rename method net/minecraft/client/renderer/GlStateManager/disableBlend ()V[4350,4362]::disableBlend->func_179084_k
-Rename method net/minecraft/client/renderer/GlStateManager/enableAlpha ()V[4384,4395]::enableAlpha->func_179141_d
-Rename method net/minecraft/client/renderer/GlStateManager/enableTexture2D ()V[4418,4433]::enableTexture2D->func_179098_w
-Rename method net/minecraft/client/renderer/GlStateManager/enableDepth ()V[4452,4463]::enableDepth->func_179126_j
-Rename method net/minecraft/client/renderer/GlStateManager/enableCull ()V[4486,4496]::enableCull->func_179089_o
-Rename field net/minecraft/client/Minecraft/profiler[4542,4550]::profiler->field_71424_I
-Rename method net/minecraft/profiler/Profiler/endSection ()V[4556,4566]::endSection->func_76319_b
+Rename field net/minecraft/entity/Entity/posX[2953,2957]::posX->field_70165_t
+Rename field net/minecraft/entity/Entity/lastTickPosX[2976,2988]::lastTickPosX->field_70142_S
+Rename field net/minecraft/entity/Entity/posY[3007,3011]::posY->field_70163_u
+Rename field net/minecraft/entity/Entity/lastTickPosY[3030,3042]::lastTickPosY->field_70137_T
+Rename field net/minecraft/entity/Entity/posZ[3061,3065]::posZ->field_70161_v
+Rename field net/minecraft/entity/Entity/lastTickPosZ[3084,3096]::lastTickPosZ->field_70136_U
+Rename field net/minecraft/entity/Entity/lastTickPosX[3201,3213]::lastTickPosX->field_70142_S
+Rename field net/minecraft/entity/Entity/lastTickPosY[3223,3235]::lastTickPosY->field_70137_T
+Rename field net/minecraft/entity/Entity/lastTickPosZ[3245,3257]::lastTickPosZ->field_70136_U
+Rename method net/minecraft/util/math/Vec3d/add (Lnet/minecraft/util/math/Vec3d;)Lnet/minecraft/util/math/Vec3d;[3260,3263]::add->func_178787_e
+Rename field net/minecraft/client/Minecraft/profiler[3396,3404]::profiler->field_71424_I
+Rename method net/minecraft/profiler/Profiler/startSection (Ljava/lang/String;)V[3410,3422]::startSection->func_76320_a
+Rename field net/minecraft/client/Minecraft/profiler[3437,3445]::profiler->field_71424_I
+Rename method net/minecraft/profiler/Profiler/startSection (Ljava/lang/String;)V[3451,3463]::startSection->func_76320_a
+Rename method net/minecraft/client/renderer/GlStateManager/disableTexture2D ()V[3492,3508]::disableTexture2D->func_179090_x
+Rename method net/minecraft/client/renderer/GlStateManager/enableBlend ()V[3526,3537]::enableBlend->func_179147_l
+Rename method net/minecraft/client/renderer/GlStateManager/disableAlpha ()V[3560,3572]::disableAlpha->func_179118_c
+Rename method net/minecraft/client/renderer/GlStateManager/tryBlendFuncSeparate (IIII)V[3594,3614]::tryBlendFuncSeparate->func_179120_a
+Rename method net/minecraft/client/renderer/GlStateManager/shadeModel (I)V[3680,3690]::shadeModel->func_179103_j
+Rename method net/minecraft/client/renderer/GlStateManager/disableDepth ()V[3728,3740]::disableDepth->func_179097_i
+Rename method net/minecraft/client/renderer/GlStateManager/glLineWidth (F)V[3763,3774]::glLineWidth->func_187441_d
+Rename field net/minecraft/client/Minecraft/player[3821,3827]::player->field_71439_g
+Rename field net/minecraft/client/Minecraft/profiler[3991,3999]::profiler->field_71424_I
+Rename method net/minecraft/profiler/Profiler/endSection ()V[4005,4015]::endSection->func_76319_b
+Rename field net/minecraft/client/Minecraft/profiler[4110,4118]::profiler->field_71424_I
+Rename method net/minecraft/profiler/Profiler/startSection (Ljava/lang/String;)V[4124,4136]::startSection->func_76320_a
+Rename field net/minecraft/client/Minecraft/profiler[4200,4208]::profiler->field_71424_I
+Rename method net/minecraft/profiler/Profiler/endSection ()V[4214,4224]::endSection->func_76319_b
+Rename field net/minecraft/client/Minecraft/profiler[4245,4253]::profiler->field_71424_I
+Rename method net/minecraft/profiler/Profiler/startSection (Ljava/lang/String;)V[4259,4271]::startSection->func_76320_a
+Rename method net/minecraft/client/renderer/GlStateManager/glLineWidth (F)V[4302,4313]::glLineWidth->func_187441_d
+Rename method net/minecraft/client/renderer/GlStateManager/shadeModel (I)V[4339,4349]::shadeModel->func_179103_j
+Rename method net/minecraft/client/renderer/GlStateManager/disableBlend ()V[4385,4397]::disableBlend->func_179084_k
+Rename method net/minecraft/client/renderer/GlStateManager/enableAlpha ()V[4419,4430]::enableAlpha->func_179141_d
+Rename method net/minecraft/client/renderer/GlStateManager/enableTexture2D ()V[4453,4468]::enableTexture2D->func_179098_w
+Rename method net/minecraft/client/renderer/GlStateManager/enableDepth ()V[4487,4498]::enableDepth->func_179126_j
+Rename method net/minecraft/client/renderer/GlStateManager/enableCull ()V[4521,4531]::enableCull->func_179089_o
 Rename field net/minecraft/client/Minecraft/profiler[4577,4585]::profiler->field_71424_I
 Rename method net/minecraft/profiler/Profiler/endSection ()V[4591,4601]::endSection->func_76319_b
+Rename field net/minecraft/client/Minecraft/profiler[4612,4620]::profiler->field_71424_I
+Rename method net/minecraft/profiler/Profiler/endSection ()V[4626,4636]::endSection->func_76319_b
 Import: net.minecraftforge.client.event.RenderWorldLastEvent
 Import: net.minecraft.client.renderer.GlStateManager
 Import: net.minecraft.client.Minecraft
@@ -1828,12 +1835,13 @@ Import: net.minecraft.entity.Entity
 Import: org.lwjgl.opengl.GL11
 Import: java.util.Comparator
 Import: java.util.*
-Adding 25 imports
+Adding 26 imports
         rina.turok.bope.bopemod.BopeModule
         rina.turok.bope.bopemod.events.BopeEventRender
         rina.turok.bope.bopemod.hacks.BopeCategory
         rina.turok.bope.bopemod.hacks.BopeClickGUI
         rina.turok.bope.bopemod.hacks.BopeClickHUD
+        rina.turok.bope.bopemod.hacks.chat.BopeChatStyle
         rina.turok.bope.bopemod.hacks.chat.BopeChatSuffix
         rina.turok.bope.bopemod.hacks.chat.BopeVisualRange
         rina.turok.bope.bopemod.hacks.combat.BopeAutoGapple

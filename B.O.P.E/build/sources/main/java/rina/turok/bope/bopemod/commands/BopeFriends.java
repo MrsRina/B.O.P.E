@@ -33,11 +33,7 @@ public class BopeFriends extends BopeCommand {
 		int size  = Bope.get_friend_manager().get_array_friends().size();
 
 		for (BopeFriend friends : Bope.get_friend_manager().get_array_friends()) {
-			if (count >= size) {
-				names.append(friends.get_name() + ".");
-			} else {
-				names.append(friends.get_name() + ", ");
-			}
+			names.append(friends.get_name() + "; ");
 
 			count++;
 		}

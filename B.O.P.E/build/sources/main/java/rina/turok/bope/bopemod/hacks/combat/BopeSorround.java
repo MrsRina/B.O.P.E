@@ -50,7 +50,6 @@ import rina.turok.bope.Bope;
 *
 */
 public class BopeSorround extends BopeModule {
-	BopeSetting mode            = create("Mode", "SorroundMode", "3", combobox("3", "4"));
 	BopeSetting blocks_per_tick = create("Blocks Per Tick", "SorroundBlocksPerTick", 4,  1, 6);
 	BopeSetting timeout_tick    = create("Time Out Tick", "SorroundTimeOutTick", 10, 0, 30);
 	BopeSetting tick            = create("Tick", "SorroundTick", 2,  0, 10);
@@ -65,7 +64,7 @@ public class BopeSorround extends BopeModule {
 	boolean verify;
 	boolean missing;
 
-	Vec3d[] sorround_with_8_blocks = {
+	Vec3d[] mask = {
 		new Vec3d( 1,  0,  0),
 		new Vec3d( 0,  0,  1),
 		new Vec3d(-1,  0,  0),
@@ -74,18 +73,6 @@ public class BopeSorround extends BopeModule {
 		new Vec3d( 0, -1,  1),
 		new Vec3d(-1, -1,  0),
 		new Vec3d( 0, -1, -1)
-	};
-
-	Vec3d[] sorround_with_9_blocks = {
-		new Vec3d( 1,  0,  0),
-		new Vec3d( 0,  0,  1),
-		new Vec3d(-1,  0,  0),
-		new Vec3d( 0,  0, -1),
-		new Vec3d( 1, -1,  0),
-		new Vec3d( 0, -1,  1),
-		new Vec3d(-1, -1,  0),
-		new Vec3d( 0, -1, -1),
-		new Vec3d( 0, -1,  0)
 	};
 
 	List<Block> not_true_blocks = Arrays.asList(
@@ -191,20 +178,10 @@ public class BopeSorround extends BopeModule {
 				}
 			}
 
-			Vec3d[] many_blocks = new Vec3d[0];
+			Vec3d[] many_blocks = mask;
 
-			int blocks_length = 0;
+			int blocks_length = mask.length;
 			int places        = 0;
-
-			if (mode.in("3")) {
-				many_blocks   = sorround_with_8_blocks;
-				blocks_length = sorround_with_8_blocks.length; // 0 == 1; 0 + 1, 1, 2, 3, 4...
-			}
-
-			if (mode.in("4")) {
-				many_blocks   = sorround_with_9_blocks;
-				blocks_length = sorround_with_9_blocks.length; // 0 == 1; 0 + 1, 1, 2, 3, 4...
-			}
 
 			while (places < blocks_per_tick.get_value(1)) {
 				if (places_tick >= blocks_length) {

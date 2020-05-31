@@ -153,6 +153,11 @@ public class BopeEventManager {
 		BopeEventBus.ZERO_ALPINE_EVENT_BUS.post(event);
 	}
 
+	@SubscribeEvent
+	public void onClientChatReceivedEvent(ClientChatReceivedEvent event) {
+		BopeEventBus.ZERO_ALPINE_EVENT_BUS.post(event);
+	}
+
 	public String get_tag() {
 		return this.tag;
 	}

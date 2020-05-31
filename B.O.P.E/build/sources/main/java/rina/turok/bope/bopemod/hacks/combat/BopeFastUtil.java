@@ -25,11 +25,11 @@ import rina.turok.bope.Bope;
 *
 */
 public class BopeFastUtil extends BopeModule {
-	BopeSetting place   = create("Place",   "BopeFastPlace",   true);
-	BopeSetting break_  = create("Break",   "BopeFastBreak",   true);
-	BopeSetting use     = create("Use",     "BopeFastUse",     true);
+	BopeSetting place   = create("Place", "BopeFastPlace", true);
+	BopeSetting break_  = create("Break", "BopeFastBreak", true);
+	BopeSetting use     = create("Use", "BopeFastUse", true);
 	BopeSetting crystal = create("Crystal", "BopeFastCrystal", true);
-	BopeSetting exp     = create("EXP",     "BopeFastExp",     true);
+	BopeSetting exp     = create("EXP", "BopeFastExp", true);
 
 	public BopeFastUtil() {
 		super(BopeCategory.BOPE_COMBAT);

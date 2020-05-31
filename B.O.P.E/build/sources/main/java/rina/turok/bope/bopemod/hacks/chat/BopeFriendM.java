@@ -1,5 +1,7 @@
 package rina.turok.bope.bopemod.hacks.chat;
 
+import net.minecraftforge.client.event.ClientChatReceivedEvent;
+
 // Zero alpine manager.
 import me.zero.alpine.listener.EventHandler;
 import me.zero.alpine.listener.Listener;
@@ -19,6 +21,13 @@ import rina.turok.bope.bopemod.BopeModule;
 // Core.
 import rina.turok.bope.Bope;
 
+/**
+* @author Rina
+*
+* Created by Rina.
+* 31/05/2020.
+*
+*/
 public class BopeFriendM extends BopeModule {
 	BopeSetting server_join_leave = create("Server Join & Leave", "FriendServerJoinLeave", true);
 	BopeSetting second_plan       = create("Second Plan", "FriendSecondPlan", true);

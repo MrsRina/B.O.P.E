@@ -50,10 +50,10 @@ import rina.turok.bope.Bope;
 *
 */
 public class BopeSorround extends BopeModule {
-	BopeSetting mode            = create("Mode",            "SorroundMode",          "3", combobox("3", "4"));
+	BopeSetting mode            = create("Mode", "SorroundMode", "3", combobox("3", "4"));
 	BopeSetting blocks_per_tick = create("Blocks Per Tick", "SorroundBlocksPerTick", 4,  1, 6);
-	BopeSetting timeout_tick    = create("Time Out Tick",   "SorroundTimeOutTick",   10, 0, 30);
-	BopeSetting tick            = create("Tick",            "SorroundTick",          2,  0, 10);
+	BopeSetting timeout_tick    = create("Time Out Tick", "SorroundTimeOutTick", 10, 0, 30);
+	BopeSetting tick            = create("Tick", "SorroundTick", 2,  0, 10);
 
 	int places_tick = 0;
 	int place_tick  = 0;
@@ -217,7 +217,7 @@ public class BopeSorround extends BopeModule {
 				BlockPos target_place = new BlockPos(mc.player.getPositionVector()).add(off_place.x, off_place.y, off_place.z);
 
 				if (place_blocks(target_place)) {
-					places = 0;
+					places++;
 				}
 
 				places_tick++;
@@ -324,7 +324,7 @@ public class BopeSorround extends BopeModule {
 		double diff_x_z = Math.sqrt(diff_x * diff_x + diff_z * diff_z);
 
 		float player_yaw   = (float)   Math.toDegrees(Math.atan2(diff_z, diff_x)) - 90f;
-		float player_pitch = (float) - Math.toDegrees(Math.atan2(diff_z, diff_x));
+		float player_pitch = (float) - Math.toDegrees(Math.atan2(diff_y, diff_x_z));
 
 		return new float[] {
 			mc.player.rotationYaw   + MathHelper.wrapDegrees(player_yaw   - mc.player.rotationYaw),
@@ -376,7 +376,15 @@ public class BopeSorround extends BopeModule {
 		return slot;
 	}
 
+	public Block get_block(BlockPos pos) {
+		return get_state(pos).getBlock();
+	}
+
+	public IBlockState get_state(BlockPos pos) {
+		return mc.world.getBlockState(pos);
+	}
+
 	public boolean is_possible(BlockPos pos) {
-		return mc.world.getBlockState(pos).getBlock().canCollideCheck(mc.world.getBlockState(pos), false);
+		return get_block(pos).canCollideCheck(get_state(pos), false);
 	}
 }

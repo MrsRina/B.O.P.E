@@ -149,13 +149,9 @@ public class BopeNameTag extends BopeModule {
 			int b = Bope.get_setting_manager().get_setting_with_tag("HUD", "HUDStringsColorB").get_value(1);
 
 			if (Bope.get_friend_manager().is_friend(entity.getName())) {
-				font.draw_string(tag, -colapse_x, 10, r, g, b, smooth == true ? true : false, smooth);
+				font.draw_string(tag, -colapse_x, 10, r, g, b, true, smooth);
 			} else {
-				if (r > 225 && g > 225 && b > 225) {
-					font.draw_string(tag, -colapse_x, 10, 0, 0, 0, smooth == true ? true : false, smooth);
-				} else {
-					font.draw_string(tag, -colapse_x, 10, 190, 190, 150, smooth == true ? true : false, smooth);
-				}
+				font.draw_string(tag, -colapse_x, 10, 190, 190, 150, true, smooth);
 			}
 
 			if (entity instanceof EntityPlayer) {

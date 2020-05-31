@@ -46,14 +46,14 @@ import rina.turok.bope.Bope;
 *
 */
 public class BopeNameTag extends BopeModule {
-	BopeSetting name_ = create("Name",      "NameTagName",       true);
-	BopeSetting life_ = create("Health",    "NameTagHealth",     true);
-	BopeSetting ping_ = create("Ping",      "NameTagPing",       false); 
-	BopeSetting armor = create("Armor",     "NameTagArmor",      true);
-	BopeSetting main_ = create("Main Hand", "NameTagMainHand",   true);
-	BopeSetting off_h = create("Off Hand",  "NameTagOffHand",    true);
-	BopeSetting range = create("Range",     "NameTagRange",      25, 0, 50);
-	BopeSetting size  = create("Size",      "NameTagSize",       4, 3, 4);
+	BopeSetting name_ = create("Name", "NameTagName", true);
+	BopeSetting life_ = create("Health", "NameTagHealth", true);
+	BopeSetting ping_ = create("Ping", "NameTagPing", false); 
+	BopeSetting armor = create("Armor", "NameTagArmor", true);
+	BopeSetting main_ = create("Main Hand", "NameTagMainHand", true);
+	BopeSetting off_h = create("Off Hand", "NameTagOffHand", true);
+	BopeSetting range = create("Range", "NameTagRange", 25, 0, 50);
+	BopeSetting size  = create("Size", "NameTagSize", 4, 3, 4);
 
 	float partial_ticks = 0.0f;
 
@@ -149,13 +149,9 @@ public class BopeNameTag extends BopeModule {
 			int b = Bope.get_setting_manager().get_setting_with_tag("HUD", "HUDStringsColorB").get_value(1);
 
 			if (Bope.get_friend_manager().is_friend(entity.getName())) {
-				font.draw_string(tag, -colapse_x, 10, r, g, b, smooth == true ? true : false, smooth);
+				font.draw_string(tag, -colapse_x, 10, r, g, b, true, smooth);
 			} else {
-				if (r > 225 && g > 225 && b > 225) {
-					font.draw_string(tag, -colapse_x, 10, 0, 0, 0, smooth == true ? true : false, smooth);
-				} else {
-					font.draw_string(tag, -colapse_x, 10, 190, 190, 150, smooth == true ? true : false, smooth);
-				}
+				font.draw_string(tag, -colapse_x, 10, 190, 190, 150, true, smooth);
 			}
 
 			if (entity instanceof EntityPlayer) {

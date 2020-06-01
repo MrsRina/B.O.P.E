@@ -12,6 +12,7 @@ import net.minecraft.client.renderer.*;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.item.ItemStack;
 import net.minecraft.entity.Entity;
+import net.minecraft.init.Items;
 
 import static org.lwjgl.opengl.GL11.*;
 import org.lwjgl.opengl.GL11;
@@ -48,8 +49,9 @@ import rina.turok.bope.Bope;
 public class BopeNameTag extends BopeModule {
 	BopeSetting name_ = create("Name", "NameTagName", true);
 	BopeSetting life_ = create("Health", "NameTagHealth", true);
-	BopeSetting ping_ = create("Ping", "NameTagPing", false); 
+	BopeSetting ping_ = create("Ping", "NameTagPing", false);
 	BopeSetting armor = create("Armor", "NameTagArmor", true);
+	BopeSetting totem = create("Totems Left", "NameTagTotemsLeft", true);
 	BopeSetting main_ = create("Main Hand", "NameTagMainHand", true);
 	BopeSetting off_h = create("Off Hand", "NameTagOffHand", true);
 	BopeSetting range = create("Range", "NameTagRange", 25, 0, 50);
@@ -109,11 +111,12 @@ public class BopeNameTag extends BopeModule {
 			float viewer_pitch = mc.getRenderManager().playerViewX;
 			float viewer_yaw   = mc.getRenderManager().playerViewY;
 
-			String spac = " ";
-			String name = name_.get_value(true) == true ? (life_.get_value(true) || ping_.get_value(true) == true ? spac : "") + entity.getName() : "";
-			String life = life_.get_value(true) == true ? "[" + ChatFormatting.DARK_RED + Integer.toString(Math.round(((EntityLivingBase) entity).getHealth() / 2 + (entity instanceof EntityPlayer ? ((EntityPlayer) entity).getAbsorptionAmount() : 0))) + Bope.r + "]" : "";
-			String ping = ping_.get_value(true) == true ? "[" + ChatFormatting.DARK_BLUE + get_ping(entity) + Bope.r + "]" : "";
-			String tag  = ping + life + name;
+			String spac   = " ";
+			String name   = name_.get_value(true) == true ? (life_.get_value(true) || ping_.get_value(true) == true ? spac : "") + entity.getName() + spac : "";
+			String life   = life_.get_value(true) == true ? "[" + ChatFormatting.DARK_RED  + Integer.toString(Math.round(((EntityLivingBase) entity).getHealth() / 2 + (entity instanceof EntityPlayer ? ((EntityPlayer) entity).getAbsorptionAmount() : 0))) + Bope.r + "]" : "";
+			String ping   = ping_.get_value(true) == true ? "[" + ChatFormatting.DARK_BLUE + get_ping(entity) + Bope.r + "]" : "";
+			String totem_ = totem.get_value(true) == true ? (life_.get_value(true) || ping_.get_value(true) || name_.get_value(true) == true ? "[" + ChatFormatting.GOLD : "[" + ChatFormatting.GOLD) + get_totems(entity) + Bope.r + "]" : "";
+			String tag    = ping + life + name + totem_;
 
 			GlStateManager.pushMatrix();
 
@@ -268,6 +271,31 @@ public class BopeNameTag extends BopeModule {
 		bufferbuilder.pos(colapse_x + 1, 19, 0.0).color(0.1f, 0.1f, 0.1f, 0.1f).endVertex();
 		bufferbuilder.pos(colapse_x + 1, 8, 0.0).color(0.1f, 0.1f, 0.1f, 0.1f).endVertex();
 		tessellator.draw();
+	}
+
+	public String get_totems(Entity entity) {
+		String totems_left = "";
+
+		int off    = 0;
+		//int totems = 0; 
+
+		if (entity instanceof EntityPlayer) {
+			EntityPlayer player = (EntityPlayer) entity;
+
+			ItemStack off_h = player.getHeldItemOffhand();
+
+			if (off_h.getItem() == Items.TOTEM_OF_UNDYING) {
+				off = off_h.stackSize;
+			} else {
+				off = 0;
+			}
+
+			int totems = player.inventory.mainInventory.stream().filter(stack -> stack.getItem() == Items.TOTEM_OF_UNDYING).mapToInt(ItemStack::getCount).sum();
+			
+			totems_left = Integer.toString((int) (totems));
+		}
+
+		return totems_left;
 	}
 
 	public String get_ping(Entity entity) {

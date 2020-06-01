@@ -554,7 +554,7 @@ Class Start: rina.turok.bope.bopemod.BopeMessage
 Class End  : rina.turok.bope.bopemod.BopeMessage
 endProcessing "rina/turok/bope/bopemod/BopeMessage.java"
 
-startProcessing "rina/turok/bope/bopemod/BopeModule.java" md5: f3620cbbf97f355885942f5e93ed475e
+startProcessing "rina/turok/bope/bopemod/BopeModule.java" md5: a5a559b2ebb821333b80d96079a0a7c3
 @|rina/turok/bope/bopemod/BopeModule.java|8|31|rina.turok.bope.bopemod|package|rina.turok.bope.bopemod|(file)
 Class Start: rina.turok.bope.bopemod.BopeModule
    @|rina/turok/bope/bopemod/BopeModule.java|782|792|BopeModule|class|rina.turok.bope.bopemod.BopeModule|false
@@ -743,125 +743,125 @@ Class Start: rina.turok.bope.bopemod.BopeModule
       @|rina/turok/bope/bopemod/BopeModule.java|3653|3663|set_active|method|rina.turok.bope.bopemod.BopeModule|set_active|(Z)V
       @|rina/turok/bope/bopemod/BopeModule.java|3665|3674|is_active|method|rina.turok.bope.bopemod.BopeModule|is_active|()Z
    Method End: toggle()V
-   Method Start: create(Ljava/lang/String;Ljava/lang/String;III)Lrina/turok/bope/bopemod/guiscreen/settings/BopeSetting;
-      @|rina/turok/bope/bopemod/BopeModule.java|3751|3755|name|param|rina.turok.bope.bopemod.BopeModule|create|(Ljava/lang/String;Ljava/lang/String;III)Lrina/turok/bope/bopemod/guiscreen/settings/BopeSetting;|name|0
-      @|rina/turok/bope/bopemod/BopeModule.java|3764|3767|tag|param|rina.turok.bope.bopemod.BopeModule|create|(Ljava/lang/String;Ljava/lang/String;III)Lrina/turok/bope/bopemod/guiscreen/settings/BopeSetting;|tag|1
-      @|rina/turok/bope/bopemod/BopeModule.java|3773|3778|value|param|rina.turok.bope.bopemod.BopeModule|create|(Ljava/lang/String;Ljava/lang/String;III)Lrina/turok/bope/bopemod/guiscreen/settings/BopeSetting;|value|2
-      @|rina/turok/bope/bopemod/BopeModule.java|3784|3787|min|param|rina.turok.bope.bopemod.BopeModule|create|(Ljava/lang/String;Ljava/lang/String;III)Lrina/turok/bope/bopemod/guiscreen/settings/BopeSetting;|min|3
-      @|rina/turok/bope/bopemod/BopeModule.java|3793|3796|max|param|rina.turok.bope.bopemod.BopeModule|create|(Ljava/lang/String;Ljava/lang/String;III)Lrina/turok/bope/bopemod/guiscreen/settings/BopeSetting;|max|4
-      @|rina/turok/bope/bopemod/BopeModule.java|3725|3736|BopeSetting|class|rina.turok.bope.bopemod.guiscreen.settings.BopeSetting|false
-      @|rina/turok/bope/bopemod/BopeModule.java|3737|3743|create|method|rina.turok.bope.bopemod.BopeModule|create|(Ljava/lang/String;Ljava/lang/String;III)Lrina/turok/bope/bopemod/guiscreen/settings/BopeSetting;
-      @|rina/turok/bope/bopemod/BopeModule.java|3744|3750|String|class|java.lang.String|false
-      @|rina/turok/bope/bopemod/BopeModule.java|3757|3763|String|class|java.lang.String|false
-      @|rina/turok/bope/bopemod/BopeModule.java|3802|3806|Bope|class|rina.turok.bope.Bope|false
-      @|rina/turok/bope/bopemod/BopeModule.java|3807|3826|get_setting_manager|method|rina.turok.bope.Bope|get_setting_manager|()Lrina/turok/bope/bopemod/manager/BopeSettingManager;
-      @|rina/turok/bope/bopemod/BopeModule.java|3829|3837|register|method|rina.turok.bope.bopemod.manager.BopeSettingManager|register|(Ljava/lang/String;Lrina/turok/bope/bopemod/guiscreen/settings/BopeSetting;)V
-      @|rina/turok/bope/bopemod/BopeModule.java|3838|3841|tag|param|rina.turok.bope.bopemod.BopeModule|create|(Ljava/lang/String;Ljava/lang/String;III)Lrina/turok/bope/bopemod/guiscreen/settings/BopeSetting;|tag|1
-      @|rina/turok/bope/bopemod/BopeModule.java|3847|3858|BopeSetting|class|rina.turok.bope.bopemod.guiscreen.settings.BopeSetting|false
-      @|rina/turok/bope/bopemod/BopeModule.java|3865|3869|name|param|rina.turok.bope.bopemod.BopeModule|create|(Ljava/lang/String;Ljava/lang/String;III)Lrina/turok/bope/bopemod/guiscreen/settings/BopeSetting;|name|0
-      @|rina/turok/bope/bopemod/BopeModule.java|3871|3874|tag|param|rina.turok.bope.bopemod.BopeModule|create|(Ljava/lang/String;Ljava/lang/String;III)Lrina/turok/bope/bopemod/guiscreen/settings/BopeSetting;|tag|1
-      @|rina/turok/bope/bopemod/BopeModule.java|3876|3881|value|param|rina.turok.bope.bopemod.BopeModule|create|(Ljava/lang/String;Ljava/lang/String;III)Lrina/turok/bope/bopemod/guiscreen/settings/BopeSetting;|value|2
-      @|rina/turok/bope/bopemod/BopeModule.java|3883|3886|min|param|rina.turok.bope.bopemod.BopeModule|create|(Ljava/lang/String;Ljava/lang/String;III)Lrina/turok/bope/bopemod/guiscreen/settings/BopeSetting;|min|3
-      @|rina/turok/bope/bopemod/BopeModule.java|3888|3891|max|param|rina.turok.bope.bopemod.BopeModule|create|(Ljava/lang/String;Ljava/lang/String;III)Lrina/turok/bope/bopemod/guiscreen/settings/BopeSetting;|max|4
-      @|rina/turok/bope/bopemod/BopeModule.java|3905|3909|Bope|class|rina.turok.bope.Bope|false
-      @|rina/turok/bope/bopemod/BopeModule.java|3910|3929|get_setting_manager|method|rina.turok.bope.Bope|get_setting_manager|()Lrina/turok/bope/bopemod/manager/BopeSettingManager;
-      @|rina/turok/bope/bopemod/BopeModule.java|3932|3952|get_setting_with_tag|method|rina.turok.bope.bopemod.manager.BopeSettingManager|get_setting_with_tag|(Lrina/turok/bope/bopemod/BopeModule;Ljava/lang/String;)Lrina/turok/bope/bopemod/guiscreen/settings/BopeSetting;
-      @|rina/turok/bope/bopemod/BopeModule.java|3959|3962|tag|param|rina.turok.bope.bopemod.BopeModule|create|(Ljava/lang/String;Ljava/lang/String;III)Lrina/turok/bope/bopemod/guiscreen/settings/BopeSetting;|tag|1
-   Method End: create(Ljava/lang/String;Ljava/lang/String;III)Lrina/turok/bope/bopemod/guiscreen/settings/BopeSetting;
-   Method Start: create(Ljava/lang/String;Ljava/lang/String;DDD)Lrina/turok/bope/bopemod/guiscreen/settings/BopeSetting;
-      @|rina/turok/bope/bopemod/BopeModule.java|4035|4039|name|param|rina.turok.bope.bopemod.BopeModule|create|(Ljava/lang/String;Ljava/lang/String;DDD)Lrina/turok/bope/bopemod/guiscreen/settings/BopeSetting;|name|0
-      @|rina/turok/bope/bopemod/BopeModule.java|4048|4051|tag|param|rina.turok.bope.bopemod.BopeModule|create|(Ljava/lang/String;Ljava/lang/String;DDD)Lrina/turok/bope/bopemod/guiscreen/settings/BopeSetting;|tag|1
-      @|rina/turok/bope/bopemod/BopeModule.java|4060|4065|value|param|rina.turok.bope.bopemod.BopeModule|create|(Ljava/lang/String;Ljava/lang/String;DDD)Lrina/turok/bope/bopemod/guiscreen/settings/BopeSetting;|value|2
-      @|rina/turok/bope/bopemod/BopeModule.java|4074|4077|min|param|rina.turok.bope.bopemod.BopeModule|create|(Ljava/lang/String;Ljava/lang/String;DDD)Lrina/turok/bope/bopemod/guiscreen/settings/BopeSetting;|min|3
-      @|rina/turok/bope/bopemod/BopeModule.java|4086|4089|max|param|rina.turok.bope.bopemod.BopeModule|create|(Ljava/lang/String;Ljava/lang/String;DDD)Lrina/turok/bope/bopemod/guiscreen/settings/BopeSetting;|max|4
-      @|rina/turok/bope/bopemod/BopeModule.java|4009|4020|BopeSetting|class|rina.turok.bope.bopemod.guiscreen.settings.BopeSetting|false
-      @|rina/turok/bope/bopemod/BopeModule.java|4021|4027|create|method|rina.turok.bope.bopemod.BopeModule|create|(Ljava/lang/String;Ljava/lang/String;DDD)Lrina/turok/bope/bopemod/guiscreen/settings/BopeSetting;
-      @|rina/turok/bope/bopemod/BopeModule.java|4028|4034|String|class|java.lang.String|false
-      @|rina/turok/bope/bopemod/BopeModule.java|4041|4047|String|class|java.lang.String|false
-      @|rina/turok/bope/bopemod/BopeModule.java|4095|4099|Bope|class|rina.turok.bope.Bope|false
-      @|rina/turok/bope/bopemod/BopeModule.java|4100|4119|get_setting_manager|method|rina.turok.bope.Bope|get_setting_manager|()Lrina/turok/bope/bopemod/manager/BopeSettingManager;
-      @|rina/turok/bope/bopemod/BopeModule.java|4122|4130|register|method|rina.turok.bope.bopemod.manager.BopeSettingManager|register|(Ljava/lang/String;Lrina/turok/bope/bopemod/guiscreen/settings/BopeSetting;)V
-      @|rina/turok/bope/bopemod/BopeModule.java|4131|4134|tag|param|rina.turok.bope.bopemod.BopeModule|create|(Ljava/lang/String;Ljava/lang/String;DDD)Lrina/turok/bope/bopemod/guiscreen/settings/BopeSetting;|tag|1
-      @|rina/turok/bope/bopemod/BopeModule.java|4140|4151|BopeSetting|class|rina.turok.bope.bopemod.guiscreen.settings.BopeSetting|false
-      @|rina/turok/bope/bopemod/BopeModule.java|4158|4162|name|param|rina.turok.bope.bopemod.BopeModule|create|(Ljava/lang/String;Ljava/lang/String;DDD)Lrina/turok/bope/bopemod/guiscreen/settings/BopeSetting;|name|0
-      @|rina/turok/bope/bopemod/BopeModule.java|4164|4167|tag|param|rina.turok.bope.bopemod.BopeModule|create|(Ljava/lang/String;Ljava/lang/String;DDD)Lrina/turok/bope/bopemod/guiscreen/settings/BopeSetting;|tag|1
-      @|rina/turok/bope/bopemod/BopeModule.java|4169|4174|value|param|rina.turok.bope.bopemod.BopeModule|create|(Ljava/lang/String;Ljava/lang/String;DDD)Lrina/turok/bope/bopemod/guiscreen/settings/BopeSetting;|value|2
-      @|rina/turok/bope/bopemod/BopeModule.java|4176|4179|min|param|rina.turok.bope.bopemod.BopeModule|create|(Ljava/lang/String;Ljava/lang/String;DDD)Lrina/turok/bope/bopemod/guiscreen/settings/BopeSetting;|min|3
-      @|rina/turok/bope/bopemod/BopeModule.java|4181|4184|max|param|rina.turok.bope.bopemod.BopeModule|create|(Ljava/lang/String;Ljava/lang/String;DDD)Lrina/turok/bope/bopemod/guiscreen/settings/BopeSetting;|max|4
-      @|rina/turok/bope/bopemod/BopeModule.java|4198|4202|Bope|class|rina.turok.bope.Bope|false
-      @|rina/turok/bope/bopemod/BopeModule.java|4203|4222|get_setting_manager|method|rina.turok.bope.Bope|get_setting_manager|()Lrina/turok/bope/bopemod/manager/BopeSettingManager;
-      @|rina/turok/bope/bopemod/BopeModule.java|4225|4245|get_setting_with_tag|method|rina.turok.bope.bopemod.manager.BopeSettingManager|get_setting_with_tag|(Lrina/turok/bope/bopemod/BopeModule;Ljava/lang/String;)Lrina/turok/bope/bopemod/guiscreen/settings/BopeSetting;
-      @|rina/turok/bope/bopemod/BopeModule.java|4252|4255|tag|param|rina.turok.bope.bopemod.BopeModule|create|(Ljava/lang/String;Ljava/lang/String;DDD)Lrina/turok/bope/bopemod/guiscreen/settings/BopeSetting;|tag|1
-   Method End: create(Ljava/lang/String;Ljava/lang/String;DDD)Lrina/turok/bope/bopemod/guiscreen/settings/BopeSetting;
    Method Start: create(Ljava/lang/String;Ljava/lang/String;Z)Lrina/turok/bope/bopemod/guiscreen/settings/BopeSetting;
-      @|rina/turok/bope/bopemod/BopeModule.java|4321|4325|name|param|rina.turok.bope.bopemod.BopeModule|create|(Ljava/lang/String;Ljava/lang/String;Z)Lrina/turok/bope/bopemod/guiscreen/settings/BopeSetting;|name|0
-      @|rina/turok/bope/bopemod/BopeModule.java|4334|4337|tag|param|rina.turok.bope.bopemod.BopeModule|create|(Ljava/lang/String;Ljava/lang/String;Z)Lrina/turok/bope/bopemod/guiscreen/settings/BopeSetting;|tag|1
-      @|rina/turok/bope/bopemod/BopeModule.java|4347|4352|value|param|rina.turok.bope.bopemod.BopeModule|create|(Ljava/lang/String;Ljava/lang/String;Z)Lrina/turok/bope/bopemod/guiscreen/settings/BopeSetting;|value|2
-      @|rina/turok/bope/bopemod/BopeModule.java|4295|4306|BopeSetting|class|rina.turok.bope.bopemod.guiscreen.settings.BopeSetting|false
-      @|rina/turok/bope/bopemod/BopeModule.java|4307|4313|create|method|rina.turok.bope.bopemod.BopeModule|create|(Ljava/lang/String;Ljava/lang/String;Z)Lrina/turok/bope/bopemod/guiscreen/settings/BopeSetting;
-      @|rina/turok/bope/bopemod/BopeModule.java|4314|4320|String|class|java.lang.String|false
-      @|rina/turok/bope/bopemod/BopeModule.java|4327|4333|String|class|java.lang.String|false
-      @|rina/turok/bope/bopemod/BopeModule.java|4358|4362|Bope|class|rina.turok.bope.Bope|false
-      @|rina/turok/bope/bopemod/BopeModule.java|4363|4382|get_setting_manager|method|rina.turok.bope.Bope|get_setting_manager|()Lrina/turok/bope/bopemod/manager/BopeSettingManager;
-      @|rina/turok/bope/bopemod/BopeModule.java|4385|4393|register|method|rina.turok.bope.bopemod.manager.BopeSettingManager|register|(Ljava/lang/String;Lrina/turok/bope/bopemod/guiscreen/settings/BopeSetting;)V
-      @|rina/turok/bope/bopemod/BopeModule.java|4394|4397|tag|param|rina.turok.bope.bopemod.BopeModule|create|(Ljava/lang/String;Ljava/lang/String;Z)Lrina/turok/bope/bopemod/guiscreen/settings/BopeSetting;|tag|1
-      @|rina/turok/bope/bopemod/BopeModule.java|4403|4414|BopeSetting|class|rina.turok.bope.bopemod.guiscreen.settings.BopeSetting|false
-      @|rina/turok/bope/bopemod/BopeModule.java|4421|4425|name|param|rina.turok.bope.bopemod.BopeModule|create|(Ljava/lang/String;Ljava/lang/String;Z)Lrina/turok/bope/bopemod/guiscreen/settings/BopeSetting;|name|0
-      @|rina/turok/bope/bopemod/BopeModule.java|4427|4430|tag|param|rina.turok.bope.bopemod.BopeModule|create|(Ljava/lang/String;Ljava/lang/String;Z)Lrina/turok/bope/bopemod/guiscreen/settings/BopeSetting;|tag|1
-      @|rina/turok/bope/bopemod/BopeModule.java|4432|4437|value|param|rina.turok.bope.bopemod.BopeModule|create|(Ljava/lang/String;Ljava/lang/String;Z)Lrina/turok/bope/bopemod/guiscreen/settings/BopeSetting;|value|2
-      @|rina/turok/bope/bopemod/BopeModule.java|4451|4455|Bope|class|rina.turok.bope.Bope|false
-      @|rina/turok/bope/bopemod/BopeModule.java|4456|4475|get_setting_manager|method|rina.turok.bope.Bope|get_setting_manager|()Lrina/turok/bope/bopemod/manager/BopeSettingManager;
-      @|rina/turok/bope/bopemod/BopeModule.java|4478|4498|get_setting_with_tag|method|rina.turok.bope.bopemod.manager.BopeSettingManager|get_setting_with_tag|(Lrina/turok/bope/bopemod/BopeModule;Ljava/lang/String;)Lrina/turok/bope/bopemod/guiscreen/settings/BopeSetting;
-      @|rina/turok/bope/bopemod/BopeModule.java|4505|4508|tag|param|rina.turok.bope.bopemod.BopeModule|create|(Ljava/lang/String;Ljava/lang/String;Z)Lrina/turok/bope/bopemod/guiscreen/settings/BopeSetting;|tag|1
+      @|rina/turok/bope/bopemod/BopeModule.java|3742|3746|name|param|rina.turok.bope.bopemod.BopeModule|create|(Ljava/lang/String;Ljava/lang/String;Z)Lrina/turok/bope/bopemod/guiscreen/settings/BopeSetting;|name|0
+      @|rina/turok/bope/bopemod/BopeModule.java|3755|3758|tag|param|rina.turok.bope.bopemod.BopeModule|create|(Ljava/lang/String;Ljava/lang/String;Z)Lrina/turok/bope/bopemod/guiscreen/settings/BopeSetting;|tag|1
+      @|rina/turok/bope/bopemod/BopeModule.java|3768|3773|value|param|rina.turok.bope.bopemod.BopeModule|create|(Ljava/lang/String;Ljava/lang/String;Z)Lrina/turok/bope/bopemod/guiscreen/settings/BopeSetting;|value|2
+      @|rina/turok/bope/bopemod/BopeModule.java|3716|3727|BopeSetting|class|rina.turok.bope.bopemod.guiscreen.settings.BopeSetting|false
+      @|rina/turok/bope/bopemod/BopeModule.java|3728|3734|create|method|rina.turok.bope.bopemod.BopeModule|create|(Ljava/lang/String;Ljava/lang/String;Z)Lrina/turok/bope/bopemod/guiscreen/settings/BopeSetting;
+      @|rina/turok/bope/bopemod/BopeModule.java|3735|3741|String|class|java.lang.String|false
+      @|rina/turok/bope/bopemod/BopeModule.java|3748|3754|String|class|java.lang.String|false
+      @|rina/turok/bope/bopemod/BopeModule.java|3779|3783|Bope|class|rina.turok.bope.Bope|false
+      @|rina/turok/bope/bopemod/BopeModule.java|3784|3803|get_setting_manager|method|rina.turok.bope.Bope|get_setting_manager|()Lrina/turok/bope/bopemod/manager/BopeSettingManager;
+      @|rina/turok/bope/bopemod/BopeModule.java|3806|3814|register|method|rina.turok.bope.bopemod.manager.BopeSettingManager|register|(Ljava/lang/String;Lrina/turok/bope/bopemod/guiscreen/settings/BopeSetting;)V
+      @|rina/turok/bope/bopemod/BopeModule.java|3815|3818|tag|param|rina.turok.bope.bopemod.BopeModule|create|(Ljava/lang/String;Ljava/lang/String;Z)Lrina/turok/bope/bopemod/guiscreen/settings/BopeSetting;|tag|1
+      @|rina/turok/bope/bopemod/BopeModule.java|3824|3835|BopeSetting|class|rina.turok.bope.bopemod.guiscreen.settings.BopeSetting|false
+      @|rina/turok/bope/bopemod/BopeModule.java|3842|3846|name|param|rina.turok.bope.bopemod.BopeModule|create|(Ljava/lang/String;Ljava/lang/String;Z)Lrina/turok/bope/bopemod/guiscreen/settings/BopeSetting;|name|0
+      @|rina/turok/bope/bopemod/BopeModule.java|3848|3851|tag|param|rina.turok.bope.bopemod.BopeModule|create|(Ljava/lang/String;Ljava/lang/String;Z)Lrina/turok/bope/bopemod/guiscreen/settings/BopeSetting;|tag|1
+      @|rina/turok/bope/bopemod/BopeModule.java|3853|3858|value|param|rina.turok.bope.bopemod.BopeModule|create|(Ljava/lang/String;Ljava/lang/String;Z)Lrina/turok/bope/bopemod/guiscreen/settings/BopeSetting;|value|2
+      @|rina/turok/bope/bopemod/BopeModule.java|3872|3876|Bope|class|rina.turok.bope.Bope|false
+      @|rina/turok/bope/bopemod/BopeModule.java|3877|3896|get_setting_manager|method|rina.turok.bope.Bope|get_setting_manager|()Lrina/turok/bope/bopemod/manager/BopeSettingManager;
+      @|rina/turok/bope/bopemod/BopeModule.java|3899|3919|get_setting_with_tag|method|rina.turok.bope.bopemod.manager.BopeSettingManager|get_setting_with_tag|(Lrina/turok/bope/bopemod/BopeModule;Ljava/lang/String;)Lrina/turok/bope/bopemod/guiscreen/settings/BopeSetting;
+      @|rina/turok/bope/bopemod/BopeModule.java|3926|3929|tag|param|rina.turok.bope.bopemod.BopeModule|create|(Ljava/lang/String;Ljava/lang/String;Z)Lrina/turok/bope/bopemod/guiscreen/settings/BopeSetting;|tag|1
    Method End: create(Ljava/lang/String;Ljava/lang/String;Z)Lrina/turok/bope/bopemod/guiscreen/settings/BopeSetting;
-   Method Start: create(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lrina/turok/bope/bopemod/guiscreen/settings/BopeSetting;
-      @|rina/turok/bope/bopemod/BopeModule.java|4573|4577|name|param|rina.turok.bope.bopemod.BopeModule|create|(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lrina/turok/bope/bopemod/guiscreen/settings/BopeSetting;|name|0
-      @|rina/turok/bope/bopemod/BopeModule.java|4586|4589|tag|param|rina.turok.bope.bopemod.BopeModule|create|(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lrina/turok/bope/bopemod/guiscreen/settings/BopeSetting;|tag|1
-      @|rina/turok/bope/bopemod/BopeModule.java|4598|4603|value|param|rina.turok.bope.bopemod.BopeModule|create|(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lrina/turok/bope/bopemod/guiscreen/settings/BopeSetting;|value|2
-      @|rina/turok/bope/bopemod/BopeModule.java|4547|4558|BopeSetting|class|rina.turok.bope.bopemod.guiscreen.settings.BopeSetting|false
-      @|rina/turok/bope/bopemod/BopeModule.java|4559|4565|create|method|rina.turok.bope.bopemod.BopeModule|create|(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lrina/turok/bope/bopemod/guiscreen/settings/BopeSetting;
-      @|rina/turok/bope/bopemod/BopeModule.java|4566|4572|String|class|java.lang.String|false
-      @|rina/turok/bope/bopemod/BopeModule.java|4579|4585|String|class|java.lang.String|false
-      @|rina/turok/bope/bopemod/BopeModule.java|4591|4597|String|class|java.lang.String|false
-      @|rina/turok/bope/bopemod/BopeModule.java|4609|4613|Bope|class|rina.turok.bope.Bope|false
-      @|rina/turok/bope/bopemod/BopeModule.java|4614|4633|get_setting_manager|method|rina.turok.bope.Bope|get_setting_manager|()Lrina/turok/bope/bopemod/manager/BopeSettingManager;
-      @|rina/turok/bope/bopemod/BopeModule.java|4636|4644|register|method|rina.turok.bope.bopemod.manager.BopeSettingManager|register|(Ljava/lang/String;Lrina/turok/bope/bopemod/guiscreen/settings/BopeSetting;)V
-      @|rina/turok/bope/bopemod/BopeModule.java|4645|4648|tag|param|rina.turok.bope.bopemod.BopeModule|create|(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lrina/turok/bope/bopemod/guiscreen/settings/BopeSetting;|tag|1
-      @|rina/turok/bope/bopemod/BopeModule.java|4654|4665|BopeSetting|class|rina.turok.bope.bopemod.guiscreen.settings.BopeSetting|false
-      @|rina/turok/bope/bopemod/BopeModule.java|4672|4676|name|param|rina.turok.bope.bopemod.BopeModule|create|(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lrina/turok/bope/bopemod/guiscreen/settings/BopeSetting;|name|0
-      @|rina/turok/bope/bopemod/BopeModule.java|4678|4681|tag|param|rina.turok.bope.bopemod.BopeModule|create|(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lrina/turok/bope/bopemod/guiscreen/settings/BopeSetting;|tag|1
-      @|rina/turok/bope/bopemod/BopeModule.java|4683|4688|value|param|rina.turok.bope.bopemod.BopeModule|create|(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lrina/turok/bope/bopemod/guiscreen/settings/BopeSetting;|value|2
-      @|rina/turok/bope/bopemod/BopeModule.java|4702|4706|Bope|class|rina.turok.bope.Bope|false
-      @|rina/turok/bope/bopemod/BopeModule.java|4707|4726|get_setting_manager|method|rina.turok.bope.Bope|get_setting_manager|()Lrina/turok/bope/bopemod/manager/BopeSettingManager;
-      @|rina/turok/bope/bopemod/BopeModule.java|4729|4749|get_setting_with_tag|method|rina.turok.bope.bopemod.manager.BopeSettingManager|get_setting_with_tag|(Lrina/turok/bope/bopemod/BopeModule;Ljava/lang/String;)Lrina/turok/bope/bopemod/guiscreen/settings/BopeSetting;
-      @|rina/turok/bope/bopemod/BopeModule.java|4756|4759|tag|param|rina.turok.bope.bopemod.BopeModule|create|(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lrina/turok/bope/bopemod/guiscreen/settings/BopeSetting;|tag|1
-   Method End: create(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lrina/turok/bope/bopemod/guiscreen/settings/BopeSetting;
    Method Start: create(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/util/List;)Lrina/turok/bope/bopemod/guiscreen/settings/BopeSetting;
-      @|rina/turok/bope/bopemod/BopeModule.java|4831|4835|name|param|rina.turok.bope.bopemod.BopeModule|create|(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/util/List;)Lrina/turok/bope/bopemod/guiscreen/settings/BopeSetting;|name|0
-      @|rina/turok/bope/bopemod/BopeModule.java|4844|4847|tag|param|rina.turok.bope.bopemod.BopeModule|create|(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/util/List;)Lrina/turok/bope/bopemod/guiscreen/settings/BopeSetting;|tag|1
-      @|rina/turok/bope/bopemod/BopeModule.java|4856|4861|value|param|rina.turok.bope.bopemod.BopeModule|create|(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/util/List;)Lrina/turok/bope/bopemod/guiscreen/settings/BopeSetting;|value|2
-      @|rina/turok/bope/bopemod/BopeModule.java|4876|4882|values|param|rina.turok.bope.bopemod.BopeModule|create|(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/util/List;)Lrina/turok/bope/bopemod/guiscreen/settings/BopeSetting;|values|3
-      @|rina/turok/bope/bopemod/BopeModule.java|4805|4816|BopeSetting|class|rina.turok.bope.bopemod.guiscreen.settings.BopeSetting|false
-      @|rina/turok/bope/bopemod/BopeModule.java|4817|4823|create|method|rina.turok.bope.bopemod.BopeModule|create|(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/util/List;)Lrina/turok/bope/bopemod/guiscreen/settings/BopeSetting;
-      @|rina/turok/bope/bopemod/BopeModule.java|4824|4830|String|class|java.lang.String|false
-      @|rina/turok/bope/bopemod/BopeModule.java|4837|4843|String|class|java.lang.String|false
-      @|rina/turok/bope/bopemod/BopeModule.java|4849|4855|String|class|java.lang.String|false
-      @|rina/turok/bope/bopemod/BopeModule.java|4863|4867|List|class|java.util.List|false
-      @|rina/turok/bope/bopemod/BopeModule.java|4868|4874|String|class|java.lang.String|false
-      @|rina/turok/bope/bopemod/BopeModule.java|4888|4892|Bope|class|rina.turok.bope.Bope|false
-      @|rina/turok/bope/bopemod/BopeModule.java|4893|4912|get_setting_manager|method|rina.turok.bope.Bope|get_setting_manager|()Lrina/turok/bope/bopemod/manager/BopeSettingManager;
-      @|rina/turok/bope/bopemod/BopeModule.java|4915|4923|register|method|rina.turok.bope.bopemod.manager.BopeSettingManager|register|(Ljava/lang/String;Lrina/turok/bope/bopemod/guiscreen/settings/BopeSetting;)V
-      @|rina/turok/bope/bopemod/BopeModule.java|4924|4927|tag|param|rina.turok.bope.bopemod.BopeModule|create|(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/util/List;)Lrina/turok/bope/bopemod/guiscreen/settings/BopeSetting;|tag|1
-      @|rina/turok/bope/bopemod/BopeModule.java|4933|4944|BopeSetting|class|rina.turok.bope.bopemod.guiscreen.settings.BopeSetting|false
-      @|rina/turok/bope/bopemod/BopeModule.java|4951|4955|name|param|rina.turok.bope.bopemod.BopeModule|create|(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/util/List;)Lrina/turok/bope/bopemod/guiscreen/settings/BopeSetting;|name|0
-      @|rina/turok/bope/bopemod/BopeModule.java|4957|4960|tag|param|rina.turok.bope.bopemod.BopeModule|create|(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/util/List;)Lrina/turok/bope/bopemod/guiscreen/settings/BopeSetting;|tag|1
-      @|rina/turok/bope/bopemod/BopeModule.java|4962|4968|values|param|rina.turok.bope.bopemod.BopeModule|create|(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/util/List;)Lrina/turok/bope/bopemod/guiscreen/settings/BopeSetting;|values|3
-      @|rina/turok/bope/bopemod/BopeModule.java|4970|4975|value|param|rina.turok.bope.bopemod.BopeModule|create|(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/util/List;)Lrina/turok/bope/bopemod/guiscreen/settings/BopeSetting;|value|2
+      @|rina/turok/bope/bopemod/BopeModule.java|4001|4005|name|param|rina.turok.bope.bopemod.BopeModule|create|(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/util/List;)Lrina/turok/bope/bopemod/guiscreen/settings/BopeSetting;|name|0
+      @|rina/turok/bope/bopemod/BopeModule.java|4014|4017|tag|param|rina.turok.bope.bopemod.BopeModule|create|(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/util/List;)Lrina/turok/bope/bopemod/guiscreen/settings/BopeSetting;|tag|1
+      @|rina/turok/bope/bopemod/BopeModule.java|4026|4031|value|param|rina.turok.bope.bopemod.BopeModule|create|(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/util/List;)Lrina/turok/bope/bopemod/guiscreen/settings/BopeSetting;|value|2
+      @|rina/turok/bope/bopemod/BopeModule.java|4046|4052|values|param|rina.turok.bope.bopemod.BopeModule|create|(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/util/List;)Lrina/turok/bope/bopemod/guiscreen/settings/BopeSetting;|values|3
+      @|rina/turok/bope/bopemod/BopeModule.java|3975|3986|BopeSetting|class|rina.turok.bope.bopemod.guiscreen.settings.BopeSetting|false
+      @|rina/turok/bope/bopemod/BopeModule.java|3987|3993|create|method|rina.turok.bope.bopemod.BopeModule|create|(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/util/List;)Lrina/turok/bope/bopemod/guiscreen/settings/BopeSetting;
+      @|rina/turok/bope/bopemod/BopeModule.java|3994|4000|String|class|java.lang.String|false
+      @|rina/turok/bope/bopemod/BopeModule.java|4007|4013|String|class|java.lang.String|false
+      @|rina/turok/bope/bopemod/BopeModule.java|4019|4025|String|class|java.lang.String|false
+      @|rina/turok/bope/bopemod/BopeModule.java|4033|4037|List|class|java.util.List|false
+      @|rina/turok/bope/bopemod/BopeModule.java|4038|4044|String|class|java.lang.String|false
+      @|rina/turok/bope/bopemod/BopeModule.java|4058|4062|Bope|class|rina.turok.bope.Bope|false
+      @|rina/turok/bope/bopemod/BopeModule.java|4063|4082|get_setting_manager|method|rina.turok.bope.Bope|get_setting_manager|()Lrina/turok/bope/bopemod/manager/BopeSettingManager;
+      @|rina/turok/bope/bopemod/BopeModule.java|4085|4093|register|method|rina.turok.bope.bopemod.manager.BopeSettingManager|register|(Ljava/lang/String;Lrina/turok/bope/bopemod/guiscreen/settings/BopeSetting;)V
+      @|rina/turok/bope/bopemod/BopeModule.java|4094|4097|tag|param|rina.turok.bope.bopemod.BopeModule|create|(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/util/List;)Lrina/turok/bope/bopemod/guiscreen/settings/BopeSetting;|tag|1
+      @|rina/turok/bope/bopemod/BopeModule.java|4103|4114|BopeSetting|class|rina.turok.bope.bopemod.guiscreen.settings.BopeSetting|false
+      @|rina/turok/bope/bopemod/BopeModule.java|4121|4125|name|param|rina.turok.bope.bopemod.BopeModule|create|(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/util/List;)Lrina/turok/bope/bopemod/guiscreen/settings/BopeSetting;|name|0
+      @|rina/turok/bope/bopemod/BopeModule.java|4127|4130|tag|param|rina.turok.bope.bopemod.BopeModule|create|(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/util/List;)Lrina/turok/bope/bopemod/guiscreen/settings/BopeSetting;|tag|1
+      @|rina/turok/bope/bopemod/BopeModule.java|4132|4138|values|param|rina.turok.bope.bopemod.BopeModule|create|(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/util/List;)Lrina/turok/bope/bopemod/guiscreen/settings/BopeSetting;|values|3
+      @|rina/turok/bope/bopemod/BopeModule.java|4140|4145|value|param|rina.turok.bope.bopemod.BopeModule|create|(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/util/List;)Lrina/turok/bope/bopemod/guiscreen/settings/BopeSetting;|value|2
+      @|rina/turok/bope/bopemod/BopeModule.java|4159|4163|Bope|class|rina.turok.bope.Bope|false
+      @|rina/turok/bope/bopemod/BopeModule.java|4164|4183|get_setting_manager|method|rina.turok.bope.Bope|get_setting_manager|()Lrina/turok/bope/bopemod/manager/BopeSettingManager;
+      @|rina/turok/bope/bopemod/BopeModule.java|4186|4206|get_setting_with_tag|method|rina.turok.bope.bopemod.manager.BopeSettingManager|get_setting_with_tag|(Lrina/turok/bope/bopemod/BopeModule;Ljava/lang/String;)Lrina/turok/bope/bopemod/guiscreen/settings/BopeSetting;
+      @|rina/turok/bope/bopemod/BopeModule.java|4213|4216|tag|param|rina.turok.bope.bopemod.BopeModule|create|(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/util/List;)Lrina/turok/bope/bopemod/guiscreen/settings/BopeSetting;|tag|1
+   Method End: create(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/util/List;)Lrina/turok/bope/bopemod/guiscreen/settings/BopeSetting;
+   Method Start: create(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lrina/turok/bope/bopemod/guiscreen/settings/BopeSetting;
+      @|rina/turok/bope/bopemod/BopeModule.java|4281|4285|name|param|rina.turok.bope.bopemod.BopeModule|create|(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lrina/turok/bope/bopemod/guiscreen/settings/BopeSetting;|name|0
+      @|rina/turok/bope/bopemod/BopeModule.java|4294|4297|tag|param|rina.turok.bope.bopemod.BopeModule|create|(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lrina/turok/bope/bopemod/guiscreen/settings/BopeSetting;|tag|1
+      @|rina/turok/bope/bopemod/BopeModule.java|4306|4311|value|param|rina.turok.bope.bopemod.BopeModule|create|(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lrina/turok/bope/bopemod/guiscreen/settings/BopeSetting;|value|2
+      @|rina/turok/bope/bopemod/BopeModule.java|4255|4266|BopeSetting|class|rina.turok.bope.bopemod.guiscreen.settings.BopeSetting|false
+      @|rina/turok/bope/bopemod/BopeModule.java|4267|4273|create|method|rina.turok.bope.bopemod.BopeModule|create|(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lrina/turok/bope/bopemod/guiscreen/settings/BopeSetting;
+      @|rina/turok/bope/bopemod/BopeModule.java|4274|4280|String|class|java.lang.String|false
+      @|rina/turok/bope/bopemod/BopeModule.java|4287|4293|String|class|java.lang.String|false
+      @|rina/turok/bope/bopemod/BopeModule.java|4299|4305|String|class|java.lang.String|false
+      @|rina/turok/bope/bopemod/BopeModule.java|4317|4321|Bope|class|rina.turok.bope.Bope|false
+      @|rina/turok/bope/bopemod/BopeModule.java|4322|4341|get_setting_manager|method|rina.turok.bope.Bope|get_setting_manager|()Lrina/turok/bope/bopemod/manager/BopeSettingManager;
+      @|rina/turok/bope/bopemod/BopeModule.java|4344|4352|register|method|rina.turok.bope.bopemod.manager.BopeSettingManager|register|(Ljava/lang/String;Lrina/turok/bope/bopemod/guiscreen/settings/BopeSetting;)V
+      @|rina/turok/bope/bopemod/BopeModule.java|4353|4356|tag|param|rina.turok.bope.bopemod.BopeModule|create|(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lrina/turok/bope/bopemod/guiscreen/settings/BopeSetting;|tag|1
+      @|rina/turok/bope/bopemod/BopeModule.java|4362|4373|BopeSetting|class|rina.turok.bope.bopemod.guiscreen.settings.BopeSetting|false
+      @|rina/turok/bope/bopemod/BopeModule.java|4380|4384|name|param|rina.turok.bope.bopemod.BopeModule|create|(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lrina/turok/bope/bopemod/guiscreen/settings/BopeSetting;|name|0
+      @|rina/turok/bope/bopemod/BopeModule.java|4386|4389|tag|param|rina.turok.bope.bopemod.BopeModule|create|(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lrina/turok/bope/bopemod/guiscreen/settings/BopeSetting;|tag|1
+      @|rina/turok/bope/bopemod/BopeModule.java|4391|4396|value|param|rina.turok.bope.bopemod.BopeModule|create|(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lrina/turok/bope/bopemod/guiscreen/settings/BopeSetting;|value|2
+      @|rina/turok/bope/bopemod/BopeModule.java|4410|4414|Bope|class|rina.turok.bope.Bope|false
+      @|rina/turok/bope/bopemod/BopeModule.java|4415|4434|get_setting_manager|method|rina.turok.bope.Bope|get_setting_manager|()Lrina/turok/bope/bopemod/manager/BopeSettingManager;
+      @|rina/turok/bope/bopemod/BopeModule.java|4437|4457|get_setting_with_tag|method|rina.turok.bope.bopemod.manager.BopeSettingManager|get_setting_with_tag|(Lrina/turok/bope/bopemod/BopeModule;Ljava/lang/String;)Lrina/turok/bope/bopemod/guiscreen/settings/BopeSetting;
+      @|rina/turok/bope/bopemod/BopeModule.java|4464|4467|tag|param|rina.turok.bope.bopemod.BopeModule|create|(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lrina/turok/bope/bopemod/guiscreen/settings/BopeSetting;|tag|1
+   Method End: create(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lrina/turok/bope/bopemod/guiscreen/settings/BopeSetting;
+   Method Start: create(Ljava/lang/String;Ljava/lang/String;DDD)Lrina/turok/bope/bopemod/guiscreen/settings/BopeSetting;
+      @|rina/turok/bope/bopemod/BopeModule.java|4540|4544|name|param|rina.turok.bope.bopemod.BopeModule|create|(Ljava/lang/String;Ljava/lang/String;DDD)Lrina/turok/bope/bopemod/guiscreen/settings/BopeSetting;|name|0
+      @|rina/turok/bope/bopemod/BopeModule.java|4553|4556|tag|param|rina.turok.bope.bopemod.BopeModule|create|(Ljava/lang/String;Ljava/lang/String;DDD)Lrina/turok/bope/bopemod/guiscreen/settings/BopeSetting;|tag|1
+      @|rina/turok/bope/bopemod/BopeModule.java|4565|4570|value|param|rina.turok.bope.bopemod.BopeModule|create|(Ljava/lang/String;Ljava/lang/String;DDD)Lrina/turok/bope/bopemod/guiscreen/settings/BopeSetting;|value|2
+      @|rina/turok/bope/bopemod/BopeModule.java|4579|4582|min|param|rina.turok.bope.bopemod.BopeModule|create|(Ljava/lang/String;Ljava/lang/String;DDD)Lrina/turok/bope/bopemod/guiscreen/settings/BopeSetting;|min|3
+      @|rina/turok/bope/bopemod/BopeModule.java|4591|4594|max|param|rina.turok.bope.bopemod.BopeModule|create|(Ljava/lang/String;Ljava/lang/String;DDD)Lrina/turok/bope/bopemod/guiscreen/settings/BopeSetting;|max|4
+      @|rina/turok/bope/bopemod/BopeModule.java|4514|4525|BopeSetting|class|rina.turok.bope.bopemod.guiscreen.settings.BopeSetting|false
+      @|rina/turok/bope/bopemod/BopeModule.java|4526|4532|create|method|rina.turok.bope.bopemod.BopeModule|create|(Ljava/lang/String;Ljava/lang/String;DDD)Lrina/turok/bope/bopemod/guiscreen/settings/BopeSetting;
+      @|rina/turok/bope/bopemod/BopeModule.java|4533|4539|String|class|java.lang.String|false
+      @|rina/turok/bope/bopemod/BopeModule.java|4546|4552|String|class|java.lang.String|false
+      @|rina/turok/bope/bopemod/BopeModule.java|4600|4604|Bope|class|rina.turok.bope.Bope|false
+      @|rina/turok/bope/bopemod/BopeModule.java|4605|4624|get_setting_manager|method|rina.turok.bope.Bope|get_setting_manager|()Lrina/turok/bope/bopemod/manager/BopeSettingManager;
+      @|rina/turok/bope/bopemod/BopeModule.java|4627|4635|register|method|rina.turok.bope.bopemod.manager.BopeSettingManager|register|(Ljava/lang/String;Lrina/turok/bope/bopemod/guiscreen/settings/BopeSetting;)V
+      @|rina/turok/bope/bopemod/BopeModule.java|4636|4639|tag|param|rina.turok.bope.bopemod.BopeModule|create|(Ljava/lang/String;Ljava/lang/String;DDD)Lrina/turok/bope/bopemod/guiscreen/settings/BopeSetting;|tag|1
+      @|rina/turok/bope/bopemod/BopeModule.java|4645|4656|BopeSetting|class|rina.turok.bope.bopemod.guiscreen.settings.BopeSetting|false
+      @|rina/turok/bope/bopemod/BopeModule.java|4663|4667|name|param|rina.turok.bope.bopemod.BopeModule|create|(Ljava/lang/String;Ljava/lang/String;DDD)Lrina/turok/bope/bopemod/guiscreen/settings/BopeSetting;|name|0
+      @|rina/turok/bope/bopemod/BopeModule.java|4669|4672|tag|param|rina.turok.bope.bopemod.BopeModule|create|(Ljava/lang/String;Ljava/lang/String;DDD)Lrina/turok/bope/bopemod/guiscreen/settings/BopeSetting;|tag|1
+      @|rina/turok/bope/bopemod/BopeModule.java|4674|4679|value|param|rina.turok.bope.bopemod.BopeModule|create|(Ljava/lang/String;Ljava/lang/String;DDD)Lrina/turok/bope/bopemod/guiscreen/settings/BopeSetting;|value|2
+      @|rina/turok/bope/bopemod/BopeModule.java|4681|4684|min|param|rina.turok.bope.bopemod.BopeModule|create|(Ljava/lang/String;Ljava/lang/String;DDD)Lrina/turok/bope/bopemod/guiscreen/settings/BopeSetting;|min|3
+      @|rina/turok/bope/bopemod/BopeModule.java|4686|4689|max|param|rina.turok.bope.bopemod.BopeModule|create|(Ljava/lang/String;Ljava/lang/String;DDD)Lrina/turok/bope/bopemod/guiscreen/settings/BopeSetting;|max|4
+      @|rina/turok/bope/bopemod/BopeModule.java|4703|4707|Bope|class|rina.turok.bope.Bope|false
+      @|rina/turok/bope/bopemod/BopeModule.java|4708|4727|get_setting_manager|method|rina.turok.bope.Bope|get_setting_manager|()Lrina/turok/bope/bopemod/manager/BopeSettingManager;
+      @|rina/turok/bope/bopemod/BopeModule.java|4730|4750|get_setting_with_tag|method|rina.turok.bope.bopemod.manager.BopeSettingManager|get_setting_with_tag|(Lrina/turok/bope/bopemod/BopeModule;Ljava/lang/String;)Lrina/turok/bope/bopemod/guiscreen/settings/BopeSetting;
+      @|rina/turok/bope/bopemod/BopeModule.java|4757|4760|tag|param|rina.turok.bope.bopemod.BopeModule|create|(Ljava/lang/String;Ljava/lang/String;DDD)Lrina/turok/bope/bopemod/guiscreen/settings/BopeSetting;|tag|1
+   Method End: create(Ljava/lang/String;Ljava/lang/String;DDD)Lrina/turok/bope/bopemod/guiscreen/settings/BopeSetting;
+   Method Start: create(Ljava/lang/String;Ljava/lang/String;III)Lrina/turok/bope/bopemod/guiscreen/settings/BopeSetting;
+      @|rina/turok/bope/bopemod/BopeModule.java|4835|4839|name|param|rina.turok.bope.bopemod.BopeModule|create|(Ljava/lang/String;Ljava/lang/String;III)Lrina/turok/bope/bopemod/guiscreen/settings/BopeSetting;|name|0
+      @|rina/turok/bope/bopemod/BopeModule.java|4848|4851|tag|param|rina.turok.bope.bopemod.BopeModule|create|(Ljava/lang/String;Ljava/lang/String;III)Lrina/turok/bope/bopemod/guiscreen/settings/BopeSetting;|tag|1
+      @|rina/turok/bope/bopemod/BopeModule.java|4857|4862|value|param|rina.turok.bope.bopemod.BopeModule|create|(Ljava/lang/String;Ljava/lang/String;III)Lrina/turok/bope/bopemod/guiscreen/settings/BopeSetting;|value|2
+      @|rina/turok/bope/bopemod/BopeModule.java|4868|4871|min|param|rina.turok.bope.bopemod.BopeModule|create|(Ljava/lang/String;Ljava/lang/String;III)Lrina/turok/bope/bopemod/guiscreen/settings/BopeSetting;|min|3
+      @|rina/turok/bope/bopemod/BopeModule.java|4877|4880|max|param|rina.turok.bope.bopemod.BopeModule|create|(Ljava/lang/String;Ljava/lang/String;III)Lrina/turok/bope/bopemod/guiscreen/settings/BopeSetting;|max|4
+      @|rina/turok/bope/bopemod/BopeModule.java|4809|4820|BopeSetting|class|rina.turok.bope.bopemod.guiscreen.settings.BopeSetting|false
+      @|rina/turok/bope/bopemod/BopeModule.java|4821|4827|create|method|rina.turok.bope.bopemod.BopeModule|create|(Ljava/lang/String;Ljava/lang/String;III)Lrina/turok/bope/bopemod/guiscreen/settings/BopeSetting;
+      @|rina/turok/bope/bopemod/BopeModule.java|4828|4834|String|class|java.lang.String|false
+      @|rina/turok/bope/bopemod/BopeModule.java|4841|4847|String|class|java.lang.String|false
+      @|rina/turok/bope/bopemod/BopeModule.java|4886|4890|Bope|class|rina.turok.bope.Bope|false
+      @|rina/turok/bope/bopemod/BopeModule.java|4891|4910|get_setting_manager|method|rina.turok.bope.Bope|get_setting_manager|()Lrina/turok/bope/bopemod/manager/BopeSettingManager;
+      @|rina/turok/bope/bopemod/BopeModule.java|4913|4921|register|method|rina.turok.bope.bopemod.manager.BopeSettingManager|register|(Ljava/lang/String;Lrina/turok/bope/bopemod/guiscreen/settings/BopeSetting;)V
+      @|rina/turok/bope/bopemod/BopeModule.java|4922|4925|tag|param|rina.turok.bope.bopemod.BopeModule|create|(Ljava/lang/String;Ljava/lang/String;III)Lrina/turok/bope/bopemod/guiscreen/settings/BopeSetting;|tag|1
+      @|rina/turok/bope/bopemod/BopeModule.java|4931|4942|BopeSetting|class|rina.turok.bope.bopemod.guiscreen.settings.BopeSetting|false
+      @|rina/turok/bope/bopemod/BopeModule.java|4949|4953|name|param|rina.turok.bope.bopemod.BopeModule|create|(Ljava/lang/String;Ljava/lang/String;III)Lrina/turok/bope/bopemod/guiscreen/settings/BopeSetting;|name|0
+      @|rina/turok/bope/bopemod/BopeModule.java|4955|4958|tag|param|rina.turok.bope.bopemod.BopeModule|create|(Ljava/lang/String;Ljava/lang/String;III)Lrina/turok/bope/bopemod/guiscreen/settings/BopeSetting;|tag|1
+      @|rina/turok/bope/bopemod/BopeModule.java|4960|4965|value|param|rina.turok.bope.bopemod.BopeModule|create|(Ljava/lang/String;Ljava/lang/String;III)Lrina/turok/bope/bopemod/guiscreen/settings/BopeSetting;|value|2
+      @|rina/turok/bope/bopemod/BopeModule.java|4967|4970|min|param|rina.turok.bope.bopemod.BopeModule|create|(Ljava/lang/String;Ljava/lang/String;III)Lrina/turok/bope/bopemod/guiscreen/settings/BopeSetting;|min|3
+      @|rina/turok/bope/bopemod/BopeModule.java|4972|4975|max|param|rina.turok.bope.bopemod.BopeModule|create|(Ljava/lang/String;Ljava/lang/String;III)Lrina/turok/bope/bopemod/guiscreen/settings/BopeSetting;|max|4
       @|rina/turok/bope/bopemod/BopeModule.java|4989|4993|Bope|class|rina.turok.bope.Bope|false
       @|rina/turok/bope/bopemod/BopeModule.java|4994|5013|get_setting_manager|method|rina.turok.bope.Bope|get_setting_manager|()Lrina/turok/bope/bopemod/manager/BopeSettingManager;
       @|rina/turok/bope/bopemod/BopeModule.java|5016|5036|get_setting_with_tag|method|rina.turok.bope.bopemod.manager.BopeSettingManager|get_setting_with_tag|(Lrina/turok/bope/bopemod/BopeModule;Ljava/lang/String;)Lrina/turok/bope/bopemod/guiscreen/settings/BopeSetting;
-      @|rina/turok/bope/bopemod/BopeModule.java|5043|5046|tag|param|rina.turok.bope.bopemod.BopeModule|create|(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/util/List;)Lrina/turok/bope/bopemod/guiscreen/settings/BopeSetting;|tag|1
-   Method End: create(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/util/List;)Lrina/turok/bope/bopemod/guiscreen/settings/BopeSetting;
+      @|rina/turok/bope/bopemod/BopeModule.java|5043|5046|tag|param|rina.turok.bope.bopemod.BopeModule|create|(Ljava/lang/String;Ljava/lang/String;III)Lrina/turok/bope/bopemod/guiscreen/settings/BopeSetting;|tag|1
+   Method End: create(Ljava/lang/String;Ljava/lang/String;III)Lrina/turok/bope/bopemod/guiscreen/settings/BopeSetting;
    Method Start: combobox([Ljava/lang/String;)Ljava/util/List;
       @|rina/turok/bope/bopemod/BopeModule.java|5118|5122|item|param|rina.turok.bope.bopemod.BopeModule|combobox|([Ljava/lang/String;)Ljava/util/List;|item|0
       @|rina/turok/bope/bopemod/BopeModule.java|5086|5090|List|class|java.util.List|false

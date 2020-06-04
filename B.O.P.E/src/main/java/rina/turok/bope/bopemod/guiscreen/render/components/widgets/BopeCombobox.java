@@ -159,8 +159,6 @@ public class BopeCombobox extends BopeAbstractWidget {
 			if (motion(mx, my) && this.master.is_open() && can()) {
 				this.frame.does_can(false);
 
-				this.setting.set_current_value(this.values.get(this.combobox_actual_value));
-
 				this.combobox_actual_value++;
 			}
 		}
@@ -196,5 +194,7 @@ public class BopeCombobox extends BopeAbstractWidget {
 		if (this.combobox_actual_value >= this.values.size()) {
 			this.combobox_actual_value = 0;
 		}
+
+		this.setting.set_current_value(this.values.get(this.combobox_actual_value));
 	}
 }

@@ -190,11 +190,11 @@ public class BopeHoleColor extends BopeModule {
 	}
 
 	// KAMI. :")
-    public List<BlockPos> sphere(BlockPos pos, float r, int h) {
-    	boolean hollow = false;
-    	boolean sphere = true;
+	public List<BlockPos> sphere(BlockPos pos, float r, int h) {
+		boolean hollow = false;
+		boolean sphere = true;
 
-    	int plus_y = 0;
+		int plus_y = 0;
 
 		List<BlockPos> sphere_block = new ArrayList<BlockPos>();
 

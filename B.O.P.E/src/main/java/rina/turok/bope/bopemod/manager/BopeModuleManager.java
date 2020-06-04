@@ -71,6 +71,7 @@ public class BopeModuleManager {
 		add_module(new BopeChatStyle());
 
 		// Combat.
+		add_module(new BopeAutoCrystal());
 		add_module(new BopeAutoGapple());
 		add_module(new BopeAutoTotem());
 		add_module(new BopeCriticals());

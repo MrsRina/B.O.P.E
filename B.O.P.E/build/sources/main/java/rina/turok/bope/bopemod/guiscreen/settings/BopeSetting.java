@@ -94,6 +94,11 @@ public class BopeSetting {
 		return this.tag;
 	}
 
+	// For one thing.
+	public void set_name(String new_name) {
+		this.name = new_name;
+	}
+
 	public void set_value(boolean value) {
 		this.button = value;
 	}

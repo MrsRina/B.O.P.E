@@ -34,8 +34,33 @@ import rina.turok.bope.Bope;
 *
 */
 public class BopeChatStyle extends BopeModule {
-	BopeSetting time_message = create("Time Message", "ChatStyleTimeMessage", true);
+	public List<String> colors_combobox = combobox(
+		"False", // False. :)
+		"LIGHT_PURPLE",
+		"DARK_PURPLE",
+		"DARK_GREEN",
+		"DARK_GRAY",
+		"DARK_BLUE",
+		"DARK_AQUA",
+		"DARK_RED",
+		"YELLOW",
+		"GREEN",
+		"BLACK",
+		"WHITE",
+		"BLUE",
+		"AQUA",
+		"RED"
+	);
+
+	BopeSetting color_time = create("Time", "ChatStyleColorTime", "DARK_BLUE", colors_combobox); 
+	BopeSetting color_name = create("Name", "ChatStyleColorMessage", "DARK_BLUE", colors_combobox);
+	BopeSetting type_mode  = create("Type Mode", "ChatStyleTypeMode", "[]", combobox("[]", "<>"));
 	//BopeSetting color_mode   = create("Color Mode", "ChatStyleColorMode", "HUD", combobox("HUD", "Server"));
+
+	public static HashMap<String, ChatFormatting> color = new HashMap<>();
+
+	boolean event_color_time = true;
+	boolean event_color_name = true; 
 
 	public BopeChatStyle() {
 		super(BopeCategory.BOPE_CHAT, false);
@@ -47,18 +72,86 @@ public class BopeChatStyle extends BopeModule {
 
 		// Release.
 		release("B.O.P.E - Module - B.O.P.E");
+
+		// Colors.
+		color.put("LIGHT_PURPLE", ChatFormatting.LIGHT_PURPLE);
+		color.put("DARK_PURPLE",  ChatFormatting.DARK_PURPLE);
+		color.put("DARK_GREEN",   ChatFormatting.DARK_GREEN);
+		color.put("DARK_GRAY",    ChatFormatting.DARK_GRAY);
+		color.put("DARK_BLUE",    ChatFormatting.DARK_BLUE);
+		color.put("DARK_AQUA",    ChatFormatting.DARK_AQUA);
+		color.put("DARK_RED",     ChatFormatting.DARK_RED);
+		color.put("YELLOW",       ChatFormatting.YELLOW);
+		color.put("GREEN",        ChatFormatting.GREEN);
+		color.put("BLACK",        ChatFormatting.BLACK);
+		color.put("WHITE",        ChatFormatting.WHITE);
+		color.put("BLUE",         ChatFormatting.BLUE);
+		color.put("AQUA",         ChatFormatting.AQUA);
+		color.put("RED",          ChatFormatting.RED);
 	}
 
 	@EventHandler
 	private Listener<ClientChatReceivedEvent> listener = new Listener<>(event -> {
-		if (time_message.get_value(true)) {
-			TextComponentString time = new TextComponentString(ChatFormatting.GRAY + "<" + new SimpleDateFormat("k:mm").format(new Date()) + ">" + ChatFormatting.RESET + " ");
-			
-			time.appendSibling(event.getMessage());
+		TextComponentString message = new TextComponentString("");
 
-			event.setMessage(time);
-		} else {
-			event.setMessage(event.getMessage());
+		String original_message = event.getMessage().getUnformattedText();
+
+		event_color_time = true;
+		event_color_name = true;
+
+		if (color_time.in("False")) {
+			event_color_time = false;
 		}
+
+		if (color_name.in("False")) {
+			event_color_name = false;
+		}
+
+		if (event_color_time) {
+			ChatFormatting c = color.get(color_time.get_current_value());
+
+			message.appendText(Bope.g + "[" + c + new SimpleDateFormat("k:mm:a").format(new Date()) + Bope.g + "]" + " > ");
+		}
+
+		if (event_color_name) {
+			ChatFormatting c = color.get(color_name.get_current_value());
+
+			String[] separates = original_message.trim().split("\\s+");
+
+			String base_1 = separates[0];
+
+			String pre = type_mode.in("[]") ? "[" : "<";
+			String end = type_mode.in("[]") ? "]" : ">";
+				
+			base_1 = base_1.replaceAll("<", Bope.g + pre + c);
+			base_1 = base_1.replaceAll(">", Bope.g + end + Bope.r);
+
+			String message_of_player = original_message.substring(separates[0].length());
+
+			message.appendText(base_1 + message_of_player);
+		} else {
+			message.appendSibling(event.getMessage());
+		}
+
+		event.setMessage(message);
 	});
+
+	@Override
+	public void update() {
+		if (color_time.in("False")) {
+			color_time.set_name("Time");
+		} else {
+			ChatFormatting c = color.get(color_time.get_current_value());
+
+			color_time.set_name(c + "Time");
+		}
+
+		if (color_name.in("False")) {
+			color_time.set_name("Name");
+		} else {
+			ChatFormatting c = color.get(color_name.get_current_value());
+
+			color_name.set_name(c + "Name");
+		}
+	}
 }

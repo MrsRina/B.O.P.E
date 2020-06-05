@@ -20,9 +20,4 @@ public class BopeSurroundPreview extends BopePinnable {
 	public BopeSurroundPreview() {
 		super("Surround Preview", "SurroundPreview", 1, 0, 0);
 	}
-
-	@Override
-	public void render() {
-		
-	}
 }

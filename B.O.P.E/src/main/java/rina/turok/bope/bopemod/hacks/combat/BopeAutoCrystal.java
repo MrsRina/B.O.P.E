@@ -129,16 +129,6 @@ public class BopeAutoCrystal extends BopeModule {
 	});
 
 	@Override
-	public void enable() {
-		old_slot = mc.player.inventory.currentItem;
-	}
-
-	@Override
-	public void disable() {
-		mc.player.inventory.currentItem = old_slot;
-	}
-
-	@Override
 	public void update() {
 		EntityEnderCrystal crystal = request("crystal", 0);
 
@@ -161,9 +151,7 @@ public class BopeAutoCrystal extends BopeModule {
 				place_count = 0;
 
 				return;
-			}
-
-			if (place_count >= 2 && doubles.get_value(true)) {
+			} else if (place_count >= 2 && doubles.get_value(true)) {
 				reset_rotation();
 
 				place_count = 0;
@@ -226,7 +214,7 @@ public class BopeAutoCrystal extends BopeModule {
 						continue;
 					}
 
-					if (sf - 0.4 > mc.player.getHealth()) {
+					if (sf - 0.5 > mc.player.getHealth()) {
 						continue;
 					}
 

@@ -77,7 +77,7 @@ public class BopeModuleManager {
 		add_module(new BopeCriticals());
 		add_module(new BopeFastUtil());
 		add_module(new BopeKillAura());
-		add_module(new BopeSorround());
+		add_module(new BopeSurround());
 		add_module(new BopeVelocity());
 
 		// Exploit.

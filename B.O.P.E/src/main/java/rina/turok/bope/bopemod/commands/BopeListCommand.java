@@ -43,6 +43,7 @@ public class BopeListCommand {
 		add_command(new BopeLabel());
 		add_command(new BopeBind());
 		add_command(new BopeHelp());
+		add_command(new BopeFOV());
 
 		command_list.sort(Comparator.comparing(BopeCommand::get_name));
 	}

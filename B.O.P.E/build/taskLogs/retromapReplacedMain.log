@@ -1,4 +1,4 @@
-Processing 109 files
+Processing 110 files
 Start Processing: rina/turok/bope/Bope.java
 New Key: class net/minecraftforge/fml/common/Mod
 New Key: class net/minecraftforge/fml/common/Mod
@@ -1609,6 +1609,27 @@ Import: rina.turok.bope.bopemod.hacks.BopeCategory
 Adding 1 imports
         rina.turok.bope.bopemod.BopeModule
 End  Processing: rina/turok/bope/bopemod/hacks/render/BopeBrightness.java
+
+Start Processing: rina/turok/bope/bopemod/hacks/render/BopeESP.java
+FOUND CONSTR method rina/turok/bope/bopemod/hacks/render/BopeESP/BopeESP ()V rina/turok/bope/bopemod/hacks/render/BopeESP
+Import: net.minecraft.client.renderer.vertex.DefaultVertexFormats
+Import: net.minecraft.client.renderer.GlStateManager
+Import: net.minecraft.entity.player.InventoryPlayer
+Import: com.mojang.realmsclient.gui.ChatFormatting
+Import: net.minecraft.client.renderer.RenderHelper
+Import: net.minecraft.entity.player.EntityPlayerMP
+Import: net.minecraft.entity.player.EntityPlayer
+Import: net.minecraft.entity.EntityLivingBase
+Import: net.minecraft.client.renderer.*
+Import: net.minecraft.util.math.Vec3d
+Import: net.minecraft.item.ItemStack
+Import: net.minecraft.entity.Entity
+Import: net.minecraft.init.Items
+Adding 3 imports
+        rina.turok.bope.bopemod.BopeModule
+        rina.turok.bope.bopemod.events.BopeEventRender
+        rina.turok.bope.bopemod.hacks.BopeCategory
+End  Processing: rina/turok/bope/bopemod/hacks/render/BopeESP.java
 
 Start Processing: rina/turok/bope/bopemod/hacks/render/BopeHighlight.java
 FOUND CONSTR method rina/turok/bope/bopemod/hacks/render/BopeHighlight/BopeHighlight ()V rina/turok/bope/bopemod/hacks/render/BopeHighlight

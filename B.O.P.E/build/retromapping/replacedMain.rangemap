@@ -1,7 +1,7 @@
 Unsupposrted library path: C:\Users\SrRina\Documents\B.O.P.E\B.O.P.E\build\classes\api
 Unsupposrted library path: C:\Users\SrRina\Documents\B.O.P.E\B.O.P.E\build\resources\api
 Symbol range map extraction starting
-Processing 109 files
+Processing 110 files
 startProcessing "rina/turok/bope/Bope.java" md5: 7912fdcb51c3cb40f45af7d88a179853
 @|rina/turok/bope/Bope.java|8|23|rina.turok.bope|package|rina.turok.bope|(file)
 Class Start: rina.turok.bope.Bope
@@ -3134,7 +3134,7 @@ Class Start: rina.turok.bope.bopemod.guiscreen.hud.BopeStoragePreview
 Class End  : rina.turok.bope.bopemod.guiscreen.hud.BopeStoragePreview
 endProcessing "rina/turok/bope/bopemod/guiscreen/hud/BopeStoragePreview.java"
 
-startProcessing "rina/turok/bope/bopemod/guiscreen/hud/BopeSurroundPreview.java" md5: c1e888147dc26c6a793a00e6d5da061a
+startProcessing "rina/turok/bope/bopemod/guiscreen/hud/BopeSurroundPreview.java" md5: 906712e49e84326769b3ca2549549adb
 @|rina/turok/bope/bopemod/guiscreen/hud/BopeSurroundPreview.java|8|45|rina.turok.bope.bopemod.guiscreen.hud|package|rina.turok.bope.bopemod.guiscreen.hud|(file)
 Class Start: rina.turok.bope.bopemod.guiscreen.hud.BopeSurroundPreview
    @|rina/turok/bope/bopemod/guiscreen/hud/BopeSurroundPreview.java|315|334|BopeSurroundPreview|class|rina.turok.bope.bopemod.guiscreen.hud.BopeSurroundPreview|false
@@ -3142,10 +3142,6 @@ Class Start: rina.turok.bope.bopemod.guiscreen.hud.BopeSurroundPreview
    Method Start: BopeSurroundPreview()V
       @|rina/turok/bope/bopemod/guiscreen/hud/BopeSurroundPreview.java|367|386|BopeSurroundPreview|method|rina.turok.bope.bopemod.guiscreen.hud.BopeSurroundPreview|BopeSurroundPreview|()V
    Method End: BopeSurroundPreview()V
-   Method Start: render()V
-      @|rina/turok/bope/bopemod/guiscreen/hud/BopeSurroundPreview.java|458|466|Override|class|java.lang.Override|false
-      @|rina/turok/bope/bopemod/guiscreen/hud/BopeSurroundPreview.java|481|487|render|method|rina.turok.bope.bopemod.guiscreen.render.pinnables.BopePinnable|render|()V
-   Method End: render()V
 Class End  : rina.turok.bope.bopemod.guiscreen.hud.BopeSurroundPreview
 endProcessing "rina/turok/bope/bopemod/guiscreen/hud/BopeSurroundPreview.java"
 
@@ -10065,6 +10061,29 @@ Class Start: rina.turok.bope.bopemod.hacks.render.BopeBrightness
    Method End: update()V
 Class End  : rina.turok.bope.bopemod.hacks.render.BopeBrightness
 endProcessing "rina/turok/bope/bopemod/hacks/render/BopeBrightness.java"
+
+startProcessing "rina/turok/bope/bopemod/hacks/render/BopeESP.java" md5: 034cedd0fb9f0909fa9f2c141b6261d8
+@|rina/turok/bope/bopemod/hacks/render/BopeESP.java|8|44|rina.turok.bope.bopemod.hacks.render|package|rina.turok.bope.bopemod.hacks.render|(file)
+Class Start: rina.turok.bope.bopemod.hacks.render.BopeESP
+   @|rina/turok/bope/bopemod/hacks/render/BopeESP.java|1217|1224|BopeESP|class|rina.turok.bope.bopemod.hacks.render.BopeESP|false
+   @|rina/turok/bope/bopemod/hacks/render/BopeESP.java|1233|1243|BopeModule|class|rina.turok.bope.bopemod.BopeModule|false
+   Method Start: BopeESP()V
+      @|rina/turok/bope/bopemod/hacks/render/BopeESP.java|1255|1262|BopeESP|method|rina.turok.bope.bopemod.hacks.render.BopeESP|BopeESP|()V
+      @|rina/turok/bope/bopemod/hacks/render/BopeESP.java|1276|1288|BopeCategory|class|rina.turok.bope.bopemod.hacks.BopeCategory|false
+      @|rina/turok/bope/bopemod/hacks/render/BopeESP.java|1289|1300|BOPE_RENDER|field|rina.turok.bope.bopemod.hacks.BopeCategory|BOPE_RENDER
+      @|rina/turok/bope/bopemod/hacks/render/BopeESP.java|1325|1329|name|field|rina.turok.bope.bopemod.BopeModule|name
+      @|rina/turok/bope/bopemod/hacks/render/BopeESP.java|1354|1357|tag|field|rina.turok.bope.bopemod.BopeModule|tag
+      @|rina/turok/bope/bopemod/hacks/render/BopeESP.java|1383|1394|description|field|rina.turok.bope.bopemod.BopeModule|description
+      @|rina/turok/bope/bopemod/hacks/render/BopeESP.java|1473|1480|release|method|rina.turok.bope.bopemod.BopeModule|release|(Ljava/lang/String;)V
+   Method End: BopeESP()V
+   Method Start: render(Lrina/turok/bope/bopemod/events/BopeEventRender;)V
+      @|rina/turok/bope/bopemod/hacks/render/BopeESP.java|1568|1573|event|param|rina.turok.bope.bopemod.hacks.render.BopeESP|render|(Lrina/turok/bope/bopemod/events/BopeEventRender;)V|event|0
+      @|rina/turok/bope/bopemod/hacks/render/BopeESP.java|1522|1530|Override|class|java.lang.Override|false
+      @|rina/turok/bope/bopemod/hacks/render/BopeESP.java|1545|1551|render|method|rina.turok.bope.bopemod.BopeModule|render|(Lrina/turok/bope/bopemod/events/BopeEventRender;)V
+      @|rina/turok/bope/bopemod/hacks/render/BopeESP.java|1552|1567|BopeEventRender|class|rina.turok.bope.bopemod.events.BopeEventRender|false
+   Method End: render(Lrina/turok/bope/bopemod/events/BopeEventRender;)V
+Class End  : rina.turok.bope.bopemod.hacks.render.BopeESP
+endProcessing "rina/turok/bope/bopemod/hacks/render/BopeESP.java"
 
 startProcessing "rina/turok/bope/bopemod/hacks/render/BopeHighlight.java" md5: 69817a0458768587ed120eca2833e150
 @|rina/turok/bope/bopemod/hacks/render/BopeHighlight.java|8|44|rina.turok.bope.bopemod.hacks.render|package|rina.turok.bope.bopemod.hacks.render|(file)

@@ -1,7 +1,7 @@
 Unsupposrted library path: C:\Users\SrRina\Documents\B.O.P.E\B.O.P.E\build\classes\api
 Unsupposrted library path: C:\Users\SrRina\Documents\B.O.P.E\B.O.P.E\build\resources\api
 Symbol range map extraction starting
-Processing 109 files
+Processing 110 files
 startProcessing "rina/turok/bope/Bope.java" md5: 7912fdcb51c3cb40f45af7d88a179853
 endProcessing "rina/turok/bope/Bope.java"
 
@@ -110,7 +110,7 @@ endProcessing "rina/turok/bope/bopemod/guiscreen/hud/BopeServerInfo.java"
 startProcessing "rina/turok/bope/bopemod/guiscreen/hud/BopeStoragePreview.java" md5: 0134eab9b69d995e2636b8903583e990
 endProcessing "rina/turok/bope/bopemod/guiscreen/hud/BopeStoragePreview.java"
 
-startProcessing "rina/turok/bope/bopemod/guiscreen/hud/BopeSurroundPreview.java" md5: c1e888147dc26c6a793a00e6d5da061a
+startProcessing "rina/turok/bope/bopemod/guiscreen/hud/BopeSurroundPreview.java" md5: 906712e49e84326769b3ca2549549adb
 endProcessing "rina/turok/bope/bopemod/guiscreen/hud/BopeSurroundPreview.java"
 
 startProcessing "rina/turok/bope/bopemod/guiscreen/hud/BopeTotemCount.java" md5: 03921456796830271a3f43be1a3999a4
@@ -226,6 +226,9 @@ endProcessing "rina/turok/bope/bopemod/hacks/movement/BopeStrafe.java"
 
 startProcessing "rina/turok/bope/bopemod/hacks/render/BopeBrightness.java" md5: 5d006b621b0e7e123c1e61b022cd83cf
 endProcessing "rina/turok/bope/bopemod/hacks/render/BopeBrightness.java"
+
+startProcessing "rina/turok/bope/bopemod/hacks/render/BopeESP.java" md5: 034cedd0fb9f0909fa9f2c141b6261d8
+endProcessing "rina/turok/bope/bopemod/hacks/render/BopeESP.java"
 
 startProcessing "rina/turok/bope/bopemod/hacks/render/BopeHighlight.java" md5: 69817a0458768587ed120eca2833e150
 endProcessing "rina/turok/bope/bopemod/hacks/render/BopeHighlight.java"

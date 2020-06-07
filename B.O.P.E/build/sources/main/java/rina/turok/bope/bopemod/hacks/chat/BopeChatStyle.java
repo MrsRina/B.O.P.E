@@ -135,23 +135,4 @@ public class BopeChatStyle extends BopeModule {
 
 		event.setMessage(message);
 	});
-
-	@Override
-	public void update() {
-		if (color_time.in("False")) {
-			color_time.set_name("Time");
-		} else {
-			ChatFormatting c = color.get(color_time.get_current_value());
-
-			color_time.set_name(c + "Time");
-		}
-
-		if (color_name.in("False")) {
-			color_time.set_name("Name");
-		} else {
-			ChatFormatting c = color.get(color_name.get_current_value());
-
-			color_name.set_name(c + "Name");
-		}
-	}
 }

@@ -53,7 +53,7 @@ public class BopeNameTag extends BopeModule {
 	BopeSetting armor = create("Armor", "NameTagArmor", true);
 	BopeSetting main_ = create("Main Hand", "NameTagMainHand", true);
 	BopeSetting off_h = create("Off Hand", "NameTagOffHand", true);
-	BopeSetting range = create("Range", "NameTagRange", 25, 0, 50);
+	BopeSetting range = create("Range", "NameTagRange", 15, 0, 30);
 	BopeSetting size  = create("Size", "NameTagSize", 4, 3, 4);
 
 	String totems_left_string = "";
@@ -92,7 +92,7 @@ public class BopeNameTag extends BopeModule {
 			/* inaRinaRinaRinaRin */ .map(    entity -> (EntityLivingBase) entity)
 			/* inaRinaRinaRinaRin */ .filter(_entity -> !_entity.isDead)
 			/* inaRinaRinaRinaRin */ .filter( entity -> entity instanceof EntityPlayer)
-			/* inaRinaRinaRinaRin */ .filter( entity -> mc.player.getDistance(entity) < range.get_value(1))
+			/* inaRinaRinaRinaRin */ .filter( entity -> mc.player.getDistance(entity) < (range.get_value(1) * 4))
 			/* inaRinaRinaRinaRin */ .sorted(Comparator.comparing(entity -> -mc.player.getDistance(entity)))
 			/* inaRinaRinaRinaRin */ .forEach(this::draw);
 		}

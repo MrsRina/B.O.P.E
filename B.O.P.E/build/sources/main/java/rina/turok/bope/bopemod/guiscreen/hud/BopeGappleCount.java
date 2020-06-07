@@ -52,8 +52,9 @@ public class BopeGappleCount extends BopePinnable {
 				}
 
 				if (stack.getItem() == Items.GOLDEN_APPLE) {
-					mc.getRenderItem().renderItemAndEffectIntoGUI(stack, get_x(), get_y());
-					
+					// Docking (defaul, width);
+					mc.getRenderItem().renderItemAndEffectIntoGUI(stack, get_x() + docking(0, 16), get_y());
+
 					create_line(Integer.toString(gapples + off), 16 + 2, 16 - get(Integer.toString(gapples + off), "height"));
 				}
 			}

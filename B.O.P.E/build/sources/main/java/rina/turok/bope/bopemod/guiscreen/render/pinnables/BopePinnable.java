@@ -310,6 +310,14 @@ public class BopePinnable {
 		}
 	}
 
+	public int docking(int position_x, int width) {
+		if (get_dock()) {
+			return position_x;
+		} else {
+			return (this.width - width - position_x);
+		}
+	}
+
 	protected boolean is_on_gui() {
 		return Bope.click_hud.on_gui;
 	}

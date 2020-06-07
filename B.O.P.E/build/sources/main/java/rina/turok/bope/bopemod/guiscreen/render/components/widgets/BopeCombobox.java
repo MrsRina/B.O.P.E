@@ -64,6 +64,8 @@ public class BopeCombobox extends BopeAbstractWidget {
 
 		this.combobox_name = this.setting.get_name();
 
+		this.combobox_actual_value = this.setting.get_values().indexOf(this.setting.get_current_value());
+
 		this.can = true;
 
 		int count = 0;
@@ -72,14 +74,6 @@ public class BopeCombobox extends BopeAbstractWidget {
 			this.values.add(values);
 
 			count++;
-		}
-
-		for (int i = 0; i >= this.values.size(); i++) {
-			if (this.values.get(i).equals(this.setting.get_current_value())) {
-				this.combobox_actual_value = i;
-
-				break;
-			}
 		}
 	}
 

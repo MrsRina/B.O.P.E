@@ -108,7 +108,7 @@ public class BopeFrame {
 	}
 
 	public void refresh_frame(BopeModuleButton button, int combo_height) {
-		this.height = 25;
+		this.height = 25 + 2;
 
 		int size  = Bope.get_module_manager().get_modules_with_category(this.category).size();
 		int count = 0;

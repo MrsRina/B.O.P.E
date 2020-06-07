@@ -53,6 +53,8 @@ public class BopePinnable {
 
 	public final Minecraft mc = Minecraft.getMinecraft();
 
+	public boolean pass;
+
 	public BopePinnable(String title, String tag, float font_, int x, int y) {
 		this.title = title;
 		this.tag   = tag;
@@ -70,6 +72,7 @@ public class BopePinnable {
 		this.screen_height = (mc.displayHeight / 2);
 
 		this.tolerance = this.x;
+		this.pass      = false;
 	}
 
 	public void background() {
@@ -256,7 +259,7 @@ public class BopePinnable {
 
 			TurokRenderHelp.release_gl();
 
-			if (motion(mx, my)) {
+			if (motion(mx, my) || this.pass) {
 				BopeDraw.draw_rect(this.x - 1, this.y - 1, this.width + 1, this.height + 1, 0, 0, 0, 90, 2, "right-left-down-up");
 			}
 		}

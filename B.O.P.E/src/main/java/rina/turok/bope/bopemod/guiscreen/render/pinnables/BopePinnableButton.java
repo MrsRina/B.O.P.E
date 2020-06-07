@@ -69,6 +69,10 @@ public class BopePinnableButton {
 		this.first = true;
 	}
 
+	public void pass(boolean value) {
+		this.pinnable.pass = value;
+	}
+
 	public void set_x(int x) {
 		this.x = x;
 	}

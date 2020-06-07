@@ -692,8 +692,8 @@ End  Processing: rina/turok/bope/bopemod/guiscreen/render/components/BopeAbstrac
 Start Processing: rina/turok/bope/bopemod/guiscreen/render/components/BopeFrame.java
 Rename method net/minecraft/client/Minecraft/getMinecraft ()Lnet/minecraft/client/Minecraft;[1350,1362]::getMinecraft->func_71410_x
 FOUND CONSTR method rina/turok/bope/bopemod/guiscreen/render/components/BopeFrame/BopeFrame (Lrina/turok/bope/bopemod/hacks/BopeCategory;)V rina/turok/bope/bopemod/guiscreen/render/components/BopeFrame
-Rename field net/minecraft/client/Minecraft/displayWidth[4508,4520]::displayWidth->field_71443_c
-Rename field net/minecraft/client/Minecraft/displayHeight[4550,4563]::displayHeight->field_71440_d
+Rename field net/minecraft/client/Minecraft/displayWidth[4512,4524]::displayWidth->field_71443_c
+Rename field net/minecraft/client/Minecraft/displayHeight[4554,4567]::displayHeight->field_71440_d
 Import: net.minecraft.client.Minecraft
 Adding 6 imports
         java.awt.Color
@@ -742,9 +742,16 @@ Adding 5 imports
 End  Processing: rina/turok/bope/bopemod/guiscreen/render/components/widgets/BopeButtonBind.java
 
 Start Processing: rina/turok/bope/bopemod/guiscreen/render/components/widgets/BopeCombobox.java
+New Key: class rina/turok/bope/bopemod/guiscreen/render/components/widgets/BopeCombobox
+Rename method net/minecraft/client/Minecraft/getMinecraft ()Lnet/minecraft/client/Minecraft;[1520,1532]::getMinecraft->func_71410_x
 FOUND CONSTR method rina/turok/bope/bopemod/guiscreen/render/components/widgets/BopeCombobox/BopeCombobox (Lrina/turok/bope/bopemod/guiscreen/render/components/BopeFrame;Lrina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton;Ljava/lang/String;I)V rina/turok/bope/bopemod/guiscreen/render/components/widgets/BopeCombobox
-Import: java.util.*
-Adding 6 imports
+New Key: class rina/turok/bope/bopemod/guiscreen/render/components/widgets/BopeCombobox
+New Key: class rina/turok/bope/bopemod/guiscreen/render/components/widgets/BopeCombobox
+Rename field net/minecraft/client/Minecraft/displayWidth[5708,5720]::displayWidth->field_71443_c
+FOUND CONSTR method rina/turok/bope/bopemod/guiscreen/render/components/widgets/BopeCombobox/BopeMenuCombobox/BopeMenuCombobox (Lrina/turok/bope/bopemod/guiscreen/render/components/widgets/BopeCombobox;Ljava/lang/String;I)V rina/turok/bope/bopemod/guiscreen/render/components/widgets/BopeCombobox/BopeMenuCombobox
+Import: net.minecraft.client.Minecraft
+Adding 7 imports
+        java.util.ArrayList
         rina.turok.bope.Bope
         rina.turok.bope.bopemod.guiscreen.render.BopeDraw
         rina.turok.bope.bopemod.guiscreen.render.components.BopeAbstractWidget
@@ -797,11 +804,11 @@ End  Processing: rina/turok/bope/bopemod/guiscreen/render/pinnables/BopeFrame.ja
 Start Processing: rina/turok/bope/bopemod/guiscreen/render/pinnables/BopePinnable.java
 Rename method net/minecraft/client/Minecraft/getMinecraft ()Lnet/minecraft/client/Minecraft;[1106,1118]::getMinecraft->func_71410_x
 FOUND CONSTR method rina/turok/bope/bopemod/guiscreen/render/pinnables/BopePinnable/BopePinnable (Ljava/lang/String;Ljava/lang/String;FII)V rina/turok/bope/bopemod/guiscreen/render/pinnables/BopePinnable
-Rename field net/minecraft/client/Minecraft/displayWidth[1411,1423]::displayWidth->field_71443_c
-Rename field net/minecraft/client/Minecraft/displayHeight[1459,1472]::displayHeight->field_71440_d
-Rename field net/minecraft/client/Minecraft/displayWidth[3322,3334]::displayWidth->field_71443_c
-Rename field net/minecraft/client/Minecraft/displayHeight[3370,3383]::displayHeight->field_71440_d
-Rename method net/minecraft/client/renderer/GlStateManager/enableBlend ()V[4693,4704]::enableBlend->func_179147_l
+Rename field net/minecraft/client/Minecraft/displayWidth[1436,1448]::displayWidth->field_71443_c
+Rename field net/minecraft/client/Minecraft/displayHeight[1484,1497]::displayHeight->field_71440_d
+Rename field net/minecraft/client/Minecraft/displayWidth[3374,3386]::displayWidth->field_71443_c
+Rename field net/minecraft/client/Minecraft/displayHeight[3422,3435]::displayHeight->field_71440_d
+Rename method net/minecraft/client/renderer/GlStateManager/enableBlend ()V[4745,4756]::enableBlend->func_179147_l
 Import: net.minecraft.client.renderer.GlStateManager
 Import: net.minecraft.client.Minecraft
 Adding 4 imports

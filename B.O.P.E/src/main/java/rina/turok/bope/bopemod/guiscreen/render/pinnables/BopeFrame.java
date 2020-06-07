@@ -256,7 +256,11 @@ public class BopeFrame {
 			pinnables_buttons.render(mx, my, separate);
 
 			if (pinnables_buttons.motion(mx, my)) {
-				BopeDraw.draw_rect(get_x() - 1, pinnables_buttons.get_save_y(), get_width() + 1, pinnables_buttons.get_height(), this.bdw_r, this.bdw_g, this.bdw_b, this.bdw_a, this.border_size, "right-left");
+				pinnables_buttons.pass(true);
+
+				BopeDraw.draw_rect(get_x() - 1, pinnables_buttons.get_save_y(), get_width() + 4, pinnables_buttons.get_height(), this.bdw_r, this.bdw_g, this.bdw_b, this.bdw_a, this.border_size, "right-left");
+			} else {
+				pinnables_buttons.pass(false);
 			}
 		}
 	}

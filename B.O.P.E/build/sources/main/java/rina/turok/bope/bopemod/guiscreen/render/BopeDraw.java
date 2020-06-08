@@ -91,14 +91,14 @@ public class BopeDraw {
 		}
 	}
 
-	public void draw_string_gl(String string, int x, int y, int r, int g, int b) {
+	public void draw_string_gl(String string, int x, int y, int r, int g, int b, int size) {
 		Turok resize_gl = new Turok("Resize");
 
-		resize_gl.resize(x, y, this.size);
+		resize_gl.resize(x, y, size);
 
 		font_renderer.drawString(string, x, y, new TurokColor(r, g, b).hex());
 
-		resize_gl.resize(x, y, this.size, "end");
+		resize_gl.resize(x, y, size, "end");
 
 		GL11.glPushMatrix();
 

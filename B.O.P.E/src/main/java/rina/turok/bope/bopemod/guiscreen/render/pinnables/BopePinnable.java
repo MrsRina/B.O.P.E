@@ -259,10 +259,10 @@ public class BopePinnable {
 
 			TurokRenderHelp.release_gl();
 
-			if (motion(mx, my)) {
-				BopeDraw.draw_rect(this.x, this.y, this.x + this.width, this.y + this.height, 255, 255, 255, 20);
-			} else if (this.pass) {
-				BopeDraw.draw_rect(this.x, this.y, this.x + this.width, this.y + this.height, 190, 190, 190, 20);
+			if (motion(mx, my) && !is_moving()) {
+				create_rect(0, 0, this.width, this.height, 255, 255, 255, 50);
+			} else if (motion(mx, my) && is_moving()) {
+				create_rect(0, 0, this.width, this.height, 0, 0, 255, 50);
 			}
 		}
 	}

@@ -652,7 +652,7 @@ Rename method net/minecraft/client/gui/FontRenderer/drawStringWithShadow (Ljava/
 Rename method net/minecraft/client/gui/FontRenderer/drawString (Ljava/lang/String;III)I[2514,2524]::drawString->func_78276_b
 Rename method net/minecraft/client/gui/FontRenderer/drawStringWithShadow (Ljava/lang/String;FFI)I[2628,2648]::drawStringWithShadow->func_175063_a
 Rename method net/minecraft/client/gui/FontRenderer/drawString (Ljava/lang/String;III)I[2720,2730]::drawString->func_78276_b
-Rename method net/minecraft/client/gui/FontRenderer/drawString (Ljava/lang/String;III)I[2978,2988]::drawString->func_78276_b
+Rename method net/minecraft/client/gui/FontRenderer/drawString (Ljava/lang/String;III)I[2983,2993]::drawString->func_78276_b
 Rename method net/minecraft/client/renderer/GlStateManager/enableBlend ()V[3203,3214]::enableBlend->func_179147_l
 Rename method net/minecraft/client/gui/FontRenderer/getStringWidth (Ljava/lang/String;)I[3442,3456]::getStringWidth->func_78256_a
 Rename method net/minecraft/client/gui/FontRenderer/getStringWidth (Ljava/lang/String;)I[3520,3534]::getStringWidth->func_78256_a

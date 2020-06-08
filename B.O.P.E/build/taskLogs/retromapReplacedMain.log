@@ -654,10 +654,10 @@ Rename method net/minecraft/client/gui/FontRenderer/drawStringWithShadow (Ljava/
 Rename method net/minecraft/client/gui/FontRenderer/drawString (Ljava/lang/String;III)I[2720,2730]::drawString->func_78276_b
 Rename method net/minecraft/client/gui/FontRenderer/drawString (Ljava/lang/String;III)I[2978,2988]::drawString->func_78276_b
 Rename method net/minecraft/client/renderer/GlStateManager/enableBlend ()V[3203,3214]::enableBlend->func_179147_l
-Rename field net/minecraft/client/gui/FontRenderer/FONT_HEIGHT[3486,3497]::FONT_HEIGHT->field_78288_b
-Rename field net/minecraft/client/gui/FontRenderer/FONT_HEIGHT[3557,3568]::FONT_HEIGHT->field_78288_b
-Rename method net/minecraft/client/gui/FontRenderer/getStringWidth (Ljava/lang/String;)I[3752,3766]::getStringWidth->func_78256_a
-Rename method net/minecraft/client/gui/FontRenderer/getStringWidth (Ljava/lang/String;)I[3830,3844]::getStringWidth->func_78256_a
+Rename method net/minecraft/client/gui/FontRenderer/getStringWidth (Ljava/lang/String;)I[3442,3456]::getStringWidth->func_78256_a
+Rename method net/minecraft/client/gui/FontRenderer/getStringWidth (Ljava/lang/String;)I[3520,3534]::getStringWidth->func_78256_a
+Rename field net/minecraft/client/gui/FontRenderer/FONT_HEIGHT[3766,3777]::FONT_HEIGHT->field_78288_b
+Rename field net/minecraft/client/gui/FontRenderer/FONT_HEIGHT[3837,3848]::FONT_HEIGHT->field_78288_b
 FOUND CONSTR method rina/turok/bope/bopemod/guiscreen/render/BopeDraw/TurokColor/TurokColor (IIII)V rina/turok/bope/bopemod/guiscreen/render/BopeDraw/TurokColor
 FOUND CONSTR method rina/turok/bope/bopemod/guiscreen/render/BopeDraw/TurokColor/TurokColor (III)V rina/turok/bope/bopemod/guiscreen/render/BopeDraw/TurokColor
 Import: java.util.*
@@ -692,8 +692,8 @@ End  Processing: rina/turok/bope/bopemod/guiscreen/render/components/BopeAbstrac
 Start Processing: rina/turok/bope/bopemod/guiscreen/render/components/BopeFrame.java
 Rename method net/minecraft/client/Minecraft/getMinecraft ()Lnet/minecraft/client/Minecraft;[1350,1362]::getMinecraft->func_71410_x
 FOUND CONSTR method rina/turok/bope/bopemod/guiscreen/render/components/BopeFrame/BopeFrame (Lrina/turok/bope/bopemod/hacks/BopeCategory;)V rina/turok/bope/bopemod/guiscreen/render/components/BopeFrame
-Rename field net/minecraft/client/Minecraft/displayWidth[4512,4524]::displayWidth->field_71443_c
-Rename field net/minecraft/client/Minecraft/displayHeight[4554,4567]::displayHeight->field_71440_d
+Rename field net/minecraft/client/Minecraft/displayWidth[4508,4520]::displayWidth->field_71443_c
+Rename field net/minecraft/client/Minecraft/displayHeight[4550,4563]::displayHeight->field_71440_d
 Import: net.minecraft.client.Minecraft
 Adding 6 imports
         java.awt.Color
@@ -791,8 +791,8 @@ End  Processing: rina/turok/bope/bopemod/guiscreen/render/components/widgets/Bop
 Start Processing: rina/turok/bope/bopemod/guiscreen/render/pinnables/BopeFrame.java
 Rename method net/minecraft/client/Minecraft/getMinecraft ()Lnet/minecraft/client/Minecraft;[1478,1490]::getMinecraft->func_71410_x
 FOUND CONSTR method rina/turok/bope/bopemod/guiscreen/render/pinnables/BopeFrame/BopeFrame (Ljava/lang/String;Ljava/lang/String;II)V rina/turok/bope/bopemod/guiscreen/render/pinnables/BopeFrame
-Rename field net/minecraft/client/Minecraft/displayWidth[3520,3532]::displayWidth->field_71443_c
-Rename field net/minecraft/client/Minecraft/displayHeight[3562,3575]::displayHeight->field_71440_d
+Rename field net/minecraft/client/Minecraft/displayWidth[3516,3528]::displayWidth->field_71443_c
+Rename field net/minecraft/client/Minecraft/displayHeight[3558,3571]::displayHeight->field_71440_d
 Import: net.minecraft.client.Minecraft
 Adding 4 imports
         java.awt.Color

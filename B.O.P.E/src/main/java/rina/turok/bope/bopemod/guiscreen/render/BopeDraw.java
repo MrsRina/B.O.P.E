@@ -112,6 +112,16 @@ public class BopeDraw {
 		TurokRenderHelp.release_gl();
 	}
 
+	public int get_string_width(String string, boolean smoth) {
+		FontRenderer fontRenderer = font_renderer;
+
+		if (smoth) {
+			return (int) (custom_font.getStringWidth(string) * this.size);
+		} else {
+			return (int) (fontRenderer.getStringWidth(string) * this.size);
+		}
+	}
+
 	public int get_string_height(String string, boolean smoth) {
 		FontRenderer fontRenderer = font_renderer;
 		FontRenderer customFont   = custom_font;
@@ -120,16 +130,6 @@ public class BopeDraw {
 			return (int) (customFont.FONT_HEIGHT * this.size);
 		} else {
 			return (int) (fontRenderer.FONT_HEIGHT * this.size);
-		}
-	}
-
-	public int get_string_width(String string, boolean smoth) {
-		FontRenderer fontRenderer = font_renderer;
-
-		if (smoth) {
-			return (int) (custom_font.getStringWidth(string) * this.size);
-		} else {
-			return (int) (fontRenderer.getStringWidth(string) * this.size);
 		}
 	}
 

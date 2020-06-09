@@ -1,9 +1,11 @@
 package rina.turok.bope.bopemod.guiscreen.hud;
 
+import net.minecraft.client.gui.GuiIngame;
 import com.mojang.realmsclient.gui.ChatFormatting;
 
 // Guiscreen.
 import rina.turok.bope.bopemod.guiscreen.render.pinnables.BopePinnable;
+import rina.turok.bope.bopemod.guiscreen.render.BopeDraw;
 
 // Core.
 import rina.turok.bope.Bope;
@@ -16,11 +18,10 @@ import rina.turok.bope.Bope;
 *
 */
 public class BopeCoordinates extends BopePinnable {
-	ChatFormatting dg = ChatFormatting.DARK_GRAY;
-	ChatFormatting db = ChatFormatting.DARK_BLUE;
-	ChatFormatting dr = ChatFormatting.DARK_RED;
+	ChatFormatting db = Bope.r;
+	ChatFormatting dr = Bope.r;
 
-	boolean state = true;
+	boolean state = false;
 
 	public BopeCoordinates() {
 		super("Coordinates", "Coordinates", 1, 0, 0);
@@ -38,6 +39,20 @@ public class BopeCoordinates extends BopePinnable {
 		String line = "XYZ " + x + y + z + x_nether + z_nether;
 
 		create_line(line, 1, 2);
+
+		boolean in_gui = mc.ingameGUI.getChatGUI().getChatOpen();
+
+		if (in_gui && (get_y()) == (BopeDraw.get_height() - get_height() - 1)) {
+			set_y(10, "-");
+
+			state = true;
+		}
+
+		if (!in_gui && state) {
+			set_y(BopeDraw.get_height() - get_height() - 1);
+
+			state = false;
+		}
 
 		set_width(get(line, "width"));
 		set_height(get(line, "height") + 2);

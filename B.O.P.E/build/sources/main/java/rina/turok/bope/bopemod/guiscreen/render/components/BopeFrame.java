@@ -138,6 +138,12 @@ public class BopeFrame {
 		}
 	}
 
+	public void event_can(boolean event) {
+		for (BopeModuleButton module_buttons : this.module_button) {
+			module_buttons.event_can(event);
+		}
+	}
+
 	public void does_can(boolean value) {
 		this.can = value;
 	}

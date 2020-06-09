@@ -39,6 +39,7 @@ public class BopeModuleButton {
 
 	private boolean opened;
 	private boolean smoth = Bope.get_setting_manager().get_setting_with_tag("GUISmothFont").get_value(true);
+	public  boolean can   = true;
 
 	private int x;
 	private int y;
@@ -143,6 +144,14 @@ public class BopeModuleButton {
 		return this.master;
 	}
 
+	public void event_can(boolean event) {
+		this.can = event;
+
+		for (BopeAbstractWidget wdigets : this.widget) {
+			wdigets.does_can(event);
+		}
+	}
+
 	public void set_pressed(boolean value) {
 		this.module.set_active(value);
 	}
@@ -241,7 +250,7 @@ public class BopeModuleButton {
 		}
 
 		if (mouse == 0) {
-			if (motion(mx, my)) {
+			if (motion(mx, my) && this.can) {
 				this.master.does_can(false);
 
 				set_pressed(!get_state());
@@ -249,7 +258,7 @@ public class BopeModuleButton {
 		}
 
 		if (mouse == 1) {
-			if (motion(mx, my)) {
+			if (motion(mx, my) && this.can) {
 				this.master.does_can(false);
 
 				set_open(!is_open());
@@ -300,7 +309,7 @@ public class BopeModuleButton {
 
 			boolean is_passing_in_widget = this.opened ? widgets.motion_pass(mx, my) : false;
 
-			if (motion(mx, my) || is_passing_in_widget) {
+			if (motion(mx, my) || is_passing_in_widget && this.can) {
 				BopeDraw.draw_rect(this.master.get_x() - 1, this.save_y, this.master.get_width() + separe + 1, this.opened_height, bd_r, bd_g, bd_b, border_a, this.border_size, "right-left");
 
 				font.draw_string(this.module.get_description(), 2, 1, nm_r, nm_g, nm_b, this.smoth);

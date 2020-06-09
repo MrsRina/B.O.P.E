@@ -32,6 +32,11 @@ public abstract class BopeAbstractWidget {
 		return 0;
 	}
 
+	// Can.
+	public boolean can() {
+		return false;
+	}
+
 	// Binding.
 	public boolean is_binding() {
 		return false;

@@ -68,8 +68,8 @@ public class BopePinnable {
 
 		this.move = false;
 
-		this.screen_width  = (mc.displayWidth / 2);
-		this.screen_height = (mc.displayHeight / 2);
+		this.screen_width  = BopeDraw.get_width();
+		this.screen_height = BopeDraw.get_height();
 
 		this.tolerance = this.x;
 		this.pass      = false;
@@ -180,8 +180,8 @@ public class BopePinnable {
 	}
 
 	public void update() {
-		this.screen_width  = (mc.displayWidth / 2);
-		this.screen_height = (mc.displayHeight / 2);
+		this.screen_width  = BopeDraw.get_width();
+		this.screen_height = BopeDraw.get_height();
 	}
 
 	public void fix_screen() {
@@ -261,7 +261,7 @@ public class BopePinnable {
 
 			if (motion(mx, my) && !is_moving()) {
 				create_rect(0, 0, this.width, this.height, 255, 255, 255, 50);
-			} else if (motion(mx, my) && is_moving()) {
+			} else if (is_moving()) {
 				create_rect(0, 0, this.width, this.height, 0, 0, 255, 50);
 			}
 		}

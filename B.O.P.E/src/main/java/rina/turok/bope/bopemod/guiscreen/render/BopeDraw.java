@@ -4,6 +4,7 @@ import java.util.*;
 import java.awt.*;
 
 import net.minecraft.client.renderer.GlStateManager;
+import net.minecraft.client.gui.ScaledResolution;
 import net.minecraft.client.gui.FontRenderer;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.Gui;
@@ -33,7 +34,7 @@ import rina.turok.turok.Turok;
 */
 public class BopeDraw {
 	private static FontRenderer font_renderer = Minecraft.getMinecraft().fontRenderer;
-	private static FontRenderer custom_font   = new BopeString(true); 
+	private static FontRenderer custom_font   = new BopeString(true);
 
 	private float size;
 
@@ -131,6 +132,18 @@ public class BopeDraw {
 		} else {
 			return (int) (fontRenderer.FONT_HEIGHT * this.size);
 		}
+	}
+
+	public static int get_width() {
+		ScaledResolution resolution = new ScaledResolution(Minecraft.getMinecraft());
+
+		return resolution.getScaledWidth();
+	}
+
+	public static int get_height() {
+		ScaledResolution resolution = new ScaledResolution(Minecraft.getMinecraft());
+
+		return resolution.getScaledHeight();
 	}
 
 	public static class TurokColor extends Color {

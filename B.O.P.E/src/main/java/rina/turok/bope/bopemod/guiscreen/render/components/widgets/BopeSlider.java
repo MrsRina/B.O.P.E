@@ -144,6 +144,7 @@ public class BopeSlider extends BopeAbstractWidget {
 		return false;
 	}
 
+	@Override
 	public boolean can() {
 		return this.can;
 	}

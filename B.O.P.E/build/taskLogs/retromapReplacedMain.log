@@ -1,12 +1,12 @@
-Processing 110 files
+Processing 112 files
 Start Processing: rina/turok/bope/Bope.java
 New Key: class net/minecraftforge/fml/common/Mod
 New Key: class net/minecraftforge/fml/common/Mod
-Rename method net/minecraft/client/Minecraft/getMinecraft ()Lnet/minecraft/client/Minecraft;[5202,5214]::getMinecraft->func_71410_x
-Rename field net/minecraft/client/Minecraft/player[5217,5223]::player->field_71439_g
-Rename method net/minecraft/client/Minecraft/getMinecraft ()Lnet/minecraft/client/Minecraft;[5274,5286]::getMinecraft->func_71410_x
-Rename field net/minecraft/client/Minecraft/player[5289,5295]::player->field_71439_g
-Rename method net/minecraft/command/ICommandSender/getName ()Ljava/lang/String;[5303,5310]::getName->func_70005_c_
+Rename method net/minecraft/client/Minecraft/getMinecraft ()Lnet/minecraft/client/Minecraft;[5228,5240]::getMinecraft->func_71410_x
+Rename field net/minecraft/client/Minecraft/player[5243,5249]::player->field_71439_g
+Rename method net/minecraft/client/Minecraft/getMinecraft ()Lnet/minecraft/client/Minecraft;[5300,5312]::getMinecraft->func_71410_x
+Rename field net/minecraft/client/Minecraft/player[5315,5321]::player->field_71439_g
+Rename method net/minecraft/command/ICommandSender/getName ()Ljava/lang/String;[5329,5336]::getName->func_70005_c_
 Import: net.minecraftforge.fml.common.event.FMLInitializationEvent
 Import: com.mojang.realmsclient.gui.ChatFormatting
 Import: net.minecraftforge.fml.common.Mod
@@ -371,19 +371,24 @@ End  Processing: rina/turok/bope/bopemod/guiscreen/hud/BopeArrayList.java
 
 Start Processing: rina/turok/bope/bopemod/guiscreen/hud/BopeCoordinates.java
 FOUND CONSTR method rina/turok/bope/bopemod/guiscreen/hud/BopeCoordinates/BopeCoordinates ()V rina/turok/bope/bopemod/guiscreen/hud/BopeCoordinates
-Rename field net/minecraft/client/Minecraft/player[706,712]::player->field_71439_g
-Rename field net/minecraft/entity/Entity/posX[720,724]::posX->field_70165_t
-Rename field net/minecraft/client/Minecraft/player[817,823]::player->field_71439_g
-Rename field net/minecraft/entity/Entity/posY[831,835]::posY->field_70163_u
-Rename field net/minecraft/client/Minecraft/player[928,934]::player->field_71439_g
-Rename field net/minecraft/entity/Entity/posZ[942,946]::posZ->field_70161_v
-Rename field net/minecraft/client/Minecraft/player[1054,1060]::player->field_71439_g
-Rename field net/minecraft/entity/Entity/posX[1068,1072]::posX->field_70165_t
-Rename field net/minecraft/client/Minecraft/player[1181,1187]::player->field_71439_g
-Rename field net/minecraft/entity/Entity/posZ[1195,1199]::posZ->field_70161_v
+Rename field net/minecraft/client/Minecraft/player[727,733]::player->field_71439_g
+Rename field net/minecraft/entity/Entity/posX[741,745]::posX->field_70165_t
+Rename field net/minecraft/client/Minecraft/player[838,844]::player->field_71439_g
+Rename field net/minecraft/entity/Entity/posY[852,856]::posY->field_70163_u
+Rename field net/minecraft/client/Minecraft/player[949,955]::player->field_71439_g
+Rename field net/minecraft/entity/Entity/posZ[963,967]::posZ->field_70161_v
+Rename field net/minecraft/client/Minecraft/player[1075,1081]::player->field_71439_g
+Rename field net/minecraft/entity/Entity/posX[1089,1093]::posX->field_70165_t
+Rename field net/minecraft/client/Minecraft/player[1202,1208]::player->field_71439_g
+Rename field net/minecraft/entity/Entity/posZ[1216,1220]::posZ->field_70161_v
+Rename field net/minecraft/client/Minecraft/ingameGUI[1382,1391]::ingameGUI->field_71456_v
+Rename method net/minecraft/client/gui/GuiIngame/getChatGUI ()Lnet/minecraft/client/gui/GuiNewChat;[1396,1406]::getChatGUI->func_146158_b
+Rename method net/minecraft/client/gui/GuiNewChat/getChatOpen ()Z[1412,1423]::getChatOpen->func_146241_e
+Import: net.minecraft.client.gui.GuiIngame
 Import: com.mojang.realmsclient.gui.ChatFormatting
-Adding 2 imports
+Adding 3 imports
         rina.turok.bope.Bope
+        rina.turok.bope.bopemod.guiscreen.render.BopeDraw
         rina.turok.bope.bopemod.guiscreen.render.pinnables.BopePinnable
 End  Processing: rina/turok/bope/bopemod/guiscreen/hud/BopeCoordinates.java
 
@@ -641,31 +646,36 @@ Adding 2 imports
 End  Processing: rina/turok/bope/bopemod/guiscreen/hud/BopeWatermark.java
 
 Start Processing: rina/turok/bope/bopemod/guiscreen/render/BopeDraw.java
-Rename method net/minecraft/client/Minecraft/getMinecraft ()Lnet/minecraft/client/Minecraft;[762,774]::getMinecraft->func_71410_x
-Rename field net/minecraft/client/Minecraft/fontRenderer[777,789]::fontRenderer->field_71466_p
+Rename method net/minecraft/client/Minecraft/getMinecraft ()Lnet/minecraft/client/Minecraft;[813,825]::getMinecraft->func_71410_x
+Rename field net/minecraft/client/Minecraft/fontRenderer[828,840]::fontRenderer->field_71466_p
 FOUND CONSTR method rina/turok/bope/bopemod/guiscreen/render/BopeDraw/BopeDraw (F)V rina/turok/bope/bopemod/guiscreen/render/BopeDraw
-Rename method net/minecraft/client/gui/Gui/drawRect (IIIII)V[1042,1050]::drawRect->func_73734_a
-Rename method net/minecraft/client/gui/Gui/drawRect (IIIII)V[1831,1839]::drawRect->func_73734_a
-Rename method net/minecraft/client/gui/FontRenderer/drawStringWithShadow (Ljava/lang/String;FFI)I[2096,2116]::drawStringWithShadow->func_175063_a
-Rename method net/minecraft/client/gui/FontRenderer/drawStringWithShadow (Ljava/lang/String;FFI)I[2186,2206]::drawStringWithShadow->func_175063_a
-Rename method net/minecraft/client/gui/FontRenderer/drawStringWithShadow (Ljava/lang/String;FFI)I[2424,2444]::drawStringWithShadow->func_175063_a
-Rename method net/minecraft/client/gui/FontRenderer/drawString (Ljava/lang/String;III)I[2514,2524]::drawString->func_78276_b
-Rename method net/minecraft/client/gui/FontRenderer/drawStringWithShadow (Ljava/lang/String;FFI)I[2628,2648]::drawStringWithShadow->func_175063_a
-Rename method net/minecraft/client/gui/FontRenderer/drawString (Ljava/lang/String;III)I[2720,2730]::drawString->func_78276_b
-Rename method net/minecraft/client/gui/FontRenderer/drawString (Ljava/lang/String;III)I[2983,2993]::drawString->func_78276_b
-Rename method net/minecraft/client/renderer/GlStateManager/enableBlend ()V[3203,3214]::enableBlend->func_179147_l
-Rename method net/minecraft/client/gui/FontRenderer/getStringWidth (Ljava/lang/String;)I[3442,3456]::getStringWidth->func_78256_a
-Rename method net/minecraft/client/gui/FontRenderer/getStringWidth (Ljava/lang/String;)I[3520,3534]::getStringWidth->func_78256_a
-Rename field net/minecraft/client/gui/FontRenderer/FONT_HEIGHT[3766,3777]::FONT_HEIGHT->field_78288_b
-Rename field net/minecraft/client/gui/FontRenderer/FONT_HEIGHT[3837,3848]::FONT_HEIGHT->field_78288_b
+Rename method net/minecraft/client/gui/Gui/drawRect (IIIII)V[1092,1100]::drawRect->func_73734_a
+Rename method net/minecraft/client/gui/Gui/drawRect (IIIII)V[1881,1889]::drawRect->func_73734_a
+Rename method net/minecraft/client/gui/FontRenderer/drawStringWithShadow (Ljava/lang/String;FFI)I[2146,2166]::drawStringWithShadow->func_175063_a
+Rename method net/minecraft/client/gui/FontRenderer/drawStringWithShadow (Ljava/lang/String;FFI)I[2236,2256]::drawStringWithShadow->func_175063_a
+Rename method net/minecraft/client/gui/FontRenderer/drawStringWithShadow (Ljava/lang/String;FFI)I[2474,2494]::drawStringWithShadow->func_175063_a
+Rename method net/minecraft/client/gui/FontRenderer/drawString (Ljava/lang/String;III)I[2564,2574]::drawString->func_78276_b
+Rename method net/minecraft/client/gui/FontRenderer/drawStringWithShadow (Ljava/lang/String;FFI)I[2678,2698]::drawStringWithShadow->func_175063_a
+Rename method net/minecraft/client/gui/FontRenderer/drawString (Ljava/lang/String;III)I[2770,2780]::drawString->func_78276_b
+Rename method net/minecraft/client/gui/FontRenderer/drawString (Ljava/lang/String;III)I[3033,3043]::drawString->func_78276_b
+Rename method net/minecraft/client/renderer/GlStateManager/enableBlend ()V[3253,3264]::enableBlend->func_179147_l
+Rename method net/minecraft/client/gui/FontRenderer/getStringWidth (Ljava/lang/String;)I[3492,3506]::getStringWidth->func_78256_a
+Rename method net/minecraft/client/gui/FontRenderer/getStringWidth (Ljava/lang/String;)I[3570,3584]::getStringWidth->func_78256_a
+Rename field net/minecraft/client/gui/FontRenderer/FONT_HEIGHT[3816,3827]::FONT_HEIGHT->field_78288_b
+Rename field net/minecraft/client/gui/FontRenderer/FONT_HEIGHT[3887,3898]::FONT_HEIGHT->field_78288_b
+Rename method net/minecraft/client/Minecraft/getMinecraft ()Lnet/minecraft/client/Minecraft;[4024,4036]::getMinecraft->func_71410_x
+Rename method net/minecraft/client/gui/ScaledResolution/getScaledWidth ()I[4064,4078]::getScaledWidth->func_78326_a
+Rename method net/minecraft/client/Minecraft/getMinecraft ()Lnet/minecraft/client/Minecraft;[4185,4197]::getMinecraft->func_71410_x
+Rename method net/minecraft/client/gui/ScaledResolution/getScaledHeight ()I[4225,4240]::getScaledHeight->func_78328_b
 FOUND CONSTR method rina/turok/bope/bopemod/guiscreen/render/BopeDraw/TurokColor/TurokColor (IIII)V rina/turok/bope/bopemod/guiscreen/render/BopeDraw/TurokColor
 FOUND CONSTR method rina/turok/bope/bopemod/guiscreen/render/BopeDraw/TurokColor/TurokColor (III)V rina/turok/bope/bopemod/guiscreen/render/BopeDraw/TurokColor
 Import: java.util.*
 Import: java.awt.*
-Adding 8 imports
+Adding 9 imports
         net.minecraft.client.Minecraft
         net.minecraft.client.gui.FontRenderer
         net.minecraft.client.gui.Gui
+        net.minecraft.client.gui.ScaledResolution
         net.minecraft.client.renderer.GlStateManager
         org.lwjgl.opengl.GL11
         rina.turok.turok.Turok
@@ -692,8 +702,8 @@ End  Processing: rina/turok/bope/bopemod/guiscreen/render/components/BopeAbstrac
 Start Processing: rina/turok/bope/bopemod/guiscreen/render/components/BopeFrame.java
 Rename method net/minecraft/client/Minecraft/getMinecraft ()Lnet/minecraft/client/Minecraft;[1350,1362]::getMinecraft->func_71410_x
 FOUND CONSTR method rina/turok/bope/bopemod/guiscreen/render/components/BopeFrame/BopeFrame (Lrina/turok/bope/bopemod/hacks/BopeCategory;)V rina/turok/bope/bopemod/guiscreen/render/components/BopeFrame
-Rename field net/minecraft/client/Minecraft/displayWidth[4508,4520]::displayWidth->field_71443_c
-Rename field net/minecraft/client/Minecraft/displayHeight[4550,4563]::displayHeight->field_71440_d
+Rename field net/minecraft/client/Minecraft/displayWidth[4661,4673]::displayWidth->field_71443_c
+Rename field net/minecraft/client/Minecraft/displayHeight[4703,4716]::displayHeight->field_71440_d
 Import: net.minecraft.client.Minecraft
 Adding 6 imports
         java.awt.Color
@@ -742,16 +752,10 @@ Adding 5 imports
 End  Processing: rina/turok/bope/bopemod/guiscreen/render/components/widgets/BopeButtonBind.java
 
 Start Processing: rina/turok/bope/bopemod/guiscreen/render/components/widgets/BopeCombobox.java
-New Key: class rina/turok/bope/bopemod/guiscreen/render/components/widgets/BopeCombobox
-Rename method net/minecraft/client/Minecraft/getMinecraft ()Lnet/minecraft/client/Minecraft;[1520,1532]::getMinecraft->func_71410_x
+Rename method net/minecraft/client/Minecraft/getMinecraft ()Lnet/minecraft/client/Minecraft;[1448,1460]::getMinecraft->func_71410_x
 FOUND CONSTR method rina/turok/bope/bopemod/guiscreen/render/components/widgets/BopeCombobox/BopeCombobox (Lrina/turok/bope/bopemod/guiscreen/render/components/BopeFrame;Lrina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton;Ljava/lang/String;I)V rina/turok/bope/bopemod/guiscreen/render/components/widgets/BopeCombobox
-New Key: class rina/turok/bope/bopemod/guiscreen/render/components/widgets/BopeCombobox
-New Key: class rina/turok/bope/bopemod/guiscreen/render/components/widgets/BopeCombobox
-Rename field net/minecraft/client/Minecraft/displayWidth[5708,5720]::displayWidth->field_71443_c
-FOUND CONSTR method rina/turok/bope/bopemod/guiscreen/render/components/widgets/BopeCombobox/BopeMenuCombobox/BopeMenuCombobox (Lrina/turok/bope/bopemod/guiscreen/render/components/widgets/BopeCombobox;Ljava/lang/String;I)V rina/turok/bope/bopemod/guiscreen/render/components/widgets/BopeCombobox/BopeMenuCombobox
 Import: net.minecraft.client.Minecraft
-Adding 7 imports
-        java.util.ArrayList
+Adding 6 imports
         rina.turok.bope.Bope
         rina.turok.bope.bopemod.guiscreen.render.BopeDraw
         rina.turok.bope.bopemod.guiscreen.render.components.BopeAbstractWidget
@@ -762,7 +766,7 @@ End  Processing: rina/turok/bope/bopemod/guiscreen/render/components/widgets/Bop
 
 Start Processing: rina/turok/bope/bopemod/guiscreen/render/components/widgets/BopeLabel.java
 FOUND CONSTR method rina/turok/bope/bopemod/guiscreen/render/components/widgets/BopeLabel/BopeLabel (Lrina/turok/bope/bopemod/guiscreen/render/components/BopeFrame;Lrina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton;Ljava/lang/String;I)V rina/turok/bope/bopemod/guiscreen/render/components/widgets/BopeLabel
-Rename method net/minecraft/client/renderer/GlStateManager/enableBlend ()V[4336,4347]::enableBlend->func_179147_l
+Rename method net/minecraft/client/renderer/GlStateManager/enableBlend ()V[4348,4359]::enableBlend->func_179147_l
 Import: net.minecraft.client.renderer.GlStateManager
 Adding 8 imports
         org.lwjgl.opengl.GL11
@@ -774,6 +778,17 @@ Adding 8 imports
         rina.turok.bope.bopemod.guiscreen.settings.BopeSetting
         rina.turok.turok.draw.TurokRenderHelp
 End  Processing: rina/turok/bope/bopemod/guiscreen/render/components/widgets/BopeLabel.java
+
+Start Processing: rina/turok/bope/bopemod/guiscreen/render/components/widgets/BopeMenu.java
+Rename method net/minecraft/client/Minecraft/getMinecraft ()Lnet/minecraft/client/Minecraft;[1178,1190]::getMinecraft->func_71410_x
+FOUND CONSTR method rina/turok/bope/bopemod/guiscreen/render/components/widgets/BopeMenu/BopeMenu (Lrina/turok/bope/bopemod/guiscreen/render/components/widgets/BopeCombobox;Ljava/util/List;Ljava/lang/String;)V rina/turok/bope/bopemod/guiscreen/render/components/widgets/BopeMenu
+Import: net.minecraft.client.Minecraft
+Adding 4 imports
+        java.util.ArrayList
+        java.util.List
+        rina.turok.bope.Bope
+        rina.turok.bope.bopemod.guiscreen.render.BopeDraw
+End  Processing: rina/turok/bope/bopemod/guiscreen/render/components/widgets/BopeMenu.java
 
 Start Processing: rina/turok/bope/bopemod/guiscreen/render/components/widgets/BopeSlider.java
 FOUND CONSTR method rina/turok/bope/bopemod/guiscreen/render/components/widgets/BopeSlider/BopeSlider (Lrina/turok/bope/bopemod/guiscreen/render/components/BopeFrame;Lrina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton;Ljava/lang/String;I)V rina/turok/bope/bopemod/guiscreen/render/components/widgets/BopeSlider
@@ -787,6 +802,14 @@ Adding 7 imports
         rina.turok.bope.bopemod.guiscreen.settings.BopeSetting
         rina.turok.turok.values.TurokDouble
 End  Processing: rina/turok/bope/bopemod/guiscreen/render/components/widgets/BopeSlider.java
+
+Start Processing: rina/turok/bope/bopemod/guiscreen/render/components/widgets/BopeSubMenu.java
+FOUND CONSTR method rina/turok/bope/bopemod/guiscreen/render/components/widgets/BopeSubMenu/BopeSubMenu (Lrina/turok/bope/bopemod/guiscreen/render/components/widgets/BopeMenu;Ljava/lang/String;I)V rina/turok/bope/bopemod/guiscreen/render/components/widgets/BopeSubMenu
+Import: java.util.*
+Adding 2 imports
+        rina.turok.bope.Bope
+        rina.turok.bope.bopemod.guiscreen.render.BopeDraw
+End  Processing: rina/turok/bope/bopemod/guiscreen/render/components/widgets/BopeSubMenu.java
 
 Start Processing: rina/turok/bope/bopemod/guiscreen/render/pinnables/BopeFrame.java
 Rename method net/minecraft/client/Minecraft/getMinecraft ()Lnet/minecraft/client/Minecraft;[1478,1490]::getMinecraft->func_71410_x
@@ -804,11 +827,7 @@ End  Processing: rina/turok/bope/bopemod/guiscreen/render/pinnables/BopeFrame.ja
 Start Processing: rina/turok/bope/bopemod/guiscreen/render/pinnables/BopePinnable.java
 Rename method net/minecraft/client/Minecraft/getMinecraft ()Lnet/minecraft/client/Minecraft;[1106,1118]::getMinecraft->func_71410_x
 FOUND CONSTR method rina/turok/bope/bopemod/guiscreen/render/pinnables/BopePinnable/BopePinnable (Ljava/lang/String;Ljava/lang/String;FII)V rina/turok/bope/bopemod/guiscreen/render/pinnables/BopePinnable
-Rename field net/minecraft/client/Minecraft/displayWidth[1436,1448]::displayWidth->field_71443_c
-Rename field net/minecraft/client/Minecraft/displayHeight[1484,1497]::displayHeight->field_71440_d
-Rename field net/minecraft/client/Minecraft/displayWidth[3374,3386]::displayWidth->field_71443_c
-Rename field net/minecraft/client/Minecraft/displayHeight[3422,3435]::displayHeight->field_71440_d
-Rename method net/minecraft/client/renderer/GlStateManager/enableBlend ()V[4745,4756]::enableBlend->func_179147_l
+Rename method net/minecraft/client/renderer/GlStateManager/enableBlend ()V[4739,4750]::enableBlend->func_179147_l
 Import: net.minecraft.client.renderer.GlStateManager
 Import: net.minecraft.client.Minecraft
 Adding 4 imports
@@ -876,10 +895,10 @@ End  Processing: rina/turok/bope/bopemod/hacks/BopeFinderModule.java
 
 Start Processing: rina/turok/bope/bopemod/hacks/chat/BopeChatStyle.java
 FOUND CONSTR method rina/turok/bope/bopemod/hacks/chat/BopeChatStyle/BopeChatStyle ()V rina/turok/bope/bopemod/hacks/chat/BopeChatStyle
-Rename method net/minecraft/util/text/ITextComponent/getUnformattedText ()Ljava/lang/String;[2899,2917]::getUnformattedText->func_150260_c
-Rename method net/minecraft/util/text/ITextComponent/appendText (Ljava/lang/String;)Lnet/minecraft/util/text/ITextComponent;[3223,3233]::appendText->func_150258_a
-Rename method net/minecraft/util/text/ITextComponent/appendText (Ljava/lang/String;)Lnet/minecraft/util/text/ITextComponent;[3852,3862]::appendText->func_150258_a
-Rename method net/minecraft/util/text/ITextComponent/appendSibling (Lnet/minecraft/util/text/ITextComponent;)Lnet/minecraft/util/text/ITextComponent;[3919,3932]::appendSibling->func_150257_a
+Rename method net/minecraft/util/text/ITextComponent/getUnformattedText ()Ljava/lang/String;[3672,3690]::getUnformattedText->func_150260_c
+Rename method net/minecraft/util/text/ITextComponent/appendText (Ljava/lang/String;)Lnet/minecraft/util/text/ITextComponent;[4129,4139]::appendText->func_150258_a
+Rename method net/minecraft/util/text/ITextComponent/appendText (Ljava/lang/String;)Lnet/minecraft/util/text/ITextComponent;[4680,4690]::appendText->func_150258_a
+Rename method net/minecraft/util/text/ITextComponent/appendSibling (Lnet/minecraft/util/text/ITextComponent;)Lnet/minecraft/util/text/ITextComponent;[4781,4794]::appendSibling->func_150257_a
 Import: net.minecraftforge.client.event.ClientChatReceivedEvent
 Import: net.minecraft.util.text.TextComponentString
 Import: com.mojang.realmsclient.gui.ChatFormatting
@@ -899,8 +918,8 @@ End  Processing: rina/turok/bope/bopemod/hacks/chat/BopeChatStyle.java
 Start Processing: rina/turok/bope/bopemod/hacks/chat/BopeChatSuffix.java
 FOUND CONSTR method rina/turok/bope/bopemod/hacks/chat/BopeChatSuffix/BopeChatSuffix ()V rina/turok/bope/bopemod/hacks/chat/BopeChatSuffix
 New Key: class rina/turok/bope/bopemod/events/BopeEventPacket
-Rename method net/minecraft/network/play/client/CPacketChatMessage/getMessage ()Ljava/lang/String;[2828,2838]::getMessage->func_149439_c
-Rename field net/minecraft/network/play/client/CPacketChatMessage/message[5221,5228]::message->field_149440_a
+Rename method net/minecraft/network/play/client/CPacketChatMessage/getMessage ()Ljava/lang/String;[2945,2955]::getMessage->func_149439_c
+Rename field net/minecraft/network/play/client/CPacketChatMessage/message[5338,5345]::message->field_149440_a
 Import: net.minecraft.network.play.client.CPacketChatMessage
 Adding 8 imports
         java.util.Random

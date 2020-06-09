@@ -125,6 +125,7 @@ public class BopeButton extends BopeAbstractWidget {
 		return false;
 	}
 
+	@Override
 	public boolean can() {
 		return this.can;
 	}

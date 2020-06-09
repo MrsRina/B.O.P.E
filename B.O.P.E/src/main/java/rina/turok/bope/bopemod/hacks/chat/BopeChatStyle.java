@@ -35,25 +35,27 @@ import rina.turok.bope.Bope;
 */
 public class BopeChatStyle extends BopeModule {
 	public List<String> colors_combobox = combobox(
-		"False", // False. :)
-		"LIGHT_PURPLE",
-		"DARK_PURPLE",
-		"DARK_GREEN",
-		"DARK_GRAY",
-		"DARK_BLUE",
-		"DARK_AQUA",
-		"DARK_RED",
-		"YELLOW",
-		"GREEN",
-		"BLACK",
-		"WHITE",
-		"BLUE",
-		"AQUA",
-		"RED"
+		"Disabled", // False. :)
+		ChatFormatting.BLACK        + "Black",
+		ChatFormatting.RED          + "Red",
+		ChatFormatting.AQUA         + "Aqua",
+		ChatFormatting.BLUE         + "Blue",
+		ChatFormatting.GOLD         + "Gold",
+		ChatFormatting.GRAY         + "Gray",
+		ChatFormatting.WHITE        + "White",
+		ChatFormatting.GREEN        + "Green",
+		ChatFormatting.YELLOW       + "Yellow",
+		ChatFormatting.DARK_RED     + "Dark_Red",
+		ChatFormatting.DARK_AQUA    + "Dark_aqua",
+		ChatFormatting.DARK_BLUE    + "Dark_Blue",
+		ChatFormatting.DARK_GRAY    + "Dark_Gray",
+		ChatFormatting.DARK_GREEN   + "Dark_Green",
+		ChatFormatting.DARK_PURPLE  + "Dark_Purple",
+		ChatFormatting.LIGHT_PURPLE + "Light_Purple"
 	);
 
-	BopeSetting color_time = create("Time", "ChatStyleColorTime", "DARK_BLUE", colors_combobox); 
-	BopeSetting color_name = create("Name", "ChatStyleColorMessage", "DARK_BLUE", colors_combobox);
+	BopeSetting color_time = create("Time", "ChatStyleColorTime", colors_combobox.get(0), colors_combobox); 
+	BopeSetting color_name = create("Name", "ChatStyleColorMessage", colors_combobox.get(0), colors_combobox);
 	BopeSetting type_mode  = create("Type Mode", "ChatStyleTypeMode", "[]", combobox("[]", "<>"));
 	//BopeSetting color_mode   = create("Color Mode", "ChatStyleColorMode", "HUD", combobox("HUD", "Server"));
 
@@ -74,20 +76,22 @@ public class BopeChatStyle extends BopeModule {
 		release("B.O.P.E - Module - B.O.P.E");
 
 		// Colors.
-		color.put("LIGHT_PURPLE", ChatFormatting.LIGHT_PURPLE);
-		color.put("DARK_PURPLE",  ChatFormatting.DARK_PURPLE);
-		color.put("DARK_GREEN",   ChatFormatting.DARK_GREEN);
-		color.put("DARK_GRAY",    ChatFormatting.DARK_GRAY);
-		color.put("DARK_BLUE",    ChatFormatting.DARK_BLUE);
-		color.put("DARK_AQUA",    ChatFormatting.DARK_AQUA);
-		color.put("DARK_RED",     ChatFormatting.DARK_RED);
-		color.put("YELLOW",       ChatFormatting.YELLOW);
-		color.put("GREEN",        ChatFormatting.GREEN);
-		color.put("BLACK",        ChatFormatting.BLACK);
-		color.put("WHITE",        ChatFormatting.WHITE);
-		color.put("BLUE",         ChatFormatting.BLUE);
-		color.put("AQUA",         ChatFormatting.AQUA);
-		color.put("RED",          ChatFormatting.RED);
+		color.put(colors_combobox.get(1),  ChatFormatting.BLACK);
+		color.put(colors_combobox.get(2),  ChatFormatting.RED);
+		color.put(colors_combobox.get(3),  ChatFormatting.AQUA);
+		color.put(colors_combobox.get(4),  ChatFormatting.BLUE);
+		color.put(colors_combobox.get(5),  ChatFormatting.GOLD);
+		color.put(colors_combobox.get(6),  ChatFormatting.GRAY);
+		color.put(colors_combobox.get(7),  ChatFormatting.WHITE);
+		color.put(colors_combobox.get(8),  ChatFormatting.GREEN);
+		color.put(colors_combobox.get(9),  ChatFormatting.YELLOW);
+		color.put(colors_combobox.get(10), ChatFormatting.DARK_RED);
+		color.put(colors_combobox.get(11), ChatFormatting.DARK_AQUA);
+		color.put(colors_combobox.get(12), ChatFormatting.DARK_BLUE);
+		color.put(colors_combobox.get(13), ChatFormatting.DARK_GRAY);
+		color.put(colors_combobox.get(14), ChatFormatting.DARK_GREEN);
+		color.put(colors_combobox.get(15), ChatFormatting.DARK_PURPLE);
+		color.put(colors_combobox.get(16), ChatFormatting.LIGHT_PURPLE);
 	}
 
 	@EventHandler
@@ -96,21 +100,28 @@ public class BopeChatStyle extends BopeModule {
 
 		String original_message = event.getMessage().getUnformattedText();
 
+		boolean cancel = false;
+
 		event_color_time = true;
 		event_color_name = true;
 
-		if (color_time.in("False")) {
+		String pre = type_mode.in("[]") ? "[" : "<";
+		String end = type_mode.in("[]") ? "]" : ">";
+
+		if (color_time.in("Disabled")) {
 			event_color_time = false;
 		}
 
-		if (color_name.in("False")) {
+		if (color_name.in("Disabled")) {
 			event_color_name = false;
 		}
 
 		if (event_color_time) {
 			ChatFormatting c = color.get(color_time.get_current_value());
 
-			message.appendText(Bope.g + "[" + c + new SimpleDateFormat("k:mm:a").format(new Date()) + Bope.g + "]" + " > ");
+			message.appendText(Bope.r + pre + c + new SimpleDateFormat("k:mm:a").format(new Date()) + Bope.r + end + " ");
+		
+			cancel = false;
 		}
 
 		if (event_color_name) {
@@ -119,17 +130,18 @@ public class BopeChatStyle extends BopeModule {
 			String[] separates = original_message.trim().split("\\s+");
 
 			String base_1 = separates[0];
-
-			String pre = type_mode.in("[]") ? "[" : "<";
-			String end = type_mode.in("[]") ? "]" : ">";
 				
-			base_1 = base_1.replaceAll("<", Bope.g + pre + c);
-			base_1 = base_1.replaceAll(">", Bope.g + end + Bope.r);
+			base_1 = base_1.replaceAll("<", Bope.r + pre + c);
+			base_1 = base_1.replaceAll(">", Bope.r + end + Bope.r);
 
 			String message_of_player = original_message.substring(separates[0].length());
 
 			message.appendText(base_1 + message_of_player);
-		} else {
+
+			cancel = true;
+		}
+
+		if (!cancel) {
 			message.appendSibling(event.getMessage());
 		}
 

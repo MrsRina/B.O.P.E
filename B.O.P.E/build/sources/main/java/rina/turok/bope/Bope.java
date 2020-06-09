@@ -110,10 +110,8 @@ public class Bope {
 
 		send_minecraft_log("Managers are initialed.");
 
-		click_gui = new BopeGUI();
+		// Fix somethings. :)
 		click_hud = new BopeHUD();
-
-		send_minecraft_log("GUI and HUD initialed.");
 
 		turok = new Turok("Turok");
 
@@ -124,10 +122,13 @@ public class Bope {
 		BopeEventRegister.register_module_manager(event_manager);
 
 		send_minecraft_log("Events registered.");
-		send_minecraft_log("Client started.");
 
 		// Load all config.
 		config_manager.load();
+
+		click_gui = new BopeGUI();
+
+		send_minecraft_log("GUI and HUD initialed.");
 
 		// For just fix the GUI.
 		if (module_manager.get_module_with_tag("GUI").is_active()) {
@@ -138,6 +139,8 @@ public class Bope {
 		if (module_manager.get_module_with_tag("HUD").is_active()) {
 			module_manager.get_module_with_tag("HUD").set_active(false);
 		}
+
+		send_minecraft_log("Client started.");
 	}
 
 	public void init_log(String name) {

@@ -42,6 +42,11 @@ public class BopeChatSuffix extends BopeModule {
 
 	StringBuilder suffix;
 
+	// New.
+	String[] random_suffix_pre = {};
+	String[] random_suffix_mid = {};
+	String[] random_suffix_end = {};
+
 	// I have made a simple list names.
 	String[] random_client_name = {
 		"bope",

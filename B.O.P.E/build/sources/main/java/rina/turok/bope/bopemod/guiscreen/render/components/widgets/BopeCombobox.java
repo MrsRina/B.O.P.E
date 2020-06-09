@@ -61,7 +61,7 @@ public class BopeCombobox extends BopeAbstractWidget {
 		this.master  = master;
 		this.setting = Bope.get_setting_manager().get_setting_with_tag(master.get_module(), tag);
 
-		this.menu = new BopeMenu(this, this.setting.get_values(), this.setting.get_current_value());
+		this.menu = new BopeMenu(this, this.setting.get_values());
 
 		this.x = master.get_x();
 		this.y = update_postion;
@@ -73,8 +73,7 @@ public class BopeCombobox extends BopeAbstractWidget {
 		this.width  = master.get_width();
 		this.height = font.get_string_height(this.setting.get_name(), this.smoth);
 
-		this.combobox_name      = this.setting.get_name();
-		this.menu.current_value = this.setting.get_current_value();
+		this.combobox_name = this.setting.get_name();
 
 		this.can = true;
 	}
@@ -221,7 +220,5 @@ public class BopeCombobox extends BopeAbstractWidget {
 		}
 
 		this.menu.render(motion(mx, my), this.save_y, mx, my);
-
-		this.setting.set_current_value(this.menu.current_value);
 	}
 }

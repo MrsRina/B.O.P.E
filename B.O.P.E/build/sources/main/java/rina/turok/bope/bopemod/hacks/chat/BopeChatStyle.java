@@ -36,22 +36,22 @@ import rina.turok.bope.Bope;
 public class BopeChatStyle extends BopeModule {
 	public List<String> colors_combobox = combobox(
 		"Disabled", // False. :)
-		ChatFormatting.BLACK        + "Black",
-		ChatFormatting.RED          + "Red",
-		ChatFormatting.AQUA         + "Aqua",
-		ChatFormatting.BLUE         + "Blue",
-		ChatFormatting.GOLD         + "Gold",
-		ChatFormatting.GRAY         + "Gray",
-		ChatFormatting.WHITE        + "White",
-		ChatFormatting.GREEN        + "Green",
-		ChatFormatting.YELLOW       + "Yellow",
-		ChatFormatting.DARK_RED     + "Dark_Red",
-		ChatFormatting.DARK_AQUA    + "Dark_aqua",
-		ChatFormatting.DARK_BLUE    + "Dark_Blue",
-		ChatFormatting.DARK_GRAY    + "Dark_Gray",
-		ChatFormatting.DARK_GREEN   + "Dark_Green",
-		ChatFormatting.DARK_PURPLE  + "Dark_Purple",
-		ChatFormatting.LIGHT_PURPLE + "Light_Purple"
+		"Black",
+		"Red",
+		"Aqua",
+		"Blue",
+		"Gold",
+		"Gray",
+		"White",
+		"Green",
+		"Yellow",
+		"Dark_Red",
+		"Dark_aqua",
+		"Dark_Blue",
+		"Dark_Gray",
+		"Dark_Green",
+		"Dark_Purple",
+		"Light_Purple"
 	);
 
 	BopeSetting color_time = create("Time", "ChatStyleColorTime", colors_combobox.get(0), colors_combobox); 

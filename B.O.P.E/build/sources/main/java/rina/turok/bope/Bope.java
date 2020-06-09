@@ -112,6 +112,7 @@ public class Bope {
 
 		// Fix somethings. :)
 		click_hud = new BopeHUD();
+		click_gui = new BopeGUI();
 
 		turok = new Turok("Turok");
 
@@ -125,8 +126,6 @@ public class Bope {
 
 		// Load all config.
 		config_manager.load();
-
-		click_gui = new BopeGUI();
 
 		send_minecraft_log("GUI and HUD initialed.");
 

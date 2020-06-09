@@ -97,7 +97,7 @@ public class BopeSubMenu {
 	public void click(int mx, int my, int mouse) {
 		if (mouse == 0) {
 			if (motion(mx, my) && this.menu.is_open()) {
-				this.menu.current_value = this.name;
+				this.menu.get_master().get_setting().set_current_value(this.name);
 
 				this.menu.set_open(false);
 				this.menu.get_master().set_open(false);
@@ -120,7 +120,7 @@ public class BopeSubMenu {
 		int bg_b = Bope.click_gui.theme_widget_background_b;
 		int bg_a = Bope.click_gui.theme_widget_background_a;
 
-		if (motion(mx, my) || this.name.equals(this.menu.current_value)) {
+		if (motion(mx, my) || this.name.equals(this.menu.get_master().get_setting().get_current_value())) {
 			BopeDraw.draw_rect(this.x, this.save_y, this.x + this.width - separe, this.save_y + this.height, bg_r, bg_g, bg_b, bg_a);
 
 			BopeDraw.draw_string(this.name, this.x + separe, this.save_y, ns_r, ns_r, ns_r, this.smoth);

@@ -2,11 +2,11 @@ Processing 112 files
 Start Processing: rina/turok/bope/Bope.java
 New Key: class net/minecraftforge/fml/common/Mod
 New Key: class net/minecraftforge/fml/common/Mod
-Rename method net/minecraft/client/Minecraft/getMinecraft ()Lnet/minecraft/client/Minecraft;[5228,5240]::getMinecraft->func_71410_x
-Rename field net/minecraft/client/Minecraft/player[5243,5249]::player->field_71439_g
-Rename method net/minecraft/client/Minecraft/getMinecraft ()Lnet/minecraft/client/Minecraft;[5300,5312]::getMinecraft->func_71410_x
-Rename field net/minecraft/client/Minecraft/player[5315,5321]::player->field_71439_g
-Rename method net/minecraft/command/ICommandSender/getName ()Ljava/lang/String;[5329,5336]::getName->func_70005_c_
+Rename method net/minecraft/client/Minecraft/getMinecraft ()Lnet/minecraft/client/Minecraft;[5227,5239]::getMinecraft->func_71410_x
+Rename field net/minecraft/client/Minecraft/player[5242,5248]::player->field_71439_g
+Rename method net/minecraft/client/Minecraft/getMinecraft ()Lnet/minecraft/client/Minecraft;[5299,5311]::getMinecraft->func_71410_x
+Rename field net/minecraft/client/Minecraft/player[5314,5320]::player->field_71439_g
+Rename method net/minecraft/command/ICommandSender/getName ()Ljava/lang/String;[5328,5335]::getName->func_70005_c_
 Import: net.minecraftforge.fml.common.event.FMLInitializationEvent
 Import: com.mojang.realmsclient.gui.ChatFormatting
 Import: net.minecraftforge.fml.common.Mod
@@ -272,14 +272,14 @@ End  Processing: rina/turok/bope/bopemod/events/BopeEventRender.java
 Start Processing: rina/turok/bope/bopemod/guiscreen/BopeGUI.java
 Rename method net/minecraft/client/Minecraft/getMinecraft ()Lnet/minecraft/client/Minecraft;[1735,1747]::getMinecraft->func_71410_x
 FOUND CONSTR method rina/turok/bope/bopemod/guiscreen/BopeGUI/BopeGUI ()V rina/turok/bope/bopemod/guiscreen/BopeGUI
-Rename method net/minecraft/client/gui/GuiScreen/doesGuiPauseGame ()Z[2491,2507]::doesGuiPauseGame->func_73868_f
-Rename method net/minecraft/client/gui/GuiScreen/onGuiClosed ()V[2593,2604]::onGuiClosed->func_146281_b
-Rename method net/minecraft/client/gui/GuiScreen/keyTyped (CI)V[2911,2919]::keyTyped->func_73869_a
-Rename method net/minecraft/client/Minecraft/displayGuiScreen (Lnet/minecraft/client/gui/GuiScreen;)V[3125,3141]::displayGuiScreen->func_147108_a
-Rename method net/minecraft/client/gui/GuiScreen/mouseClicked (III)V[3192,3204]::mouseClicked->func_73864_a
-Rename method net/minecraft/client/gui/GuiScreen/mouseReleased (III)V[3942,3955]::mouseReleased->func_146286_b
-Rename method net/minecraft/client/gui/GuiScreen/drawScreen (IIF)V[4278,4288]::drawScreen->func_73863_a
-Rename method net/minecraft/client/gui/GuiScreen/drawDefaultBackground ()V[4356,4377]::drawDefaultBackground->func_146276_q_
+Rename method net/minecraft/client/gui/GuiScreen/doesGuiPauseGame ()Z[2694,2710]::doesGuiPauseGame->func_73868_f
+Rename method net/minecraft/client/gui/GuiScreen/onGuiClosed ()V[2796,2807]::onGuiClosed->func_146281_b
+Rename method net/minecraft/client/gui/GuiScreen/keyTyped (CI)V[3114,3122]::keyTyped->func_73869_a
+Rename method net/minecraft/client/Minecraft/displayGuiScreen (Lnet/minecraft/client/gui/GuiScreen;)V[3328,3344]::displayGuiScreen->func_147108_a
+Rename method net/minecraft/client/gui/GuiScreen/mouseClicked (III)V[3395,3407]::mouseClicked->func_73864_a
+Rename method net/minecraft/client/gui/GuiScreen/mouseReleased (III)V[4145,4158]::mouseReleased->func_146286_b
+Rename method net/minecraft/client/gui/GuiScreen/drawScreen (IIF)V[4481,4491]::drawScreen->func_73863_a
+Rename method net/minecraft/client/gui/GuiScreen/drawDefaultBackground ()V[4559,4580]::drawDefaultBackground->func_146276_q_
 Import: net.minecraft.client.gui.ScaledResolution
 Import: net.minecraft.client.gui.GuiScreen
 Import: net.minecraft.client.Minecraft
@@ -780,8 +780,8 @@ Adding 8 imports
 End  Processing: rina/turok/bope/bopemod/guiscreen/render/components/widgets/BopeLabel.java
 
 Start Processing: rina/turok/bope/bopemod/guiscreen/render/components/widgets/BopeMenu.java
-Rename method net/minecraft/client/Minecraft/getMinecraft ()Lnet/minecraft/client/Minecraft;[1178,1190]::getMinecraft->func_71410_x
-FOUND CONSTR method rina/turok/bope/bopemod/guiscreen/render/components/widgets/BopeMenu/BopeMenu (Lrina/turok/bope/bopemod/guiscreen/render/components/widgets/BopeCombobox;Ljava/util/List;Ljava/lang/String;)V rina/turok/bope/bopemod/guiscreen/render/components/widgets/BopeMenu
+Rename method net/minecraft/client/Minecraft/getMinecraft ()Lnet/minecraft/client/Minecraft;[1145,1157]::getMinecraft->func_71410_x
+FOUND CONSTR method rina/turok/bope/bopemod/guiscreen/render/components/widgets/BopeMenu/BopeMenu (Lrina/turok/bope/bopemod/guiscreen/render/components/widgets/BopeCombobox;Ljava/util/List;)V rina/turok/bope/bopemod/guiscreen/render/components/widgets/BopeMenu
 Import: net.minecraft.client.Minecraft
 Adding 4 imports
         java.util.ArrayList
@@ -895,10 +895,10 @@ End  Processing: rina/turok/bope/bopemod/hacks/BopeFinderModule.java
 
 Start Processing: rina/turok/bope/bopemod/hacks/chat/BopeChatStyle.java
 FOUND CONSTR method rina/turok/bope/bopemod/hacks/chat/BopeChatStyle/BopeChatStyle ()V rina/turok/bope/bopemod/hacks/chat/BopeChatStyle
-Rename method net/minecraft/util/text/ITextComponent/getUnformattedText ()Ljava/lang/String;[3672,3690]::getUnformattedText->func_150260_c
-Rename method net/minecraft/util/text/ITextComponent/appendText (Ljava/lang/String;)Lnet/minecraft/util/text/ITextComponent;[4129,4139]::appendText->func_150258_a
-Rename method net/minecraft/util/text/ITextComponent/appendText (Ljava/lang/String;)Lnet/minecraft/util/text/ITextComponent;[4680,4690]::appendText->func_150258_a
-Rename method net/minecraft/util/text/ITextComponent/appendSibling (Lnet/minecraft/util/text/ITextComponent;)Lnet/minecraft/util/text/ITextComponent;[4781,4794]::appendSibling->func_150257_a
+Rename method net/minecraft/util/text/ITextComponent/getUnformattedText ()Ljava/lang/String;[3192,3210]::getUnformattedText->func_150260_c
+Rename method net/minecraft/util/text/ITextComponent/appendText (Ljava/lang/String;)Lnet/minecraft/util/text/ITextComponent;[3649,3659]::appendText->func_150258_a
+Rename method net/minecraft/util/text/ITextComponent/appendText (Ljava/lang/String;)Lnet/minecraft/util/text/ITextComponent;[4200,4210]::appendText->func_150258_a
+Rename method net/minecraft/util/text/ITextComponent/appendSibling (Lnet/minecraft/util/text/ITextComponent;)Lnet/minecraft/util/text/ITextComponent;[4301,4314]::appendSibling->func_150257_a
 Import: net.minecraftforge.client.event.ClientChatReceivedEvent
 Import: net.minecraft.util.text.TextComponentString
 Import: com.mojang.realmsclient.gui.ChatFormatting

@@ -40,11 +40,9 @@ public class BopeMenu {
 
 	private boolean opened;
 
-	public String current_value;
-
 	public final Minecraft mc = Minecraft.getMinecraft();
 
-	public BopeMenu(BopeCombobox master, List<String> items, String current) {
+	public BopeMenu(BopeCombobox master, List<String> items) {
 		this.master    = master;
 		this.sub_menu = new ArrayList<>();
 
@@ -60,8 +58,6 @@ public class BopeMenu {
 
 		int count = 0;
 		int size  = items.size();
-
-		this.current_value = current;
 
 		for (String values : items) {
 			BopeSubMenu sub_menus = new BopeSubMenu(this, values, this.height);

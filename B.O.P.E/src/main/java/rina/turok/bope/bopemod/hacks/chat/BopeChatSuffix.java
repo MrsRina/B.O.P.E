@@ -115,7 +115,7 @@ public class BopeChatSuffix extends BopeModule {
 		" \u2764", // heart
 		" \u267f", // wheelchair ♿
 		" \u262f", // yingyang ☯
-		" "       // None.
+		" "        // None.
 	};
 
 	public BopeChatSuffix() {

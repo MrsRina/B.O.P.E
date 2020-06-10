@@ -53,6 +53,9 @@ import rina.turok.bope.bopemod.events.BopeEventPacket;
 // Modules.
 import rina.turok.bope.bopemod.hacks.BopeCategory;
 
+// Util.
+import static rina.turok.bope.bopemod.util.BopeUtilMath.calcule_look_at;
+
 // Data.
 import rina.turok.bope.bopemod.BopeModule;
 
@@ -363,27 +366,6 @@ public class BopeAutoCrystal extends BopeModule {
 			&&  mc.world.getBlockState(bs2).getBlock() == Blocks.AIR
 			&&  mc.world.getEntitiesWithinAABB((Class) Entity.class, new AxisAlignedBB(bs1)).isEmpty()
 			&&  mc.world.getEntitiesWithinAABB((Class) Entity.class, new AxisAlignedBB(bs2)).isEmpty();
-	}
-
-	// KAMI :).
-	public double[] calcule_look_at(double px, double py, double pz, EntityPlayer player) {
-		double diff_x = player.posX - px;
-		double diff_y = player.posY - py;
-		double diff_z = player.posZ - pz;
-
-		double dif_xyz = Math.sqrt(diff_x * diff_x + diff_y * diff_y + diff_z * diff_z);
-
-		double pitch = Math.asin(diff_y);
-		double yaw   = Math.atan2(diff_z, diff_x);
-
-		pitch = pitch * 180.0d / Math.PI;
-		yaw   = yaw   * 180.0d / Math.PI;
-
-		yaw += 90f;
-
-		return new double[] {
-			yaw, pitch
-		};
 	}
 
 	public EntityEnderCrystal request(String tag, int index) {

@@ -29,6 +29,10 @@ import rina.turok.bope.bopemod.guiscreen.settings.BopeSetting;
 // Modules.
 import rina.turok.bope.bopemod.hacks.BopeCategory;
 
+// Util.
+import static rina.turok.bope.bopemod.util.BopeUtilMath.legit_rotation;
+import static rina.turok.bope.bopemod.util.BopeUtilBlock.is_possible;
+
 // Data.
 import rina.turok.bope.bopemod.BopeMessage;
 import rina.turok.bope.bopemod.BopeModule;
@@ -297,28 +301,6 @@ public class BopeSurround extends BopeModule {
 		mc.player.connection.sendPacket(new CPacketPlayer.Rotation(rotations[0], rotations[1], mc.player.onGround));
 	}
 
-	public float[] legit_rotation(Vec3d pos) {
-		Vec3d eye_pos = get_eye_pos();
-
-		double diff_x = pos.x - eye_pos.x;
-		double diff_y = pos.y - eye_pos.y;
-		double diff_z = pos.z - eye_pos.z;
-
-		double diff_x_z = Math.sqrt(diff_x * diff_x + diff_z * diff_z);
-
-		float player_yaw   = (float)   Math.toDegrees(Math.atan2(diff_z, diff_x)) - 90f;
-		float player_pitch = (float) - Math.toDegrees(Math.atan2(diff_y, diff_x_z));
-
-		return new float[] {
-			mc.player.rotationYaw   + MathHelper.wrapDegrees(player_yaw   - mc.player.rotationYaw),
-			mc.player.rotationPitch + MathHelper.wrapDegrees(player_pitch - mc.player.rotationPitch)
-		};
-	}
-
-	public Vec3d get_eye_pos() {
-		return new Vec3d(mc.player.posX, mc.player.posY + mc.player.getEyeHeight(), mc.player.posZ);
-	}
-
 	public EnumFacing get_placeale_side(BlockPos pos) {
 		for (EnumFacing sides : EnumFacing.values()) {
 			BlockPos left_side = pos.offset(sides);
@@ -357,18 +339,6 @@ public class BopeSurround extends BopeModule {
 		}
 
 		return slot;
-	}
-
-	public Block get_block(BlockPos pos) {
-		return get_state(pos).getBlock();
-	}
-
-	public IBlockState get_state(BlockPos pos) {
-		return mc.world.getBlockState(pos);
-	}
-
-	public boolean is_possible(BlockPos pos) {
-		return get_block(pos).canCollideCheck(get_state(pos), false);
 	}
 
 	@Override

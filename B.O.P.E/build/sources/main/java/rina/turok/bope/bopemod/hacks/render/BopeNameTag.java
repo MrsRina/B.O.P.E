@@ -29,6 +29,9 @@ import rina.turok.bope.bopemod.events.BopeEventRender;
 // Modules.
 import rina.turok.bope.bopemod.hacks.BopeCategory;
 
+// Util.
+import static rina.turok.bope.bopemod.util.BopeUtilEntity.get_interpolated_render_pos;
+
 // Data.
 import rina.turok.bope.bopemod.BopeModule;
 
@@ -54,7 +57,7 @@ public class BopeNameTag extends BopeModule {
 	BopeSetting main_ = create("Main Hand", "NameTagMainHand", true);
 	BopeSetting off_h = create("Off Hand", "NameTagOffHand", true);
 	BopeSetting range = create("Range", "NameTagRange", 15, 0, 30);
-	BopeSetting size  = create("Size", "NameTagSize", 4, 3, 4);
+	BopeSetting size  = create("Size", "NameTagSize", 4.0, 1.0, 4.0);
 
 	String totems_left_string = "";
 
@@ -285,29 +288,5 @@ public class BopeNameTag extends BopeModule {
 		}
 
 		return ping;
-	}
-
-	public Vec3d process_interpolated_pos(Entity entity, float ticks) {
-		return new Vec3d(entity.lastTickPosX, entity.lastTickPosY, entity.lastTickPosZ).add(get_interpolated_amout(entity, ticks));
-	}
-
-	public Vec3d get_interpolated_render_pos(Entity entity, float ticks) {
-		return process_interpolated_pos(entity, ticks).subtract(mc.getRenderManager().renderPosX, mc.getRenderManager().renderPosY, mc.getRenderManager().renderPosZ);
-	}
-
-	public Vec3d process_interpolated_amount(Entity entity, double x, double y, double z) {
-		return new Vec3d(
-			(entity.posX - entity.lastTickPosX) * x,
-			(entity.posY - entity.lastTickPosY) * y,
-			(entity.posZ - entity.lastTickPosZ) * z
-		);
-	}
-
-	public Vec3d get_interpolated_amout(Entity entity, float ticks) {
-		return process_interpolated_amount(entity, ticks, ticks, ticks);
-	}
-
-	public Vec3d get_interpolated_entity(Entity entity, float ticks) {
-		return new Vec3d(entity.lastTickPosX, entity.lastTickPosY, entity.lastTickPosZ).add(get_interpolated_amout(entity, ticks));
 	}
 }

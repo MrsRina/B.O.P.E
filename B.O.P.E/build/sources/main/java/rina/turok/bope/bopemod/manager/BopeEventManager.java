@@ -158,6 +158,11 @@ public class BopeEventManager {
 		BopeEventBus.ZERO_ALPINE_EVENT_BUS.post(event);
 	}
 
+	@SubscribeEvent
+	public void onPlayerPush(PlayerSPPushOutOfBlocksEvent event) {
+		BopeEventBus.ZERO_ALPINE_EVENT_BUS.post(event);
+	}
+
 	public String get_tag() {
 		return this.tag;
 	}

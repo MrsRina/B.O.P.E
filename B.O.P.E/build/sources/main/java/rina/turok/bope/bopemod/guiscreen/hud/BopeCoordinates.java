@@ -42,8 +42,10 @@ public class BopeCoordinates extends BopePinnable {
 
 		boolean in_gui = mc.ingameGUI.getChatGUI().getChatOpen();
 
-		if (in_gui && (get_y()) == (BopeDraw.get_height() - get_height() - 1)) {
-			set_y(15, "-");
+		if (in_gui && (get_y() + get_height()) >= (BopeDraw.get_height() - get_height() - 16)) {
+			int comparator = (get_y() + get_height()) - (BopeDraw.get_height() - get_height() - 16);
+
+			set_y(comparator, "-");
 
 			state = true;
 		}

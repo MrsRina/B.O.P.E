@@ -44,7 +44,7 @@ public class BopeStrafe extends BopeModule {
 		super(BopeCategory.BOPE_MOVEMENT);
 
 		// Info.
-		this.name        = "Strafe";
+		this.name        = "§4 Strafe";
 		this.tag         = "Strafe";
 		this.description = "Strafe to movimentation.";
 

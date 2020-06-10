@@ -47,12 +47,6 @@ public class BopeLabel extends BopeCommand {
 			syntax++;
 		}
 
-		if (message.length > 4) {
-			change_2 = message[4];
-
-			syntax++;
-		}
-
 		if (message.length > syntax) {
 			BopeMessage.send_client_error_message(current_prefix() + "label <ModuleName> <ModuleNameLabel> <change1> <change2>");
 

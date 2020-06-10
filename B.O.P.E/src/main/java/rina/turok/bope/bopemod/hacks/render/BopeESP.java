@@ -93,5 +93,7 @@ public class BopeESP extends BopeModule {
 		GlStateManager.enableDepth();
 	}
 
-	public void draw(Entity entity) {}
+	public void draw(Entity entity) {
+		
+	}
 }

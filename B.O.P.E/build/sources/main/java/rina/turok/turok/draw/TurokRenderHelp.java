@@ -24,6 +24,19 @@ public class TurokRenderHelp extends Tessellator {
     }
 
     public static void prepare(String mode_requested) {
+        int mode = 0;
+
+        if (mode_requested.equalsIgnoreCase("quads")) {
+            mode = GL_QUADS;
+        } else if (mode_requested.equalsIgnoreCase("lines")) {
+            mode = GL_LINES;
+        }
+
+        prepare_gl(0.5f);
+        begin(mode);
+    }
+
+    public static void prepare(String mode_requested, float size) {
     	int mode = 0;
 
     	if (mode_requested.equalsIgnoreCase("quads")) {
@@ -32,14 +45,14 @@ public class TurokRenderHelp extends Tessellator {
     		mode = GL_LINES;
     	}
 
-        prepare_gl();
+        prepare_gl(size);
         begin(mode);
     }
 
-    public static void prepare_gl() {
+    public static void prepare_gl(float size) {
         glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
         GlStateManager.tryBlendFuncSeparate(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA, GlStateManager.SourceFactor.ONE, GlStateManager.DestFactor.ZERO);
-        GlStateManager.glLineWidth(1.5F);
+        GlStateManager.glLineWidth(size);
         GlStateManager.disableTexture2D();
         GlStateManager.depthMask(false);
         GlStateManager.enableBlend();

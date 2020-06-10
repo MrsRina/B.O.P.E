@@ -50,9 +50,10 @@ import rina.turok.bope.Bope;
 *
 */
 public class BopeSurround extends BopeModule {
-	BopeSetting blocks_per_tick = create("Blocks Per Tick", "SorroundBlocksPerTick", 4,  1, 6);
-	BopeSetting timeout_tick    = create("Time Out Tick", "SorroundTimeOutTick", 10, 0, 30);
-	BopeSetting tick            = create("Tick", "SorroundTick", 2,  0, 10);
+	BopeSetting animation       = create("Animation", "SurroundAnimation", true);
+	BopeSetting blocks_per_tick = create("Blocks Per Tick", "SurroundBlocksPerTick", 4,  1, 6);
+	BopeSetting timeout_tick    = create("Time Out Tick", "SurroundTimeOutTick", 10, 0, 30);
+	BopeSetting tick            = create("Tick", "SurroundTick", 2,  0, 10);
 
 	int places_tick = 0;
 	int place_tick  = 0;
@@ -280,7 +281,10 @@ public class BopeSurround extends BopeModule {
 		reset_rotate(hit);
 
 		mc.playerController.processRightClickBlock(mc.player, mc.world, left_side, opposite, hit, EnumHand.MAIN_HAND);
-		mc.player.swingArm(EnumHand.MAIN_HAND);
+		
+		if (animation.get_value(true)) {
+			mc.player.swingArm(EnumHand.MAIN_HAND);
+		}
 
 		mc.rightClickDelayTimer = 4;
 

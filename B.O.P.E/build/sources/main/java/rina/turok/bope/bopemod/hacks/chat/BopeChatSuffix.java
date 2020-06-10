@@ -29,6 +29,8 @@ import rina.turok.bope.Bope;
 * Created by Rina.
 * 09/05/20.
 *
+* - It idea come from Hephaestus.
+*
 */
 public class BopeChatSuffix extends BopeModule {
 	BopeSetting ignore = create("Ignore", "ChatSuffixIgnore", true);
@@ -43,88 +45,77 @@ public class BopeChatSuffix extends BopeModule {
 	StringBuilder suffix;
 
 	// New.
-	String[] random_suffix_pre = {};
-	String[] random_suffix_mid = {};
-	String[] random_suffix_end = {};
-
-	// I have made a simple list names.
-	String[] random_client_name = {
+	String[] random_suffix_pre = {
 		"bope",
 		"turok",
-		"lunar",
 		"mercury",
-		"xulu",
-		"hephaestus",
-		"axios",
-		"leafyhack",
-		"phobos",
-		"bophos",
-		"megyn",
-		"nutfail",
-		"nutlord",
-		"nutgod",
-		"impact",
-		"axios",
-		"seppuku",
-		"osiris",
-		"wao",
-		"wwe",
-		"team",
-		"aurora",
 		"salhack",
+		"phbobos",
+		"waohack",
+		"nutgod",
+		"nutlord",
+		"nutfail",
+		"orkut",
+		"osiris",
+		"seppuku",
+		"aurora",
+		"wwe",
 		"rusherhack",
-		"ruhack",
-		"mad",
-		"big",
-		"nigger",
-		"reload",
-		"black",
-		"three nine y",
-		"demtios",
-		"six nine hr",
-		"darkmind",
-		"walle",
-		"sasha",
-		"awesome",
-		"stone",
-		"fuck",
-		"udumb",
-		"haha",
-		"cringe",
-		"othersskids",
-		"caralho",
-		""
+		"hephaestus",
+		"impact",
+		"team",
+		"rhuama",
+		"oct",
+		"future",
+		"huzuni",
+		"kami",
+		"optifine",
+		"wrust",
+		"root",
+		"holocaust",
+		"twd",
+		"aristois",
+		"axiom",
+		"fit",
+		"rina",
+		"zbob",
+		"trump",
+		"atlas",
+		"ares",
+		"oldturok",
+		"kotlin",
+		"keemy",
+		"based",
+		"rgba",
+		"rgb",
+		"obama"
 	};
 
-	// A list with finish ends words.
-	String[] random_client_finish = {
-		" eu",
-		" gg",
-		" ca",
-		" me",
+	String[] random_suffix_mid = {
+		".eu",
+		".ez",
+		".gg",
+		".cc",
+		".ff",
+		".kt",
+		".gay",
+		".java",
+		".god",
 		" god",
-		" mad",
-		" haha",
-		" ez",
-		" demtios",
-		" stone",
-		" big",
-		" spicy",
-		" bit",
-		" lunatic",
-		" tranny",
-		" vadia",
-		" cringe",
-		" ssssss",
-		" phobos",
-		" wao",
-		" aurora",
-		" chungus",
-		" on top",
-		" a",
-		" powerful",
-		" auto",
-		""
+		" blue",
+		" "
+	};
+
+	String[] random_suffix_end = {
+		" \u262d", // hammer and sickle ☭
+		" \u0fc9", // nut symbol ࿉
+		" \u2620", // skull ☠
+		" \u2623", // biohazard ☣
+		" \u2654", // brown ♔
+		" \u2764", // heart
+		" \u267f", // wheelchair ♿
+		" \u262f", // yingyang ☯
+		" "       // None.
 	};
 
 	public BopeChatSuffix() {
@@ -193,7 +184,7 @@ public class BopeChatSuffix extends BopeModule {
 		if (accept_suffix) {
 			if (suffix_default) {
 				// Just default.
-				message += Bope.BOPE_SIGN + convert_base("bope");
+				message += Bope.BOPE_SIGN + random_suffix_end[2] + " " + convert_base("bope") + random_suffix_end[2];
 			}
 
 			if (suffix_random) {
@@ -201,8 +192,9 @@ public class BopeChatSuffix extends BopeModule {
 				StringBuilder suffix_with_randoms = new StringBuilder();
 
 				// Convert the base using the TurokFont.
-				suffix_with_randoms.append(convert_base(random_string(random_client_name)));
-				suffix_with_randoms.append(convert_base(random_string(random_client_finish)));
+				suffix_with_randoms.append(convert_base(random_string(random_suffix_pre)));
+				suffix_with_randoms.append(convert_base(random_string(random_suffix_mid)));
+				suffix_with_randoms.append(convert_base(random_string(random_suffix_end)));
 
 				message += Bope.BOPE_SIGN + suffix_with_randoms.toString(); 
 			}

@@ -262,7 +262,7 @@ public class BopePinnable {
 			if (motion(mx, my) && !is_moving()) {
 				create_rect(0, 0, this.width, this.height, 255, 255, 255, 50);
 			} else if (is_moving()) {
-				create_rect(0, 0, this.width, this.height, 0, 0, 255, 50);
+				create_rect(0, 0, this.width, this.height, 255, 255, 255, 75);
 			}
 		}
 	}

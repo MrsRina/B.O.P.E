@@ -54,7 +54,7 @@ public class BopeNameTag extends BopeModule {
 	BopeSetting main_ = create("Main Hand", "NameTagMainHand", true);
 	BopeSetting off_h = create("Off Hand", "NameTagOffHand", true);
 	BopeSetting range = create("Range", "NameTagRange", 15, 0, 30);
-	BopeSetting size  = create("Size", "NameTagSize", 4, 3, 4);
+	BopeSetting size  = create("Size", "NameTagSize", 4.5, 1.0, 6.0);
 
 	String totems_left_string = "";
 

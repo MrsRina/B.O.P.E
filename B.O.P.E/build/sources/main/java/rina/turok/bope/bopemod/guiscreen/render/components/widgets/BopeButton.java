@@ -41,6 +41,8 @@ public class BopeButton extends BopeAbstractWidget {
 
 	private int border_size = 0;
 
+	private int animation = 0;
+
 	public BopeButton(BopeFrame frame, BopeModuleButton master, String tag, int update_postion) {
 		this.frame   = frame;
 		this.master  = master;
@@ -169,6 +171,8 @@ public class BopeButton extends BopeAbstractWidget {
 
 			BopeDraw.draw_string(this.button_name, this.x + 2, this.save_y, ns_r, ns_g, ns_b, this.smoth);
 		} else {
+			this.animation = 0;
+
 			BopeDraw.draw_string(this.button_name, this.x + 2, this.save_y, ns_r, ns_g, ns_b, this.smoth);
 		}
 	}

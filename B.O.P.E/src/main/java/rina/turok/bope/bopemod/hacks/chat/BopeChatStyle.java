@@ -100,10 +100,17 @@ public class BopeChatStyle extends BopeModule {
 
 		String original_message = event.getMessage().getUnformattedText();
 
-		boolean cancel = false;
+		boolean cancel  = false;
+		boolean is_name = false; 
 
 		event_color_time = true;
 		event_color_name = true;
+
+		String name = original_message.trim().split("\\s+")[0];
+
+		if (name.contains("<") && name.contains(">")) {
+			is_name = true;
+		}
 
 		String pre = type_mode.in("[]") ? "[" : "<";
 		String end = type_mode.in("[]") ? "]" : ">";
@@ -124,7 +131,7 @@ public class BopeChatStyle extends BopeModule {
 			cancel = false;
 		}
 
-		if (event_color_name) {
+		if (event_color_name && is_name) {
 			ChatFormatting c = color.get(color_name.get_current_value());
 
 			String[] separates = original_message.trim().split("\\s+");

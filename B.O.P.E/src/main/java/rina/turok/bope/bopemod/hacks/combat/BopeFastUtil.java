@@ -1,7 +1,12 @@
 package rina.turok.bope.bopemod.hacks.combat;
 
+import net.minecraft.network.play.client.CPacketPlayerTryUseItem;
+import net.minecraft.network.play.client.CPacketPlayerDigging;
 import net.minecraft.item.ItemEndCrystal;
 import net.minecraft.item.ItemExpBottle;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.network.Packet;
+import net.minecraft.item.ItemBow;
 import net.minecraft.item.Item;
 
 // Guiscreen.
@@ -30,6 +35,7 @@ public class BopeFastUtil extends BopeModule {
 	BopeSetting use     = create("Use", "BopeFastUse", true);
 	BopeSetting crystal = create("Crystal", "BopeFastCrystal", true);
 	BopeSetting exp     = create("EXP", "BopeFastExp", true);
+	BopeSetting bow     = create("Bow", "BopeFastBow", false);
 
 	public BopeFastUtil() {
 		super(BopeCategory.BOPE_COMBAT);
@@ -69,6 +75,14 @@ public class BopeFastUtil extends BopeModule {
 
 		if (break_.get_value(true)) {
 			mc.playerController.blockHitDelay = 0;
+		}
+
+		if (mc.player.inventory.getCurrentItem().getItem() instanceof ItemBow && bow.get_value(true)) {
+			if (mc.player.isHandActive() && mc.player.getItemInUseMaxCount() >= 3) {
+				mc.player.connection.sendPacket(new CPacketPlayerDigging(CPacketPlayerDigging.Action.RELEASE_USE_ITEM, BlockPos.ORIGIN, mc.player.getHorizontalFacing()));
+				mc.player.connection.sendPacket(new CPacketPlayerTryUseItem(mc.player.getActiveHand()));
+				mc.player.stopActiveHand();
+			}
 		}
 	}
 }

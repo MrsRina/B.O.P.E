@@ -91,6 +91,7 @@ public class BopeModuleManager {
 
 		// Render.
 		add_module(new BopeBrightness());
+		add_module(new BopeStorageESP());
 		add_module(new BopeHighlight());
 		add_module(new BopeNoHurtCam());
 		add_module(new BopeHoleColor());

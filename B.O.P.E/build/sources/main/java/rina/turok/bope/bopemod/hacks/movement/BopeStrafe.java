@@ -59,6 +59,10 @@ public class BopeStrafe extends BopeModule {
 		float rotation_pit = mc.player.rotationPitch;
 		float rotation_yaw = mc.player.rotationYaw;
 
+		if (!is_active()) {
+			return;
+		}
+
 		// If player null.
 		if (mc.player == null) {
 			return;

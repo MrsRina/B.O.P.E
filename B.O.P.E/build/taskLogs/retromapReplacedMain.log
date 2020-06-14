@@ -1694,29 +1694,29 @@ Rename field net/minecraft/client/Minecraft/player[1550,1556]::player->field_714
 Rename field net/minecraft/entity/Entity/rotationPitch[1564,1577]::rotationPitch->field_70125_A
 Rename field net/minecraft/client/Minecraft/player[1606,1612]::player->field_71439_g
 Rename field net/minecraft/entity/Entity/rotationYaw[1620,1631]::rotationYaw->field_70177_z
-Rename field net/minecraft/client/Minecraft/player[1669,1675]::player->field_71439_g
-Rename field net/minecraft/client/Minecraft/player[1772,1778]::player->field_71439_g
-Rename method net/minecraft/entity/Entity/isSneaking ()Z[1786,1796]::isSneaking->func_70093_af
-Rename field net/minecraft/client/Minecraft/player[1808,1814]::player->field_71439_g
-Rename method net/minecraft/entity/EntityLivingBase/isOnLadder ()Z[1822,1832]::isOnLadder->func_70617_f_
-Rename field net/minecraft/client/Minecraft/player[1844,1850]::player->field_71439_g
-Rename field net/minecraft/entity/Entity/isInWeb[1858,1865]::isInWeb->field_70134_J
-Rename field net/minecraft/client/Minecraft/player[1878,1884]::player->field_71439_g
-Rename method net/minecraft/entity/Entity/isInLava ()Z[1892,1900]::isInLava->func_180799_ab
-Rename field net/minecraft/client/Minecraft/player[1915,1921]::player->field_71439_g
-Rename method net/minecraft/entity/Entity/isInWater ()Z[1929,1938]::isInWater->func_70090_H
-Rename field net/minecraft/client/Minecraft/player[1950,1956]::player->field_71439_g
-Rename field net/minecraft/entity/player/EntityPlayer/capabilities[1964,1976]::capabilities->field_71075_bZ
-Rename field net/minecraft/entity/player/PlayerCapabilities/isFlying[1979,1987]::isFlying->field_75100_b
-Rename field net/minecraft/client/Minecraft/player[2058,2064]::player->field_71439_g
-Rename field net/minecraft/entity/Entity/onGround[2072,2080]::onGround->field_70122_E
-Rename field net/minecraft/client/Minecraft/player[2165,2171]::player->field_71439_g
-Rename method net/minecraft/entity/EntityLivingBase/isPotionActive (Lnet/minecraft/potion/Potion;)Z[2179,2193]::isPotionActive->func_70644_a
-Rename field net/minecraft/init/MobEffects/SPEED[2203,2208]::SPEED->field_76424_c
-Rename field net/minecraft/client/Minecraft/player[2244,2250]::player->field_71439_g
-Rename method net/minecraft/entity/EntityLivingBase/getActivePotionEffect (Lnet/minecraft/potion/Potion;)Lnet/minecraft/potion/PotionEffect;[2258,2279]::getActivePotionEffect->func_70660_b
-Rename field net/minecraft/init/MobEffects/SPEED[2282,2287]::SPEED->field_76424_c
-Rename method net/minecraft/potion/PotionEffect/getAmplifier ()I[2297,2309]::getAmplifier->func_76458_c
+Rename field net/minecraft/client/Minecraft/player[1711,1717]::player->field_71439_g
+Rename field net/minecraft/client/Minecraft/player[1814,1820]::player->field_71439_g
+Rename method net/minecraft/entity/Entity/isSneaking ()Z[1828,1838]::isSneaking->func_70093_af
+Rename field net/minecraft/client/Minecraft/player[1850,1856]::player->field_71439_g
+Rename method net/minecraft/entity/EntityLivingBase/isOnLadder ()Z[1864,1874]::isOnLadder->func_70617_f_
+Rename field net/minecraft/client/Minecraft/player[1886,1892]::player->field_71439_g
+Rename field net/minecraft/entity/Entity/isInWeb[1900,1907]::isInWeb->field_70134_J
+Rename field net/minecraft/client/Minecraft/player[1920,1926]::player->field_71439_g
+Rename method net/minecraft/entity/Entity/isInLava ()Z[1934,1942]::isInLava->func_180799_ab
+Rename field net/minecraft/client/Minecraft/player[1957,1963]::player->field_71439_g
+Rename method net/minecraft/entity/Entity/isInWater ()Z[1971,1980]::isInWater->func_70090_H
+Rename field net/minecraft/client/Minecraft/player[1992,1998]::player->field_71439_g
+Rename field net/minecraft/entity/player/EntityPlayer/capabilities[2006,2018]::capabilities->field_71075_bZ
+Rename field net/minecraft/entity/player/PlayerCapabilities/isFlying[2021,2029]::isFlying->field_75100_b
+Rename field net/minecraft/client/Minecraft/player[2100,2106]::player->field_71439_g
+Rename field net/minecraft/entity/Entity/onGround[2114,2122]::onGround->field_70122_E
+Rename field net/minecraft/client/Minecraft/player[2207,2213]::player->field_71439_g
+Rename method net/minecraft/entity/EntityLivingBase/isPotionActive (Lnet/minecraft/potion/Potion;)Z[2221,2235]::isPotionActive->func_70644_a
+Rename field net/minecraft/init/MobEffects/SPEED[2245,2250]::SPEED->field_76424_c
+Rename field net/minecraft/client/Minecraft/player[2286,2292]::player->field_71439_g
+Rename method net/minecraft/entity/EntityLivingBase/getActivePotionEffect (Lnet/minecraft/potion/Potion;)Lnet/minecraft/potion/PotionEffect;[2300,2321]::getActivePotionEffect->func_70660_b
+Rename field net/minecraft/init/MobEffects/SPEED[2324,2329]::SPEED->field_76424_c
+Rename method net/minecraft/potion/PotionEffect/getAmplifier ()I[2339,2351]::getAmplifier->func_76458_c
 Import: net.minecraft.util.math.AxisAlignedBB
 Import: net.minecraft.util.math.MathHelper
 Import: net.minecraft.init.MobEffects
@@ -2509,7 +2509,6 @@ End  Processing: rina/turok/bope/mixins/BopeMixinEntityRender.java
 
 Start Processing: rina/turok/bope/mixins/BopeMixinEntitySP.java
 FOUND CONSTR method rina/turok/bope/mixins/BopeMixinEntitySP/BopeMixinEntitySP (Lnet/minecraft/world/World;)V rina/turok/bope/mixins/BopeMixinEntitySP
-Rename method net/minecraft/entity/Entity/move (Lnet/minecraft/entity/MoverType;DDD)V[1450,1454]::move->func_70091_d
 Import: net.minecraft.client.entity.EntityPlayerSP
 Import: net.minecraft.client.gui.GuiScreen
 Import: net.minecraft.client.Minecraft

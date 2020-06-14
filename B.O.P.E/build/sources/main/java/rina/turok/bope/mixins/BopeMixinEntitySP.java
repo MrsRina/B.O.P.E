@@ -45,11 +45,5 @@ public abstract class BopeMixinEntitySP extends Entity {
 		BopeEventMove event = new BopeEventMove(type, x, y, z);
 
 		BopeEventBus.ZERO_ALPINE_EVENT_BUS.post(event);
-
-		if (event.isCancelled()) {
-			super.move(type, event.get_x(), event.get_y(), event.get_z());
-
-			info.cancel();
-		}
 	}
 }

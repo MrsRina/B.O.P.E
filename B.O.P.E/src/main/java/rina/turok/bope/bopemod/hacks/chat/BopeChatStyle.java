@@ -54,15 +54,16 @@ public class BopeChatStyle extends BopeModule {
 		"Light_Purple"
 	);
 
-	BopeSetting color_time = create("Time", "ChatStyleColorTime", colors_combobox.get(0), colors_combobox); 
-	BopeSetting color_name = create("Name", "ChatStyleColorMessage", colors_combobox.get(0), colors_combobox);
+	BopeSetting color_time  = create("Time", "ChatStyleColorTime", colors_combobox.get(0), colors_combobox); 
+	BopeSetting color_name  = create("Name", "ChatStyleColorMessage", colors_combobox.get(0), colors_combobox);
+	BopeSetting color_fname = create("Friend", "ChatStyleColorFriend", colors_combobox.get(14), colors_combobox);
 	BopeSetting type_mode  = create("Type Mode", "ChatStyleTypeMode", "[]", combobox("[]", "<>"));
 	//BopeSetting color_mode   = create("Color Mode", "ChatStyleColorMode", "HUD", combobox("HUD", "Server"));
 
 	public static HashMap<String, ChatFormatting> color = new HashMap<>();
 
 	boolean event_color_time = true;
-	boolean event_color_name = true; 
+	boolean event_color_name = true;
 
 	public BopeChatStyle() {
 		super(BopeCategory.BOPE_CHAT, false);
@@ -100,8 +101,9 @@ public class BopeChatStyle extends BopeModule {
 
 		String original_message = event.getMessage().getUnformattedText();
 
-		boolean cancel  = false;
-		boolean is_name = false; 
+		boolean cancel    = false;
+		boolean is_name   = false;
+		boolean is_friend = false;
 
 		event_color_time = true;
 		event_color_name = true;
@@ -110,6 +112,13 @@ public class BopeChatStyle extends BopeModule {
 
 		if (name.contains("<") && name.contains(">")) {
 			is_name = true;
+		}
+
+		name = name.replaceAll("<", "");
+		name = name.replaceAll(">", "");
+
+		if (Bope.get_friend_manager().is_friend(name) || mc.player.getName().equalsIgnoreCase(name)) {
+			is_friend = true;
 		}
 
 		String pre = type_mode.in("[]") ? "[" : "<";
@@ -132,7 +141,13 @@ public class BopeChatStyle extends BopeModule {
 		}
 
 		if (event_color_name && is_name) {
-			ChatFormatting c = color.get(color_name.get_current_value());
+			ChatFormatting c;
+
+			if (is_friend) {
+				c = color.get(color_fname.get_current_value());
+			} else {
+				c = color.get(color_name.get_current_value());
+			}
 
 			String[] separates = original_message.trim().split("\\s+");
 

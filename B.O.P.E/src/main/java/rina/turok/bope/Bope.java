@@ -35,6 +35,7 @@ import rina.turok.bope.bopemod.manager.BopeHUDManager;
 import rina.turok.bope.external.BopeEventHandler;
 
 // Data.
+import rina.turok.bope.bopemod.BopeDiscordRichPresence;
 import rina.turok.bope.bopemod.BopeMessage;
 
 // Core.
@@ -78,6 +79,9 @@ public class Bope {
 	public static BopeFriendManager  friend_manager;
 	public static BopeEventManager   event_manager;
 	public static BopeHUDManager     hud_manager;
+
+	// RPC.
+	public static BopeDiscordRichPresence discord_rpc;
 
 	// Cick GUI and HUD.
 	public static BopeGUI click_gui;
@@ -128,6 +132,14 @@ public class Bope {
 		config_manager.load();
 
 		send_minecraft_log("GUI and HUD initialed.");
+
+		// Load rpc.
+		discord_rpc = new BopeDiscordRichPresence("RPC");
+
+		// If...
+		if (module_manager.get_module_with_tag("RPC").is_active()) {
+			discord_rpc.run();
+		}
 
 		// For just fix the GUI.
 		if (module_manager.get_module_with_tag("GUI").is_active()) {
@@ -211,6 +223,10 @@ public class Bope {
 
 	public static BopeEventHandler get_event_handler() {
 		return BopeEventHandler.INSTANCE;
+	}
+
+	public static BopeDiscordRichPresence get_rpc() {
+		return get_instance().discord_rpc;
 	}
 
 	public static Turok get_turok() {

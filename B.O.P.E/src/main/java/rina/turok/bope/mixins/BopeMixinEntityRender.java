@@ -39,7 +39,7 @@ public class BopeMixinEntityRender {
 	private List<Entity> getEntitiesInAABBexcluding(WorldClient world_client, Entity entity, AxisAlignedBB bouding_box, Predicate predicate) {
 		BopeModule module_requested = Bope.get_module_manager().get_module_with_tag("NoEntityTrace");
 
-		if (module_requested.is_active() && module_requested.boolean_state()) {
+		if (module_requested.is_active() && module_requested.value_boolean_0()) {
 			return new ArrayList<>();
 		} else {
 			return world_client.getEntitiesInAABBexcluding(entity, bouding_box, predicate);

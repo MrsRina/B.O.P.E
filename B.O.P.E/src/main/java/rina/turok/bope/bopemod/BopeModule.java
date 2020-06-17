@@ -257,23 +257,43 @@ public class BopeModule {
 		return null;
 	}
 
-	// Event to state type boolean.
-	public String string_state() {
+	// BOPEMODULE:VALUE:STRING;
+	public String value_string_0() {
 		return null;
 	}
 
-	// Event to state type boolean.
-	public boolean boolean_state() {
+	public String value_string_1() {
+		return null;
+	}
+
+	// BOPEMODULE:VALUE:BOOLEAN;
+	public boolean value_boolean_0() {
 		return false;
 	}
 
-	// Event to state type double.
-	public double double_state() {
+	public boolean value_boolean_1() {
+		return false;
+	}
+
+	public double value_double() {
 		return 0.0;
 	}
 
-	// Event to state type int.
-	public int int_state() {
+	// BOPEMODULE:VALUE:DOUBLE;
+	public double value_double_0() {
+		return 0.0;
+	}
+
+	public double value_double_1() {
+		return 0.0;
+	}
+
+	// BOPEMODULE:VALUE:INT;
+	public int value_int_0() {
+		return 0;
+	}
+
+	public int value_int_1() {
 		return 0;
 	}
 }

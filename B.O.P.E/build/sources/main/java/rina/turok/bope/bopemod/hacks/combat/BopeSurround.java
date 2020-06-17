@@ -342,7 +342,7 @@ public class BopeSurround extends BopeModule {
 	}
 
 	@Override
-	public String string_state() {
+	public String value_string_0() {
 		return this.sides_can_place;
 	}
 }

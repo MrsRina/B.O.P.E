@@ -48,7 +48,7 @@ public class BopePinnable {
 	private int tolerance;
 
 	private boolean dock            = true;
-	public  boolean smoth           = false; // Bope.get_setting_manager().get_setting_with_tag("HUDSmothFont").get_value(true);
+	public  boolean smoth           = Bope.get_setting_manager().get_setting_with_tag("HUDStringsSmooth").get_value(true);
 	public  boolean event_is_resize = false;
 
 	public final Minecraft mc = Minecraft.getMinecraft();
@@ -268,8 +268,7 @@ public class BopePinnable {
 	}
 
 	protected void create_line(String string, int pos_x, int pos_y) {
-		// this.smoth = Bope.get_setting_manager().get_setting_with_tag("HUDSmothFont").get_value(true);
-		this.smoth = false;
+		this.smoth = Bope.get_setting_manager().get_setting_with_tag("HUDStringsSmooth").get_value(true);
 
 		int nl_r = Bope.get_setting_manager().get_setting_with_tag("HUD", "HUDStringsColorR").get_value(1);
 		int nl_g = Bope.get_setting_manager().get_setting_with_tag("HUD", "HUDStringsColorG").get_value(1);
@@ -281,8 +280,7 @@ public class BopePinnable {
 	}
 
 	protected void create_line(String string, int pos_x, int pos_y, int r, int g, int b) {
-		// this.smoth = Bope.get_setting_manager().get_setting_with_tag("HUDSmothFont").get_value(true);
-		this.smoth = false;
+		this.smoth = Bope.get_setting_manager().get_setting_with_tag("HUDStringsSmooth").get_value(true);
 
 		boolean shadow = Bope.get_setting_manager().get_setting_with_tag("HUDStringsShadow").get_value(true);
 

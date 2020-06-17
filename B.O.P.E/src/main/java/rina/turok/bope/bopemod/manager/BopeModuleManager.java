@@ -96,6 +96,7 @@ public class BopeModuleManager {
 		add_module(new BopeHighlight());
 		add_module(new BopeNoHurtCam());
 		add_module(new BopeHoleColor());
+		add_module(new BopePlayerESP());
 		add_module(new BopeNameTag());
 		add_module(new BopeSwing());
 

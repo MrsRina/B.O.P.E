@@ -44,22 +44,21 @@ import rina.turok.bope.Bope;
 * 05/06/2020.
 *
 */
-public class BopeESP extends BopeModule {
-	BopeSetting animals = create("Animals & Pigs", "ESPAnimals", true);
-	BopeSetting hostile = create("Hostile", "ESPHostile", true);
-	BopeSetting players = create("Players", "ESPPlayers", true);
-	BopeSetting outline = create("Outline", "ESPOutline", true);
-	BopeSetting range   = create("Range", "ESPRange", 15, 0, 30);
+public class BopePlayerESP extends BopeModule {
+	BopeSetting chams   = create("Chams", "PlayerESPChams", true);
+	BopeSetting skleton = create("Skleton", "PlayerESPSkeleton", 15, 0, 30);
+	BopeSetting beffect = create("Bow Effect", "PlayerESPBowEffect", true);
+	BopeSetting range   = create("Range", "PlayerESPRange", 15, 0, 30);
 
 	float partial_ticks;
 
-	public BopeESP() {
+	public BopePlayerESP() {
 		super(BopeCategory.BOPE_RENDER);
 
 		// Info.
-		this.name        = "ESP";
-		this.tag         = "ESP";
-		this.description = "ESP - Extra Sensory Perception.";
+		this.name        = "Player ESP";
+		this.tag         = "PlayerESP";
+		this.description = "Player ESP - Extra Sensory Perception.";
 
 		// Release or launch the module.
 		release("B.O.P.E - Module - B.O.P.E");	
@@ -79,9 +78,7 @@ public class BopeESP extends BopeModule {
 			/* inaRinaRinaRinaRin */ .filter( entity -> entity != mc.player)
 			/* inaRinaRinaRinaRin */ .map(    entity -> (EntityLivingBase) entity)
 			/* inaRinaRinaRinaRin */ .filter(_entity -> !_entity.isDead)
-			/* inaRinaRinaRinaRin */ .filter( entity -> entity instanceof EntityPlayer && players.get_value(true))
-			/* inaRinaRinaRinaRin */ .filter( entity -> entity instanceof IMob         && hostile.get_value(true))
-			/* inaRinaRinaRinaRin */ .filter( entity -> entity instanceof EntityAnimal && animals.get_value(true))
+			/* inaRinaRinaRinaRin */ .filter( entity -> entity instanceof EntityPlayer)
 			/* inaRinaRinaRinaRin */ .filter( entity -> mc.player.getDistance(entity) < (range.get_value(1) * 4))
 			/* inaRinaRinaRinaRin */ .sorted(Comparator.comparing(entity -> -mc.player.getDistance(entity)))
 			/* inaRinaRinaRinaRin */ .forEach(this::draw);
@@ -94,6 +91,18 @@ public class BopeESP extends BopeModule {
 	}
 
 	public void draw(Entity entity) {
-		
+		entity.setGlowing(beffect.get_value(true));
+	}
+
+	@Override
+	public void disable() {
+		for (Entity entitys : mc.world.loadedEntityList) {
+			entitys.setGlowing(false);
+		}
+	}
+
+	@Override
+	public boolean value_boolean_0() {
+		return chams.get_value(true);
 	}
 }

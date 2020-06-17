@@ -27,6 +27,7 @@ public class BopeClickHUD extends BopeModule {
 	BopeSetting strings_b = create("Color B", "HUDStringsColorB", 200, 0, 255);
 
 	BopeSetting shadow = create("Shadow", "HUDStringsShadow", false);
+	BopeSetting smooth = create("Smooth", "HUDStringsSmooth", false);
 
 	public BopeClickHUD() {
 		super(BopeCategory.BOPE_GUI);

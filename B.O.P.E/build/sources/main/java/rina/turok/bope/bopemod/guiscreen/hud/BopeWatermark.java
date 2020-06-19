@@ -22,7 +22,11 @@ public class BopeWatermark extends BopePinnable {
 
 	@Override
 	public void render() {
-		String line = "Welcome to B.O.P.E. " + Bope.g + "[" + Bope.r + Bope.get_version() + Bope.g + "]" + Bope.r;
+		if (is_on_gui()) {
+			background();
+		}
+
+		String line = "Welcome to B.O.P.E. And stop ping pls " + Bope.g + "[" + Bope.r + Bope.get_version() + Bope.g + "]" + Bope.r;
 
 		create_line(line, 1, 2);
 

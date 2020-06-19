@@ -48,6 +48,7 @@ public class BopePinnable {
 	private int tolerance;
 
 	private boolean dock            = true;
+	private boolean dock_y          = false;
 	public  boolean smoth           = Bope.get_setting_manager().get_setting_with_tag("HUDStringsSmooth").get_value(true);
 	public  boolean event_is_resize = false;
 
@@ -131,6 +132,10 @@ public class BopePinnable {
 		this.dock = value;
 	}
 
+	public void set_dock_y(boolean value) {
+		this.dock_y = value;
+	}
+
 	public boolean is_moving() {
 		return this.move;
 	}
@@ -167,6 +172,10 @@ public class BopePinnable {
 		return this.dock;
 	}
 
+	public boolean get_dock_y() {
+		return this.dock_y;
+	}
+
 	public boolean is_active() {
 		return this.state;
 	}
@@ -196,10 +205,12 @@ public class BopePinnable {
 		}
 
 		if (get_y() <= 0) {
+			set_dock_y(true);
 			set_y(1);
 		}
 
 		if (get_y() + get_height() >= this.screen_height) {
+			set_dock_y(false);
 			set_y(this.screen_height - get_height() - 1);
 		}
 

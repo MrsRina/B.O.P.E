@@ -30,13 +30,29 @@ public class BopeArrayList extends BopePinnable {
 
 	@Override
 	public void render() {
-		ScaledResolution scaled_resolution = new ScaledResolution(mc);
+		if (is_on_gui()) {
+			background();
+		}
 
 		int position_update_y = 2;
 
-		List<BopeModule> pretty_modules = Bope.get_module_manager().get_array_active_modules().stream()
+		Comparator<BopeModule> comparator = (first, second) -> {
+			String first_name  = first.get_tag() + (first.detail_option() == null ? "" : Bope.g + " [" + Bope.r + first.detail_option() + Bope.g + "]" + Bope.r);
+			String second_name = second.get_tag() + (second.detail_option() == null ? "" : Bope.g + " [" + Bope.r + second.detail_option() + Bope.g + "]" + Bope.r);
+			
+			float diff = get(second_name, "width") - get(first_name, "width");
+
+			if (get_dock_y()) {
+				return diff != 0 ? (int) diff : second_name.compareTo(first_name);
+			} else {
+				return (int) diff;
+			}
+		};
+
+		List<BopeModule> pretty_modules = Bope.get_module_manager().get_array_modules().stream()
+			.filter(module -> module.is_active())
 			.filter(module -> module.to_show())
-			.sorted(Comparator.comparing(modules -> get(modules.detail_option() == null ? modules.get_tag() : modules.get_tag() + Bope.g + " [" + Bope.r + modules.detail_option() + Bope.g + "]" + Bope.r, "width")))
+			.sorted(comparator)
 			.collect(Collectors.toList());
 
 		for (BopeModule modules : pretty_modules) {
@@ -45,8 +61,7 @@ public class BopeArrayList extends BopePinnable {
 			}
 
 			String module_name = (
-				modules.detail_option() == null ? modules.get_tag() :
-				modules.get_tag() + Bope.g + " [" + Bope.r + modules.detail_option() + Bope.g + "]" + Bope.r
+				modules.get_tag() + (modules.detail_option() == null ? "" : Bope.g + " [" + Bope.r + modules.detail_option() + Bope.g + "]" + Bope.r)
 			);
 
 			create_line(module_name, 1, position_update_y);

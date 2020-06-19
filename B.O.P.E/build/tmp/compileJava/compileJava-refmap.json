@@ -1,5 +1,8 @@
 {
   "mappings": {
+    "rina/turok/bope/mixins/BopeMixinRenderLivingBase": {
+      "doRender": "Lnet/minecraft/client/renderer/entity/RenderLivingBase;func_76986_a(Lnet/minecraft/entity/EntityLivingBase;DDDFF)V"
+    },
     "rina/turok/bope/mixins/BopeMixinEntityRender": {
       "hurtCameraEffect": "Lnet/minecraft/client/renderer/EntityRenderer;func_78482_e(F)V",
       "Lnet/minecraft/client/multiplayer/WorldClient;getEntitiesInAABBexcluding(Lnet/minecraft/entity/Entity;Lnet/minecraft/util/math/AxisAlignedBB;Lcom/google/common/base/Predicate;)Ljava/util/List;": "Lnet/minecraft/client/multiplayer/WorldClient;func_175674_a(Lnet/minecraft/entity/Entity;Lnet/minecraft/util/math/AxisAlignedBB;Lcom/google/common/base/Predicate;)Ljava/util/List;",
@@ -17,6 +20,9 @@
     "rina/turok/bope/mixins/BopeMixinEntitySP": {
       "move": "Lnet/minecraft/client/entity/EntityPlayerSP;func_70091_d(Lnet/minecraft/entity/MoverType;DDD)V"
     },
+    "rina/turok/bope/mixins/BopeMixinRender": {
+      "renderLivingLabel": "Lnet/minecraft/client/renderer/entity/Render;func_147906_a(Lnet/minecraft/entity/Entity;Ljava/lang/String;DDDI)V"
+    },
     "rina/turok/bope/mixins/BopeMixinMinecraft": {
       "Lnet/minecraft/client/Minecraft;displayCrashReport(Lnet/minecraft/crash/CrashReport;)V": "Lnet/minecraft/client/Minecraft;func_71377_b(Lnet/minecraft/crash/CrashReport;)V",
       "run": "Lnet/minecraft/client/Minecraft;func_99999_d()V",
@@ -30,6 +36,9 @@
   },
   "data": {
     "notch": {
+      "rina/turok/bope/mixins/BopeMixinRenderLivingBase": {
+        "doRender": "Lcaa;a(Lvp;DDDFF)V"
+      },
       "rina/turok/bope/mixins/BopeMixinEntityRender": {
         "hurtCameraEffect": "Lbuq;d(F)V",
         "Lnet/minecraft/client/multiplayer/WorldClient;getEntitiesInAABBexcluding(Lnet/minecraft/entity/Entity;Lnet/minecraft/util/math/AxisAlignedBB;Lcom/google/common/base/Predicate;)Ljava/util/List;": "Lbsb;a(Lvg;Lbhb;Lcom/google/common/base/Predicate;)Ljava/util/List;",
@@ -47,6 +56,9 @@
       "rina/turok/bope/mixins/BopeMixinEntitySP": {
         "move": "Lbud;a(Lvv;DDD)V"
       },
+      "rina/turok/bope/mixins/BopeMixinRender": {
+        "renderLivingLabel": "Lbzg;a(Lvg;Ljava/lang/String;DDDI)V"
+      },
       "rina/turok/bope/mixins/BopeMixinMinecraft": {
         "Lnet/minecraft/client/Minecraft;displayCrashReport(Lnet/minecraft/crash/CrashReport;)V": "Lbib;c(Lb;)V",
         "run": "Lbib;a()V",
@@ -59,6 +71,9 @@
       }
     },
     "searge": {
+      "rina/turok/bope/mixins/BopeMixinRenderLivingBase": {
+        "doRender": "Lnet/minecraft/client/renderer/entity/RenderLivingBase;func_76986_a(Lnet/minecraft/entity/EntityLivingBase;DDDFF)V"
+      },
       "rina/turok/bope/mixins/BopeMixinEntityRender": {
         "hurtCameraEffect": "Lnet/minecraft/client/renderer/EntityRenderer;func_78482_e(F)V",
         "Lnet/minecraft/client/multiplayer/WorldClient;getEntitiesInAABBexcluding(Lnet/minecraft/entity/Entity;Lnet/minecraft/util/math/AxisAlignedBB;Lcom/google/common/base/Predicate;)Ljava/util/List;": "Lnet/minecraft/client/multiplayer/WorldClient;func_175674_a(Lnet/minecraft/entity/Entity;Lnet/minecraft/util/math/AxisAlignedBB;Lcom/google/common/base/Predicate;)Ljava/util/List;",
@@ -75,6 +90,9 @@
       },
       "rina/turok/bope/mixins/BopeMixinEntitySP": {
         "move": "Lnet/minecraft/client/entity/EntityPlayerSP;func_70091_d(Lnet/minecraft/entity/MoverType;DDD)V"
+      },
+      "rina/turok/bope/mixins/BopeMixinRender": {
+        "renderLivingLabel": "Lnet/minecraft/client/renderer/entity/Render;func_147906_a(Lnet/minecraft/entity/Entity;Ljava/lang/String;DDDI)V"
       },
       "rina/turok/bope/mixins/BopeMixinMinecraft": {
         "Lnet/minecraft/client/Minecraft;displayCrashReport(Lnet/minecraft/crash/CrashReport;)V": "Lnet/minecraft/client/Minecraft;func_71377_b(Lnet/minecraft/crash/CrashReport;)V",

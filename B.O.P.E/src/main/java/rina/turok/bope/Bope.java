@@ -91,7 +91,7 @@ public class Bope {
 	public static Turok turok;
 
 	// Strings detail.
-	public static ChatFormatting g = ChatFormatting.DARK_GRAY;
+	public static ChatFormatting g = ChatFormatting.GRAY;
 	public static ChatFormatting r = ChatFormatting.RESET;
 
 	@Mod.EventHandler

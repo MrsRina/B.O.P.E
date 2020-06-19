@@ -5,10 +5,12 @@
 	"refmap"             : "mixins.bope.refmap.json",
 	"mixins"             : [
 		"BopeMixinPlayerControllerMP",
+		"BopeMixinRenderLivingBase",
 		"BopeMixinNetworkManager",
 		"BopeMixinEntityRender",
 		"BopeMixinMinecraft",
 		"BopeMixinEntitySP",
+		"BopeMixinRender",
 		"BopeMixinEntity"
 	]
 }

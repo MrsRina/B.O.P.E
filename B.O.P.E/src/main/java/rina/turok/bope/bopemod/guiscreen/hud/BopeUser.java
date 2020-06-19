@@ -22,6 +22,10 @@ public class BopeUser extends BopePinnable {
 
 	@Override
 	public void render() {
+		if (is_on_gui()) {
+			background();
+		}
+
 		String line = "Welcome " + mc.player.getName() + " :^)";
 
 		create_line(line, 1, 2);

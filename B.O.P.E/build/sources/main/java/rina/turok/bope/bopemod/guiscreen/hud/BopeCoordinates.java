@@ -29,6 +29,10 @@ public class BopeCoordinates extends BopePinnable {
 
 	@Override
 	public void render() {
+		if (is_on_gui()) {
+			background();
+		}
+
 		String x = Bope.g + "["  + db + Integer.toString((int) (mc.player.posX)) + Bope.g + Bope.r;
 		String y = Bope.g + ", " + db + Integer.toString((int) (mc.player.posY)) + Bope.g + Bope.r;
 		String z = Bope.g + ", " + db + Integer.toString((int) (mc.player.posZ)) + Bope.g + "]" + Bope.r;

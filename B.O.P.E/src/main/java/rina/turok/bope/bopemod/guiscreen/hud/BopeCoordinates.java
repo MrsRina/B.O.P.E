@@ -1,7 +1,7 @@
 package rina.turok.bope.bopemod.guiscreen.hud;
 
-import net.minecraft.client.gui.GuiIngame;
 import com.mojang.realmsclient.gui.ChatFormatting;
+import net.minecraft.client.gui.GuiIngame;
 
 // Guiscreen.
 import rina.turok.bope.bopemod.guiscreen.render.pinnables.BopePinnable;

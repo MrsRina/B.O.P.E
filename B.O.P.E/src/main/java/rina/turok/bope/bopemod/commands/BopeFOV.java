@@ -27,13 +27,13 @@ public class BopeFOV extends BopeCommand {
 		}
 
 		if (message.length > 2) {
-			BopeMessage.send_client_error_message(current_prefix() + "fov <30 >> && << 180>");
+			BopeMessage.send_client_error_message(current_prefix() + "fov +30 or -180");
 
 			return true;
 		}
 
 		if (value.equals("null")) {
-			BopeMessage.send_client_error_message(current_prefix() + "fov <30 >> && << 180>");
+			BopeMessage.send_client_error_message(current_prefix() + "fov +30 or -180");
 
 			return true;
 		}

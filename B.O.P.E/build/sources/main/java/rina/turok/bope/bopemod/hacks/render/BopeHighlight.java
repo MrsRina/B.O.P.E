@@ -35,9 +35,9 @@ public class BopeHighlight extends BopeModule {
 	BopeSetting r = create("R", "HighlightR", 255, 0, 255);
 	BopeSetting g = create("G", "HighlightG", 255, 0, 255);
 	BopeSetting b = create("B", "HighlightB", 255, 0, 255);
-	BopeSetting a = create("A", "HighlightA", 100, 0, 255);
+	BopeSetting a = create("A", "HighlightA", 50, 0, 255);
 	
-	BopeSetting l_a = create("Outline A", "HighlightLineA", 255, 0, 255);
+	BopeSetting l_a = create("Outline A", "HighlightLineA", 100, 0, 255);
 
 	int color_r;
 	int color_g;

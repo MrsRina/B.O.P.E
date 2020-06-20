@@ -29,7 +29,7 @@ public class BopeSettings extends BopeCommand {
 		}
 
 		if (what.equals("null")) {
-			BopeMessage.send_client_error_message(current_prefix() + "settings <save/load>");
+			BopeMessage.send_client_error_message(current_prefix() + "settings save/load");
 
 			return true;
 		}

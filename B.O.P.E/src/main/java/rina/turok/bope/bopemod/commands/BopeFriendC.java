@@ -64,19 +64,19 @@ public class BopeFriendC extends BopeCommand {
 		}
 
 		if (message.length > 3) {
-			BopeMessage.send_client_error_message(current_prefix() + "friend <add/new/rem/remove/del/delete>");
+			BopeMessage.send_client_error_message(current_prefix() + "friend add/new/rem/remove/del/delete name");
 
 			return true;
 		}
 
 		if (type.equals("null")) {
-			BopeMessage.send_client_error_message(current_prefix() + "friend <add/new/rem/remove/del/delete> <name>");
+			BopeMessage.send_client_error_message(current_prefix() + "friend add/new/rem/remove/del/delete name");
 
 			return true;
 		}
 
 		if (friend.equals("null")) {
-			BopeMessage.send_client_error_message(current_prefix() + "friend <add/new/rem/remove/del/delete> <name>");
+			BopeMessage.send_client_error_message(current_prefix() + "friend add/new/rem/remove/del/delete name");
 			
 			return true;
 		}

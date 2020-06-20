@@ -1,6 +1,8 @@
 package rina.turok.bope.bopemod.guiscreen.render.components.widgets;
 
 import net.minecraft.client.renderer.GlStateManager;
+import net.minecraft.client.gui.GuiTextField;
+import net.minecraft.client.Minecraft;
 
 import org.lwjgl.opengl.GL11;
 
@@ -34,6 +36,8 @@ public class BopeLabel extends BopeAbstractWidget {
 
 	private String label_name;
 
+	//private GuiTextField entry;
+
 	private int x;
 	private int y;
 
@@ -50,6 +54,8 @@ public class BopeLabel extends BopeAbstractWidget {
 
 	private int border_size = 0;
 
+	public final Minecraft mc = Minecraft.getMinecraft();
+
 	public BopeLabel(BopeFrame frame, BopeModuleButton master, String tag, int update_postion) {
 		this.frame   = frame;
 		this.master  = master;
@@ -59,6 +65,8 @@ public class BopeLabel extends BopeAbstractWidget {
 		this.y = update_postion;
 
 		this.save_y = this.y;
+
+		//this.entry = new GuiTextField(0, mc.fontRenderer, this.x, this.save_y, this.width, this.height);
 
 		this.width  = master.get_width();
 		this.height = font.get_string_height(this.setting.get_name(), this.smoth);
@@ -176,27 +184,19 @@ public class BopeLabel extends BopeAbstractWidget {
 		int bd_b = Bope.click_gui.theme_widget_border_b;
 		int bd_a = 100;
 
-		if (motion(absolute_x, absolute_y)) {
-			if (this.setting.get_master().using_widget()) {
-				this.setting.get_master().event_widget();
-
-				GL11.glPushMatrix();
-
-				GL11.glEnable(GL11.GL_TEXTURE_2D);
-				GL11.glEnable(GL11.GL_BLEND);
-
-				GlStateManager.enableBlend();
-
-				GL11.glPopMatrix();
-
-				TurokRenderHelp.release_gl();
-			}
+		if (motion(absolute_x, absolute_y) && !this.info) {
+			BopeDraw.draw_string(this.setting.get_value(zbob), absolute_x + 10, absolute_y, ns_r, ns_g, ns_b, this.smoth);
 		}
+
+		//this.entry.drawTextBox();
+
+		//this.entry.width = this.width;
+		//this.entry.height = this.height;
 
 		if (this.info) {
 			BopeDraw.draw_string(this.setting.get_value(zbob), this.x + 2, this.save_y, ns_r, ns_g, ns_b, this.smoth);
 		} else {
-			BopeDraw.draw_string(this.label_name + " \"" + this.setting.get_value(zbob) + "\"", this.x + 2, this.save_y, ns_r, ns_g, ns_b, this.smoth);
+			BopeDraw.draw_string(this.label_name, this.x + 2, this.save_y, ns_r, ns_g, ns_b, this.smoth);
 		}
 	}
 }

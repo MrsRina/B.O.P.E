@@ -41,10 +41,10 @@ public class BopeStrafe extends BopeModule {
 	BopeSetting ground = create("Event Ground", "StrafeEventGround", true);
 
 	public BopeStrafe() {
-		super(BopeCategory.BOPE_MOVEMENT);
+		super(BopeCategory.BOPE_BETA);
 
 		// Info.
-		this.name        = "§4 Strafe";
+		this.name        = "Strafe";
 		this.tag         = "Strafe";
 		this.description = "Strafe to movimentation.";
 

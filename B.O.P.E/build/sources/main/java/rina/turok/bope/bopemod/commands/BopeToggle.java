@@ -28,13 +28,13 @@ public class BopeToggle extends BopeCommand {
 		}
 
 		if (message.length > 2) {
-			BopeMessage.send_client_error_message(current_prefix() + "t <ModuleNameNoSpace>");
+			BopeMessage.send_client_error_message(current_prefix() + "t module");
 
 			return true;
 		}
 
 		if (module.equals("null")) {
-			BopeMessage.send_client_error_message(Bope.get_instance().command_manager.get_prefix() + "t <ModuleNameNoSpace>");
+			BopeMessage.send_client_error_message(Bope.get_instance().command_manager.get_prefix() + "t module");
 
 			return true;
 		}

@@ -44,7 +44,7 @@ public class BopeChatStyle extends BopeModule {
 		"Gray",
 		"White",
 		"Green",
-		"Yellow",
+		"Yello",
 		"Dark_Red",
 		"Dark_aqua",
 		"Dark_Blue",
@@ -57,7 +57,7 @@ public class BopeChatStyle extends BopeModule {
 	BopeSetting color_time  = create("Time", "ChatStyleColorTime", colors_combobox.get(0), colors_combobox); 
 	BopeSetting color_name  = create("Name", "ChatStyleColorMessage", colors_combobox.get(0), colors_combobox);
 	BopeSetting color_fname = create("Friend", "ChatStyleColorFriend", colors_combobox.get(14), colors_combobox);
-	BopeSetting type_mode  = create("Type Mode", "ChatStyleTypeMode", "[]", combobox("[]", "<>"));
+	BopeSetting type_mode   = create("Type Mode", "ChatStyleTypeMode", "[]", combobox("[]", "<>"));
 	//BopeSetting color_mode   = create("Color Mode", "ChatStyleColorMode", "HUD", combobox("HUD", "Server"));
 
 	public static HashMap<String, ChatFormatting> color = new HashMap<>();

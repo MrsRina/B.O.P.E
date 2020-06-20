@@ -35,19 +35,19 @@ public class BopeBind extends BopeCommand {
 		}
 
 		if (message.length > 3) {
-			BopeMessage.send_client_error_message(current_prefix() + "bind <ModuleNameNoSpace> <key>");
+			BopeMessage.send_client_error_message(current_prefix() + "bind module key");
 
 			return true;
 		}
 
 		if (module.equals("null")) {
-			BopeMessage.send_client_error_message(current_prefix() + "bind <ModuleNameNoSpace> <key>");
+			BopeMessage.send_client_error_message(current_prefix() + "bind module key");
 
 			return true;
 		}
 
 		if (key.equals("null")) {
-			BopeMessage.send_client_error_message(current_prefix() + "bind <ModuleNameNoSpace> <key>");
+			BopeMessage.send_client_error_message(current_prefix() + "bind module key");
 
 			return true;
 		}

@@ -33,13 +33,13 @@ public class BopeToggleMessage extends BopeCommand {
 		}
 
 		if (message.length > 3) {
-			BopeMessage.send_client_error_message(current_prefix() + "t <ModuleName> <True/On/False/Off>");
+			BopeMessage.send_client_error_message(current_prefix() + "t module true/on/false/off");
 
 			return true;
 		}
 
 		if (module.equals("null")) {
-			BopeMessage.send_client_error_message(current_prefix() + "t <ModuleName> <True/On/False/Off>");
+			BopeMessage.send_client_error_message(current_prefix() + "t module true/on/false/off");
 
 			return true;
 		}

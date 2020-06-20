@@ -141,7 +141,7 @@ public class BopeEventManager {
 			}
 
 			if (!true_command && Bope.get_command_manager().command_list.has_prefix(event.getMessage())) {
-				BopeMessage.send_client_message("Try use .help to get list of commands.");
+				BopeMessage.send_client_message("Try use \"help list\" to get list of commands.");
 
 				true_command = false;
 			}

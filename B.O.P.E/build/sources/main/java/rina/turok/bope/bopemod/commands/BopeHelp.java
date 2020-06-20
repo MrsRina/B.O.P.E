@@ -30,25 +30,34 @@ public class BopeHelp extends BopeCommand {
 		}
 
 		if (message.length > 2) {
-			BopeMessage.send_client_error_message(current_prefix() + "help <List/NameCommand>");
+			BopeMessage.send_client_error_message(current_prefix() + "help list/command");
 
 			return true;
 		}
 
 		if (type.equals("null")) {
-			BopeMessage.send_client_error_message(current_prefix() + "help <List/NameCommand>");
+			BopeMessage.send_client_error_message(current_prefix() + "help list/command");
 
 			return true;
 		}
 
 		if (type.equalsIgnoreCase("list")) {
-			int commands_length = 0;
+			int count = 0;
+			int size  = BopeListCommand.get_pure_command_list().size();
+
+			StringBuilder commands_names = new StringBuilder();
 
 			for (BopeCommand commands : BopeListCommand.get_pure_command_list()) {
-				BopeMessage.send_client_message(commands.get_name());
+				count++;
 
-				commands_length++;
+				if (count >= size) {
+					commands_names.append(commands.get_name() + ".");
+				} else {
+					commands_names.append(commands.get_name() + ", ");
+				}
 			}
+
+			BopeMessage.send_client_message(commands_names.toString());
 
 			return true;
 		}

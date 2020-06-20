@@ -72,6 +72,23 @@ public class BopeDiscordRichPresence {
 		new Thread(() -> {
 			while (!Thread.currentThread().isInterrupted()) {
 				try {
+					if (mc.world == null) {
+						this.detail_option_1 = "";
+						this.detail_option_2 = "main menu";
+					} else {
+						if (mc.player != null) {
+							this.detail_option_1 = mc.player.getName() + " - ";
+						} else {
+							this.detail_option_1 = "";
+						}
+			
+						if (mc.isIntegratedServerRunning()) {
+							this.detail_option_2 = "survival";
+						} else {
+							this.detail_option_2 = mc.getCurrentServerData().serverIP;
+						}
+					}
+
 					String detail = this.detail_option_1 + this.detail_option_2 + this.detail_option_3 + this.detail_option_4;
 					String state  = this.state_option_1  + this.state_option_2  + this.state_option_3  + this.state_option_4;
 

@@ -48,25 +48,25 @@ public class BopeLabel extends BopeCommand {
 		}
 
 		if (message.length > syntax) {
-			BopeMessage.send_client_error_message(current_prefix() + "label <ModuleName> <ModuleNameLabel> <change1> <change2>");
+			BopeMessage.send_client_error_message(current_prefix() + "label module setting value");
 
 			return true;
 		}
 
 		if (module.equals("null")) {
-			BopeMessage.send_client_error_message(current_prefix() + "label <ModuleName> <ModuleNameLabel> <change1> <change2>");
+			BopeMessage.send_client_error_message(current_prefix() + "label module setting value");
 
 			return true;
 		}
 
 		if (label.equals("null")) {
-			BopeMessage.send_client_error_message(current_prefix() + "label <ModuleName> <ModuleNameLabel> <change1> <change2>");
+			BopeMessage.send_client_error_message(current_prefix() + "label module setting value");
 
 			return true;
 		}
 
 		if (change_1.equals("null") && change_2.equals("null")) {
-			BopeMessage.send_client_error_message(current_prefix() + "label <ModuleName> <ModuleNameLabel> <change1> <change2>");
+			BopeMessage.send_client_error_message(current_prefix() + "label module setting value");
 
 			return true;
 		}

@@ -73,6 +73,7 @@ public class BopeChatSuffix extends BopeModule {
 		"wrust",
 		"root",
 		"holocaust",
+		"future",
 		"twd",
 		"aristois",
 		"axiom",
@@ -101,12 +102,11 @@ public class BopeChatSuffix extends BopeModule {
 		".gay",
 		".java",
 		".god",
-		" god",
-		" blue",
 		" "
 	};
 
 	String[] random_suffix_end = {
+		" ",       // None.
 		" \u262d", // hammer and sickle ☭
 		" \u0fc9", // nut symbol ࿉
 		" \u2620", // skull ☠
@@ -114,8 +114,7 @@ public class BopeChatSuffix extends BopeModule {
 		" \u2654", // brown ♔
 		" \u2764", // heart
 		" \u267f", // wheelchair ♿
-		" \u262f", // yingyang ☯
-		" "        // None.
+		" \u262f"  // yingyang ☯
 	};
 
 	public BopeChatSuffix() {

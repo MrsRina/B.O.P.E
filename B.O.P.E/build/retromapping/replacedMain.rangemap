@@ -11007,7 +11007,7 @@ Class Start: rina.turok.bope.bopemod.hacks.movement.BopeNoSlowDown
 Class End  : rina.turok.bope.bopemod.hacks.movement.BopeNoSlowDown
 endProcessing "rina/turok/bope/bopemod/hacks/movement/BopeNoSlowDown.java"
 
-startProcessing "rina/turok/bope/bopemod/hacks/movement/BopeStrafe.java" md5: 669679cc61757acb9b5858c22bf73ab1
+startProcessing "rina/turok/bope/bopemod/hacks/movement/BopeStrafe.java" md5: b2194c311c29c82ed62dcfbaf709d3f1
 @|rina/turok/bope/bopemod/hacks/movement/BopeStrafe.java|8|46|rina.turok.bope.bopemod.hacks.movement|package|rina.turok.bope.bopemod.hacks.movement|(file)
 Class Start: rina.turok.bope.bopemod.hacks.movement.BopeStrafe
    @|rina/turok/bope/bopemod/hacks/movement/BopeStrafe.java|844|854|BopeStrafe|class|rina.turok.bope.bopemod.hacks.movement.BopeStrafe|false
@@ -11029,94 +11029,6 @@ Class Start: rina.turok.bope.bopemod.hacks.movement.BopeStrafe
       @|rina/turok/bope/bopemod/hacks/movement/BopeStrafe.java|1160|1171|description|field|rina.turok.bope.bopemod.BopeModule|description
       @|rina/turok/bope/bopemod/hacks/movement/BopeStrafe.java|1233|1240|release|method|rina.turok.bope.bopemod.BopeModule|release|(Ljava/lang/String;)V
    Method End: BopeStrafe()V
-   @|rina/turok/bope/bopemod/hacks/movement/BopeStrafe.java|1289|1302|BopeEventMove|class|rina.turok.bope.bopemod.events.BopeEventMove|false
-   @|rina/turok/bope/bopemod/hacks/movement/BopeStrafe.java|1280|1288|Listener|class|me.zero.alpine.listener.Listener|false
-   @|rina/turok/bope/bopemod/hacks/movement/BopeStrafe.java|1280|1288|Listener|class|me.zero.alpine.listener.Listener|false
-   @|rina/turok/bope/bopemod/hacks/movement/BopeStrafe.java|1289|1302|BopeEventMove|class|rina.turok.bope.bopemod.events.BopeEventMove|false
-   @|rina/turok/bope/bopemod/hacks/movement/BopeStrafe.java|1304|1312|listener|field|rina.turok.bope.bopemod.hacks.movement.BopeStrafe|listener|
-   @|rina/turok/bope/bopemod/hacks/movement/BopeStrafe.java|1319|1327|Listener|class|me.zero.alpine.listener.Listener|false
-   @|rina/turok/bope/bopemod/hacks/movement/BopeStrafe.java|1399|1401|mc|field|rina.turok.bope.bopemod.BopeModule|mc
-   @|rina/turok/bope/bopemod/hacks/movement/BopeStrafe.java|1402|1408|player|field|net.minecraft.client.Minecraft|player
-   @|rina/turok/bope/bopemod/hacks/movement/BopeStrafe.java|1409|1422|movementInput|field|net.minecraft.client.entity.EntityPlayerSP|movementInput
-   @|rina/turok/bope/bopemod/hacks/movement/BopeStrafe.java|1423|1434|moveForward|field|net.minecraft.util.MovementInput|moveForward
-   @|rina/turok/bope/bopemod/hacks/movement/BopeStrafe.java|1460|1462|mc|field|rina.turok.bope.bopemod.BopeModule|mc
-   @|rina/turok/bope/bopemod/hacks/movement/BopeStrafe.java|1463|1469|player|field|net.minecraft.client.Minecraft|player
-   @|rina/turok/bope/bopemod/hacks/movement/BopeStrafe.java|1470|1483|movementInput|field|net.minecraft.client.entity.EntityPlayerSP|movementInput
-   @|rina/turok/bope/bopemod/hacks/movement/BopeStrafe.java|1484|1494|moveStrafe|field|net.minecraft.util.MovementInput|moveStrafe
-   @|rina/turok/bope/bopemod/hacks/movement/BopeStrafe.java|1520|1522|mc|field|rina.turok.bope.bopemod.BopeModule|mc
-   @|rina/turok/bope/bopemod/hacks/movement/BopeStrafe.java|1523|1529|player|field|net.minecraft.client.Minecraft|player
-   @|rina/turok/bope/bopemod/hacks/movement/BopeStrafe.java|1530|1543|rotationPitch|field|net.minecraft.entity.Entity|rotationPitch
-   @|rina/turok/bope/bopemod/hacks/movement/BopeStrafe.java|1569|1571|mc|field|rina.turok.bope.bopemod.BopeModule|mc
-   @|rina/turok/bope/bopemod/hacks/movement/BopeStrafe.java|1572|1578|player|field|net.minecraft.client.Minecraft|player
-   @|rina/turok/bope/bopemod/hacks/movement/BopeStrafe.java|1579|1590|rotationYaw|field|net.minecraft.entity.Entity|rotationYaw
-   @|rina/turok/bope/bopemod/hacks/movement/BopeStrafe.java|1602|1611|is_active|method|rina.turok.bope.bopemod.BopeModule|is_active|()Z
-   @|rina/turok/bope/bopemod/hacks/movement/BopeStrafe.java|1665|1667|mc|field|rina.turok.bope.bopemod.BopeModule|mc
-   @|rina/turok/bope/bopemod/hacks/movement/BopeStrafe.java|1668|1674|player|field|net.minecraft.client.Minecraft|player
-   @|rina/turok/bope/bopemod/hacks/movement/BopeStrafe.java|1761|1763|mc|field|rina.turok.bope.bopemod.BopeModule|mc
-   @|rina/turok/bope/bopemod/hacks/movement/BopeStrafe.java|1764|1770|player|field|net.minecraft.client.Minecraft|player
-   @|rina/turok/bope/bopemod/hacks/movement/BopeStrafe.java|1771|1781|isSneaking|method|net.minecraft.entity.Entity|isSneaking|()Z
-   @|rina/turok/bope/bopemod/hacks/movement/BopeStrafe.java|1787|1789|mc|field|rina.turok.bope.bopemod.BopeModule|mc
-   @|rina/turok/bope/bopemod/hacks/movement/BopeStrafe.java|1790|1796|player|field|net.minecraft.client.Minecraft|player
-   @|rina/turok/bope/bopemod/hacks/movement/BopeStrafe.java|1797|1807|isOnLadder|method|net.minecraft.entity.EntityLivingBase|isOnLadder|()Z
-   @|rina/turok/bope/bopemod/hacks/movement/BopeStrafe.java|1813|1815|mc|field|rina.turok.bope.bopemod.BopeModule|mc
-   @|rina/turok/bope/bopemod/hacks/movement/BopeStrafe.java|1816|1822|player|field|net.minecraft.client.Minecraft|player
-   @|rina/turok/bope/bopemod/hacks/movement/BopeStrafe.java|1823|1830|isInWeb|field|net.minecraft.entity.Entity|isInWeb
-   @|rina/turok/bope/bopemod/hacks/movement/BopeStrafe.java|1834|1836|mc|field|rina.turok.bope.bopemod.BopeModule|mc
-   @|rina/turok/bope/bopemod/hacks/movement/BopeStrafe.java|1837|1843|player|field|net.minecraft.client.Minecraft|player
-   @|rina/turok/bope/bopemod/hacks/movement/BopeStrafe.java|1844|1852|isInLava|method|net.minecraft.entity.Entity|isInLava|()Z
-   @|rina/turok/bope/bopemod/hacks/movement/BopeStrafe.java|1858|1860|mc|field|rina.turok.bope.bopemod.BopeModule|mc
-   @|rina/turok/bope/bopemod/hacks/movement/BopeStrafe.java|1861|1867|player|field|net.minecraft.client.Minecraft|player
-   @|rina/turok/bope/bopemod/hacks/movement/BopeStrafe.java|1868|1877|isInWater|method|net.minecraft.entity.Entity|isInWater|()Z
-   @|rina/turok/bope/bopemod/hacks/movement/BopeStrafe.java|1883|1885|mc|field|rina.turok.bope.bopemod.BopeModule|mc
-   @|rina/turok/bope/bopemod/hacks/movement/BopeStrafe.java|1886|1892|player|field|net.minecraft.client.Minecraft|player
-   @|rina/turok/bope/bopemod/hacks/movement/BopeStrafe.java|1893|1905|capabilities|field|net.minecraft.entity.player.EntityPlayer|capabilities
-   @|rina/turok/bope/bopemod/hacks/movement/BopeStrafe.java|1906|1914|isFlying|field|net.minecraft.entity.player.PlayerCapabilities|isFlying
-   @|rina/turok/bope/bopemod/hacks/movement/BopeStrafe.java|1977|1979|mc|field|rina.turok.bope.bopemod.BopeModule|mc
-   @|rina/turok/bope/bopemod/hacks/movement/BopeStrafe.java|1980|1986|player|field|net.minecraft.client.Minecraft|player
-   @|rina/turok/bope/bopemod/hacks/movement/BopeStrafe.java|1987|1995|onGround|field|net.minecraft.entity.Entity|onGround
-   @|rina/turok/bope/bopemod/hacks/movement/BopeStrafe.java|1999|2005|ground|field|rina.turok.bope.bopemod.hacks.movement.BopeStrafe|ground
-   @|rina/turok/bope/bopemod/hacks/movement/BopeStrafe.java|2006|2015|get_value|method|rina.turok.bope.bopemod.guiscreen.settings.BopeSetting|get_value|(Z)Z
-   @|rina/turok/bope/bopemod/hacks/movement/BopeStrafe.java|2072|2074|mc|field|rina.turok.bope.bopemod.BopeModule|mc
-   @|rina/turok/bope/bopemod/hacks/movement/BopeStrafe.java|2075|2081|player|field|net.minecraft.client.Minecraft|player
-   @|rina/turok/bope/bopemod/hacks/movement/BopeStrafe.java|2082|2096|isPotionActive|method|net.minecraft.entity.EntityLivingBase|isPotionActive|(Lnet/minecraft/potion/Potion;)Z
-   @|rina/turok/bope/bopemod/hacks/movement/BopeStrafe.java|2097|2107|MobEffects|class|net.minecraft.init.MobEffects|false
-   @|rina/turok/bope/bopemod/hacks/movement/BopeStrafe.java|2108|2113|SPEED|field|net.minecraft.init.MobEffects|SPEED
-   @|rina/turok/bope/bopemod/hacks/movement/BopeStrafe.java|2138|2140|mc|field|rina.turok.bope.bopemod.BopeModule|mc
-   @|rina/turok/bope/bopemod/hacks/movement/BopeStrafe.java|2141|2147|player|field|net.minecraft.client.Minecraft|player
-   @|rina/turok/bope/bopemod/hacks/movement/BopeStrafe.java|2148|2169|getActivePotionEffect|method|net.minecraft.entity.EntityLivingBase|getActivePotionEffect|(Lnet/minecraft/potion/Potion;)Lnet/minecraft/potion/PotionEffect;
-   @|rina/turok/bope/bopemod/hacks/movement/BopeStrafe.java|2170|2180|MobEffects|class|net.minecraft.init.MobEffects|false
-   @|rina/turok/bope/bopemod/hacks/movement/BopeStrafe.java|2181|2186|SPEED|field|net.minecraft.init.MobEffects|SPEED
-   @|rina/turok/bope/bopemod/hacks/movement/BopeStrafe.java|2188|2200|getAmplifier|method|net.minecraft.potion.PotionEffect|getAmplifier|()I
-   @|rina/turok/bope/bopemod/hacks/movement/BopeStrafe.java|2273|2278|speed|field|rina.turok.bope.bopemod.hacks.movement.BopeStrafe|speed
-   @|rina/turok/bope/bopemod/hacks/movement/BopeStrafe.java|2279|2288|get_value|method|rina.turok.bope.bopemod.guiscreen.settings.BopeSetting|get_value|(I)I
-   @|rina/turok/bope/bopemod/hacks/movement/BopeStrafe.java|2333|2338|speed|field|rina.turok.bope.bopemod.hacks.movement.BopeStrafe|speed
-   @|rina/turok/bope/bopemod/hacks/movement/BopeStrafe.java|2339|2348|get_value|method|rina.turok.bope.bopemod.guiscreen.settings.BopeSetting|get_value|(I)I
-   @|rina/turok/bope/bopemod/hacks/movement/BopeStrafe.java|2501|2506|event|param|me.zero.alpine.listener.EventHook<rina.turok.bope.bopemod.events.BopeEventMove>|invoke|(Lrina/turok/bope/bopemod/events/BopeEventMove;)V|event|-1
-   @|rina/turok/bope/bopemod/hacks/movement/BopeStrafe.java|2507|2512|set_x|method|rina.turok.bope.bopemod.events.BopeEventMove|set_x|(D)V
-   @|rina/turok/bope/bopemod/hacks/movement/BopeStrafe.java|2524|2529|event|param|me.zero.alpine.listener.EventHook<rina.turok.bope.bopemod.events.BopeEventMove>|invoke|(Lrina/turok/bope/bopemod/events/BopeEventMove;)V|event|-1
-   @|rina/turok/bope/bopemod/hacks/movement/BopeStrafe.java|2530|2535|set_z|method|rina.turok.bope.bopemod.events.BopeEventMove|set_z|(D)V
-   @|rina/turok/bope/bopemod/hacks/movement/BopeStrafe.java|3134|3139|event|param|me.zero.alpine.listener.EventHook<rina.turok.bope.bopemod.events.BopeEventMove>|invoke|(Lrina/turok/bope/bopemod/events/BopeEventMove;)V|event|-1
-   @|rina/turok/bope/bopemod/hacks/movement/BopeStrafe.java|3140|3145|set_x|method|rina.turok.bope.bopemod.events.BopeEventMove|set_x|(D)V
-   @|rina/turok/bope/bopemod/hacks/movement/BopeStrafe.java|3178|3182|Math|class|java.lang.Math|false
-   @|rina/turok/bope/bopemod/hacks/movement/BopeStrafe.java|3183|3186|cos|method|java.lang.Math|cos|(D)D
-   @|rina/turok/bope/bopemod/hacks/movement/BopeStrafe.java|3187|3191|Math|class|java.lang.Math|false
-   @|rina/turok/bope/bopemod/hacks/movement/BopeStrafe.java|3192|3201|toRadians|method|java.lang.Math|toRadians|(D)D
-   @|rina/turok/bope/bopemod/hacks/movement/BopeStrafe.java|3260|3264|Math|class|java.lang.Math|false
-   @|rina/turok/bope/bopemod/hacks/movement/BopeStrafe.java|3265|3268|sin|method|java.lang.Math|sin|(D)D
-   @|rina/turok/bope/bopemod/hacks/movement/BopeStrafe.java|3269|3273|Math|class|java.lang.Math|false
-   @|rina/turok/bope/bopemod/hacks/movement/BopeStrafe.java|3274|3283|toRadians|method|java.lang.Math|toRadians|(D)D
-   @|rina/turok/bope/bopemod/hacks/movement/BopeStrafe.java|3315|3320|event|param|me.zero.alpine.listener.EventHook<rina.turok.bope.bopemod.events.BopeEventMove>|invoke|(Lrina/turok/bope/bopemod/events/BopeEventMove;)V|event|-1
-   @|rina/turok/bope/bopemod/hacks/movement/BopeStrafe.java|3321|3326|set_z|method|rina.turok.bope.bopemod.events.BopeEventMove|set_z|(D)V
-   @|rina/turok/bope/bopemod/hacks/movement/BopeStrafe.java|3359|3363|Math|class|java.lang.Math|false
-   @|rina/turok/bope/bopemod/hacks/movement/BopeStrafe.java|3364|3367|sin|method|java.lang.Math|sin|(D)D
-   @|rina/turok/bope/bopemod/hacks/movement/BopeStrafe.java|3368|3372|Math|class|java.lang.Math|false
-   @|rina/turok/bope/bopemod/hacks/movement/BopeStrafe.java|3373|3382|toRadians|method|java.lang.Math|toRadians|(D)D
-   @|rina/turok/bope/bopemod/hacks/movement/BopeStrafe.java|3441|3445|Math|class|java.lang.Math|false
-   @|rina/turok/bope/bopemod/hacks/movement/BopeStrafe.java|3446|3449|cos|method|java.lang.Math|cos|(D)D
-   @|rina/turok/bope/bopemod/hacks/movement/BopeStrafe.java|3450|3454|Math|class|java.lang.Math|false
-   @|rina/turok/bope/bopemod/hacks/movement/BopeStrafe.java|3455|3464|toRadians|method|java.lang.Math|toRadians|(D)D
-   @|rina/turok/bope/bopemod/hacks/movement/BopeStrafe.java|3502|3507|event|param|me.zero.alpine.listener.EventHook<rina.turok.bope.bopemod.events.BopeEventMove>|invoke|(Lrina/turok/bope/bopemod/events/BopeEventMove;)V|event|-1
-   @|rina/turok/bope/bopemod/hacks/movement/BopeStrafe.java|3508|3514|cancel|method|me.zero.alpine.type.Cancellable|cancel|()V
 Class End  : rina.turok.bope.bopemod.hacks.movement.BopeStrafe
 endProcessing "rina/turok/bope/bopemod/hacks/movement/BopeStrafe.java"
 

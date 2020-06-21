@@ -1715,46 +1715,11 @@ End  Processing: rina/turok/bope/bopemod/hacks/movement/BopeNoSlowDown.java
 
 Start Processing: rina/turok/bope/bopemod/hacks/movement/BopeStrafe.java
 FOUND CONSTR method rina/turok/bope/bopemod/hacks/movement/BopeStrafe/BopeStrafe ()V rina/turok/bope/bopemod/hacks/movement/BopeStrafe
-Rename field net/minecraft/client/Minecraft/player[1402,1408]::player->field_71439_g
-Rename field net/minecraft/client/entity/EntityPlayerSP/movementInput[1416,1429]::movementInput->field_71158_b
-Rename field net/minecraft/util/MovementInput/moveForward[1430,1441]::moveForward->field_192832_b
-Rename field net/minecraft/client/Minecraft/player[1473,1479]::player->field_71439_g
-Rename field net/minecraft/client/entity/EntityPlayerSP/movementInput[1487,1500]::movementInput->field_71158_b
-Rename field net/minecraft/util/MovementInput/moveStrafe[1501,1511]::moveStrafe->field_78902_a
-Rename field net/minecraft/client/Minecraft/player[1543,1549]::player->field_71439_g
-Rename field net/minecraft/entity/Entity/rotationPitch[1557,1570]::rotationPitch->field_70125_A
-Rename field net/minecraft/client/Minecraft/player[1599,1605]::player->field_71439_g
-Rename field net/minecraft/entity/Entity/rotationYaw[1613,1624]::rotationYaw->field_70177_z
-Rename field net/minecraft/client/Minecraft/player[1704,1710]::player->field_71439_g
-Rename field net/minecraft/client/Minecraft/player[1807,1813]::player->field_71439_g
-Rename method net/minecraft/entity/Entity/isSneaking ()Z[1821,1831]::isSneaking->func_70093_af
-Rename field net/minecraft/client/Minecraft/player[1843,1849]::player->field_71439_g
-Rename method net/minecraft/entity/EntityLivingBase/isOnLadder ()Z[1857,1867]::isOnLadder->func_70617_f_
-Rename field net/minecraft/client/Minecraft/player[1879,1885]::player->field_71439_g
-Rename field net/minecraft/entity/Entity/isInWeb[1893,1900]::isInWeb->field_70134_J
-Rename field net/minecraft/client/Minecraft/player[1913,1919]::player->field_71439_g
-Rename method net/minecraft/entity/Entity/isInLava ()Z[1927,1935]::isInLava->func_180799_ab
-Rename field net/minecraft/client/Minecraft/player[1950,1956]::player->field_71439_g
-Rename method net/minecraft/entity/Entity/isInWater ()Z[1964,1973]::isInWater->func_70090_H
-Rename field net/minecraft/client/Minecraft/player[1985,1991]::player->field_71439_g
-Rename field net/minecraft/entity/player/EntityPlayer/capabilities[1999,2011]::capabilities->field_71075_bZ
-Rename field net/minecraft/entity/player/PlayerCapabilities/isFlying[2014,2022]::isFlying->field_75100_b
-Rename field net/minecraft/client/Minecraft/player[2093,2099]::player->field_71439_g
-Rename field net/minecraft/entity/Entity/onGround[2107,2115]::onGround->field_70122_E
-Rename field net/minecraft/client/Minecraft/player[2200,2206]::player->field_71439_g
-Rename method net/minecraft/entity/EntityLivingBase/isPotionActive (Lnet/minecraft/potion/Potion;)Z[2214,2228]::isPotionActive->func_70644_a
-Rename field net/minecraft/init/MobEffects/SPEED[2238,2243]::SPEED->field_76424_c
-Rename field net/minecraft/client/Minecraft/player[2279,2285]::player->field_71439_g
-Rename method net/minecraft/entity/EntityLivingBase/getActivePotionEffect (Lnet/minecraft/potion/Potion;)Lnet/minecraft/potion/PotionEffect;[2293,2314]::getActivePotionEffect->func_70660_b
-Rename field net/minecraft/init/MobEffects/SPEED[2317,2322]::SPEED->field_76424_c
-Rename method net/minecraft/potion/PotionEffect/getAmplifier ()I[2332,2344]::getAmplifier->func_76458_c
 Import: net.minecraft.util.math.AxisAlignedBB
 Import: net.minecraft.util.math.MathHelper
 Import: net.minecraft.init.MobEffects
-Adding 5 imports
-        me.zero.alpine.listener.Listener
+Adding 3 imports
         rina.turok.bope.bopemod.BopeModule
-        rina.turok.bope.bopemod.events.BopeEventMove
         rina.turok.bope.bopemod.guiscreen.settings.BopeSetting
         rina.turok.bope.bopemod.hacks.BopeCategory
 End  Processing: rina/turok/bope/bopemod/hacks/movement/BopeStrafe.java

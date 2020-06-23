@@ -183,7 +183,7 @@ public class BopeChatSuffix extends BopeModule {
 		if (accept_suffix) {
 			if (suffix_default) {
 				// Just default.
-				message += Bope.BOPE_SIGN + random_suffix_end[3] + " " + convert_base("bope") + random_suffix_end[3];
+				message += Bope.BOPE_SIGN + "\u2620" + " " + convert_base("bope") + " \u2620";
 			}
 
 			if (suffix_random) {

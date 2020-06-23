@@ -8726,7 +8726,7 @@ Class Start: rina.turok.bope.bopemod.hacks.chat.BopeChatStyle
 Class End  : rina.turok.bope.bopemod.hacks.chat.BopeChatStyle
 endProcessing "rina/turok/bope/bopemod/hacks/chat/BopeChatStyle.java"
 
-startProcessing "rina/turok/bope/bopemod/hacks/chat/BopeChatSuffix.java" md5: 432cf02088ef2d40fb75b791e75e8d02
+startProcessing "rina/turok/bope/bopemod/hacks/chat/BopeChatSuffix.java" md5: 2c8bc85a783de24bf9a24e0673ca7547
 @|rina/turok/bope/bopemod/hacks/chat/BopeChatSuffix.java|8|42|rina.turok.bope.bopemod.hacks.chat|package|rina.turok.bope.bopemod.hacks.chat|(file)
 Class Start: rina.turok.bope.bopemod.hacks.chat.BopeChatSuffix
    @|rina/turok/bope/bopemod/hacks/chat/BopeChatSuffix.java|680|694|BopeChatSuffix|class|rina.turok.bope.bopemod.hacks.chat.BopeChatSuffix|false
@@ -8834,65 +8834,63 @@ Class Start: rina.turok.bope.bopemod.hacks.chat.BopeChatSuffix
    @|rina/turok/bope/bopemod/hacks/chat/BopeChatSuffix.java|4341|4355|suffix_default|field|rina.turok.bope.bopemod.hacks.chat.BopeChatSuffix|suffix_default
    @|rina/turok/bope/bopemod/hacks/chat/BopeChatSuffix.java|4397|4401|Bope|class|rina.turok.bope.Bope|false
    @|rina/turok/bope/bopemod/hacks/chat/BopeChatSuffix.java|4402|4411|BOPE_SIGN|field|rina.turok.bope.Bope|BOPE_SIGN
-   @|rina/turok/bope/bopemod/hacks/chat/BopeChatSuffix.java|4414|4431|random_suffix_end|field|rina.turok.bope.bopemod.hacks.chat.BopeChatSuffix|random_suffix_end
-   @|rina/turok/bope/bopemod/hacks/chat/BopeChatSuffix.java|4443|4455|convert_base|method|rina.turok.bope.bopemod.hacks.chat.BopeChatSuffix|convert_base|(Ljava/lang/String;)Ljava/lang/String;
-   @|rina/turok/bope/bopemod/hacks/chat/BopeChatSuffix.java|4466|4483|random_suffix_end|field|rina.turok.bope.bopemod.hacks.chat.BopeChatSuffix|random_suffix_end
-   @|rina/turok/bope/bopemod/hacks/chat/BopeChatSuffix.java|4504|4517|suffix_random|field|rina.turok.bope.bopemod.hacks.chat.BopeChatSuffix|suffix_random
-   @|rina/turok/bope/bopemod/hacks/chat/BopeChatSuffix.java|4567|4580|StringBuilder|class|java.lang.StringBuilder|false
-   @|rina/turok/bope/bopemod/hacks/chat/BopeChatSuffix.java|4607|4620|StringBuilder|class|java.lang.StringBuilder|false
-   @|rina/turok/bope/bopemod/hacks/chat/BopeChatSuffix.java|4697|4703|append|method|java.lang.AbstractStringBuilder|append|(Ljava/lang/String;)Ljava/lang/AbstractStringBuilder;
-   @|rina/turok/bope/bopemod/hacks/chat/BopeChatSuffix.java|4704|4716|convert_base|method|rina.turok.bope.bopemod.hacks.chat.BopeChatSuffix|convert_base|(Ljava/lang/String;)Ljava/lang/String;
-   @|rina/turok/bope/bopemod/hacks/chat/BopeChatSuffix.java|4717|4730|random_string|method|rina.turok.bope.bopemod.hacks.chat.BopeChatSuffix|random_string|([Ljava/lang/String;)Ljava/lang/String;
-   @|rina/turok/bope/bopemod/hacks/chat/BopeChatSuffix.java|4731|4748|random_suffix_pre|field|rina.turok.bope.bopemod.hacks.chat.BopeChatSuffix|random_suffix_pre
-   @|rina/turok/bope/bopemod/hacks/chat/BopeChatSuffix.java|4778|4784|append|method|java.lang.AbstractStringBuilder|append|(Ljava/lang/String;)Ljava/lang/AbstractStringBuilder;
-   @|rina/turok/bope/bopemod/hacks/chat/BopeChatSuffix.java|4785|4797|convert_base|method|rina.turok.bope.bopemod.hacks.chat.BopeChatSuffix|convert_base|(Ljava/lang/String;)Ljava/lang/String;
-   @|rina/turok/bope/bopemod/hacks/chat/BopeChatSuffix.java|4798|4811|random_string|method|rina.turok.bope.bopemod.hacks.chat.BopeChatSuffix|random_string|([Ljava/lang/String;)Ljava/lang/String;
-   @|rina/turok/bope/bopemod/hacks/chat/BopeChatSuffix.java|4812|4829|random_suffix_mid|field|rina.turok.bope.bopemod.hacks.chat.BopeChatSuffix|random_suffix_mid
-   @|rina/turok/bope/bopemod/hacks/chat/BopeChatSuffix.java|4859|4865|append|method|java.lang.AbstractStringBuilder|append|(Ljava/lang/String;)Ljava/lang/AbstractStringBuilder;
-   @|rina/turok/bope/bopemod/hacks/chat/BopeChatSuffix.java|4866|4878|convert_base|method|rina.turok.bope.bopemod.hacks.chat.BopeChatSuffix|convert_base|(Ljava/lang/String;)Ljava/lang/String;
-   @|rina/turok/bope/bopemod/hacks/chat/BopeChatSuffix.java|4879|4892|random_string|method|rina.turok.bope.bopemod.hacks.chat.BopeChatSuffix|random_string|([Ljava/lang/String;)Ljava/lang/String;
-   @|rina/turok/bope/bopemod/hacks/chat/BopeChatSuffix.java|4893|4910|random_suffix_end|field|rina.turok.bope.bopemod.hacks.chat.BopeChatSuffix|random_suffix_end
-   @|rina/turok/bope/bopemod/hacks/chat/BopeChatSuffix.java|4933|4937|Bope|class|rina.turok.bope.Bope|false
-   @|rina/turok/bope/bopemod/hacks/chat/BopeChatSuffix.java|4938|4947|BOPE_SIGN|field|rina.turok.bope.Bope|BOPE_SIGN
-   @|rina/turok/bope/bopemod/hacks/chat/BopeChatSuffix.java|4970|4978|toString|method|java.lang.Object|toString|()Ljava/lang/String;
-   @|rina/turok/bope/bopemod/hacks/chat/BopeChatSuffix.java|5062|5075|suffix_custom|field|rina.turok.bope.bopemod.hacks.chat.BopeChatSuffix|suffix_custom
-   @|rina/turok/bope/bopemod/hacks/chat/BopeChatSuffix.java|5095|5099|Bope|class|rina.turok.bope.Bope|false
-   @|rina/turok/bope/bopemod/hacks/chat/BopeChatSuffix.java|5100|5109|BOPE_SIGN|field|rina.turok.bope.Bope|BOPE_SIGN
-   @|rina/turok/bope/bopemod/hacks/chat/BopeChatSuffix.java|5112|5124|convert_base|method|rina.turok.bope.bopemod.hacks.chat.BopeChatSuffix|convert_base|(Ljava/lang/String;)Ljava/lang/String;
-   @|rina/turok/bope/bopemod/hacks/chat/BopeChatSuffix.java|5125|5131|custom|field|rina.turok.bope.bopemod.hacks.chat.BopeChatSuffix|custom
-   @|rina/turok/bope/bopemod/hacks/chat/BopeChatSuffix.java|5132|5141|get_value|method|rina.turok.bope.bopemod.guiscreen.settings.BopeSetting|get_value|(Ljava/lang/String;)Ljava/lang/String;
-   @|rina/turok/bope/bopemod/hacks/chat/BopeChatSuffix.java|5219|5225|length|method|java.lang.CharSequence|length|()I
-   @|rina/turok/bope/bopemod/hacks/chat/BopeChatSuffix.java|5251|5260|substring|method|java.lang.String|substring|(II)Ljava/lang/String;
-   @|rina/turok/bope/bopemod/hacks/chat/BopeChatSuffix.java|5312|5330|CPacketChatMessage|class|net.minecraft.network.play.client.CPacketChatMessage|false
-   @|rina/turok/bope/bopemod/hacks/chat/BopeChatSuffix.java|5332|5337|event|param|me.zero.alpine.listener.EventHook<rina.turok.bope.bopemod.events.BopeEventPacket.SendPacket>|invoke|(Lrina/turok/bope/bopemod/events/BopeEventPacket$SendPacket;)V|event|-1
-   @|rina/turok/bope/bopemod/hacks/chat/BopeChatSuffix.java|5338|5348|get_packet|method|rina.turok.bope.bopemod.events.BopeEventPacket|get_packet|()Lnet/minecraft/network/Packet;
-   @|rina/turok/bope/bopemod/hacks/chat/BopeChatSuffix.java|5352|5359|message|field|net.minecraft.network.play.client.CPacketChatMessage|message
+   @|rina/turok/bope/bopemod/hacks/chat/BopeChatSuffix.java|4431|4443|convert_base|method|rina.turok.bope.bopemod.hacks.chat.BopeChatSuffix|convert_base|(Ljava/lang/String;)Ljava/lang/String;
+   @|rina/turok/bope/bopemod/hacks/chat/BopeChatSuffix.java|4481|4494|suffix_random|field|rina.turok.bope.bopemod.hacks.chat.BopeChatSuffix|suffix_random
+   @|rina/turok/bope/bopemod/hacks/chat/BopeChatSuffix.java|4544|4557|StringBuilder|class|java.lang.StringBuilder|false
+   @|rina/turok/bope/bopemod/hacks/chat/BopeChatSuffix.java|4584|4597|StringBuilder|class|java.lang.StringBuilder|false
+   @|rina/turok/bope/bopemod/hacks/chat/BopeChatSuffix.java|4674|4680|append|method|java.lang.AbstractStringBuilder|append|(Ljava/lang/String;)Ljava/lang/AbstractStringBuilder;
+   @|rina/turok/bope/bopemod/hacks/chat/BopeChatSuffix.java|4681|4693|convert_base|method|rina.turok.bope.bopemod.hacks.chat.BopeChatSuffix|convert_base|(Ljava/lang/String;)Ljava/lang/String;
+   @|rina/turok/bope/bopemod/hacks/chat/BopeChatSuffix.java|4694|4707|random_string|method|rina.turok.bope.bopemod.hacks.chat.BopeChatSuffix|random_string|([Ljava/lang/String;)Ljava/lang/String;
+   @|rina/turok/bope/bopemod/hacks/chat/BopeChatSuffix.java|4708|4725|random_suffix_pre|field|rina.turok.bope.bopemod.hacks.chat.BopeChatSuffix|random_suffix_pre
+   @|rina/turok/bope/bopemod/hacks/chat/BopeChatSuffix.java|4755|4761|append|method|java.lang.AbstractStringBuilder|append|(Ljava/lang/String;)Ljava/lang/AbstractStringBuilder;
+   @|rina/turok/bope/bopemod/hacks/chat/BopeChatSuffix.java|4762|4774|convert_base|method|rina.turok.bope.bopemod.hacks.chat.BopeChatSuffix|convert_base|(Ljava/lang/String;)Ljava/lang/String;
+   @|rina/turok/bope/bopemod/hacks/chat/BopeChatSuffix.java|4775|4788|random_string|method|rina.turok.bope.bopemod.hacks.chat.BopeChatSuffix|random_string|([Ljava/lang/String;)Ljava/lang/String;
+   @|rina/turok/bope/bopemod/hacks/chat/BopeChatSuffix.java|4789|4806|random_suffix_mid|field|rina.turok.bope.bopemod.hacks.chat.BopeChatSuffix|random_suffix_mid
+   @|rina/turok/bope/bopemod/hacks/chat/BopeChatSuffix.java|4836|4842|append|method|java.lang.AbstractStringBuilder|append|(Ljava/lang/String;)Ljava/lang/AbstractStringBuilder;
+   @|rina/turok/bope/bopemod/hacks/chat/BopeChatSuffix.java|4843|4855|convert_base|method|rina.turok.bope.bopemod.hacks.chat.BopeChatSuffix|convert_base|(Ljava/lang/String;)Ljava/lang/String;
+   @|rina/turok/bope/bopemod/hacks/chat/BopeChatSuffix.java|4856|4869|random_string|method|rina.turok.bope.bopemod.hacks.chat.BopeChatSuffix|random_string|([Ljava/lang/String;)Ljava/lang/String;
+   @|rina/turok/bope/bopemod/hacks/chat/BopeChatSuffix.java|4870|4887|random_suffix_end|field|rina.turok.bope.bopemod.hacks.chat.BopeChatSuffix|random_suffix_end
+   @|rina/turok/bope/bopemod/hacks/chat/BopeChatSuffix.java|4910|4914|Bope|class|rina.turok.bope.Bope|false
+   @|rina/turok/bope/bopemod/hacks/chat/BopeChatSuffix.java|4915|4924|BOPE_SIGN|field|rina.turok.bope.Bope|BOPE_SIGN
+   @|rina/turok/bope/bopemod/hacks/chat/BopeChatSuffix.java|4947|4955|toString|method|java.lang.Object|toString|()Ljava/lang/String;
+   @|rina/turok/bope/bopemod/hacks/chat/BopeChatSuffix.java|5039|5052|suffix_custom|field|rina.turok.bope.bopemod.hacks.chat.BopeChatSuffix|suffix_custom
+   @|rina/turok/bope/bopemod/hacks/chat/BopeChatSuffix.java|5072|5076|Bope|class|rina.turok.bope.Bope|false
+   @|rina/turok/bope/bopemod/hacks/chat/BopeChatSuffix.java|5077|5086|BOPE_SIGN|field|rina.turok.bope.Bope|BOPE_SIGN
+   @|rina/turok/bope/bopemod/hacks/chat/BopeChatSuffix.java|5089|5101|convert_base|method|rina.turok.bope.bopemod.hacks.chat.BopeChatSuffix|convert_base|(Ljava/lang/String;)Ljava/lang/String;
+   @|rina/turok/bope/bopemod/hacks/chat/BopeChatSuffix.java|5102|5108|custom|field|rina.turok.bope.bopemod.hacks.chat.BopeChatSuffix|custom
+   @|rina/turok/bope/bopemod/hacks/chat/BopeChatSuffix.java|5109|5118|get_value|method|rina.turok.bope.bopemod.guiscreen.settings.BopeSetting|get_value|(Ljava/lang/String;)Ljava/lang/String;
+   @|rina/turok/bope/bopemod/hacks/chat/BopeChatSuffix.java|5196|5202|length|method|java.lang.CharSequence|length|()I
+   @|rina/turok/bope/bopemod/hacks/chat/BopeChatSuffix.java|5228|5237|substring|method|java.lang.String|substring|(II)Ljava/lang/String;
+   @|rina/turok/bope/bopemod/hacks/chat/BopeChatSuffix.java|5289|5307|CPacketChatMessage|class|net.minecraft.network.play.client.CPacketChatMessage|false
+   @|rina/turok/bope/bopemod/hacks/chat/BopeChatSuffix.java|5309|5314|event|param|me.zero.alpine.listener.EventHook<rina.turok.bope.bopemod.events.BopeEventPacket.SendPacket>|invoke|(Lrina/turok/bope/bopemod/events/BopeEventPacket$SendPacket;)V|event|-1
+   @|rina/turok/bope/bopemod/hacks/chat/BopeChatSuffix.java|5315|5325|get_packet|method|rina.turok.bope.bopemod.events.BopeEventPacket|get_packet|()Lnet/minecraft/network/Packet;
+   @|rina/turok/bope/bopemod/hacks/chat/BopeChatSuffix.java|5329|5336|message|field|net.minecraft.network.play.client.CPacketChatMessage|message
    Method Start: random_string([Ljava/lang/String;)Ljava/lang/String;
-      @|rina/turok/bope/bopemod/hacks/chat/BopeChatSuffix.java|5453|5457|list|param|rina.turok.bope.bopemod.hacks.chat.BopeChatSuffix|random_string|([Ljava/lang/String;)Ljava/lang/String;|list|0
-      @|rina/turok/bope/bopemod/hacks/chat/BopeChatSuffix.java|5423|5429|String|class|java.lang.String|false
-      @|rina/turok/bope/bopemod/hacks/chat/BopeChatSuffix.java|5430|5443|random_string|method|rina.turok.bope.bopemod.hacks.chat.BopeChatSuffix|random_string|([Ljava/lang/String;)Ljava/lang/String;
-      @|rina/turok/bope/bopemod/hacks/chat/BopeChatSuffix.java|5444|5450|String|class|java.lang.String|false
-      @|rina/turok/bope/bopemod/hacks/chat/BopeChatSuffix.java|5471|5475|list|param|rina.turok.bope.bopemod.hacks.chat.BopeChatSuffix|random_string|([Ljava/lang/String;)Ljava/lang/String;|list|0
-      @|rina/turok/bope/bopemod/hacks/chat/BopeChatSuffix.java|5480|5486|Random|class|java.util.Random|false
-      @|rina/turok/bope/bopemod/hacks/chat/BopeChatSuffix.java|5489|5496|nextInt|method|java.util.Random|nextInt|(I)I
-      @|rina/turok/bope/bopemod/hacks/chat/BopeChatSuffix.java|5497|5501|list|param|rina.turok.bope.bopemod.hacks.chat.BopeChatSuffix|random_string|([Ljava/lang/String;)Ljava/lang/String;|list|0
+      @|rina/turok/bope/bopemod/hacks/chat/BopeChatSuffix.java|5430|5434|list|param|rina.turok.bope.bopemod.hacks.chat.BopeChatSuffix|random_string|([Ljava/lang/String;)Ljava/lang/String;|list|0
+      @|rina/turok/bope/bopemod/hacks/chat/BopeChatSuffix.java|5400|5406|String|class|java.lang.String|false
+      @|rina/turok/bope/bopemod/hacks/chat/BopeChatSuffix.java|5407|5420|random_string|method|rina.turok.bope.bopemod.hacks.chat.BopeChatSuffix|random_string|([Ljava/lang/String;)Ljava/lang/String;
+      @|rina/turok/bope/bopemod/hacks/chat/BopeChatSuffix.java|5421|5427|String|class|java.lang.String|false
+      @|rina/turok/bope/bopemod/hacks/chat/BopeChatSuffix.java|5448|5452|list|param|rina.turok.bope.bopemod.hacks.chat.BopeChatSuffix|random_string|([Ljava/lang/String;)Ljava/lang/String;|list|0
+      @|rina/turok/bope/bopemod/hacks/chat/BopeChatSuffix.java|5457|5463|Random|class|java.util.Random|false
+      @|rina/turok/bope/bopemod/hacks/chat/BopeChatSuffix.java|5466|5473|nextInt|method|java.util.Random|nextInt|(I)I
+      @|rina/turok/bope/bopemod/hacks/chat/BopeChatSuffix.java|5474|5478|list|param|rina.turok.bope.bopemod.hacks.chat.BopeChatSuffix|random_string|([Ljava/lang/String;)Ljava/lang/String;|list|0
       Field: Array Length, skipping
    Method End: random_string([Ljava/lang/String;)Ljava/lang/String;
    Method Start: convert_base(Ljava/lang/String;)Ljava/lang/String;
-      @|rina/turok/bope/bopemod/hacks/chat/BopeChatSuffix.java|5597|5601|base|param|rina.turok.bope.bopemod.hacks.chat.BopeChatSuffix|convert_base|(Ljava/lang/String;)Ljava/lang/String;|base|0
-      @|rina/turok/bope/bopemod/hacks/chat/BopeChatSuffix.java|5570|5576|String|class|java.lang.String|false
-      @|rina/turok/bope/bopemod/hacks/chat/BopeChatSuffix.java|5577|5589|convert_base|method|rina.turok.bope.bopemod.hacks.chat.BopeChatSuffix|convert_base|(Ljava/lang/String;)Ljava/lang/String;
-      @|rina/turok/bope/bopemod/hacks/chat/BopeChatSuffix.java|5590|5596|String|class|java.lang.String|false
-      @|rina/turok/bope/bopemod/hacks/chat/BopeChatSuffix.java|5615|5619|Bope|class|rina.turok.bope.Bope|false
-      @|rina/turok/bope/bopemod/hacks/chat/BopeChatSuffix.java|5620|5626|smooth|method|rina.turok.bope.Bope|smooth|(Ljava/lang/String;)Ljava/lang/String;
-      @|rina/turok/bope/bopemod/hacks/chat/BopeChatSuffix.java|5627|5631|base|param|rina.turok.bope.bopemod.hacks.chat.BopeChatSuffix|convert_base|(Ljava/lang/String;)Ljava/lang/String;|base|0
+      @|rina/turok/bope/bopemod/hacks/chat/BopeChatSuffix.java|5574|5578|base|param|rina.turok.bope.bopemod.hacks.chat.BopeChatSuffix|convert_base|(Ljava/lang/String;)Ljava/lang/String;|base|0
+      @|rina/turok/bope/bopemod/hacks/chat/BopeChatSuffix.java|5547|5553|String|class|java.lang.String|false
+      @|rina/turok/bope/bopemod/hacks/chat/BopeChatSuffix.java|5554|5566|convert_base|method|rina.turok.bope.bopemod.hacks.chat.BopeChatSuffix|convert_base|(Ljava/lang/String;)Ljava/lang/String;
+      @|rina/turok/bope/bopemod/hacks/chat/BopeChatSuffix.java|5567|5573|String|class|java.lang.String|false
+      @|rina/turok/bope/bopemod/hacks/chat/BopeChatSuffix.java|5592|5596|Bope|class|rina.turok.bope.Bope|false
+      @|rina/turok/bope/bopemod/hacks/chat/BopeChatSuffix.java|5597|5603|smooth|method|rina.turok.bope.Bope|smooth|(Ljava/lang/String;)Ljava/lang/String;
+      @|rina/turok/bope/bopemod/hacks/chat/BopeChatSuffix.java|5604|5608|base|param|rina.turok.bope.bopemod.hacks.chat.BopeChatSuffix|convert_base|(Ljava/lang/String;)Ljava/lang/String;|base|0
    Method End: convert_base(Ljava/lang/String;)Ljava/lang/String;
    Method Start: detail_option()Ljava/lang/String;
-      @|rina/turok/bope/bopemod/hacks/chat/BopeChatSuffix.java|5643|5651|Override|class|java.lang.Override|false
-      @|rina/turok/bope/bopemod/hacks/chat/BopeChatSuffix.java|5661|5667|String|class|java.lang.String|false
-      @|rina/turok/bope/bopemod/hacks/chat/BopeChatSuffix.java|5668|5681|detail_option|method|rina.turok.bope.bopemod.BopeModule|detail_option|()Ljava/lang/String;
-      @|rina/turok/bope/bopemod/hacks/chat/BopeChatSuffix.java|5726|5730|type|field|rina.turok.bope.bopemod.hacks.chat.BopeChatSuffix|type
-      @|rina/turok/bope/bopemod/hacks/chat/BopeChatSuffix.java|5731|5748|get_current_value|method|rina.turok.bope.bopemod.guiscreen.settings.BopeSetting|get_current_value|()Ljava/lang/String;
+      @|rina/turok/bope/bopemod/hacks/chat/BopeChatSuffix.java|5620|5628|Override|class|java.lang.Override|false
+      @|rina/turok/bope/bopemod/hacks/chat/BopeChatSuffix.java|5638|5644|String|class|java.lang.String|false
+      @|rina/turok/bope/bopemod/hacks/chat/BopeChatSuffix.java|5645|5658|detail_option|method|rina.turok.bope.bopemod.BopeModule|detail_option|()Ljava/lang/String;
+      @|rina/turok/bope/bopemod/hacks/chat/BopeChatSuffix.java|5703|5707|type|field|rina.turok.bope.bopemod.hacks.chat.BopeChatSuffix|type
+      @|rina/turok/bope/bopemod/hacks/chat/BopeChatSuffix.java|5708|5725|get_current_value|method|rina.turok.bope.bopemod.guiscreen.settings.BopeSetting|get_current_value|()Ljava/lang/String;
    Method End: detail_option()Ljava/lang/String;
 Class End  : rina.turok.bope.bopemod.hacks.chat.BopeChatSuffix
 endProcessing "rina/turok/bope/bopemod/hacks/chat/BopeChatSuffix.java"

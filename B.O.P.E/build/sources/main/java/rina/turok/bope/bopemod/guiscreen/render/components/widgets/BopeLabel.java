@@ -4,6 +4,7 @@ import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.gui.GuiTextField;
 import net.minecraft.client.Minecraft;
 
+import org.lwjgl.input.Keyboard;
 import org.lwjgl.opengl.GL11;
 
 // Guiscreen.
@@ -48,6 +49,7 @@ public class BopeLabel extends BopeAbstractWidget {
 
 	private boolean can;
 	private boolean info;
+	private boolean click;
 	private boolean smoth = Bope.get_setting_manager().get_setting_with_tag("GUISmothFont").get_value(true);
 
 	private BopeDraw font = new BopeDraw(1);
@@ -81,7 +83,8 @@ public class BopeLabel extends BopeAbstractWidget {
 			this.info = true;
 		}
 
-		this.can  = true;
+		this.can   = true;
+		this.click = false;
 	}
 
 	public BopeSetting get_setting() {
@@ -150,6 +153,14 @@ public class BopeLabel extends BopeAbstractWidget {
 		return false;
 	}
 
+	public int get_actual_side() {
+		if (this.master.master.get_x() + this.master.master.get_width() + this.width > BopeDraw.get_width()) {
+			return this.master.master.get_x() - this.master.master.get_width();
+		} else {
+			return this.master.master.get_x() + this.master.master.get_width() + 4;
+		}
+	}
+
 	@Override
 	public boolean can() {
 		return this.can;
@@ -158,6 +169,10 @@ public class BopeLabel extends BopeAbstractWidget {
 	@Override
 	public void input(char char_, int key) {
 		this.entry.textboxKeyTyped(char_, key);
+
+		if (key == Keyboard.KEY_RETURN && this.entry.isFocused()) {
+			this.entry.setFocused(false);
+		}
 	}
 
 	@Override
@@ -167,12 +182,15 @@ public class BopeLabel extends BopeAbstractWidget {
 		if (mouse == 0) {
 			if (motion(mx, my) && this.master.is_open() && can()) {
 				this.frame.does_can(false);
+
+				this.click = true;
+				this.entry.setFocused(this.click);
 			}
 		}
 	}
 
 	@Override
-	public void render(int master_y, int separe, int absolute_x, int absolute_y) {
+	public void render(int master_y, int separe, int mx, int my) {
 		this.smoth = Bope.get_setting_manager().get_setting_with_tag("GUISmothFont").get_value(true);
 
 		set_width(this.master.get_width() - separe);
@@ -201,13 +219,21 @@ public class BopeLabel extends BopeAbstractWidget {
 			this.entry.width  = this.width;
 			this.entry.height = this.height;
 
-			this.entry.x = this.x;
+			this.entry.x = get_actual_side();
 			this.entry.y = this.save_y;
 
 			this.setting.set_value(this.entry.getText());
 
-			if (this.entry.isFocused()) {		
+			if (motion(mx, my)) {
+				BopeDraw.draw_string(this.label_name, this.x + 2, this.save_y, ns_r, ns_g, ns_b, this.smoth);
+
 				this.entry.drawTextBox();
+			} else if (this.click) {
+				BopeDraw.draw_string(this.label_name, this.x + 2, this.save_y, ns_r, ns_g, ns_b, this.smoth);
+
+				this.entry.drawTextBox();
+
+				this.click = this.entry.isFocused();
 			} else {
 				BopeDraw.draw_string(this.label_name, this.x + 2, this.save_y, ns_r, ns_g, ns_b, this.smoth);
 			}

@@ -1,12 +1,12 @@
-Processing 121 files
+Processing 120 files
 Start Processing: rina/turok/bope/Bope.java
 New Key: class net/minecraftforge/fml/common/Mod
 New Key: class net/minecraftforge/fml/common/Mod
-Rename method net/minecraft/client/Minecraft/getMinecraft ()Lnet/minecraft/client/Minecraft;[5509,5521]::getMinecraft->func_71410_x
-Rename field net/minecraft/client/Minecraft/player[5524,5530]::player->field_71439_g
-Rename method net/minecraft/client/Minecraft/getMinecraft ()Lnet/minecraft/client/Minecraft;[5581,5593]::getMinecraft->func_71410_x
-Rename field net/minecraft/client/Minecraft/player[5596,5602]::player->field_71439_g
-Rename method net/minecraft/command/ICommandSender/getName ()Ljava/lang/String;[5610,5617]::getName->func_70005_c_
+Rename method net/minecraft/client/Minecraft/getMinecraft ()Lnet/minecraft/client/Minecraft;[5895,5907]::getMinecraft->func_71410_x
+Rename field net/minecraft/client/Minecraft/player[5910,5916]::player->field_71439_g
+Rename method net/minecraft/client/Minecraft/getMinecraft ()Lnet/minecraft/client/Minecraft;[5967,5979]::getMinecraft->func_71410_x
+Rename field net/minecraft/client/Minecraft/player[5982,5988]::player->field_71439_g
+Rename method net/minecraft/command/ICommandSender/getName ()Ljava/lang/String;[5996,6003]::getName->func_70005_c_
 Import: net.minecraftforge.fml.common.event.FMLInitializationEvent
 Import: com.mojang.realmsclient.gui.ChatFormatting
 Import: net.minecraftforge.fml.common.Mod
@@ -553,33 +553,6 @@ Adding 2 imports
         rina.turok.bope.bopemod.guiscreen.render.pinnables.BopePinnable
 End  Processing: rina/turok/bope/bopemod/guiscreen/hud/BopeServerInfo.java
 
-Start Processing: rina/turok/bope/bopemod/guiscreen/hud/BopeStoragePreview.java
-Rename field net/minecraft/init/Blocks/TRAPPED_CHEST[1079,1092]::TRAPPED_CHEST->field_150447_bR
-Rename field net/minecraft/init/Blocks/ENDER_CHEST[1106,1117]::ENDER_CHEST->field_150477_bB
-Rename field net/minecraft/init/Blocks/CHEST[1133,1138]::CHEST->field_150486_ae
-FOUND CONSTR method rina/turok/bope/bopemod/guiscreen/hud/BopeStoragePreview/BopeStoragePreview ()V rina/turok/bope/bopemod/guiscreen/hud/BopeStoragePreview
-Import: net.minecraft.client.renderer.GlStateManager
-Import: net.minecraft.client.renderer.RenderHelper
-Import: net.minecraft.inventory.ItemStackHelper
-Import: net.minecraft.util.math.RayTraceResult
-Import: net.minecraft.block.state.IBlockState
-Import: net.minecraft.block.BlockShulkerBox
-Import: net.minecraft.item.ItemShulkerBox
-Import: net.minecraft.nbt.NBTTagCompound
-Import: net.minecraft.util.math.BlockPos
-Import: net.minecraft.util.NonNullList
-Import: net.minecraft.item.ItemStack
-Import: net.minecraft.tileentity.*
-Import: net.minecraft.block.Block
-Import: net.minecraft.init.Blocks
-Import: net.minecraft.item.Item
-Adding 4 imports
-        com.mojang.realmsclient.gui.ChatFormatting
-        java.util.Arrays
-        java.util.List
-        rina.turok.bope.bopemod.guiscreen.render.pinnables.BopePinnable
-End  Processing: rina/turok/bope/bopemod/guiscreen/hud/BopeStoragePreview.java
-
 Start Processing: rina/turok/bope/bopemod/guiscreen/hud/BopeSurroundPreview.java
 FOUND CONSTR method rina/turok/bope/bopemod/guiscreen/hud/BopeSurroundPreview/BopeSurroundPreview ()V rina/turok/bope/bopemod/guiscreen/hud/BopeSurroundPreview
 Import: rina.turok.bope.bopemod.guiscreen.render.pinnables.BopePinnable
@@ -757,24 +730,29 @@ Adding 6 imports
 End  Processing: rina/turok/bope/bopemod/guiscreen/render/components/widgets/BopeCombobox.java
 
 Start Processing: rina/turok/bope/bopemod/guiscreen/render/components/widgets/BopeLabel.java
-Rename method net/minecraft/client/Minecraft/getMinecraft ()Lnet/minecraft/client/Minecraft;[1482,1494]::getMinecraft->func_71410_x
+Rename method net/minecraft/client/Minecraft/getMinecraft ()Lnet/minecraft/client/Minecraft;[1541,1553]::getMinecraft->func_71410_x
 FOUND CONSTR method rina/turok/bope/bopemod/guiscreen/render/components/widgets/BopeLabel/BopeLabel (Lrina/turok/bope/bopemod/guiscreen/render/components/BopeFrame;Lrina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton;Ljava/lang/String;I)V rina/turok/bope/bopemod/guiscreen/render/components/widgets/BopeLabel
-Rename method net/minecraft/client/gui/GuiTextField/writeText (Ljava/lang/String;)V[1943,1952]::writeText->func_146191_b
-Rename method net/minecraft/client/gui/GuiTextField/setCursorPosition (I)V[2004,2021]::setCursorPosition->func_146190_e
-Rename method net/minecraft/client/gui/GuiTextField/setMaxStringLength (I)V[2036,2054]::setMaxStringLength->func_146203_f
-Rename method net/minecraft/client/gui/GuiTextField/textboxKeyTyped (CI)Z[3504,3519]::textboxKeyTyped->func_146201_a
-Rename method net/minecraft/client/gui/GuiTextField/mouseClicked (III)Z[3612,3624]::mouseClicked->func_146192_a
-Rename field net/minecraft/client/gui/GuiTextField/width[4795,4800]::width->field_146218_h
-Rename field net/minecraft/client/gui/GuiTextField/height[4840,4846]::height->field_146219_i
-Rename field net/minecraft/client/gui/GuiTextField/x[4887,4888]::x->field_146209_f
-Rename field net/minecraft/client/gui/GuiTextField/y[4927,4928]::y->field_146210_g
-Rename method net/minecraft/client/gui/GuiTextField/getText ()Ljava/lang/String;[4997,5004]::getText->func_146179_b
-Rename method net/minecraft/client/gui/GuiTextField/isFocused ()Z[5036,5045]::isFocused->func_146206_l
-Rename method net/minecraft/client/gui/GuiTextField/drawTextBox ()V[5073,5084]::drawTextBox->func_146194_f
+Rename method net/minecraft/client/gui/GuiTextField/writeText (Ljava/lang/String;)V[2002,2011]::writeText->func_146191_b
+Rename method net/minecraft/client/gui/GuiTextField/setCursorPosition (I)V[2063,2080]::setCursorPosition->func_146190_e
+Rename method net/minecraft/client/gui/GuiTextField/setMaxStringLength (I)V[2095,2113]::setMaxStringLength->func_146203_f
+Rename method net/minecraft/client/gui/GuiTextField/textboxKeyTyped (CI)Z[3897,3912]::textboxKeyTyped->func_146201_a
+Rename method net/minecraft/client/gui/GuiTextField/isFocused ()Z[3974,3983]::isFocused->func_146206_l
+Rename method net/minecraft/client/gui/GuiTextField/setFocused (Z)V[4008,4018]::setFocused->func_146195_b
+Rename method net/minecraft/client/gui/GuiTextField/mouseClicked (III)Z[4116,4128]::mouseClicked->func_146192_a
+Rename method net/minecraft/client/gui/GuiTextField/setFocused (Z)V[4304,4314]::setFocused->func_146195_b
+Rename field net/minecraft/client/gui/GuiTextField/width[5352,5357]::width->field_146218_h
+Rename field net/minecraft/client/gui/GuiTextField/height[5397,5403]::height->field_146219_i
+Rename field net/minecraft/client/gui/GuiTextField/x[5444,5445]::x->field_146209_f
+Rename field net/minecraft/client/gui/GuiTextField/y[5495,5496]::y->field_146210_g
+Rename method net/minecraft/client/gui/GuiTextField/getText ()Ljava/lang/String;[5565,5572]::getText->func_146179_b
+Rename method net/minecraft/client/gui/GuiTextField/drawTextBox ()V[5728,5739]::drawTextBox->func_146194_f
+Rename method net/minecraft/client/gui/GuiTextField/drawTextBox ()V[5891,5902]::drawTextBox->func_146194_f
+Rename method net/minecraft/client/gui/GuiTextField/isFocused ()Z[5939,5948]::isFocused->func_146206_l
 Import: net.minecraft.client.renderer.GlStateManager
 Import: net.minecraft.client.gui.GuiTextField
 Import: net.minecraft.client.Minecraft
-Adding 6 imports
+Adding 7 imports
+        org.lwjgl.input.Keyboard
         rina.turok.bope.Bope
         rina.turok.bope.bopemod.guiscreen.render.BopeDraw
         rina.turok.bope.bopemod.guiscreen.render.components.BopeAbstractWidget
@@ -2144,7 +2122,7 @@ End  Processing: rina/turok/bope/bopemod/manager/BopeFriendManager.java
 Start Processing: rina/turok/bope/bopemod/manager/BopeHUDManager.java
 FOUND CONSTR method rina/turok/bope/bopemod/manager/BopeHUDManager/BopeHUDManager (Ljava/lang/String;)V rina/turok/bope/bopemod/manager/BopeHUDManager
 Import: java.util.*
-Adding 13 imports
+Adding 12 imports
         rina.turok.bope.bopemod.guiscreen.hud.BopeArmorPreview
         rina.turok.bope.bopemod.guiscreen.hud.BopeArrayList
         rina.turok.bope.bopemod.guiscreen.hud.BopeCoordinates
@@ -2153,7 +2131,6 @@ Adding 13 imports
         rina.turok.bope.bopemod.guiscreen.hud.BopeGappleCount
         rina.turok.bope.bopemod.guiscreen.hud.BopeInventoryPreview
         rina.turok.bope.bopemod.guiscreen.hud.BopeServerInfo
-        rina.turok.bope.bopemod.guiscreen.hud.BopeStoragePreview
         rina.turok.bope.bopemod.guiscreen.hud.BopeTotemCount
         rina.turok.bope.bopemod.guiscreen.hud.BopeUser
         rina.turok.bope.bopemod.guiscreen.hud.BopeWatermark

@@ -791,7 +791,6 @@ public class BopeConfigManager {
 			BOPE_LOAD_HUD();
 		} catch (Exception exc) {}
 
-
 		try {
 			BOPE_LOAD_FRIENDS();
 		} catch (Exception exc) {}

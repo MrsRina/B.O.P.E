@@ -31,7 +31,7 @@ import rina.turok.bope.Bope;
 */
 public class BopeModuleButton {
 	private BopeModule module;
-	private BopeFrame  master;
+	public  BopeFrame  master;
 
 	private ArrayList<BopeAbstractWidget> widget;
 

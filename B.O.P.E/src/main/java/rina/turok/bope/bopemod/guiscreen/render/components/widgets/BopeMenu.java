@@ -43,7 +43,7 @@ public class BopeMenu {
 	public final Minecraft mc = Minecraft.getMinecraft();
 
 	public BopeMenu(BopeCombobox master, List<String> items) {
-		this.master    = master;
+		this.master   = master;
 		this.sub_menu = new ArrayList<>();
 
 		this.x = 0;

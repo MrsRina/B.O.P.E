@@ -25,7 +25,6 @@ public class BopeHUDManager {
 		this.tag = tag;
 
 		add_component_pinnable(new BopeInventoryPreview());
-		add_component_pinnable(new BopeStoragePreview());
 		add_component_pinnable(new BopeArmorPreview());
 		add_component_pinnable(new BopeCrystalCount());
 		add_component_pinnable(new BopeCoordinates());

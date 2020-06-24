@@ -28,7 +28,7 @@ import rina.turok.bope.Bope;
 * - It were referenced with KAMI mixins, 086 thanks for help me.
 *
 */
-@Mixin(value = Entity.class)
+@Mixin(value = Entity.class, priority = 998)
 public abstract class BopeMixinEntity {
 	// Inject.
 	@Redirect(method = "applyEntityCollision", at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/Entity;addVelocity(DDD)V"))

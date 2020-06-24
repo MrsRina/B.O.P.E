@@ -33,8 +33,8 @@ import rina.turok.turok.Turok;
 *
 */
 public class BopeDraw {
-	private static FontRenderer font_renderer = Minecraft.getMinecraft().fontRenderer;
-	private static FontRenderer custom_font   = new BopeString(true);
+	public static FontRenderer font_renderer = Minecraft.getMinecraft().fontRenderer;
+	public static FontRenderer custom_font   = new BopeString(true);
 
 	private float size;
 
@@ -66,6 +66,14 @@ public class BopeDraw {
 
 	public static void draw_rect(TurokRect rect, int r, int g, int b, int a) {
 		Gui.drawRect(rect.get_x(), rect.get_y(), rect.get_screen_width(), rect.get_screen_height(), new TurokColor(r, g, b, a).hex());
+	}
+
+	public static FontRenderer get_font_renderer(boolean smooth) {
+		if (smooth) {
+			return custom_font;
+		} else {
+			return font_renderer;
+		}
 	}
 
 	public static void draw_string(String string, int x, int y, int r, int g, int b, boolean smoth) {

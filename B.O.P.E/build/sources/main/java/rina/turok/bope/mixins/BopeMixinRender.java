@@ -25,7 +25,7 @@ import rina.turok.bope.Bope;
 * - It were referenced with KAMI mixins, 086 thanks for help me.
 *
 */
-@Mixin(value = Render.class)
+@Mixin(value = Render.class, priority = 998)
 public abstract class BopeMixinRender <T extends Entity> {
 	// Renmove name.
 	@Inject(method = "renderLivingLabel", at = @At("HEAD"), cancellable = true)

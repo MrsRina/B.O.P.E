@@ -241,6 +241,7 @@ public class BopeModuleButton {
 	public void bind(char char_, int key) {
 		for (BopeAbstractWidget widgets : this.widget) {
 			widgets.bind(char_, key);
+			widgets.input(char_, key);
 		}
 	}
 

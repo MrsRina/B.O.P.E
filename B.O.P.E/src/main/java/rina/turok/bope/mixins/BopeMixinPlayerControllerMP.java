@@ -22,7 +22,7 @@ import rina.turok.bope.Bope;
 * - It were referenced with KAMI mixins, 086 thanks for help me.
 *
 */
-@Mixin(value = PlayerControllerMP.class)
+@Mixin(value = PlayerControllerMP.class, priority = 998)
 public class BopeMixinPlayerControllerMP {
 	// Player damage fix the hit.
 	@Redirect(method = "onPlayerDamageBlock", at = @At(value = "INVOKE", target = "Lnet/minecraft/block/state/IBlockState;getPlayerRelativeBlockHardness(Lnet/minecraft/entity/player/EntityPlayer;Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;)F"))

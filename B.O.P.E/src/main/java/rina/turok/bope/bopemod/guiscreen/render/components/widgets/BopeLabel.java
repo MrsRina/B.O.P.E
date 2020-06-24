@@ -36,7 +36,7 @@ public class BopeLabel extends BopeAbstractWidget {
 
 	private String label_name;
 
-	//private GuiTextField entry;
+	private GuiTextField entry;
 
 	private int x;
 	private int y;
@@ -66,7 +66,11 @@ public class BopeLabel extends BopeAbstractWidget {
 
 		this.save_y = this.y;
 
-		//this.entry = new GuiTextField(0, mc.fontRenderer, this.x, this.save_y, this.width, this.height);
+		this.entry = new GuiTextField(0, font.custom_font, this.x, this.save_y, this.width, this.height);
+
+		this.entry.writeText(this.setting.get_value("true"));
+		this.entry.setCursorPosition(0);
+		this.entry.setMaxStringLength(24);
 
 		this.width  = master.get_width();
 		this.height = font.get_string_height(this.setting.get_name(), this.smoth);
@@ -152,7 +156,14 @@ public class BopeLabel extends BopeAbstractWidget {
 	}
 
 	@Override
+	public void input(char char_, int key) {
+		this.entry.textboxKeyTyped(char_, key);
+	}
+
+	@Override
 	public void mouse(int mx, int my, int mouse) {
+		this.entry.mouseClicked(mx, my, mouse);
+
 		if (mouse == 0) {
 			if (motion(mx, my) && this.master.is_open() && can()) {
 				this.frame.does_can(false);
@@ -184,19 +195,22 @@ public class BopeLabel extends BopeAbstractWidget {
 		int bd_b = Bope.click_gui.theme_widget_border_b;
 		int bd_a = 100;
 
-		if (motion(absolute_x, absolute_y) && !this.info) {
-			BopeDraw.draw_string(this.setting.get_value(zbob), absolute_x + 10, absolute_y, ns_r, ns_g, ns_b, this.smoth);
-		}
-
-		//this.entry.drawTextBox();
-
-		//this.entry.width = this.width;
-		//this.entry.height = this.height;
-
 		if (this.info) {
 			BopeDraw.draw_string(this.setting.get_value(zbob), this.x + 2, this.save_y, ns_r, ns_g, ns_b, this.smoth);
 		} else {
-			BopeDraw.draw_string(this.label_name, this.x + 2, this.save_y, ns_r, ns_g, ns_b, this.smoth);
+			this.entry.width  = this.width;
+			this.entry.height = this.height;
+
+			this.entry.x = this.x;
+			this.entry.y = this.save_y;
+
+			this.setting.set_value(this.entry.getText());
+
+			if (this.entry.isFocused()) {		
+				this.entry.drawTextBox();
+			} else {
+				BopeDraw.draw_string(this.label_name, this.x + 2, this.save_y, ns_r, ns_g, ns_b, this.smoth);
+			}
 		}
 	}
 }

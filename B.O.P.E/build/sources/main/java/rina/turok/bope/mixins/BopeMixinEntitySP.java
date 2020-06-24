@@ -33,7 +33,7 @@ import rina.turok.bope.Bope;
 * - It were referenced with KAMI mixins, 086 thanks for help me.
 *
 */
-@Mixin(value = EntityPlayerSP.class)
+@Mixin(value = EntityPlayerSP.class, priority = 998)
 public abstract class BopeMixinEntitySP extends Entity {
 	public BopeMixinEntitySP(World world) {
 		super(world);

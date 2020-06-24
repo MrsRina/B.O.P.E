@@ -63,26 +63,28 @@ public class BopeKillAura extends BopeModule {
 	@Override
 	public void update() {
 		if (mc.player != null && mc.world != null) {
-			List<Entity> entitys = mc.world.loadedEntityList.stream()
-			/* RinaRinaRinaRinaRinaRinaRinaRinaRinaRinaR */ .filter(entity ->  entity != mc.player)
-			/* RinaRinaRinaRinaRinaRinaRinaRinaRinaRinaR */ .filter(entity ->  mc.player.getDistance(entity) <= range.get_value(1))
-			/* RinaRinaRinaRinaRinaRinaRinaRinaRinaRinaR */ .filter(entity -> !entity.isDead)
-			/* RinaRinaRinaRinaRinaRinaRinaRinaRinaRinaR */ .filter(entity -> !(Bope.get_friend_manager().is_friend(entity.getName())))
-			/* RinaRinaRinaRinaRinaRinaRinaRinaRinaRinaR */ .filter(entity ->  entity instanceof EntityPlayer || (entity instanceof IMob && hostile.get_value(true)))
-			/* RinaRinaRinaRinaRinaRinaRinaRinaRinaRinaR */ .filter(entity ->  ((EntityPlayer) entity).getHealth() > 0)
-			/* RinaRinaRinaRinaRinaRinaRinaRinaRinaRinaR */ .sorted(Comparator.comparing(distance -> mc.player.getDistance(distance)))
-			/* RinaRinaRinaRinaRinaRinaRinaRinaRinaRinaR */ .collect(Collectors.toList());
-
-			// Im not sure why I used like "FinzoAura"...
-			entitys.forEach(entity -> {
-				if (sword.get_value(true)) {
-					if (!(mc.player.getHeldItemMainhand().getItem() instanceof ItemSword)) {
-						return;
+			try {
+				List<Entity> entitys = mc.world.loadedEntityList.stream()
+				/* RinaRinaRinaRinaRinaRinaRinaRinaRinaRinaR */ .filter(entity ->  entity != mc.player)
+				/* RinaRinaRinaRinaRinaRinaRinaRinaRinaRinaR */ .filter(entity ->  mc.player.getDistance(entity) <= range.get_value(1))
+				/* RinaRinaRinaRinaRinaRinaRinaRinaRinaRinaR */ .filter(entity -> !entity.isDead)
+				/* RinaRinaRinaRinaRinaRinaRinaRinaRinaRinaR */ .filter(entity -> !(Bope.get_friend_manager().is_friend(entity.getName())))
+				/* RinaRinaRinaRinaRinaRinaRinaRinaRinaRinaR */ .filter(entity ->  entity instanceof EntityPlayer || (entity instanceof IMob && hostile.get_value(true)))
+				/* RinaRinaRinaRinaRinaRinaRinaRinaRinaRinaR */ .filter(entity ->  ((EntityPlayer) entity).getHealth() > 0)
+				/* RinaRinaRinaRinaRinaRinaRinaRinaRinaRinaR */ .sorted(Comparator.comparing(distance -> mc.player.getDistance(distance)))
+				/* RinaRinaRinaRinaRinaRinaRinaRinaRinaRinaR */ .collect(Collectors.toList());
+	
+				// Im not sure why I used like "FinzoAura"...
+				entitys.forEach(entity -> {
+					if (sword.get_value(true)) {
+						if (!(mc.player.getHeldItemMainhand().getItem() instanceof ItemSword)) {
+							return;
+						}
 					}
-				}
-
-				attack_entity(entity);
-			});
+	
+					attack_entity(entity);
+				});
+			} catch(Exception exc) {}
 		}
 	}
 

@@ -50,6 +50,9 @@ public abstract class BopeAbstractWidget {
 	// Keyboard.
 	public void bind(char char_, int key) {}
 
+	// input.
+	public void input(char char_, int key) {}
+
 	// Can.
 	public void does_can(boolean value) {}
 

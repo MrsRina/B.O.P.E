@@ -29,7 +29,7 @@ import rina.turok.bope.Bope;
 * - It were referenced with KAMI mixins, 086 thanks for help me.
 *
 */
-@Mixin(value = RenderLivingBase.class)
+@Mixin(value = RenderLivingBase.class, priority = 998)
 public class BopeMixinRenderLivingBase <T extends EntityLivingBase> extends BopeMixinRender<T> {
 	public final Minecraft mc = Minecraft.getMinecraft();
 

@@ -38,7 +38,7 @@ import rina.turok.bope.Bope;
 * - It were referenced with KAMI mixins, 086 thanks for help me.
 *
 */
-@Mixin(value = Minecraft.class)
+@Mixin(value = Minecraft.class, priority = 998)
 public class BopeMixinMinecraft {
 	@Inject(method = "displayGuiScreen", at = @At("HEAD"))
 	private void displayGuiScreen(GuiScreen guiScreenIn, CallbackInfo info) {

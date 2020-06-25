@@ -242,7 +242,7 @@ public class BopeFrame {
 		this.bdw_a = 255;
 
 		BopeDraw.draw_rect(this.x, this.y, this.x + this.width, this.y + this.height, this.bg_r, this.bg_g, this.bg_b, this.bg_a);
-		BopeDraw.draw_rect(this.x - 1, this.y, this.width + 2 + 1, this.height, this.bd_r, this.bd_g, this.bd_b, this.bd_a, this.border_size, "left-right");		
+		BopeDraw.draw_rect(this.x - 1, this.y, this.width + 2, this.height, this.bd_r, this.bd_g, this.bd_b, this.bd_a, this.border_size, "left-right");		
 
 		BopeDraw.draw_string(this.name, this.x + 4, this.y + 4, this.nc_r, this.nc_g, this.nc_b, this.smoth);
 
@@ -258,7 +258,7 @@ public class BopeFrame {
 			if (pinnables_buttons.motion(mx, my)) {
 				pinnables_buttons.pass(true);
 
-				BopeDraw.draw_rect(get_x() - 1, pinnables_buttons.get_save_y(), get_width() + 3, pinnables_buttons.get_height(), this.bdw_r, this.bdw_g, this.bdw_b, this.bdw_a, this.border_size, "right-left");
+				BopeDraw.draw_rect(get_x() - 1, pinnables_buttons.get_save_y(), get_width() + 2, pinnables_buttons.get_height(), this.bdw_r, this.bdw_g, this.bdw_b, this.bdw_a, this.border_size, "right-left");
 			} else {
 				pinnables_buttons.pass(false);
 			}

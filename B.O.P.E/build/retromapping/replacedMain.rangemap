@@ -3396,7 +3396,7 @@ Class Start: rina.turok.bope.bopemod.guiscreen.hud.BopeUser
 Class End  : rina.turok.bope.bopemod.guiscreen.hud.BopeUser
 endProcessing "rina/turok/bope/bopemod/guiscreen/hud/BopeUser.java"
 
-startProcessing "rina/turok/bope/bopemod/guiscreen/hud/BopeWatermark.java" md5: 708dcfac8c543579745baa703c88f02f
+startProcessing "rina/turok/bope/bopemod/guiscreen/hud/BopeWatermark.java" md5: b51c21c9f8e657940085aa520148a49d
 @|rina/turok/bope/bopemod/guiscreen/hud/BopeWatermark.java|8|45|rina.turok.bope.bopemod.guiscreen.hud|package|rina.turok.bope.bopemod.guiscreen.hud|(file)
 Class Start: rina.turok.bope.bopemod.guiscreen.hud.BopeWatermark
    @|rina/turok/bope/bopemod/guiscreen/hud/BopeWatermark.java|313|326|BopeWatermark|class|rina.turok.bope.bopemod.guiscreen.hud.BopeWatermark|false
@@ -3410,21 +3410,21 @@ Class Start: rina.turok.bope.bopemod.guiscreen.hud.BopeWatermark
       @|rina/turok/bope/bopemod/guiscreen/hud/BopeWatermark.java|472|481|is_on_gui|method|rina.turok.bope.bopemod.guiscreen.render.pinnables.BopePinnable|is_on_gui|()Z
       @|rina/turok/bope/bopemod/guiscreen/hud/BopeWatermark.java|491|501|background|method|rina.turok.bope.bopemod.guiscreen.render.pinnables.BopePinnable|background|()V
       @|rina/turok/bope/bopemod/guiscreen/hud/BopeWatermark.java|515|521|String|class|java.lang.String|false
-      @|rina/turok/bope/bopemod/guiscreen/hud/BopeWatermark.java|553|557|Bope|class|rina.turok.bope.Bope|false
-      @|rina/turok/bope/bopemod/guiscreen/hud/BopeWatermark.java|558|559|g|field|rina.turok.bope.Bope|g
-      @|rina/turok/bope/bopemod/guiscreen/hud/BopeWatermark.java|568|572|Bope|class|rina.turok.bope.Bope|false
-      @|rina/turok/bope/bopemod/guiscreen/hud/BopeWatermark.java|573|574|r|field|rina.turok.bope.Bope|r
-      @|rina/turok/bope/bopemod/guiscreen/hud/BopeWatermark.java|577|581|Bope|class|rina.turok.bope.Bope|false
-      @|rina/turok/bope/bopemod/guiscreen/hud/BopeWatermark.java|582|593|get_version|method|rina.turok.bope.Bope|get_version|()Ljava/lang/String;
-      @|rina/turok/bope/bopemod/guiscreen/hud/BopeWatermark.java|598|602|Bope|class|rina.turok.bope.Bope|false
-      @|rina/turok/bope/bopemod/guiscreen/hud/BopeWatermark.java|603|604|g|field|rina.turok.bope.Bope|g
-      @|rina/turok/bope/bopemod/guiscreen/hud/BopeWatermark.java|613|617|Bope|class|rina.turok.bope.Bope|false
-      @|rina/turok/bope/bopemod/guiscreen/hud/BopeWatermark.java|618|619|r|field|rina.turok.bope.Bope|r
-      @|rina/turok/bope/bopemod/guiscreen/hud/BopeWatermark.java|626|637|create_line|method|rina.turok.bope.bopemod.guiscreen.render.pinnables.BopePinnable|create_line|(Ljava/lang/String;II)V
-      @|rina/turok/bope/bopemod/guiscreen/hud/BopeWatermark.java|656|665|set_width|method|rina.turok.bope.bopemod.guiscreen.render.pinnables.BopePinnable|set_width|(I)V
-      @|rina/turok/bope/bopemod/guiscreen/hud/BopeWatermark.java|666|669|get|method|rina.turok.bope.bopemod.guiscreen.render.pinnables.BopePinnable|get|(Ljava/lang/String;Ljava/lang/String;)I
-      @|rina/turok/bope/bopemod/guiscreen/hud/BopeWatermark.java|694|704|set_height|method|rina.turok.bope.bopemod.guiscreen.render.pinnables.BopePinnable|set_height|(I)V
-      @|rina/turok/bope/bopemod/guiscreen/hud/BopeWatermark.java|705|708|get|method|rina.turok.bope.bopemod.guiscreen.render.pinnables.BopePinnable|get|(Ljava/lang/String;Ljava/lang/String;)I
+      @|rina/turok/bope/bopemod/guiscreen/hud/BopeWatermark.java|554|558|Bope|class|rina.turok.bope.Bope|false
+      @|rina/turok/bope/bopemod/guiscreen/hud/BopeWatermark.java|559|560|g|field|rina.turok.bope.Bope|g
+      @|rina/turok/bope/bopemod/guiscreen/hud/BopeWatermark.java|569|573|Bope|class|rina.turok.bope.Bope|false
+      @|rina/turok/bope/bopemod/guiscreen/hud/BopeWatermark.java|574|575|r|field|rina.turok.bope.Bope|r
+      @|rina/turok/bope/bopemod/guiscreen/hud/BopeWatermark.java|578|582|Bope|class|rina.turok.bope.Bope|false
+      @|rina/turok/bope/bopemod/guiscreen/hud/BopeWatermark.java|583|594|get_version|method|rina.turok.bope.Bope|get_version|()Ljava/lang/String;
+      @|rina/turok/bope/bopemod/guiscreen/hud/BopeWatermark.java|599|603|Bope|class|rina.turok.bope.Bope|false
+      @|rina/turok/bope/bopemod/guiscreen/hud/BopeWatermark.java|604|605|g|field|rina.turok.bope.Bope|g
+      @|rina/turok/bope/bopemod/guiscreen/hud/BopeWatermark.java|614|618|Bope|class|rina.turok.bope.Bope|false
+      @|rina/turok/bope/bopemod/guiscreen/hud/BopeWatermark.java|619|620|r|field|rina.turok.bope.Bope|r
+      @|rina/turok/bope/bopemod/guiscreen/hud/BopeWatermark.java|627|638|create_line|method|rina.turok.bope.bopemod.guiscreen.render.pinnables.BopePinnable|create_line|(Ljava/lang/String;II)V
+      @|rina/turok/bope/bopemod/guiscreen/hud/BopeWatermark.java|657|666|set_width|method|rina.turok.bope.bopemod.guiscreen.render.pinnables.BopePinnable|set_width|(I)V
+      @|rina/turok/bope/bopemod/guiscreen/hud/BopeWatermark.java|667|670|get|method|rina.turok.bope.bopemod.guiscreen.render.pinnables.BopePinnable|get|(Ljava/lang/String;Ljava/lang/String;)I
+      @|rina/turok/bope/bopemod/guiscreen/hud/BopeWatermark.java|695|705|set_height|method|rina.turok.bope.bopemod.guiscreen.render.pinnables.BopePinnable|set_height|(I)V
+      @|rina/turok/bope/bopemod/guiscreen/hud/BopeWatermark.java|706|709|get|method|rina.turok.bope.bopemod.guiscreen.render.pinnables.BopePinnable|get|(Ljava/lang/String;Ljava/lang/String;)I
    Method End: render()V
 Class End  : rina.turok.bope.bopemod.guiscreen.hud.BopeWatermark
 endProcessing "rina/turok/bope/bopemod/guiscreen/hud/BopeWatermark.java"
@@ -3904,7 +3904,7 @@ Class Start: rina.turok.bope.bopemod.guiscreen.render.components.BopeAbstractWid
 Class End  : rina.turok.bope.bopemod.guiscreen.render.components.BopeAbstractWidget
 endProcessing "rina/turok/bope/bopemod/guiscreen/render/components/BopeAbstractWidget.java"
 
-startProcessing "rina/turok/bope/bopemod/guiscreen/render/components/BopeFrame.java" md5: 7930a03da8dac554bc7cd37553e5f824
+startProcessing "rina/turok/bope/bopemod/guiscreen/render/components/BopeFrame.java" md5: fdd1cbdd41a444b6c69faf9516a88edb
 @|rina/turok/bope/bopemod/guiscreen/render/components/BopeFrame.java|8|59|rina.turok.bope.bopemod.guiscreen.render.components|package|rina.turok.bope.bopemod.guiscreen.render.components|(file)
 Class Start: rina.turok.bope.bopemod.guiscreen.render.components.BopeFrame
    @|rina/turok/bope/bopemod/guiscreen/render/components/BopeFrame.java|668|677|BopeFrame|class|rina.turok.bope.bopemod.guiscreen.render.components.BopeFrame|false
@@ -4295,30 +4295,30 @@ Class Start: rina.turok.bope.bopemod.guiscreen.render.components.BopeFrame
       @|rina/turok/bope/bopemod/guiscreen/render/components/BopeFrame.java|7276|7277|x|field|rina.turok.bope.bopemod.guiscreen.render.components.BopeFrame|x
       @|rina/turok/bope/bopemod/guiscreen/render/components/BopeFrame.java|7288|7289|y|field|rina.turok.bope.bopemod.guiscreen.render.components.BopeFrame|y
       @|rina/turok/bope/bopemod/guiscreen/render/components/BopeFrame.java|7296|7301|width|field|rina.turok.bope.bopemod.guiscreen.render.components.BopeFrame|width
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeFrame.java|7316|7322|height|field|rina.turok.bope.bopemod.guiscreen.render.components.BopeFrame|height
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeFrame.java|7353|7364|border_size|field|rina.turok.bope.bopemod.guiscreen.render.components.BopeFrame|border_size
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeFrame.java|7388|7396|BopeDraw|class|rina.turok.bope.bopemod.guiscreen.render.BopeDraw|false
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeFrame.java|7397|7408|draw_string|method|rina.turok.bope.bopemod.guiscreen.render.BopeDraw|draw_string|(Ljava/lang/String;IIIIIZ)V
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeFrame.java|7414|7424|frame_name|field|rina.turok.bope.bopemod.guiscreen.render.components.BopeFrame|frame_name
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeFrame.java|7431|7432|x|field|rina.turok.bope.bopemod.guiscreen.render.components.BopeFrame|x
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeFrame.java|7443|7444|y|field|rina.turok.bope.bopemod.guiscreen.render.components.BopeFrame|y
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeFrame.java|7473|7478|smoth|field|rina.turok.bope.bopemod.guiscreen.render.components.BopeFrame|smoth
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeFrame.java|7490|7499|is_moving|method|rina.turok.bope.bopemod.guiscreen.render.components.BopeFrame|is_moving|()Z
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeFrame.java|7509|7514|crush|method|rina.turok.bope.bopemod.guiscreen.render.components.BopeFrame|crush|(II)V
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeFrame.java|7515|7517|mx|param|rina.turok.bope.bopemod.guiscreen.render.components.BopeFrame|render|(II)V|mx|0
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeFrame.java|7519|7521|my|param|rina.turok.bope.bopemod.guiscreen.render.components.BopeFrame|render|(II)V|my|1
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeFrame.java|7539|7555|BopeModuleButton|class|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|false
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeFrame.java|7571|7584|module_button|field|rina.turok.bope.bopemod.guiscreen.render.components.BopeFrame|module_button
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeFrame.java|7600|7605|set_x|method|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|set_x|(I)V
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeFrame.java|7611|7612|x|field|rina.turok.bope.bopemod.guiscreen.render.components.BopeFrame|x
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeFrame.java|7633|7639|render|method|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|render|(III)V
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeFrame.java|7640|7642|mx|param|rina.turok.bope.bopemod.guiscreen.render.components.BopeFrame|render|(II)V|mx|0
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeFrame.java|7644|7646|my|param|rina.turok.bope.bopemod.guiscreen.render.components.BopeFrame|render|(II)V|my|1
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeFrame.java|7312|7318|height|field|rina.turok.bope.bopemod.guiscreen.render.components.BopeFrame|height
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeFrame.java|7349|7360|border_size|field|rina.turok.bope.bopemod.guiscreen.render.components.BopeFrame|border_size
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeFrame.java|7384|7392|BopeDraw|class|rina.turok.bope.bopemod.guiscreen.render.BopeDraw|false
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeFrame.java|7393|7404|draw_string|method|rina.turok.bope.bopemod.guiscreen.render.BopeDraw|draw_string|(Ljava/lang/String;IIIIIZ)V
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeFrame.java|7410|7420|frame_name|field|rina.turok.bope.bopemod.guiscreen.render.components.BopeFrame|frame_name
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeFrame.java|7427|7428|x|field|rina.turok.bope.bopemod.guiscreen.render.components.BopeFrame|x
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeFrame.java|7439|7440|y|field|rina.turok.bope.bopemod.guiscreen.render.components.BopeFrame|y
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeFrame.java|7469|7474|smoth|field|rina.turok.bope.bopemod.guiscreen.render.components.BopeFrame|smoth
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeFrame.java|7486|7495|is_moving|method|rina.turok.bope.bopemod.guiscreen.render.components.BopeFrame|is_moving|()Z
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeFrame.java|7505|7510|crush|method|rina.turok.bope.bopemod.guiscreen.render.components.BopeFrame|crush|(II)V
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeFrame.java|7511|7513|mx|param|rina.turok.bope.bopemod.guiscreen.render.components.BopeFrame|render|(II)V|mx|0
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeFrame.java|7515|7517|my|param|rina.turok.bope.bopemod.guiscreen.render.components.BopeFrame|render|(II)V|my|1
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeFrame.java|7535|7551|BopeModuleButton|class|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|false
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeFrame.java|7567|7580|module_button|field|rina.turok.bope.bopemod.guiscreen.render.components.BopeFrame|module_button
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeFrame.java|7596|7601|set_x|method|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|set_x|(I)V
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeFrame.java|7607|7608|x|field|rina.turok.bope.bopemod.guiscreen.render.components.BopeFrame|x
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeFrame.java|7629|7635|render|method|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|render|(III)V
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeFrame.java|7636|7638|mx|param|rina.turok.bope.bopemod.guiscreen.render.components.BopeFrame|render|(II)V|mx|0
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeFrame.java|7640|7642|my|param|rina.turok.bope.bopemod.guiscreen.render.components.BopeFrame|render|(II)V|my|1
    Method End: render(II)V
 Class End  : rina.turok.bope.bopemod.guiscreen.render.components.BopeFrame
 endProcessing "rina/turok/bope/bopemod/guiscreen/render/components/BopeFrame.java"
 
-startProcessing "rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java" md5: 5a7e1505754ca77491f4a1c5f1d947d9
+startProcessing "rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java" md5: 463a0a91e034fc9764019d7b8be6eb5f
 @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|8|59|rina.turok.bope.bopemod.guiscreen.render.components|package|rina.turok.bope.bopemod.guiscreen.render.components|(file)
 Class Start: rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton
    @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|1023|1039|BopeModuleButton|class|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|false
@@ -6796,7 +6796,7 @@ Class Start: rina.turok.bope.bopemod.guiscreen.render.components.widgets.BopeSub
 Class End  : rina.turok.bope.bopemod.guiscreen.render.components.widgets.BopeSubMenu
 endProcessing "rina/turok/bope/bopemod/guiscreen/render/components/widgets/BopeSubMenu.java"
 
-startProcessing "rina/turok/bope/bopemod/guiscreen/render/pinnables/BopeFrame.java" md5: 5afca5ef79803c7fda6556bf26760b76
+startProcessing "rina/turok/bope/bopemod/guiscreen/render/pinnables/BopeFrame.java" md5: 9264bbc72dd3d45b9349669782af515c
 @|rina/turok/bope/bopemod/guiscreen/render/pinnables/BopeFrame.java|8|58|rina.turok.bope.bopemod.guiscreen.render.pinnables|package|rina.turok.bope.bopemod.guiscreen.render.pinnables|(file)
 Class Start: rina.turok.bope.bopemod.guiscreen.render.pinnables.BopeFrame
    @|rina/turok/bope/bopemod/guiscreen/render/pinnables/BopeFrame.java|495|504|BopeFrame|class|rina.turok.bope.bopemod.guiscreen.render.pinnables.BopeFrame|false
@@ -7079,50 +7079,50 @@ Class Start: rina.turok.bope.bopemod.guiscreen.render.pinnables.BopeFrame
       @|rina/turok/bope/bopemod/guiscreen/render/pinnables/BopeFrame.java|5069|5070|x|field|rina.turok.bope.bopemod.guiscreen.render.pinnables.BopeFrame|x
       @|rina/turok/bope/bopemod/guiscreen/render/pinnables/BopeFrame.java|5081|5082|y|field|rina.turok.bope.bopemod.guiscreen.render.pinnables.BopeFrame|y
       @|rina/turok/bope/bopemod/guiscreen/render/pinnables/BopeFrame.java|5089|5094|width|field|rina.turok.bope.bopemod.guiscreen.render.pinnables.BopeFrame|width
-      @|rina/turok/bope/bopemod/guiscreen/render/pinnables/BopeFrame.java|5109|5115|height|field|rina.turok.bope.bopemod.guiscreen.render.pinnables.BopeFrame|height
-      @|rina/turok/bope/bopemod/guiscreen/render/pinnables/BopeFrame.java|5122|5126|bd_r|field|rina.turok.bope.bopemod.guiscreen.render.pinnables.BopeFrame|bd_r
-      @|rina/turok/bope/bopemod/guiscreen/render/pinnables/BopeFrame.java|5133|5137|bd_g|field|rina.turok.bope.bopemod.guiscreen.render.pinnables.BopeFrame|bd_g
-      @|rina/turok/bope/bopemod/guiscreen/render/pinnables/BopeFrame.java|5144|5148|bd_b|field|rina.turok.bope.bopemod.guiscreen.render.pinnables.BopeFrame|bd_b
-      @|rina/turok/bope/bopemod/guiscreen/render/pinnables/BopeFrame.java|5155|5159|bd_a|field|rina.turok.bope.bopemod.guiscreen.render.pinnables.BopeFrame|bd_a
-      @|rina/turok/bope/bopemod/guiscreen/render/pinnables/BopeFrame.java|5166|5177|border_size|field|rina.turok.bope.bopemod.guiscreen.render.pinnables.BopeFrame|border_size
-      @|rina/turok/bope/bopemod/guiscreen/render/pinnables/BopeFrame.java|5201|5209|BopeDraw|class|rina.turok.bope.bopemod.guiscreen.render.BopeDraw|false
-      @|rina/turok/bope/bopemod/guiscreen/render/pinnables/BopeFrame.java|5210|5221|draw_string|method|rina.turok.bope.bopemod.guiscreen.render.BopeDraw|draw_string|(Ljava/lang/String;IIIIIZ)V
-      @|rina/turok/bope/bopemod/guiscreen/render/pinnables/BopeFrame.java|5227|5231|name|field|rina.turok.bope.bopemod.guiscreen.render.pinnables.BopeFrame|name
-      @|rina/turok/bope/bopemod/guiscreen/render/pinnables/BopeFrame.java|5238|5239|x|field|rina.turok.bope.bopemod.guiscreen.render.pinnables.BopeFrame|x
-      @|rina/turok/bope/bopemod/guiscreen/render/pinnables/BopeFrame.java|5250|5251|y|field|rina.turok.bope.bopemod.guiscreen.render.pinnables.BopeFrame|y
-      @|rina/turok/bope/bopemod/guiscreen/render/pinnables/BopeFrame.java|5262|5266|nc_r|field|rina.turok.bope.bopemod.guiscreen.render.pinnables.BopeFrame|nc_r
-      @|rina/turok/bope/bopemod/guiscreen/render/pinnables/BopeFrame.java|5273|5277|nc_g|field|rina.turok.bope.bopemod.guiscreen.render.pinnables.BopeFrame|nc_g
-      @|rina/turok/bope/bopemod/guiscreen/render/pinnables/BopeFrame.java|5284|5288|nc_b|field|rina.turok.bope.bopemod.guiscreen.render.pinnables.BopeFrame|nc_b
-      @|rina/turok/bope/bopemod/guiscreen/render/pinnables/BopeFrame.java|5295|5300|smoth|field|rina.turok.bope.bopemod.guiscreen.render.pinnables.BopeFrame|smoth
-      @|rina/turok/bope/bopemod/guiscreen/render/pinnables/BopeFrame.java|5312|5321|is_moving|method|rina.turok.bope.bopemod.guiscreen.render.pinnables.BopeFrame|is_moving|()Z
-      @|rina/turok/bope/bopemod/guiscreen/render/pinnables/BopeFrame.java|5331|5336|crush|method|rina.turok.bope.bopemod.guiscreen.render.pinnables.BopeFrame|crush|(II)V
-      @|rina/turok/bope/bopemod/guiscreen/render/pinnables/BopeFrame.java|5337|5339|mx|param|rina.turok.bope.bopemod.guiscreen.render.pinnables.BopeFrame|render|(III)V|mx|0
-      @|rina/turok/bope/bopemod/guiscreen/render/pinnables/BopeFrame.java|5341|5343|my|param|rina.turok.bope.bopemod.guiscreen.render.pinnables.BopeFrame|render|(III)V|my|1
-      @|rina/turok/bope/bopemod/guiscreen/render/pinnables/BopeFrame.java|5362|5380|BopePinnableButton|class|rina.turok.bope.bopemod.guiscreen.render.pinnables.BopePinnableButton|false
-      @|rina/turok/bope/bopemod/guiscreen/render/pinnables/BopeFrame.java|5406|5421|pinnable_button|field|rina.turok.bope.bopemod.guiscreen.render.pinnables.BopeFrame|pinnable_button
-      @|rina/turok/bope/bopemod/guiscreen/render/pinnables/BopeFrame.java|5447|5452|set_x|method|rina.turok.bope.bopemod.guiscreen.render.pinnables.BopePinnableButton|set_x|(I)V
-      @|rina/turok/bope/bopemod/guiscreen/render/pinnables/BopeFrame.java|5458|5459|x|field|rina.turok.bope.bopemod.guiscreen.render.pinnables.BopeFrame|x
-      @|rina/turok/bope/bopemod/guiscreen/render/pinnables/BopeFrame.java|5462|5470|separate|param|rina.turok.bope.bopemod.guiscreen.render.pinnables.BopeFrame|render|(III)V|separate|2
-      @|rina/turok/bope/bopemod/guiscreen/render/pinnables/BopeFrame.java|5497|5503|render|method|rina.turok.bope.bopemod.guiscreen.render.pinnables.BopePinnableButton|render|(III)V
-      @|rina/turok/bope/bopemod/guiscreen/render/pinnables/BopeFrame.java|5504|5506|mx|param|rina.turok.bope.bopemod.guiscreen.render.pinnables.BopeFrame|render|(III)V|mx|0
-      @|rina/turok/bope/bopemod/guiscreen/render/pinnables/BopeFrame.java|5508|5510|my|param|rina.turok.bope.bopemod.guiscreen.render.pinnables.BopeFrame|render|(III)V|my|1
-      @|rina/turok/bope/bopemod/guiscreen/render/pinnables/BopeFrame.java|5512|5520|separate|param|rina.turok.bope.bopemod.guiscreen.render.pinnables.BopeFrame|render|(III)V|separate|2
-      @|rina/turok/bope/bopemod/guiscreen/render/pinnables/BopeFrame.java|5551|5557|motion|method|rina.turok.bope.bopemod.guiscreen.render.pinnables.BopePinnableButton|motion|(II)Z
-      @|rina/turok/bope/bopemod/guiscreen/render/pinnables/BopeFrame.java|5558|5560|mx|param|rina.turok.bope.bopemod.guiscreen.render.pinnables.BopeFrame|render|(III)V|mx|0
-      @|rina/turok/bope/bopemod/guiscreen/render/pinnables/BopeFrame.java|5562|5564|my|param|rina.turok.bope.bopemod.guiscreen.render.pinnables.BopeFrame|render|(III)V|my|1
-      @|rina/turok/bope/bopemod/guiscreen/render/pinnables/BopeFrame.java|5592|5596|pass|method|rina.turok.bope.bopemod.guiscreen.render.pinnables.BopePinnableButton|pass|(Z)V
-      @|rina/turok/bope/bopemod/guiscreen/render/pinnables/BopeFrame.java|5611|5619|BopeDraw|class|rina.turok.bope.bopemod.guiscreen.render.BopeDraw|false
-      @|rina/turok/bope/bopemod/guiscreen/render/pinnables/BopeFrame.java|5620|5629|draw_rect|method|rina.turok.bope.bopemod.guiscreen.render.BopeDraw|draw_rect|(IIIIIIIIILjava/lang/String;)V
-      @|rina/turok/bope/bopemod/guiscreen/render/pinnables/BopeFrame.java|5630|5635|get_x|method|rina.turok.bope.bopemod.guiscreen.render.pinnables.BopeFrame|get_x|()I
-      @|rina/turok/bope/bopemod/guiscreen/render/pinnables/BopeFrame.java|5661|5671|get_save_y|method|rina.turok.bope.bopemod.guiscreen.render.pinnables.BopePinnableButton|get_save_y|()I
-      @|rina/turok/bope/bopemod/guiscreen/render/pinnables/BopeFrame.java|5675|5684|get_width|method|rina.turok.bope.bopemod.guiscreen.render.pinnables.BopeFrame|get_width|()I
-      @|rina/turok/bope/bopemod/guiscreen/render/pinnables/BopeFrame.java|5710|5720|get_height|method|rina.turok.bope.bopemod.guiscreen.render.pinnables.BopePinnableButton|get_height|()I
-      @|rina/turok/bope/bopemod/guiscreen/render/pinnables/BopeFrame.java|5729|5734|bdw_r|field|rina.turok.bope.bopemod.guiscreen.render.pinnables.BopeFrame|bdw_r
-      @|rina/turok/bope/bopemod/guiscreen/render/pinnables/BopeFrame.java|5741|5746|bdw_g|field|rina.turok.bope.bopemod.guiscreen.render.pinnables.BopeFrame|bdw_g
-      @|rina/turok/bope/bopemod/guiscreen/render/pinnables/BopeFrame.java|5753|5758|bdw_b|field|rina.turok.bope.bopemod.guiscreen.render.pinnables.BopeFrame|bdw_b
-      @|rina/turok/bope/bopemod/guiscreen/render/pinnables/BopeFrame.java|5765|5770|bdw_a|field|rina.turok.bope.bopemod.guiscreen.render.pinnables.BopeFrame|bdw_a
-      @|rina/turok/bope/bopemod/guiscreen/render/pinnables/BopeFrame.java|5777|5788|border_size|field|rina.turok.bope.bopemod.guiscreen.render.pinnables.BopeFrame|border_size
-      @|rina/turok/bope/bopemod/guiscreen/render/pinnables/BopeFrame.java|5841|5845|pass|method|rina.turok.bope.bopemod.guiscreen.render.pinnables.BopePinnableButton|pass|(Z)V
+      @|rina/turok/bope/bopemod/guiscreen/render/pinnables/BopeFrame.java|5105|5111|height|field|rina.turok.bope.bopemod.guiscreen.render.pinnables.BopeFrame|height
+      @|rina/turok/bope/bopemod/guiscreen/render/pinnables/BopeFrame.java|5118|5122|bd_r|field|rina.turok.bope.bopemod.guiscreen.render.pinnables.BopeFrame|bd_r
+      @|rina/turok/bope/bopemod/guiscreen/render/pinnables/BopeFrame.java|5129|5133|bd_g|field|rina.turok.bope.bopemod.guiscreen.render.pinnables.BopeFrame|bd_g
+      @|rina/turok/bope/bopemod/guiscreen/render/pinnables/BopeFrame.java|5140|5144|bd_b|field|rina.turok.bope.bopemod.guiscreen.render.pinnables.BopeFrame|bd_b
+      @|rina/turok/bope/bopemod/guiscreen/render/pinnables/BopeFrame.java|5151|5155|bd_a|field|rina.turok.bope.bopemod.guiscreen.render.pinnables.BopeFrame|bd_a
+      @|rina/turok/bope/bopemod/guiscreen/render/pinnables/BopeFrame.java|5162|5173|border_size|field|rina.turok.bope.bopemod.guiscreen.render.pinnables.BopeFrame|border_size
+      @|rina/turok/bope/bopemod/guiscreen/render/pinnables/BopeFrame.java|5197|5205|BopeDraw|class|rina.turok.bope.bopemod.guiscreen.render.BopeDraw|false
+      @|rina/turok/bope/bopemod/guiscreen/render/pinnables/BopeFrame.java|5206|5217|draw_string|method|rina.turok.bope.bopemod.guiscreen.render.BopeDraw|draw_string|(Ljava/lang/String;IIIIIZ)V
+      @|rina/turok/bope/bopemod/guiscreen/render/pinnables/BopeFrame.java|5223|5227|name|field|rina.turok.bope.bopemod.guiscreen.render.pinnables.BopeFrame|name
+      @|rina/turok/bope/bopemod/guiscreen/render/pinnables/BopeFrame.java|5234|5235|x|field|rina.turok.bope.bopemod.guiscreen.render.pinnables.BopeFrame|x
+      @|rina/turok/bope/bopemod/guiscreen/render/pinnables/BopeFrame.java|5246|5247|y|field|rina.turok.bope.bopemod.guiscreen.render.pinnables.BopeFrame|y
+      @|rina/turok/bope/bopemod/guiscreen/render/pinnables/BopeFrame.java|5258|5262|nc_r|field|rina.turok.bope.bopemod.guiscreen.render.pinnables.BopeFrame|nc_r
+      @|rina/turok/bope/bopemod/guiscreen/render/pinnables/BopeFrame.java|5269|5273|nc_g|field|rina.turok.bope.bopemod.guiscreen.render.pinnables.BopeFrame|nc_g
+      @|rina/turok/bope/bopemod/guiscreen/render/pinnables/BopeFrame.java|5280|5284|nc_b|field|rina.turok.bope.bopemod.guiscreen.render.pinnables.BopeFrame|nc_b
+      @|rina/turok/bope/bopemod/guiscreen/render/pinnables/BopeFrame.java|5291|5296|smoth|field|rina.turok.bope.bopemod.guiscreen.render.pinnables.BopeFrame|smoth
+      @|rina/turok/bope/bopemod/guiscreen/render/pinnables/BopeFrame.java|5308|5317|is_moving|method|rina.turok.bope.bopemod.guiscreen.render.pinnables.BopeFrame|is_moving|()Z
+      @|rina/turok/bope/bopemod/guiscreen/render/pinnables/BopeFrame.java|5327|5332|crush|method|rina.turok.bope.bopemod.guiscreen.render.pinnables.BopeFrame|crush|(II)V
+      @|rina/turok/bope/bopemod/guiscreen/render/pinnables/BopeFrame.java|5333|5335|mx|param|rina.turok.bope.bopemod.guiscreen.render.pinnables.BopeFrame|render|(III)V|mx|0
+      @|rina/turok/bope/bopemod/guiscreen/render/pinnables/BopeFrame.java|5337|5339|my|param|rina.turok.bope.bopemod.guiscreen.render.pinnables.BopeFrame|render|(III)V|my|1
+      @|rina/turok/bope/bopemod/guiscreen/render/pinnables/BopeFrame.java|5358|5376|BopePinnableButton|class|rina.turok.bope.bopemod.guiscreen.render.pinnables.BopePinnableButton|false
+      @|rina/turok/bope/bopemod/guiscreen/render/pinnables/BopeFrame.java|5402|5417|pinnable_button|field|rina.turok.bope.bopemod.guiscreen.render.pinnables.BopeFrame|pinnable_button
+      @|rina/turok/bope/bopemod/guiscreen/render/pinnables/BopeFrame.java|5443|5448|set_x|method|rina.turok.bope.bopemod.guiscreen.render.pinnables.BopePinnableButton|set_x|(I)V
+      @|rina/turok/bope/bopemod/guiscreen/render/pinnables/BopeFrame.java|5454|5455|x|field|rina.turok.bope.bopemod.guiscreen.render.pinnables.BopeFrame|x
+      @|rina/turok/bope/bopemod/guiscreen/render/pinnables/BopeFrame.java|5458|5466|separate|param|rina.turok.bope.bopemod.guiscreen.render.pinnables.BopeFrame|render|(III)V|separate|2
+      @|rina/turok/bope/bopemod/guiscreen/render/pinnables/BopeFrame.java|5493|5499|render|method|rina.turok.bope.bopemod.guiscreen.render.pinnables.BopePinnableButton|render|(III)V
+      @|rina/turok/bope/bopemod/guiscreen/render/pinnables/BopeFrame.java|5500|5502|mx|param|rina.turok.bope.bopemod.guiscreen.render.pinnables.BopeFrame|render|(III)V|mx|0
+      @|rina/turok/bope/bopemod/guiscreen/render/pinnables/BopeFrame.java|5504|5506|my|param|rina.turok.bope.bopemod.guiscreen.render.pinnables.BopeFrame|render|(III)V|my|1
+      @|rina/turok/bope/bopemod/guiscreen/render/pinnables/BopeFrame.java|5508|5516|separate|param|rina.turok.bope.bopemod.guiscreen.render.pinnables.BopeFrame|render|(III)V|separate|2
+      @|rina/turok/bope/bopemod/guiscreen/render/pinnables/BopeFrame.java|5547|5553|motion|method|rina.turok.bope.bopemod.guiscreen.render.pinnables.BopePinnableButton|motion|(II)Z
+      @|rina/turok/bope/bopemod/guiscreen/render/pinnables/BopeFrame.java|5554|5556|mx|param|rina.turok.bope.bopemod.guiscreen.render.pinnables.BopeFrame|render|(III)V|mx|0
+      @|rina/turok/bope/bopemod/guiscreen/render/pinnables/BopeFrame.java|5558|5560|my|param|rina.turok.bope.bopemod.guiscreen.render.pinnables.BopeFrame|render|(III)V|my|1
+      @|rina/turok/bope/bopemod/guiscreen/render/pinnables/BopeFrame.java|5588|5592|pass|method|rina.turok.bope.bopemod.guiscreen.render.pinnables.BopePinnableButton|pass|(Z)V
+      @|rina/turok/bope/bopemod/guiscreen/render/pinnables/BopeFrame.java|5607|5615|BopeDraw|class|rina.turok.bope.bopemod.guiscreen.render.BopeDraw|false
+      @|rina/turok/bope/bopemod/guiscreen/render/pinnables/BopeFrame.java|5616|5625|draw_rect|method|rina.turok.bope.bopemod.guiscreen.render.BopeDraw|draw_rect|(IIIIIIIIILjava/lang/String;)V
+      @|rina/turok/bope/bopemod/guiscreen/render/pinnables/BopeFrame.java|5626|5631|get_x|method|rina.turok.bope.bopemod.guiscreen.render.pinnables.BopeFrame|get_x|()I
+      @|rina/turok/bope/bopemod/guiscreen/render/pinnables/BopeFrame.java|5657|5667|get_save_y|method|rina.turok.bope.bopemod.guiscreen.render.pinnables.BopePinnableButton|get_save_y|()I
+      @|rina/turok/bope/bopemod/guiscreen/render/pinnables/BopeFrame.java|5671|5680|get_width|method|rina.turok.bope.bopemod.guiscreen.render.pinnables.BopeFrame|get_width|()I
+      @|rina/turok/bope/bopemod/guiscreen/render/pinnables/BopeFrame.java|5706|5716|get_height|method|rina.turok.bope.bopemod.guiscreen.render.pinnables.BopePinnableButton|get_height|()I
+      @|rina/turok/bope/bopemod/guiscreen/render/pinnables/BopeFrame.java|5725|5730|bdw_r|field|rina.turok.bope.bopemod.guiscreen.render.pinnables.BopeFrame|bdw_r
+      @|rina/turok/bope/bopemod/guiscreen/render/pinnables/BopeFrame.java|5737|5742|bdw_g|field|rina.turok.bope.bopemod.guiscreen.render.pinnables.BopeFrame|bdw_g
+      @|rina/turok/bope/bopemod/guiscreen/render/pinnables/BopeFrame.java|5749|5754|bdw_b|field|rina.turok.bope.bopemod.guiscreen.render.pinnables.BopeFrame|bdw_b
+      @|rina/turok/bope/bopemod/guiscreen/render/pinnables/BopeFrame.java|5761|5766|bdw_a|field|rina.turok.bope.bopemod.guiscreen.render.pinnables.BopeFrame|bdw_a
+      @|rina/turok/bope/bopemod/guiscreen/render/pinnables/BopeFrame.java|5773|5784|border_size|field|rina.turok.bope.bopemod.guiscreen.render.pinnables.BopeFrame|border_size
+      @|rina/turok/bope/bopemod/guiscreen/render/pinnables/BopeFrame.java|5837|5841|pass|method|rina.turok.bope.bopemod.guiscreen.render.pinnables.BopePinnableButton|pass|(Z)V
    Method End: render(III)V
 Class End  : rina.turok.bope.bopemod.guiscreen.render.pinnables.BopeFrame
 endProcessing "rina/turok/bope/bopemod/guiscreen/render/pinnables/BopeFrame.java"

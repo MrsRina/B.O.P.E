@@ -67,7 +67,6 @@ public class BopeModuleButton {
 		 * A value to save the y. When move the frame the save_y does the work.
 		 * @param save_y;
 		 **/
-
 		this.module = module;
 		this.master = master;
 
@@ -78,7 +77,7 @@ public class BopeModuleButton {
 		this.x = 0;
 		this.y = 0;
 
-		this.width  = font.get_string_width(module.get_name(), this.smoth) + 5;
+		this.width  = master.get_width();
 		this.height = font.get_string_height(module.get_name(), this.smoth);
 
 		this.opened_height = this.height;

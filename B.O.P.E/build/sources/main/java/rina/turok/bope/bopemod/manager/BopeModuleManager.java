@@ -82,6 +82,7 @@ public class BopeModuleManager {
 
 		// Exploit.
 		add_module(new BopeNoEntityTrace());
+		add_module(new BopeSpeedMine());
 		add_module(new BopeFreecam());
 		add_module(new BopeXCarry());
 		add_module(new BopeRPC());

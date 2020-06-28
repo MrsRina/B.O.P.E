@@ -67,7 +67,7 @@ public class BopeKillAura extends BopeModule {
 				if (entity != mc.player) {
 					if (mc.player.getDistance(entity) <= range.get_value(1)) {
 						try {
-							attack(entity);
+							who_attack(entity);
 						} catch (Exception exc) {}
 					}
 				}
@@ -75,7 +75,7 @@ public class BopeKillAura extends BopeModule {
 		}
 	}
 
-	public void attack(Entity entity) {
+	public void who_attack(Entity entity) {
 		if ((entity instanceof EntityPlayer && player.get_value(true)) || (entity instanceof IMob && hostile.get_value(true))) {
 			if (mc.player.getHeldItemMainhand().getItem() instanceof ItemSword && sword.get_value(true)) {
 				attack_entity(entity);

@@ -67,7 +67,7 @@ public class BopeKillAura extends BopeModule {
 				if (entity != mc.player) {
 					if (mc.player.getDistance(entity) <= range.get_value(1)) {
 						try {
-						 who_attack(entity);
+							who_attack(entity);
 						} catch (Exception exc) {}
 					}
 				}

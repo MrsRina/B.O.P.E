@@ -44,6 +44,7 @@ import net.minecraft.init.Items;
 public class BopeUtilMath {
 	public static final Minecraft mc = Minecraft.getMinecraft();
 
+	// kamo.
 	public static double[] calcule_look_at(double px, double py, double pz, EntityPlayer player) {
 		double diff_x = player.posX - px;
 		double diff_y = player.posY - py;
@@ -86,6 +87,7 @@ public class BopeUtilMath {
 		return new Vec3d(mc.player.posX, mc.player.posY + mc.player.getEyeHeight(), mc.player.posZ);
 	}
 
+	// Seppuku.
 	public static double[] movement_speed(double speed) {
 		float forward = mc.player.movementInput.moveForward;
 		float side    = mc.player.movementInput.moveStrafe;

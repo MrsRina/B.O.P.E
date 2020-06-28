@@ -11,7 +11,7 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.Mixin;
 
 // Events.
-import rina.turok.bope.bopemod.events.BopeEventPlayerDamageBlock;
+//import rina.turok.bope.bopemod.events.BopeEventPlayerDamageBlock;
 
 // External.
 import rina.turok.bope.external.BopeEventBus;
@@ -36,12 +36,12 @@ public class BopeMixinPlayerControllerMP {
 		return state.getPlayerRelativeBlockHardness(player, world, pos) * (Bope.get_event_handler().get_tick_rate() / 20f);
 	}
 
-	@Inject(method = "onPlayerDamageBlockHook", at = @At(value = "INVOKE", target = "(Lnet/minecraft/util/math/BlockPos;Lnet/minecraft/util/EnumFacing;)Z"))
-	private boolean onPlayerDamageBlockHook(BlockPos pos, EnumFacing face) {
-		BopeEventPlayerDamageBlock event = new BopeEventPlayerDamageBlock(pos, face);
+//	@Inject(method = "onPlayerDamageBlockHook", at = @At(value = "INVOKE", target = "(Lnet/minecraft/util/math/BlockPos;Lnet/minecraft/util/EnumFacing;)Z"))
+//	private boolean onPlayerDamageBlockHook(BlockPos pos, EnumFacing face) {
+//		BopeEventPlayerDamageBlock event = new BopeEventPlayerDamageBlock(pos, face);
 
-		BopeEventBus.ZERO_ALPINE_EVENT_BUS.post(event);
+//		BopeEventBus.ZERO_ALPINE_EVENT_BUS.post(event);
 
-		return event.isCancelled();
-	}
+//		return event.isCancelled();
+//	}
 }

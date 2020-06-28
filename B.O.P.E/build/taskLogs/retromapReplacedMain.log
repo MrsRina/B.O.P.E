@@ -1,4 +1,4 @@
-Processing 120 files
+Processing 122 files
 Start Processing: rina/turok/bope/Bope.java
 New Key: class net/minecraftforge/fml/common/Mod
 New Key: class net/minecraftforge/fml/common/Mod
@@ -274,6 +274,10 @@ Import: net.minecraft.network.Packet
 Adding 1 imports
         rina.turok.bope.external.BopeEventCancellable
 End  Processing: rina/turok/bope/bopemod/events/BopeEventPacket.java
+
+Start Processing: rina/turok/bope/bopemod/events/BopeEventPlayerDamageBlock.java
+Import: rina.turok.bope.external.BopeEventCancellable
+End  Processing: rina/turok/bope/bopemod/events/BopeEventPlayerDamageBlock.java
 
 Start Processing: rina/turok/bope/bopemod/events/BopeEventRender.java
 FOUND CONSTR method rina/turok/bope/bopemod/events/BopeEventRender/BopeEventRender (Lnet/minecraft/client/renderer/Tessellator;Lnet/minecraft/util/math/Vec3d;)V rina/turok/bope/bopemod/events/BopeEventRender
@@ -1673,6 +1677,24 @@ Adding 3 imports
         rina.turok.bope.bopemod.guiscreen.settings.BopeSetting
 End  Processing: rina/turok/bope/bopemod/hacks/exploit/BopeRPC.java
 
+Start Processing: rina/turok/bope/bopemod/hacks/exploit/BopeSpeedMine.java
+FOUND CONSTR method rina/turok/bope/bopemod/hacks/exploit/BopeSpeedMine/BopeSpeedMine ()V rina/turok/bope/bopemod/hacks/exploit/BopeSpeedMine
+Rename field net/minecraft/client/Minecraft/world[1199,1204]::world->field_71441_e
+Rename field net/minecraft/client/Minecraft/playerController[1231,1247]::playerController->field_71442_b
+Rename field net/minecraft/client/multiplayer/PlayerControllerMP/blockHitDelay[1245,1258]::blockHitDelay->field_78781_i
+Rename field net/minecraft/client/Minecraft/gameSettings[1307,1319]::gameSettings->field_71474_y
+Rename field net/minecraft/client/settings/GameSettings/keyBindUseItem[1321,1335]::keyBindUseItem->field_74313_G
+Rename method net/minecraft/client/settings/KeyBinding/isKeyDown ()Z[1335,1344]::isKeyDown->func_151470_d
+Rename field net/minecraft/client/Minecraft/playerController[1362,1378]::playerController->field_71442_b
+Rename field net/minecraft/client/multiplayer/PlayerControllerMP/isHittingBlock[1376,1390]::isHittingBlock->field_78778_j
+Import: me.zero.alpine.listener.EventHandler
+Import: me.zero.alpine.listener.Listener
+Adding 3 imports
+        rina.turok.bope.bopemod.BopeModule
+        rina.turok.bope.bopemod.guiscreen.settings.BopeSetting
+        rina.turok.bope.bopemod.hacks.BopeCategory
+End  Processing: rina/turok/bope/bopemod/hacks/exploit/BopeSpeedMine.java
+
 Start Processing: rina/turok/bope/bopemod/hacks/exploit/BopeXCarry.java
 FOUND CONSTR method rina/turok/bope/bopemod/hacks/exploit/BopeXCarry/BopeXCarry ()V rina/turok/bope/bopemod/hacks/exploit/BopeXCarry
 New Key: class rina/turok/bope/bopemod/events/BopeEventPacket
@@ -2533,7 +2555,7 @@ Adding 3 imports
 End  Processing: rina/turok/bope/mixins/BopeMixinNetworkManager.java
 
 Start Processing: rina/turok/bope/mixins/BopeMixinPlayerControllerMP.java
-Rename method net/minecraft/block/state/IBlockProperties/getPlayerRelativeBlockHardness (Lnet/minecraft/entity/player/EntityPlayer;Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;)F[1119,1149]::getPlayerRelativeBlockHardness->func_185903_a
+Rename method net/minecraft/block/state/IBlockProperties/getPlayerRelativeBlockHardness (Lnet/minecraft/entity/player/EntityPlayer;Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;)F[1265,1295]::getPlayerRelativeBlockHardness->func_185903_a
 Import: net.minecraft.client.multiplayer.PlayerControllerMP
 Import: net.minecraft.entity.player.EntityPlayer
 Import: net.minecraft.block.state.IBlockState

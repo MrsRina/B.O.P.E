@@ -67,7 +67,6 @@ public class BopeModuleButton {
 		 * A value to save the y. When move the frame the save_y does the work.
 		 * @param save_y;
 		 **/
-
 		this.module = module;
 		this.master = master;
 

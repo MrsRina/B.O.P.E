@@ -1,7 +1,7 @@
 Unsupposrted library path: C:\Users\SrRina\Documents\B.O.P.E\B.O.P.E\build\classes\api
 Unsupposrted library path: C:\Users\SrRina\Documents\B.O.P.E\B.O.P.E\build\resources\api
 Symbol range map extraction starting
-Processing 120 files
+Processing 122 files
 startProcessing "rina/turok/bope/Bope.java" md5: 68302ac2303b37b1337cb947f5c18e6b
 @|rina/turok/bope/Bope.java|8|23|rina.turok.bope|package|rina.turok.bope|(file)
 Class Start: rina.turok.bope.Bope
@@ -2100,6 +2100,10 @@ Class Start: rina.turok.bope.bopemod.events.BopeEventPacket
 Class End  : rina.turok.bope.bopemod.events.BopeEventPacket
 endProcessing "rina/turok/bope/bopemod/events/BopeEventPacket.java"
 
+startProcessing "rina/turok/bope/bopemod/events/BopeEventPlayerDamageBlock.java" md5: cb6ac230684870959bf2b70b38753a18
+@|rina/turok/bope/bopemod/events/BopeEventPlayerDamageBlock.java|8|38|rina.turok.bope.bopemod.events|package|rina.turok.bope.bopemod.events|(file)
+endProcessing "rina/turok/bope/bopemod/events/BopeEventPlayerDamageBlock.java"
+
 startProcessing "rina/turok/bope/bopemod/events/BopeEventRender.java" md5: a2ad3393d007c93a8067046cfe72284c
 @|rina/turok/bope/bopemod/events/BopeEventRender.java|8|38|rina.turok.bope.bopemod.events|package|rina.turok.bope.bopemod.events|(file)
 Class Start: rina.turok.bope.bopemod.events.BopeEventRender
@@ -3902,7 +3906,7 @@ Class Start: rina.turok.bope.bopemod.guiscreen.render.components.BopeAbstractWid
 Class End  : rina.turok.bope.bopemod.guiscreen.render.components.BopeAbstractWidget
 endProcessing "rina/turok/bope/bopemod/guiscreen/render/components/BopeAbstractWidget.java"
 
-startProcessing "rina/turok/bope/bopemod/guiscreen/render/components/BopeFrame.java" md5: fdd1cbdd41a444b6c69faf9516a88edb
+startProcessing "rina/turok/bope/bopemod/guiscreen/render/components/BopeFrame.java" md5: 230314454b62f5bd77350b6501b98cc8
 @|rina/turok/bope/bopemod/guiscreen/render/components/BopeFrame.java|8|59|rina.turok.bope.bopemod.guiscreen.render.components|package|rina.turok.bope.bopemod.guiscreen.render.components|(file)
 Class Start: rina.turok.bope.bopemod.guiscreen.render.components.BopeFrame
    @|rina/turok/bope/bopemod/guiscreen/render/components/BopeFrame.java|668|677|BopeFrame|class|rina.turok.bope.bopemod.guiscreen.render.components.BopeFrame|false
@@ -4316,7 +4320,7 @@ Class Start: rina.turok.bope.bopemod.guiscreen.render.components.BopeFrame
 Class End  : rina.turok.bope.bopemod.guiscreen.render.components.BopeFrame
 endProcessing "rina/turok/bope/bopemod/guiscreen/render/components/BopeFrame.java"
 
-startProcessing "rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java" md5: 58257230269c55958b0ed7eea3300f79
+startProcessing "rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java" md5: 4249997c4c925c0320a571e837904829
 @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|8|59|rina.turok.bope.bopemod.guiscreen.render.components|package|rina.turok.bope.bopemod.guiscreen.render.components|(file)
 Class Start: rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton
    @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|1023|1039|BopeModuleButton|class|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|false
@@ -4362,390 +4366,390 @@ Class Start: rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButto
       @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|1699|1715|BopeModuleButton|method|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|BopeModuleButton|(Lrina/turok/bope/bopemod/BopeModule;Lrina/turok/bope/bopemod/guiscreen/render/components/BopeFrame;)V
       @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|1716|1726|BopeModule|class|rina.turok.bope.bopemod.BopeModule|false
       @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|1735|1744|BopeFrame|class|rina.turok.bope.bopemod.guiscreen.render.components.BopeFrame|false
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|1876|1882|module|field|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|module
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|1885|1891|module|param|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|BopeModuleButton|(Lrina/turok/bope/bopemod/BopeModule;Lrina/turok/bope/bopemod/guiscreen/render/components/BopeFrame;)V|module|0
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|1901|1907|master|field|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|master
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|1910|1916|master|param|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|BopeModuleButton|(Lrina/turok/bope/bopemod/BopeModule;Lrina/turok/bope/bopemod/guiscreen/render/components/BopeFrame;)V|master|1
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|1928|1934|widget|field|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|widget
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|1941|1950|ArrayList|class|java.util.ArrayList|false
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|1964|1975|module_name|field|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|module_name
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|1978|1984|module|param|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|BopeModuleButton|(Lrina/turok/bope/bopemod/BopeModule;Lrina/turok/bope/bopemod/guiscreen/render/components/BopeFrame;)V|module|0
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|1985|1993|get_name|method|rina.turok.bope.bopemod.BopeModule|get_name|()Ljava/lang/String;
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|2007|2008|x|field|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|x
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|2022|2023|y|field|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|y
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|2039|2044|width|field|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|width
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|2048|2054|master|param|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|BopeModuleButton|(Lrina/turok/bope/bopemod/BopeModule;Lrina/turok/bope/bopemod/guiscreen/render/components/BopeFrame;)V|master|1
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|2055|2064|get_width|method|rina.turok.bope.bopemod.guiscreen.render.components.BopeFrame|get_width|()I
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|2076|2082|height|field|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|height
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|2085|2089|font|field|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|font
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|2090|2107|get_string_height|method|rina.turok.bope.bopemod.guiscreen.render.BopeDraw|get_string_height|(Ljava/lang/String;Z)I
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|2108|2114|module|param|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|BopeModuleButton|(Lrina/turok/bope/bopemod/BopeModule;Lrina/turok/bope/bopemod/guiscreen/render/components/BopeFrame;)V|module|0
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|2115|2123|get_name|method|rina.turok.bope.bopemod.BopeModule|get_name|()Ljava/lang/String;
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|2132|2137|smoth|field|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|smoth
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|2150|2163|opened_height|field|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|opened_height
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|2171|2177|height|field|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|height
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|2189|2195|save_y|field|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|save_y
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|2211|2217|opened|field|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|opened
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|2237|2256|master_height_cache|field|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|master_height_cache
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|2259|2265|master|param|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|BopeModuleButton|(Lrina/turok/bope/bopemod/BopeModule;Lrina/turok/bope/bopemod/guiscreen/render/components/BopeFrame;)V|master|1
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|2266|2276|get_height|method|rina.turok.bope.bopemod.guiscreen.render.components.BopeFrame|get_height|()I
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|2290|2305|settings_height|field|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|settings_height
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|2313|2314|y|field|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|y
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|2331|2336|count|field|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|count
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|2352|2363|BopeSetting|class|rina.turok.bope.bopemod.guiscreen.settings.BopeSetting|false
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|2375|2379|Bope|class|rina.turok.bope.Bope|false
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|2380|2399|get_setting_manager|method|rina.turok.bope.Bope|get_setting_manager|()Lrina/turok/bope/bopemod/manager/BopeSettingManager;
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|2402|2426|get_settings_with_module|method|rina.turok.bope.bopemod.manager.BopeSettingManager|get_settings_with_module|(Lrina/turok/bope/bopemod/BopeModule;)Ljava/util/ArrayList;
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|2427|2433|module|param|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|BopeModuleButton|(Lrina/turok/bope/bopemod/BopeModule;Lrina/turok/bope/bopemod/guiscreen/render/components/BopeFrame;)V|module|0
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|2455|2463|get_type|method|rina.turok.bope.bopemod.guiscreen.settings.BopeSetting|get_type|()Ljava/lang/String;
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|2466|2472|equals|method|java.lang.String|equals|(Ljava/lang/Object;)Z
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|2496|2502|widget|field|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|widget
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|2503|2506|add|method|java.util.Collection|add|(Ljava/lang/Object;)Z
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|2511|2521|BopeButton|class|rina.turok.bope.bopemod.guiscreen.render.components.widgets.BopeButton|false
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|2522|2528|master|param|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|BopeModuleButton|(Lrina/turok/bope/bopemod/BopeModule;Lrina/turok/bope/bopemod/guiscreen/render/components/BopeFrame;)V|master|1
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|2545|2552|get_tag|method|rina.turok.bope.bopemod.guiscreen.settings.BopeSetting|get_tag|()Ljava/lang/String;
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|2561|2576|settings_height|field|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|settings_height
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|2592|2607|settings_height|field|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|settings_height
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|2627|2632|count|field|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|count
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|2661|2669|get_type|method|rina.turok.bope.bopemod.guiscreen.settings.BopeSetting|get_type|()Ljava/lang/String;
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|2672|2678|equals|method|java.lang.String|equals|(Ljava/lang/Object;)Z
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|2704|2710|widget|field|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|widget
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|2711|2714|add|method|java.util.Collection|add|(Ljava/lang/Object;)Z
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|2719|2731|BopeCombobox|class|rina.turok.bope.bopemod.guiscreen.render.components.widgets.BopeCombobox|false
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|2732|2738|master|param|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|BopeModuleButton|(Lrina/turok/bope/bopemod/BopeModule;Lrina/turok/bope/bopemod/guiscreen/render/components/BopeFrame;)V|master|1
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|2755|2762|get_tag|method|rina.turok.bope.bopemod.guiscreen.settings.BopeSetting|get_tag|()Ljava/lang/String;
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|2771|2786|settings_height|field|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|settings_height
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|2802|2817|settings_height|field|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|settings_height
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|2837|2842|count|field|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|count
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|2871|2879|get_type|method|rina.turok.bope.bopemod.guiscreen.settings.BopeSetting|get_type|()Ljava/lang/String;
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|2882|2888|equals|method|java.lang.String|equals|(Ljava/lang/Object;)Z
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|2911|2917|widget|field|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|widget
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|2918|2921|add|method|java.util.Collection|add|(Ljava/lang/Object;)Z
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|2926|2935|BopeLabel|class|rina.turok.bope.bopemod.guiscreen.render.components.widgets.BopeLabel|false
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|2936|2942|master|param|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|BopeModuleButton|(Lrina/turok/bope/bopemod/BopeModule;Lrina/turok/bope/bopemod/guiscreen/render/components/BopeFrame;)V|master|1
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|2959|2966|get_tag|method|rina.turok.bope.bopemod.guiscreen.settings.BopeSetting|get_tag|()Ljava/lang/String;
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|2975|2990|settings_height|field|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|settings_height
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|3006|3021|settings_height|field|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|settings_height
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|3041|3046|count|field|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|count
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|3075|3083|get_type|method|rina.turok.bope.bopemod.guiscreen.settings.BopeSetting|get_type|()Ljava/lang/String;
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|3086|3092|equals|method|java.lang.String|equals|(Ljava/lang/Object;)Z
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|3121|3129|get_type|method|rina.turok.bope.bopemod.guiscreen.settings.BopeSetting|get_type|()Ljava/lang/String;
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|3132|3138|equals|method|java.lang.String|equals|(Ljava/lang/Object;)Z
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|3169|3175|widget|field|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|widget
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|3176|3179|add|method|java.util.Collection|add|(Ljava/lang/Object;)Z
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|3184|3194|BopeSlider|class|rina.turok.bope.bopemod.guiscreen.render.components.widgets.BopeSlider|false
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|3195|3201|master|param|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|BopeModuleButton|(Lrina/turok/bope/bopemod/BopeModule;Lrina/turok/bope/bopemod/guiscreen/render/components/BopeFrame;)V|master|1
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|3218|3225|get_tag|method|rina.turok.bope.bopemod.guiscreen.settings.BopeSetting|get_tag|()Ljava/lang/String;
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|3234|3249|settings_height|field|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|settings_height
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|3265|3280|settings_height|field|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|settings_height
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|3300|3305|count|field|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|count
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|3336|3340|Bope|class|rina.turok.bope.Bope|false
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|3341|3360|get_setting_manager|method|rina.turok.bope.Bope|get_setting_manager|()Lrina/turok/bope/bopemod/manager/BopeSettingManager;
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|3363|3387|get_settings_with_module|method|rina.turok.bope.bopemod.manager.BopeSettingManager|get_settings_with_module|(Lrina/turok/bope/bopemod/BopeModule;)Ljava/util/ArrayList;
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|3388|3394|module|param|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|BopeModuleButton|(Lrina/turok/bope/bopemod/BopeModule;Lrina/turok/bope/bopemod/guiscreen/render/components/BopeFrame;)V|module|0
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|3396|3400|size|method|java.util.Collection|size|()I
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|3418|3423|count|field|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|count
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|3444|3450|widget|field|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|widget
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|3451|3454|add|method|java.util.Collection|add|(Ljava/lang/Object;)Z
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|3459|3473|BopeButtonBind|class|rina.turok.bope.bopemod.guiscreen.render.components.widgets.BopeButtonBind|false
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|3474|3480|master|param|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|BopeModuleButton|(Lrina/turok/bope/bopemod/BopeModule;Lrina/turok/bope/bopemod/guiscreen/render/components/BopeFrame;)V|master|1
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|3501|3516|settings_height|field|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|settings_height
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|3531|3546|settings_height|field|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|settings_height
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|1874|1880|module|field|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|module
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|1883|1889|module|param|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|BopeModuleButton|(Lrina/turok/bope/bopemod/BopeModule;Lrina/turok/bope/bopemod/guiscreen/render/components/BopeFrame;)V|module|0
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|1899|1905|master|field|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|master
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|1908|1914|master|param|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|BopeModuleButton|(Lrina/turok/bope/bopemod/BopeModule;Lrina/turok/bope/bopemod/guiscreen/render/components/BopeFrame;)V|master|1
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|1926|1932|widget|field|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|widget
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|1939|1948|ArrayList|class|java.util.ArrayList|false
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|1962|1973|module_name|field|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|module_name
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|1976|1982|module|param|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|BopeModuleButton|(Lrina/turok/bope/bopemod/BopeModule;Lrina/turok/bope/bopemod/guiscreen/render/components/BopeFrame;)V|module|0
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|1983|1991|get_name|method|rina.turok.bope.bopemod.BopeModule|get_name|()Ljava/lang/String;
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|2005|2006|x|field|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|x
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|2020|2021|y|field|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|y
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|2037|2042|width|field|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|width
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|2046|2052|master|param|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|BopeModuleButton|(Lrina/turok/bope/bopemod/BopeModule;Lrina/turok/bope/bopemod/guiscreen/render/components/BopeFrame;)V|master|1
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|2053|2062|get_width|method|rina.turok.bope.bopemod.guiscreen.render.components.BopeFrame|get_width|()I
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|2074|2080|height|field|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|height
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|2083|2087|font|field|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|font
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|2088|2105|get_string_height|method|rina.turok.bope.bopemod.guiscreen.render.BopeDraw|get_string_height|(Ljava/lang/String;Z)I
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|2106|2112|module|param|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|BopeModuleButton|(Lrina/turok/bope/bopemod/BopeModule;Lrina/turok/bope/bopemod/guiscreen/render/components/BopeFrame;)V|module|0
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|2113|2121|get_name|method|rina.turok.bope.bopemod.BopeModule|get_name|()Ljava/lang/String;
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|2130|2135|smoth|field|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|smoth
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|2148|2161|opened_height|field|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|opened_height
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|2169|2175|height|field|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|height
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|2187|2193|save_y|field|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|save_y
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|2209|2215|opened|field|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|opened
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|2235|2254|master_height_cache|field|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|master_height_cache
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|2257|2263|master|param|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|BopeModuleButton|(Lrina/turok/bope/bopemod/BopeModule;Lrina/turok/bope/bopemod/guiscreen/render/components/BopeFrame;)V|master|1
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|2264|2274|get_height|method|rina.turok.bope.bopemod.guiscreen.render.components.BopeFrame|get_height|()I
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|2288|2303|settings_height|field|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|settings_height
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|2311|2312|y|field|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|y
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|2329|2334|count|field|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|count
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|2350|2361|BopeSetting|class|rina.turok.bope.bopemod.guiscreen.settings.BopeSetting|false
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|2373|2377|Bope|class|rina.turok.bope.Bope|false
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|2378|2397|get_setting_manager|method|rina.turok.bope.Bope|get_setting_manager|()Lrina/turok/bope/bopemod/manager/BopeSettingManager;
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|2400|2424|get_settings_with_module|method|rina.turok.bope.bopemod.manager.BopeSettingManager|get_settings_with_module|(Lrina/turok/bope/bopemod/BopeModule;)Ljava/util/ArrayList;
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|2425|2431|module|param|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|BopeModuleButton|(Lrina/turok/bope/bopemod/BopeModule;Lrina/turok/bope/bopemod/guiscreen/render/components/BopeFrame;)V|module|0
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|2453|2461|get_type|method|rina.turok.bope.bopemod.guiscreen.settings.BopeSetting|get_type|()Ljava/lang/String;
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|2464|2470|equals|method|java.lang.String|equals|(Ljava/lang/Object;)Z
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|2494|2500|widget|field|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|widget
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|2501|2504|add|method|java.util.Collection|add|(Ljava/lang/Object;)Z
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|2509|2519|BopeButton|class|rina.turok.bope.bopemod.guiscreen.render.components.widgets.BopeButton|false
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|2520|2526|master|param|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|BopeModuleButton|(Lrina/turok/bope/bopemod/BopeModule;Lrina/turok/bope/bopemod/guiscreen/render/components/BopeFrame;)V|master|1
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|2543|2550|get_tag|method|rina.turok.bope.bopemod.guiscreen.settings.BopeSetting|get_tag|()Ljava/lang/String;
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|2559|2574|settings_height|field|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|settings_height
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|2590|2605|settings_height|field|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|settings_height
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|2625|2630|count|field|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|count
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|2659|2667|get_type|method|rina.turok.bope.bopemod.guiscreen.settings.BopeSetting|get_type|()Ljava/lang/String;
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|2670|2676|equals|method|java.lang.String|equals|(Ljava/lang/Object;)Z
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|2702|2708|widget|field|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|widget
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|2709|2712|add|method|java.util.Collection|add|(Ljava/lang/Object;)Z
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|2717|2729|BopeCombobox|class|rina.turok.bope.bopemod.guiscreen.render.components.widgets.BopeCombobox|false
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|2730|2736|master|param|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|BopeModuleButton|(Lrina/turok/bope/bopemod/BopeModule;Lrina/turok/bope/bopemod/guiscreen/render/components/BopeFrame;)V|master|1
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|2753|2760|get_tag|method|rina.turok.bope.bopemod.guiscreen.settings.BopeSetting|get_tag|()Ljava/lang/String;
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|2769|2784|settings_height|field|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|settings_height
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|2800|2815|settings_height|field|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|settings_height
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|2835|2840|count|field|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|count
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|2869|2877|get_type|method|rina.turok.bope.bopemod.guiscreen.settings.BopeSetting|get_type|()Ljava/lang/String;
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|2880|2886|equals|method|java.lang.String|equals|(Ljava/lang/Object;)Z
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|2909|2915|widget|field|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|widget
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|2916|2919|add|method|java.util.Collection|add|(Ljava/lang/Object;)Z
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|2924|2933|BopeLabel|class|rina.turok.bope.bopemod.guiscreen.render.components.widgets.BopeLabel|false
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|2934|2940|master|param|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|BopeModuleButton|(Lrina/turok/bope/bopemod/BopeModule;Lrina/turok/bope/bopemod/guiscreen/render/components/BopeFrame;)V|master|1
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|2957|2964|get_tag|method|rina.turok.bope.bopemod.guiscreen.settings.BopeSetting|get_tag|()Ljava/lang/String;
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|2973|2988|settings_height|field|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|settings_height
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|3004|3019|settings_height|field|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|settings_height
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|3039|3044|count|field|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|count
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|3073|3081|get_type|method|rina.turok.bope.bopemod.guiscreen.settings.BopeSetting|get_type|()Ljava/lang/String;
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|3084|3090|equals|method|java.lang.String|equals|(Ljava/lang/Object;)Z
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|3119|3127|get_type|method|rina.turok.bope.bopemod.guiscreen.settings.BopeSetting|get_type|()Ljava/lang/String;
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|3130|3136|equals|method|java.lang.String|equals|(Ljava/lang/Object;)Z
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|3167|3173|widget|field|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|widget
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|3174|3177|add|method|java.util.Collection|add|(Ljava/lang/Object;)Z
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|3182|3192|BopeSlider|class|rina.turok.bope.bopemod.guiscreen.render.components.widgets.BopeSlider|false
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|3193|3199|master|param|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|BopeModuleButton|(Lrina/turok/bope/bopemod/BopeModule;Lrina/turok/bope/bopemod/guiscreen/render/components/BopeFrame;)V|master|1
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|3216|3223|get_tag|method|rina.turok.bope.bopemod.guiscreen.settings.BopeSetting|get_tag|()Ljava/lang/String;
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|3232|3247|settings_height|field|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|settings_height
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|3263|3278|settings_height|field|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|settings_height
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|3298|3303|count|field|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|count
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|3334|3338|Bope|class|rina.turok.bope.Bope|false
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|3339|3358|get_setting_manager|method|rina.turok.bope.Bope|get_setting_manager|()Lrina/turok/bope/bopemod/manager/BopeSettingManager;
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|3361|3385|get_settings_with_module|method|rina.turok.bope.bopemod.manager.BopeSettingManager|get_settings_with_module|(Lrina/turok/bope/bopemod/BopeModule;)Ljava/util/ArrayList;
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|3386|3392|module|param|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|BopeModuleButton|(Lrina/turok/bope/bopemod/BopeModule;Lrina/turok/bope/bopemod/guiscreen/render/components/BopeFrame;)V|module|0
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|3394|3398|size|method|java.util.Collection|size|()I
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|3416|3421|count|field|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|count
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|3442|3448|widget|field|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|widget
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|3449|3452|add|method|java.util.Collection|add|(Ljava/lang/Object;)Z
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|3457|3471|BopeButtonBind|class|rina.turok.bope.bopemod.guiscreen.render.components.widgets.BopeButtonBind|false
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|3472|3478|master|param|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|BopeModuleButton|(Lrina/turok/bope/bopemod/BopeModule;Lrina/turok/bope/bopemod/guiscreen/render/components/BopeFrame;)V|master|1
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|3499|3514|settings_height|field|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|settings_height
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|3529|3544|settings_height|field|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|settings_height
    Method End: BopeModuleButton(Lrina/turok/bope/bopemod/BopeModule;Lrina/turok/bope/bopemod/guiscreen/render/components/BopeFrame;)V
    Method Start: get_module()Lrina/turok/bope/bopemod/BopeModule;
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|3574|3584|BopeModule|class|rina.turok.bope.bopemod.BopeModule|false
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|3585|3595|get_module|method|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|get_module|()Lrina/turok/bope/bopemod/BopeModule;
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|3615|3621|module|field|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|module
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|3572|3582|BopeModule|class|rina.turok.bope.bopemod.BopeModule|false
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|3583|3593|get_module|method|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|get_module|()Lrina/turok/bope/bopemod/BopeModule;
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|3613|3619|module|field|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|module
    Method End: get_module()Lrina/turok/bope/bopemod/BopeModule;
    Method Start: get_master()Lrina/turok/bope/bopemod/guiscreen/render/components/BopeFrame;
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|3638|3647|BopeFrame|class|rina.turok.bope.bopemod.guiscreen.render.components.BopeFrame|false
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|3648|3658|get_master|method|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|get_master|()Lrina/turok/bope/bopemod/guiscreen/render/components/BopeFrame;
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|3678|3684|master|field|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|master
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|3636|3645|BopeFrame|class|rina.turok.bope.bopemod.guiscreen.render.components.BopeFrame|false
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|3646|3656|get_master|method|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|get_master|()Lrina/turok/bope/bopemod/guiscreen/render/components/BopeFrame;
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|3676|3682|master|field|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|master
    Method End: get_master()Lrina/turok/bope/bopemod/guiscreen/render/components/BopeFrame;
    Method Start: event_can(Z)V
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|3724|3729|event|param|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|event_can|(Z)V|event|0
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|3706|3715|event_can|method|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|event_can|(Z)V
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|3741|3744|can|field|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|can
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|3747|3752|event|param|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|event_can|(Z)V|event|0
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|3764|3782|BopeAbstractWidget|class|rina.turok.bope.bopemod.guiscreen.render.components.BopeAbstractWidget|false
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|3798|3804|widget|field|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|widget
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|3820|3828|does_can|method|rina.turok.bope.bopemod.guiscreen.render.components.BopeAbstractWidget|does_can|(Z)V
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|3829|3834|event|param|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|event_can|(Z)V|event|0
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|3722|3727|event|param|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|event_can|(Z)V|event|0
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|3704|3713|event_can|method|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|event_can|(Z)V
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|3739|3742|can|field|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|can
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|3745|3750|event|param|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|event_can|(Z)V|event|0
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|3762|3780|BopeAbstractWidget|class|rina.turok.bope.bopemod.guiscreen.render.components.BopeAbstractWidget|false
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|3796|3802|widget|field|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|widget
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|3818|3826|does_can|method|rina.turok.bope.bopemod.guiscreen.render.components.BopeAbstractWidget|does_can|(Z)V
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|3827|3832|event|param|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|event_can|(Z)V|event|0
    Method End: event_can(Z)V
    Method Start: set_pressed(Z)V
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|3882|3887|value|param|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|set_pressed|(Z)V|value|0
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|3862|3873|set_pressed|method|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|set_pressed|(Z)V
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|3899|3905|module|field|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|module
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|3906|3916|set_active|method|rina.turok.bope.bopemod.BopeModule|set_active|(Z)V
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|3917|3922|value|param|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|set_pressed|(Z)V|value|0
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|3880|3885|value|param|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|set_pressed|(Z)V|value|0
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|3860|3871|set_pressed|method|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|set_pressed|(Z)V
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|3897|3903|module|field|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|module
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|3904|3914|set_active|method|rina.turok.bope.bopemod.BopeModule|set_active|(Z)V
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|3915|3920|value|param|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|set_pressed|(Z)V|value|0
    Method End: set_pressed(Z)V
    Method Start: set_width(I)V
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|3959|3964|width|param|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|set_width|(I)V|width|0
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|3945|3954|set_width|method|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|set_width|(I)V
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|3976|3981|width|field|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|width
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|3984|3989|width|param|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|set_width|(I)V|width|0
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|3957|3962|width|param|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|set_width|(I)V|width|0
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|3943|3952|set_width|method|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|set_width|(I)V
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|3974|3979|width|field|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|width
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|3982|3987|width|param|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|set_width|(I)V|width|0
    Method End: set_width(I)V
    Method Start: set_height(I)V
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|4026|4032|height|param|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|set_height|(I)V|height|0
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|4011|4021|set_height|method|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|set_height|(I)V
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|4044|4050|height|field|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|height
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|4053|4059|height|param|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|set_height|(I)V|height|0
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|4024|4030|height|param|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|set_height|(I)V|height|0
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|4009|4019|set_height|method|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|set_height|(I)V
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|4042|4048|height|field|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|height
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|4051|4057|height|param|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|set_height|(I)V|height|0
    Method End: set_height(I)V
    Method Start: set_x(I)V
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|4091|4092|x|param|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|set_x|(I)V|x|0
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|4081|4086|set_x|method|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|set_x|(I)V
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|4104|4105|x|field|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|x
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|4108|4109|x|param|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|set_x|(I)V|x|0
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|4089|4090|x|param|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|set_x|(I)V|x|0
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|4079|4084|set_x|method|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|set_x|(I)V
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|4102|4103|x|field|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|x
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|4106|4107|x|param|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|set_x|(I)V|x|0
    Method End: set_x(I)V
    Method Start: set_y(I)V
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|4141|4142|y|param|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|set_y|(I)V|y|0
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|4131|4136|set_y|method|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|set_y|(I)V
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|4154|4155|y|field|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|y
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|4158|4159|y|param|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|set_y|(I)V|y|0
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|4139|4140|y|param|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|set_y|(I)V|y|0
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|4129|4134|set_y|method|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|set_y|(I)V
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|4152|4153|y|field|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|y
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|4156|4157|y|param|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|set_y|(I)V|y|0
    Method End: set_y(I)V
    Method Start: set_open(Z)V
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|4198|4203|value|param|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|set_open|(Z)V|value|0
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|4181|4189|set_open|method|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|set_open|(Z)V
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|4215|4221|opened|field|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|opened
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|4224|4229|value|param|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|set_open|(Z)V|value|0
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|4196|4201|value|param|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|set_open|(Z)V|value|0
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|4179|4187|set_open|method|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|set_open|(Z)V
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|4213|4219|opened|field|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|opened
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|4222|4227|value|param|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|set_open|(Z)V|value|0
    Method End: set_open(Z)V
    Method Start: get_state()Z
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|4254|4263|get_state|method|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|get_state|()Z
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|4283|4289|module|field|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|module
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|4290|4299|is_active|method|rina.turok.bope.bopemod.BopeModule|is_active|()Z
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|4252|4261|get_state|method|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|get_state|()Z
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|4281|4287|module|field|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|module
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|4288|4297|is_active|method|rina.turok.bope.bopemod.BopeModule|is_active|()Z
    Method End: get_state()Z
    Method Start: get_settings_height()I
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|4322|4341|get_settings_height|method|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|get_settings_height|()I
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|4361|4376|settings_height|field|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|settings_height
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|4320|4339|get_settings_height|method|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|get_settings_height|()I
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|4359|4374|settings_height|field|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|settings_height
    Method End: get_settings_height()I
    Method Start: get_cache_height()I
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|4397|4413|get_cache_height|method|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|get_cache_height|()I
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|4433|4452|master_height_cache|field|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|master_height_cache
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|4395|4411|get_cache_height|method|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|get_cache_height|()I
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|4431|4450|master_height_cache|field|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|master_height_cache
    Method End: get_cache_height()I
    Method Start: get_width()I
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|4473|4482|get_width|method|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|get_width|()I
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|4502|4507|width|field|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|width
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|4471|4480|get_width|method|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|get_width|()I
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|4500|4505|width|field|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|width
    Method End: get_width()I
    Method Start: get_height()I
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|4528|4538|get_height|method|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|get_height|()I
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|4558|4564|height|field|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|height
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|4526|4536|get_height|method|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|get_height|()I
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|4556|4562|height|field|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|height
    Method End: get_height()I
    Method Start: get_x()I
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|4585|4590|get_x|method|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|get_x|()I
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|4610|4611|x|field|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|x
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|4583|4588|get_x|method|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|get_x|()I
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|4608|4609|x|field|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|x
    Method End: get_x()I
    Method Start: get_y()I
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|4632|4637|get_y|method|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|get_y|()I
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|4657|4658|y|field|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|y
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|4630|4635|get_y|method|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|get_y|()I
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|4655|4656|y|field|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|y
    Method End: get_y()I
    Method Start: get_save_y()I
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|4679|4689|get_save_y|method|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|get_save_y|()I
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|4709|4715|save_y|field|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|save_y
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|4677|4687|get_save_y|method|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|get_save_y|()I
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|4707|4713|save_y|field|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|save_y
    Method End: get_save_y()I
    Method Start: is_open()Z
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|4740|4747|is_open|method|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|is_open|()Z
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|4767|4773|opened|field|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|opened
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|4738|4745|is_open|method|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|is_open|()Z
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|4765|4771|opened|field|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|opened
    Method End: is_open()Z
    Method Start: is_binding()Z
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|4798|4808|is_binding|method|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|is_binding|()Z
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|4859|4877|BopeAbstractWidget|class|rina.turok.bope.bopemod.guiscreen.render.components.BopeAbstractWidget|false
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|4893|4899|widget|field|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|widget
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|4919|4929|is_binding|method|rina.turok.bope.bopemod.guiscreen.render.components.BopeAbstractWidget|is_binding|()Z
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|4796|4806|is_binding|method|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|is_binding|()Z
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|4857|4875|BopeAbstractWidget|class|rina.turok.bope.bopemod.guiscreen.render.components.BopeAbstractWidget|false
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|4891|4897|widget|field|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|widget
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|4917|4927|is_binding|method|rina.turok.bope.bopemod.guiscreen.render.components.BopeAbstractWidget|is_binding|()Z
    Method End: is_binding()Z
    Method Start: motion(II)Z
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|5038|5040|mx|param|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|motion|(II)Z|mx|0
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|5046|5048|my|param|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|motion|(II)Z|my|1
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|5027|5033|motion|method|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|motion|(II)Z
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|5059|5061|mx|param|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|motion|(II)Z|mx|0
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|5065|5070|get_x|method|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|get_x|()I
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|5076|5078|my|param|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|motion|(II)Z|my|1
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|5082|5092|get_save_y|method|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|get_save_y|()I
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|5098|5100|mx|param|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|motion|(II)Z|mx|0
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|5104|5109|get_x|method|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|get_x|()I
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|5114|5123|get_width|method|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|get_width|()I
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|5129|5131|my|param|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|motion|(II)Z|my|1
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|5135|5145|get_save_y|method|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|get_save_y|()I
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|5150|5160|get_height|method|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|get_height|()I
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|5036|5038|mx|param|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|motion|(II)Z|mx|0
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|5044|5046|my|param|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|motion|(II)Z|my|1
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|5025|5031|motion|method|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|motion|(II)Z
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|5057|5059|mx|param|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|motion|(II)Z|mx|0
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|5063|5068|get_x|method|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|get_x|()I
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|5074|5076|my|param|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|motion|(II)Z|my|1
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|5080|5090|get_save_y|method|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|get_save_y|()I
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|5096|5098|mx|param|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|motion|(II)Z|mx|0
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|5102|5107|get_x|method|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|get_x|()I
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|5112|5121|get_width|method|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|get_width|()I
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|5127|5129|my|param|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|motion|(II)Z|my|1
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|5133|5143|get_save_y|method|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|get_save_y|()I
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|5148|5158|get_height|method|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|get_height|()I
    Method End: motion(II)Z
    Method Start: does_widgets_can(Z)V
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|5252|5255|can|param|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|does_widgets_can|(Z)V|can|0
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|5227|5243|does_widgets_can|method|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|does_widgets_can|(Z)V
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|5267|5285|BopeAbstractWidget|class|rina.turok.bope.bopemod.guiscreen.render.components.BopeAbstractWidget|false
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|5301|5307|widget|field|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|widget
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|5323|5331|does_can|method|rina.turok.bope.bopemod.guiscreen.render.components.BopeAbstractWidget|does_can|(Z)V
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|5332|5335|can|param|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|does_widgets_can|(Z)V|can|0
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|5250|5253|can|param|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|does_widgets_can|(Z)V|can|0
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|5225|5241|does_widgets_can|method|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|does_widgets_can|(Z)V
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|5265|5283|BopeAbstractWidget|class|rina.turok.bope.bopemod.guiscreen.render.components.BopeAbstractWidget|false
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|5299|5305|widget|field|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|widget
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|5321|5329|does_can|method|rina.turok.bope.bopemod.guiscreen.render.components.BopeAbstractWidget|does_can|(Z)V
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|5330|5333|can|param|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|does_widgets_can|(Z)V|can|0
    Method End: does_widgets_can(Z)V
    Method Start: bind(CI)V
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|5373|5378|char_|param|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|bind|(CI)V|char_|0
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|5384|5387|key|param|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|bind|(CI)V|key|1
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|5363|5367|bind|method|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|bind|(CI)V
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|5399|5417|BopeAbstractWidget|class|rina.turok.bope.bopemod.guiscreen.render.components.BopeAbstractWidget|false
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|5433|5439|widget|field|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|widget
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|5455|5459|bind|method|rina.turok.bope.bopemod.guiscreen.render.components.BopeAbstractWidget|bind|(CI)V
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|5460|5465|char_|param|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|bind|(CI)V|char_|0
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|5467|5470|key|param|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|bind|(CI)V|key|1
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|5485|5490|input|method|rina.turok.bope.bopemod.guiscreen.render.components.BopeAbstractWidget|input|(CI)V
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|5491|5496|char_|param|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|bind|(CI)V|char_|0
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|5498|5501|key|param|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|bind|(CI)V|key|1
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|5371|5376|char_|param|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|bind|(CI)V|char_|0
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|5382|5385|key|param|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|bind|(CI)V|key|1
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|5361|5365|bind|method|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|bind|(CI)V
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|5397|5415|BopeAbstractWidget|class|rina.turok.bope.bopemod.guiscreen.render.components.BopeAbstractWidget|false
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|5431|5437|widget|field|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|widget
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|5453|5457|bind|method|rina.turok.bope.bopemod.guiscreen.render.components.BopeAbstractWidget|bind|(CI)V
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|5458|5463|char_|param|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|bind|(CI)V|char_|0
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|5465|5468|key|param|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|bind|(CI)V|key|1
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|5483|5488|input|method|rina.turok.bope.bopemod.guiscreen.render.components.BopeAbstractWidget|input|(CI)V
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|5489|5494|char_|param|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|bind|(CI)V|char_|0
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|5496|5499|key|param|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|bind|(CI)V|key|1
    Method End: bind(CI)V
    Method Start: mouse(III)V
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|5539|5541|mx|param|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|mouse|(III)V|mx|0
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|5547|5549|my|param|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|mouse|(III)V|my|1
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|5555|5560|mouse|param|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|mouse|(III)V|mouse|2
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|5529|5534|mouse|method|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|mouse|(III)V
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|5572|5590|BopeAbstractWidget|class|rina.turok.bope.bopemod.guiscreen.render.components.BopeAbstractWidget|false
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|5606|5612|widget|field|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|widget
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|5628|5633|mouse|method|rina.turok.bope.bopemod.guiscreen.render.components.BopeAbstractWidget|mouse|(III)V
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|5634|5636|mx|param|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|mouse|(III)V|mx|0
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|5638|5640|my|param|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|mouse|(III)V|my|1
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|5642|5647|mouse|param|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|mouse|(III)V|mouse|2
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|5664|5669|mouse|param|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|mouse|(III)V|mouse|2
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|5686|5692|motion|method|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|motion|(II)Z
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|5693|5695|mx|param|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|mouse|(III)V|mx|0
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|5697|5699|my|param|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|mouse|(III)V|my|1
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|5709|5712|can|field|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|can
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|5726|5732|master|field|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|master
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|5733|5741|does_can|method|rina.turok.bope.bopemod.guiscreen.render.components.BopeFrame|does_can|(Z)V
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|5757|5768|set_pressed|method|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|set_pressed|(Z)V
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|5770|5779|get_state|method|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|get_state|()Z
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|5804|5809|mouse|param|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|mouse|(III)V|mouse|2
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|5826|5832|motion|method|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|motion|(II)Z
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|5833|5835|mx|param|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|mouse|(III)V|mx|0
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|5837|5839|my|param|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|mouse|(III)V|my|1
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|5849|5852|can|field|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|can
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|5866|5872|master|field|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|master
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|5873|5881|does_can|method|rina.turok.bope.bopemod.guiscreen.render.components.BopeFrame|does_can|(Z)V
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|5897|5905|set_open|method|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|set_open|(Z)V
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|5907|5914|is_open|method|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|is_open|()Z
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|5931|5937|master|field|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|master
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|5938|5951|refresh_frame|method|rina.turok.bope.bopemod.guiscreen.render.components.BopeFrame|refresh_frame|(Lrina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton;I)V
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|5537|5539|mx|param|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|mouse|(III)V|mx|0
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|5545|5547|my|param|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|mouse|(III)V|my|1
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|5553|5558|mouse|param|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|mouse|(III)V|mouse|2
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|5527|5532|mouse|method|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|mouse|(III)V
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|5570|5588|BopeAbstractWidget|class|rina.turok.bope.bopemod.guiscreen.render.components.BopeAbstractWidget|false
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|5604|5610|widget|field|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|widget
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|5626|5631|mouse|method|rina.turok.bope.bopemod.guiscreen.render.components.BopeAbstractWidget|mouse|(III)V
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|5632|5634|mx|param|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|mouse|(III)V|mx|0
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|5636|5638|my|param|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|mouse|(III)V|my|1
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|5640|5645|mouse|param|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|mouse|(III)V|mouse|2
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|5662|5667|mouse|param|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|mouse|(III)V|mouse|2
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|5684|5690|motion|method|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|motion|(II)Z
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|5691|5693|mx|param|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|mouse|(III)V|mx|0
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|5695|5697|my|param|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|mouse|(III)V|my|1
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|5707|5710|can|field|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|can
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|5724|5730|master|field|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|master
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|5731|5739|does_can|method|rina.turok.bope.bopemod.guiscreen.render.components.BopeFrame|does_can|(Z)V
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|5755|5766|set_pressed|method|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|set_pressed|(Z)V
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|5768|5777|get_state|method|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|get_state|()Z
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|5802|5807|mouse|param|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|mouse|(III)V|mouse|2
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|5824|5830|motion|method|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|motion|(II)Z
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|5831|5833|mx|param|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|mouse|(III)V|mx|0
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|5835|5837|my|param|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|mouse|(III)V|my|1
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|5847|5850|can|field|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|can
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|5864|5870|master|field|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|master
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|5871|5879|does_can|method|rina.turok.bope.bopemod.guiscreen.render.components.BopeFrame|does_can|(Z)V
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|5895|5903|set_open|method|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|set_open|(Z)V
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|5905|5912|is_open|method|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|is_open|()Z
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|5929|5935|master|field|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|master
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|5936|5949|refresh_frame|method|rina.turok.bope.bopemod.guiscreen.render.components.BopeFrame|refresh_frame|(Lrina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton;I)V
    Method End: mouse(III)V
    Method Start: button_release(III)V
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|6012|6014|mx|param|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|button_release|(III)V|mx|0
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|6020|6022|my|param|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|button_release|(III)V|my|1
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|6028|6033|mouse|param|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|button_release|(III)V|mouse|2
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|5993|6007|button_release|method|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|button_release|(III)V
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|6045|6063|BopeAbstractWidget|class|rina.turok.bope.bopemod.guiscreen.render.components.BopeAbstractWidget|false
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|6079|6085|widget|field|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|widget
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|6101|6108|release|method|rina.turok.bope.bopemod.guiscreen.render.components.BopeAbstractWidget|release|(III)V
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|6109|6111|mx|param|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|button_release|(III)V|mx|0
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|6113|6115|my|param|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|button_release|(III)V|my|1
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|6117|6122|mouse|param|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|button_release|(III)V|mouse|2
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|6140|6146|master|field|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|master
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|6147|6155|does_can|method|rina.turok.bope.bopemod.guiscreen.render.components.BopeFrame|does_can|(Z)V
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|6010|6012|mx|param|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|button_release|(III)V|mx|0
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|6018|6020|my|param|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|button_release|(III)V|my|1
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|6026|6031|mouse|param|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|button_release|(III)V|mouse|2
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|5991|6005|button_release|method|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|button_release|(III)V
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|6043|6061|BopeAbstractWidget|class|rina.turok.bope.bopemod.guiscreen.render.components.BopeAbstractWidget|false
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|6077|6083|widget|field|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|widget
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|6099|6106|release|method|rina.turok.bope.bopemod.guiscreen.render.components.BopeAbstractWidget|release|(III)V
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|6107|6109|mx|param|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|button_release|(III)V|mx|0
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|6111|6113|my|param|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|button_release|(III)V|my|1
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|6115|6120|mouse|param|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|button_release|(III)V|mouse|2
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|6138|6144|master|field|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|master
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|6145|6153|does_can|method|rina.turok.bope.bopemod.guiscreen.render.components.BopeFrame|does_can|(Z)V
    Method End: button_release(III)V
    Method Start: render(III)V
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|6194|6196|mx|param|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|render|(III)V|mx|0
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|6202|6204|my|param|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|render|(III)V|my|1
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|6210|6216|separe|param|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|render|(III)V|separe|2
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|6183|6189|render|method|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|render|(III)V
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|6228|6233|smoth|field|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|smoth
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|6236|6240|Bope|class|rina.turok.bope.Bope|false
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|6241|6260|get_setting_manager|method|rina.turok.bope.Bope|get_setting_manager|()Lrina/turok/bope/bopemod/manager/BopeSettingManager;
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|6263|6283|get_setting_with_tag|method|rina.turok.bope.bopemod.manager.BopeSettingManager|get_setting_with_tag|(Ljava/lang/String;)Lrina/turok/bope/bopemod/guiscreen/settings/BopeSetting;
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|6300|6309|get_value|method|rina.turok.bope.bopemod.guiscreen.settings.BopeSetting|get_value|(Z)Z
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|6322|6331|set_width|method|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|set_width|(I)V
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|6337|6343|master|field|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|master
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|6344|6353|get_width|method|rina.turok.bope.bopemod.guiscreen.render.components.BopeFrame|get_width|()I
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|6358|6364|separe|param|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|render|(III)V|separe|2
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|6377|6383|save_y|field|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|save_y
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|6391|6392|y|field|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|y
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|6400|6406|master|field|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|master
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|6407|6412|get_y|method|rina.turok.bope.bopemod.guiscreen.render.components.BopeFrame|get_y|()I
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|6437|6441|Bope|class|rina.turok.bope.Bope|false
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|6442|6451|click_gui|field|rina.turok.bope.Bope|click_gui
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|6452|6471|theme_widget_name_r|field|rina.turok.bope.bopemod.guiscreen.BopeGUI|theme_widget_name_r
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|6487|6491|Bope|class|rina.turok.bope.Bope|false
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|6492|6501|click_gui|field|rina.turok.bope.Bope|click_gui
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|6502|6521|theme_widget_name_g|field|rina.turok.bope.bopemod.guiscreen.BopeGUI|theme_widget_name_g
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|6537|6541|Bope|class|rina.turok.bope.Bope|false
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|6542|6551|click_gui|field|rina.turok.bope.Bope|click_gui
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|6552|6571|theme_widget_name_b|field|rina.turok.bope.bopemod.guiscreen.BopeGUI|theme_widget_name_b
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|6589|6593|Bope|class|rina.turok.bope.Bope|false
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|6594|6603|click_gui|field|rina.turok.bope.Bope|click_gui
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|6604|6629|theme_widget_background_r|field|rina.turok.bope.bopemod.guiscreen.BopeGUI|theme_widget_background_r
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|6645|6649|Bope|class|rina.turok.bope.Bope|false
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|6650|6659|click_gui|field|rina.turok.bope.Bope|click_gui
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|6660|6685|theme_widget_background_g|field|rina.turok.bope.bopemod.guiscreen.BopeGUI|theme_widget_background_g
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|6701|6705|Bope|class|rina.turok.bope.Bope|false
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|6706|6715|click_gui|field|rina.turok.bope.Bope|click_gui
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|6716|6741|theme_widget_background_b|field|rina.turok.bope.bopemod.guiscreen.BopeGUI|theme_widget_background_b
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|6757|6761|Bope|class|rina.turok.bope.Bope|false
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|6762|6771|click_gui|field|rina.turok.bope.Bope|click_gui
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|6772|6797|theme_widget_background_a|field|rina.turok.bope.bopemod.guiscreen.BopeGUI|theme_widget_background_a
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|6815|6819|Bope|class|rina.turok.bope.Bope|false
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|6820|6829|click_gui|field|rina.turok.bope.Bope|click_gui
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|6830|6851|theme_widget_border_r|field|rina.turok.bope.bopemod.guiscreen.BopeGUI|theme_widget_border_r
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|6867|6871|Bope|class|rina.turok.bope.Bope|false
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|6872|6881|click_gui|field|rina.turok.bope.Bope|click_gui
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|6882|6903|theme_widget_border_g|field|rina.turok.bope.bopemod.guiscreen.BopeGUI|theme_widget_border_g
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|6919|6923|Bope|class|rina.turok.bope.Bope|false
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|6924|6933|click_gui|field|rina.turok.bope.Bope|click_gui
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|6934|6955|theme_widget_border_b|field|rina.turok.bope.bopemod.guiscreen.BopeGUI|theme_widget_border_b
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|6971|6977|module|field|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|module
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|6978|6987|is_active|method|rina.turok.bope.bopemod.BopeModule|is_active|()Z
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|6997|7005|BopeDraw|class|rina.turok.bope.bopemod.guiscreen.render.BopeDraw|false
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|7006|7015|draw_rect|method|rina.turok.bope.bopemod.guiscreen.render.BopeDraw|draw_rect|(IIIIIIII)V
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|7021|7022|x|field|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|x
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|7029|7035|save_y|field|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|save_y
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|7042|7043|x|field|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|x
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|7051|7056|width|field|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|width
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|7059|7065|separe|param|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|render|(III)V|separe|2
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|7072|7078|save_y|field|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|save_y
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|7086|7092|height|field|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|height
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|7125|7129|font|field|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|font
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|7130|7141|draw_string|method|rina.turok.bope.bopemod.guiscreen.render.BopeDraw|draw_string|(Ljava/lang/String;IIIIIZ)V
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|7147|7158|module_name|field|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|module_name
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|7165|7166|x|field|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|x
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|7169|7175|separe|param|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|render|(III)V|separe|2
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|7182|7188|save_y|field|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|save_y
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|7213|7218|smoth|field|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|smoth
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|7237|7241|font|field|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|font
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|7242|7253|draw_string|method|rina.turok.bope.bopemod.guiscreen.render.BopeDraw|draw_string|(Ljava/lang/String;IIIIIZ)V
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|7259|7270|module_name|field|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|module_name
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|7277|7278|x|field|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|x
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|7281|7287|separe|param|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|render|(III)V|separe|2
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|7294|7300|save_y|field|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|save_y
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|7325|7330|smoth|field|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|smoth
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|7348|7366|BopeAbstractWidget|class|rina.turok.bope.bopemod.guiscreen.render.components.BopeAbstractWidget|false
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|7382|7388|widget|field|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|widget
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|7404|7409|set_x|method|rina.turok.bope.bopemod.guiscreen.render.components.BopeAbstractWidget|set_x|(I)V
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|7410|7415|get_x|method|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|get_x|()I
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|7462|7468|opened|field|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|opened
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|7479|7490|motion_pass|method|rina.turok.bope.bopemod.guiscreen.render.components.BopeAbstractWidget|motion_pass|(II)Z
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|7491|7493|mx|param|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|render|(III)V|mx|0
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|7495|7497|my|param|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|render|(III)V|my|1
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|7518|7524|motion|method|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|motion|(II)Z
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|7525|7527|mx|param|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|render|(III)V|mx|0
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|7529|7531|my|param|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|render|(III)V|my|1
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|7565|7568|can|field|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|can
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|7577|7585|BopeDraw|class|rina.turok.bope.bopemod.guiscreen.render.BopeDraw|false
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|7586|7595|draw_rect|method|rina.turok.bope.bopemod.guiscreen.render.BopeDraw|draw_rect|(IIIIIIIIILjava/lang/String;)V
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|7601|7607|master|field|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|master
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|7608|7613|get_x|method|rina.turok.bope.bopemod.guiscreen.render.components.BopeFrame|get_x|()I
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|7626|7632|save_y|field|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|save_y
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|7639|7645|master|field|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|master
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|7646|7655|get_width|method|rina.turok.bope.bopemod.guiscreen.render.components.BopeFrame|get_width|()I
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|7660|7666|separe|param|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|render|(III)V|separe|2
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|7677|7690|opened_height|field|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|opened_height
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|7710|7718|border_a|field|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|border_a
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|7725|7736|border_size|field|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|border_size
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|7760|7764|font|field|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|font
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|7765|7776|draw_string|method|rina.turok.bope.bopemod.guiscreen.render.BopeDraw|draw_string|(Ljava/lang/String;IIIIIZ)V
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|7782|7788|module|field|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|module
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|7789|7804|get_description|method|rina.turok.bope.bopemod.BopeModule|get_description|()Ljava/lang/String;
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|7837|7842|smoth|field|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|smoth
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|7866|7872|opened|field|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|opened
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|7886|7899|opened_height|field|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|opened_height
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|7907|7913|height|field|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|height
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|7921|7936|settings_height|field|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|settings_height
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|7958|7964|render|method|rina.turok.bope.bopemod.guiscreen.render.components.BopeAbstractWidget|render|(IIII)V
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|7965|7975|get_save_y|method|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|get_save_y|()I
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|7979|7985|separe|param|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|render|(III)V|separe|2
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|7987|7989|mx|param|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|render|(III)V|mx|0
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|7991|7993|my|param|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|render|(III)V|my|1
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|8019|8032|opened_height|field|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|opened_height
-      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|8040|8046|height|field|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|height
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|6192|6194|mx|param|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|render|(III)V|mx|0
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|6200|6202|my|param|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|render|(III)V|my|1
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|6208|6214|separe|param|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|render|(III)V|separe|2
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|6181|6187|render|method|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|render|(III)V
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|6226|6231|smoth|field|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|smoth
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|6234|6238|Bope|class|rina.turok.bope.Bope|false
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|6239|6258|get_setting_manager|method|rina.turok.bope.Bope|get_setting_manager|()Lrina/turok/bope/bopemod/manager/BopeSettingManager;
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|6261|6281|get_setting_with_tag|method|rina.turok.bope.bopemod.manager.BopeSettingManager|get_setting_with_tag|(Ljava/lang/String;)Lrina/turok/bope/bopemod/guiscreen/settings/BopeSetting;
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|6298|6307|get_value|method|rina.turok.bope.bopemod.guiscreen.settings.BopeSetting|get_value|(Z)Z
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|6320|6329|set_width|method|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|set_width|(I)V
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|6335|6341|master|field|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|master
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|6342|6351|get_width|method|rina.turok.bope.bopemod.guiscreen.render.components.BopeFrame|get_width|()I
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|6356|6362|separe|param|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|render|(III)V|separe|2
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|6375|6381|save_y|field|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|save_y
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|6389|6390|y|field|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|y
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|6398|6404|master|field|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|master
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|6405|6410|get_y|method|rina.turok.bope.bopemod.guiscreen.render.components.BopeFrame|get_y|()I
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|6435|6439|Bope|class|rina.turok.bope.Bope|false
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|6440|6449|click_gui|field|rina.turok.bope.Bope|click_gui
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|6450|6469|theme_widget_name_r|field|rina.turok.bope.bopemod.guiscreen.BopeGUI|theme_widget_name_r
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|6485|6489|Bope|class|rina.turok.bope.Bope|false
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|6490|6499|click_gui|field|rina.turok.bope.Bope|click_gui
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|6500|6519|theme_widget_name_g|field|rina.turok.bope.bopemod.guiscreen.BopeGUI|theme_widget_name_g
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|6535|6539|Bope|class|rina.turok.bope.Bope|false
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|6540|6549|click_gui|field|rina.turok.bope.Bope|click_gui
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|6550|6569|theme_widget_name_b|field|rina.turok.bope.bopemod.guiscreen.BopeGUI|theme_widget_name_b
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|6587|6591|Bope|class|rina.turok.bope.Bope|false
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|6592|6601|click_gui|field|rina.turok.bope.Bope|click_gui
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|6602|6627|theme_widget_background_r|field|rina.turok.bope.bopemod.guiscreen.BopeGUI|theme_widget_background_r
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|6643|6647|Bope|class|rina.turok.bope.Bope|false
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|6648|6657|click_gui|field|rina.turok.bope.Bope|click_gui
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|6658|6683|theme_widget_background_g|field|rina.turok.bope.bopemod.guiscreen.BopeGUI|theme_widget_background_g
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|6699|6703|Bope|class|rina.turok.bope.Bope|false
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|6704|6713|click_gui|field|rina.turok.bope.Bope|click_gui
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|6714|6739|theme_widget_background_b|field|rina.turok.bope.bopemod.guiscreen.BopeGUI|theme_widget_background_b
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|6755|6759|Bope|class|rina.turok.bope.Bope|false
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|6760|6769|click_gui|field|rina.turok.bope.Bope|click_gui
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|6770|6795|theme_widget_background_a|field|rina.turok.bope.bopemod.guiscreen.BopeGUI|theme_widget_background_a
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|6813|6817|Bope|class|rina.turok.bope.Bope|false
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|6818|6827|click_gui|field|rina.turok.bope.Bope|click_gui
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|6828|6849|theme_widget_border_r|field|rina.turok.bope.bopemod.guiscreen.BopeGUI|theme_widget_border_r
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|6865|6869|Bope|class|rina.turok.bope.Bope|false
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|6870|6879|click_gui|field|rina.turok.bope.Bope|click_gui
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|6880|6901|theme_widget_border_g|field|rina.turok.bope.bopemod.guiscreen.BopeGUI|theme_widget_border_g
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|6917|6921|Bope|class|rina.turok.bope.Bope|false
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|6922|6931|click_gui|field|rina.turok.bope.Bope|click_gui
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|6932|6953|theme_widget_border_b|field|rina.turok.bope.bopemod.guiscreen.BopeGUI|theme_widget_border_b
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|6969|6975|module|field|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|module
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|6976|6985|is_active|method|rina.turok.bope.bopemod.BopeModule|is_active|()Z
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|6995|7003|BopeDraw|class|rina.turok.bope.bopemod.guiscreen.render.BopeDraw|false
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|7004|7013|draw_rect|method|rina.turok.bope.bopemod.guiscreen.render.BopeDraw|draw_rect|(IIIIIIII)V
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|7019|7020|x|field|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|x
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|7027|7033|save_y|field|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|save_y
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|7040|7041|x|field|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|x
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|7049|7054|width|field|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|width
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|7057|7063|separe|param|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|render|(III)V|separe|2
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|7070|7076|save_y|field|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|save_y
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|7084|7090|height|field|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|height
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|7123|7127|font|field|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|font
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|7128|7139|draw_string|method|rina.turok.bope.bopemod.guiscreen.render.BopeDraw|draw_string|(Ljava/lang/String;IIIIIZ)V
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|7145|7156|module_name|field|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|module_name
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|7163|7164|x|field|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|x
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|7167|7173|separe|param|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|render|(III)V|separe|2
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|7180|7186|save_y|field|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|save_y
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|7211|7216|smoth|field|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|smoth
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|7235|7239|font|field|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|font
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|7240|7251|draw_string|method|rina.turok.bope.bopemod.guiscreen.render.BopeDraw|draw_string|(Ljava/lang/String;IIIIIZ)V
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|7257|7268|module_name|field|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|module_name
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|7275|7276|x|field|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|x
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|7279|7285|separe|param|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|render|(III)V|separe|2
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|7292|7298|save_y|field|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|save_y
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|7323|7328|smoth|field|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|smoth
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|7346|7364|BopeAbstractWidget|class|rina.turok.bope.bopemod.guiscreen.render.components.BopeAbstractWidget|false
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|7380|7386|widget|field|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|widget
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|7402|7407|set_x|method|rina.turok.bope.bopemod.guiscreen.render.components.BopeAbstractWidget|set_x|(I)V
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|7408|7413|get_x|method|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|get_x|()I
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|7460|7466|opened|field|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|opened
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|7477|7488|motion_pass|method|rina.turok.bope.bopemod.guiscreen.render.components.BopeAbstractWidget|motion_pass|(II)Z
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|7489|7491|mx|param|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|render|(III)V|mx|0
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|7493|7495|my|param|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|render|(III)V|my|1
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|7516|7522|motion|method|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|motion|(II)Z
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|7523|7525|mx|param|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|render|(III)V|mx|0
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|7527|7529|my|param|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|render|(III)V|my|1
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|7563|7566|can|field|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|can
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|7575|7583|BopeDraw|class|rina.turok.bope.bopemod.guiscreen.render.BopeDraw|false
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|7584|7593|draw_rect|method|rina.turok.bope.bopemod.guiscreen.render.BopeDraw|draw_rect|(IIIIIIIIILjava/lang/String;)V
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|7599|7605|master|field|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|master
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|7606|7611|get_x|method|rina.turok.bope.bopemod.guiscreen.render.components.BopeFrame|get_x|()I
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|7624|7630|save_y|field|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|save_y
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|7637|7643|master|field|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|master
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|7644|7653|get_width|method|rina.turok.bope.bopemod.guiscreen.render.components.BopeFrame|get_width|()I
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|7658|7664|separe|param|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|render|(III)V|separe|2
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|7675|7688|opened_height|field|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|opened_height
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|7708|7716|border_a|field|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|border_a
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|7723|7734|border_size|field|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|border_size
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|7758|7762|font|field|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|font
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|7763|7774|draw_string|method|rina.turok.bope.bopemod.guiscreen.render.BopeDraw|draw_string|(Ljava/lang/String;IIIIIZ)V
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|7780|7786|module|field|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|module
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|7787|7802|get_description|method|rina.turok.bope.bopemod.BopeModule|get_description|()Ljava/lang/String;
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|7835|7840|smoth|field|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|smoth
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|7864|7870|opened|field|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|opened
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|7884|7897|opened_height|field|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|opened_height
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|7905|7911|height|field|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|height
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|7919|7934|settings_height|field|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|settings_height
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|7956|7962|render|method|rina.turok.bope.bopemod.guiscreen.render.components.BopeAbstractWidget|render|(IIII)V
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|7963|7973|get_save_y|method|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|get_save_y|()I
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|7977|7983|separe|param|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|render|(III)V|separe|2
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|7985|7987|mx|param|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|render|(III)V|mx|0
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|7989|7991|my|param|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|render|(III)V|my|1
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|8017|8030|opened_height|field|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|opened_height
+      @|rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java|8038|8044|height|field|rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton|height
    Method End: render(III)V
 Class End  : rina.turok.bope.bopemod.guiscreen.render.components.BopeModuleButton
 endProcessing "rina/turok/bope/bopemod/guiscreen/render/components/BopeModuleButton.java"
@@ -11025,6 +11029,45 @@ Class Start: rina.turok.bope.bopemod.hacks.exploit.BopeRPC
 Class End  : rina.turok.bope.bopemod.hacks.exploit.BopeRPC
 endProcessing "rina/turok/bope/bopemod/hacks/exploit/BopeRPC.java"
 
+startProcessing "rina/turok/bope/bopemod/hacks/exploit/BopeSpeedMine.java" md5: 3fb414556f0671abe8a44336e8225292
+@|rina/turok/bope/bopemod/hacks/exploit/BopeSpeedMine.java|8|45|rina.turok.bope.bopemod.hacks.exploit|package|rina.turok.bope.bopemod.hacks.exploit|(file)
+Class Start: rina.turok.bope.bopemod.hacks.exploit.BopeSpeedMine
+   @|rina/turok/bope/bopemod/hacks/exploit/BopeSpeedMine.java|751|764|BopeSpeedMine|class|rina.turok.bope.bopemod.hacks.exploit.BopeSpeedMine|false
+   @|rina/turok/bope/bopemod/hacks/exploit/BopeSpeedMine.java|773|783|BopeModule|class|rina.turok.bope.bopemod.BopeModule|false
+   @|rina/turok/bope/bopemod/hacks/exploit/BopeSpeedMine.java|788|799|BopeSetting|class|rina.turok.bope.bopemod.guiscreen.settings.BopeSetting|false
+   @|rina/turok/bope/bopemod/hacks/exploit/BopeSpeedMine.java|788|799|BopeSetting|class|rina.turok.bope.bopemod.guiscreen.settings.BopeSetting|false
+   @|rina/turok/bope/bopemod/hacks/exploit/BopeSpeedMine.java|800|805|reset|field|rina.turok.bope.bopemod.hacks.exploit.BopeSpeedMine|reset|
+   @|rina/turok/bope/bopemod/hacks/exploit/BopeSpeedMine.java|808|814|create|method|rina.turok.bope.bopemod.BopeModule|create|(Ljava/lang/String;Ljava/lang/String;Z)Lrina/turok/bope/bopemod/guiscreen/settings/BopeSetting;
+   Method Start: BopeSpeedMine()V
+      @|rina/turok/bope/bopemod/hacks/exploit/BopeSpeedMine.java|860|873|BopeSpeedMine|method|rina.turok.bope.bopemod.hacks.exploit.BopeSpeedMine|BopeSpeedMine|()V
+      @|rina/turok/bope/bopemod/hacks/exploit/BopeSpeedMine.java|887|899|BopeCategory|class|rina.turok.bope.bopemod.hacks.BopeCategory|false
+      @|rina/turok/bope/bopemod/hacks/exploit/BopeSpeedMine.java|900|912|BOPE_EXPLOIT|field|rina.turok.bope.bopemod.hacks.BopeCategory|BOPE_EXPLOIT
+      @|rina/turok/bope/bopemod/hacks/exploit/BopeSpeedMine.java|937|941|name|field|rina.turok.bope.bopemod.BopeModule|name
+      @|rina/turok/bope/bopemod/hacks/exploit/BopeSpeedMine.java|973|976|tag|field|rina.turok.bope.bopemod.BopeModule|tag
+      @|rina/turok/bope/bopemod/hacks/exploit/BopeSpeedMine.java|1008|1019|description|field|rina.turok.bope.bopemod.BopeModule|description
+      @|rina/turok/bope/bopemod/hacks/exploit/BopeSpeedMine.java|1107|1114|release|method|rina.turok.bope.bopemod.BopeModule|release|(Ljava/lang/String;)V
+   Method End: BopeSpeedMine()V
+   Method Start: update()V
+      @|rina/turok/bope/bopemod/hacks/exploit/BopeSpeedMine.java|1155|1163|Override|class|java.lang.Override|false
+      @|rina/turok/bope/bopemod/hacks/exploit/BopeSpeedMine.java|1178|1184|update|method|rina.turok.bope.bopemod.BopeModule|update|()V
+      @|rina/turok/bope/bopemod/hacks/exploit/BopeSpeedMine.java|1196|1198|mc|field|rina.turok.bope.bopemod.BopeModule|mc
+      @|rina/turok/bope/bopemod/hacks/exploit/BopeSpeedMine.java|1199|1204|world|field|net.minecraft.client.Minecraft|world
+      @|rina/turok/bope/bopemod/hacks/exploit/BopeSpeedMine.java|1220|1222|mc|field|rina.turok.bope.bopemod.BopeModule|mc
+      @|rina/turok/bope/bopemod/hacks/exploit/BopeSpeedMine.java|1223|1239|playerController|field|net.minecraft.client.Minecraft|playerController
+      @|rina/turok/bope/bopemod/hacks/exploit/BopeSpeedMine.java|1240|1253|blockHitDelay|field|net.minecraft.client.multiplayer.PlayerControllerMP|blockHitDelay
+      @|rina/turok/bope/bopemod/hacks/exploit/BopeSpeedMine.java|1274|1279|reset|field|rina.turok.bope.bopemod.hacks.exploit.BopeSpeedMine|reset
+      @|rina/turok/bope/bopemod/hacks/exploit/BopeSpeedMine.java|1280|1289|get_value|method|rina.turok.bope.bopemod.guiscreen.settings.BopeSetting|get_value|(Z)Z
+      @|rina/turok/bope/bopemod/hacks/exploit/BopeSpeedMine.java|1299|1301|mc|field|rina.turok.bope.bopemod.BopeModule|mc
+      @|rina/turok/bope/bopemod/hacks/exploit/BopeSpeedMine.java|1302|1314|gameSettings|field|net.minecraft.client.Minecraft|gameSettings
+      @|rina/turok/bope/bopemod/hacks/exploit/BopeSpeedMine.java|1315|1329|keyBindUseItem|field|net.minecraft.client.settings.GameSettings|keyBindUseItem
+      @|rina/turok/bope/bopemod/hacks/exploit/BopeSpeedMine.java|1330|1339|isKeyDown|method|net.minecraft.client.settings.KeyBinding|isKeyDown|()Z
+      @|rina/turok/bope/bopemod/hacks/exploit/BopeSpeedMine.java|1350|1352|mc|field|rina.turok.bope.bopemod.BopeModule|mc
+      @|rina/turok/bope/bopemod/hacks/exploit/BopeSpeedMine.java|1353|1369|playerController|field|net.minecraft.client.Minecraft|playerController
+      @|rina/turok/bope/bopemod/hacks/exploit/BopeSpeedMine.java|1370|1384|isHittingBlock|field|net.minecraft.client.multiplayer.PlayerControllerMP|isHittingBlock
+   Method End: update()V
+Class End  : rina.turok.bope.bopemod.hacks.exploit.BopeSpeedMine
+endProcessing "rina/turok/bope/bopemod/hacks/exploit/BopeSpeedMine.java"
+
 startProcessing "rina/turok/bope/bopemod/hacks/exploit/BopeXCarry.java" md5: b16b631e4d674d287749a3fe9fc80159
 @|rina/turok/bope/bopemod/hacks/exploit/BopeXCarry.java|8|45|rina.turok.bope.bopemod.hacks.exploit|package|rina.turok.bope.bopemod.hacks.exploit|(file)
 Class Start: rina.turok.bope.bopemod.hacks.exploit.BopeXCarry
@@ -15047,38 +15090,38 @@ Class Start: rina.turok.bope.mixins.BopeMixinNetworkManager
 Class End  : rina.turok.bope.mixins.BopeMixinNetworkManager
 endProcessing "rina/turok/bope/mixins/BopeMixinNetworkManager.java"
 
-startProcessing "rina/turok/bope/mixins/BopeMixinPlayerControllerMP.java" md5: 27767533ea25515dc373c48249947bd2
+startProcessing "rina/turok/bope/mixins/BopeMixinPlayerControllerMP.java" md5: d7c50596e6ffaf3d8ed0821c597501a5
 @|rina/turok/bope/mixins/BopeMixinPlayerControllerMP.java|8|30|rina.turok.bope.mixins|package|rina.turok.bope.mixins|(file)
 Class Start: rina.turok.bope.mixins.BopeMixinPlayerControllerMP
-   @|rina/turok/bope/mixins/BopeMixinPlayerControllerMP.java|601|606|Mixin|class|org.spongepowered.asm.mixin.Mixin|false
-   @|rina/turok/bope/mixins/BopeMixinPlayerControllerMP.java|607|612|value|method|org.spongepowered.asm.mixin.Mixin|value|()[Ljava/lang/Class;
-   @|rina/turok/bope/mixins/BopeMixinPlayerControllerMP.java|615|633|PlayerControllerMP|class|net.minecraft.client.multiplayer.PlayerControllerMP|false
-   @|rina/turok/bope/mixins/BopeMixinPlayerControllerMP.java|641|649|priority|method|org.spongepowered.asm.mixin.Mixin|priority|()I
-   @|rina/turok/bope/mixins/BopeMixinPlayerControllerMP.java|671|698|BopeMixinPlayerControllerMP|class|rina.turok.bope.mixins.BopeMixinPlayerControllerMP|false
+   @|rina/turok/bope/mixins/BopeMixinPlayerControllerMP.java|747|752|Mixin|class|org.spongepowered.asm.mixin.Mixin|false
+   @|rina/turok/bope/mixins/BopeMixinPlayerControllerMP.java|753|758|value|method|org.spongepowered.asm.mixin.Mixin|value|()[Ljava/lang/Class;
+   @|rina/turok/bope/mixins/BopeMixinPlayerControllerMP.java|761|779|PlayerControllerMP|class|net.minecraft.client.multiplayer.PlayerControllerMP|false
+   @|rina/turok/bope/mixins/BopeMixinPlayerControllerMP.java|787|795|priority|method|org.spongepowered.asm.mixin.Mixin|priority|()I
+   @|rina/turok/bope/mixins/BopeMixinPlayerControllerMP.java|817|844|BopeMixinPlayerControllerMP|class|rina.turok.bope.mixins.BopeMixinPlayerControllerMP|false
    Method Start: onPlayerDamageBlockSpeed(Lnet/minecraft/block/state/IBlockState;Lnet/minecraft/entity/player/EntityPlayer;Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;)F
-      @|rina/turok/bope/mixins/BopeMixinPlayerControllerMP.java|1046|1051|state|param|rina.turok.bope.mixins.BopeMixinPlayerControllerMP|onPlayerDamageBlockSpeed|(Lnet/minecraft/block/state/IBlockState;Lnet/minecraft/entity/player/EntityPlayer;Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;)F|state|0
-      @|rina/turok/bope/mixins/BopeMixinPlayerControllerMP.java|1066|1072|player|param|rina.turok.bope.mixins.BopeMixinPlayerControllerMP|onPlayerDamageBlockSpeed|(Lnet/minecraft/block/state/IBlockState;Lnet/minecraft/entity/player/EntityPlayer;Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;)F|player|1
-      @|rina/turok/bope/mixins/BopeMixinPlayerControllerMP.java|1080|1085|world|param|rina.turok.bope.mixins.BopeMixinPlayerControllerMP|onPlayerDamageBlockSpeed|(Lnet/minecraft/block/state/IBlockState;Lnet/minecraft/entity/player/EntityPlayer;Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;)F|world|2
-      @|rina/turok/bope/mixins/BopeMixinPlayerControllerMP.java|1096|1099|pos|param|rina.turok.bope.mixins.BopeMixinPlayerControllerMP|onPlayerDamageBlockSpeed|(Lnet/minecraft/block/state/IBlockState;Lnet/minecraft/entity/player/EntityPlayer;Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;)F|pos|3
-      @|rina/turok/bope/mixins/BopeMixinPlayerControllerMP.java|736|744|Redirect|class|org.spongepowered.asm.mixin.injection.Redirect|false
-      @|rina/turok/bope/mixins/BopeMixinPlayerControllerMP.java|745|751|method|method|org.spongepowered.asm.mixin.injection.Redirect|method|()[Ljava/lang/String;
-      @|rina/turok/bope/mixins/BopeMixinPlayerControllerMP.java|777|779|at|method|org.spongepowered.asm.mixin.injection.Redirect|at|()Lorg/spongepowered/asm/mixin/injection/At;
-      @|rina/turok/bope/mixins/BopeMixinPlayerControllerMP.java|783|785|At|class|org.spongepowered.asm.mixin.injection.At|false
-      @|rina/turok/bope/mixins/BopeMixinPlayerControllerMP.java|786|791|value|method|org.spongepowered.asm.mixin.injection.At|value|()Ljava/lang/String;
-      @|rina/turok/bope/mixins/BopeMixinPlayerControllerMP.java|804|810|target|method|org.spongepowered.asm.mixin.injection.At|target|()Ljava/lang/String;
-      @|rina/turok/bope/mixins/BopeMixinPlayerControllerMP.java|1009|1033|onPlayerDamageBlockSpeed|method|rina.turok.bope.mixins.BopeMixinPlayerControllerMP|onPlayerDamageBlockSpeed|(Lnet/minecraft/block/state/IBlockState;Lnet/minecraft/entity/player/EntityPlayer;Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;)F
-      @|rina/turok/bope/mixins/BopeMixinPlayerControllerMP.java|1034|1045|IBlockState|class|net.minecraft.block.state.IBlockState|false
-      @|rina/turok/bope/mixins/BopeMixinPlayerControllerMP.java|1053|1065|EntityPlayer|class|net.minecraft.entity.player.EntityPlayer|false
-      @|rina/turok/bope/mixins/BopeMixinPlayerControllerMP.java|1074|1079|World|class|net.minecraft.world.World|false
-      @|rina/turok/bope/mixins/BopeMixinPlayerControllerMP.java|1087|1095|BlockPos|class|net.minecraft.util.math.BlockPos|false
-      @|rina/turok/bope/mixins/BopeMixinPlayerControllerMP.java|1113|1118|state|param|rina.turok.bope.mixins.BopeMixinPlayerControllerMP|onPlayerDamageBlockSpeed|(Lnet/minecraft/block/state/IBlockState;Lnet/minecraft/entity/player/EntityPlayer;Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;)F|state|0
-      @|rina/turok/bope/mixins/BopeMixinPlayerControllerMP.java|1119|1149|getPlayerRelativeBlockHardness|method|net.minecraft.block.state.IBlockProperties|getPlayerRelativeBlockHardness|(Lnet/minecraft/entity/player/EntityPlayer;Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;)F
-      @|rina/turok/bope/mixins/BopeMixinPlayerControllerMP.java|1150|1156|player|param|rina.turok.bope.mixins.BopeMixinPlayerControllerMP|onPlayerDamageBlockSpeed|(Lnet/minecraft/block/state/IBlockState;Lnet/minecraft/entity/player/EntityPlayer;Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;)F|player|1
-      @|rina/turok/bope/mixins/BopeMixinPlayerControllerMP.java|1158|1163|world|param|rina.turok.bope.mixins.BopeMixinPlayerControllerMP|onPlayerDamageBlockSpeed|(Lnet/minecraft/block/state/IBlockState;Lnet/minecraft/entity/player/EntityPlayer;Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;)F|world|2
-      @|rina/turok/bope/mixins/BopeMixinPlayerControllerMP.java|1165|1168|pos|param|rina.turok.bope.mixins.BopeMixinPlayerControllerMP|onPlayerDamageBlockSpeed|(Lnet/minecraft/block/state/IBlockState;Lnet/minecraft/entity/player/EntityPlayer;Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;)F|pos|3
-      @|rina/turok/bope/mixins/BopeMixinPlayerControllerMP.java|1173|1177|Bope|class|rina.turok.bope.Bope|false
-      @|rina/turok/bope/mixins/BopeMixinPlayerControllerMP.java|1178|1195|get_event_handler|method|rina.turok.bope.Bope|get_event_handler|()Lrina/turok/bope/external/BopeEventHandler;
-      @|rina/turok/bope/mixins/BopeMixinPlayerControllerMP.java|1198|1211|get_tick_rate|method|rina.turok.bope.external.BopeEventHandler|get_tick_rate|()F
+      @|rina/turok/bope/mixins/BopeMixinPlayerControllerMP.java|1192|1197|state|param|rina.turok.bope.mixins.BopeMixinPlayerControllerMP|onPlayerDamageBlockSpeed|(Lnet/minecraft/block/state/IBlockState;Lnet/minecraft/entity/player/EntityPlayer;Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;)F|state|0
+      @|rina/turok/bope/mixins/BopeMixinPlayerControllerMP.java|1212|1218|player|param|rina.turok.bope.mixins.BopeMixinPlayerControllerMP|onPlayerDamageBlockSpeed|(Lnet/minecraft/block/state/IBlockState;Lnet/minecraft/entity/player/EntityPlayer;Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;)F|player|1
+      @|rina/turok/bope/mixins/BopeMixinPlayerControllerMP.java|1226|1231|world|param|rina.turok.bope.mixins.BopeMixinPlayerControllerMP|onPlayerDamageBlockSpeed|(Lnet/minecraft/block/state/IBlockState;Lnet/minecraft/entity/player/EntityPlayer;Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;)F|world|2
+      @|rina/turok/bope/mixins/BopeMixinPlayerControllerMP.java|1242|1245|pos|param|rina.turok.bope.mixins.BopeMixinPlayerControllerMP|onPlayerDamageBlockSpeed|(Lnet/minecraft/block/state/IBlockState;Lnet/minecraft/entity/player/EntityPlayer;Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;)F|pos|3
+      @|rina/turok/bope/mixins/BopeMixinPlayerControllerMP.java|882|890|Redirect|class|org.spongepowered.asm.mixin.injection.Redirect|false
+      @|rina/turok/bope/mixins/BopeMixinPlayerControllerMP.java|891|897|method|method|org.spongepowered.asm.mixin.injection.Redirect|method|()[Ljava/lang/String;
+      @|rina/turok/bope/mixins/BopeMixinPlayerControllerMP.java|923|925|at|method|org.spongepowered.asm.mixin.injection.Redirect|at|()Lorg/spongepowered/asm/mixin/injection/At;
+      @|rina/turok/bope/mixins/BopeMixinPlayerControllerMP.java|929|931|At|class|org.spongepowered.asm.mixin.injection.At|false
+      @|rina/turok/bope/mixins/BopeMixinPlayerControllerMP.java|932|937|value|method|org.spongepowered.asm.mixin.injection.At|value|()Ljava/lang/String;
+      @|rina/turok/bope/mixins/BopeMixinPlayerControllerMP.java|950|956|target|method|org.spongepowered.asm.mixin.injection.At|target|()Ljava/lang/String;
+      @|rina/turok/bope/mixins/BopeMixinPlayerControllerMP.java|1155|1179|onPlayerDamageBlockSpeed|method|rina.turok.bope.mixins.BopeMixinPlayerControllerMP|onPlayerDamageBlockSpeed|(Lnet/minecraft/block/state/IBlockState;Lnet/minecraft/entity/player/EntityPlayer;Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;)F
+      @|rina/turok/bope/mixins/BopeMixinPlayerControllerMP.java|1180|1191|IBlockState|class|net.minecraft.block.state.IBlockState|false
+      @|rina/turok/bope/mixins/BopeMixinPlayerControllerMP.java|1199|1211|EntityPlayer|class|net.minecraft.entity.player.EntityPlayer|false
+      @|rina/turok/bope/mixins/BopeMixinPlayerControllerMP.java|1220|1225|World|class|net.minecraft.world.World|false
+      @|rina/turok/bope/mixins/BopeMixinPlayerControllerMP.java|1233|1241|BlockPos|class|net.minecraft.util.math.BlockPos|false
+      @|rina/turok/bope/mixins/BopeMixinPlayerControllerMP.java|1259|1264|state|param|rina.turok.bope.mixins.BopeMixinPlayerControllerMP|onPlayerDamageBlockSpeed|(Lnet/minecraft/block/state/IBlockState;Lnet/minecraft/entity/player/EntityPlayer;Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;)F|state|0
+      @|rina/turok/bope/mixins/BopeMixinPlayerControllerMP.java|1265|1295|getPlayerRelativeBlockHardness|method|net.minecraft.block.state.IBlockProperties|getPlayerRelativeBlockHardness|(Lnet/minecraft/entity/player/EntityPlayer;Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;)F
+      @|rina/turok/bope/mixins/BopeMixinPlayerControllerMP.java|1296|1302|player|param|rina.turok.bope.mixins.BopeMixinPlayerControllerMP|onPlayerDamageBlockSpeed|(Lnet/minecraft/block/state/IBlockState;Lnet/minecraft/entity/player/EntityPlayer;Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;)F|player|1
+      @|rina/turok/bope/mixins/BopeMixinPlayerControllerMP.java|1304|1309|world|param|rina.turok.bope.mixins.BopeMixinPlayerControllerMP|onPlayerDamageBlockSpeed|(Lnet/minecraft/block/state/IBlockState;Lnet/minecraft/entity/player/EntityPlayer;Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;)F|world|2
+      @|rina/turok/bope/mixins/BopeMixinPlayerControllerMP.java|1311|1314|pos|param|rina.turok.bope.mixins.BopeMixinPlayerControllerMP|onPlayerDamageBlockSpeed|(Lnet/minecraft/block/state/IBlockState;Lnet/minecraft/entity/player/EntityPlayer;Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;)F|pos|3
+      @|rina/turok/bope/mixins/BopeMixinPlayerControllerMP.java|1319|1323|Bope|class|rina.turok.bope.Bope|false
+      @|rina/turok/bope/mixins/BopeMixinPlayerControllerMP.java|1324|1341|get_event_handler|method|rina.turok.bope.Bope|get_event_handler|()Lrina/turok/bope/external/BopeEventHandler;
+      @|rina/turok/bope/mixins/BopeMixinPlayerControllerMP.java|1344|1357|get_tick_rate|method|rina.turok.bope.external.BopeEventHandler|get_tick_rate|()F
    Method End: onPlayerDamageBlockSpeed(Lnet/minecraft/block/state/IBlockState;Lnet/minecraft/entity/player/EntityPlayer;Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;)F
 Class End  : rina.turok.bope.mixins.BopeMixinPlayerControllerMP
 endProcessing "rina/turok/bope/mixins/BopeMixinPlayerControllerMP.java"

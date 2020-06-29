@@ -193,7 +193,7 @@ public class Bope {
 	}
 
 	public static String get_name() {
-		return  BOPE_NAME;
+		return BOPE_NAME;
 	}
 
 	public static String get_version() {

@@ -36,9 +36,8 @@ apply plugin: "com.github.johnrengelman.shadow";
 apply plugin: "org.spongepowered.mixin"
 
 // Dont change here if you dont know.
-
-version          project.client_version
-group            project.client_group
+version project.client_version
+group   project.client_group
 
 archivesBaseName = "bope"
 

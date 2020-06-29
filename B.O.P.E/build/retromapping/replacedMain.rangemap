@@ -2,7 +2,7 @@ Unsupposrted library path: C:\Users\SrRina\Documents\B.O.P.E\B.O.P.E\build\class
 Unsupposrted library path: C:\Users\SrRina\Documents\B.O.P.E\B.O.P.E\build\resources\api
 Symbol range map extraction starting
 Processing 122 files
-startProcessing "rina/turok/bope/Bope.java" md5: 68302ac2303b37b1337cb947f5c18e6b
+startProcessing "rina/turok/bope/Bope.java" md5: 24a60b82ea8741ca10336318b4ab0c35
 @|rina/turok/bope/Bope.java|8|23|rina.turok.bope|package|rina.turok.bope|(file)
 Class Start: rina.turok.bope.Bope
    @|rina/turok/bope/Bope.java|1420|1423|Mod|class|net.minecraftforge.fml.common.Mod|false
@@ -213,89 +213,89 @@ Class Start: rina.turok.bope.Bope
    Method Start: get_name()Ljava/lang/String;
       @|rina/turok/bope/Bope.java|5688|5694|String|class|java.lang.String|false
       @|rina/turok/bope/Bope.java|5695|5703|get_name|method|rina.turok.bope.Bope|get_name|()Ljava/lang/String;
-      @|rina/turok/bope/Bope.java|5718|5727|BOPE_NAME|field|rina.turok.bope.Bope|BOPE_NAME
+      @|rina/turok/bope/Bope.java|5717|5726|BOPE_NAME|field|rina.turok.bope.Bope|BOPE_NAME
    Method End: get_name()Ljava/lang/String;
    Method Start: get_version()Ljava/lang/String;
-      @|rina/turok/bope/Bope.java|5748|5754|String|class|java.lang.String|false
-      @|rina/turok/bope/Bope.java|5755|5766|get_version|method|rina.turok.bope.Bope|get_version|()Ljava/lang/String;
-      @|rina/turok/bope/Bope.java|5780|5792|BOPE_VERSION|field|rina.turok.bope.Bope|BOPE_VERSION
+      @|rina/turok/bope/Bope.java|5747|5753|String|class|java.lang.String|false
+      @|rina/turok/bope/Bope.java|5754|5765|get_version|method|rina.turok.bope.Bope|get_version|()Ljava/lang/String;
+      @|rina/turok/bope/Bope.java|5779|5791|BOPE_VERSION|field|rina.turok.bope.Bope|BOPE_VERSION
    Method End: get_version()Ljava/lang/String;
    Method Start: get_actual_user()Ljava/lang/String;
-      @|rina/turok/bope/Bope.java|5813|5819|String|class|java.lang.String|false
-      @|rina/turok/bope/Bope.java|5820|5835|get_actual_user|method|rina.turok.bope.Bope|get_actual_user|()Ljava/lang/String;
-      @|rina/turok/bope/Bope.java|5842|5848|String|class|java.lang.String|false
-      @|rina/turok/bope/Bope.java|5885|5894|Minecraft|class|net.minecraft.client.Minecraft|false
-      @|rina/turok/bope/Bope.java|5895|5907|getMinecraft|method|net.minecraft.client.Minecraft|getMinecraft|()Lnet/minecraft/client/Minecraft;
-      @|rina/turok/bope/Bope.java|5910|5916|player|field|net.minecraft.client.Minecraft|player
-      @|rina/turok/bope/Bope.java|5950|5959|Minecraft|class|net.minecraft.client.Minecraft|false
-      @|rina/turok/bope/Bope.java|5960|5972|getMinecraft|method|net.minecraft.client.Minecraft|getMinecraft|()Lnet/minecraft/client/Minecraft;
-      @|rina/turok/bope/Bope.java|5975|5981|player|field|net.minecraft.client.Minecraft|player
-      @|rina/turok/bope/Bope.java|5982|5989|getName|method|net.minecraft.command.ICommandSender|getName|()Ljava/lang/String;
+      @|rina/turok/bope/Bope.java|5812|5818|String|class|java.lang.String|false
+      @|rina/turok/bope/Bope.java|5819|5834|get_actual_user|method|rina.turok.bope.Bope|get_actual_user|()Ljava/lang/String;
+      @|rina/turok/bope/Bope.java|5841|5847|String|class|java.lang.String|false
+      @|rina/turok/bope/Bope.java|5884|5893|Minecraft|class|net.minecraft.client.Minecraft|false
+      @|rina/turok/bope/Bope.java|5894|5906|getMinecraft|method|net.minecraft.client.Minecraft|getMinecraft|()Lnet/minecraft/client/Minecraft;
+      @|rina/turok/bope/Bope.java|5909|5915|player|field|net.minecraft.client.Minecraft|player
+      @|rina/turok/bope/Bope.java|5949|5958|Minecraft|class|net.minecraft.client.Minecraft|false
+      @|rina/turok/bope/Bope.java|5959|5971|getMinecraft|method|net.minecraft.client.Minecraft|getMinecraft|()Lnet/minecraft/client/Minecraft;
+      @|rina/turok/bope/Bope.java|5974|5980|player|field|net.minecraft.client.Minecraft|player
+      @|rina/turok/bope/Bope.java|5981|5988|getName|method|net.minecraft.command.ICommandSender|getName|()Ljava/lang/String;
    Method End: get_actual_user()Ljava/lang/String;
    Method Start: get_command_manager()Lrina/turok/bope/bopemod/manager/BopeCommandManager;
-      @|rina/turok/bope/Bope.java|6044|6062|BopeCommandManager|class|rina.turok.bope.bopemod.manager.BopeCommandManager|false
-      @|rina/turok/bope/Bope.java|6063|6082|get_command_manager|method|rina.turok.bope.Bope|get_command_manager|()Lrina/turok/bope/bopemod/manager/BopeCommandManager;
-      @|rina/turok/bope/Bope.java|6096|6108|get_instance|method|rina.turok.bope.Bope|get_instance|()Lrina/turok/bope/Bope;
-      @|rina/turok/bope/Bope.java|6111|6126|command_manager|field|rina.turok.bope.Bope|command_manager
+      @|rina/turok/bope/Bope.java|6043|6061|BopeCommandManager|class|rina.turok.bope.bopemod.manager.BopeCommandManager|false
+      @|rina/turok/bope/Bope.java|6062|6081|get_command_manager|method|rina.turok.bope.Bope|get_command_manager|()Lrina/turok/bope/bopemod/manager/BopeCommandManager;
+      @|rina/turok/bope/Bope.java|6095|6107|get_instance|method|rina.turok.bope.Bope|get_instance|()Lrina/turok/bope/Bope;
+      @|rina/turok/bope/Bope.java|6110|6125|command_manager|field|rina.turok.bope.Bope|command_manager
    Method End: get_command_manager()Lrina/turok/bope/bopemod/manager/BopeCommandManager;
    Method Start: get_config_manager()Lrina/turok/bope/bopemod/manager/BopeConfigManager;
-      @|rina/turok/bope/Bope.java|6147|6164|BopeConfigManager|class|rina.turok.bope.bopemod.manager.BopeConfigManager|false
-      @|rina/turok/bope/Bope.java|6165|6183|get_config_manager|method|rina.turok.bope.Bope|get_config_manager|()Lrina/turok/bope/bopemod/manager/BopeConfigManager;
-      @|rina/turok/bope/Bope.java|6197|6209|get_instance|method|rina.turok.bope.Bope|get_instance|()Lrina/turok/bope/Bope;
-      @|rina/turok/bope/Bope.java|6212|6226|config_manager|field|rina.turok.bope.Bope|config_manager
+      @|rina/turok/bope/Bope.java|6146|6163|BopeConfigManager|class|rina.turok.bope.bopemod.manager.BopeConfigManager|false
+      @|rina/turok/bope/Bope.java|6164|6182|get_config_manager|method|rina.turok.bope.Bope|get_config_manager|()Lrina/turok/bope/bopemod/manager/BopeConfigManager;
+      @|rina/turok/bope/Bope.java|6196|6208|get_instance|method|rina.turok.bope.Bope|get_instance|()Lrina/turok/bope/Bope;
+      @|rina/turok/bope/Bope.java|6211|6225|config_manager|field|rina.turok.bope.Bope|config_manager
    Method End: get_config_manager()Lrina/turok/bope/bopemod/manager/BopeConfigManager;
    Method Start: get_module_manager()Lrina/turok/bope/bopemod/manager/BopeModuleManager;
-      @|rina/turok/bope/Bope.java|6247|6264|BopeModuleManager|class|rina.turok.bope.bopemod.manager.BopeModuleManager|false
-      @|rina/turok/bope/Bope.java|6265|6283|get_module_manager|method|rina.turok.bope.Bope|get_module_manager|()Lrina/turok/bope/bopemod/manager/BopeModuleManager;
-      @|rina/turok/bope/Bope.java|6297|6309|get_instance|method|rina.turok.bope.Bope|get_instance|()Lrina/turok/bope/Bope;
-      @|rina/turok/bope/Bope.java|6312|6326|module_manager|field|rina.turok.bope.Bope|module_manager
+      @|rina/turok/bope/Bope.java|6246|6263|BopeModuleManager|class|rina.turok.bope.bopemod.manager.BopeModuleManager|false
+      @|rina/turok/bope/Bope.java|6264|6282|get_module_manager|method|rina.turok.bope.Bope|get_module_manager|()Lrina/turok/bope/bopemod/manager/BopeModuleManager;
+      @|rina/turok/bope/Bope.java|6296|6308|get_instance|method|rina.turok.bope.Bope|get_instance|()Lrina/turok/bope/Bope;
+      @|rina/turok/bope/Bope.java|6311|6325|module_manager|field|rina.turok.bope.Bope|module_manager
    Method End: get_module_manager()Lrina/turok/bope/bopemod/manager/BopeModuleManager;
    Method Start: get_friend_manager()Lrina/turok/bope/bopemod/manager/BopeFriendManager;
-      @|rina/turok/bope/Bope.java|6347|6364|BopeFriendManager|class|rina.turok.bope.bopemod.manager.BopeFriendManager|false
-      @|rina/turok/bope/Bope.java|6365|6383|get_friend_manager|method|rina.turok.bope.Bope|get_friend_manager|()Lrina/turok/bope/bopemod/manager/BopeFriendManager;
-      @|rina/turok/bope/Bope.java|6397|6409|get_instance|method|rina.turok.bope.Bope|get_instance|()Lrina/turok/bope/Bope;
-      @|rina/turok/bope/Bope.java|6412|6426|friend_manager|field|rina.turok.bope.Bope|friend_manager
+      @|rina/turok/bope/Bope.java|6346|6363|BopeFriendManager|class|rina.turok.bope.bopemod.manager.BopeFriendManager|false
+      @|rina/turok/bope/Bope.java|6364|6382|get_friend_manager|method|rina.turok.bope.Bope|get_friend_manager|()Lrina/turok/bope/bopemod/manager/BopeFriendManager;
+      @|rina/turok/bope/Bope.java|6396|6408|get_instance|method|rina.turok.bope.Bope|get_instance|()Lrina/turok/bope/Bope;
+      @|rina/turok/bope/Bope.java|6411|6425|friend_manager|field|rina.turok.bope.Bope|friend_manager
    Method End: get_friend_manager()Lrina/turok/bope/bopemod/manager/BopeFriendManager;
    Method Start: get_setting_manager()Lrina/turok/bope/bopemod/manager/BopeSettingManager;
-      @|rina/turok/bope/Bope.java|6447|6465|BopeSettingManager|class|rina.turok.bope.bopemod.manager.BopeSettingManager|false
-      @|rina/turok/bope/Bope.java|6466|6485|get_setting_manager|method|rina.turok.bope.Bope|get_setting_manager|()Lrina/turok/bope/bopemod/manager/BopeSettingManager;
-      @|rina/turok/bope/Bope.java|6499|6511|get_instance|method|rina.turok.bope.Bope|get_instance|()Lrina/turok/bope/Bope;
-      @|rina/turok/bope/Bope.java|6514|6529|setting_manager|field|rina.turok.bope.Bope|setting_manager
+      @|rina/turok/bope/Bope.java|6446|6464|BopeSettingManager|class|rina.turok.bope.bopemod.manager.BopeSettingManager|false
+      @|rina/turok/bope/Bope.java|6465|6484|get_setting_manager|method|rina.turok.bope.Bope|get_setting_manager|()Lrina/turok/bope/bopemod/manager/BopeSettingManager;
+      @|rina/turok/bope/Bope.java|6498|6510|get_instance|method|rina.turok.bope.Bope|get_instance|()Lrina/turok/bope/Bope;
+      @|rina/turok/bope/Bope.java|6513|6528|setting_manager|field|rina.turok.bope.Bope|setting_manager
    Method End: get_setting_manager()Lrina/turok/bope/bopemod/manager/BopeSettingManager;
    Method Start: get_hud_manager()Lrina/turok/bope/bopemod/manager/BopeHUDManager;
-      @|rina/turok/bope/Bope.java|6550|6564|BopeHUDManager|class|rina.turok.bope.bopemod.manager.BopeHUDManager|false
-      @|rina/turok/bope/Bope.java|6565|6580|get_hud_manager|method|rina.turok.bope.Bope|get_hud_manager|()Lrina/turok/bope/bopemod/manager/BopeHUDManager;
-      @|rina/turok/bope/Bope.java|6594|6606|get_instance|method|rina.turok.bope.Bope|get_instance|()Lrina/turok/bope/Bope;
-      @|rina/turok/bope/Bope.java|6609|6620|hud_manager|field|rina.turok.bope.Bope|hud_manager
+      @|rina/turok/bope/Bope.java|6549|6563|BopeHUDManager|class|rina.turok.bope.bopemod.manager.BopeHUDManager|false
+      @|rina/turok/bope/Bope.java|6564|6579|get_hud_manager|method|rina.turok.bope.Bope|get_hud_manager|()Lrina/turok/bope/bopemod/manager/BopeHUDManager;
+      @|rina/turok/bope/Bope.java|6593|6605|get_instance|method|rina.turok.bope.Bope|get_instance|()Lrina/turok/bope/Bope;
+      @|rina/turok/bope/Bope.java|6608|6619|hud_manager|field|rina.turok.bope.Bope|hud_manager
    Method End: get_hud_manager()Lrina/turok/bope/bopemod/manager/BopeHUDManager;
    Method Start: get_event_handler()Lrina/turok/bope/external/BopeEventHandler;
-      @|rina/turok/bope/Bope.java|6641|6657|BopeEventHandler|class|rina.turok.bope.external.BopeEventHandler|false
-      @|rina/turok/bope/Bope.java|6658|6675|get_event_handler|method|rina.turok.bope.Bope|get_event_handler|()Lrina/turok/bope/external/BopeEventHandler;
-      @|rina/turok/bope/Bope.java|6689|6705|BopeEventHandler|class|rina.turok.bope.external.BopeEventHandler|false
-      @|rina/turok/bope/Bope.java|6706|6714|INSTANCE|field|rina.turok.bope.external.BopeEventHandler|INSTANCE
+      @|rina/turok/bope/Bope.java|6640|6656|BopeEventHandler|class|rina.turok.bope.external.BopeEventHandler|false
+      @|rina/turok/bope/Bope.java|6657|6674|get_event_handler|method|rina.turok.bope.Bope|get_event_handler|()Lrina/turok/bope/external/BopeEventHandler;
+      @|rina/turok/bope/Bope.java|6688|6704|BopeEventHandler|class|rina.turok.bope.external.BopeEventHandler|false
+      @|rina/turok/bope/Bope.java|6705|6713|INSTANCE|field|rina.turok.bope.external.BopeEventHandler|INSTANCE
    Method End: get_event_handler()Lrina/turok/bope/external/BopeEventHandler;
    Method Start: get_rpc()Lrina/turok/bope/bopemod/BopeDiscordRichPresence;
-      @|rina/turok/bope/Bope.java|6735|6758|BopeDiscordRichPresence|class|rina.turok.bope.bopemod.BopeDiscordRichPresence|false
-      @|rina/turok/bope/Bope.java|6759|6766|get_rpc|method|rina.turok.bope.Bope|get_rpc|()Lrina/turok/bope/bopemod/BopeDiscordRichPresence;
-      @|rina/turok/bope/Bope.java|6780|6792|get_instance|method|rina.turok.bope.Bope|get_instance|()Lrina/turok/bope/Bope;
-      @|rina/turok/bope/Bope.java|6795|6806|discord_rpc|field|rina.turok.bope.Bope|discord_rpc
+      @|rina/turok/bope/Bope.java|6734|6757|BopeDiscordRichPresence|class|rina.turok.bope.bopemod.BopeDiscordRichPresence|false
+      @|rina/turok/bope/Bope.java|6758|6765|get_rpc|method|rina.turok.bope.Bope|get_rpc|()Lrina/turok/bope/bopemod/BopeDiscordRichPresence;
+      @|rina/turok/bope/Bope.java|6779|6791|get_instance|method|rina.turok.bope.Bope|get_instance|()Lrina/turok/bope/Bope;
+      @|rina/turok/bope/Bope.java|6794|6805|discord_rpc|field|rina.turok.bope.Bope|discord_rpc
    Method End: get_rpc()Lrina/turok/bope/bopemod/BopeDiscordRichPresence;
    Method Start: get_turok()Lrina/turok/turok/Turok;
-      @|rina/turok/bope/Bope.java|6827|6832|Turok|class|rina.turok.turok.Turok|false
-      @|rina/turok/bope/Bope.java|6833|6842|get_turok|method|rina.turok.bope.Bope|get_turok|()Lrina/turok/turok/Turok;
-      @|rina/turok/bope/Bope.java|6856|6868|get_instance|method|rina.turok.bope.Bope|get_instance|()Lrina/turok/bope/Bope;
-      @|rina/turok/bope/Bope.java|6871|6876|turok|field|rina.turok.bope.Bope|turok
+      @|rina/turok/bope/Bope.java|6826|6831|Turok|class|rina.turok.turok.Turok|false
+      @|rina/turok/bope/Bope.java|6832|6841|get_turok|method|rina.turok.bope.Bope|get_turok|()Lrina/turok/turok/Turok;
+      @|rina/turok/bope/Bope.java|6855|6867|get_instance|method|rina.turok.bope.Bope|get_instance|()Lrina/turok/bope/Bope;
+      @|rina/turok/bope/Bope.java|6870|6875|turok|field|rina.turok.bope.Bope|turok
    Method End: get_turok()Lrina/turok/turok/Turok;
    Method Start: smooth(Ljava/lang/String;)Ljava/lang/String;
-      @|rina/turok/bope/Bope.java|6918|6922|base|param|rina.turok.bope.Bope|smooth|(Ljava/lang/String;)Ljava/lang/String;|base|0
-      @|rina/turok/bope/Bope.java|6897|6903|String|class|java.lang.String|false
-      @|rina/turok/bope/Bope.java|6904|6910|smooth|method|rina.turok.bope.Bope|smooth|(Ljava/lang/String;)Ljava/lang/String;
-      @|rina/turok/bope/Bope.java|6911|6917|String|class|java.lang.String|false
-      @|rina/turok/bope/Bope.java|6935|6939|Bope|class|rina.turok.bope.Bope|false
-      @|rina/turok/bope/Bope.java|6940|6949|get_turok|method|rina.turok.bope.Bope|get_turok|()Lrina/turok/turok/Turok;
-      @|rina/turok/bope/Bope.java|6952|6968|get_font_manager|method|rina.turok.turok.Turok|get_font_manager|()Lrina/turok/turok/task/TurokFont;
-      @|rina/turok/bope/Bope.java|6971|6977|smooth|method|rina.turok.turok.task.TurokFont|smooth|(Ljava/lang/String;)Ljava/lang/String;
-      @|rina/turok/bope/Bope.java|6978|6982|base|param|rina.turok.bope.Bope|smooth|(Ljava/lang/String;)Ljava/lang/String;|base|0
+      @|rina/turok/bope/Bope.java|6917|6921|base|param|rina.turok.bope.Bope|smooth|(Ljava/lang/String;)Ljava/lang/String;|base|0
+      @|rina/turok/bope/Bope.java|6896|6902|String|class|java.lang.String|false
+      @|rina/turok/bope/Bope.java|6903|6909|smooth|method|rina.turok.bope.Bope|smooth|(Ljava/lang/String;)Ljava/lang/String;
+      @|rina/turok/bope/Bope.java|6910|6916|String|class|java.lang.String|false
+      @|rina/turok/bope/Bope.java|6934|6938|Bope|class|rina.turok.bope.Bope|false
+      @|rina/turok/bope/Bope.java|6939|6948|get_turok|method|rina.turok.bope.Bope|get_turok|()Lrina/turok/turok/Turok;
+      @|rina/turok/bope/Bope.java|6951|6967|get_font_manager|method|rina.turok.turok.Turok|get_font_manager|()Lrina/turok/turok/task/TurokFont;
+      @|rina/turok/bope/Bope.java|6970|6976|smooth|method|rina.turok.turok.task.TurokFont|smooth|(Ljava/lang/String;)Ljava/lang/String;
+      @|rina/turok/bope/Bope.java|6977|6981|base|param|rina.turok.bope.Bope|smooth|(Ljava/lang/String;)Ljava/lang/String;|base|0
    Method End: smooth(Ljava/lang/String;)Ljava/lang/String;
 Class End  : rina.turok.bope.Bope
 endProcessing "rina/turok/bope/Bope.java"
@@ -9814,119 +9814,113 @@ Class Start: rina.turok.bope.bopemod.hacks.combat.BopeAutoReplace
 Class End  : rina.turok.bope.bopemod.hacks.combat.BopeAutoReplace
 endProcessing "rina/turok/bope/bopemod/hacks/combat/BopeAutoReplace.java"
 
-startProcessing "rina/turok/bope/bopemod/hacks/combat/BopeAutoTotem.java" md5: 76cbcb2cca4c558207b1d6840641aac9
+startProcessing "rina/turok/bope/bopemod/hacks/combat/BopeAutoTotem.java" md5: 4836ea7fec2784168d54bfddb32fbdd1
 @|rina/turok/bope/bopemod/hacks/combat/BopeAutoTotem.java|8|44|rina.turok.bope.bopemod.hacks.combat|package|rina.turok.bope.bopemod.hacks.combat|(file)
 Class Start: rina.turok.bope.bopemod.hacks.combat.BopeAutoTotem
    @|rina/turok/bope/bopemod/hacks/combat/BopeAutoTotem.java|546|559|BopeAutoTotem|class|rina.turok.bope.bopemod.hacks.combat.BopeAutoTotem|false
    @|rina/turok/bope/bopemod/hacks/combat/BopeAutoTotem.java|568|578|BopeModule|class|rina.turok.bope.bopemod.BopeModule|false
    @|rina/turok/bope/bopemod/hacks/combat/BopeAutoTotem.java|583|594|BopeSetting|class|rina.turok.bope.bopemod.guiscreen.settings.BopeSetting|false
    @|rina/turok/bope/bopemod/hacks/combat/BopeAutoTotem.java|583|594|BopeSetting|class|rina.turok.bope.bopemod.guiscreen.settings.BopeSetting|false
-   @|rina/turok/bope/bopemod/hacks/combat/BopeAutoTotem.java|595|611|button_inventory|field|rina.turok.bope.bopemod.hacks.combat.BopeAutoTotem|button_inventory|
-   @|rina/turok/bope/bopemod/hacks/combat/BopeAutoTotem.java|614|620|create|method|rina.turok.bope.bopemod.BopeModule|create|(Ljava/lang/String;Ljava/lang/String;Z)Lrina/turok/bope/bopemod/guiscreen/settings/BopeSetting;
-   @|rina/turok/bope/bopemod/hacks/combat/BopeAutoTotem.java|667|678|BopeSetting|class|rina.turok.bope.bopemod.guiscreen.settings.BopeSetting|false
-   @|rina/turok/bope/bopemod/hacks/combat/BopeAutoTotem.java|667|678|BopeSetting|class|rina.turok.bope.bopemod.guiscreen.settings.BopeSetting|false
-   @|rina/turok/bope/bopemod/hacks/combat/BopeAutoTotem.java|679|692|slider_health|field|rina.turok.bope.bopemod.hacks.combat.BopeAutoTotem|slider_health|
-   @|rina/turok/bope/bopemod/hacks/combat/BopeAutoTotem.java|698|704|create|method|rina.turok.bope.bopemod.BopeModule|create|(Ljava/lang/String;Ljava/lang/String;III)Lrina/turok/bope/bopemod/guiscreen/settings/BopeSetting;
-   @|rina/turok/bope/bopemod/hacks/combat/BopeAutoTotem.java|758|768|find_totem|field|rina.turok.bope.bopemod.hacks.combat.BopeAutoTotem|find_totem|
-   @|rina/turok/bope/bopemod/hacks/combat/BopeAutoTotem.java|788|798|move_totem|field|rina.turok.bope.bopemod.hacks.combat.BopeAutoTotem|move_totem|
-   @|rina/turok/bope/bopemod/hacks/combat/BopeAutoTotem.java|816|827|totem_count|field|rina.turok.bope.bopemod.hacks.combat.BopeAutoTotem|totem_count|
+   @|rina/turok/bope/bopemod/hacks/combat/BopeAutoTotem.java|595|608|slider_health|field|rina.turok.bope.bopemod.hacks.combat.BopeAutoTotem|slider_health|
+   @|rina/turok/bope/bopemod/hacks/combat/BopeAutoTotem.java|611|617|create|method|rina.turok.bope.bopemod.BopeModule|create|(Ljava/lang/String;Ljava/lang/String;III)Lrina/turok/bope/bopemod/guiscreen/settings/BopeSetting;
+   @|rina/turok/bope/bopemod/hacks/combat/BopeAutoTotem.java|671|681|find_totem|field|rina.turok.bope.bopemod.hacks.combat.BopeAutoTotem|find_totem|
+   @|rina/turok/bope/bopemod/hacks/combat/BopeAutoTotem.java|701|711|move_totem|field|rina.turok.bope.bopemod.hacks.combat.BopeAutoTotem|move_totem|
+   @|rina/turok/bope/bopemod/hacks/combat/BopeAutoTotem.java|729|740|totem_count|field|rina.turok.bope.bopemod.hacks.combat.BopeAutoTotem|totem_count|
    Method Start: BopeAutoTotem()V
-      @|rina/turok/bope/bopemod/hacks/combat/BopeAutoTotem.java|840|853|BopeAutoTotem|method|rina.turok.bope.bopemod.hacks.combat.BopeAutoTotem|BopeAutoTotem|()V
-      @|rina/turok/bope/bopemod/hacks/combat/BopeAutoTotem.java|867|879|BopeCategory|class|rina.turok.bope.bopemod.hacks.BopeCategory|false
-      @|rina/turok/bope/bopemod/hacks/combat/BopeAutoTotem.java|880|891|BOPE_COMBAT|field|rina.turok.bope.bopemod.hacks.BopeCategory|BOPE_COMBAT
-      @|rina/turok/bope/bopemod/hacks/combat/BopeAutoTotem.java|916|920|name|field|rina.turok.bope.bopemod.BopeModule|name
-      @|rina/turok/bope/bopemod/hacks/combat/BopeAutoTotem.java|952|955|tag|field|rina.turok.bope.bopemod.BopeModule|tag
-      @|rina/turok/bope/bopemod/hacks/combat/BopeAutoTotem.java|987|998|description|field|rina.turok.bope.bopemod.BopeModule|description
-      @|rina/turok/bope/bopemod/hacks/combat/BopeAutoTotem.java|1085|1092|release|method|rina.turok.bope.bopemod.BopeModule|release|(Ljava/lang/String;)V
+      @|rina/turok/bope/bopemod/hacks/combat/BopeAutoTotem.java|753|766|BopeAutoTotem|method|rina.turok.bope.bopemod.hacks.combat.BopeAutoTotem|BopeAutoTotem|()V
+      @|rina/turok/bope/bopemod/hacks/combat/BopeAutoTotem.java|780|792|BopeCategory|class|rina.turok.bope.bopemod.hacks.BopeCategory|false
+      @|rina/turok/bope/bopemod/hacks/combat/BopeAutoTotem.java|793|804|BOPE_COMBAT|field|rina.turok.bope.bopemod.hacks.BopeCategory|BOPE_COMBAT
+      @|rina/turok/bope/bopemod/hacks/combat/BopeAutoTotem.java|829|833|name|field|rina.turok.bope.bopemod.BopeModule|name
+      @|rina/turok/bope/bopemod/hacks/combat/BopeAutoTotem.java|865|868|tag|field|rina.turok.bope.bopemod.BopeModule|tag
+      @|rina/turok/bope/bopemod/hacks/combat/BopeAutoTotem.java|900|911|description|field|rina.turok.bope.bopemod.BopeModule|description
+      @|rina/turok/bope/bopemod/hacks/combat/BopeAutoTotem.java|998|1005|release|method|rina.turok.bope.bopemod.BopeModule|release|(Ljava/lang/String;)V
    Method End: BopeAutoTotem()V
    Method Start: update()V
-      @|rina/turok/bope/bopemod/hacks/combat/BopeAutoTotem.java|1133|1141|Override|class|java.lang.Override|false
-      @|rina/turok/bope/bopemod/hacks/combat/BopeAutoTotem.java|1156|1162|update|method|rina.turok.bope.bopemod.BopeModule|update|()V
-      @|rina/turok/bope/bopemod/hacks/combat/BopeAutoTotem.java|1193|1195|mc|field|rina.turok.bope.bopemod.BopeModule|mc
-      @|rina/turok/bope/bopemod/hacks/combat/BopeAutoTotem.java|1196|1202|player|field|net.minecraft.client.Minecraft|player
-      @|rina/turok/bope/bopemod/hacks/combat/BopeAutoTotem.java|1214|1216|mc|field|rina.turok.bope.bopemod.BopeModule|mc
-      @|rina/turok/bope/bopemod/hacks/combat/BopeAutoTotem.java|1217|1222|world|field|net.minecraft.client.Minecraft|world
-      @|rina/turok/bope/bopemod/hacks/combat/BopeAutoTotem.java|1234|1236|mc|field|rina.turok.bope.bopemod.BopeModule|mc
-      @|rina/turok/bope/bopemod/hacks/combat/BopeAutoTotem.java|1237|1243|player|field|net.minecraft.client.Minecraft|player
-      @|rina/turok/bope/bopemod/hacks/combat/BopeAutoTotem.java|1244|1253|getHealth|method|net.minecraft.entity.EntityLivingBase|getHealth|()F
-      @|rina/turok/bope/bopemod/hacks/combat/BopeAutoTotem.java|1259|1272|slider_health|field|rina.turok.bope.bopemod.hacks.combat.BopeAutoTotem|slider_health
-      @|rina/turok/bope/bopemod/hacks/combat/BopeAutoTotem.java|1273|1282|get_value|method|rina.turok.bope.bopemod.guiscreen.settings.BopeSetting|get_value|(I)I
-      @|rina/turok/bope/bopemod/hacks/combat/BopeAutoTotem.java|1297|1308|totem_count|field|rina.turok.bope.bopemod.hacks.combat.BopeAutoTotem|totem_count
-      @|rina/turok/bope/bopemod/hacks/combat/BopeAutoTotem.java|1311|1313|mc|field|rina.turok.bope.bopemod.BopeModule|mc
-      @|rina/turok/bope/bopemod/hacks/combat/BopeAutoTotem.java|1314|1320|player|field|net.minecraft.client.Minecraft|player
-      @|rina/turok/bope/bopemod/hacks/combat/BopeAutoTotem.java|1321|1330|inventory|field|net.minecraft.entity.player.EntityPlayer|inventory
-      @|rina/turok/bope/bopemod/hacks/combat/BopeAutoTotem.java|1331|1344|mainInventory|field|net.minecraft.entity.player.InventoryPlayer|mainInventory
-      @|rina/turok/bope/bopemod/hacks/combat/BopeAutoTotem.java|1345|1351|stream|method|java.util.Collection|stream|()Ljava/util/stream/Stream;
-      @|rina/turok/bope/bopemod/hacks/combat/BopeAutoTotem.java|1354|1360|filter|method|java.util.stream.Stream|filter|(Ljava/util/function/Predicate;)Ljava/util/stream/Stream;
-      @|rina/turok/bope/bopemod/hacks/combat/BopeAutoTotem.java|1369|1373|item|param|java.util.function.Predicate<net.minecraft.item.ItemStack>|test|(Lnet/minecraft/item/ItemStack;)Z|item|-1
-      @|rina/turok/bope/bopemod/hacks/combat/BopeAutoTotem.java|1374|1381|getItem|method|net.minecraft.item.ItemStack|getItem|()Lnet/minecraft/item/Item;
-      @|rina/turok/bope/bopemod/hacks/combat/BopeAutoTotem.java|1387|1392|Items|class|net.minecraft.init.Items|false
-      @|rina/turok/bope/bopemod/hacks/combat/BopeAutoTotem.java|1393|1409|TOTEM_OF_UNDYING|field|net.minecraft.init.Items|TOTEM_OF_UNDYING
-      @|rina/turok/bope/bopemod/hacks/combat/BopeAutoTotem.java|1411|1419|mapToInt|method|java.util.stream.Stream|mapToInt|(Ljava/util/function/ToIntFunction;)Ljava/util/stream/IntStream;
-      @|rina/turok/bope/bopemod/hacks/combat/BopeAutoTotem.java|1420|1429|ItemStack|class|net.minecraft.item.ItemStack|false
-      @|rina/turok/bope/bopemod/hacks/combat/BopeAutoTotem.java|1431|1439|getCount|method|net.minecraft.item.ItemStack|getCount|()I
-      @|rina/turok/bope/bopemod/hacks/combat/BopeAutoTotem.java|1441|1444|sum|method|java.util.stream.IntStream|sum|()I
-      @|rina/turok/bope/bopemod/hacks/combat/BopeAutoTotem.java|1458|1460|mc|field|rina.turok.bope.bopemod.BopeModule|mc
-      @|rina/turok/bope/bopemod/hacks/combat/BopeAutoTotem.java|1461|1474|currentScreen|field|net.minecraft.client.Minecraft|currentScreen
-      @|rina/turok/bope/bopemod/hacks/combat/BopeAutoTotem.java|1486|1498|GuiContainer|class|net.minecraft.client.gui.inventory.GuiContainer|false
-      @|rina/turok/bope/bopemod/hacks/combat/BopeAutoTotem.java|1503|1519|button_inventory|field|rina.turok.bope.bopemod.hacks.combat.BopeAutoTotem|button_inventory
-      @|rina/turok/bope/bopemod/hacks/combat/BopeAutoTotem.java|1520|1529|get_value|method|rina.turok.bope.bopemod.guiscreen.settings.BopeSetting|get_value|(Z)Z
-      @|rina/turok/bope/bopemod/hacks/combat/BopeAutoTotem.java|1568|1578|find_totem|field|rina.turok.bope.bopemod.hacks.combat.BopeAutoTotem|find_totem
-      @|rina/turok/bope/bopemod/hacks/combat/BopeAutoTotem.java|1664|1666|mc|field|rina.turok.bope.bopemod.BopeModule|mc
-      @|rina/turok/bope/bopemod/hacks/combat/BopeAutoTotem.java|1667|1673|player|field|net.minecraft.client.Minecraft|player
-      @|rina/turok/bope/bopemod/hacks/combat/BopeAutoTotem.java|1674|1683|inventory|field|net.minecraft.entity.player.EntityPlayer|inventory
-      @|rina/turok/bope/bopemod/hacks/combat/BopeAutoTotem.java|1684|1698|getStackInSlot|method|net.minecraft.inventory.IInventory|getStackInSlot|(I)Lnet/minecraft/item/ItemStack;
-      @|rina/turok/bope/bopemod/hacks/combat/BopeAutoTotem.java|1706|1713|isEmpty|field|net.minecraft.item.ItemStack|isEmpty
-      @|rina/turok/bope/bopemod/hacks/combat/BopeAutoTotem.java|1825|1827|mc|field|rina.turok.bope.bopemod.BopeModule|mc
-      @|rina/turok/bope/bopemod/hacks/combat/BopeAutoTotem.java|1828|1844|playerController|field|net.minecraft.client.Minecraft|playerController
-      @|rina/turok/bope/bopemod/hacks/combat/BopeAutoTotem.java|1845|1856|windowClick|method|net.minecraft.client.multiplayer.PlayerControllerMP|windowClick|(IIILnet/minecraft/inventory/ClickType;Lnet/minecraft/entity/player/EntityPlayer;)Lnet/minecraft/item/ItemStack;
-      @|rina/turok/bope/bopemod/hacks/combat/BopeAutoTotem.java|1895|1904|ClickType|class|net.minecraft.inventory.ClickType|false
-      @|rina/turok/bope/bopemod/hacks/combat/BopeAutoTotem.java|1905|1911|PICKUP|field|net.minecraft.inventory.ClickType|PICKUP
-      @|rina/turok/bope/bopemod/hacks/combat/BopeAutoTotem.java|1913|1915|mc|field|rina.turok.bope.bopemod.BopeModule|mc
-      @|rina/turok/bope/bopemod/hacks/combat/BopeAutoTotem.java|1916|1922|player|field|net.minecraft.client.Minecraft|player
-      @|rina/turok/bope/bopemod/hacks/combat/BopeAutoTotem.java|1932|1942|find_totem|field|rina.turok.bope.bopemod.hacks.combat.BopeAutoTotem|find_totem
-      @|rina/turok/bope/bopemod/hacks/combat/BopeAutoTotem.java|1968|1970|mc|field|rina.turok.bope.bopemod.BopeModule|mc
-      @|rina/turok/bope/bopemod/hacks/combat/BopeAutoTotem.java|1971|1977|player|field|net.minecraft.client.Minecraft|player
-      @|rina/turok/bope/bopemod/hacks/combat/BopeAutoTotem.java|1978|1996|getHeldItemOffhand|method|net.minecraft.entity.EntityLivingBase|getHeldItemOffhand|()Lnet/minecraft/item/ItemStack;
-      @|rina/turok/bope/bopemod/hacks/combat/BopeAutoTotem.java|1999|2006|getItem|method|net.minecraft.item.ItemStack|getItem|()Lnet/minecraft/item/Item;
-      @|rina/turok/bope/bopemod/hacks/combat/BopeAutoTotem.java|2012|2017|Items|class|net.minecraft.init.Items|false
-      @|rina/turok/bope/bopemod/hacks/combat/BopeAutoTotem.java|2018|2034|TOTEM_OF_UNDYING|field|net.minecraft.init.Items|TOTEM_OF_UNDYING
-      @|rina/turok/bope/bopemod/hacks/combat/BopeAutoTotem.java|2047|2057|move_totem|field|rina.turok.bope.bopemod.hacks.combat.BopeAutoTotem|move_totem
-      @|rina/turok/bope/bopemod/hacks/combat/BopeAutoTotem.java|2067|2069|mc|field|rina.turok.bope.bopemod.BopeModule|mc
-      @|rina/turok/bope/bopemod/hacks/combat/BopeAutoTotem.java|2070|2086|playerController|field|net.minecraft.client.Minecraft|playerController
-      @|rina/turok/bope/bopemod/hacks/combat/BopeAutoTotem.java|2087|2098|windowClick|method|net.minecraft.client.multiplayer.PlayerControllerMP|windowClick|(IIILnet/minecraft/inventory/ClickType;Lnet/minecraft/entity/player/EntityPlayer;)Lnet/minecraft/item/ItemStack;
-      @|rina/turok/bope/bopemod/hacks/combat/BopeAutoTotem.java|2109|2118|ClickType|class|net.minecraft.inventory.ClickType|false
-      @|rina/turok/bope/bopemod/hacks/combat/BopeAutoTotem.java|2119|2125|PICKUP|field|net.minecraft.inventory.ClickType|PICKUP
-      @|rina/turok/bope/bopemod/hacks/combat/BopeAutoTotem.java|2127|2129|mc|field|rina.turok.bope.bopemod.BopeModule|mc
-      @|rina/turok/bope/bopemod/hacks/combat/BopeAutoTotem.java|2130|2136|player|field|net.minecraft.client.Minecraft|player
-      @|rina/turok/bope/bopemod/hacks/combat/BopeAutoTotem.java|2147|2157|move_totem|field|rina.turok.bope.bopemod.hacks.combat.BopeAutoTotem|move_totem
-      @|rina/turok/bope/bopemod/hacks/combat/BopeAutoTotem.java|2180|2182|mc|field|rina.turok.bope.bopemod.BopeModule|mc
-      @|rina/turok/bope/bopemod/hacks/combat/BopeAutoTotem.java|2183|2189|player|field|net.minecraft.client.Minecraft|player
-      @|rina/turok/bope/bopemod/hacks/combat/BopeAutoTotem.java|2190|2199|inventory|field|net.minecraft.entity.player.EntityPlayer|inventory
-      @|rina/turok/bope/bopemod/hacks/combat/BopeAutoTotem.java|2200|2209|itemStack|field|net.minecraft.entity.player.InventoryPlayer|itemStack
-      @|rina/turok/bope/bopemod/hacks/combat/BopeAutoTotem.java|2210|2217|isEmpty|method|net.minecraft.item.ItemStack|isEmpty|()Z
-      @|rina/turok/bope/bopemod/hacks/combat/BopeAutoTotem.java|2230|2240|find_totem|field|rina.turok.bope.bopemod.hacks.combat.BopeAutoTotem|find_totem
-      @|rina/turok/bope/bopemod/hacks/combat/BopeAutoTotem.java|2291|2293|mc|field|rina.turok.bope.bopemod.BopeModule|mc
-      @|rina/turok/bope/bopemod/hacks/combat/BopeAutoTotem.java|2294|2300|player|field|net.minecraft.client.Minecraft|player
-      @|rina/turok/bope/bopemod/hacks/combat/BopeAutoTotem.java|2301|2310|inventory|field|net.minecraft.entity.player.EntityPlayer|inventory
-      @|rina/turok/bope/bopemod/hacks/combat/BopeAutoTotem.java|2311|2320|itemStack|field|net.minecraft.entity.player.InventoryPlayer|itemStack
-      @|rina/turok/bope/bopemod/hacks/combat/BopeAutoTotem.java|2321|2328|isEmpty|method|net.minecraft.item.ItemStack|isEmpty|()Z
-      @|rina/turok/bope/bopemod/hacks/combat/BopeAutoTotem.java|2344|2355|totem_count|field|rina.turok.bope.bopemod.hacks.combat.BopeAutoTotem|totem_count
-      @|rina/turok/bope/bopemod/hacks/combat/BopeAutoTotem.java|2461|2463|mc|field|rina.turok.bope.bopemod.BopeModule|mc
-      @|rina/turok/bope/bopemod/hacks/combat/BopeAutoTotem.java|2464|2470|player|field|net.minecraft.client.Minecraft|player
-      @|rina/turok/bope/bopemod/hacks/combat/BopeAutoTotem.java|2471|2480|inventory|field|net.minecraft.entity.player.EntityPlayer|inventory
-      @|rina/turok/bope/bopemod/hacks/combat/BopeAutoTotem.java|2481|2495|getStackInSlot|method|net.minecraft.inventory.IInventory|getStackInSlot|(I)Lnet/minecraft/item/ItemStack;
-      @|rina/turok/bope/bopemod/hacks/combat/BopeAutoTotem.java|2499|2506|getItem|method|net.minecraft.item.ItemStack|getItem|()Lnet/minecraft/item/Item;
-      @|rina/turok/bope/bopemod/hacks/combat/BopeAutoTotem.java|2512|2517|Items|class|net.minecraft.init.Items|false
-      @|rina/turok/bope/bopemod/hacks/combat/BopeAutoTotem.java|2518|2534|TOTEM_OF_UNDYING|field|net.minecraft.init.Items|TOTEM_OF_UNDYING
-      @|rina/turok/bope/bopemod/hacks/combat/BopeAutoTotem.java|2648|2650|mc|field|rina.turok.bope.bopemod.BopeModule|mc
-      @|rina/turok/bope/bopemod/hacks/combat/BopeAutoTotem.java|2651|2667|playerController|field|net.minecraft.client.Minecraft|playerController
-      @|rina/turok/bope/bopemod/hacks/combat/BopeAutoTotem.java|2668|2679|windowClick|method|net.minecraft.client.multiplayer.PlayerControllerMP|windowClick|(IIILnet/minecraft/inventory/ClickType;Lnet/minecraft/entity/player/EntityPlayer;)Lnet/minecraft/item/ItemStack;
-      @|rina/turok/bope/bopemod/hacks/combat/BopeAutoTotem.java|2715|2724|ClickType|class|net.minecraft.inventory.ClickType|false
-      @|rina/turok/bope/bopemod/hacks/combat/BopeAutoTotem.java|2725|2731|PICKUP|field|net.minecraft.inventory.ClickType|PICKUP
-      @|rina/turok/bope/bopemod/hacks/combat/BopeAutoTotem.java|2733|2735|mc|field|rina.turok.bope.bopemod.BopeModule|mc
-      @|rina/turok/bope/bopemod/hacks/combat/BopeAutoTotem.java|2736|2742|player|field|net.minecraft.client.Minecraft|player
-      @|rina/turok/bope/bopemod/hacks/combat/BopeAutoTotem.java|2753|2763|move_totem|field|rina.turok.bope.bopemod.hacks.combat.BopeAutoTotem|move_totem
+      @|rina/turok/bope/bopemod/hacks/combat/BopeAutoTotem.java|1046|1054|Override|class|java.lang.Override|false
+      @|rina/turok/bope/bopemod/hacks/combat/BopeAutoTotem.java|1069|1075|update|method|rina.turok.bope.bopemod.BopeModule|update|()V
+      @|rina/turok/bope/bopemod/hacks/combat/BopeAutoTotem.java|1106|1108|mc|field|rina.turok.bope.bopemod.BopeModule|mc
+      @|rina/turok/bope/bopemod/hacks/combat/BopeAutoTotem.java|1109|1115|player|field|net.minecraft.client.Minecraft|player
+      @|rina/turok/bope/bopemod/hacks/combat/BopeAutoTotem.java|1127|1129|mc|field|rina.turok.bope.bopemod.BopeModule|mc
+      @|rina/turok/bope/bopemod/hacks/combat/BopeAutoTotem.java|1130|1135|world|field|net.minecraft.client.Minecraft|world
+      @|rina/turok/bope/bopemod/hacks/combat/BopeAutoTotem.java|1147|1149|mc|field|rina.turok.bope.bopemod.BopeModule|mc
+      @|rina/turok/bope/bopemod/hacks/combat/BopeAutoTotem.java|1150|1156|player|field|net.minecraft.client.Minecraft|player
+      @|rina/turok/bope/bopemod/hacks/combat/BopeAutoTotem.java|1157|1166|getHealth|method|net.minecraft.entity.EntityLivingBase|getHealth|()F
+      @|rina/turok/bope/bopemod/hacks/combat/BopeAutoTotem.java|1172|1185|slider_health|field|rina.turok.bope.bopemod.hacks.combat.BopeAutoTotem|slider_health
+      @|rina/turok/bope/bopemod/hacks/combat/BopeAutoTotem.java|1186|1195|get_value|method|rina.turok.bope.bopemod.guiscreen.settings.BopeSetting|get_value|(I)I
+      @|rina/turok/bope/bopemod/hacks/combat/BopeAutoTotem.java|1210|1221|totem_count|field|rina.turok.bope.bopemod.hacks.combat.BopeAutoTotem|totem_count
+      @|rina/turok/bope/bopemod/hacks/combat/BopeAutoTotem.java|1224|1226|mc|field|rina.turok.bope.bopemod.BopeModule|mc
+      @|rina/turok/bope/bopemod/hacks/combat/BopeAutoTotem.java|1227|1233|player|field|net.minecraft.client.Minecraft|player
+      @|rina/turok/bope/bopemod/hacks/combat/BopeAutoTotem.java|1234|1243|inventory|field|net.minecraft.entity.player.EntityPlayer|inventory
+      @|rina/turok/bope/bopemod/hacks/combat/BopeAutoTotem.java|1244|1257|mainInventory|field|net.minecraft.entity.player.InventoryPlayer|mainInventory
+      @|rina/turok/bope/bopemod/hacks/combat/BopeAutoTotem.java|1258|1264|stream|method|java.util.Collection|stream|()Ljava/util/stream/Stream;
+      @|rina/turok/bope/bopemod/hacks/combat/BopeAutoTotem.java|1267|1273|filter|method|java.util.stream.Stream|filter|(Ljava/util/function/Predicate;)Ljava/util/stream/Stream;
+      @|rina/turok/bope/bopemod/hacks/combat/BopeAutoTotem.java|1282|1286|item|param|java.util.function.Predicate<net.minecraft.item.ItemStack>|test|(Lnet/minecraft/item/ItemStack;)Z|item|-1
+      @|rina/turok/bope/bopemod/hacks/combat/BopeAutoTotem.java|1287|1294|getItem|method|net.minecraft.item.ItemStack|getItem|()Lnet/minecraft/item/Item;
+      @|rina/turok/bope/bopemod/hacks/combat/BopeAutoTotem.java|1300|1305|Items|class|net.minecraft.init.Items|false
+      @|rina/turok/bope/bopemod/hacks/combat/BopeAutoTotem.java|1306|1322|TOTEM_OF_UNDYING|field|net.minecraft.init.Items|TOTEM_OF_UNDYING
+      @|rina/turok/bope/bopemod/hacks/combat/BopeAutoTotem.java|1324|1332|mapToInt|method|java.util.stream.Stream|mapToInt|(Ljava/util/function/ToIntFunction;)Ljava/util/stream/IntStream;
+      @|rina/turok/bope/bopemod/hacks/combat/BopeAutoTotem.java|1333|1342|ItemStack|class|net.minecraft.item.ItemStack|false
+      @|rina/turok/bope/bopemod/hacks/combat/BopeAutoTotem.java|1344|1352|getCount|method|net.minecraft.item.ItemStack|getCount|()I
+      @|rina/turok/bope/bopemod/hacks/combat/BopeAutoTotem.java|1354|1357|sum|method|java.util.stream.IntStream|sum|()I
+      @|rina/turok/bope/bopemod/hacks/combat/BopeAutoTotem.java|1371|1373|mc|field|rina.turok.bope.bopemod.BopeModule|mc
+      @|rina/turok/bope/bopemod/hacks/combat/BopeAutoTotem.java|1374|1387|currentScreen|field|net.minecraft.client.Minecraft|currentScreen
+      @|rina/turok/bope/bopemod/hacks/combat/BopeAutoTotem.java|1399|1411|GuiContainer|class|net.minecraft.client.gui.inventory.GuiContainer|false
+      @|rina/turok/bope/bopemod/hacks/combat/BopeAutoTotem.java|1444|1454|find_totem|field|rina.turok.bope.bopemod.hacks.combat.BopeAutoTotem|find_totem
+      @|rina/turok/bope/bopemod/hacks/combat/BopeAutoTotem.java|1540|1542|mc|field|rina.turok.bope.bopemod.BopeModule|mc
+      @|rina/turok/bope/bopemod/hacks/combat/BopeAutoTotem.java|1543|1549|player|field|net.minecraft.client.Minecraft|player
+      @|rina/turok/bope/bopemod/hacks/combat/BopeAutoTotem.java|1550|1559|inventory|field|net.minecraft.entity.player.EntityPlayer|inventory
+      @|rina/turok/bope/bopemod/hacks/combat/BopeAutoTotem.java|1560|1574|getStackInSlot|method|net.minecraft.inventory.IInventory|getStackInSlot|(I)Lnet/minecraft/item/ItemStack;
+      @|rina/turok/bope/bopemod/hacks/combat/BopeAutoTotem.java|1582|1589|isEmpty|field|net.minecraft.item.ItemStack|isEmpty
+      @|rina/turok/bope/bopemod/hacks/combat/BopeAutoTotem.java|1701|1703|mc|field|rina.turok.bope.bopemod.BopeModule|mc
+      @|rina/turok/bope/bopemod/hacks/combat/BopeAutoTotem.java|1704|1720|playerController|field|net.minecraft.client.Minecraft|playerController
+      @|rina/turok/bope/bopemod/hacks/combat/BopeAutoTotem.java|1721|1732|windowClick|method|net.minecraft.client.multiplayer.PlayerControllerMP|windowClick|(IIILnet/minecraft/inventory/ClickType;Lnet/minecraft/entity/player/EntityPlayer;)Lnet/minecraft/item/ItemStack;
+      @|rina/turok/bope/bopemod/hacks/combat/BopeAutoTotem.java|1771|1780|ClickType|class|net.minecraft.inventory.ClickType|false
+      @|rina/turok/bope/bopemod/hacks/combat/BopeAutoTotem.java|1781|1787|PICKUP|field|net.minecraft.inventory.ClickType|PICKUP
+      @|rina/turok/bope/bopemod/hacks/combat/BopeAutoTotem.java|1789|1791|mc|field|rina.turok.bope.bopemod.BopeModule|mc
+      @|rina/turok/bope/bopemod/hacks/combat/BopeAutoTotem.java|1792|1798|player|field|net.minecraft.client.Minecraft|player
+      @|rina/turok/bope/bopemod/hacks/combat/BopeAutoTotem.java|1808|1818|find_totem|field|rina.turok.bope.bopemod.hacks.combat.BopeAutoTotem|find_totem
+      @|rina/turok/bope/bopemod/hacks/combat/BopeAutoTotem.java|1844|1846|mc|field|rina.turok.bope.bopemod.BopeModule|mc
+      @|rina/turok/bope/bopemod/hacks/combat/BopeAutoTotem.java|1847|1853|player|field|net.minecraft.client.Minecraft|player
+      @|rina/turok/bope/bopemod/hacks/combat/BopeAutoTotem.java|1854|1872|getHeldItemOffhand|method|net.minecraft.entity.EntityLivingBase|getHeldItemOffhand|()Lnet/minecraft/item/ItemStack;
+      @|rina/turok/bope/bopemod/hacks/combat/BopeAutoTotem.java|1875|1882|getItem|method|net.minecraft.item.ItemStack|getItem|()Lnet/minecraft/item/Item;
+      @|rina/turok/bope/bopemod/hacks/combat/BopeAutoTotem.java|1888|1893|Items|class|net.minecraft.init.Items|false
+      @|rina/turok/bope/bopemod/hacks/combat/BopeAutoTotem.java|1894|1910|TOTEM_OF_UNDYING|field|net.minecraft.init.Items|TOTEM_OF_UNDYING
+      @|rina/turok/bope/bopemod/hacks/combat/BopeAutoTotem.java|1923|1933|move_totem|field|rina.turok.bope.bopemod.hacks.combat.BopeAutoTotem|move_totem
+      @|rina/turok/bope/bopemod/hacks/combat/BopeAutoTotem.java|1943|1945|mc|field|rina.turok.bope.bopemod.BopeModule|mc
+      @|rina/turok/bope/bopemod/hacks/combat/BopeAutoTotem.java|1946|1962|playerController|field|net.minecraft.client.Minecraft|playerController
+      @|rina/turok/bope/bopemod/hacks/combat/BopeAutoTotem.java|1963|1974|windowClick|method|net.minecraft.client.multiplayer.PlayerControllerMP|windowClick|(IIILnet/minecraft/inventory/ClickType;Lnet/minecraft/entity/player/EntityPlayer;)Lnet/minecraft/item/ItemStack;
+      @|rina/turok/bope/bopemod/hacks/combat/BopeAutoTotem.java|1985|1994|ClickType|class|net.minecraft.inventory.ClickType|false
+      @|rina/turok/bope/bopemod/hacks/combat/BopeAutoTotem.java|1995|2001|PICKUP|field|net.minecraft.inventory.ClickType|PICKUP
+      @|rina/turok/bope/bopemod/hacks/combat/BopeAutoTotem.java|2003|2005|mc|field|rina.turok.bope.bopemod.BopeModule|mc
+      @|rina/turok/bope/bopemod/hacks/combat/BopeAutoTotem.java|2006|2012|player|field|net.minecraft.client.Minecraft|player
+      @|rina/turok/bope/bopemod/hacks/combat/BopeAutoTotem.java|2023|2033|move_totem|field|rina.turok.bope.bopemod.hacks.combat.BopeAutoTotem|move_totem
+      @|rina/turok/bope/bopemod/hacks/combat/BopeAutoTotem.java|2056|2058|mc|field|rina.turok.bope.bopemod.BopeModule|mc
+      @|rina/turok/bope/bopemod/hacks/combat/BopeAutoTotem.java|2059|2065|player|field|net.minecraft.client.Minecraft|player
+      @|rina/turok/bope/bopemod/hacks/combat/BopeAutoTotem.java|2066|2075|inventory|field|net.minecraft.entity.player.EntityPlayer|inventory
+      @|rina/turok/bope/bopemod/hacks/combat/BopeAutoTotem.java|2076|2085|itemStack|field|net.minecraft.entity.player.InventoryPlayer|itemStack
+      @|rina/turok/bope/bopemod/hacks/combat/BopeAutoTotem.java|2086|2093|isEmpty|method|net.minecraft.item.ItemStack|isEmpty|()Z
+      @|rina/turok/bope/bopemod/hacks/combat/BopeAutoTotem.java|2106|2116|find_totem|field|rina.turok.bope.bopemod.hacks.combat.BopeAutoTotem|find_totem
+      @|rina/turok/bope/bopemod/hacks/combat/BopeAutoTotem.java|2167|2169|mc|field|rina.turok.bope.bopemod.BopeModule|mc
+      @|rina/turok/bope/bopemod/hacks/combat/BopeAutoTotem.java|2170|2176|player|field|net.minecraft.client.Minecraft|player
+      @|rina/turok/bope/bopemod/hacks/combat/BopeAutoTotem.java|2177|2186|inventory|field|net.minecraft.entity.player.EntityPlayer|inventory
+      @|rina/turok/bope/bopemod/hacks/combat/BopeAutoTotem.java|2187|2196|itemStack|field|net.minecraft.entity.player.InventoryPlayer|itemStack
+      @|rina/turok/bope/bopemod/hacks/combat/BopeAutoTotem.java|2197|2204|isEmpty|method|net.minecraft.item.ItemStack|isEmpty|()Z
+      @|rina/turok/bope/bopemod/hacks/combat/BopeAutoTotem.java|2220|2231|totem_count|field|rina.turok.bope.bopemod.hacks.combat.BopeAutoTotem|totem_count
+      @|rina/turok/bope/bopemod/hacks/combat/BopeAutoTotem.java|2337|2339|mc|field|rina.turok.bope.bopemod.BopeModule|mc
+      @|rina/turok/bope/bopemod/hacks/combat/BopeAutoTotem.java|2340|2346|player|field|net.minecraft.client.Minecraft|player
+      @|rina/turok/bope/bopemod/hacks/combat/BopeAutoTotem.java|2347|2356|inventory|field|net.minecraft.entity.player.EntityPlayer|inventory
+      @|rina/turok/bope/bopemod/hacks/combat/BopeAutoTotem.java|2357|2371|getStackInSlot|method|net.minecraft.inventory.IInventory|getStackInSlot|(I)Lnet/minecraft/item/ItemStack;
+      @|rina/turok/bope/bopemod/hacks/combat/BopeAutoTotem.java|2375|2382|getItem|method|net.minecraft.item.ItemStack|getItem|()Lnet/minecraft/item/Item;
+      @|rina/turok/bope/bopemod/hacks/combat/BopeAutoTotem.java|2388|2393|Items|class|net.minecraft.init.Items|false
+      @|rina/turok/bope/bopemod/hacks/combat/BopeAutoTotem.java|2394|2410|TOTEM_OF_UNDYING|field|net.minecraft.init.Items|TOTEM_OF_UNDYING
+      @|rina/turok/bope/bopemod/hacks/combat/BopeAutoTotem.java|2524|2526|mc|field|rina.turok.bope.bopemod.BopeModule|mc
+      @|rina/turok/bope/bopemod/hacks/combat/BopeAutoTotem.java|2527|2543|playerController|field|net.minecraft.client.Minecraft|playerController
+      @|rina/turok/bope/bopemod/hacks/combat/BopeAutoTotem.java|2544|2555|windowClick|method|net.minecraft.client.multiplayer.PlayerControllerMP|windowClick|(IIILnet/minecraft/inventory/ClickType;Lnet/minecraft/entity/player/EntityPlayer;)Lnet/minecraft/item/ItemStack;
+      @|rina/turok/bope/bopemod/hacks/combat/BopeAutoTotem.java|2591|2600|ClickType|class|net.minecraft.inventory.ClickType|false
+      @|rina/turok/bope/bopemod/hacks/combat/BopeAutoTotem.java|2601|2607|PICKUP|field|net.minecraft.inventory.ClickType|PICKUP
+      @|rina/turok/bope/bopemod/hacks/combat/BopeAutoTotem.java|2609|2611|mc|field|rina.turok.bope.bopemod.BopeModule|mc
+      @|rina/turok/bope/bopemod/hacks/combat/BopeAutoTotem.java|2612|2618|player|field|net.minecraft.client.Minecraft|player
+      @|rina/turok/bope/bopemod/hacks/combat/BopeAutoTotem.java|2629|2639|move_totem|field|rina.turok.bope.bopemod.hacks.combat.BopeAutoTotem|move_totem
    Method End: update()V
 Class End  : rina.turok.bope.bopemod.hacks.combat.BopeAutoTotem
 endProcessing "rina/turok/bope/bopemod/hacks/combat/BopeAutoTotem.java"

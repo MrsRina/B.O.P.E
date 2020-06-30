@@ -115,11 +115,11 @@ public class BopeNameTag extends BopeModule {
 			float viewer_pitch = mc.getRenderManager().playerViewX;
 			float viewer_yaw   = mc.getRenderManager().playerViewY;
 
-			String spac  = " ";
-			String name  = name_.get_value(true) == true ? (life_.get_value(true) || ping_.get_value(true) == true ? spac : "") + entity.getName() + spac : "";
-			String life  = life_.get_value(true) == true ? "[" + ChatFormatting.DARK_RED  + Integer.toString(Math.round(((EntityLivingBase) entity).getHealth() / 2 + (entity instanceof EntityPlayer ? ((EntityPlayer) entity).getAbsorptionAmount() : 0))) + Bope.r + "]" : "";
-			String ping  = ping_.get_value(true) == true ? "[" + ChatFormatting.DARK_BLUE + get_ping(entity) + Bope.r + "]" : "";
-			String tag   = ping + life + name;
+			String spac = " ";
+			String name = name_.get_value(true) == true ? (life_.get_value(true) || ping_.get_value(true) == true ? spac : "") + entity.getName() + spac : "";
+			String life = life_.get_value(true) == true ? "[" + ChatFormatting.DARK_RED  + Integer.toString(Math.round(((EntityLivingBase) entity).getHealth() / 2 + (entity instanceof EntityPlayer ? ((EntityPlayer) entity).getAbsorptionAmount() : 0))) + Bope.r + "]" : "";
+			String ping = ping_.get_value(true) == true ? "[" + ChatFormatting.DARK_BLUE + get_ping(entity) + Bope.r + "]" : "";
+			String tag  = ping + life + name;
 
 			GlStateManager.pushMatrix();
 

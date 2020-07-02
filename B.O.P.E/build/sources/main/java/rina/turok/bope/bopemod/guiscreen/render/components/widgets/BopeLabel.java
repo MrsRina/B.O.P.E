@@ -190,10 +190,10 @@ public class BopeLabel extends BopeAbstractWidget {
 	}
 
 	@Override
-	public void render(int master_y, int separe, int mx, int my) {
+	public void render(int master_y, int separate, int mx, int my) {
 		this.smoth = Bope.get_setting_manager().get_setting_with_tag("GUISmothFont").get_value(true);
 
-		set_width(this.master.get_width() - separe);
+		set_width(this.master.get_width() - separate);
 
 		String zbob = "rina";
 

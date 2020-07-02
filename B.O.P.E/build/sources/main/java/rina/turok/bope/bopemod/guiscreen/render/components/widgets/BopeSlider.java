@@ -166,10 +166,10 @@ public class BopeSlider extends BopeAbstractWidget {
 	}
 
 	@Override
-	public void render(int master_y, int separe, int absolute_x, int absolute_y) {
+	public void render(int master_y, int separate, int absolute_x, int absolute_y) {
 		this.smoth = Bope.get_setting_manager().get_setting_with_tag("GUISmothFont").get_value(true);
 
-		set_width(this.master.get_width() - separe);
+		set_width(this.master.get_width() - separate);
 
 		this.save_y = this.y + master_y;
 
@@ -210,6 +210,6 @@ public class BopeSlider extends BopeAbstractWidget {
 		BopeDraw.draw_rect(this.x, this.save_y, this.x + (this.width) * (this.setting.get_value(1) - this.setting.get_min(1)) / (this.setting.get_max(1) - this.setting.get_min(1)), this.save_y + this.height, bg_r, bg_g, bg_b, bg_a);
 
 		BopeDraw.draw_string(this.slider_name, this.x + 2, this.save_y, ns_r, ns_g, ns_b, this.smoth);
-		BopeDraw.draw_string(slider_value, this.x + this.width - separe - font.get_string_width(slider_value, this.smoth) + 2, this.save_y, ns_r, ns_g, ns_b, this.smoth);
+		BopeDraw.draw_string(slider_value, this.x + this.width - separate - font.get_string_width(slider_value, this.smoth) + 2, this.save_y, ns_r, ns_g, ns_b, this.smoth);
 	}
 }

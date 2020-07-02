@@ -181,10 +181,10 @@ public class BopeButtonBind extends BopeAbstractWidget {
 	}
 
 	@Override
-	public void render(int master_y, int separe, int absolute_x, int absolute_y) {
+	public void render(int master_y, int separate, int absolute_x, int absolute_y) {
 		this.smoth = Bope.get_setting_manager().get_setting_with_tag("GUISmothFont").get_value(true);
 
-		set_width(this.master.get_width() - separe);
+		set_width(this.master.get_width() - separate);
 
 		float[] tick_color = {
 			(System.currentTimeMillis() % (360 * 32)) / (360f * 32)

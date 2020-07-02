@@ -68,7 +68,7 @@ public class BopeFrame {
 		this.x = 10;
 		this.y = 10;
 
-		this.width  = 100 + 6;
+		this.width  = 100;
 		this.height = 25;
 
 		this.category = category;
@@ -293,7 +293,7 @@ public class BopeFrame {
 		}
 	}
 
-	public void render(int mx, int my) {
+	public void render(int mx, int my, int separate) {
 		this.smoth = Bope.get_setting_manager().get_setting_with_tag("GUISmothFont").get_value(true);
 
 		float[] tick_color = {
@@ -337,9 +337,9 @@ public class BopeFrame {
 		}
 
 		for (BopeModuleButton buttons : this.module_button) {
-			buttons.set_x(this.x + 2);
+			buttons.set_x(this.x + separate);
 
-			buttons.render(mx, my, 2);
+			buttons.render(mx, my, separate);
 		}
 
 		tick_color[0] += 1;

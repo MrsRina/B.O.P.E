@@ -63,5 +63,5 @@ public abstract class BopeAbstractWidget {
 	public void release(int mx, int my, int mouse) {}
 
 	// Render abstract.
-	public void render(int master_y, int separe, int x, int y) {}
+	public void render(int master_y, int separate, int x, int y) {}
 }

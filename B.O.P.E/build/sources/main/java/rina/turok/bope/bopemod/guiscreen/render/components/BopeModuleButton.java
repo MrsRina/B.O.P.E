@@ -276,10 +276,10 @@ public class BopeModuleButton {
 		this.master.does_can(true);
 	}
 
-	public void render(int mx, int my, int separe) {
+	public void render(int mx, int my, int separate) {
 		this.smoth = Bope.get_setting_manager().get_setting_with_tag("GUISmothFont").get_value(true);
 
-		set_width(this.master.get_width() - separe);
+		set_width(this.master.get_width() - separate);
 
 		this.save_y = this.y + this.master.get_y() - 10;
 
@@ -297,11 +297,11 @@ public class BopeModuleButton {
 		int bd_b = Bope.click_gui.theme_widget_border_b;
 
 		if (this.module.is_active()) {
-			BopeDraw.draw_rect(this.x, this.save_y, this.x + this.width - separe, this.save_y + this.height, bg_r, bg_g, bg_b, bg_a);
+			BopeDraw.draw_rect(this.x, this.save_y, this.x + this.width - separate, this.save_y + this.height, bg_r, bg_g, bg_b, bg_a);
 
-			font.draw_string(this.module_name, this.x + separe, this.save_y, nm_r, nm_g, nm_b, this.smoth);
+			font.draw_string(this.module_name, this.x + separate, this.save_y, nm_r, nm_g, nm_b, this.smoth);
 		} else {
-			font.draw_string(this.module_name, this.x + separe, this.save_y, nm_r, nm_g, nm_b, this.smoth);
+			font.draw_string(this.module_name, this.x + separate, this.save_y, nm_r, nm_g, nm_b, this.smoth);
 		}
 
 		for (BopeAbstractWidget widgets : this.widget) {
@@ -310,7 +310,7 @@ public class BopeModuleButton {
 			boolean is_passing_in_widget = this.opened ? widgets.motion_pass(mx, my) : false;
 
 			if (motion(mx, my) || is_passing_in_widget && this.can) {
-				BopeDraw.draw_rect(this.master.get_x() - 1, this.save_y, this.master.get_width() + separe - 1, this.opened_height, bd_r, bd_g, bd_b, border_a, this.border_size, "right-left");
+				BopeDraw.draw_rect(this.master.get_x() - 1, this.save_y, this.master.get_width() + separate - 1, this.opened_height, bd_r, bd_g, bd_b, border_a, this.border_size, "right-left");
 
 				font.draw_string(this.module.get_description(), 2, 1, nm_r, nm_g, nm_b, this.smoth);
 			}
@@ -318,7 +318,7 @@ public class BopeModuleButton {
 			if (this.opened) {
 				this.opened_height = this.height + this.settings_height - 10;
 
-				widgets.render(get_save_y(), separe, mx, my);
+				widgets.render(get_save_y(), separate, mx, my);
 			} else {
 				this.opened_height = this.height;
 			}

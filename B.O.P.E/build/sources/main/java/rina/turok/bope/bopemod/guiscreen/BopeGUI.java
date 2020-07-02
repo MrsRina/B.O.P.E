@@ -187,7 +187,7 @@ public class BopeGUI extends GuiScreen {
 
 		// For draw in screen.
 		for (BopeFrame frames : this.frame) {
-			frames.render(mx, my);
+			frames.render(mx, my, 2);
 		}
 	}
 

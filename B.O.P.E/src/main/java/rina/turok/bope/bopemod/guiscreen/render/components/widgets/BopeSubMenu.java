@@ -105,10 +105,10 @@ public class BopeSubMenu {
 		}
 	}
 
-	public void render(int master_y, int mx, int my, int separe) {
+	public void render(int master_y, int mx, int my, int separate) {
 		this.save_y = this.y + master_y;
-		this.x      = this.menu.get_x() + 2 + separe;
-		this.width  = this.menu.get_width() - separe - 4;
+		this.x      = this.menu.get_x() + 2 + separate;
+		this.width  = this.menu.get_width() - separate - 4;
 		this.smoth  = Bope.get_setting_manager().get_setting_with_tag("GUISmothFont").get_value(true);
 
 		int ns_r = Bope.click_gui.theme_widget_name_r;
@@ -121,11 +121,11 @@ public class BopeSubMenu {
 		int bg_a = Bope.click_gui.theme_widget_background_a;
 
 		if (motion(mx, my) || this.name.equals(this.menu.get_master().get_setting().get_current_value())) {
-			BopeDraw.draw_rect(this.x, this.save_y, this.x + this.width - separe, this.save_y + this.height, bg_r, bg_g, bg_b, bg_a);
+			BopeDraw.draw_rect(this.x, this.save_y, this.x + this.width - separate, this.save_y + this.height, bg_r, bg_g, bg_b, bg_a);
 
-			BopeDraw.draw_string(this.name, this.x + separe, this.save_y, ns_r, ns_r, ns_r, this.smoth);
+			BopeDraw.draw_string(this.name, this.x + separate, this.save_y, ns_r, ns_r, ns_r, this.smoth);
 		} else {
-			BopeDraw.draw_string(this.name, this.x + separe, this.save_y, ns_r, ns_r, ns_r, this.smoth);
+			BopeDraw.draw_string(this.name, this.x + separate, this.save_y, ns_r, ns_r, ns_r, this.smoth);
 		}
 	}
 }

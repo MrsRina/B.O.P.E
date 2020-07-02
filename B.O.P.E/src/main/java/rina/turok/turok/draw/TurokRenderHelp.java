@@ -2,6 +2,7 @@ package rina.turok.turok.draw;
 
 import net.minecraft.client.renderer.vertex.DefaultVertexFormats;
 import net.minecraft.client.renderer.GlStateManager;
+import net.minecraft.client.renderer.RenderGlobal;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.client.renderer.*;
 

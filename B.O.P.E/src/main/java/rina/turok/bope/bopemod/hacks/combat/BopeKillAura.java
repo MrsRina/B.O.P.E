@@ -76,7 +76,7 @@ public class BopeKillAura extends BopeModule {
 	}
 
 	public void who_attack(Entity entity) {
-		if ((entity instanceof EntityPlayer && player.get_value(true)) || (entity instanceof IMob && hostile.get_value(true))) {
+		if ((entity instanceof EntityPlayer && player.get_value(true) && !Bope.get_friend_manager().is_friend(entity.getName())) || (entity instanceof IMob && hostile.get_value(true))) {
 			if (mc.player.getHeldItemMainhand().getItem() instanceof ItemSword && sword.get_value(true)) {
 				attack_entity(entity);
 			} else if (!sword.get_value(true)) {

@@ -30,13 +30,13 @@ public class BopeHelp extends BopeCommand {
 		}
 
 		if (message.length > 2) {
-			BopeMessage.send_client_error_message(current_prefix() + "help list/command");
+			BopeMessage.send_client_error_message("help list/command");
 
 			return true;
 		}
 
 		if (type.equals("null")) {
-			BopeMessage.send_client_error_message(current_prefix() + "help list/command");
+			BopeMessage.send_client_error_message("help list/command");
 
 			return true;
 		}
@@ -51,9 +51,9 @@ public class BopeHelp extends BopeCommand {
 				count++;
 
 				if (count >= size) {
-					commands_names.append(commands.get_name() + ".");
+					commands_names.append(Bope.dg + commands.get_name() + Bope.r + ".");
 				} else {
-					commands_names.append(commands.get_name() + ", ");
+					commands_names.append(Bope.dg + commands.get_name() + Bope.r + ", ");
 				}
 			}
 
@@ -70,7 +70,9 @@ public class BopeHelp extends BopeCommand {
 			return true;
 		}
 
-		BopeMessage.send_client_message(command_requested.get_name() + " - " + command_requested.get_description());
+		String upper_case_name = command_requested.get_name();
+
+		BopeMessage.send_client_message(Bope.dg + upper_case_name.toUpperCase() + Bope.r + " " + command_requested.get_description());
 
 		return true;
 	}

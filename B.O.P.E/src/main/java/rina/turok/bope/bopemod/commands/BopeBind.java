@@ -35,19 +35,19 @@ public class BopeBind extends BopeCommand {
 		}
 
 		if (message.length > 3) {
-			BopeMessage.send_client_error_message(current_prefix() + "bind module key");
+			BopeMessage.send_client_error_message("bind module key");
 
 			return true;
 		}
 
 		if (module.equals("null")) {
-			BopeMessage.send_client_error_message(current_prefix() + "bind module key");
+			BopeMessage.send_client_error_message("bind module key");
 
 			return true;
 		}
 
 		if (key.equals("null")) {
-			BopeMessage.send_client_error_message(current_prefix() + "bind module key");
+			BopeMessage.send_client_error_message("bind module key");
 
 			return true;
 		}
@@ -65,7 +65,7 @@ public class BopeBind extends BopeCommand {
 		if (key.equalsIgnoreCase("NONE")) {
 			module_requested.set_bind(0);
 
-			BopeMessage.send_client_message(module_requested.get_tag() + " is bound to None.");
+			BopeMessage.send_client_message(Bope.dg + module_requested.get_tag() + Bope.r + " is bound to " + Bope.g + "none");
 
 			return true;
 		}
@@ -86,7 +86,7 @@ public class BopeBind extends BopeCommand {
 
 		module_requested.set_bind(new_bind);
 
-		BopeMessage.send_client_message(module_requested.get_tag() +  " is bound to " + module_requested.get_bind(""));
+		BopeMessage.send_client_message(Bope.dg + module_requested.get_tag() + Bope.r  + " is bound to " + Bope.g + module_requested.get_bind(""));
 
 		return true;
 	}

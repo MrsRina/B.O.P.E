@@ -45,7 +45,7 @@ public class BopeModule {
 	public int bind;
 
 	public boolean state_module;
-	public boolean toggle_message;
+	public boolean alert_message;
 	public boolean widget_usage;
 	public boolean show_arraylist;
 
@@ -56,7 +56,7 @@ public class BopeModule {
 		this.tag            = "";
 		this.description    = "";
 		this.bind           = -1;
-		this.toggle_message = true;
+		this.alert_message  = true;
 		this.widget_usage   = false;
 		this.show_arraylist = true;
 
@@ -69,7 +69,7 @@ public class BopeModule {
 		this.tag            = "";
 		this.description    = "";
 		this.bind           = -1;
-		this.toggle_message = true;
+		this.alert_message  = true;
 		this.widget_usage   = false;
 		this.show_arraylist = to_show;
 
@@ -87,8 +87,8 @@ public class BopeModule {
 		this.bind = Keyboard.getKeyIndex(key.toLowerCase());
 	}
 
-	public void set_if_can_send_message_toggle(boolean value) {
-		this.toggle_message = value;
+	public void alert(boolean value) {
+		this.alert_message = value;
 	}
 
 	public void set_usage_widget(boolean value) {
@@ -144,8 +144,8 @@ public class BopeModule {
 		return this.category;
 	}
 
-	public boolean can_send_message_when_toggle() {
-		return this.toggle_message;
+	public boolean alert() {
+		return this.alert_message;
 	}
 
 	public void set_disable() {
@@ -173,8 +173,8 @@ public class BopeModule {
 			}
 		}
 
-		if (!(this.tag.equals("GUI") || this.tag.equals("HUD")) && this.toggle_message) {
-			BopeMessage.toggle_message(this);
+		if (!(this.tag.equals("GUI") || this.tag.equals("HUD")) && this.alert_message) {
+			BopeMessage.alert_message(this);
 		}
 	}
 

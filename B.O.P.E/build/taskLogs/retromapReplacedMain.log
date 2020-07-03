@@ -1,12 +1,12 @@
-Processing 122 files
+Processing 121 files
 Start Processing: rina/turok/bope/Bope.java
 New Key: class net/minecraftforge/fml/common/Mod
 New Key: class net/minecraftforge/fml/common/Mod
-Rename method net/minecraft/client/Minecraft/getMinecraft ()Lnet/minecraft/client/Minecraft;[5894,5906]::getMinecraft->func_71410_x
-Rename field net/minecraft/client/Minecraft/player[5909,5915]::player->field_71439_g
-Rename method net/minecraft/client/Minecraft/getMinecraft ()Lnet/minecraft/client/Minecraft;[5966,5978]::getMinecraft->func_71410_x
-Rename field net/minecraft/client/Minecraft/player[5981,5987]::player->field_71439_g
-Rename method net/minecraft/command/ICommandSender/getName ()Ljava/lang/String;[5995,6002]::getName->func_70005_c_
+Rename method net/minecraft/client/Minecraft/getMinecraft ()Lnet/minecraft/client/Minecraft;[6780,6792]::getMinecraft->func_71410_x
+Rename field net/minecraft/client/Minecraft/player[6795,6801]::player->field_71439_g
+Rename method net/minecraft/client/Minecraft/getMinecraft ()Lnet/minecraft/client/Minecraft;[6852,6864]::getMinecraft->func_71410_x
+Rename field net/minecraft/client/Minecraft/player[6867,6873]::player->field_71439_g
+Rename method net/minecraft/command/ICommandSender/getName ()Ljava/lang/String;[6881,6888]::getName->func_70005_c_
 Import: net.minecraftforge.fml.common.event.FMLInitializationEvent
 Import: com.mojang.realmsclient.gui.ChatFormatting
 Import: net.minecraftforge.fml.common.Mod
@@ -83,16 +83,16 @@ End  Processing: rina/turok/bope/bopemod/BopeFriend.java
 
 Start Processing: rina/turok/bope/bopemod/BopeMessage.java
 Rename method net/minecraft/client/Minecraft/getMinecraft ()Lnet/minecraft/client/Minecraft;[565,577]::getMinecraft->func_71410_x
-Rename field net/minecraft/client/Minecraft/player[1079,1085]::player->field_71439_g
-Rename field net/minecraft/client/Minecraft/player[1110,1116]::player->field_71439_g
-Rename field net/minecraft/client/entity/EntityPlayerSP/connection[1124,1134]::connection->field_71174_a
-Rename method net/minecraft/client/network/NetHandlerPlayClient/sendPacket (Lnet/minecraft/network/Packet;)V[1138,1148]::sendPacket->func_147297_a
-Rename field net/minecraft/client/Minecraft/player[1256,1262]::player->field_71439_g
-Rename field net/minecraft/client/Minecraft/player[1287,1293]::player->field_71439_g
-Rename method net/minecraft/command/ICommandSender/sendMessage (Lnet/minecraft/util/text/ITextComponent;)V[1301,1312]::sendMessage->func_145747_a
+Rename field net/minecraft/client/Minecraft/player[853,859]::player->field_71439_g
+Rename field net/minecraft/client/Minecraft/player[884,890]::player->field_71439_g
+Rename field net/minecraft/client/entity/EntityPlayerSP/connection[898,908]::connection->field_71174_a
+Rename method net/minecraft/client/network/NetHandlerPlayClient/sendPacket (Lnet/minecraft/network/Packet;)V[912,922]::sendPacket->func_147297_a
+Rename field net/minecraft/client/Minecraft/player[1030,1036]::player->field_71439_g
+Rename field net/minecraft/client/Minecraft/player[1061,1067]::player->field_71439_g
+Rename method net/minecraft/command/ICommandSender/sendMessage (Lnet/minecraft/util/text/ITextComponent;)V[1075,1086]::sendMessage->func_145747_a
 FOUND CONSTR method rina/turok/bope/bopemod/BopeMessage/ChatMessage/ChatMessage (Ljava/lang/String;)V rina/turok/bope/bopemod/BopeMessage/ChatMessage
-Rename method net/minecraft/util/text/ITextComponent/getUnformattedComponentText ()Ljava/lang/String;[2256,2283]::getUnformattedComponentText->func_150261_e
-Rename method net/minecraft/util/text/ITextComponent/createCopy ()Lnet/minecraft/util/text/ITextComponent;[2347,2357]::createCopy->func_150259_f
+Rename method net/minecraft/util/text/ITextComponent/getUnformattedComponentText ()Ljava/lang/String;[1951,1978]::getUnformattedComponentText->func_150261_e
+Rename method net/minecraft/util/text/ITextComponent/createCopy ()Lnet/minecraft/util/text/ITextComponent;[2042,2052]::createCopy->func_150259_f
 Import: net.minecraft.network.play.client.CPacketChatMessage
 Import: net.minecraft.util.text.TextComponentBase
 Import: net.minecraft.util.text.ITextComponent
@@ -105,7 +105,7 @@ Adding 1 imports
 End  Processing: rina/turok/bope/bopemod/BopeMessage.java
 
 Start Processing: rina/turok/bope/bopemod/BopeModule.java
-Rename method net/minecraft/client/Minecraft/getMinecraft ()Lnet/minecraft/client/Minecraft;[1110,1122]::getMinecraft->func_71410_x
+Rename method net/minecraft/client/Minecraft/getMinecraft ()Lnet/minecraft/client/Minecraft;[1109,1121]::getMinecraft->func_71410_x
 FOUND CONSTR method rina/turok/bope/bopemod/BopeModule/BopeModule (Lrina/turok/bope/bopemod/hacks/BopeCategory;)V rina/turok/bope/bopemod/BopeModule
 FOUND CONSTR method rina/turok/bope/bopemod/BopeModule/BopeModule (Lrina/turok/bope/bopemod/hacks/BopeCategory;Z)V rina/turok/bope/bopemod/BopeModule
 Import: net.minecraftforge.fml.client.registry.ClientRegistry
@@ -137,17 +137,19 @@ End  Processing: rina/turok/bope/bopemod/commands/BopeBind.java
 
 Start Processing: rina/turok/bope/bopemod/commands/BopeFOV.java
 FOUND CONSTR method rina/turok/bope/bopemod/commands/BopeFOV/BopeFOV ()V rina/turok/bope/bopemod/commands/BopeFOV
-Rename field net/minecraft/client/Minecraft/gameSettings[1009,1021]::gameSettings->field_71474_y
-Rename field net/minecraft/client/settings/GameSettings/fovSetting[1023,1033]::fovSetting->field_74334_X
+Rename field net/minecraft/client/Minecraft/gameSettings[971,983]::gameSettings->field_71474_y
+Rename field net/minecraft/client/settings/GameSettings/fovSetting[985,995]::fovSetting->field_74334_X
 Import: rina.turok.bope.bopemod.BopeMessage
 Import: rina.turok.bope.bopemod.BopeCommand
+Adding 1 imports
+        rina.turok.bope.Bope
 End  Processing: rina/turok/bope/bopemod/commands/BopeFOV.java
 
 Start Processing: rina/turok/bope/bopemod/commands/BopeFriendC.java
 FOUND CONSTR method rina/turok/bope/bopemod/commands/BopeFriendC/BopeFriendC ()V rina/turok/bope/bopemod/commands/BopeFriendC
-Rename method net/minecraft/client/Minecraft/getConnection ()Lnet/minecraft/client/network/NetHandlerPlayClient;[2335,2348]::getConnection->func_147114_u
-Rename method net/minecraft/client/network/NetHandlerPlayClient/getPlayerInfoMap ()Ljava/util/Collection;[2351,2367]::getPlayerInfoMap->func_175106_d
-Rename method net/minecraft/client/network/NetworkPlayerInfo/getGameProfile ()Lcom/mojang/authlib/GameProfile;[3480,3494]::getGameProfile->func_178845_a
+Rename method net/minecraft/client/Minecraft/getConnection ()Lnet/minecraft/client/network/NetHandlerPlayClient;[2278,2291]::getConnection->func_147114_u
+Rename method net/minecraft/client/network/NetHandlerPlayClient/getPlayerInfoMap ()Ljava/util/Collection;[2294,2310]::getPlayerInfoMap->func_175106_d
+Rename method net/minecraft/client/network/NetworkPlayerInfo/getGameProfile ()Lcom/mojang/authlib/GameProfile;[3476,3490]::getGameProfile->func_178845_a
 Import: net.minecraft.client.network.NetworkPlayerInfo
 Import: net.minecraft.client.Minecraft
 Adding 6 imports
@@ -161,31 +163,21 @@ End  Processing: rina/turok/bope/bopemod/commands/BopeFriendC.java
 
 Start Processing: rina/turok/bope/bopemod/commands/BopeFriends.java
 FOUND CONSTR method rina/turok/bope/bopemod/commands/BopeFriends/BopeFriends ()V rina/turok/bope/bopemod/commands/BopeFriends
-Import: com.mojang.realmsclient.gui.ChatFormatting
-Adding 4 imports
+Import: rina.turok.bope.bopemod.BopeMessage
+Import: rina.turok.bope.bopemod.BopeCommand
+Import: rina.turok.bope.bopemod.BopeFriend
+Adding 1 imports
         rina.turok.bope.Bope
-        rina.turok.bope.bopemod.BopeCommand
-        rina.turok.bope.bopemod.BopeFriend
-        rina.turok.bope.bopemod.BopeMessage
 End  Processing: rina/turok/bope/bopemod/commands/BopeFriends.java
 
 Start Processing: rina/turok/bope/bopemod/commands/BopeHelp.java
 FOUND CONSTR method rina/turok/bope/bopemod/commands/BopeHelp/BopeHelp ()V rina/turok/bope/bopemod/commands/BopeHelp
 Import: rina.turok.bope.bopemod.commands.BopeListCommand
-Adding 2 imports
-        rina.turok.bope.bopemod.BopeCommand
-        rina.turok.bope.bopemod.BopeMessage
-End  Processing: rina/turok/bope/bopemod/commands/BopeHelp.java
-
-Start Processing: rina/turok/bope/bopemod/commands/BopeLabel.java
-FOUND CONSTR method rina/turok/bope/bopemod/commands/BopeLabel/BopeLabel ()V rina/turok/bope/bopemod/commands/BopeLabel
-Import: rina.turok.bope.bopemod.guiscreen.settings.BopeSetting
-Adding 4 imports
+Adding 3 imports
         rina.turok.bope.Bope
         rina.turok.bope.bopemod.BopeCommand
         rina.turok.bope.bopemod.BopeMessage
-        rina.turok.bope.bopemod.BopeModule
-End  Processing: rina/turok/bope/bopemod/commands/BopeLabel.java
+End  Processing: rina/turok/bope/bopemod/commands/BopeHelp.java
 
 Start Processing: rina/turok/bope/bopemod/commands/BopeListCommand.java
 FOUND CONSTR method rina/turok/bope/bopemod/commands/BopeListCommand/BopeListCommand (Lnet/minecraft/util/text/Style;)V rina/turok/bope/bopemod/commands/BopeListCommand
@@ -209,11 +201,10 @@ End  Processing: rina/turok/bope/bopemod/commands/BopePrefix.java
 
 Start Processing: rina/turok/bope/bopemod/commands/BopeSettings.java
 FOUND CONSTR method rina/turok/bope/bopemod/commands/BopeSettings/BopeSettings ()V rina/turok/bope/bopemod/commands/BopeSettings
-Import: com.mojang.realmsclient.gui.ChatFormatting
-Adding 3 imports
+Import: rina.turok.bope.bopemod.BopeCommand
+Import: rina.turok.bope.bopemod.BopeMessage
+Adding 1 imports
         rina.turok.bope.Bope
-        rina.turok.bope.bopemod.BopeCommand
-        rina.turok.bope.bopemod.BopeMessage
 End  Processing: rina/turok/bope/bopemod/commands/BopeSettings.java
 
 Start Processing: rina/turok/bope/bopemod/commands/BopeToggle.java

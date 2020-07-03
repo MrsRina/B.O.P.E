@@ -26,14 +26,11 @@ import rina.turok.bope.Bope;
 public class BopeMessage {
 	public static Minecraft mc = Minecraft.getMinecraft();
 
-	public static ChatFormatting db = ChatFormatting.DARK_BLUE;
-	public static ChatFormatting dg = ChatFormatting.DARK_GRAY;
-
-	public static void toggle_message(BopeModule module) {
+	public static void alert_message(BopeModule module) {
 		if (module.is_active()) {
-			client_message(dg + "[" + db + module.get_name() + dg + "] > " + ChatFormatting.DARK_GREEN + "True.");
+			send_client_message(Bope.dg + module.get_tag());
 		} else {
-			client_message(dg + "[" + db + module.get_name() + dg + "] < " + ChatFormatting.RED + "False.");
+			send_client_message(Bope.re + module.get_tag());
 		}
 	}
 
@@ -50,13 +47,14 @@ public class BopeMessage {
 	}
 
 	public static void send_client_message(String message) {
-		client_message(ChatFormatting.DARK_BLUE + Bope.BOPE_NAME + ChatFormatting.GRAY + " > " + message);
+		client_message(Bope.g + "B.O.P.E " + Bope.r + message);
 
 		Bope.send_client_log(" > " +  message);
 	}
 
 	public static void send_client_error_message(String message) {
-		client_message(ChatFormatting.RED + Bope.BOPE_NAME + ChatFormatting.GRAY +  " < " + message);
+		client_message(Bope.g + "B.O.P.E " + Bope.re + message);
+
 		Bope.send_client_log(" < " +  message);
 	}
 

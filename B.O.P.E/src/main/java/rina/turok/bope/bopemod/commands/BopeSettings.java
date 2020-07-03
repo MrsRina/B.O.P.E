@@ -1,7 +1,5 @@
 package rina.turok.bope.bopemod.commands;
 
-import com.mojang.realmsclient.gui.ChatFormatting;
-
 // Data.
 import rina.turok.bope.bopemod.BopeCommand;
 import rina.turok.bope.bopemod.BopeMessage;
@@ -29,12 +27,10 @@ public class BopeSettings extends BopeCommand {
 		}
 
 		if (what.equals("null")) {
-			BopeMessage.send_client_error_message(current_prefix() + "settings save/load");
+			BopeMessage.send_client_error_message("settings save/load");
 
 			return true;
 		}
-
-		ChatFormatting c = ChatFormatting.GRAY;
 
 		if (what.equalsIgnoreCase("save")) {
 			Bope.get_config_manager().save_values();
@@ -42,13 +38,13 @@ public class BopeSettings extends BopeCommand {
 			Bope.get_config_manager().save_client();
 			Bope.get_config_manager().save_friends();
 
-			BopeMessage.send_client_message(ChatFormatting.GREEN + "Successfully " + c + "saved!");
+			BopeMessage.send_client_message(Bope.dg + "Successfully " + Bope.r + "saved!");
 		} else if (what.equalsIgnoreCase("load")) {
 			Bope.get_config_manager().load();
 
-			BopeMessage.send_client_message(ChatFormatting.GREEN + "Successfully " + c + "loaded!");
+			BopeMessage.send_client_message(Bope.dg + "Successfully " + Bope.r + "loaded!");
 		} else {
-			BopeMessage.send_client_error_message(current_prefix() + "settings <save/load>");
+			BopeMessage.send_client_error_message("settings save/load");
 
 			return true;
 		}

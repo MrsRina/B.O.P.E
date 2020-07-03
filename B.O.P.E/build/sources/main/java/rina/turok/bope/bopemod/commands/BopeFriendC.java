@@ -64,19 +64,19 @@ public class BopeFriendC extends BopeCommand {
 		}
 
 		if (message.length > 3) {
-			BopeMessage.send_client_error_message(current_prefix() + "friend add/new/rem/remove/del/delete name");
+			BopeMessage.send_client_error_message("friend add/new/rem/remove/del/delete name");
 
 			return true;
 		}
 
 		if (type.equals("null")) {
-			BopeMessage.send_client_error_message(current_prefix() + "friend add/new/rem/remove/del/delete name");
+			BopeMessage.send_client_error_message("friend add/new/rem/remove/del/delete name");
 
 			return true;
 		}
 
 		if (friend.equals("null")) {
-			BopeMessage.send_client_error_message(current_prefix() + "friend add/new/rem/remove/del/delete name");
+			BopeMessage.send_client_error_message("friend add/new/rem/remove/del/delete name");
 			
 			return true;
 		}
@@ -108,13 +108,13 @@ public class BopeFriendC extends BopeCommand {
 					BopeMessage.send_client_message("Already added as friend.");
 
 					return true;
+				} else {
+					Bope.get_friend_manager().add_friend(friend);
+
+					BopeMessage.send_client_message("Added " + Bope.dg + friend + Bope.r + " as friend.");
+
+					return true;
 				}
-
-				Bope.get_friend_manager().add_friend(friend);
-
-				BopeMessage.send_client_message("Added " + friend + " as friend.");
-
-				return true;
 			}
 		} else {
 			BopeFriend friend_requested = Bope.get_friend_manager().get_friend_with_name(friend);
@@ -126,7 +126,7 @@ public class BopeFriendC extends BopeCommand {
 			} else {
 				Bope.get_friend_manager().remove_friend(friend_requested);
 
-				BopeMessage.send_client_message("Removed " + friend + " :(.");
+				BopeMessage.send_client_message("Removed " + Bope.re + friend + Bope.r + " :(.");
 
 				return  true;
 			}

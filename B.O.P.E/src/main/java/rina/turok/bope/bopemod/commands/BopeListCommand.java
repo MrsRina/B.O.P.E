@@ -40,7 +40,6 @@ public class BopeListCommand {
 		add_command(new BopeFriendC());
 		add_command(new BopePrefix());
 		add_command(new BopeToggle());
-		add_command(new BopeLabel());
 		add_command(new BopeBind());
 		add_command(new BopeHelp());
 		add_command(new BopeFOV());

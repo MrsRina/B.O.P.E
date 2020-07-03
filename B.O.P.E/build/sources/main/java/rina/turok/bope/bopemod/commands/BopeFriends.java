@@ -1,7 +1,5 @@
 package rina.turok.bope.bopemod.commands;
 
-import com.mojang.realmsclient.gui.ChatFormatting;
-
 // Data.
 import rina.turok.bope.bopemod.BopeMessage;
 import rina.turok.bope.bopemod.BopeCommand;
@@ -24,7 +22,7 @@ public class BopeFriends extends BopeCommand {
 
 	public boolean get_message(String[] message) {
 		if (message.length > 1) {
-			BopeMessage.send_client_error_message(current_prefix() + "friends");
+			BopeMessage.send_client_error_message("friends");
 
 			return true;
 		}
@@ -33,18 +31,18 @@ public class BopeFriends extends BopeCommand {
 			BopeMessage.send_client_message("No friends :(");
 		}
 
-		StringBuilder names = new StringBuilder();
-
 		int count = 0;
 		int size  = Bope.get_friend_manager().get_array_friends().size();
+
+		StringBuilder names = new StringBuilder();
 
 		for (BopeFriend friends : Bope.get_friend_manager().get_array_friends()) {
 			count++;
 
 			if (count >= size) {
-				names.append(ChatFormatting.GREEN + friends.get_name() + ".");
+				names.append(Bope.dg + friends.get_name() + Bope.r + ".");
 			} else {
-				names.append(ChatFormatting.GREEN + friends.get_name() + ", ");
+				names.append(Bope.dg + friends.get_name() + Bope.r + ", ");
 			}
 		}
 

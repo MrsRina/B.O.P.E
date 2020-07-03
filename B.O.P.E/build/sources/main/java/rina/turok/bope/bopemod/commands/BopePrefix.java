@@ -27,20 +27,20 @@ public class BopePrefix extends BopeCommand {
 		}
 
 		if (message.length > 2) {
-			BopeMessage.send_client_error_message(current_prefix() + "prefix character");
+			BopeMessage.send_client_error_message("prefix character");
 
 			return true;
 		}
 
 		if (prefix.equals("null")) {
-			BopeMessage.send_client_error_message(current_prefix() + "prefix character");
+			BopeMessage.send_client_error_message("prefix character");
 
 			return true;
 		}
 
 		Bope.get_instance().command_manager.set_prefix(prefix);
 
-		BopeMessage.send_client_message("The new prefix is " + prefix);
+		BopeMessage.send_client_message("The new prefix is " + Bope.g + prefix);
 
 		return true;
 	}

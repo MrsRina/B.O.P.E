@@ -91,8 +91,23 @@ public class Bope {
 	public static Turok turok;
 
 	// Strings detail.
-	public static ChatFormatting g = ChatFormatting.GRAY;
-	public static ChatFormatting r = ChatFormatting.RESET;
+	public static ChatFormatting r  = ChatFormatting.RESET;
+	public static ChatFormatting ba = ChatFormatting.BLACK;
+	public static ChatFormatting re = ChatFormatting.RED;
+	public static ChatFormatting aq = ChatFormatting.AQUA;
+	public static ChatFormatting bl = ChatFormatting.BLUE;
+	public static ChatFormatting go = ChatFormatting.GOLD;
+	public static ChatFormatting g  = ChatFormatting.GRAY;
+	public static ChatFormatting wh = ChatFormatting.WHITE;
+	public static ChatFormatting gr = ChatFormatting.GREEN;
+	public static ChatFormatting ye = ChatFormatting.YELLOW;
+	public static ChatFormatting dr = ChatFormatting.DARK_RED;
+	public static ChatFormatting da = ChatFormatting.DARK_AQUA;
+	public static ChatFormatting db = ChatFormatting.DARK_BLUE;
+	public static ChatFormatting gg = ChatFormatting.DARK_GRAY;
+	public static ChatFormatting dg = ChatFormatting.DARK_GREEN;
+	public static ChatFormatting dp = ChatFormatting.DARK_PURPLE;
+	public static ChatFormatting lp = ChatFormatting.LIGHT_PURPLE;
 
 	@Mod.EventHandler
 	public void BopeStarting(FMLInitializationEvent event) {

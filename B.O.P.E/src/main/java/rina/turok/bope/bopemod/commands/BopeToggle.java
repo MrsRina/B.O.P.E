@@ -28,13 +28,13 @@ public class BopeToggle extends BopeCommand {
 		}
 
 		if (message.length > 2) {
-			BopeMessage.send_client_error_message(current_prefix() + "t module");
+			BopeMessage.send_client_error_message("t module");
 
 			return true;
 		}
 
 		if (module.equals("null")) {
-			BopeMessage.send_client_error_message(Bope.get_instance().command_manager.get_prefix() + "t module");
+			BopeMessage.send_client_error_message("t module");
 
 			return true;
 		}
@@ -44,7 +44,9 @@ public class BopeToggle extends BopeCommand {
 		if (module_requested != null) {
 			module_requested.toggle();
 
-			BopeMessage.send_client_message("[" + module_requested.get_tag() + "] - Toggled to " + Boolean.toString(module_requested.is_active()) + ".");
+			if (!module_requested.alert()) {
+				BopeMessage.send_client_message(module_requested.is_active() == true ? Bope.dg + module_requested.get_tag() : Bope.re + module_requested.get_tag());
+			}
 		} else {
 			BopeMessage.send_client_error_message("Module does not exist.");
 		}

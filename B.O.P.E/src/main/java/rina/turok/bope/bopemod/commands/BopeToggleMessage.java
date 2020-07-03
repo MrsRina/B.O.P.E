@@ -33,19 +33,19 @@ public class BopeToggleMessage extends BopeCommand {
 		}
 
 		if (message.length > 3) {
-			BopeMessage.send_client_error_message(current_prefix() + "t module true/on/false/off");
+			BopeMessage.send_client_error_message("alert module true/on/false/off");
 
 			return true;
 		}
 
 		if (module.equals("null")) {
-			BopeMessage.send_client_error_message(current_prefix() + "t module true/on/false/off");
+			BopeMessage.send_client_error_message("alert module true/on/false/off");
 
 			return true;
 		}
 
 		if (state.equals("null")) {
-			BopeMessage.send_client_error_message(current_prefix() + "t <ModuleName> <True/On/False/Off>");
+			BopeMessage.send_client_error_message("alert module true/on/false/off");
 
 			return true;
 		}
@@ -68,14 +68,14 @@ public class BopeToggleMessage extends BopeCommand {
 		} else if (state.equals("false") || state.equals("off")) {
 			value = false;
 		} else {
-			BopeMessage.send_client_error_message("This value does not exist. <True/On/False/Off>");
+			BopeMessage.send_client_error_message("This value does not exist.");
 
 			return true;
 		}
 
-		module_requested.set_if_can_send_message_toggle(value);
+		module_requested.alert(value);
 
-		BopeMessage.send_client_message("The actual value of " + module_requested.get_name() +  " is " + Boolean.toString(module_requested.can_send_message_when_toggle()) + ".");
+		BopeMessage.send_client_message("Alert " + (module_requested.alert() == true ? Bope.dg + module_requested.get_tag() : Bope.re + module_requested.get_tag()));
 
 		return true;
 	}

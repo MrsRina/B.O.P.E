@@ -27,13 +27,13 @@ public class BopeFOV extends BopeCommand {
 		}
 
 		if (message.length > 2) {
-			BopeMessage.send_client_error_message(current_prefix() + "fov +30 or -180");
+			BopeMessage.send_client_error_message("fov +30 or -180");
 
 			return true;
 		}
 
 		if (value.equals("null")) {
-			BopeMessage.send_client_error_message(current_prefix() + "fov +30 or -180");
+			BopeMessage.send_client_error_message("fov +30 or -180");
 
 			return true;
 		}
@@ -50,7 +50,7 @@ public class BopeFOV extends BopeCommand {
 
 		mc.gameSettings.fovSetting = clamp(value_to_float, 30.0f, 179.9f);
 
-		BopeMessage.send_client_message("Setted " + Float.toString(clamp(value_to_float, 30.0f, 179.9f)) + " to field of view.");
+		BopeMessage.send_client_message("Setted " + Bope.g + Float.toString(clamp(value_to_float, 30.0f, 179.9f)) + Bope.r + " to field of view.");
 
 		return true;
 	}

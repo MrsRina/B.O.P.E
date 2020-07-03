@@ -77,7 +77,7 @@ public class BopeModuleButton {
 		this.x = 0;
 		this.y = 0;
 
-		this.width  = master.get_width();
+		this.width  = this.master.get_width();
 		this.height = font.get_string_height(module.get_name(), this.smoth);
 
 		this.opened_height = this.height;
@@ -310,7 +310,7 @@ public class BopeModuleButton {
 			boolean is_passing_in_widget = this.opened ? widgets.motion_pass(mx, my) : false;
 
 			if (motion(mx, my) || is_passing_in_widget && this.can) {
-				BopeDraw.draw_rect(this.master.get_x() - 1, this.save_y, this.master.get_width() + separate - 1, this.opened_height, bd_r, bd_g, bd_b, border_a, this.border_size, "right-left");
+				BopeDraw.draw_rect(this.master.get_x() - 1, this.save_y, this.master.get_width() + separate, this.opened_height, bd_r, bd_g, bd_b, border_a, this.border_size, "right-left");
 
 				font.draw_string(this.module.get_description(), 2, 1, nm_r, nm_g, nm_b, this.smoth);
 			}

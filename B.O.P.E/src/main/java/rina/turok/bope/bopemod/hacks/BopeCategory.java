@@ -8,42 +8,21 @@ package rina.turok.bope.bopemod.hacks;
 *
 */
 public enum BopeCategory {
-	BOPE_CHAT     ("B.O.P.E Chat"    , "BopeChat"    , "y_sw", "y_bt"),
-	BOPE_COMBAT   ("B.O.P.E Combat"  , "BopeCombat"  , "y_sw", "y_bt"),
-	BOPE_MOVEMENT ("B.O.P.E Movement", "BopeMovement", "y_sw", "y_bt"),
-	BOPE_RENDER   ("B.O.P.E Render"  , "BopeRender"  , "y_sw", "y_bt"),
-	BOPE_EXPLOIT  ("B.O.P.E Exploit" , "BopeExploit" , "y_sw", "y_bt"),
-	BOPE_GUI      ("B.O.P.E GUI"     , "BopeGUI"     , "y_sw", "y_bt"),
-	BOPE_BETA     ("B.O.P.E Beta"    , "BopeBeta"    , "y_sw", "n_bt"),
-	BOPE_HIDDEN   ("B.O.P.E Hidden"  , "BopeHidden"  , "n_sw", "y_bt");
+	BOPE_CHAT("B.O.P.E Chat", "BopeChat"),
+	BOPE_COMBAT("B.O.P.E Combat", "BopeCombat"),
+	BOPE_MOVEMENT("B.O.P.E Movement", "BopeMovement"),
+	BOPE_RENDER("B.O.P.E Render", "BopeRender"),
+	BOPE_EXPLOIT("B.O.P.E Exploit", "BopeExploit"),
+	BOPE_MISC("B.O.P.E Misc", "BopeMisc"),
+	BOPE_PLAYER("B.O.P.E Player", "BopePlayer"),
+	BOPE_GUI("B.O.P.E GUI", "BopeGUI");
 
 	String name;
 	String tag;
 
-	String hidden;
-	String beta;
-
-	BopeCategory(String name, String tag, String hidden, String beta) {
+	BopeCategory(String name, String tag) {
 		this.name   = name;
 		this.tag    = tag;
-		this.hidden = hidden;
-		this.beta   = beta;
-	}
-
-	public boolean is_hidden() {
-		if (this.hidden.equals("n_sw")) {
-			return true;
-		}
-
-		return false;
-	}
-
-	public boolean is_beta() {
-		if (this.beta.equals("y_bt")) {
-			return true;
-		}
-
-		return false;
 	}
 
 	public String get_name() {

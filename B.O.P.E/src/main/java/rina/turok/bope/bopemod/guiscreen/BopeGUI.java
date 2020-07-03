@@ -83,10 +83,6 @@ public class BopeGUI extends GuiScreen {
 
 		// Verify the categorys in a list and replace with all frames.
 		for (BopeCategory categorys : BopeCategory.values()) {
-			if (categorys.is_hidden()) {
-				continue;
-			}
-
 			// Create variable with frame.
 			BopeFrame frames = new BopeFrame(categorys);
 
@@ -100,12 +96,7 @@ public class BopeGUI extends GuiScreen {
 			count++;
 
 			// And replace with width more 5 if not end size.
-			if (count >= size) {
-				this.frame_x = 10;
-				frames.set_y(500);
-			} else {
-				this.frame_x += frames.get_width() + 5;
-			}
+			this.frame_x += (frames.get_width() / 2);
 
 			// For just update a current.
 			this.current = frames;

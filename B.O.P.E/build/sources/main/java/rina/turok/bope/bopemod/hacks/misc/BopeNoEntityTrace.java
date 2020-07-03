@@ -1,4 +1,4 @@
-package rina.turok.bope.bopemod.hacks.exploit;
+package rina.turok.bope.bopemod.hacks.misc;
 
 // Modules.
 import rina.turok.bope.bopemod.hacks.BopeCategory;
@@ -18,7 +18,7 @@ import rina.turok.bope.Bope;
 */
 public class BopeNoEntityTrace extends BopeModule {
 	public BopeNoEntityTrace() {
-		super(BopeCategory.BOPE_EXPLOIT, false);
+		super(BopeCategory.BOPE_MISC, false);
 
 		// Info.
 		this.name        = "No Entity Trace";

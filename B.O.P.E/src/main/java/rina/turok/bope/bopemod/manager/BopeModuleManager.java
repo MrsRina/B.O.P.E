@@ -13,23 +13,16 @@ import java.util.*;
 // Events.
 import rina.turok.bope.bopemod.events.BopeEventRender;
 
-// Modules chat.
+// Modules.
 import rina.turok.bope.bopemod.hacks.chat.*;
-
-// Modules combat.
 import rina.turok.bope.bopemod.hacks.combat.*;
-
-// Modules exploit.
 import rina.turok.bope.bopemod.hacks.exploit.*;
-
-// Modules movement.
+import rina.turok.bope.bopemod.hacks.misc.*;
 import rina.turok.bope.bopemod.hacks.movement.*;
-
-// Modules render.
+import rina.turok.bope.bopemod.hacks.player.*;
 import rina.turok.bope.bopemod.hacks.render.*;
 
 // Modules.
-import rina.turok.bope.bopemod.hacks.BopeFinderModule;
 import rina.turok.bope.bopemod.hacks.BopeCategory;
 import rina.turok.bope.bopemod.hacks.BopeClickGUI;
 import rina.turok.bope.bopemod.hacks.BopeClickHUD;
@@ -81,25 +74,29 @@ public class BopeModuleManager {
 		add_module(new BopeVelocity());
 
 		// Exploit.
-		add_module(new BopeNoEntityTrace());
 		add_module(new BopeSpeedMine());
-		add_module(new BopeFreecam());
 		add_module(new BopeXCarry());
+
+		// Misc.
+		add_module(new BopeNoEntityTrace());
+		add_module(new BopeNoHurtCam());
+		add_module(new BopeSwing());
 		add_module(new BopeRPC());
 
 		// Movement.
 		add_module(new BopeNoSlowDown());
 		add_module(new BopeStrafe());
 
+		// Player.
+		add_module(new BopeFreecam());
+
 		// Render.
 		add_module(new BopeBrightness());
 		add_module(new BopeStorageESP());
 		add_module(new BopeHighlight());
-		add_module(new BopeNoHurtCam());
 		add_module(new BopeHoleColor());
 		add_module(new BopePlayerESP());
 		add_module(new BopeNameTag());
-		add_module(new BopeSwing());
 
 		// Configure.
 		array_module.sort(Comparator.comparing(BopeModule::get_name));

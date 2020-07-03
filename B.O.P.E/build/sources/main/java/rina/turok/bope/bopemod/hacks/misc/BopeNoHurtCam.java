@@ -1,4 +1,4 @@
-package rina.turok.bope.bopemod.hacks.render;
+package rina.turok.bope.bopemod.hacks.misc;
 
 // Modules.
 import rina.turok.bope.bopemod.hacks.BopeCategory;
@@ -15,7 +15,7 @@ import rina.turok.bope.bopemod.BopeModule;
 */
 public class BopeNoHurtCam extends BopeModule {
 	public BopeNoHurtCam() {
-		super(BopeCategory.BOPE_RENDER, false);
+		super(BopeCategory.BOPE_MISC, false);
 
 		// Info.
 		this.name        = "No Hurt Cam";

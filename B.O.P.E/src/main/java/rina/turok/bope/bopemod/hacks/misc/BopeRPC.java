@@ -1,4 +1,4 @@
-package rina.turok.bope.bopemod.hacks.exploit;
+package rina.turok.bope.bopemod.hacks.misc;
 
 // Modules.
 import rina.turok.bope.bopemod.hacks.BopeCategory;
@@ -31,7 +31,7 @@ public class BopeRPC extends BopeModule {
 	BopeSetting message = create("Custom", "RPCCustom", "off");
 
 	public BopeRPC() {
-		super(BopeCategory.BOPE_EXPLOIT);
+		super(BopeCategory.BOPE_MISC);
 
 		// Info.
 		this.name        = "RPC";

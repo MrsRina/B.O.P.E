@@ -1,4 +1,4 @@
-package rina.turok.bope.bopemod.hacks.render;
+package rina.turok.bope.bopemod.hacks.misc;
 
 import net.minecraft.client.entity.EntityPlayerSP;
 import net.minecraft.client.renderer.EntityRenderer;
@@ -32,7 +32,7 @@ public class BopeSwing extends BopeModule {
     BopeSetting sword = create("Only Sword", "BopeSwingOnlySword", false);
 
     public BopeSwing() {
-        super(BopeCategory.BOPE_RENDER, false);
+        super(BopeCategory.BOPE_MISC, false);
 
         // Info.
         this.name        = "Swing";

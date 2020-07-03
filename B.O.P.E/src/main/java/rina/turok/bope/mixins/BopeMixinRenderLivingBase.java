@@ -33,37 +33,20 @@ import rina.turok.bope.Bope;
 public class BopeMixinRenderLivingBase <T extends EntityLivingBase> extends BopeMixinRender<T> {
 	public final Minecraft mc = Minecraft.getMinecraft();
 
-	public boolean friend = false;
-	public boolean all    = false;
-
 	// Render.
 	@Inject(method = "doRender", at = @At("HEAD"))
 	private void doRender(T entity, double x, double y, double z, float yaw, float partial_ticks, CallbackInfo callback) {
-		if (Bope.get_module_manager().get_module_with_tag("PlayerESP").is_active() && mc.world != null) {
-			if (Bope.get_setting_manager().get_setting_with_tag("PlayerESP", "PlayerESPMode").in("Friends")) {
-				friend = true;
-				all    = false;
-			}
+		if (entity instanceof EntityPlayer && mc.player != null && mc.player.getDistance(entity) > Bope.get_setting_manager().get_setting_with_tag("PlayerESP", "PlayerESPDistanceStopRender").get_value(1)) {
+			if (Bope.get_setting_manager().get_setting_with_tag("PlayerESP", "PlayerESPMode").in("Chams") && Bope.get_module_manager().get_module_with_tag("PlayerESP").is_active()) {
+				GlStateManager.pushMatrix();
 
-			if (Bope.get_setting_manager().get_setting_with_tag("PlayerESP", "PlayerESPMode").in("All")) {
-				friend = false;
-				all    = true;
-			}
+				OpenGlHelper.setLightmapTextureCoords(OpenGlHelper.lightmapTexUnit, 240.0F, 240.0F);
 
-			if (entity instanceof EntityPlayer && mc.player.getDistance(entity) > Bope.get_setting_manager().get_setting_with_tag("PlayerESP", "PlayerESPDistanceToStopRender").get_value(1)) {
-				EntityPlayer player = (EntityPlayer) entity; 
+				glEnable(GL11.GL_POLYGON_OFFSET_FILL);
 
-				if (friend) {
-					if (Bope.get_friend_manager().is_friend(player.getName())) {
-						actual();
-					} else {
-						callback.cancel();
-					}
-				}
+				glPolygonOffset(1.0f, -1100000.0f);
 
-				if (all) {
-					actual();
-				}
+				GlStateManager.popMatrix();
 			}
 		}
 	}
@@ -71,56 +54,16 @@ public class BopeMixinRenderLivingBase <T extends EntityLivingBase> extends Bope
 	// Last render.+
 	@Inject(method = "doRender", at = @At("RETURN"))
 	private void doRenderlast(T entity, double x, double y, double z, float yaw, float partial_ticks, CallbackInfo callback) {
-		if (Bope.get_module_manager().get_module_with_tag("PlayerESP").is_active() && mc.world != null) {
-			if (Bope.get_setting_manager().get_setting_with_tag("PlayerESP", "PlayerESPMode").in("Friends")) {
-				friend = true;
-				all    = false;
-			}
+		if (entity instanceof EntityPlayer && mc.player != null && mc.player.getDistance(entity) > Bope.get_setting_manager().get_setting_with_tag("PlayerESP", "PlayerESPDistanceStopRender").get_value(1)) {
+			if (Bope.get_setting_manager().get_setting_with_tag("PlayerESP", "PlayerESPMode").in("Chams") && Bope.get_module_manager().get_module_with_tag("PlayerESP").is_active()) {
+				GlStateManager.pushMatrix();
 
-			if (Bope.get_setting_manager().get_setting_with_tag("PlayerESP", "PlayerESPMode").in("All")) {
-				friend = false;
-				all    = true;
-			}
+				glDisable(GL11.GL_POLYGON_OFFSET_FILL);
+				glPolygonOffset(1.0f, 1100000.0f);
+				glEnable(GL11.GL_TEXTURE_2D);
 
-			if (entity instanceof EntityPlayer && mc.player.getDistance(entity) > Bope.get_setting_manager().get_setting_with_tag("PlayerESP", "PlayerESPDistanceToStopRender").get_value(1)) {
-				EntityPlayer player = (EntityPlayer) entity;
-
-				if (friend) {
-					if (Bope.get_friend_manager().is_friend(player.getName())) {
-						last();
-					} else {
-						callback.cancel();
-					}
-				}
-
-				if (all) {
-					last();
-				}
+				GlStateManager.popMatrix();
 			}
 		}
-	}
-
-	// Actual.
-	public void actual() {
-		GlStateManager.pushMatrix();
-
-		OpenGlHelper.setLightmapTextureCoords(OpenGlHelper.lightmapTexUnit, 240.0F, 240.0F);
-
-		glEnable(GL11.GL_POLYGON_OFFSET_FILL);
-		glPolygonOffset(1.0f, -1100000.0f);
-
-		GlStateManager.popMatrix();
-	}
-
-
-	// Last.
-	public void last() {
-		GlStateManager.pushMatrix();
-
-		glDisable(GL11.GL_POLYGON_OFFSET_FILL);
-		glPolygonOffset(1.0f, 1100000.0f);
-		glEnable(GL11.GL_TEXTURE_2D);
-
-		GlStateManager.popMatrix();
 	}
 }

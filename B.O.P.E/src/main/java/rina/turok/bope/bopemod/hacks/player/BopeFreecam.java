@@ -1,4 +1,4 @@
-package rina.turok.bope.bopemod.hacks.exploit;
+package rina.turok.bope.bopemod.hacks.player;
 
 import net.minecraftforge.client.event.PlayerSPPushOutOfBlocksEvent;
 import net.minecraft.client.entity.EntityOtherPlayerMP;
@@ -57,7 +57,7 @@ public class BopeFreecam extends BopeModule {
 	boolean is_riding;
 
 	public BopeFreecam() {
-		super(BopeCategory.BOPE_EXPLOIT);
+		super(BopeCategory.BOPE_PLAYER);
 
 		// Info.
 		this.name        = "Freecam";

@@ -33,20 +33,37 @@ import rina.turok.bope.Bope;
 public class BopeMixinRenderLivingBase <T extends EntityLivingBase> extends BopeMixinRender<T> {
 	public final Minecraft mc = Minecraft.getMinecraft();
 
+	public boolean friend = false;
+	public boolean all    = false;
+
 	// Render.
 	@Inject(method = "doRender", at = @At("HEAD"))
 	private void doRender(T entity, double x, double y, double z, float yaw, float partial_ticks, CallbackInfo callback) {
-		if (entity instanceof EntityPlayer && mc.player != null && mc.player.getDistance(entity) > 6) {
-			if (Bope.get_setting_manager().get_setting_with_tag("PlayerESP", "PlayerESPMode").in("BOPE") && Bope.get_module_manager().get_module_with_tag("PlayerESP").is_active()) {
-				GlStateManager.pushMatrix();
+		if (Bope.get_module_manager().get_module_with_tag("PlayerESP").is_active() && mc.world != null) {
+			if (Bope.get_setting_manager().get_setting_with_tag("PlayerESP", "PlayerESPMode").in("Friends")) {
+				friend = true;
+				all    = false;
+			}
 
-				OpenGlHelper.setLightmapTextureCoords(OpenGlHelper.lightmapTexUnit, 240.0F, 240.0F);
+			if (Bope.get_setting_manager().get_setting_with_tag("PlayerESP", "PlayerESPMode").in("All")) {
+				friend = false;
+				all    = true;
+			}
 
-				glEnable(GL11.GL_POLYGON_OFFSET_FILL);
+			if (entity instanceof EntityPlayer && mc.player.getDistance(entity) > Bope.get_setting_manager().get_setting_with_tag("PlayerESP", "PlayerESPDistanceToStopRender").get_value(1)) {
+				EntityPlayer player = (EntityPlayer) entity; 
 
-				glPolygonOffset(1.0f, -1100000.0f);
+				if (friend) {
+					if (Bope.get_friend_manager().is_friend(player.getName())) {
+						actual();
+					} else {
+						callback.cancel();
+					}
+				}
 
-				GlStateManager.popMatrix();
+				if (all) {
+					actual();
+				}
 			}
 		}
 	}
@@ -54,16 +71,56 @@ public class BopeMixinRenderLivingBase <T extends EntityLivingBase> extends Bope
 	// Last render.+
 	@Inject(method = "doRender", at = @At("RETURN"))
 	private void doRenderlast(T entity, double x, double y, double z, float yaw, float partial_ticks, CallbackInfo callback) {
-		if (entity instanceof EntityPlayer && mc.player != null && mc.player.getDistance(entity) > 6) {
-			if (Bope.get_setting_manager().get_setting_with_tag("PlayerESP", "PlayerESPMode").in("BOPE") && Bope.get_module_manager().get_module_with_tag("PlayerESP").is_active()) {
-				GlStateManager.pushMatrix();
+		if (Bope.get_module_manager().get_module_with_tag("PlayerESP").is_active() && mc.world != null) {
+			if (Bope.get_setting_manager().get_setting_with_tag("PlayerESP", "PlayerESPMode").in("Friends")) {
+				friend = true;
+				all    = false;
+			}
 
-				glDisable(GL11.GL_POLYGON_OFFSET_FILL);
-				glPolygonOffset(1.0f, 1100000.0f);
-				glEnable(GL11.GL_TEXTURE_2D);
+			if (Bope.get_setting_manager().get_setting_with_tag("PlayerESP", "PlayerESPMode").in("All")) {
+				friend = false;
+				all    = true;
+			}
 
-				GlStateManager.popMatrix();
+			if (entity instanceof EntityPlayer && mc.player.getDistance(entity) > Bope.get_setting_manager().get_setting_with_tag("PlayerESP", "PlayerESPDistanceToStopRender").get_value(1)) {
+				EntityPlayer player = (EntityPlayer) entity;
+
+				if (friend) {
+					if (Bope.get_friend_manager().is_friend(player.getName())) {
+						last();
+					} else {
+						callback.cancel();
+					}
+				}
+
+				if (all) {
+					last();
+				}
 			}
 		}
+	}
+
+	// Actual.
+	public void actual() {
+		GlStateManager.pushMatrix();
+
+		OpenGlHelper.setLightmapTextureCoords(OpenGlHelper.lightmapTexUnit, 240.0F, 240.0F);
+
+		glEnable(GL11.GL_POLYGON_OFFSET_FILL);
+		glPolygonOffset(1.0f, -1100000.0f);
+
+		GlStateManager.popMatrix();
+	}
+
+
+	// Last.
+	public void last() {
+		GlStateManager.pushMatrix();
+
+		glDisable(GL11.GL_POLYGON_OFFSET_FILL);
+		glPolygonOffset(1.0f, 1100000.0f);
+		glEnable(GL11.GL_TEXTURE_2D);
+
+		GlStateManager.popMatrix();
 	}
 }

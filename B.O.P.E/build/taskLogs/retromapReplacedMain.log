@@ -2566,18 +2566,20 @@ End  Processing: rina/turok/bope/mixins/BopeMixinRender.java
 
 Start Processing: rina/turok/bope/mixins/BopeMixinRenderLivingBase.java
 Rename method net/minecraft/client/Minecraft/getMinecraft ()Lnet/minecraft/client/Minecraft;[1102,1114]::getMinecraft->func_71410_x
-Rename field net/minecraft/client/Minecraft/player[1347,1353]::player->field_71439_g
-Rename field net/minecraft/client/Minecraft/player[1375,1381]::player->field_71439_g
-Rename method net/minecraft/entity/Entity/getDistance (Lnet/minecraft/entity/Entity;)F[1389,1400]::getDistance->func_70032_d
-Rename method net/minecraft/client/renderer/GlStateManager/pushMatrix ()V[1611,1621]::pushMatrix->func_179094_E
-Rename method net/minecraft/client/renderer/OpenGlHelper/setLightmapTextureCoords (IFF)V[1648,1672]::setLightmapTextureCoords->func_77475_a
-Rename field net/minecraft/client/renderer/OpenGlHelper/lightmapTexUnit[1674,1689]::lightmapTexUnit->field_77476_b
-Rename method net/minecraft/client/renderer/GlStateManager/popMatrix ()V[1817,1826]::popMatrix->func_179121_F
-Rename field net/minecraft/client/Minecraft/player[2091,2097]::player->field_71439_g
-Rename field net/minecraft/client/Minecraft/player[2119,2125]::player->field_71439_g
-Rename method net/minecraft/entity/Entity/getDistance (Lnet/minecraft/entity/Entity;)F[2133,2144]::getDistance->func_70032_d
-Rename method net/minecraft/client/renderer/GlStateManager/pushMatrix ()V[2355,2365]::pushMatrix->func_179094_E
-Rename method net/minecraft/client/renderer/GlStateManager/popMatrix ()V[2516,2525]::popMatrix->func_179121_F
+Rename field net/minecraft/client/Minecraft/world[1455,1460]::world->field_71441_e
+Rename field net/minecraft/client/Minecraft/player[1825,1831]::player->field_71439_g
+Rename method net/minecraft/entity/Entity/getDistance (Lnet/minecraft/entity/Entity;)F[1839,1850]::getDistance->func_70032_d
+Rename method net/minecraft/command/ICommandSender/getName ()Ljava/lang/String;[2097,2104]::getName->func_70005_c_
+Rename field net/minecraft/client/Minecraft/world[2528,2533]::world->field_71441_e
+Rename field net/minecraft/client/Minecraft/player[2898,2904]::player->field_71439_g
+Rename method net/minecraft/entity/Entity/getDistance (Lnet/minecraft/entity/Entity;)F[2912,2923]::getDistance->func_70032_d
+Rename method net/minecraft/command/ICommandSender/getName ()Ljava/lang/String;[3169,3176]::getName->func_70005_c_
+Rename method net/minecraft/client/renderer/GlStateManager/pushMatrix ()V[3372,3382]::pushMatrix->func_179094_E
+Rename method net/minecraft/client/renderer/OpenGlHelper/setLightmapTextureCoords (IFF)V[3407,3431]::setLightmapTextureCoords->func_77475_a
+Rename field net/minecraft/client/renderer/OpenGlHelper/lightmapTexUnit[3433,3448]::lightmapTexUnit->field_77476_b
+Rename method net/minecraft/client/renderer/GlStateManager/popMatrix ()V[3568,3577]::popMatrix->func_179121_F
+Rename method net/minecraft/client/renderer/GlStateManager/pushMatrix ()V[3645,3655]::pushMatrix->func_179094_E
+Rename method net/minecraft/client/renderer/GlStateManager/popMatrix ()V[3798,3807]::popMatrix->func_179121_F
 Import: org.spongepowered.asm.mixin.injection.callback.CallbackInfo
 Import: org.spongepowered.asm.mixin.injection.Redirect
 Import: org.spongepowered.asm.mixin.injection.Inject

@@ -45,7 +45,8 @@ import rina.turok.bope.Bope;
 *
 */
 public class BopePlayerESP extends BopeModule {
-	BopeSetting mode = create("Mode", "PlayerESPMode", "BOPE", combobox("BOPE"));
+	BopeSetting mode = create("Mode", "PlayerESPMode", "All", combobox("Friends", "All"));
+	BopeSetting disp = create("Distance Stop Render", "PlayerESPDistanceStopRender", 6, 0, 10);
 
 	public BopePlayerESP() {
 		super(BopeCategory.BOPE_RENDER);

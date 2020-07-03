@@ -633,16 +633,40 @@ public class BopeConfigManager {
 		BOPE_JSON_FILE.close();
 	}
 
-	public void BOPE_SAVE_FRIEND() throws IOException {
+	public boolean is_valid(JsonArray array, String element) {
+		boolean valid = false;
+
+		for (JsonElement elements : array) {
+			if (elements.getAsString().equalsIgnoreCase(element)) {
+				valid = true;
+
+				break;
+			}
+		}
+
+		return valid;
+	}
+
+	public void BOPE_SAVE_FRIENDS() throws IOException {
 		Gson       BOPE_GSON   = new GsonBuilder().setPrettyPrinting().create();
 		JsonParser BOPE_PARSER = new JsonParser();
 
 		JsonObject BOPE_MAIN_JSON = new JsonObject();
 		JsonArray  BOPE_ARRAY_FRD = new JsonArray();
 
+		InputStream BOPE_JSON_FILE    = Files.newInputStream(PATH_FRIENDS);
+		JsonObject  BOPE_MAIN_FRD     = new JsonParser().parse(new InputStreamReader(BOPE_JSON_FILE)).getAsJsonObject();
+		JsonArray   BOPE_MAIN_FRIENDS = BOPE_MAIN_FRD.get("friends").getAsJsonArray();
+
 		for (BopeFriend friends : Bope.get_friend_manager().get_array_friends()) {
+			if (!is_valid(BOPE_MAIN_FRIENDS, friends.get_name())) {
+				continue;
+			}
+
 			BOPE_ARRAY_FRD.add(friends.get_name());
 		}
+
+		BOPE_JSON_FILE.close();
 
 		BOPE_MAIN_JSON.add("friends", BOPE_ARRAY_FRD);
 
@@ -741,7 +765,7 @@ public class BopeConfigManager {
 		try {
 			BOPE_VERIFY_FOLDER(PATH_FOLDER);
 
-			BOPE_SAVE_FRIEND();
+			BOPE_SAVE_FRIENDS();
 		} catch (IOException exc) {
 			exc.printStackTrace();
 		}

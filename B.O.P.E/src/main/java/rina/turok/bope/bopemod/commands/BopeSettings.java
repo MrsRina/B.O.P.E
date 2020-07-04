@@ -33,14 +33,17 @@ public class BopeSettings extends BopeCommand {
 		}
 
 		if (what.equalsIgnoreCase("save")) {
-			Bope.get_config_manager().save_values();
-			Bope.get_config_manager().save_binds();
+			Bope.get_config_manager().save_settings();
 			Bope.get_config_manager().save_client();
+			Bope.get_config_manager().save_binds();
 			Bope.get_config_manager().save_friends();
 
 			BopeMessage.send_client_message(Bope.dg + "Successfully " + Bope.r + "saved!");
 		} else if (what.equalsIgnoreCase("load")) {
-			Bope.get_config_manager().load();
+			Bope.get_config_manager().load_settings();
+			Bope.get_config_manager().load_client();
+			Bope.get_config_manager().load_binds();
+			Bope.get_config_manager().load_friends();
 
 			BopeMessage.send_client_message(Bope.dg + "Successfully " + Bope.r + "loaded!");
 		} else {

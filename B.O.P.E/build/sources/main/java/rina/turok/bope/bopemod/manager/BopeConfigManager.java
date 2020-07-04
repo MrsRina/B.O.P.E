@@ -39,29 +39,31 @@ import rina.turok.bope.Bope;
 public class BopeConfigManager {
 	public String tag;
 
-	public String BOPE_FILE_COMBOBOXS = "settings_2.bin";
-	public String BOPE_FILE_INTEGERS  = "settings_5.bin";
+	public String BOPE_FILE_COMBOBOXS = "comboboxs.txt";
+	public String BOPE_FILE_INTEGERS  = "integers.txt";
 	public String BOPE_FOLDER_CONFIG  = "B.O.P.E/";
-	public String BOPE_FILE_FRIENDS   = "friends.json";
-	public String BOPE_FILE_BUTTONS   = "settings_1.bin";
-	public String BOPE_FILE_DOUBLES   = "settings_4.bin";
+	public String BOPE_FILE_FRIENDS   = "friends.txt";
+	public String BOPE_FILE_BUTTONS   = "buttons.txt";
+	public String BOPE_FILE_DOUBLES   = "doubles.txt";
 	public String BOPE_FILE_CLIENT    = "client.json";
-	public String BOPE_FILE_LABELS    = "settings_3.bin";
+	public String BOPE_FILE_LABELS    = "labels.txt";
 	public String BOPE_FOLDER_LOG     = "logs/";
-	public String BOPE_FILE_BINDS     = "binds.json";
+	public String BOPE_FOLDER_VALUES  = "values/";
+	public String BOPE_FOLDER_MODULES = "modules/";
+	public String BOPE_FILE_BINDS     = "binds.txt";
 	public String BOPE_FILE_HUD       = "HUD.json";
 	public String BOPE_FILE_LOG       = "log";
 
 	public String BOPE_ABS_FOLDER_LOG = (BOPE_FOLDER_CONFIG + BOPE_FOLDER_LOG);
-	public String BOPE_ABS_COMBOBOXS  = (BOPE_FOLDER_CONFIG + BOPE_FILE_COMBOBOXS);
-	public String BOPE_ABS_INTEGERS   = (BOPE_FOLDER_CONFIG + BOPE_FILE_INTEGERS);
-	public String BOPE_ABS_DOUBLES    = (BOPE_FOLDER_CONFIG + BOPE_FILE_DOUBLES);
-	public String BOPE_ABS_BUTTONS    = (BOPE_FOLDER_CONFIG + BOPE_FILE_BUTTONS);
+	public String BOPE_ABS_COMBOBOXS  = (BOPE_FOLDER_CONFIG + BOPE_FOLDER_VALUES + BOPE_FILE_COMBOBOXS);
+	public String BOPE_ABS_INTEGERS   = (BOPE_FOLDER_CONFIG + BOPE_FOLDER_VALUES + BOPE_FILE_INTEGERS);
+	public String BOPE_ABS_DOUBLES    = (BOPE_FOLDER_CONFIG + BOPE_FOLDER_VALUES + BOPE_FILE_DOUBLES);
+	public String BOPE_ABS_BUTTONS    = (BOPE_FOLDER_CONFIG + BOPE_FOLDER_VALUES + BOPE_FILE_BUTTONS);
 	public String BOPE_ABS_FRIENDS    = (BOPE_FOLDER_CONFIG + BOPE_FILE_FRIENDS);
-	public String BOPE_ABS_LABELS     = (BOPE_FOLDER_CONFIG + BOPE_FILE_LABELS);
+	public String BOPE_ABS_LABELS     = (BOPE_FOLDER_CONFIG + BOPE_FOLDER_VALUES + BOPE_FILE_LABELS);
 	public String BOPE_ABS_FOLDER     = (BOPE_FOLDER_CONFIG);
 	public String BOPE_ABS_CLIENT     = (BOPE_FOLDER_CONFIG + BOPE_FILE_CLIENT);
-	public String BOPE_ABS_BINDS      = (BOPE_FOLDER_CONFIG + BOPE_FILE_BINDS);
+	public String BOPE_ABS_BINDS      = (BOPE_FOLDER_CONFIG + BOPE_FOLDER_MODULES + BOPE_FILE_BINDS);
 	public String BOPE_ABS_HUD        = (BOPE_FOLDER_CONFIG + BOPE_FILE_HUD);
 	public String BOPE_ABS_LOG        = (BOPE_ABS_FOLDER_LOG + BOPE_FILE_LOG);
 
@@ -119,386 +121,345 @@ public class BopeConfigManager {
 		file.delete();
 	}
 
-	public void BOPE_SAVE_BUTTONS() throws IOException {
-		Gson       BOPE_GSON         = new GsonBuilder().setPrettyPrinting().create();
-		JsonParser BOPE_PARSER       = new JsonParser(); 
-		JsonObject BOPE_MAIN_JSON    = new JsonObject();
-		JsonObject BOPE_MAIN_BUTTONS = new JsonObject();
+	public void BOPE_SAVE_SETTINGS() {
+		File file;
+		BufferedWriter buffer;
 
-		for (BopeSetting buttons : Bope.get_setting_manager().get_array_settings()) {
-			boolean button = false;
+		Iterator iterator;
 
-			JsonObject BOPE_BUTTON_SETTING = new JsonObject();
+		BopeSetting settings;
 
-			if (!(is(buttons, "button"))){
-				continue;
+		try {
+			BOPE_DELETE_FILES(BOPE_ABS_BUTTONS);
+			BOPE_VERIFY_FILES(PATH_BUTTONS);
+
+			file   = new File(BOPE_ABS_BUTTONS);
+			buffer = new BufferedWriter(new FileWriter(file));
+
+			iterator = Bope.get_setting_manager().get_array_settings().iterator();
+
+			while (iterator.hasNext()) {
+				settings = (BopeSetting) iterator.next();
+
+				if (is(settings, "button")) {
+					buffer.write(settings.get_tag() + ":" + settings.get_value(true) + ":" + settings.get_master().get_tag() + "\r\n");
+				}
 			}
 
-			BOPE_BUTTON_SETTING.add("master", new JsonPrimitive(buttons.get_master().get_tag()));
-			BOPE_BUTTON_SETTING.add("name",   new JsonPrimitive(buttons.get_name()));
-			BOPE_BUTTON_SETTING.add("tag",    new JsonPrimitive(buttons.get_tag()));
-			BOPE_BUTTON_SETTING.add("value",  new JsonPrimitive(buttons.get_value(button)));
-			BOPE_BUTTON_SETTING.add("type",   new JsonPrimitive(buttons.get_type()));
+			buffer.close();
+		} catch (Exception exc) {}
 
-			BOPE_MAIN_BUTTONS.add(buttons.get_tag(), BOPE_BUTTON_SETTING);
-		}
+		try {
+			BOPE_DELETE_FILES(BOPE_ABS_COMBOBOXS);
+			BOPE_VERIFY_FILES(PATH_COMBOBOXS);
 
-		BOPE_MAIN_JSON.add("buttons", BOPE_MAIN_BUTTONS);
+			file   = new File(BOPE_ABS_COMBOBOXS);
+			buffer = new BufferedWriter(new FileWriter(file));
 
-		JsonElement BOPE_MAIN_PRETTY_JSON = BOPE_PARSER.parse(BOPE_MAIN_JSON.toString());
+			iterator = Bope.get_setting_manager().get_array_settings().iterator();
 
-		String BOPE_JSON = BOPE_GSON.toJson(BOPE_MAIN_PRETTY_JSON);
+			while (iterator.hasNext()) {
+				settings = (BopeSetting) iterator.next();
 
-		BOPE_DELETE_FILES(BOPE_ABS_BUTTONS);
-		BOPE_VERIFY_FILES(PATH_BUTTONS);
+				if (is(settings, "combobox")) {
+					buffer.write(settings.get_tag() + ":" + settings.get_current_value() + ":" + settings.get_master().get_tag() + "\r\n");
+				}
+			}
 
-		OutputStreamWriter file;
+			buffer.close();
+		} catch (Exception exc) {}
 
-		file = new OutputStreamWriter(new FileOutputStream(BOPE_ABS_BUTTONS), "UTF-8");
-		file.write(BOPE_JSON);
+		try {
+			BOPE_DELETE_FILES(BOPE_ABS_LABELS);
+			BOPE_VERIFY_FILES(PATH_LABELS);
 
-		file.close();
+			file   = new File(BOPE_ABS_LABELS);
+			buffer = new BufferedWriter(new FileWriter(file));
+
+			iterator = Bope.get_setting_manager().get_array_settings().iterator();
+
+			while (iterator.hasNext()) {
+				settings = (BopeSetting) iterator.next();
+
+				if (is(settings, "label")) {
+					buffer.write(settings.get_tag() + ":" + settings.get_value("label") + ":" + settings.get_master().get_tag() + "\r\n");
+				}
+			}
+
+			buffer.close();
+		} catch (Exception exc) {}
+
+		try {
+			BOPE_DELETE_FILES(BOPE_ABS_DOUBLES);
+			BOPE_VERIFY_FILES(PATH_DOUBLES);
+
+			file   = new File(BOPE_ABS_DOUBLES);
+			buffer = new BufferedWriter(new FileWriter(file));
+
+			iterator = Bope.get_setting_manager().get_array_settings().iterator();
+
+			while (iterator.hasNext()) {
+				settings = (BopeSetting) iterator.next();
+
+				if (is(settings, "doubleslider")) {
+					buffer.write(settings.get_tag() + ":" + settings.get_value(1.0) + ":" + settings.get_master().get_tag() + "\r\n");
+				}
+			}
+
+			buffer.close();
+		} catch (Exception exc) {}
+
+		try {
+			BOPE_DELETE_FILES(BOPE_ABS_INTEGERS);
+			BOPE_VERIFY_FILES(PATH_INTEGERS);
+
+			file   = new File(BOPE_ABS_INTEGERS);
+			buffer = new BufferedWriter(new FileWriter(file));
+
+			iterator = Bope.get_setting_manager().get_array_settings().iterator();
+
+			while (iterator.hasNext()) {
+				settings = (BopeSetting) iterator.next();
+
+				if (is(settings, "integerslider")) {
+					buffer.write(settings.get_tag() + ":" + settings.get_value(1) + ":" + settings.get_master().get_tag() + "\r\n");
+				}
+			}
+
+			buffer.close();
+		} catch (Exception exc) {}
 	}
 
-	public void BOPE_SAVE_COMBOBOXS() throws IOException {
-		Gson       BOPE_GSON           = new GsonBuilder().setPrettyPrinting().create();
-		JsonParser BOPE_PARSER         = new JsonParser(); 
-		JsonObject BOPE_MAIN_JSON      = new JsonObject();
-		JsonObject BOPE_MAIN_COMBOBOXS = new JsonObject();
+	public void BOPE_LAOD_SETTINGS() {
+		File file;
+		FileInputStream input_stream;
+		DataInputStream data_stream;
+		BufferedReader buffer;
 
-		for (BopeSetting comboboxs : Bope.get_setting_manager().get_array_settings()) {
-			JsonObject BOPE_COMBOBOX_SETTING = new JsonObject();
+		String line;
+		String colune;
 
-			if (!(is(comboboxs, "combobox"))) {
-				continue;
+		String tag;
+		String value;
+		String module;
+
+		BopeSetting module_req;
+
+		try {
+			file         = new File(BOPE_ABS_BUTTONS);
+			input_stream = new FileInputStream(file.getAbsolutePath());
+			data_stream  = new DataInputStream(input_stream);
+			buffer       = new BufferedReader(new InputStreamReader(data_stream));
+
+			while ((line = buffer.readLine()) != null) {
+				colune = line.trim();
+
+				// Get values.
+				tag    = colune.split(":")[0];
+				value  = colune.split(":")[1];
+				module = colune.split(":")[2];
+
+				Bope.get_setting_manager().get_setting_with_tag(module, tag).set_value(Boolean.parseBoolean(value));
 			}
 
-			BOPE_COMBOBOX_SETTING.add("master", new JsonPrimitive(comboboxs.get_master().get_tag()));
-			BOPE_COMBOBOX_SETTING.add("name",   new JsonPrimitive(comboboxs.get_name()));
-			BOPE_COMBOBOX_SETTING.add("tag",    new JsonPrimitive(comboboxs.get_tag()));
-			BOPE_COMBOBOX_SETTING.add("value",  new JsonPrimitive(comboboxs.get_current_value()));
-			BOPE_COMBOBOX_SETTING.add("type",   new JsonPrimitive(comboboxs.get_type()));
+			buffer.close();
+		} catch (Exception exc) {}
 
-			BOPE_MAIN_COMBOBOXS.add(comboboxs.get_tag(), BOPE_COMBOBOX_SETTING);
-		}
+		try {
+			file         = new File(BOPE_ABS_COMBOBOXS);
+			input_stream = new FileInputStream(file.getAbsolutePath());
+			data_stream  = new DataInputStream(input_stream);
+			buffer       = new BufferedReader(new InputStreamReader(data_stream));
 
-		BOPE_MAIN_JSON.add("comboboxs", BOPE_MAIN_COMBOBOXS);
+			while ((line = buffer.readLine()) != null) {
+				colune = line.trim();
 
-		JsonElement BOPE_MAIN_PRETTY_JSON = BOPE_PARSER.parse(BOPE_MAIN_JSON.toString());
+				// Get values.
+				tag    = colune.split(":")[0];
+				value  = colune.split(":")[1];
+				module = colune.split(":")[2];
 
-		String BOPE_JSON = BOPE_GSON.toJson(BOPE_MAIN_PRETTY_JSON);
+				Bope.get_setting_manager().get_setting_with_tag(module, tag).set_current_value(value);
+			}
 
-		BOPE_DELETE_FILES(BOPE_ABS_COMBOBOXS);
-		BOPE_VERIFY_FILES(PATH_COMBOBOXS);
+			buffer.close();
+		} catch (Exception exc) {}
 
-		OutputStreamWriter file;
+		try {
+			file         = new File(BOPE_ABS_LABELS);
+			input_stream = new FileInputStream(file.getAbsolutePath());
+			data_stream  = new DataInputStream(input_stream);
+			buffer       = new BufferedReader(new InputStreamReader(data_stream));
 
-		file = new OutputStreamWriter(new FileOutputStream(BOPE_ABS_COMBOBOXS), "UTF-8");
-		file.write(BOPE_JSON);
+			while ((line = buffer.readLine()) != null) {
+				colune = line.trim();
 
-		file.close();
+				// Get values.
+				tag    = colune.split(":")[0];
+				value  = colune.split(":")[1];
+				module = colune.split(":")[2];
+
+				Bope.get_setting_manager().get_setting_with_tag(module, tag).set_value(value);
+			}
+
+			buffer.close();
+		} catch (Exception exc) {}
+
+		try {
+			file         = new File(BOPE_ABS_DOUBLES);
+			input_stream = new FileInputStream(file.getAbsolutePath());
+			data_stream  = new DataInputStream(input_stream);
+			buffer       = new BufferedReader(new InputStreamReader(data_stream));
+
+			while ((line = buffer.readLine()) != null) {
+				colune = line.trim();
+
+				// Get values.
+				tag    = colune.split(":")[0];
+				value  = colune.split(":")[1];
+				module = colune.split(":")[2];
+
+				Bope.get_setting_manager().get_setting_with_tag(module, tag).set_value(Double.parseDouble(value));
+			}
+
+			buffer.close();
+		} catch (Exception exc) {}
+
+		try {
+			file         = new File(BOPE_ABS_INTEGERS);
+			input_stream = new FileInputStream(file.getAbsolutePath());
+			data_stream  = new DataInputStream(input_stream);
+			buffer       = new BufferedReader(new InputStreamReader(data_stream));
+
+			while ((line = buffer.readLine()) != null) {
+				colune = line.trim();
+
+				// Get values.
+				tag    = colune.split(":")[0];
+				value  = colune.split(":")[1];
+				module = colune.split(":")[2];
+
+				Bope.get_setting_manager().get_setting_with_tag(module, tag).set_value(Integer.parseInt(value));
+			}
+
+			buffer.close();
+		} catch (Exception exc) {}
 	}
 
-	public void BOPE_SAVE_LABELS() throws IOException {
-		Gson       BOPE_GSON        = new GsonBuilder().setPrettyPrinting().create();
-		JsonParser BOPE_PARSER      = new JsonParser(); 
-		JsonObject BOPE_MAIN_JSON   = new JsonObject();
-		JsonObject BOPE_MAIN_LABELS = new JsonObject();
+	public void BOPE_SAVE_BINDS() {
+		File file;
+		BufferedWriter buffer;
 
-		for (BopeSetting labels : Bope.get_setting_manager().get_array_settings()) {
-			String label = "ue";
+		Iterator iterator;
 
-			JsonObject BOPE_LABELS_SETTING = new JsonObject();
+		BopeModule modules;
 
-			if (!(is(labels, "label"))) {
-				continue;
+		try {
+			BOPE_DELETE_FILES(BOPE_ABS_BINDS);
+			BOPE_VERIFY_FILES(PATH_BINDS);
+
+			file   = new File(BOPE_ABS_BINDS);
+			buffer = new BufferedWriter(new FileWriter(file));
+
+			iterator = Bope.get_module_manager().get_array_modules().iterator();
+
+			while (iterator.hasNext()) {
+				modules = (BopeModule) iterator.next();
+
+				buffer.write(modules.get_tag() + ":" + modules.get_bind(1) + ":" + modules.is_active() + ":" + modules.alert() + "\r\n");
 			}
 
-			BOPE_LABELS_SETTING.add("master", new JsonPrimitive(labels.get_master().get_tag()));
-			BOPE_LABELS_SETTING.add("name",   new JsonPrimitive(labels.get_name()));
-			BOPE_LABELS_SETTING.add("tag",    new JsonPrimitive(labels.get_tag()));
-			BOPE_LABELS_SETTING.add("value",  new JsonPrimitive(labels.get_value(label)));
-			BOPE_LABELS_SETTING.add("type",   new JsonPrimitive(labels.get_type()));
-
-			BOPE_MAIN_LABELS.add(labels.get_tag(), BOPE_LABELS_SETTING);
-		}
-
-		BOPE_MAIN_JSON.add("labels", BOPE_MAIN_LABELS);
-
-		JsonElement BOPE_MAIN_PRETTY_JSON = BOPE_PARSER.parse(BOPE_MAIN_JSON.toString());
-
-		String BOPE_JSON = BOPE_GSON.toJson(BOPE_MAIN_PRETTY_JSON);
-
-		BOPE_DELETE_FILES(BOPE_ABS_LABELS);
-		BOPE_VERIFY_FILES(PATH_LABELS);
-
-		OutputStreamWriter file;
-
-		file = new OutputStreamWriter(new FileOutputStream(BOPE_ABS_LABELS), "UTF-8");
-		file.write(BOPE_JSON);
-
-		file.close();
+			buffer.close();
+		} catch (Exception exc) {}
 	}
 
-	public void BOPE_SAVE_DOUBLES() throws IOException {
-		Gson       BOPE_GSON           = new GsonBuilder().setPrettyPrinting().create();
-		JsonParser BOPE_PARSER         = new JsonParser(); 
-		JsonObject BOPE_MAIN_JSON      = new JsonObject();
-		JsonObject BOPE_MAIN_SLIDERS_D = new JsonObject();
+	public void BOPE_LOAD_BINDS() {
+		File file;
+		FileInputStream input_stream;
+		DataInputStream data_stream;
+		BufferedReader buffer;
 
-		for (BopeSetting slider_doubles : Bope.get_setting_manager().get_array_settings()) {
-			double double_ = 1.2;
+		String line;
+		String colune;
 
-			if (!(is(slider_doubles, "doubleslider"))) {
-				continue;
+		String tag;
+		String bind;
+		String active;
+		String alert;
+
+		try {
+			file         = new File(BOPE_ABS_BINDS);
+			input_stream = new FileInputStream(file.getAbsolutePath());
+			data_stream  = new DataInputStream(input_stream);
+			buffer       = new BufferedReader(new InputStreamReader(data_stream));
+
+			while ((line = buffer.readLine()) != null) {
+				colune = line.trim();
+
+				// Get values.
+				tag    = colune.split(":")[0];
+				bind   = colune.split(":")[1];
+				active = colune.split(":")[2];
+				alert  = colune.split(":")[3];
+
+				BopeModule module = Bope.get_module_manager().get_module_with_tag(tag);
+
+				module.set_bind(Integer.parseInt(bind));
+				module.alert(Boolean.parseBoolean(alert));
+				module.set_active(Boolean.parseBoolean(active));
 			}
 
-			JsonObject BOPE_SLIDER_DOUBLES_SETTING = new JsonObject();			
-
-			BOPE_SLIDER_DOUBLES_SETTING.add("master", new JsonPrimitive(slider_doubles.get_master().get_tag()));
-			BOPE_SLIDER_DOUBLES_SETTING.add("name",   new JsonPrimitive(slider_doubles.get_name()));
-			BOPE_SLIDER_DOUBLES_SETTING.add("tag",    new JsonPrimitive(slider_doubles.get_tag()));
-			BOPE_SLIDER_DOUBLES_SETTING.add("value",  new JsonPrimitive(slider_doubles.get_value(double_)));
-			BOPE_SLIDER_DOUBLES_SETTING.add("type",   new JsonPrimitive(slider_doubles.get_type()));
-
-			BOPE_MAIN_SLIDERS_D.add(slider_doubles.get_tag(), BOPE_SLIDER_DOUBLES_SETTING);
-		}
-
-		BOPE_MAIN_JSON.add("sliders", BOPE_MAIN_SLIDERS_D);
-
-		JsonElement BOPE_MAIN_PRETTY_JSON = BOPE_PARSER.parse(BOPE_MAIN_JSON.toString());
-
-		String BOPE_JSON = BOPE_GSON.toJson(BOPE_MAIN_PRETTY_JSON);
-
-		BOPE_DELETE_FILES(BOPE_ABS_DOUBLES);
-		BOPE_VERIFY_FILES(PATH_DOUBLES);
-
-		OutputStreamWriter file;
-
-		file = new OutputStreamWriter(new FileOutputStream(BOPE_ABS_DOUBLES), "UTF-8");
-		file.write(BOPE_JSON);
-
-		file.close();
+			buffer.close();
+		} catch (Exception exc) {}
 	}
 
-	public void BOPE_SAVE_INTEGERS() throws IOException {
-		Gson       BOPE_GSON           = new GsonBuilder().setPrettyPrinting().create();
-		JsonParser BOPE_PARSER         = new JsonParser(); 
-		JsonObject BOPE_MAIN_JSON      = new JsonObject();
-		JsonObject BOPE_MAIN_SLIDERS_I = new JsonObject();
+	public void BOPE_SAVE_FRIENDS() {
+		File file;
+		BufferedWriter buffer;
 
-		for (BopeSetting slider_integers : Bope.get_setting_manager().get_array_settings()) {
-			double integer = 1;
+		Iterator iterator;
 
-			JsonObject BOPE_SLIDER_INTEGERS_SETTING = new JsonObject();
+		BopeFriend friends;
 
-			if (!(is(slider_integers, "integerslider"))) {
-				continue;
+		try {
+			BOPE_DELETE_FILES(BOPE_ABS_FRIENDS);
+			BOPE_VERIFY_FILES(PATH_FRIENDS);
+
+			file   = new File(BOPE_ABS_FRIENDS);
+			buffer = new BufferedWriter(new FileWriter(file));
+
+			iterator = Bope.get_friend_manager().get_array_friends().iterator();
+
+			while (iterator.hasNext()) {
+				friends = (BopeFriend) iterator.next();
+
+				buffer.write(friends.get_name() + "\r\n");
 			}
 
-			BOPE_SLIDER_INTEGERS_SETTING.add("master", new JsonPrimitive(slider_integers.get_master().get_tag()));
-			BOPE_SLIDER_INTEGERS_SETTING.add("name",   new JsonPrimitive(slider_integers.get_name()));
-			BOPE_SLIDER_INTEGERS_SETTING.add("tag",    new JsonPrimitive(slider_integers.get_tag()));
-			BOPE_SLIDER_INTEGERS_SETTING.add("value",  new JsonPrimitive((int) Math.round(slider_integers.get_value(integer))));
-			BOPE_SLIDER_INTEGERS_SETTING.add("type",   new JsonPrimitive(slider_integers.get_type()));
-
-			BOPE_MAIN_SLIDERS_I.add(slider_integers.get_tag(), BOPE_SLIDER_INTEGERS_SETTING);
-		}
-
-		BOPE_MAIN_JSON.add("sliders", BOPE_MAIN_SLIDERS_I);
-
-		JsonElement BOPE_MAIN_PRETTY_JSON = BOPE_PARSER.parse(BOPE_MAIN_JSON.toString());
-
-		String BOPE_JSON = BOPE_GSON.toJson(BOPE_MAIN_PRETTY_JSON);
-
-		BOPE_DELETE_FILES(BOPE_ABS_INTEGERS);
-		BOPE_VERIFY_FILES(PATH_INTEGERS);
-
-		OutputStreamWriter file;
-
-		file = new OutputStreamWriter(new FileOutputStream(BOPE_ABS_INTEGERS), "UTF-8");
-		file.write(BOPE_JSON);
-
-		file.close();
+			buffer.close();
+		} catch (Exception exc) {}
 	}
 
-	public void BOPE_LOAD_BUTTONS() throws IOException {
-		InputStream BOPE_JSON_FILE    = Files.newInputStream(PATH_BUTTONS);
-		JsonObject  BOPE_JSON         = new JsonParser().parse(new InputStreamReader(BOPE_JSON_FILE)).getAsJsonObject();
-		JsonObject  BOPE_MAIN_BUTTONS = BOPE_JSON.get("buttons").getAsJsonObject();
+	public void BOPE_LOAD_FRIENDS() {
+		File file;
+		FileInputStream input_stream;
+		DataInputStream data_stream;
+		BufferedReader buffer;
 
-		for (BopeSetting buttons : Bope.get_setting_manager().get_array_settings()) {
-			if (!(is(buttons, "button"))) {
-				continue;
+		String line;
+
+		try {
+			file         = new File(BOPE_ABS_FRIENDS);
+			input_stream = new FileInputStream(file.getAbsolutePath());
+			data_stream  = new DataInputStream(input_stream);
+			buffer       = new BufferedReader(new InputStreamReader(data_stream));
+
+			while ((line = buffer.readLine()) != null) {
+				Bope.get_friend_manager().add_friend(line);
 			}
 
-			JsonObject BOPE_BUTTONS_INFO = BOPE_MAIN_BUTTONS.get(buttons.get_tag()).getAsJsonObject();
-			
-			BopeSetting button_requested = Bope.get_setting_manager().get_setting_with_tag(BOPE_BUTTONS_INFO.get("master").getAsString(), BOPE_BUTTONS_INFO.get("tag").getAsString());
-
-			if (button_requested == null) {
-				continue;
-			}
-
-			button_requested.set_value(BOPE_BUTTONS_INFO.get("value").getAsBoolean());
-		}
-
-		BOPE_JSON_FILE.close();
-	}
-
-	public void BOPE_LOAD_COMBOBOXS() throws IOException {
-		InputStream BOPE_JSON_FILE      = Files.newInputStream(PATH_COMBOBOXS);
-		JsonObject  BOPE_JSON           = new JsonParser().parse(new InputStreamReader(BOPE_JSON_FILE)).getAsJsonObject();
-		JsonObject  BOPE_COMBOBOXS_MAIN = BOPE_JSON.get("comboboxs").getAsJsonObject();
-
-		for (BopeSetting comboboxs : Bope.get_setting_manager().get_array_settings()) {
-			if (!(is(comboboxs, "combobox"))) {
-				continue;
-			}
-
-			JsonObject BOPE_COMBOBOX_INFO = BOPE_COMBOBOXS_MAIN.get(comboboxs.get_tag()).getAsJsonObject();
-
-			BopeSetting combobox_requested = Bope.get_setting_manager().get_setting_with_tag(BOPE_COMBOBOX_INFO.get("master").getAsString(), BOPE_COMBOBOX_INFO.get("tag").getAsString());
-
-			if (combobox_requested == null) {
-				continue;
-			}
-
-			combobox_requested.set_current_value(BOPE_COMBOBOX_INFO.get("value").getAsString());
-		}
-
-		BOPE_JSON_FILE.close();
-	}
-
-	public void BOPE_LOAD_LABELS() throws IOException {
-		InputStream BOPE_JSON_FILE   = Files.newInputStream(PATH_LABELS);
-		JsonObject  BOPE_JSON        = new JsonParser().parse(new InputStreamReader(BOPE_JSON_FILE)).getAsJsonObject();
-		JsonObject  BOPE_LABELS_MAIN = BOPE_JSON.get("labels").getAsJsonObject();
-
-		for (BopeSetting labels : Bope.get_setting_manager().get_array_settings()) {
-			if (!(is(labels, "label"))) {
-				continue;
-			}
-
-			JsonObject BOPE_LABELS_INFO = BOPE_LABELS_MAIN.get(labels.get_tag()).getAsJsonObject();
-
-			BopeSetting label_requested = Bope.get_setting_manager().get_setting_with_tag(BOPE_LABELS_INFO.get("master").getAsString(), BOPE_LABELS_INFO.get("tag").getAsString());
-
-			if (label_requested == null) {
-				continue;
-			}
-
-			label_requested.set_value(BOPE_LABELS_INFO.get("value").getAsString());
-		}
-
-		BOPE_JSON_FILE.close();
-	}
-
-	public void BOPE_LOAD_DOUBLES() throws IOException {
-		InputStream BOPE_JSON_FILE     = Files.newInputStream(PATH_DOUBLES);
-		JsonObject  BOPE_JSON          = new JsonParser().parse(new InputStreamReader(BOPE_JSON_FILE)).getAsJsonObject();
-		JsonObject  BOPE_SLIDER_D_MAIN = BOPE_JSON.get("sliders").getAsJsonObject();
-
-		for (BopeSetting slider_doubles : Bope.get_setting_manager().get_array_settings()) {
-			if (!(is(slider_doubles, "doubleslider"))) {
-				continue;
-			}
-
-			JsonObject BOPE_SLIDER_D_INFO = BOPE_SLIDER_D_MAIN.get(slider_doubles.get_tag()).getAsJsonObject();
-
-			BopeSetting slider_double_requested = Bope.get_setting_manager().get_setting_with_tag(BOPE_SLIDER_D_INFO.get("master").getAsString(), BOPE_SLIDER_D_INFO.get("tag").getAsString());
-
-			if (slider_double_requested == null) {
-				continue;
-			}
-
-			slider_double_requested.set_value(BOPE_SLIDER_D_INFO.get("value").getAsDouble());
-		}
-
-		BOPE_JSON_FILE.close();
-	}
-
-	public void BOPE_LOAD_INTEGERS() throws IOException {
-		InputStream BOPE_JSON_FILE     = Files.newInputStream(PATH_INTEGERS);
-		JsonObject  BOPE_JSON          = new JsonParser().parse(new InputStreamReader(BOPE_JSON_FILE)).getAsJsonObject();
-		JsonObject  BOPE_SLIDER_I_MAIN = BOPE_JSON.get("sliders").getAsJsonObject();
-
-		for (BopeSetting slider_integers : Bope.get_setting_manager().get_array_settings()) {
-			if (!(is(slider_integers, "integerslider"))) {
-				continue;
-			}
-
-			JsonObject BOPE_SLIDER_I_INFO = BOPE_SLIDER_I_MAIN.get(slider_integers.get_tag()).getAsJsonObject();
-
-			BopeSetting slider_integer_requested = Bope.get_setting_manager().get_setting_with_tag(BOPE_SLIDER_I_INFO.get("master").getAsString(), BOPE_SLIDER_I_INFO.get("tag").getAsString());
-
-			if (slider_integer_requested == null) {
-				continue;
-			}
-
-			slider_integer_requested.set_value(BOPE_SLIDER_I_INFO.get("value").getAsInt());
-		}
-
-		BOPE_JSON_FILE.close();
-	}
-
-	public void BOPE_SAVE_BINDS() throws IOException {
-		Gson       BOPE_GSON   = new GsonBuilder().setPrettyPrinting().create();
-		JsonParser BOPE_PARSER = new JsonParser();
-
-		JsonObject BOPE_MAIN_JSON   = new JsonObject();
-		JsonObject BOPE_MODULE_JSON = new JsonObject();
-
-		for (BopeModule modules : Bope.get_module_manager().get_array_modules()) {
-			JsonObject BOPE_MODULE_INFO = new JsonObject();
-
-			BOPE_MODULE_INFO.add("name",   new JsonPrimitive(modules.get_name()));
-			BOPE_MODULE_INFO.add("tag",    new JsonPrimitive(modules.get_tag()));
-			BOPE_MODULE_INFO.add("int",    new JsonPrimitive(modules.get_bind(0)));
-			BOPE_MODULE_INFO.add("string", new JsonPrimitive(modules.get_bind("0")));
-			BOPE_MODULE_INFO.add("state",  new JsonPrimitive(modules.is_active()));
-			BOPE_MODULE_INFO.add("alert",  new JsonPrimitive(modules.alert()));
-
-			BOPE_MODULE_JSON.add(modules.get_tag(), BOPE_MODULE_INFO);
-		}
-
-		BOPE_MAIN_JSON.add("modules", BOPE_MODULE_JSON);
-
-		JsonElement BOPE_MAIN_PRETTY_JSON = BOPE_PARSER.parse(BOPE_MAIN_JSON.toString());
-
-		String BOPE_JSON = BOPE_GSON.toJson(BOPE_MAIN_PRETTY_JSON);
-
-		BOPE_DELETE_FILES(BOPE_ABS_BINDS);
-		BOPE_VERIFY_FILES(PATH_BINDS);
-
-		OutputStreamWriter file;
-
-		file = new OutputStreamWriter(new FileOutputStream(BOPE_ABS_BINDS), "UTF-8");
-		file.write(BOPE_JSON);
-
-		file.close();
-	}
-
-	public void BOPE_LOAD_BINDS() throws IOException {
-		InputStream BOPE_JSON_FILE      = Files.newInputStream(PATH_BINDS);
-		JsonObject  BOPE_JSON           = new JsonParser().parse(new InputStreamReader(BOPE_JSON_FILE)).getAsJsonObject();
-		JsonObject  BOPE_MAIN_MODULES   = BOPE_JSON.get("modules").getAsJsonObject();
-
-		for (BopeModule modules : Bope.get_module_manager().get_array_modules()) {
-			JsonObject BOPE_MODULES_JSON = BOPE_MAIN_MODULES.get(modules.get_tag()).getAsJsonObject();
-
-			BopeModule module_requested = Bope.get_module_manager().get_module_with_tag(BOPE_MODULES_JSON.get("tag").getAsString());
-
-			if (module_requested == null) {
-				continue;
-			}
-
-			module_requested.set_bind(BOPE_MODULES_JSON.get("int").getAsInt());
-			module_requested.set_active(BOPE_MODULES_JSON.get("state").getAsBoolean());
-			module_requested.alert(BOPE_MODULES_JSON.get("alert").getAsBoolean());
-		}
-
-		BOPE_JSON_FILE.close();
+			buffer.close();
+		} catch (Exception exc) {}
 	}
 
 	public void BOPE_SAVE_CLIENT() throws IOException {
@@ -507,8 +468,8 @@ public class BopeConfigManager {
 
 		JsonObject BOPE_MAIN_JSON = new JsonObject();
 
-		JsonObject BOPE_MAIN_CONFIGS  = new JsonObject();
-		JsonObject BOPE_MAIN_GUI      = new JsonObject();
+		JsonObject BOPE_MAIN_CONFIGS = new JsonObject();
+		JsonObject BOPE_MAIN_GUI     = new JsonObject();
 
 		BOPE_MAIN_CONFIGS.add("name",    new JsonPrimitive(Bope.get_name()));
 		BOPE_MAIN_CONFIGS.add("version", new JsonPrimitive(Bope.get_version()));
@@ -633,70 +594,6 @@ public class BopeConfigManager {
 		BOPE_JSON_FILE.close();
 	}
 
-	public boolean is_valid(JsonArray array, String element) {
-		boolean valid = false;
-
-		for (JsonElement elements : array) {
-			if (elements.getAsString().equalsIgnoreCase(element)) {
-				valid = true;
-
-				break;
-			}
-		}
-
-		return valid;
-	}
-
-	public void BOPE_SAVE_FRIENDS() throws IOException {
-		Gson       BOPE_GSON   = new GsonBuilder().setPrettyPrinting().create();
-		JsonParser BOPE_PARSER = new JsonParser();
-
-		JsonObject BOPE_MAIN_JSON = new JsonObject();
-		JsonArray  BOPE_ARRAY_FRD = new JsonArray();
-
-		InputStream BOPE_JSON_FILE    = Files.newInputStream(PATH_FRIENDS);
-		JsonObject  BOPE_MAIN_FRD     = new JsonParser().parse(new InputStreamReader(BOPE_JSON_FILE)).getAsJsonObject();
-		JsonArray   BOPE_MAIN_FRIENDS = BOPE_MAIN_FRD.get("friends").getAsJsonArray();
-
-		for (BopeFriend friends : Bope.get_friend_manager().get_array_friends()) {
-			if (!is_valid(BOPE_MAIN_FRIENDS, friends.get_name())) {
-				continue;
-			}
-
-			BOPE_ARRAY_FRD.add(friends.get_name());
-		}
-
-		BOPE_JSON_FILE.close();
-
-		BOPE_MAIN_JSON.add("friends", BOPE_ARRAY_FRD);
-
-		JsonElement BOPE_MAIN_PRETTY_JSON = BOPE_PARSER.parse(BOPE_MAIN_JSON.toString());
-
-		String BOPE_JSON = BOPE_GSON.toJson(BOPE_MAIN_PRETTY_JSON);
-
-		BOPE_DELETE_FILES(BOPE_ABS_FRIENDS);
-		BOPE_VERIFY_FILES(PATH_FRIENDS);
-
-		OutputStreamWriter file;
-
-		file = new OutputStreamWriter(new FileOutputStream(BOPE_ABS_FRIENDS), "UTF-8");
-		file.write(BOPE_JSON);
-
-		file.close();
-	}
-
-	public void BOPE_LOAD_FRIENDS() throws IOException {
-		InputStream BOPE_JSON_FILE    = Files.newInputStream(PATH_FRIENDS);
-		JsonObject  BOPE_MAIN_FRD     = new JsonParser().parse(new InputStreamReader(BOPE_JSON_FILE)).getAsJsonObject();
-		JsonArray   BOPE_MAIN_FRIENDS = BOPE_MAIN_FRD.get("friends").getAsJsonArray();
-
-		for (JsonElement friends_name : BOPE_MAIN_FRIENDS) {
-			Bope.get_friend_manager().add_friend(friends_name.getAsString());
-		}
-
-		BOPE_JSON_FILE.close();
-	}
-
 	public void BOPE_SAVE_LOG() throws IOException {
 		Date hora = new Date();
 
@@ -721,33 +618,48 @@ public class BopeConfigManager {
 		file.close();
 	}
 
-	public void save_values() {
+	public void save_settings() {
 		try {
 			BOPE_VERIFY_FOLDER(PATH_FOLDER);
-			BOPE_VERIFY_FILES(PATH_BUTTONS);
-			BOPE_VERIFY_FILES(PATH_COMBOBOXS);
-			BOPE_VERIFY_FILES(PATH_LABELS);
-			BOPE_VERIFY_FILES(PATH_DOUBLES);
-			BOPE_VERIFY_FILES(PATH_INTEGERS);
+			BOPE_VERIFY_FOLDER(Paths.get(BOPE_ABS_FOLDER + BOPE_FOLDER_VALUES));
 
-			BOPE_SAVE_BUTTONS();
-			BOPE_SAVE_COMBOBOXS();
-			BOPE_SAVE_LABELS();
-			BOPE_SAVE_DOUBLES();
-			BOPE_SAVE_INTEGERS();
+			BOPE_SAVE_SETTINGS();
 		} catch (IOException exc) {
 			exc.printStackTrace();
-		}		
+		}	
+	}
+
+	public void load_settings() {
+		BOPE_LAOD_SETTINGS();
 	}
 
 	public void save_binds() {
 		try {
 			BOPE_VERIFY_FOLDER(PATH_FOLDER);
+			BOPE_VERIFY_FOLDER(Paths.get(BOPE_ABS_FOLDER + BOPE_FOLDER_MODULES));
 
 			BOPE_SAVE_BINDS();
 		} catch (IOException exc) {
 			exc.printStackTrace();
-		}		
+		}	
+	}
+
+	public void load_binds() {
+		BOPE_LOAD_BINDS();
+	}
+
+	public void save_friends() {
+		try {
+			BOPE_VERIFY_FOLDER(PATH_FOLDER);
+
+			BOPE_SAVE_FRIENDS();
+		} catch (IOException exc) {
+			exc.printStackTrace();
+		}	
+	}
+
+	public void load_friends() {
+		BOPE_LOAD_FRIENDS();
 	}
 
 	public void save_client() {
@@ -761,14 +673,13 @@ public class BopeConfigManager {
 		}		
 	}
 
-	public void save_friends() {
+	public void load_client() {
 		try {
-			BOPE_VERIFY_FOLDER(PATH_FOLDER);
-
-			BOPE_SAVE_FRIENDS();
+			BOPE_LOAD_CLIENT();
+			BOPE_LOAD_HUD();
 		} catch (IOException exc) {
 			exc.printStackTrace();
-		}
+		}		
 	}
 
 	public void save_log() {
@@ -780,44 +691,6 @@ public class BopeConfigManager {
 		} catch (IOException exc) {
 			exc.printStackTrace();
 		}		
-	}
-
-	public void load() {
-		try {
-			BOPE_LOAD_BUTTONS();
-		} catch (Exception exc) {}
-
-		try {
-			BOPE_LOAD_COMBOBOXS();
-		} catch (Exception exc) {}
-
-		try {
-			BOPE_LOAD_LABELS();
-		} catch (Exception exc) {}
-
-		try {
-			BOPE_LOAD_DOUBLES();
-		} catch (Exception exc) {}
-
-		try {
-			BOPE_LOAD_INTEGERS();
-		} catch (Exception exc) {}
-
-		try {
-			BOPE_LOAD_BINDS();
-		} catch (Exception exc) {}
-
-		try {
-			BOPE_LOAD_CLIENT();
-		} catch (Exception exc) {}
-
-		try {
-			BOPE_LOAD_HUD();
-		} catch (Exception exc) {}
-
-		try {
-			BOPE_LOAD_FRIENDS();
-		} catch (Exception exc) {}
 	}
 
 	public boolean is(BopeSetting setting, String type) {

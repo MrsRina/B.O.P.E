@@ -127,14 +127,7 @@ public class Bope {
 		event_manager   = new BopeEventManager("HUD manager.");
 		hud_manager     = new BopeHUDManager("Friend manager");
 
-		try {
-			config_manager.BOPE_LOAD_BUTTONS();
-			config_manager.BOPE_LOAD_COMBOBOXS();
-			config_manager.BOPE_LOAD_LABELS();
-			config_manager.BOPE_LOAD_DOUBLES();
-			config_manager.BOPE_LOAD_INTEGERS();
-			config_manager.BOPE_LOAD_BINDS();
-		} catch (Exception exc) {}
+		config_manager.load_settings();
 
 		send_minecraft_log("Managers are initialed.");
 
@@ -144,9 +137,9 @@ public class Bope {
 
 		// Setup.
 		try {
-			config_manager.BOPE_LOAD_CLIENT();
-			config_manager.BOPE_LOAD_HUD();
-			config_manager.BOPE_LOAD_FRIENDS();
+			config_manager.load_client();
+			config_manager.load_binds();
+			config_manager.load_friends();
 		} catch (Exception exc) {}
 
 		turok = new Turok("Turok");

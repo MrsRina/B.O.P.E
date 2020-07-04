@@ -97,9 +97,6 @@ public class BopeModuleManager {
 		add_module(new BopeHoleColor());
 		add_module(new BopePlayerESP());
 		add_module(new BopeNameTag());
-
-		// Configure.
-		array_module.sort(Comparator.comparing(BopeModule::get_name));
 	}
 
 	public void add_module(BopeModule module) {

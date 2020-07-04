@@ -2,11 +2,11 @@ Processing 120 files
 Start Processing: rina/turok/bope/Bope.java
 New Key: class net/minecraftforge/fml/common/Mod
 New Key: class net/minecraftforge/fml/common/Mod
-Rename method net/minecraft/client/Minecraft/getMinecraft ()Lnet/minecraft/client/Minecraft;[6780,6792]::getMinecraft->func_71410_x
-Rename field net/minecraft/client/Minecraft/player[6795,6801]::player->field_71439_g
-Rename method net/minecraft/client/Minecraft/getMinecraft ()Lnet/minecraft/client/Minecraft;[6852,6864]::getMinecraft->func_71410_x
-Rename field net/minecraft/client/Minecraft/player[6867,6873]::player->field_71439_g
-Rename method net/minecraft/command/ICommandSender/getName ()Ljava/lang/String;[6881,6888]::getName->func_70005_c_
+Rename method net/minecraft/client/Minecraft/getMinecraft ()Lnet/minecraft/client/Minecraft;[6530,6542]::getMinecraft->func_71410_x
+Rename field net/minecraft/client/Minecraft/player[6545,6551]::player->field_71439_g
+Rename method net/minecraft/client/Minecraft/getMinecraft ()Lnet/minecraft/client/Minecraft;[6602,6614]::getMinecraft->func_71410_x
+Rename field net/minecraft/client/Minecraft/player[6617,6623]::player->field_71439_g
+Rename method net/minecraft/command/ICommandSender/getName ()Ljava/lang/String;[6631,6638]::getName->func_70005_c_
 Import: net.minecraftforge.fml.common.event.FMLInitializationEvent
 Import: com.mojang.realmsclient.gui.ChatFormatting
 Import: net.minecraftforge.fml.common.Mod
@@ -289,12 +289,12 @@ Rename method net/minecraft/client/Minecraft/getMinecraft ()Lnet/minecraft/clien
 FOUND CONSTR method rina/turok/bope/bopemod/guiscreen/BopeGUI/BopeGUI ()V rina/turok/bope/bopemod/guiscreen/BopeGUI
 Rename method net/minecraft/client/gui/GuiScreen/doesGuiPauseGame ()Z[2547,2563]::doesGuiPauseGame->func_73868_f
 Rename method net/minecraft/client/gui/GuiScreen/onGuiClosed ()V[2649,2660]::onGuiClosed->func_146281_b
-Rename method net/minecraft/client/gui/GuiScreen/keyTyped (CI)V[2967,2975]::keyTyped->func_73869_a
-Rename method net/minecraft/client/Minecraft/displayGuiScreen (Lnet/minecraft/client/gui/GuiScreen;)V[3181,3197]::displayGuiScreen->func_147108_a
-Rename method net/minecraft/client/gui/GuiScreen/mouseClicked (III)V[3248,3260]::mouseClicked->func_73864_a
-Rename method net/minecraft/client/gui/GuiScreen/mouseReleased (III)V[3998,4011]::mouseReleased->func_146286_b
-Rename method net/minecraft/client/gui/GuiScreen/drawScreen (IIF)V[4334,4344]::drawScreen->func_73863_a
-Rename method net/minecraft/client/gui/GuiScreen/drawDefaultBackground ()V[4412,4433]::drawDefaultBackground->func_146276_q_
+Rename method net/minecraft/client/gui/GuiScreen/keyTyped (CI)V[2969,2977]::keyTyped->func_73869_a
+Rename method net/minecraft/client/Minecraft/displayGuiScreen (Lnet/minecraft/client/gui/GuiScreen;)V[3183,3199]::displayGuiScreen->func_147108_a
+Rename method net/minecraft/client/gui/GuiScreen/mouseClicked (III)V[3250,3262]::mouseClicked->func_73864_a
+Rename method net/minecraft/client/gui/GuiScreen/mouseReleased (III)V[4000,4013]::mouseReleased->func_146286_b
+Rename method net/minecraft/client/gui/GuiScreen/drawScreen (IIF)V[4336,4346]::drawScreen->func_73863_a
+Rename method net/minecraft/client/gui/GuiScreen/drawDefaultBackground ()V[4414,4435]::drawDefaultBackground->func_146276_q_
 Import: net.minecraft.client.gui.ScaledResolution
 Import: net.minecraft.client.gui.GuiScreen
 Import: net.minecraft.client.Minecraft
@@ -2051,10 +2051,9 @@ Import: java.nio.file.Path
 Import: java.time.*
 Import: java.util.*
 Import: java.io.*
-Adding 13 imports
+Adding 12 imports
         com.google.gson.Gson
         com.google.gson.GsonBuilder
-        com.google.gson.JsonArray
         com.google.gson.JsonElement
         com.google.gson.JsonObject
         com.google.gson.JsonParser

@@ -115,7 +115,7 @@ public class BopeGUI extends GuiScreen {
 		// Return to false for not problem with double click.
 		Bope.get_config_manager().save_binds();
 		Bope.get_config_manager().save_client();
-		Bope.get_config_manager().save_values();
+		Bope.get_config_manager().save_settings();
 
 		Bope.get_module_manager().get_module_with_tag("GUI").set_active(false);
 	}

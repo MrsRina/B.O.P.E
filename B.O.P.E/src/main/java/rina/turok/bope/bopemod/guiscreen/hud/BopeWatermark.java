@@ -31,6 +31,6 @@ public class BopeWatermark extends BopePinnable {
 		create_line(line, 1, 2);
 
 		set_width(get(line, "width") + 2);
-		set_height(get(line, "height") + 2);
+		set_height(get(line, "height") + 2 + 2);
 	}
 }

@@ -75,7 +75,7 @@ public class BopeLabel extends BopeAbstractWidget {
 		this.entry.setMaxStringLength(24);
 
 		this.width  = master.get_width();
-		this.height = font.get_string_height(this.setting.get_name(), this.smoth);
+		this.height = font.get_string_height(this.setting.get_name(), this.smoth) + 2;
 
 		this.label_name = this.setting.get_name();
 
@@ -225,17 +225,17 @@ public class BopeLabel extends BopeAbstractWidget {
 			this.setting.set_value(this.entry.getText());
 
 			if (motion(mx, my)) {
-				BopeDraw.draw_string(this.label_name, this.x + 2, this.save_y, ns_r, ns_g, ns_b, this.smoth);
+				BopeDraw.draw_string(this.label_name, this.x + 2, this.save_y, ns_r, ns_g, ns_b, Bope.get_setting_manager().get_setting_with_tag("GUIStringsShadow").get_value(true), this.smoth);
 
 				this.entry.drawTextBox();
 			} else if (this.click) {
-				BopeDraw.draw_string(this.label_name, this.x + 2, this.save_y, ns_r, ns_g, ns_b, this.smoth);
+				BopeDraw.draw_string(this.label_name, this.x + 2, this.save_y, ns_r, ns_g, ns_b, Bope.get_setting_manager().get_setting_with_tag("GUIStringsShadow").get_value(true), this.smoth);
 
 				this.entry.drawTextBox();
 
 				this.click = this.entry.isFocused();
 			} else {
-				BopeDraw.draw_string(this.label_name, this.x + 2, this.save_y, ns_r, ns_g, ns_b, this.smoth);
+				BopeDraw.draw_string(this.label_name, this.x + 2, this.save_y, ns_r, ns_g, ns_b, Bope.get_setting_manager().get_setting_with_tag("GUIStringsShadow").get_value(true), this.smoth);
 			}
 		}
 	}

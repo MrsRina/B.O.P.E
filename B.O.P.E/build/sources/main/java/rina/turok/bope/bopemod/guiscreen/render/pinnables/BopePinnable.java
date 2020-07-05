@@ -278,6 +278,24 @@ public class BopePinnable {
 		}
 	}
 
+	protected void chat_event() {
+		boolean in_gui = mc.ingameGUI.getChatGUI().getChatOpen();
+
+		if (in_gui && (get_y() + get_height()) >= (BopeDraw.get_height() - get_height() - 1)) {
+			int comparator = BopeDraw.get_height() - get_height() - 17;
+
+			set_y(comparator);
+
+			state = true;
+		}
+
+		if (!in_gui && state) {
+			set_y(BopeDraw.get_height() - get_height() - 1);
+
+			state = false;
+		}
+	}
+
 	protected void create_line(String string, int pos_x, int pos_y) {
 		this.smoth = Bope.get_setting_manager().get_setting_with_tag("HUDStringsSmooth").get_value(true);
 

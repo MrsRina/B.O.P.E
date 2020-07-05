@@ -213,6 +213,8 @@ public class BopeModuleManager {
 		for (BopeModule module : get_array_modules()) {
 			if (module.get_tag().equalsIgnoreCase(tag)) {
 				module_requested = module;
+
+				break;
 			}
 		}
 

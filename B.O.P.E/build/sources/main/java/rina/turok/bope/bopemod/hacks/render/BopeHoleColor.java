@@ -30,8 +30,6 @@ import rina.turok.turok.draw.TurokRenderHelp;
 *
 */
 public class BopeHoleColor extends BopeModule {
-	BopeSetting mode = create("Mode", "HoleColorMode", "Pretty", combobox("Pretty", "Solid", "Outline"));
-
 	BopeSetting rgb = create("RGB Effect", "HoleColorRGBEffect", true);
 
 	BopeSetting r = create("R", "HoleColorR", 255, 0, 255);
@@ -77,21 +75,6 @@ public class BopeHoleColor extends BopeModule {
 		}
 
 		if (mc.player != null || mc.world != null) {
-			if (mode.in("Pretty")) {
-				outline = true;
-				solid   = true;
-			}
-
-			if (mode.in("Solid")) {
-				outline = false;
-				solid   = true;
-			}
-
-			if (mode.in("Outline")) {
-				outline = true;
-				solid   = false;
-			}
-
 			int colapso_range = (int) Math.ceil(range.get_value(1));
 
 			List<BlockPos> spheres = sphere(player_as_blockpos(), colapso_range, colapso_range);
@@ -162,29 +145,25 @@ public class BopeHoleColor extends BopeModule {
 			off_set_h = (float) off_set.get_value(1.0);
 
 			for (BlockPos holes : hole) {
-				if (solid) {
-					TurokRenderHelp.prepare("quads");
-					TurokRenderHelp.draw_cube(TurokRenderHelp.get_buffer_build(),
-						holes.x, holes.y, holes.z,
-						1, off_set_h, 1,
-						color_r, color_g, color_b, a.get_value(1),
-						"all"
-					);
+				TurokRenderHelp.prepare("quads");
+				TurokRenderHelp.draw_cube(TurokRenderHelp.get_buffer_build(),
+					holes.x, holes.y, holes.z,
+					1, off_set_h, 1,
+					color_r, color_g, color_b, a.get_value(1),
+					"all"
+				);
 
-					TurokRenderHelp.release();
-				}
+				TurokRenderHelp.release();
 
-				if (outline) {
-					TurokRenderHelp.prepare("lines");
-					TurokRenderHelp.draw_cube_line(TurokRenderHelp.get_buffer_build(),
-						holes.x, holes.y, holes.z,
-						1, off_set_h, 1,
-						color_r, color_g, color_b, line_a.get_value(1),
-						"all"
-					);
+				TurokRenderHelp.prepare("lines");
+				TurokRenderHelp.draw_cube_line(TurokRenderHelp.get_buffer_build(),
+					holes.x, holes.y, holes.z,
+					1, off_set_h, 1,
+					color_r, color_g, color_b, line_a.get_value(1),
+					"all"
+				);
 
-					TurokRenderHelp.release();
-				}
+				TurokRenderHelp.release();
 			}
 		}
 	}

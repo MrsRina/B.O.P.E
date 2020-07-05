@@ -87,6 +87,9 @@ public class Bope {
 	public static BopeGUI click_gui;
 	public static BopeHUD click_hud;
 
+	// Font.
+	public static String font_name = "Verdana";
+
 	// Framework Turok.
 	public static Turok turok;
 
@@ -119,15 +122,18 @@ public class Bope {
 		BopeEventHandler.INSTANCE = new BopeEventHandler();
 
 		// Init managers. // systen a bit ant-deobf.
-		setting_manager = new BopeSettingManager("Commands manager.");
-		command_manager = new BopeCommandManager("Modules manager.");
-		config_manager  = new BopeConfigManager("Settings manager.");
-		module_manager  = new BopeModuleManager("Config manager.");
-		friend_manager  = new BopeFriendManager("Event manager.");
-		event_manager   = new BopeEventManager("HUD manager.");
-		hud_manager     = new BopeHUDManager("Friend manager");
+		setting_manager = new BopeSettingManager("setting");
+		command_manager = new BopeCommandManager("command");
+		config_manager  = new BopeConfigManager("config");
+		module_manager  = new BopeModuleManager("module");
+		friend_manager  = new BopeFriendManager("friend");
+		event_manager   = new BopeEventManager("event");
+		hud_manager     = new BopeHUDManager("hud");
 
+		// Load first time.
 		config_manager.load_settings();
+		config_manager.load_binds();
+		config_manager.load_client("stuff");
 
 		send_minecraft_log("Managers are initialed.");
 
@@ -135,12 +141,9 @@ public class Bope {
 		click_hud = new BopeHUD();
 		click_gui = new BopeGUI();
 
-		// Setup.
-		try {
-			config_manager.load_client();
-			config_manager.load_binds();
-			config_manager.load_friends();
-		} catch (Exception exc) {}
+		// Load second time.
+		config_manager.load_client();
+		config_manager.load_friends();
 
 		turok = new Turok("Turok");
 
@@ -153,6 +156,13 @@ public class Bope {
 		send_minecraft_log("Events registered.");
 
 		send_minecraft_log("GUI and HUD initialed.");
+
+		// Oh why you load so many times, yes because I want;
+		config_manager.load_settings();
+		config_manager.load_binds();
+		config_manager.load_client("stuff");
+		config_manager.load_client();
+		config_manager.load_friends();
 
 		// Load rpc.
 		discord_rpc = new BopeDiscordRichPresence("RPC");

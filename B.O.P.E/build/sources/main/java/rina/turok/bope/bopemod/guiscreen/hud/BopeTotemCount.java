@@ -55,7 +55,7 @@ public class BopeTotemCount extends BopePinnable {
 					// Docking (defaul, width);
 					mc.getRenderItem().renderItemAndEffectIntoGUI(stack, get_x() + docking(0, 16), get_y());
 				
-					create_line(Integer.toString(totems + off), 16 + 2, 16 - get(Integer.toString(totems + off), "height"));
+					create_line(Integer.toString(totems + off), 16 + 2, 14 - get(Integer.toString(totems + off), "height"));
 				}
 			}
 
@@ -65,7 +65,7 @@ public class BopeTotemCount extends BopePinnable {
 			
 			GlStateManager.popMatrix();
 
-			set_width(16 + get(Integer.toString(totems + off), "width") + 2 + 2);
+			set_width(16 + get(Integer.toString(totems + off), "width") + 2);
 			set_height(16);
 		}
 	}

@@ -78,7 +78,7 @@ public class BopeModuleButton {
 		this.y = 0;
 
 		this.width  = this.master.get_width();
-		this.height = font.get_string_height(module.get_name(), this.smoth);
+		this.height = font.get_string_height(module.get_name(), this.smoth) + 2;
 
 		this.opened_height = this.height;
 
@@ -231,6 +231,14 @@ public class BopeModuleButton {
 		return false;
 	}
 
+	public boolean motion(int mx, int my, String s) {
+		if (mx >= get_x() && my >= get_save_y() && mx <= get_x() + get_width() && my <= get_save_y() + this.opened_height) {
+			return true;
+		}
+
+		return false;
+	}
+
 	public void does_widgets_can(boolean can) {
 		for (BopeAbstractWidget widgets : this.widget) {
 			widgets.does_can(can);
@@ -299,9 +307,9 @@ public class BopeModuleButton {
 		if (this.module.is_active()) {
 			BopeDraw.draw_rect(this.x, this.save_y, this.x + this.width - separate, this.save_y + this.height, bg_r, bg_g, bg_b, bg_a);
 
-			font.draw_string(this.module_name, this.x + separate, this.save_y, nm_r, nm_g, nm_b, this.smoth);
+			font.draw_string(this.module_name, this.x + separate, this.save_y, nm_r, nm_g, nm_b, Bope.get_setting_manager().get_setting_with_tag("GUIStringsShadow").get_value(true), this.smoth);
 		} else {
-			font.draw_string(this.module_name, this.x + separate, this.save_y, nm_r, nm_g, nm_b, this.smoth);
+			font.draw_string(this.module_name, this.x + separate, this.save_y, nm_r, nm_g, nm_b, Bope.get_setting_manager().get_setting_with_tag("GUIStringsShadow").get_value(true), this.smoth);
 		}
 
 		for (BopeAbstractWidget widgets : this.widget) {
@@ -309,10 +317,10 @@ public class BopeModuleButton {
 
 			boolean is_passing_in_widget = this.opened ? widgets.motion_pass(mx, my) : false;
 
-			if (motion(mx, my) || is_passing_in_widget && this.can) {
+			if (motion(mx, my, "opened_height") || is_passing_in_widget && this.can) {
 				BopeDraw.draw_rect(this.master.get_x() - 1, this.save_y, this.master.get_width() + separate, this.opened_height, bd_r, bd_g, bd_b, border_a, this.border_size, "right-left");
 
-				font.draw_string(this.module.get_description(), 2, 1, nm_r, nm_g, nm_b, this.smoth);
+				font.draw_string(this.module.get_description(), 2, 1, nm_r, nm_g, nm_b, Bope.get_setting_manager().get_setting_with_tag("GUIStringsShadow").get_value(true), this.smoth);
 			}
 
 			if (this.opened) {

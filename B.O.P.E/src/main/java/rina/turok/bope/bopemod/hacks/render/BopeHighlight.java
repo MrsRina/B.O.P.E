@@ -28,8 +28,6 @@ import rina.turok.turok.draw.TurokRenderHelp;
 *
 */
 public class BopeHighlight extends BopeModule {
-	BopeSetting mode = create("Mode", "HighlightMode", "Pretty", combobox("Pretty", "Solid", "Outline"));
-	
 	BopeSetting rgb = create("RGB Effect", "HighlightRGBEffect", true);
 	
 	BopeSetting r = create("R", "HighlightR", 255, 0, 255);
@@ -87,21 +85,6 @@ public class BopeHighlight extends BopeModule {
 				color_b = b.get_value(3);
 			}
 	
-			if (mode.in("Pretty")) {
-				outline = true;
-				solid   = true;
-			}
-	
-			if (mode.in("Solid")) {
-				outline = false;
-				solid   = true;
-			}
-	
-			if (mode.in("Outline")) {
-				outline = true;
-				solid   = false;
-			}
-	
 			RayTraceResult result = mc.objectMouseOver;
 	
 			if (result != null) {
@@ -109,18 +92,14 @@ public class BopeHighlight extends BopeModule {
 					BlockPos block_pos = result.getBlockPos();
 	
 					// Solid.
-					if (solid) {
-						TurokRenderHelp.prepare("quads");
-						TurokRenderHelp.draw_cube(block_pos, color_r, color_g, color_b, a.get_value(1), "all");
-						TurokRenderHelp.release();
-					}
+					TurokRenderHelp.prepare("quads");
+					TurokRenderHelp.draw_cube(block_pos, color_r, color_g, color_b, a.get_value(1), "all");
+					TurokRenderHelp.release();
 	
 					// Outline.
-					if (outline) {
-						TurokRenderHelp.prepare("lines");
-						TurokRenderHelp.draw_cube_line(block_pos, color_r, color_g, color_b, l_a.get_value(1), "all");
-						TurokRenderHelp.release();
-					}
+					TurokRenderHelp.prepare("lines");
+					TurokRenderHelp.draw_cube_line(block_pos, color_r, color_g, color_b, l_a.get_value(1), "all");
+					TurokRenderHelp.release();
 				}
 			}
 		}

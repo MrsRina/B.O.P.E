@@ -64,7 +64,7 @@ public class BopePinnableButton {
 		this.save_y = this.y;
 
 		this.width  = this.master.get_width();
-		this.height = font.get_string_height(this.pinnable.get_title(), this.smoth);
+		this.height = font.get_string_height(this.pinnable.get_title(), this.smoth) + 2;
 
 		this.first = true;
 	}
@@ -157,9 +157,9 @@ public class BopePinnableButton {
 		if (this.pinnable.is_active()) {
 			BopeDraw.draw_rect(this.x, this.save_y, this.x + this.width - separate, this.save_y + this.height, this.bg_r, this.bg_g, this.bg_b, this.bg_a);
 		
-			BopeDraw.draw_string(this.pinnable.get_title(), this.x + separate, this.save_y, this.nc_r, this.nc_g, this.nc_b, this.smoth);
+			BopeDraw.draw_string(this.pinnable.get_title(), this.x + separate, this.save_y, this.nc_r, this.nc_g, this.nc_b, Bope.get_setting_manager().get_setting_with_tag("GUIStringsShadow").get_value(true), this.smoth);
 		} else {
-			BopeDraw.draw_string(this.pinnable.get_title(), this.x + separate, this.save_y, this.nc_r, this.nc_g, this.nc_b, this.smoth);
+			BopeDraw.draw_string(this.pinnable.get_title(), this.x + separate, this.save_y, this.nc_r, this.nc_g, this.nc_b, Bope.get_setting_manager().get_setting_with_tag("GUIStringsShadow").get_value(true), this.smoth);
 		}
 
 		this.pinnable.render(mx, my, 0);

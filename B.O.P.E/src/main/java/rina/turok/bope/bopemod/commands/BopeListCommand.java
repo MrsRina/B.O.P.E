@@ -41,6 +41,7 @@ public class BopeListCommand {
 		add_command(new BopePrefix());
 		add_command(new BopeToggle());
 		add_command(new BopeBind());
+		add_command(new BopeFont());
 		add_command(new BopeHelp());
 		add_command(new BopeFOV());
 

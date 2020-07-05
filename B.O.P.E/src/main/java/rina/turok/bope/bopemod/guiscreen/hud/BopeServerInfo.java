@@ -33,6 +33,6 @@ public class BopeServerInfo extends BopePinnable {
 		create_line(info, 1, 1);
 
 		set_width(get(info, "width") + 1);
-		set_height(get(info, "height") + 1);
+		set_height(get(info, "height") + 2);
 	}
 }

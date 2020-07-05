@@ -1,12 +1,12 @@
-Processing 120 files
+Processing 123 files
 Start Processing: rina/turok/bope/Bope.java
 New Key: class net/minecraftforge/fml/common/Mod
 New Key: class net/minecraftforge/fml/common/Mod
-Rename method net/minecraft/client/Minecraft/getMinecraft ()Lnet/minecraft/client/Minecraft;[6530,6542]::getMinecraft->func_71410_x
-Rename field net/minecraft/client/Minecraft/player[6545,6551]::player->field_71439_g
-Rename method net/minecraft/client/Minecraft/getMinecraft ()Lnet/minecraft/client/Minecraft;[6602,6614]::getMinecraft->func_71410_x
-Rename field net/minecraft/client/Minecraft/player[6617,6623]::player->field_71439_g
-Rename method net/minecraft/command/ICommandSender/getName ()Ljava/lang/String;[6631,6638]::getName->func_70005_c_
+Rename method net/minecraft/client/Minecraft/getMinecraft ()Lnet/minecraft/client/Minecraft;[6779,6791]::getMinecraft->func_71410_x
+Rename field net/minecraft/client/Minecraft/player[6794,6800]::player->field_71439_g
+Rename method net/minecraft/client/Minecraft/getMinecraft ()Lnet/minecraft/client/Minecraft;[6851,6863]::getMinecraft->func_71410_x
+Rename field net/minecraft/client/Minecraft/player[6866,6872]::player->field_71439_g
+Rename method net/minecraft/command/ICommandSender/getName ()Ljava/lang/String;[6880,6887]::getName->func_70005_c_
 Import: net.minecraftforge.fml.common.event.FMLInitializationEvent
 Import: com.mojang.realmsclient.gui.ChatFormatting
 Import: net.minecraftforge.fml.common.Mod
@@ -144,6 +144,15 @@ Import: rina.turok.bope.bopemod.BopeCommand
 Adding 1 imports
         rina.turok.bope.Bope
 End  Processing: rina/turok/bope/bopemod/commands/BopeFOV.java
+
+Start Processing: rina/turok/bope/bopemod/commands/BopeFont.java
+FOUND CONSTR method rina/turok/bope/bopemod/commands/BopeFont/BopeFont ()V rina/turok/bope/bopemod/commands/BopeFont
+Import: java.awt.*
+Adding 3 imports
+        rina.turok.bope.Bope
+        rina.turok.bope.bopemod.BopeCommand
+        rina.turok.bope.bopemod.BopeMessage
+End  Processing: rina/turok/bope/bopemod/commands/BopeFont.java
 
 Start Processing: rina/turok/bope/bopemod/commands/BopeFriendC.java
 FOUND CONSTR method rina/turok/bope/bopemod/commands/BopeFriendC/BopeFriendC ()V rina/turok/bope/bopemod/commands/BopeFriendC
@@ -606,38 +615,35 @@ Adding 2 imports
 End  Processing: rina/turok/bope/bopemod/guiscreen/hud/BopeWatermark.java
 
 Start Processing: rina/turok/bope/bopemod/guiscreen/render/BopeDraw.java
-Rename method net/minecraft/client/Minecraft/getMinecraft ()Lnet/minecraft/client/Minecraft;[812,824]::getMinecraft->func_71410_x
-Rename field net/minecraft/client/Minecraft/fontRenderer[827,839]::fontRenderer->field_71466_p
+Rename method net/minecraft/client/Minecraft/getMinecraft ()Lnet/minecraft/client/Minecraft;[883,895]::getMinecraft->func_71410_x
+Rename field net/minecraft/client/Minecraft/fontRenderer[898,910]::fontRenderer->field_71466_p
 FOUND CONSTR method rina/turok/bope/bopemod/guiscreen/render/BopeDraw/BopeDraw (F)V rina/turok/bope/bopemod/guiscreen/render/BopeDraw
-Rename method net/minecraft/client/gui/Gui/drawRect (IIIII)V[1090,1098]::drawRect->func_73734_a
-Rename method net/minecraft/client/gui/Gui/drawRect (IIIII)V[1879,1887]::drawRect->func_73734_a
-Rename method net/minecraft/client/gui/FontRenderer/drawStringWithShadow (Ljava/lang/String;FFI)I[2299,2319]::drawStringWithShadow->func_175063_a
-Rename method net/minecraft/client/gui/FontRenderer/drawStringWithShadow (Ljava/lang/String;FFI)I[2389,2409]::drawStringWithShadow->func_175063_a
-Rename method net/minecraft/client/gui/FontRenderer/drawStringWithShadow (Ljava/lang/String;FFI)I[2627,2647]::drawStringWithShadow->func_175063_a
-Rename method net/minecraft/client/gui/FontRenderer/drawString (Ljava/lang/String;III)I[2717,2727]::drawString->func_78276_b
-Rename method net/minecraft/client/gui/FontRenderer/drawStringWithShadow (Ljava/lang/String;FFI)I[2831,2851]::drawStringWithShadow->func_175063_a
-Rename method net/minecraft/client/gui/FontRenderer/drawString (Ljava/lang/String;III)I[2923,2933]::drawString->func_78276_b
-Rename method net/minecraft/client/gui/FontRenderer/drawString (Ljava/lang/String;III)I[3186,3196]::drawString->func_78276_b
-Rename method net/minecraft/client/renderer/GlStateManager/enableBlend ()V[3406,3417]::enableBlend->func_179147_l
-Rename method net/minecraft/client/gui/FontRenderer/getStringWidth (Ljava/lang/String;)I[3645,3659]::getStringWidth->func_78256_a
-Rename method net/minecraft/client/gui/FontRenderer/getStringWidth (Ljava/lang/String;)I[3723,3737]::getStringWidth->func_78256_a
-Rename field net/minecraft/client/gui/FontRenderer/FONT_HEIGHT[3969,3980]::FONT_HEIGHT->field_78288_b
-Rename field net/minecraft/client/gui/FontRenderer/FONT_HEIGHT[4040,4051]::FONT_HEIGHT->field_78288_b
-Rename method net/minecraft/client/Minecraft/getMinecraft ()Lnet/minecraft/client/Minecraft;[4177,4189]::getMinecraft->func_71410_x
-Rename method net/minecraft/client/gui/ScaledResolution/getScaledWidth ()I[4217,4231]::getScaledWidth->func_78326_a
-Rename method net/minecraft/client/Minecraft/getMinecraft ()Lnet/minecraft/client/Minecraft;[4338,4350]::getMinecraft->func_71410_x
-Rename method net/minecraft/client/gui/ScaledResolution/getScaledHeight ()I[4378,4393]::getScaledHeight->func_78328_b
+Rename method net/minecraft/client/gui/Gui/drawRect (IIIII)V[1275,1283]::drawRect->func_73734_a
+Rename method net/minecraft/client/gui/Gui/drawRect (IIIII)V[2064,2072]::drawRect->func_73734_a
+Rename method net/minecraft/client/gui/FontRenderer/drawStringWithShadow (Ljava/lang/String;FFI)I[2669,2689]::drawStringWithShadow->func_175063_a
+Rename method net/minecraft/client/gui/FontRenderer/drawStringWithShadow (Ljava/lang/String;FFI)I[3122,3142]::drawStringWithShadow->func_175063_a
+Rename method net/minecraft/client/gui/FontRenderer/drawString (Ljava/lang/String;III)I[3214,3224]::drawString->func_78276_b
+Rename method net/minecraft/client/gui/FontRenderer/drawString (Ljava/lang/String;III)I[3477,3487]::drawString->func_78276_b
+Rename method net/minecraft/client/renderer/GlStateManager/enableBlend ()V[3697,3708]::enableBlend->func_179147_l
+Rename method net/minecraft/client/gui/FontRenderer/getStringWidth (Ljava/lang/String;)I[4007,4021]::getStringWidth->func_78256_a
+Rename field net/minecraft/client/gui/FontRenderer/FONT_HEIGHT[4282,4293]::FONT_HEIGHT->field_78288_b
+Rename method net/minecraft/client/Minecraft/getMinecraft ()Lnet/minecraft/client/Minecraft;[4419,4431]::getMinecraft->func_71410_x
+Rename method net/minecraft/client/gui/ScaledResolution/getScaledWidth ()I[4459,4473]::getScaledWidth->func_78326_a
+Rename method net/minecraft/client/Minecraft/getMinecraft ()Lnet/minecraft/client/Minecraft;[4580,4592]::getMinecraft->func_71410_x
+Rename method net/minecraft/client/gui/ScaledResolution/getScaledHeight ()I[4620,4635]::getScaledHeight->func_78328_b
 FOUND CONSTR method rina/turok/bope/bopemod/guiscreen/render/BopeDraw/TurokColor/TurokColor (IIII)V rina/turok/bope/bopemod/guiscreen/render/BopeDraw/TurokColor
 FOUND CONSTR method rina/turok/bope/bopemod/guiscreen/render/BopeDraw/TurokColor/TurokColor (III)V rina/turok/bope/bopemod/guiscreen/render/BopeDraw/TurokColor
 Import: java.util.*
 Import: java.awt.*
-Adding 9 imports
+Adding 11 imports
         net.minecraft.client.Minecraft
         net.minecraft.client.gui.FontRenderer
         net.minecraft.client.gui.Gui
         net.minecraft.client.gui.ScaledResolution
         net.minecraft.client.renderer.GlStateManager
         org.lwjgl.opengl.GL11
+        rina.turok.bope.Bope
+        rina.turok.bope.bopemod.guiscreen.render.font.CFontRenderer
         rina.turok.turok.Turok
         rina.turok.turok.draw.TurokRenderHelp
         rina.turok.turok.task.TurokRect
@@ -730,19 +736,19 @@ FOUND CONSTR method rina/turok/bope/bopemod/guiscreen/render/components/widgets/
 Rename method net/minecraft/client/gui/GuiTextField/writeText (Ljava/lang/String;)V[2002,2011]::writeText->func_146191_b
 Rename method net/minecraft/client/gui/GuiTextField/setCursorPosition (I)V[2063,2080]::setCursorPosition->func_146190_e
 Rename method net/minecraft/client/gui/GuiTextField/setMaxStringLength (I)V[2095,2113]::setMaxStringLength->func_146203_f
-Rename method net/minecraft/client/gui/GuiTextField/textboxKeyTyped (CI)Z[3897,3912]::textboxKeyTyped->func_146201_a
-Rename method net/minecraft/client/gui/GuiTextField/isFocused ()Z[3974,3983]::isFocused->func_146206_l
-Rename method net/minecraft/client/gui/GuiTextField/setFocused (Z)V[4008,4018]::setFocused->func_146195_b
-Rename method net/minecraft/client/gui/GuiTextField/mouseClicked (III)Z[4116,4128]::mouseClicked->func_146192_a
-Rename method net/minecraft/client/gui/GuiTextField/setFocused (Z)V[4304,4314]::setFocused->func_146195_b
-Rename field net/minecraft/client/gui/GuiTextField/width[5356,5361]::width->field_146218_h
-Rename field net/minecraft/client/gui/GuiTextField/height[5401,5407]::height->field_146219_i
-Rename field net/minecraft/client/gui/GuiTextField/x[5448,5449]::x->field_146209_f
-Rename field net/minecraft/client/gui/GuiTextField/y[5499,5500]::y->field_146210_g
-Rename method net/minecraft/client/gui/GuiTextField/getText ()Ljava/lang/String;[5569,5576]::getText->func_146179_b
-Rename method net/minecraft/client/gui/GuiTextField/drawTextBox ()V[5732,5743]::drawTextBox->func_146194_f
-Rename method net/minecraft/client/gui/GuiTextField/drawTextBox ()V[5895,5906]::drawTextBox->func_146194_f
-Rename method net/minecraft/client/gui/GuiTextField/isFocused ()Z[5943,5952]::isFocused->func_146206_l
+Rename method net/minecraft/client/gui/GuiTextField/textboxKeyTyped (CI)Z[3901,3916]::textboxKeyTyped->func_146201_a
+Rename method net/minecraft/client/gui/GuiTextField/isFocused ()Z[3978,3987]::isFocused->func_146206_l
+Rename method net/minecraft/client/gui/GuiTextField/setFocused (Z)V[4012,4022]::setFocused->func_146195_b
+Rename method net/minecraft/client/gui/GuiTextField/mouseClicked (III)Z[4120,4132]::mouseClicked->func_146192_a
+Rename method net/minecraft/client/gui/GuiTextField/setFocused (Z)V[4308,4318]::setFocused->func_146195_b
+Rename field net/minecraft/client/gui/GuiTextField/width[5360,5365]::width->field_146218_h
+Rename field net/minecraft/client/gui/GuiTextField/height[5405,5411]::height->field_146219_i
+Rename field net/minecraft/client/gui/GuiTextField/x[5452,5453]::x->field_146209_f
+Rename field net/minecraft/client/gui/GuiTextField/y[5503,5504]::y->field_146210_g
+Rename method net/minecraft/client/gui/GuiTextField/getText ()Ljava/lang/String;[5573,5580]::getText->func_146179_b
+Rename method net/minecraft/client/gui/GuiTextField/drawTextBox ()V[5821,5832]::drawTextBox->func_146194_f
+Rename method net/minecraft/client/gui/GuiTextField/drawTextBox ()V[6069,6080]::drawTextBox->func_146194_f
+Rename method net/minecraft/client/gui/GuiTextField/isFocused ()Z[6117,6126]::isFocused->func_146206_l
 Import: net.minecraft.client.renderer.GlStateManager
 Import: net.minecraft.client.gui.GuiTextField
 Import: net.minecraft.client.Minecraft
@@ -788,6 +794,55 @@ Adding 2 imports
         rina.turok.bope.bopemod.guiscreen.render.BopeDraw
 End  Processing: rina/turok/bope/bopemod/guiscreen/render/components/widgets/BopeSubMenu.java
 
+Start Processing: rina/turok/bope/bopemod/guiscreen/render/font/CFont.java
+FOUND CONSTR method rina/turok/bope/bopemod/guiscreen/render/font/CFont/CFont (Ljava/awt/Font;ZZ)V rina/turok/bope/bopemod/guiscreen/render/font/CFont
+FOUND CONSTR method rina/turok/bope/bopemod/guiscreen/render/font/CFont/CharData/CharData ()V rina/turok/bope/bopemod/guiscreen/render/font/CFont/CharData
+Import: net.minecraft.client.renderer.texture.DynamicTexture
+Adding 8 imports
+        java.awt.Color
+        java.awt.Font
+        java.awt.FontMetrics
+        java.awt.Graphics2D
+        java.awt.RenderingHints
+        java.awt.geom.Rectangle2D
+        java.awt.image.BufferedImage
+        org.lwjgl.opengl.GL11
+End  Processing: rina/turok/bope/bopemod/guiscreen/render/font/CFont.java
+
+Start Processing: rina/turok/bope/bopemod/guiscreen/render/font/CFontRenderer.java
+FOUND CONSTR method rina/turok/bope/bopemod/guiscreen/render/font/CFontRenderer/CFontRenderer (Ljava/awt/Font;ZZ)V rina/turok/bope/bopemod/guiscreen/render/font/CFontRenderer
+Rename method net/minecraft/client/renderer/GlStateManager/scale (DDD)V[2841,2846]::scale->func_179139_a
+Rename method net/minecraft/client/renderer/GlStateManager/enableBlend ()V[2902,2913]::enableBlend->func_179147_l
+Rename method net/minecraft/client/renderer/GlStateManager/blendFunc (II)V[2947,2956]::blendFunc->func_179112_b
+Rename method net/minecraft/client/renderer/GlStateManager/color (FFFF)V[3000,3005]::color->func_179131_c
+Rename method net/minecraft/client/renderer/GlStateManager/enableTexture2D ()V[3175,3190]::enableTexture2D->func_179098_w
+Rename method net/minecraft/client/renderer/GlStateManager/bindTexture (I)V[3220,3231]::bindTexture->func_179144_i
+Rename method net/minecraft/client/renderer/texture/ITextureObject/getGlTextureId ()I[3238,3252]::getGlTextureId->func_110552_b
+Rename method net/minecraft/client/renderer/texture/ITextureObject/getGlTextureId ()I[3312,3326]::getGlTextureId->func_110552_b
+Rename method net/minecraft/client/renderer/GlStateManager/bindTexture (I)V[4018,4029]::bindTexture->func_179144_i
+Rename method net/minecraft/client/renderer/texture/ITextureObject/getGlTextureId ()I[4036,4050]::getGlTextureId->func_110552_b
+Rename method net/minecraft/client/renderer/GlStateManager/color (FFFF)V[4475,4480]::color->func_179131_c
+Rename method net/minecraft/client/renderer/GlStateManager/bindTexture (I)V[4835,4846]::bindTexture->func_179144_i
+Rename method net/minecraft/client/renderer/texture/ITextureObject/getGlTextureId ()I[4863,4877]::getGlTextureId->func_110552_b
+Rename method net/minecraft/client/renderer/GlStateManager/bindTexture (I)V[5160,5171]::bindTexture->func_179144_i
+Rename method net/minecraft/client/renderer/texture/ITextureObject/getGlTextureId ()I[5182,5196]::getGlTextureId->func_110552_b
+Rename method net/minecraft/client/renderer/GlStateManager/bindTexture (I)V[5725,5736]::bindTexture->func_179144_i
+Rename method net/minecraft/client/renderer/texture/ITextureObject/getGlTextureId ()I[5753,5767]::getGlTextureId->func_110552_b
+Rename method net/minecraft/client/renderer/GlStateManager/bindTexture (I)V[6050,6061]::bindTexture->func_179144_i
+Rename method net/minecraft/client/renderer/texture/ITextureObject/getGlTextureId ()I[6074,6088]::getGlTextureId->func_110552_b
+Rename method net/minecraft/client/renderer/GlStateManager/color (FFFF)V[6621,6626]::color->func_179131_c
+Rename method net/minecraft/client/renderer/GlStateManager/bindTexture (I)V[6769,6780]::bindTexture->func_179144_i
+Rename method net/minecraft/client/renderer/texture/ITextureObject/getGlTextureId ()I[6787,6801]::getGlTextureId->func_110552_b
+Import: net.minecraft.client.renderer.texture.DynamicTexture
+Import: net.minecraft.client.renderer.GlStateManager
+Adding 5 imports
+        java.awt.Font
+        java.util.ArrayList
+        java.util.List
+        org.lwjgl.opengl.GL11
+        rina.turok.bope.bopemod.guiscreen.render.font.CFont.CharData
+End  Processing: rina/turok/bope/bopemod/guiscreen/render/font/CFontRenderer.java
+
 Start Processing: rina/turok/bope/bopemod/guiscreen/render/pinnables/BopeFrame.java
 Rename method net/minecraft/client/Minecraft/getMinecraft ()Lnet/minecraft/client/Minecraft;[1478,1490]::getMinecraft->func_71410_x
 FOUND CONSTR method rina/turok/bope/bopemod/guiscreen/render/pinnables/BopeFrame/BopeFrame (Ljava/lang/String;Ljava/lang/String;II)V rina/turok/bope/bopemod/guiscreen/render/pinnables/BopeFrame
@@ -805,6 +860,9 @@ Start Processing: rina/turok/bope/bopemod/guiscreen/render/pinnables/BopePinnabl
 Rename method net/minecraft/client/Minecraft/getMinecraft ()Lnet/minecraft/client/Minecraft;[1143,1155]::getMinecraft->func_71410_x
 FOUND CONSTR method rina/turok/bope/bopemod/guiscreen/render/pinnables/BopePinnable/BopePinnable (Ljava/lang/String;Ljava/lang/String;FII)V rina/turok/bope/bopemod/guiscreen/render/pinnables/BopePinnable
 Rename method net/minecraft/client/renderer/GlStateManager/enableBlend ()V[4954,4965]::enableBlend->func_179147_l
+Rename field net/minecraft/client/Minecraft/ingameGUI[5315,5324]::ingameGUI->field_71456_v
+Rename method net/minecraft/client/gui/GuiIngame/getChatGUI ()Lnet/minecraft/client/gui/GuiNewChat;[5329,5339]::getChatGUI->func_146158_b
+Rename method net/minecraft/client/gui/GuiNewChat/getChatOpen ()Z[5345,5356]::getChatOpen->func_146241_e
 Import: net.minecraft.client.renderer.GlStateManager
 Import: net.minecraft.client.Minecraft
 Adding 4 imports
@@ -839,12 +897,12 @@ End  Processing: rina/turok/bope/bopemod/hacks/BopeCategory.java
 
 Start Processing: rina/turok/bope/bopemod/hacks/BopeClickGUI.java
 FOUND CONSTR method rina/turok/bope/bopemod/hacks/BopeClickGUI/BopeClickGUI ()V rina/turok/bope/bopemod/hacks/BopeClickGUI
-Rename field net/minecraft/client/Minecraft/world[4423,4428]::world->field_71441_e
-Rename field net/minecraft/client/Minecraft/player[4451,4457]::player->field_71439_g
-Rename method net/minecraft/client/Minecraft/displayGuiScreen (Lnet/minecraft/client/gui/GuiScreen;)V[4483,4499]::displayGuiScreen->func_147108_a
-Rename field net/minecraft/client/Minecraft/world[4573,4578]::world->field_71441_e
-Rename field net/minecraft/client/Minecraft/player[4601,4607]::player->field_71439_g
-Rename method net/minecraft/client/Minecraft/displayGuiScreen (Lnet/minecraft/client/gui/GuiScreen;)V[4633,4649]::displayGuiScreen->func_147108_a
+Rename field net/minecraft/client/Minecraft/world[4495,4500]::world->field_71441_e
+Rename field net/minecraft/client/Minecraft/player[4523,4529]::player->field_71439_g
+Rename method net/minecraft/client/Minecraft/displayGuiScreen (Lnet/minecraft/client/gui/GuiScreen;)V[4555,4571]::displayGuiScreen->func_147108_a
+Rename field net/minecraft/client/Minecraft/world[4645,4650]::world->field_71441_e
+Rename field net/minecraft/client/Minecraft/player[4673,4679]::player->field_71439_g
+Rename method net/minecraft/client/Minecraft/displayGuiScreen (Lnet/minecraft/client/gui/GuiScreen;)V[4705,4721]::displayGuiScreen->func_147108_a
 Import: rina.turok.bope.bopemod.guiscreen.settings.BopeSetting
 Adding 2 imports
         rina.turok.bope.Bope
@@ -1762,12 +1820,12 @@ End  Processing: rina/turok/bope/bopemod/hacks/render/BopeBrightness.java
 
 Start Processing: rina/turok/bope/bopemod/hacks/render/BopeHighlight.java
 FOUND CONSTR method rina/turok/bope/bopemod/hacks/render/BopeHighlight/BopeHighlight ()V rina/turok/bope/bopemod/hacks/render/BopeHighlight
-Rename field net/minecraft/client/Minecraft/player[1657,1663]::player->field_71439_g
-Rename field net/minecraft/client/Minecraft/world[1685,1690]::world->field_71441_e
-Rename field net/minecraft/client/Minecraft/objectMouseOver[2491,2506]::objectMouseOver->field_71476_x
-Rename field net/minecraft/util/math/RayTraceResult/typeOfHit[2551,2560]::typeOfHit->field_72313_a
+Rename field net/minecraft/client/Minecraft/player[1550,1556]::player->field_71439_g
+Rename field net/minecraft/client/Minecraft/world[1578,1583]::world->field_71441_e
+Rename field net/minecraft/client/Minecraft/objectMouseOver[2142,2157]::objectMouseOver->field_71476_x
+Rename field net/minecraft/util/math/RayTraceResult/typeOfHit[2202,2211]::typeOfHit->field_72313_a
 New Key: class net/minecraft/util/math/RayTraceResult
-Rename method net/minecraft/util/math/RayTraceResult/getBlockPos ()Lnet/minecraft/util/math/BlockPos;[2631,2642]::getBlockPos->func_178782_a
+Rename method net/minecraft/util/math/RayTraceResult/getBlockPos ()Lnet/minecraft/util/math/BlockPos;[2282,2293]::getBlockPos->func_178782_a
 Import: net.minecraft.util.math.RayTraceResult
 Import: net.minecraft.util.math.BlockPos
 Adding 6 imports
@@ -1781,45 +1839,45 @@ End  Processing: rina/turok/bope/bopemod/hacks/render/BopeHighlight.java
 
 Start Processing: rina/turok/bope/bopemod/hacks/render/BopeHoleColor.java
 FOUND CONSTR method rina/turok/bope/bopemod/hacks/render/BopeHoleColor/BopeHoleColor ()V rina/turok/bope/bopemod/hacks/render/BopeHoleColor
-Rename field net/minecraft/client/Minecraft/player[1934,1940]::player->field_71439_g
-Rename field net/minecraft/client/Minecraft/world[1962,1967]::world->field_71441_e
-Rename field net/minecraft/client/Minecraft/world[2428,2433]::world->field_71441_e
-Rename method net/minecraft/world/IBlockAccess/getBlockState (Lnet/minecraft/util/math/BlockPos;)Lnet/minecraft/block/state/IBlockState;[2442,2455]::getBlockState->func_180495_p
-Rename method net/minecraft/block/state/IBlockState/getBlock ()Lnet/minecraft/block/Block;[2461,2469]::getBlock->func_177230_c
-Rename field net/minecraft/init/Blocks/AIR[2491,2494]::AIR->field_150350_a
-Rename field net/minecraft/client/Minecraft/world[2548,2553]::world->field_71441_e
-Rename method net/minecraft/world/IBlockAccess/getBlockState (Lnet/minecraft/util/math/BlockPos;)Lnet/minecraft/block/state/IBlockState;[2562,2575]::getBlockState->func_180495_p
-Rename method net/minecraft/util/math/BlockPos/add (III)Lnet/minecraft/util/math/BlockPos;[2580,2583]::add->func_177982_a
-Rename method net/minecraft/block/state/IBlockState/getBlock ()Lnet/minecraft/block/Block;[2604,2612]::getBlock->func_177230_c
-Rename field net/minecraft/init/Blocks/AIR[2634,2637]::AIR->field_150350_a
-Rename field net/minecraft/client/Minecraft/world[2691,2696]::world->field_71441_e
-Rename method net/minecraft/world/IBlockAccess/getBlockState (Lnet/minecraft/util/math/BlockPos;)Lnet/minecraft/block/state/IBlockState;[2705,2718]::getBlockState->func_180495_p
-Rename method net/minecraft/util/math/BlockPos/add (III)Lnet/minecraft/util/math/BlockPos;[2723,2726]::add->func_177982_a
-Rename method net/minecraft/block/state/IBlockState/getBlock ()Lnet/minecraft/block/Block;[2747,2755]::getBlock->func_177230_c
-Rename field net/minecraft/init/Blocks/AIR[2777,2780]::AIR->field_150350_a
-Rename field net/minecraft/client/Minecraft/world[3236,3241]::world->field_71441_e
-Rename method net/minecraft/world/IBlockAccess/getBlockState (Lnet/minecraft/util/math/BlockPos;)Lnet/minecraft/block/state/IBlockState;[3250,3263]::getBlockState->func_180495_p
-Rename method net/minecraft/util/math/BlockPos/add (Lnet/minecraft/util/math/Vec3i;)Lnet/minecraft/util/math/BlockPos;[3268,3271]::add->func_177971_a
-Rename method net/minecraft/block/state/IBlockState/getBlock ()Lnet/minecraft/block/Block;[3297,3305]::getBlock->func_177230_c
-Rename field net/minecraft/init/Blocks/BEDROCK[3342,3349]::BEDROCK->field_150357_h
-Rename field net/minecraft/init/Blocks/OBSIDIAN[3376,3384]::OBSIDIAN->field_150343_Z
-Rename field net/minecraft/init/Blocks/ENDER_CHEST[3410,3421]::ENDER_CHEST->field_150477_bB
-Rename field net/minecraft/init/Blocks/ANVIL[3445,3450]::ANVIL->field_150467_bQ
-Rename field net/minecraft/util/math/Vec3i/x[4445,4446]::x->field_177962_a
-Rename field net/minecraft/util/math/Vec3i/y[4467,4468]::y->field_177960_b
-Rename field net/minecraft/util/math/Vec3i/z[4489,4490]::z->field_177961_c
-Rename field net/minecraft/util/math/Vec3i/x[4791,4792]::x->field_177962_a
-Rename field net/minecraft/util/math/Vec3i/y[4813,4814]::y->field_177960_b
-Rename field net/minecraft/util/math/Vec3i/z[4835,4836]::z->field_177961_c
-Rename method net/minecraft/util/math/Vec3i/getX ()I[5243,5247]::getX->func_177958_n
-Rename method net/minecraft/util/math/Vec3i/getY ()I[5276,5280]::getY->func_177956_o
-Rename method net/minecraft/util/math/Vec3i/getZ ()I[5309,5313]::getZ->func_177952_p
-Rename field net/minecraft/client/Minecraft/player[5941,5947]::player->field_71439_g
-Rename field net/minecraft/entity/Entity/posX[5955,5959]::posX->field_70165_t
-Rename field net/minecraft/client/Minecraft/player[5994,6000]::player->field_71439_g
-Rename field net/minecraft/entity/Entity/posY[6008,6012]::posY->field_70163_u
-Rename field net/minecraft/client/Minecraft/player[6047,6053]::player->field_71439_g
-Rename field net/minecraft/entity/Entity/posZ[6061,6065]::posZ->field_70161_v
+Rename field net/minecraft/client/Minecraft/player[1828,1834]::player->field_71439_g
+Rename field net/minecraft/client/Minecraft/world[1856,1861]::world->field_71441_e
+Rename field net/minecraft/client/Minecraft/world[2083,2088]::world->field_71441_e
+Rename method net/minecraft/world/IBlockAccess/getBlockState (Lnet/minecraft/util/math/BlockPos;)Lnet/minecraft/block/state/IBlockState;[2097,2110]::getBlockState->func_180495_p
+Rename method net/minecraft/block/state/IBlockState/getBlock ()Lnet/minecraft/block/Block;[2116,2124]::getBlock->func_177230_c
+Rename field net/minecraft/init/Blocks/AIR[2146,2149]::AIR->field_150350_a
+Rename field net/minecraft/client/Minecraft/world[2203,2208]::world->field_71441_e
+Rename method net/minecraft/world/IBlockAccess/getBlockState (Lnet/minecraft/util/math/BlockPos;)Lnet/minecraft/block/state/IBlockState;[2217,2230]::getBlockState->func_180495_p
+Rename method net/minecraft/util/math/BlockPos/add (III)Lnet/minecraft/util/math/BlockPos;[2235,2238]::add->func_177982_a
+Rename method net/minecraft/block/state/IBlockState/getBlock ()Lnet/minecraft/block/Block;[2259,2267]::getBlock->func_177230_c
+Rename field net/minecraft/init/Blocks/AIR[2289,2292]::AIR->field_150350_a
+Rename field net/minecraft/client/Minecraft/world[2346,2351]::world->field_71441_e
+Rename method net/minecraft/world/IBlockAccess/getBlockState (Lnet/minecraft/util/math/BlockPos;)Lnet/minecraft/block/state/IBlockState;[2360,2373]::getBlockState->func_180495_p
+Rename method net/minecraft/util/math/BlockPos/add (III)Lnet/minecraft/util/math/BlockPos;[2378,2381]::add->func_177982_a
+Rename method net/minecraft/block/state/IBlockState/getBlock ()Lnet/minecraft/block/Block;[2402,2410]::getBlock->func_177230_c
+Rename field net/minecraft/init/Blocks/AIR[2432,2435]::AIR->field_150350_a
+Rename field net/minecraft/client/Minecraft/world[2891,2896]::world->field_71441_e
+Rename method net/minecraft/world/IBlockAccess/getBlockState (Lnet/minecraft/util/math/BlockPos;)Lnet/minecraft/block/state/IBlockState;[2905,2918]::getBlockState->func_180495_p
+Rename method net/minecraft/util/math/BlockPos/add (Lnet/minecraft/util/math/Vec3i;)Lnet/minecraft/util/math/BlockPos;[2923,2926]::add->func_177971_a
+Rename method net/minecraft/block/state/IBlockState/getBlock ()Lnet/minecraft/block/Block;[2952,2960]::getBlock->func_177230_c
+Rename field net/minecraft/init/Blocks/BEDROCK[2997,3004]::BEDROCK->field_150357_h
+Rename field net/minecraft/init/Blocks/OBSIDIAN[3031,3039]::OBSIDIAN->field_150343_Z
+Rename field net/minecraft/init/Blocks/ENDER_CHEST[3065,3076]::ENDER_CHEST->field_150477_bB
+Rename field net/minecraft/init/Blocks/ANVIL[3100,3105]::ANVIL->field_150467_bQ
+Rename field net/minecraft/util/math/Vec3i/x[4079,4080]::x->field_177962_a
+Rename field net/minecraft/util/math/Vec3i/y[4101,4102]::y->field_177960_b
+Rename field net/minecraft/util/math/Vec3i/z[4123,4124]::z->field_177961_c
+Rename field net/minecraft/util/math/Vec3i/x[4390,4391]::x->field_177962_a
+Rename field net/minecraft/util/math/Vec3i/y[4412,4413]::y->field_177960_b
+Rename field net/minecraft/util/math/Vec3i/z[4434,4435]::z->field_177961_c
+Rename method net/minecraft/util/math/Vec3i/getX ()I[4830,4834]::getX->func_177958_n
+Rename method net/minecraft/util/math/Vec3i/getY ()I[4863,4867]::getY->func_177956_o
+Rename method net/minecraft/util/math/Vec3i/getZ ()I[4896,4900]::getZ->func_177952_p
+Rename field net/minecraft/client/Minecraft/player[5528,5534]::player->field_71439_g
+Rename field net/minecraft/entity/Entity/posX[5542,5546]::posX->field_70165_t
+Rename field net/minecraft/client/Minecraft/player[5581,5587]::player->field_71439_g
+Rename field net/minecraft/entity/Entity/posY[5595,5599]::posY->field_70163_u
+Rename field net/minecraft/client/Minecraft/player[5634,5640]::player->field_71439_g
+Rename field net/minecraft/entity/Entity/posZ[5648,5652]::posZ->field_70161_v
 Import: net.minecraft.util.math.BlockPos
 Import: net.minecraft.block.Block
 Import: net.minecraft.init.Blocks
@@ -2050,6 +2108,7 @@ Import: java.nio.file.Paths
 Import: java.nio.file.Path
 Import: java.time.*
 Import: java.util.*
+Import: java.awt.*
 Import: java.io.*
 Adding 12 imports
         com.google.gson.Gson
@@ -2136,47 +2195,47 @@ End  Processing: rina/turok/bope/bopemod/manager/BopeHUDManager.java
 Start Processing: rina/turok/bope/bopemod/manager/BopeModuleManager.java
 Rename method net/minecraft/client/Minecraft/getMinecraft ()Lnet/minecraft/client/Minecraft;[1351,1363]::getMinecraft->func_71410_x
 FOUND CONSTR method rina/turok/bope/bopemod/manager/BopeModuleManager/BopeModuleManager (Ljava/lang/String;)V rina/turok/bope/bopemod/manager/BopeModuleManager
-Rename field net/minecraft/entity/Entity/posX[3133,3137]::posX->field_70165_t
-Rename field net/minecraft/entity/Entity/lastTickPosX[3156,3168]::lastTickPosX->field_70142_S
-Rename field net/minecraft/entity/Entity/posY[3187,3191]::posY->field_70163_u
-Rename field net/minecraft/entity/Entity/lastTickPosY[3210,3222]::lastTickPosY->field_70137_T
-Rename field net/minecraft/entity/Entity/posZ[3241,3245]::posZ->field_70161_v
-Rename field net/minecraft/entity/Entity/lastTickPosZ[3264,3276]::lastTickPosZ->field_70136_U
-Rename field net/minecraft/entity/Entity/lastTickPosX[3381,3393]::lastTickPosX->field_70142_S
-Rename field net/minecraft/entity/Entity/lastTickPosY[3403,3415]::lastTickPosY->field_70137_T
-Rename field net/minecraft/entity/Entity/lastTickPosZ[3425,3437]::lastTickPosZ->field_70136_U
-Rename method net/minecraft/util/math/Vec3d/add (Lnet/minecraft/util/math/Vec3d;)Lnet/minecraft/util/math/Vec3d;[3440,3443]::add->func_178787_e
-Rename field net/minecraft/client/Minecraft/profiler[3576,3584]::profiler->field_71424_I
-Rename method net/minecraft/profiler/Profiler/startSection (Ljava/lang/String;)V[3590,3602]::startSection->func_76320_a
-Rename field net/minecraft/client/Minecraft/profiler[3617,3625]::profiler->field_71424_I
-Rename method net/minecraft/profiler/Profiler/startSection (Ljava/lang/String;)V[3631,3643]::startSection->func_76320_a
-Rename method net/minecraft/client/renderer/GlStateManager/disableTexture2D ()V[3672,3688]::disableTexture2D->func_179090_x
-Rename method net/minecraft/client/renderer/GlStateManager/enableBlend ()V[3706,3717]::enableBlend->func_179147_l
-Rename method net/minecraft/client/renderer/GlStateManager/disableAlpha ()V[3740,3752]::disableAlpha->func_179118_c
-Rename method net/minecraft/client/renderer/GlStateManager/tryBlendFuncSeparate (IIII)V[3774,3794]::tryBlendFuncSeparate->func_179120_a
-Rename method net/minecraft/client/renderer/GlStateManager/shadeModel (I)V[3860,3870]::shadeModel->func_179103_j
-Rename method net/minecraft/client/renderer/GlStateManager/disableDepth ()V[3908,3920]::disableDepth->func_179097_i
-Rename method net/minecraft/client/renderer/GlStateManager/glLineWidth (F)V[3943,3954]::glLineWidth->func_187441_d
-Rename field net/minecraft/client/Minecraft/player[4003,4009]::player->field_71439_g
-Rename field net/minecraft/client/Minecraft/profiler[4173,4181]::profiler->field_71424_I
-Rename method net/minecraft/profiler/Profiler/endSection ()V[4187,4197]::endSection->func_76319_b
-Rename field net/minecraft/client/Minecraft/profiler[4292,4300]::profiler->field_71424_I
-Rename method net/minecraft/profiler/Profiler/startSection (Ljava/lang/String;)V[4306,4318]::startSection->func_76320_a
-Rename field net/minecraft/client/Minecraft/profiler[4382,4390]::profiler->field_71424_I
-Rename method net/minecraft/profiler/Profiler/endSection ()V[4396,4406]::endSection->func_76319_b
-Rename field net/minecraft/client/Minecraft/profiler[4427,4435]::profiler->field_71424_I
-Rename method net/minecraft/profiler/Profiler/startSection (Ljava/lang/String;)V[4441,4453]::startSection->func_76320_a
-Rename method net/minecraft/client/renderer/GlStateManager/glLineWidth (F)V[4484,4495]::glLineWidth->func_187441_d
-Rename method net/minecraft/client/renderer/GlStateManager/shadeModel (I)V[4523,4533]::shadeModel->func_179103_j
-Rename method net/minecraft/client/renderer/GlStateManager/disableBlend ()V[4569,4581]::disableBlend->func_179084_k
-Rename method net/minecraft/client/renderer/GlStateManager/enableAlpha ()V[4603,4614]::enableAlpha->func_179141_d
-Rename method net/minecraft/client/renderer/GlStateManager/enableTexture2D ()V[4637,4652]::enableTexture2D->func_179098_w
-Rename method net/minecraft/client/renderer/GlStateManager/enableDepth ()V[4671,4682]::enableDepth->func_179126_j
-Rename method net/minecraft/client/renderer/GlStateManager/enableCull ()V[4705,4715]::enableCull->func_179089_o
-Rename field net/minecraft/client/Minecraft/profiler[4761,4769]::profiler->field_71424_I
-Rename method net/minecraft/profiler/Profiler/endSection ()V[4775,4785]::endSection->func_76319_b
-Rename field net/minecraft/client/Minecraft/profiler[4796,4804]::profiler->field_71424_I
-Rename method net/minecraft/profiler/Profiler/endSection ()V[4810,4820]::endSection->func_76319_b
+Rename field net/minecraft/entity/Entity/posX[3051,3055]::posX->field_70165_t
+Rename field net/minecraft/entity/Entity/lastTickPosX[3074,3086]::lastTickPosX->field_70142_S
+Rename field net/minecraft/entity/Entity/posY[3105,3109]::posY->field_70163_u
+Rename field net/minecraft/entity/Entity/lastTickPosY[3128,3140]::lastTickPosY->field_70137_T
+Rename field net/minecraft/entity/Entity/posZ[3159,3163]::posZ->field_70161_v
+Rename field net/minecraft/entity/Entity/lastTickPosZ[3182,3194]::lastTickPosZ->field_70136_U
+Rename field net/minecraft/entity/Entity/lastTickPosX[3299,3311]::lastTickPosX->field_70142_S
+Rename field net/minecraft/entity/Entity/lastTickPosY[3321,3333]::lastTickPosY->field_70137_T
+Rename field net/minecraft/entity/Entity/lastTickPosZ[3343,3355]::lastTickPosZ->field_70136_U
+Rename method net/minecraft/util/math/Vec3d/add (Lnet/minecraft/util/math/Vec3d;)Lnet/minecraft/util/math/Vec3d;[3358,3361]::add->func_178787_e
+Rename field net/minecraft/client/Minecraft/profiler[3494,3502]::profiler->field_71424_I
+Rename method net/minecraft/profiler/Profiler/startSection (Ljava/lang/String;)V[3508,3520]::startSection->func_76320_a
+Rename field net/minecraft/client/Minecraft/profiler[3535,3543]::profiler->field_71424_I
+Rename method net/minecraft/profiler/Profiler/startSection (Ljava/lang/String;)V[3549,3561]::startSection->func_76320_a
+Rename method net/minecraft/client/renderer/GlStateManager/disableTexture2D ()V[3590,3606]::disableTexture2D->func_179090_x
+Rename method net/minecraft/client/renderer/GlStateManager/enableBlend ()V[3624,3635]::enableBlend->func_179147_l
+Rename method net/minecraft/client/renderer/GlStateManager/disableAlpha ()V[3658,3670]::disableAlpha->func_179118_c
+Rename method net/minecraft/client/renderer/GlStateManager/tryBlendFuncSeparate (IIII)V[3692,3712]::tryBlendFuncSeparate->func_179120_a
+Rename method net/minecraft/client/renderer/GlStateManager/shadeModel (I)V[3778,3788]::shadeModel->func_179103_j
+Rename method net/minecraft/client/renderer/GlStateManager/disableDepth ()V[3826,3838]::disableDepth->func_179097_i
+Rename method net/minecraft/client/renderer/GlStateManager/glLineWidth (F)V[3861,3872]::glLineWidth->func_187441_d
+Rename field net/minecraft/client/Minecraft/player[3921,3927]::player->field_71439_g
+Rename field net/minecraft/client/Minecraft/profiler[4091,4099]::profiler->field_71424_I
+Rename method net/minecraft/profiler/Profiler/endSection ()V[4105,4115]::endSection->func_76319_b
+Rename field net/minecraft/client/Minecraft/profiler[4210,4218]::profiler->field_71424_I
+Rename method net/minecraft/profiler/Profiler/startSection (Ljava/lang/String;)V[4224,4236]::startSection->func_76320_a
+Rename field net/minecraft/client/Minecraft/profiler[4300,4308]::profiler->field_71424_I
+Rename method net/minecraft/profiler/Profiler/endSection ()V[4314,4324]::endSection->func_76319_b
+Rename field net/minecraft/client/Minecraft/profiler[4345,4353]::profiler->field_71424_I
+Rename method net/minecraft/profiler/Profiler/startSection (Ljava/lang/String;)V[4359,4371]::startSection->func_76320_a
+Rename method net/minecraft/client/renderer/GlStateManager/glLineWidth (F)V[4402,4413]::glLineWidth->func_187441_d
+Rename method net/minecraft/client/renderer/GlStateManager/shadeModel (I)V[4441,4451]::shadeModel->func_179103_j
+Rename method net/minecraft/client/renderer/GlStateManager/disableBlend ()V[4487,4499]::disableBlend->func_179084_k
+Rename method net/minecraft/client/renderer/GlStateManager/enableAlpha ()V[4521,4532]::enableAlpha->func_179141_d
+Rename method net/minecraft/client/renderer/GlStateManager/enableTexture2D ()V[4555,4570]::enableTexture2D->func_179098_w
+Rename method net/minecraft/client/renderer/GlStateManager/enableDepth ()V[4589,4600]::enableDepth->func_179126_j
+Rename method net/minecraft/client/renderer/GlStateManager/enableCull ()V[4623,4633]::enableCull->func_179089_o
+Rename field net/minecraft/client/Minecraft/profiler[4679,4687]::profiler->field_71424_I
+Rename method net/minecraft/profiler/Profiler/endSection ()V[4693,4703]::endSection->func_76319_b
+Rename field net/minecraft/client/Minecraft/profiler[4714,4722]::profiler->field_71424_I
+Rename method net/minecraft/profiler/Profiler/endSection ()V[4728,4738]::endSection->func_76319_b
 Import: net.minecraftforge.client.event.RenderWorldLastEvent
 Import: net.minecraft.client.renderer.GlStateManager
 Import: net.minecraft.client.Minecraft

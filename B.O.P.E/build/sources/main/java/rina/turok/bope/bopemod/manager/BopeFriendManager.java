@@ -32,6 +32,10 @@ public class BopeFriendManager {
 		array_friend.remove(friend); // :(
 	}
 
+	public void clear() {
+		array_friend.clear();
+	}
+
 	public ArrayList<BopeFriend> get_array_friends() {
 		return array_friend;
 	}

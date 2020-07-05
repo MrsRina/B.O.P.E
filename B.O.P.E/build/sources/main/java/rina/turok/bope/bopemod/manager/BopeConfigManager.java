@@ -7,6 +7,7 @@ import java.nio.file.Paths;
 import java.nio.file.Path;
 import java.time.*;
 import java.util.*;
+import java.awt.*;
 import java.io.*;
 
 // Json manager.
@@ -448,6 +449,8 @@ public class BopeConfigManager {
 
 		String line;
 
+		Bope.get_friend_manager().clear();
+
 		try {
 			file         = new File(BOPE_ABS_FRIENDS);
 			input_stream = new FileInputStream(file.getAbsolutePath());
@@ -475,6 +478,7 @@ public class BopeConfigManager {
 		BOPE_MAIN_CONFIGS.add("version", new JsonPrimitive(Bope.get_version()));
 		BOPE_MAIN_CONFIGS.add("user",    new JsonPrimitive(Bope.get_actual_user()));
 		BOPE_MAIN_CONFIGS.add("prefix",  new JsonPrimitive(Bope.get_command_manager().get_prefix()));
+		BOPE_MAIN_CONFIGS.add("font",    new JsonPrimitive(Bope.font_name));
 
 		for (BopeFrame frames_gui : Bope.click_gui.get_array_frames()) {
 			JsonObject BOPE_FRAMES_INFO = new JsonObject();
@@ -505,13 +509,42 @@ public class BopeConfigManager {
 		file.close();
 	}
 
+	public boolean true_font(String font_name) {
+		GraphicsEnvironment g = null;
+
+		g = GraphicsEnvironment.getLocalGraphicsEnvironment();
+
+		String [] fonts = g.getAvailableFontFamilyNames();
+		
+		for (int i = 0; i < fonts.length; i++) {
+			if(fonts[i].equals(font_name)) {
+				return true;
+			}
+		}
+
+		return false;
+	}
+
 	public void BOPE_LOAD_CLIENT() throws IOException {
 		InputStream BOPE_JSON_FILE          = Files.newInputStream(PATH_CLIENT);
 		JsonObject  BOPE_MAIN_CLIENT        = new JsonParser().parse(new InputStreamReader(BOPE_JSON_FILE)).getAsJsonObject();
 		JsonObject  BOPE_MAIN_CONFIGURATION = BOPE_MAIN_CLIENT.get("configuration").getAsJsonObject();
-		JsonObject  BOPE_MAIN_GUI           = BOPE_MAIN_CLIENT.get("gui").getAsJsonObject();
 
 		Bope.get_command_manager().set_prefix(BOPE_MAIN_CONFIGURATION.get("prefix").getAsString());
+
+		try {
+			if (BOPE_MAIN_CONFIGURATION.get("font").getAsString() != null && true_font(BOPE_MAIN_CONFIGURATION.get("font").getAsString())) {
+				Bope.font_name = BOPE_MAIN_CONFIGURATION.get("font").getAsString();
+			}
+		} catch (Exception exc) {}
+
+		BOPE_JSON_FILE.close();
+	}
+
+	public void BOPE_LOAD_CLIENT_GUI() throws IOException {
+		InputStream BOPE_JSON_FILE          = Files.newInputStream(PATH_CLIENT);
+		JsonObject  BOPE_MAIN_CLIENT        = new JsonParser().parse(new InputStreamReader(BOPE_JSON_FILE)).getAsJsonObject();
+		JsonObject  BOPE_MAIN_GUI           = BOPE_MAIN_CLIENT.get("gui").getAsJsonObject();
 
 		for (BopeFrame frames : Bope.click_gui.get_array_frames()) {
 			JsonObject BOPE_FRAME_INFO = BOPE_MAIN_GUI.get(frames.get_tag()).getAsJsonObject();
@@ -624,9 +657,7 @@ public class BopeConfigManager {
 			BOPE_VERIFY_FOLDER(Paths.get(BOPE_ABS_FOLDER + BOPE_FOLDER_VALUES));
 
 			BOPE_SAVE_SETTINGS();
-		} catch (IOException exc) {
-			exc.printStackTrace();
-		}	
+		} catch (IOException exc) {}	
 	}
 
 	public void load_settings() {
@@ -639,9 +670,7 @@ public class BopeConfigManager {
 			BOPE_VERIFY_FOLDER(Paths.get(BOPE_ABS_FOLDER + BOPE_FOLDER_MODULES));
 
 			BOPE_SAVE_BINDS();
-		} catch (IOException exc) {
-			exc.printStackTrace();
-		}	
+		} catch (IOException exc) {}	
 	}
 
 	public void load_binds() {
@@ -653,9 +682,7 @@ public class BopeConfigManager {
 			BOPE_VERIFY_FOLDER(PATH_FOLDER);
 
 			BOPE_SAVE_FRIENDS();
-		} catch (IOException exc) {
-			exc.printStackTrace();
-		}	
+		} catch (IOException exc) {}	
 	}
 
 	public void load_friends() {
@@ -668,15 +695,20 @@ public class BopeConfigManager {
 
 			BOPE_SAVE_CLIENT();
 			BOPE_SAVE_HUD();
-		} catch (IOException exc) {
-			exc.printStackTrace();
-		}		
+		} catch (IOException exc) {}		
 	}
 
 	public void load_client() {
 		try {
+			BOPE_LOAD_CLIENT_GUI();
 			BOPE_LOAD_CLIENT();
 			BOPE_LOAD_HUD();
+		} catch (IOException exc) {}		
+	}
+
+	public void load_client(String client) {
+		try {
+			BOPE_LOAD_CLIENT();
 		} catch (IOException exc) {
 			exc.printStackTrace();
 		}		

@@ -12,6 +12,7 @@ import net.minecraft.client.gui.Gui;
 import org.lwjgl.opengl.GL11;
 
 // Guiscreen.
+import rina.turok.bope.bopemod.guiscreen.render.font.CFontRenderer;
 import rina.turok.bope.bopemod.guiscreen.render.BopeString;
 
 // Data.
@@ -33,8 +34,9 @@ import rina.turok.turok.Turok;
 *
 */
 public class BopeDraw {
-	public static FontRenderer font_renderer = Minecraft.getMinecraft().fontRenderer;
-	public static FontRenderer custom_font   = new BopeString(true);
+	public static FontRenderer font_renderer   = Minecraft.getMinecraft().fontRenderer;
+	public static FontRenderer custom_font     = new BopeString(true);
+	public static CFontRenderer cfont_renderer = new CFontRenderer(new Font(Bope.font_name, 0, 16), true, false);
 
 	private float size;
 
@@ -68,6 +70,10 @@ public class BopeDraw {
 		Gui.drawRect(rect.get_x(), rect.get_y(), rect.get_screen_width(), rect.get_screen_height(), new TurokColor(r, g, b, a).hex());
 	}
 
+	public static CFontRenderer get_cfont_renderer() {
+		return cfont_renderer;
+	}
+
 	public static FontRenderer get_font_renderer(boolean smooth) {
 		if (smooth) {
 			return custom_font;
@@ -78,7 +84,7 @@ public class BopeDraw {
 
 	public static void draw_string(String string, int x, int y, int r, int g, int b, boolean smoth) {
 		if (smoth) {
-			custom_font.drawStringWithShadow(string, x, y, new TurokColor(r, g, b).hex());
+			cfont_renderer.drawStringWithShadow(string, x, y, new TurokColor(r, g, b).hex());
 		} else {
 			font_renderer.drawStringWithShadow(string, x, y, new TurokColor(r, g, b).hex());
 		}
@@ -87,9 +93,9 @@ public class BopeDraw {
 	public static void draw_string(String string, int x, int y, int r, int g, int b, boolean shadow, boolean smoth) {
 		if (smoth) {
 			if (shadow) {
-				custom_font.drawStringWithShadow(string, x, y, new TurokColor(r, g, b).hex());
+				cfont_renderer.drawStringWithShadow(string, x, y, new TurokColor(r, g, b).hex());
 			} else {
-				custom_font.drawString(string, x, y, new TurokColor(r, g, b).hex());
+				cfont_renderer.drawString(string, x, y, new TurokColor(r, g, b).hex());
 			}
 		} else {
 			if (shadow) {
@@ -125,7 +131,7 @@ public class BopeDraw {
 		FontRenderer fontRenderer = font_renderer;
 
 		if (smoth) {
-			return (int) (custom_font.getStringWidth(string) * this.size);
+			return (int) (cfont_renderer.getStringWidth(string));
 		} else {
 			return (int) (fontRenderer.getStringWidth(string) * this.size);
 		}
@@ -133,10 +139,9 @@ public class BopeDraw {
 
 	public int get_string_height(String string, boolean smoth) {
 		FontRenderer fontRenderer = font_renderer;
-		FontRenderer customFont   = custom_font;
 
 		if (smoth) {
-			return (int) (customFont.FONT_HEIGHT * this.size);
+			return (int) (cfont_renderer.getStringHeight(string));
 		} else {
 			return (int) (fontRenderer.FONT_HEIGHT * this.size);
 		}

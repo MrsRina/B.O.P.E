@@ -21,6 +21,7 @@ import rina.turok.bope.Bope;
  */
 public class BopeClickGUI extends BopeModule {
 	//                                                 Smooth ** 
+	BopeSetting shadow     = create("Shadow", "GUIStringsShadow", false);
 	BopeSetting smoth_font = create("Smooth Font", "GUISmothFont", true);
 
 	BopeSetting label_frame = create("info", "ClickGUIInfoFrame", "Frames");

@@ -61,6 +61,6 @@ public class BopeCoordinates extends BopePinnable {
 		}
 
 		set_width(get(line, "width"));
-		set_height(get(line, "height") + 2);
+		set_height(get(line, "height") + 2 + 2);
 	}
 }

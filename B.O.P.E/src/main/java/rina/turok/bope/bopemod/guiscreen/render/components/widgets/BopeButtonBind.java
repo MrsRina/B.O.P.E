@@ -59,7 +59,7 @@ public class BopeButtonBind extends BopeAbstractWidget {
 		this.save_y = this.y;
 
 		this.width  = master.get_width();
-		this.height = font.get_string_height(tag, smoth);
+		this.height = font.get_string_height(tag, smoth) + 2;
 
 		this.button_name = tag;
 
@@ -239,9 +239,9 @@ public class BopeButtonBind extends BopeAbstractWidget {
 
 			this.tick += 0.5f;
 
-			BopeDraw.draw_string("Listening " + this.points, this.x + 2, this.save_y, ns_r, ns_g, ns_b, this.smoth);
+			BopeDraw.draw_string("Listening " + this.points, this.x + 2, this.save_y, ns_r, ns_g, ns_b, Bope.get_setting_manager().get_setting_with_tag("GUIStringsShadow").get_value(true), this.smoth);
 		} else {
-			BopeDraw.draw_string("Bind <" + this.master.get_module().get_bind("string") + ">", this.x + 2, this.save_y, ns_r, ns_g, ns_b, smoth);
+			BopeDraw.draw_string("Bind <" + this.master.get_module().get_bind("string") + ">", this.x + 2, this.save_y, ns_r, ns_g, ns_b, Bope.get_setting_manager().get_setting_with_tag("GUIStringsShadow").get_value(true), this.smoth);
 		}
 
 		tick_color[0] += 5;

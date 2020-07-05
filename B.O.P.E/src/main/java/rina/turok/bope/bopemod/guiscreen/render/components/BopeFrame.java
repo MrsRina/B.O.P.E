@@ -330,7 +330,7 @@ public class BopeFrame {
 		BopeDraw.draw_rect(this.x, this.y, this.x + this.width, this.y + this.height, bg_r, bg_g, bg_b, bg_a);
 		BopeDraw.draw_rect(this.x - 1, this.y, this.width + 2, this.height, bd_r, bd_g, bd_b, bd_a, this.border_size, "left-right");
 		
-		BopeDraw.draw_string(this.frame_name, this.x + 4, this.y + 4, nc_r, nc_g, nc_b, this.smoth);
+		BopeDraw.draw_string(this.frame_name, this.x + 4, this.y + 4, nc_r, nc_g, nc_b, Bope.get_setting_manager().get_setting_with_tag("GUIStringsShadow").get_value(true), this.smoth);
 
 		if (is_moving()) {
 			crush(mx, my);

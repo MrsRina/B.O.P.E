@@ -244,7 +244,7 @@ public class BopeFrame {
 		BopeDraw.draw_rect(this.x, this.y, this.x + this.width, this.y + this.height, this.bg_r, this.bg_g, this.bg_b, this.bg_a);
 		BopeDraw.draw_rect(this.x - 1, this.y, this.width + 2, this.height, this.bd_r, this.bd_g, this.bd_b, this.bd_a, this.border_size, "left-right");		
 
-		BopeDraw.draw_string(this.name, this.x + 4, this.y + 4, this.nc_r, this.nc_g, this.nc_b, this.smoth);
+		BopeDraw.draw_string(this.name, this.x + 4, this.y + 4, this.nc_r, this.nc_g, this.nc_b, Bope.get_setting_manager().get_setting_with_tag("GUIStringsShadow").get_value(true), this.smoth);
 
 		if (is_moving()) {
 			crush(mx, my);

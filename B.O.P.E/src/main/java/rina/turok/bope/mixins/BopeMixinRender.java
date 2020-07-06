@@ -26,12 +26,4 @@ import rina.turok.bope.Bope;
 *
 */
 @Mixin(value = Render.class, priority = 998)
-public abstract class BopeMixinRender <T extends Entity> {
-	// Renmove name.
-	@Inject(method = "renderLivingLabel", at = @At("HEAD"), cancellable = true)
-	private void renderLivingLabel(T entity_generic, String string, double x, double y, double z, int max, CallbackInfo callback) {
-		//if (Bope.get_module_manager().get_module_with_tag("NameTags").is_active() && entity_generic instanceof EntityPlayer) {
-		//	callback.cancel();
-		//}
-	}
-}
+public abstract class BopeMixinRender <T extends Entity> {}

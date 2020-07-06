@@ -1,7 +1,7 @@
 Unsupposrted library path: C:\Users\SrRina\Documents\B.O.P.E\B.O.P.E\build\classes\api
 Unsupposrted library path: C:\Users\SrRina\Documents\B.O.P.E\B.O.P.E\build\resources\api
 Symbol range map extraction starting
-Processing 123 files
+Processing 124 files
 startProcessing "rina/turok/bope/Bope.java" md5: 68030bc6f1308384ee420d5b9ca31545
 endProcessing "rina/turok/bope/Bope.java"
 
@@ -260,7 +260,7 @@ endProcessing "rina/turok/bope/bopemod/hacks/render/BopeHighlight.java"
 startProcessing "rina/turok/bope/bopemod/hacks/render/BopeHoleColor.java" md5: 18c138f4a6e9d548c71a4382a59dde0e
 endProcessing "rina/turok/bope/bopemod/hacks/render/BopeHoleColor.java"
 
-startProcessing "rina/turok/bope/bopemod/hacks/render/BopeNameTag.java" md5: 7dd2928b07e79cf17312bc6737e24429
+startProcessing "rina/turok/bope/bopemod/hacks/render/BopeNameTag.java" md5: ae37835bd49ad283a4c7aa9b67a2f176
 endProcessing "rina/turok/bope/bopemod/hacks/render/BopeNameTag.java"
 
 startProcessing "rina/turok/bope/bopemod/hacks/render/BopePlayerESP.java" md5: 3ca8628bfe67c6e3596d8c46aec2cf01
@@ -329,11 +329,14 @@ endProcessing "rina/turok/bope/mixins/BopeMixinNetworkManager.java"
 startProcessing "rina/turok/bope/mixins/BopeMixinPlayerControllerMP.java" md5: d7c50596e6ffaf3d8ed0821c597501a5
 endProcessing "rina/turok/bope/mixins/BopeMixinPlayerControllerMP.java"
 
-startProcessing "rina/turok/bope/mixins/BopeMixinRender.java" md5: 91be0884f856842101fc3b0948f54abb
+startProcessing "rina/turok/bope/mixins/BopeMixinRender.java" md5: e75f83973d162b91754fe54efdb66c0b
 endProcessing "rina/turok/bope/mixins/BopeMixinRender.java"
 
 startProcessing "rina/turok/bope/mixins/BopeMixinRenderLivingBase.java" md5: 45c106a37f1de326cc0779951709a63a
 endProcessing "rina/turok/bope/mixins/BopeMixinRenderLivingBase.java"
+
+startProcessing "rina/turok/bope/mixins/BopeMixinRenderPlayer.java" md5: e98565d094176d44aecbe3eb9df76bf8
+endProcessing "rina/turok/bope/mixins/BopeMixinRenderPlayer.java"
 
 startProcessing "rina/turok/turok/Turok.java" md5: e73db553a4c4b416769f9c9b96a5f832
 endProcessing "rina/turok/turok/Turok.java"

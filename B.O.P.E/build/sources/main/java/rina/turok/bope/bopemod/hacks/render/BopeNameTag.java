@@ -56,12 +56,14 @@ public class BopeNameTag extends BopeModule {
 	BopeSetting armor = create("Armor", "NameTagArmor", true);
 	BopeSetting main_ = create("Main Hand", "NameTagMainHand", true);
 	BopeSetting off_h = create("Off Hand", "NameTagOffHand", true);
+	BopeSetting smot  = create("Smooth", "NameTagSmooth", false);
 	BopeSetting range = create("Range", "NameTagRange", 200, 0, 200);
 	BopeSetting size  = create("Size", "NameTagSize", 4.0, 1.0, 4.0);
 
 	String totems_left_string = "";
 
 	float partial_ticks = 0.0f;
+	float uhadajsndiupa = 0.1f;
 
 	BopeDraw font = new BopeDraw(1);
 
@@ -109,24 +111,24 @@ public class BopeNameTag extends BopeModule {
 
 	public void draw(Entity entity) {
 		if (mc.getRenderManager().options != null) {
-			boolean smooth      = false;
+			boolean smooth      = smot.get_value(true);
 			boolean person_view = mc.getRenderManager().options.thirdPersonView == 2;
 
 			float viewer_pitch = mc.getRenderManager().playerViewX;
 			float viewer_yaw   = mc.getRenderManager().playerViewY;
 
 			String spac = " ";
-			String name = name_.get_value(true) == true ? (life_.get_value(true) || ping_.get_value(true) == true ? spac : "") + entity.getName() + spac : "";
-			String life = life_.get_value(true) == true ? "[" + ChatFormatting.DARK_RED  + Integer.toString(Math.round(((EntityLivingBase) entity).getHealth() / 2 + (entity instanceof EntityPlayer ? ((EntityPlayer) entity).getAbsorptionAmount() : 0))) + Bope.r + "]" : "";
-			String ping = ping_.get_value(true) == true ? "[" + ChatFormatting.DARK_BLUE + get_ping(entity) + Bope.r + "]" : "";
-			String tag  = ping + life + name;
+			String name = name_.get_value(true) == true ? entity.getName() : "";
+			String life = life_.get_value(true) == true ? (name_.get_value(true) == true ? spac : "") + Bope.re + Integer.toString(Math.round(((EntityLivingBase) entity).getHealth() / 2 + (entity instanceof EntityPlayer ? ((EntityPlayer) entity).getAbsorptionAmount() : 0))) + Bope.r : "";
+			String ping = ping_.get_value(true) == true ? Bope.bl + get_ping(entity) + Bope.r + spac : "";
+			String tag  = ping + name + life;
 
 			GlStateManager.pushMatrix();
 
 			Vec3d pos = get_interpolated_render_pos(entity, partial_ticks);
 
 			double x = pos.x;
-			double y = pos.y + (entity.height + 1.0f - (entity.isSneaking() ? 0.25f : 0.0f));
+			double y = pos.y + (entity.height + uhadajsndiupa - (entity.isSneaking() ? 0.25f : 0.0f));
 			double z = pos.z;
 
 			GlStateManager.translate(x, y, z);
@@ -157,7 +159,7 @@ public class BopeNameTag extends BopeModule {
 			if (Bope.get_friend_manager().is_friend(entity.getName())) {
 				font.draw_string(tag, -colapse_x, 10, r, g, b, true, smooth);
 			} else {
-				font.draw_string(tag, -colapse_x, 10, 190, 190, 150, true, smooth);
+				font.draw_string(tag, -colapse_x, 10, 190, 190, 190, true, smooth);
 			}
 
 			if (entity instanceof EntityPlayer) {
@@ -173,14 +175,14 @@ public class BopeNameTag extends BopeModule {
 					}
 				}
 
-				if (player.getHeldItemMainhand() != null && main_.get_value(true)) {
-					off_set_x -= 8 - separator + separator;
+				if (player.getHeldItemOffhand() != null && off_h.get_value(true)) {
+					off_set_x -= 8;
 
-					ItemStack main_hand = player.getHeldItemMainhand();
+					ItemStack off_hand = player.getHeldItemOffhand();
 
-					render_item(main_hand, off_set_x, -off_set_y);
+					render_item(off_hand, off_set_x, -off_set_y);
 
-					off_set_x += 16 + separator;
+					off_set_x += 16;
 				}
 
 				for (int i = 0; i < 4; ++i) {
@@ -189,18 +191,18 @@ public class BopeNameTag extends BopeModule {
 					if (armor_slot_item != null && armor.get_value(true)) {
 						render_item(armor_slot_item, off_set_x, -off_set_y);
 
-						off_set_x += 16 + separator;
+						off_set_x += 16;
 					}
 				}
 
-				if (player.getHeldItemOffhand() != null && off_h.get_value(true)) {
+				if (player.getHeldItemMainhand() != null && main_.get_value(true)) {
 					off_set_x -= 0;
 
-					ItemStack off_hand = player.getHeldItemOffhand();
+					ItemStack main_hand = player.getHeldItemMainhand();
 
-					render_item(off_hand, off_set_x, -off_set_y);
+					render_item(main_hand, off_set_x, -off_set_y);
 
-					off_set_x += 8 + separator;
+					off_set_x += 8;
 				}
 			}
 

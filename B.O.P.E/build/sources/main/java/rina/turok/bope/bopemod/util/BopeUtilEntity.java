@@ -27,7 +27,6 @@ import net.minecraft.util.math.Vec3d;
 import net.minecraft.block.BlockAir;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.ItemStack;
 import net.minecraft.util.EnumHand;
 import net.minecraft.entity.Entity;
 import net.minecraft.block.Block;

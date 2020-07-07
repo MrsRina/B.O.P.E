@@ -130,10 +130,12 @@ public class Bope {
 		event_manager   = new BopeEventManager("event");
 		hud_manager     = new BopeHUDManager("hud");
 
-		// Load first time.
-		config_manager.load_settings();
-		config_manager.load_binds();
-		config_manager.load_client("stuff");
+		try {
+			// Load first time.
+			config_manager.load_settings();
+			config_manager.load_binds();
+			config_manager.load_client("stuff");
+		} catch (Exception exc) {}
 
 		send_minecraft_log("Managers are initialed.");
 
@@ -141,9 +143,11 @@ public class Bope {
 		click_hud = new BopeHUD();
 		click_gui = new BopeGUI();
 
-		// Load second time.
-		config_manager.load_client();
-		config_manager.load_friends();
+		try {
+			// Load second time.
+			config_manager.load_client();
+			config_manager.load_friends();
+		} catch (Exception exc) {}
 
 		turok = new Turok("Turok");
 
@@ -157,12 +161,14 @@ public class Bope {
 
 		send_minecraft_log("GUI and HUD initialed.");
 
-		// Oh why you load so many times, yes because I want;
-		config_manager.load_settings();
-		config_manager.load_binds();
-		config_manager.load_client("stuff");
-		config_manager.load_client();
-		config_manager.load_friends();
+		try {
+			// Oh why you load so many times, yes because I want;
+			config_manager.load_settings();
+			config_manager.load_binds();
+			config_manager.load_client("stuff");
+			config_manager.load_client();
+			config_manager.load_friends();
+		} catch (Exception exc) {}
 
 		// Load rpc.
 		discord_rpc = new BopeDiscordRichPresence("RPC");

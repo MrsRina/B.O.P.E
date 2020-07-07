@@ -193,7 +193,10 @@ public class BopeChatSuffix extends BopeModule {
 				// Convert the base using the TurokFont.
 				suffix_with_randoms.append(convert_base(random_string(random_suffix_pre)));
 				suffix_with_randoms.append(convert_base(random_string(random_suffix_mid)));
-				suffix_with_randoms.append(convert_base(random_string(random_suffix_end)));
+
+				if (is_with_emoji(5, 4)) {
+					suffix_with_randoms.append(convert_base(random_string(random_suffix_end)));
+				}
 
 				message += Bope.BOPE_SIGN + suffix_with_randoms.toString(); 
 			}
@@ -216,6 +219,15 @@ public class BopeChatSuffix extends BopeModule {
 	// Get the random values string.
 	public String random_string(String[] list) {
 		return list[new Random().nextInt(list.length)];
+	}
+
+	// Is with emoji.
+	public boolean is_with_emoji(int max, int equals) {
+		if (new Random().nextInt(max) == equals) {
+			return true;
+		}
+
+		return false;
 	}
 
 	// Convert the base using the TurokFont.

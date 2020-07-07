@@ -27,6 +27,9 @@ import rina.turok.bope.bopemod.hacks.BopeCategory;
 import rina.turok.bope.bopemod.hacks.BopeClickGUI;
 import rina.turok.bope.bopemod.hacks.BopeClickHUD;
 
+// System.
+import rina.turok.bope.bopemod.system.event.*;
+
 // Data.
 import rina.turok.bope.bopemod.BopeMessage;
 import rina.turok.bope.bopemod.BopeModule;
@@ -98,6 +101,9 @@ public class BopeModuleManager {
 		add_module(new BopeHoleColor());
 		add_module(new BopePlayerESP());
 		add_module(new BopeNameTag());
+
+		// System.
+		add_module(new BopeEventRender0());
 	}
 
 	public void add_module(BopeModule module) {

@@ -296,6 +296,18 @@ public class BopePinnable {
 		}
 	}
 
+	protected void create_line(String string, int pos_x, int pos_y, String no_dock) {
+		this.smoth = Bope.get_setting_manager().get_setting_with_tag("HUDStringsSmooth").get_value(true);
+
+		int nl_r = Bope.get_setting_manager().get_setting_with_tag("HUD", "HUDStringsColorR").get_value(1);
+		int nl_g = Bope.get_setting_manager().get_setting_with_tag("HUD", "HUDStringsColorG").get_value(1);
+		int nl_b = Bope.get_setting_manager().get_setting_with_tag("HUD", "HUDStringsColorB").get_value(1);
+
+		boolean shadow = Bope.get_setting_manager().get_setting_with_tag("HUDStringsShadow").get_value(true);
+
+		BopeDraw.draw_string(string, this.x + pos_x, this.y + pos_y, nl_r, nl_g, nl_b, shadow, this.smoth);
+	}
+
 	protected void create_line(String string, int pos_x, int pos_y) {
 		this.smoth = Bope.get_setting_manager().get_setting_with_tag("HUDStringsSmooth").get_value(true);
 

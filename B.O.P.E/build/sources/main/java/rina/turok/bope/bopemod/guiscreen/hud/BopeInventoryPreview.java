@@ -56,7 +56,7 @@ public class BopeInventoryPreview extends BopePinnable {
 			mc.getRenderItem().zLevel = - 5.0f;
 
 			RenderHelper.disableStandardItemLighting();			
-			
+		
 			GlStateManager.popMatrix();
 		}
 	}

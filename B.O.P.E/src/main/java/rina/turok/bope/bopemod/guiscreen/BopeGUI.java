@@ -83,6 +83,11 @@ public class BopeGUI extends GuiScreen {
 
 		// Verify the categorys in a list and replace with all frames.
 		for (BopeCategory categorys : BopeCategory.values()) {
+			// Sys.
+			if (categorys.equals(BopeCategory.BOPE_SYS)) {
+				continue;
+			}
+
 			// Create variable with frame.
 			BopeFrame frames = new BopeFrame(categorys);
 

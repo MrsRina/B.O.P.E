@@ -1,7 +1,7 @@
 Unsupposrted library path: C:\Users\SrRina\Documents\B.O.P.E\B.O.P.E\build\classes\api
 Unsupposrted library path: C:\Users\SrRina\Documents\B.O.P.E\B.O.P.E\build\resources\api
 Symbol range map extraction starting
-Processing 124 files
+Processing 125 files
 startProcessing "rina/turok/bope/Bope.java" md5: 68030bc6f1308384ee420d5b9ca31545
 @|rina/turok/bope/Bope.java|8|23|rina.turok.bope|package|rina.turok.bope|(file)
 Class Start: rina.turok.bope.Bope
@@ -11018,7 +11018,7 @@ Class Start: rina.turok.bope.bopemod.hacks.combat.BopeFastUtil
 Class End  : rina.turok.bope.bopemod.hacks.combat.BopeFastUtil
 endProcessing "rina/turok/bope/bopemod/hacks/combat/BopeFastUtil.java"
 
-startProcessing "rina/turok/bope/bopemod/hacks/combat/BopeKillAura.java" md5: 332f98d509d3cf96d9418ea680b91101
+startProcessing "rina/turok/bope/bopemod/hacks/combat/BopeKillAura.java" md5: 68d2979cd846d2245e68f5f9a041c312
 @|rina/turok/bope/bopemod/hacks/combat/BopeKillAura.java|8|44|rina.turok.bope.bopemod.hacks.combat|package|rina.turok.bope.bopemod.hacks.combat|(file)
 Class Start: rina.turok.bope.bopemod.hacks.combat.BopeKillAura
    @|rina/turok/bope/bopemod/hacks/combat/BopeKillAura.java|999|1011|BopeKillAura|class|rina.turok.bope.bopemod.hacks.combat.BopeKillAura|false
@@ -11089,74 +11089,76 @@ Class Start: rina.turok.bope.bopemod.hacks.combat.BopeKillAura
       @|rina/turok/bope/bopemod/hacks/combat/BopeKillAura.java|2262|2268|entity|param|java.util.function.Predicate<net.minecraft.entity.Entity>|test|(Lnet/minecraft/entity/Entity;)Z|entity|-1
       @|rina/turok/bope/bopemod/hacks/combat/BopeKillAura.java|2269|2276|getName|method|net.minecraft.command.ICommandSender|getName|()Ljava/lang/String;
       @|rina/turok/bope/bopemod/hacks/combat/BopeKillAura.java|2336|2342|filter|method|java.util.stream.Stream|filter|(Ljava/util/function/Predicate;)Ljava/util/stream/Stream;
-      @|rina/turok/bope/bopemod/hacks/combat/BopeKillAura.java|2354|2360|entity|param|java.util.function.Predicate<net.minecraft.entity.Entity>|test|(Lnet/minecraft/entity/Entity;)Z|entity|-1
-      @|rina/turok/bope/bopemod/hacks/combat/BopeKillAura.java|2372|2384|EntityPlayer|class|net.minecraft.entity.player.EntityPlayer|false
-      @|rina/turok/bope/bopemod/hacks/combat/BopeKillAura.java|2389|2395|entity|param|java.util.function.Predicate<net.minecraft.entity.Entity>|test|(Lnet/minecraft/entity/Entity;)Z|entity|-1
-      @|rina/turok/bope/bopemod/hacks/combat/BopeKillAura.java|2407|2411|IMob|class|net.minecraft.entity.monster.IMob|false
-      @|rina/turok/bope/bopemod/hacks/combat/BopeKillAura.java|2415|2422|hostile|field|rina.turok.bope.bopemod.hacks.combat.BopeKillAura|hostile
-      @|rina/turok/bope/bopemod/hacks/combat/BopeKillAura.java|2423|2432|get_value|method|rina.turok.bope.bopemod.guiscreen.settings.BopeSetting|get_value|(Z)Z
-      @|rina/turok/bope/bopemod/hacks/combat/BopeKillAura.java|2495|2501|filter|method|java.util.stream.Stream|filter|(Ljava/util/function/Predicate;)Ljava/util/stream/Stream;
-      @|rina/turok/bope/bopemod/hacks/combat/BopeKillAura.java|2515|2527|EntityPlayer|class|net.minecraft.entity.player.EntityPlayer|false
-      @|rina/turok/bope/bopemod/hacks/combat/BopeKillAura.java|2529|2535|entity|param|java.util.function.Predicate<net.minecraft.entity.Entity>|test|(Lnet/minecraft/entity/Entity;)Z|entity|-1
-      @|rina/turok/bope/bopemod/hacks/combat/BopeKillAura.java|2537|2546|getHealth|method|net.minecraft.entity.EntityLivingBase|getHealth|()F
-      @|rina/turok/bope/bopemod/hacks/combat/BopeKillAura.java|2608|2614|sorted|method|java.util.stream.Stream|sorted|(Ljava/util/Comparator;)Ljava/util/stream/Stream;
-      @|rina/turok/bope/bopemod/hacks/combat/BopeKillAura.java|2615|2625|Comparator|class|java.util.Comparator|false
-      @|rina/turok/bope/bopemod/hacks/combat/BopeKillAura.java|2626|2635|comparing|method|java.util.Comparator|comparing|(Ljava/util/function/Function;)Ljava/util/Comparator;
-      @|rina/turok/bope/bopemod/hacks/combat/BopeKillAura.java|2648|2650|mc|field|rina.turok.bope.bopemod.BopeModule|mc
-      @|rina/turok/bope/bopemod/hacks/combat/BopeKillAura.java|2651|2657|player|field|net.minecraft.client.Minecraft|player
-      @|rina/turok/bope/bopemod/hacks/combat/BopeKillAura.java|2658|2669|getDistance|method|net.minecraft.entity.Entity|getDistance|(Lnet/minecraft/entity/Entity;)F
-      @|rina/turok/bope/bopemod/hacks/combat/BopeKillAura.java|2670|2678|distance|param|java.util.function.Function<net.minecraft.entity.Entity,java.lang.Float>|apply|(Lnet/minecraft/entity/Entity;)Ljava/lang/Float;|distance|-1
-      @|rina/turok/bope/bopemod/hacks/combat/BopeKillAura.java|2736|2743|collect|method|java.util.stream.Stream|collect|(Ljava/util/stream/Collector;)Ljava/lang/Object;
-      @|rina/turok/bope/bopemod/hacks/combat/BopeKillAura.java|2744|2754|Collectors|class|java.util.stream.Collectors|false
-      @|rina/turok/bope/bopemod/hacks/combat/BopeKillAura.java|2755|2761|toList|method|java.util.stream.Collectors|toList|()Ljava/util/stream/Collector;
-      @|rina/turok/bope/bopemod/hacks/combat/BopeKillAura.java|2781|2788|forEach|method|java.lang.Iterable|forEach|(Ljava/util/function/Consumer;)V
-      @|rina/turok/bope/bopemod/hacks/combat/BopeKillAura.java|2813|2815|mc|field|rina.turok.bope.bopemod.BopeModule|mc
-      @|rina/turok/bope/bopemod/hacks/combat/BopeKillAura.java|2816|2822|player|field|net.minecraft.client.Minecraft|player
-      @|rina/turok/bope/bopemod/hacks/combat/BopeKillAura.java|2823|2842|getHeldItemMainhand|method|net.minecraft.entity.EntityLivingBase|getHeldItemMainhand|()Lnet/minecraft/item/ItemStack;
-      @|rina/turok/bope/bopemod/hacks/combat/BopeKillAura.java|2845|2852|getItem|method|net.minecraft.item.ItemStack|getItem|()Lnet/minecraft/item/Item;
-      @|rina/turok/bope/bopemod/hacks/combat/BopeKillAura.java|2866|2875|ItemSword|class|net.minecraft.item.ItemSword|false
-      @|rina/turok/bope/bopemod/hacks/combat/BopeKillAura.java|2880|2885|sword|field|rina.turok.bope.bopemod.hacks.combat.BopeKillAura|sword
-      @|rina/turok/bope/bopemod/hacks/combat/BopeKillAura.java|2886|2895|get_value|method|rina.turok.bope.bopemod.guiscreen.settings.BopeSetting|get_value|(Z)Z
-      @|rina/turok/bope/bopemod/hacks/combat/BopeKillAura.java|2936|2949|attack_entity|method|rina.turok.bope.bopemod.hacks.combat.BopeKillAura|attack_entity|(Lnet/minecraft/entity/Entity;)V
-      @|rina/turok/bope/bopemod/hacks/combat/BopeKillAura.java|2950|2956|entity|param|java.util.function.Consumer<net.minecraft.entity.Entity>|accept|(Lnet/minecraft/entity/Entity;)V|entity|-1
-      @|rina/turok/bope/bopemod/hacks/combat/BopeKillAura.java|2980|2989|Exception|class|java.lang.Exception|false
+      @|rina/turok/bope/bopemod/hacks/combat/BopeKillAura.java|2355|2361|entity|param|java.util.function.Predicate<net.minecraft.entity.Entity>|test|(Lnet/minecraft/entity/Entity;)Z|entity|-1
+      @|rina/turok/bope/bopemod/hacks/combat/BopeKillAura.java|2373|2385|EntityPlayer|class|net.minecraft.entity.player.EntityPlayer|false
+      @|rina/turok/bope/bopemod/hacks/combat/BopeKillAura.java|2389|2395|player|field|rina.turok.bope.bopemod.hacks.combat.BopeKillAura|player
+      @|rina/turok/bope/bopemod/hacks/combat/BopeKillAura.java|2396|2405|get_value|method|rina.turok.bope.bopemod.guiscreen.settings.BopeSetting|get_value|(Z)Z
+      @|rina/turok/bope/bopemod/hacks/combat/BopeKillAura.java|2417|2423|entity|param|java.util.function.Predicate<net.minecraft.entity.Entity>|test|(Lnet/minecraft/entity/Entity;)Z|entity|-1
+      @|rina/turok/bope/bopemod/hacks/combat/BopeKillAura.java|2435|2439|IMob|class|net.minecraft.entity.monster.IMob|false
+      @|rina/turok/bope/bopemod/hacks/combat/BopeKillAura.java|2443|2450|hostile|field|rina.turok.bope.bopemod.hacks.combat.BopeKillAura|hostile
+      @|rina/turok/bope/bopemod/hacks/combat/BopeKillAura.java|2451|2460|get_value|method|rina.turok.bope.bopemod.guiscreen.settings.BopeSetting|get_value|(Z)Z
+      @|rina/turok/bope/bopemod/hacks/combat/BopeKillAura.java|2523|2529|filter|method|java.util.stream.Stream|filter|(Ljava/util/function/Predicate;)Ljava/util/stream/Stream;
+      @|rina/turok/bope/bopemod/hacks/combat/BopeKillAura.java|2543|2555|EntityPlayer|class|net.minecraft.entity.player.EntityPlayer|false
+      @|rina/turok/bope/bopemod/hacks/combat/BopeKillAura.java|2557|2563|entity|param|java.util.function.Predicate<net.minecraft.entity.Entity>|test|(Lnet/minecraft/entity/Entity;)Z|entity|-1
+      @|rina/turok/bope/bopemod/hacks/combat/BopeKillAura.java|2565|2574|getHealth|method|net.minecraft.entity.EntityLivingBase|getHealth|()F
+      @|rina/turok/bope/bopemod/hacks/combat/BopeKillAura.java|2636|2642|sorted|method|java.util.stream.Stream|sorted|(Ljava/util/Comparator;)Ljava/util/stream/Stream;
+      @|rina/turok/bope/bopemod/hacks/combat/BopeKillAura.java|2643|2653|Comparator|class|java.util.Comparator|false
+      @|rina/turok/bope/bopemod/hacks/combat/BopeKillAura.java|2654|2663|comparing|method|java.util.Comparator|comparing|(Ljava/util/function/Function;)Ljava/util/Comparator;
+      @|rina/turok/bope/bopemod/hacks/combat/BopeKillAura.java|2676|2678|mc|field|rina.turok.bope.bopemod.BopeModule|mc
+      @|rina/turok/bope/bopemod/hacks/combat/BopeKillAura.java|2679|2685|player|field|net.minecraft.client.Minecraft|player
+      @|rina/turok/bope/bopemod/hacks/combat/BopeKillAura.java|2686|2697|getDistance|method|net.minecraft.entity.Entity|getDistance|(Lnet/minecraft/entity/Entity;)F
+      @|rina/turok/bope/bopemod/hacks/combat/BopeKillAura.java|2698|2706|distance|param|java.util.function.Function<net.minecraft.entity.Entity,java.lang.Float>|apply|(Lnet/minecraft/entity/Entity;)Ljava/lang/Float;|distance|-1
+      @|rina/turok/bope/bopemod/hacks/combat/BopeKillAura.java|2764|2771|collect|method|java.util.stream.Stream|collect|(Ljava/util/stream/Collector;)Ljava/lang/Object;
+      @|rina/turok/bope/bopemod/hacks/combat/BopeKillAura.java|2772|2782|Collectors|class|java.util.stream.Collectors|false
+      @|rina/turok/bope/bopemod/hacks/combat/BopeKillAura.java|2783|2789|toList|method|java.util.stream.Collectors|toList|()Ljava/util/stream/Collector;
+      @|rina/turok/bope/bopemod/hacks/combat/BopeKillAura.java|2809|2816|forEach|method|java.lang.Iterable|forEach|(Ljava/util/function/Consumer;)V
+      @|rina/turok/bope/bopemod/hacks/combat/BopeKillAura.java|2841|2843|mc|field|rina.turok.bope.bopemod.BopeModule|mc
+      @|rina/turok/bope/bopemod/hacks/combat/BopeKillAura.java|2844|2850|player|field|net.minecraft.client.Minecraft|player
+      @|rina/turok/bope/bopemod/hacks/combat/BopeKillAura.java|2851|2870|getHeldItemMainhand|method|net.minecraft.entity.EntityLivingBase|getHeldItemMainhand|()Lnet/minecraft/item/ItemStack;
+      @|rina/turok/bope/bopemod/hacks/combat/BopeKillAura.java|2873|2880|getItem|method|net.minecraft.item.ItemStack|getItem|()Lnet/minecraft/item/Item;
+      @|rina/turok/bope/bopemod/hacks/combat/BopeKillAura.java|2894|2903|ItemSword|class|net.minecraft.item.ItemSword|false
+      @|rina/turok/bope/bopemod/hacks/combat/BopeKillAura.java|2908|2913|sword|field|rina.turok.bope.bopemod.hacks.combat.BopeKillAura|sword
+      @|rina/turok/bope/bopemod/hacks/combat/BopeKillAura.java|2914|2923|get_value|method|rina.turok.bope.bopemod.guiscreen.settings.BopeSetting|get_value|(Z)Z
+      @|rina/turok/bope/bopemod/hacks/combat/BopeKillAura.java|2964|2977|attack_entity|method|rina.turok.bope.bopemod.hacks.combat.BopeKillAura|attack_entity|(Lnet/minecraft/entity/Entity;)V
+      @|rina/turok/bope/bopemod/hacks/combat/BopeKillAura.java|2978|2984|entity|param|java.util.function.Consumer<net.minecraft.entity.Entity>|accept|(Lnet/minecraft/entity/Entity;)V|entity|-1
+      @|rina/turok/bope/bopemod/hacks/combat/BopeKillAura.java|3008|3017|Exception|class|java.lang.Exception|false
    Method End: update()V
    Method Start: attack_entity(Lnet/minecraft/entity/Entity;)V
-      @|rina/turok/bope/bopemod/hacks/combat/BopeKillAura.java|3044|3050|entity|param|rina.turok.bope.bopemod.hacks.combat.BopeKillAura|attack_entity|(Lnet/minecraft/entity/Entity;)V|entity|0
-      @|rina/turok/bope/bopemod/hacks/combat/BopeKillAura.java|3023|3036|attack_entity|method|rina.turok.bope.bopemod.hacks.combat.BopeKillAura|attack_entity|(Lnet/minecraft/entity/Entity;)V
-      @|rina/turok/bope/bopemod/hacks/combat/BopeKillAura.java|3037|3043|Entity|class|net.minecraft.entity.Entity|false
-      @|rina/turok/bope/bopemod/hacks/combat/BopeKillAura.java|3061|3063|mc|field|rina.turok.bope.bopemod.BopeModule|mc
-      @|rina/turok/bope/bopemod/hacks/combat/BopeKillAura.java|3064|3070|player|field|net.minecraft.client.Minecraft|player
-      @|rina/turok/bope/bopemod/hacks/combat/BopeKillAura.java|3071|3094|getCooledAttackStrength|method|net.minecraft.entity.player.EntityPlayer|getCooledAttackStrength|(F)F
-      @|rina/turok/bope/bopemod/hacks/combat/BopeKillAura.java|3143|3152|ItemStack|class|net.minecraft.item.ItemStack|false
-      @|rina/turok/bope/bopemod/hacks/combat/BopeKillAura.java|3169|3171|mc|field|rina.turok.bope.bopemod.BopeModule|mc
-      @|rina/turok/bope/bopemod/hacks/combat/BopeKillAura.java|3172|3178|player|field|net.minecraft.client.Minecraft|player
-      @|rina/turok/bope/bopemod/hacks/combat/BopeKillAura.java|3179|3197|getHeldItemOffhand|method|net.minecraft.entity.EntityLivingBase|getHeldItemOffhand|()Lnet/minecraft/item/ItemStack;
-      @|rina/turok/bope/bopemod/hacks/combat/BopeKillAura.java|3307|3314|getItem|method|net.minecraft.item.ItemStack|getItem|()Lnet/minecraft/item/Item;
-      @|rina/turok/bope/bopemod/hacks/combat/BopeKillAura.java|3320|3325|Items|class|net.minecraft.init.Items|false
-      @|rina/turok/bope/bopemod/hacks/combat/BopeKillAura.java|3326|3332|SHIELD|field|net.minecraft.init.Items|SHIELD
-      @|rina/turok/bope/bopemod/hacks/combat/BopeKillAura.java|3370|3372|mc|field|rina.turok.bope.bopemod.BopeModule|mc
-      @|rina/turok/bope/bopemod/hacks/combat/BopeKillAura.java|3373|3379|player|field|net.minecraft.client.Minecraft|player
-      @|rina/turok/bope/bopemod/hacks/combat/BopeKillAura.java|3380|3390|connection|field|net.minecraft.client.entity.EntityPlayerSP|connection
-      @|rina/turok/bope/bopemod/hacks/combat/BopeKillAura.java|3391|3401|sendPacket|method|net.minecraft.client.network.NetHandlerPlayClient|sendPacket|(Lnet/minecraft/network/Packet;)V
-      @|rina/turok/bope/bopemod/hacks/combat/BopeKillAura.java|3406|3426|CPacketPlayerDigging|class|net.minecraft.network.play.client.CPacketPlayerDigging|false
-      @|rina/turok/bope/bopemod/hacks/combat/BopeKillAura.java|3427|3454|CPacketPlayerDigging.Action|class|net.minecraft.network.play.client.CPacketPlayerDigging.Action|false
-      @|rina/turok/bope/bopemod/hacks/combat/BopeKillAura.java|3455|3471|RELEASE_USE_ITEM|field|net.minecraft.network.play.client.CPacketPlayerDigging.Action|RELEASE_USE_ITEM
-      @|rina/turok/bope/bopemod/hacks/combat/BopeKillAura.java|3473|3481|BlockPos|class|net.minecraft.util.math.BlockPos|false
-      @|rina/turok/bope/bopemod/hacks/combat/BopeKillAura.java|3482|3488|ORIGIN|field|net.minecraft.util.math.BlockPos|ORIGIN
-      @|rina/turok/bope/bopemod/hacks/combat/BopeKillAura.java|3490|3492|mc|field|rina.turok.bope.bopemod.BopeModule|mc
-      @|rina/turok/bope/bopemod/hacks/combat/BopeKillAura.java|3493|3499|player|field|net.minecraft.client.Minecraft|player
-      @|rina/turok/bope/bopemod/hacks/combat/BopeKillAura.java|3500|3519|getHorizontalFacing|method|net.minecraft.entity.Entity|getHorizontalFacing|()Lnet/minecraft/util/EnumFacing;
-      @|rina/turok/bope/bopemod/hacks/combat/BopeKillAura.java|3565|3567|mc|field|rina.turok.bope.bopemod.BopeModule|mc
-      @|rina/turok/bope/bopemod/hacks/combat/BopeKillAura.java|3568|3584|playerController|field|net.minecraft.client.Minecraft|playerController
-      @|rina/turok/bope/bopemod/hacks/combat/BopeKillAura.java|3585|3597|attackEntity|method|net.minecraft.client.multiplayer.PlayerControllerMP|attackEntity|(Lnet/minecraft/entity/player/EntityPlayer;Lnet/minecraft/entity/Entity;)V
-      @|rina/turok/bope/bopemod/hacks/combat/BopeKillAura.java|3598|3600|mc|field|rina.turok.bope.bopemod.BopeModule|mc
-      @|rina/turok/bope/bopemod/hacks/combat/BopeKillAura.java|3601|3607|player|field|net.minecraft.client.Minecraft|player
-      @|rina/turok/bope/bopemod/hacks/combat/BopeKillAura.java|3609|3615|entity|param|rina.turok.bope.bopemod.hacks.combat.BopeKillAura|attack_entity|(Lnet/minecraft/entity/Entity;)V|entity|0
-      @|rina/turok/bope/bopemod/hacks/combat/BopeKillAura.java|3622|3624|mc|field|rina.turok.bope.bopemod.BopeModule|mc
-      @|rina/turok/bope/bopemod/hacks/combat/BopeKillAura.java|3625|3631|player|field|net.minecraft.client.Minecraft|player
-      @|rina/turok/bope/bopemod/hacks/combat/BopeKillAura.java|3632|3640|swingArm|method|net.minecraft.entity.EntityLivingBase|swingArm|(Lnet/minecraft/util/EnumHand;)V
-      @|rina/turok/bope/bopemod/hacks/combat/BopeKillAura.java|3641|3652|actual_hand|field|rina.turok.bope.bopemod.hacks.combat.BopeKillAura|actual_hand
+      @|rina/turok/bope/bopemod/hacks/combat/BopeKillAura.java|3072|3078|entity|param|rina.turok.bope.bopemod.hacks.combat.BopeKillAura|attack_entity|(Lnet/minecraft/entity/Entity;)V|entity|0
+      @|rina/turok/bope/bopemod/hacks/combat/BopeKillAura.java|3051|3064|attack_entity|method|rina.turok.bope.bopemod.hacks.combat.BopeKillAura|attack_entity|(Lnet/minecraft/entity/Entity;)V
+      @|rina/turok/bope/bopemod/hacks/combat/BopeKillAura.java|3065|3071|Entity|class|net.minecraft.entity.Entity|false
+      @|rina/turok/bope/bopemod/hacks/combat/BopeKillAura.java|3089|3091|mc|field|rina.turok.bope.bopemod.BopeModule|mc
+      @|rina/turok/bope/bopemod/hacks/combat/BopeKillAura.java|3092|3098|player|field|net.minecraft.client.Minecraft|player
+      @|rina/turok/bope/bopemod/hacks/combat/BopeKillAura.java|3099|3122|getCooledAttackStrength|method|net.minecraft.entity.player.EntityPlayer|getCooledAttackStrength|(F)F
+      @|rina/turok/bope/bopemod/hacks/combat/BopeKillAura.java|3171|3180|ItemStack|class|net.minecraft.item.ItemStack|false
+      @|rina/turok/bope/bopemod/hacks/combat/BopeKillAura.java|3197|3199|mc|field|rina.turok.bope.bopemod.BopeModule|mc
+      @|rina/turok/bope/bopemod/hacks/combat/BopeKillAura.java|3200|3206|player|field|net.minecraft.client.Minecraft|player
+      @|rina/turok/bope/bopemod/hacks/combat/BopeKillAura.java|3207|3225|getHeldItemOffhand|method|net.minecraft.entity.EntityLivingBase|getHeldItemOffhand|()Lnet/minecraft/item/ItemStack;
+      @|rina/turok/bope/bopemod/hacks/combat/BopeKillAura.java|3335|3342|getItem|method|net.minecraft.item.ItemStack|getItem|()Lnet/minecraft/item/Item;
+      @|rina/turok/bope/bopemod/hacks/combat/BopeKillAura.java|3348|3353|Items|class|net.minecraft.init.Items|false
+      @|rina/turok/bope/bopemod/hacks/combat/BopeKillAura.java|3354|3360|SHIELD|field|net.minecraft.init.Items|SHIELD
+      @|rina/turok/bope/bopemod/hacks/combat/BopeKillAura.java|3398|3400|mc|field|rina.turok.bope.bopemod.BopeModule|mc
+      @|rina/turok/bope/bopemod/hacks/combat/BopeKillAura.java|3401|3407|player|field|net.minecraft.client.Minecraft|player
+      @|rina/turok/bope/bopemod/hacks/combat/BopeKillAura.java|3408|3418|connection|field|net.minecraft.client.entity.EntityPlayerSP|connection
+      @|rina/turok/bope/bopemod/hacks/combat/BopeKillAura.java|3419|3429|sendPacket|method|net.minecraft.client.network.NetHandlerPlayClient|sendPacket|(Lnet/minecraft/network/Packet;)V
+      @|rina/turok/bope/bopemod/hacks/combat/BopeKillAura.java|3434|3454|CPacketPlayerDigging|class|net.minecraft.network.play.client.CPacketPlayerDigging|false
+      @|rina/turok/bope/bopemod/hacks/combat/BopeKillAura.java|3455|3482|CPacketPlayerDigging.Action|class|net.minecraft.network.play.client.CPacketPlayerDigging.Action|false
+      @|rina/turok/bope/bopemod/hacks/combat/BopeKillAura.java|3483|3499|RELEASE_USE_ITEM|field|net.minecraft.network.play.client.CPacketPlayerDigging.Action|RELEASE_USE_ITEM
+      @|rina/turok/bope/bopemod/hacks/combat/BopeKillAura.java|3501|3509|BlockPos|class|net.minecraft.util.math.BlockPos|false
+      @|rina/turok/bope/bopemod/hacks/combat/BopeKillAura.java|3510|3516|ORIGIN|field|net.minecraft.util.math.BlockPos|ORIGIN
+      @|rina/turok/bope/bopemod/hacks/combat/BopeKillAura.java|3518|3520|mc|field|rina.turok.bope.bopemod.BopeModule|mc
+      @|rina/turok/bope/bopemod/hacks/combat/BopeKillAura.java|3521|3527|player|field|net.minecraft.client.Minecraft|player
+      @|rina/turok/bope/bopemod/hacks/combat/BopeKillAura.java|3528|3547|getHorizontalFacing|method|net.minecraft.entity.Entity|getHorizontalFacing|()Lnet/minecraft/util/EnumFacing;
+      @|rina/turok/bope/bopemod/hacks/combat/BopeKillAura.java|3593|3595|mc|field|rina.turok.bope.bopemod.BopeModule|mc
+      @|rina/turok/bope/bopemod/hacks/combat/BopeKillAura.java|3596|3612|playerController|field|net.minecraft.client.Minecraft|playerController
+      @|rina/turok/bope/bopemod/hacks/combat/BopeKillAura.java|3613|3625|attackEntity|method|net.minecraft.client.multiplayer.PlayerControllerMP|attackEntity|(Lnet/minecraft/entity/player/EntityPlayer;Lnet/minecraft/entity/Entity;)V
+      @|rina/turok/bope/bopemod/hacks/combat/BopeKillAura.java|3626|3628|mc|field|rina.turok.bope.bopemod.BopeModule|mc
+      @|rina/turok/bope/bopemod/hacks/combat/BopeKillAura.java|3629|3635|player|field|net.minecraft.client.Minecraft|player
+      @|rina/turok/bope/bopemod/hacks/combat/BopeKillAura.java|3637|3643|entity|param|rina.turok.bope.bopemod.hacks.combat.BopeKillAura|attack_entity|(Lnet/minecraft/entity/Entity;)V|entity|0
+      @|rina/turok/bope/bopemod/hacks/combat/BopeKillAura.java|3650|3652|mc|field|rina.turok.bope.bopemod.BopeModule|mc
+      @|rina/turok/bope/bopemod/hacks/combat/BopeKillAura.java|3653|3659|player|field|net.minecraft.client.Minecraft|player
+      @|rina/turok/bope/bopemod/hacks/combat/BopeKillAura.java|3660|3668|swingArm|method|net.minecraft.entity.EntityLivingBase|swingArm|(Lnet/minecraft/util/EnumHand;)V
+      @|rina/turok/bope/bopemod/hacks/combat/BopeKillAura.java|3669|3680|actual_hand|field|rina.turok.bope.bopemod.hacks.combat.BopeKillAura|actual_hand
    Method End: attack_entity(Lnet/minecraft/entity/Entity;)V
 Class End  : rina.turok.bope.bopemod.hacks.combat.BopeKillAura
 endProcessing "rina/turok/bope/bopemod/hacks/combat/BopeKillAura.java"
@@ -12156,6 +12158,23 @@ Class Start: rina.turok.bope.bopemod.hacks.render.BopeBrightness
    Method End: update()V
 Class End  : rina.turok.bope.bopemod.hacks.render.BopeBrightness
 endProcessing "rina/turok/bope/bopemod/hacks/render/BopeBrightness.java"
+
+startProcessing "rina/turok/bope/bopemod/hacks/render/BopeFreeCameraOrient.java" md5: 3fc7936f870926a56a0a3303c8974d89
+@|rina/turok/bope/bopemod/hacks/render/BopeFreeCameraOrient.java|8|44|rina.turok.bope.bopemod.hacks.render|package|rina.turok.bope.bopemod.hacks.render|(file)
+Class Start: rina.turok.bope.bopemod.hacks.render.BopeFreeCameraOrient
+   @|rina/turok/bope/bopemod/hacks/render/BopeFreeCameraOrient.java|251|271|BopeFreeCameraOrient|class|rina.turok.bope.bopemod.hacks.render.BopeFreeCameraOrient|false
+   @|rina/turok/bope/bopemod/hacks/render/BopeFreeCameraOrient.java|280|290|BopeModule|class|rina.turok.bope.bopemod.BopeModule|false
+   Method Start: BopeFreeCameraOrient()V
+      @|rina/turok/bope/bopemod/hacks/render/BopeFreeCameraOrient.java|302|322|BopeFreeCameraOrient|method|rina.turok.bope.bopemod.hacks.render.BopeFreeCameraOrient|BopeFreeCameraOrient|()V
+      @|rina/turok/bope/bopemod/hacks/render/BopeFreeCameraOrient.java|336|348|BopeCategory|class|rina.turok.bope.bopemod.hacks.BopeCategory|false
+      @|rina/turok/bope/bopemod/hacks/render/BopeFreeCameraOrient.java|349|360|BOPE_RENDER|field|rina.turok.bope.bopemod.hacks.BopeCategory|BOPE_RENDER
+      @|rina/turok/bope/bopemod/hacks/render/BopeFreeCameraOrient.java|392|396|name|field|rina.turok.bope.bopemod.BopeModule|name
+      @|rina/turok/bope/bopemod/hacks/render/BopeFreeCameraOrient.java|436|439|tag|field|rina.turok.bope.bopemod.BopeModule|tag
+      @|rina/turok/bope/bopemod/hacks/render/BopeFreeCameraOrient.java|478|489|description|field|rina.turok.bope.bopemod.BopeModule|description
+      @|rina/turok/bope/bopemod/hacks/render/BopeFreeCameraOrient.java|551|558|release|method|rina.turok.bope.bopemod.BopeModule|release|(Ljava/lang/String;)V
+   Method End: BopeFreeCameraOrient()V
+Class End  : rina.turok.bope.bopemod.hacks.render.BopeFreeCameraOrient
+endProcessing "rina/turok/bope/bopemod/hacks/render/BopeFreeCameraOrient.java"
 
 startProcessing "rina/turok/bope/bopemod/hacks/render/BopeHighlight.java" md5: bee27149a1b5f145d6ad1b36c5a7e52d
 @|rina/turok/bope/bopemod/hacks/render/BopeHighlight.java|8|44|rina.turok.bope.bopemod.hacks.render|package|rina.turok.bope.bopemod.hacks.render|(file)
@@ -14618,7 +14637,7 @@ Class Start: rina.turok.bope.bopemod.manager.BopeHUDManager
 Class End  : rina.turok.bope.bopemod.manager.BopeHUDManager
 endProcessing "rina/turok/bope/bopemod/manager/BopeHUDManager.java"
 
-startProcessing "rina/turok/bope/bopemod/manager/BopeModuleManager.java" md5: 8a64dd0000e2fbc1dd20b409de00772e
+startProcessing "rina/turok/bope/bopemod/manager/BopeModuleManager.java" md5: 7217532473c0601f626a5bffcab0c91a
 @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|8|39|rina.turok.bope.bopemod.manager|package|rina.turok.bope.bopemod.manager|(file)
 Class Start: rina.turok.bope.bopemod.manager.BopeModuleManager
    @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|1187|1204|BopeModuleManager|class|rina.turok.bope.bopemod.manager.BopeModuleManager|false
@@ -14688,228 +14707,230 @@ Class Start: rina.turok.bope.bopemod.manager.BopeModuleManager
       @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|2260|2270|add_module|method|rina.turok.bope.bopemod.manager.BopeModuleManager|add_module|(Lrina/turok/bope/bopemod/BopeModule;)V
       @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|2275|2286|BopeFreecam|class|rina.turok.bope.bopemod.hacks.player.BopeFreecam|false
       @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|2307|2317|add_module|method|rina.turok.bope.bopemod.manager.BopeModuleManager|add_module|(Lrina/turok/bope/bopemod/BopeModule;)V
-      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|2322|2336|BopeBrightness|class|rina.turok.bope.bopemod.hacks.render.BopeBrightness|false
-      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|2343|2353|add_module|method|rina.turok.bope.bopemod.manager.BopeModuleManager|add_module|(Lrina/turok/bope/bopemod/BopeModule;)V
-      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|2358|2372|BopeStorageESP|class|rina.turok.bope.bopemod.hacks.render.BopeStorageESP|false
-      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|2379|2389|add_module|method|rina.turok.bope.bopemod.manager.BopeModuleManager|add_module|(Lrina/turok/bope/bopemod/BopeModule;)V
-      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|2394|2407|BopeHighlight|class|rina.turok.bope.bopemod.hacks.render.BopeHighlight|false
-      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|2414|2424|add_module|method|rina.turok.bope.bopemod.manager.BopeModuleManager|add_module|(Lrina/turok/bope/bopemod/BopeModule;)V
-      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|2429|2442|BopeHoleColor|class|rina.turok.bope.bopemod.hacks.render.BopeHoleColor|false
-      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|2449|2459|add_module|method|rina.turok.bope.bopemod.manager.BopeModuleManager|add_module|(Lrina/turok/bope/bopemod/BopeModule;)V
-      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|2464|2477|BopePlayerESP|class|rina.turok.bope.bopemod.hacks.render.BopePlayerESP|false
-      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|2484|2494|add_module|method|rina.turok.bope.bopemod.manager.BopeModuleManager|add_module|(Lrina/turok/bope/bopemod/BopeModule;)V
-      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|2499|2510|BopeNameTag|class|rina.turok.bope.bopemod.hacks.render.BopeNameTag|false
+      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|2322|2342|BopeFreeCameraOrient|class|rina.turok.bope.bopemod.hacks.render.BopeFreeCameraOrient|false
+      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|2349|2359|add_module|method|rina.turok.bope.bopemod.manager.BopeModuleManager|add_module|(Lrina/turok/bope/bopemod/BopeModule;)V
+      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|2364|2378|BopeBrightness|class|rina.turok.bope.bopemod.hacks.render.BopeBrightness|false
+      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|2385|2395|add_module|method|rina.turok.bope.bopemod.manager.BopeModuleManager|add_module|(Lrina/turok/bope/bopemod/BopeModule;)V
+      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|2400|2414|BopeStorageESP|class|rina.turok.bope.bopemod.hacks.render.BopeStorageESP|false
+      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|2421|2431|add_module|method|rina.turok.bope.bopemod.manager.BopeModuleManager|add_module|(Lrina/turok/bope/bopemod/BopeModule;)V
+      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|2436|2449|BopeHighlight|class|rina.turok.bope.bopemod.hacks.render.BopeHighlight|false
+      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|2456|2466|add_module|method|rina.turok.bope.bopemod.manager.BopeModuleManager|add_module|(Lrina/turok/bope/bopemod/BopeModule;)V
+      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|2471|2484|BopeHoleColor|class|rina.turok.bope.bopemod.hacks.render.BopeHoleColor|false
+      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|2491|2501|add_module|method|rina.turok.bope.bopemod.manager.BopeModuleManager|add_module|(Lrina/turok/bope/bopemod/BopeModule;)V
+      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|2506|2519|BopePlayerESP|class|rina.turok.bope.bopemod.hacks.render.BopePlayerESP|false
+      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|2526|2536|add_module|method|rina.turok.bope.bopemod.manager.BopeModuleManager|add_module|(Lrina/turok/bope/bopemod/BopeModule;)V
+      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|2541|2552|BopeNameTag|class|rina.turok.bope.bopemod.hacks.render.BopeNameTag|false
    Method End: BopeModuleManager(Ljava/lang/String;)V
    Method Start: add_module(Lrina/turok/bope/bopemod/BopeModule;)V
-      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|2554|2560|module|param|rina.turok.bope.bopemod.manager.BopeModuleManager|add_module|(Lrina/turok/bope/bopemod/BopeModule;)V|module|0
-      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|2532|2542|add_module|method|rina.turok.bope.bopemod.manager.BopeModuleManager|add_module|(Lrina/turok/bope/bopemod/BopeModule;)V
-      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|2543|2553|BopeModule|class|rina.turok.bope.bopemod.BopeModule|false
-      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|2566|2578|array_module|field|rina.turok.bope.bopemod.manager.BopeModuleManager|array_module
-      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|2579|2582|add|method|java.util.Collection|add|(Ljava/lang/Object;)Z
-      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|2583|2589|module|param|rina.turok.bope.bopemod.manager.BopeModuleManager|add_module|(Lrina/turok/bope/bopemod/BopeModule;)V|module|0
+      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|2596|2602|module|param|rina.turok.bope.bopemod.manager.BopeModuleManager|add_module|(Lrina/turok/bope/bopemod/BopeModule;)V|module|0
+      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|2574|2584|add_module|method|rina.turok.bope.bopemod.manager.BopeModuleManager|add_module|(Lrina/turok/bope/bopemod/BopeModule;)V
+      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|2585|2595|BopeModule|class|rina.turok.bope.bopemod.BopeModule|false
+      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|2608|2620|array_module|field|rina.turok.bope.bopemod.manager.BopeModuleManager|array_module
+      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|2621|2624|add|method|java.util.Collection|add|(Ljava/lang/Object;)Z
+      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|2625|2631|module|param|rina.turok.bope.bopemod.manager.BopeModuleManager|add_module|(Lrina/turok/bope/bopemod/BopeModule;)V|module|0
    Method End: add_module(Lrina/turok/bope/bopemod/BopeModule;)V
    Method Start: get_array_modules()Ljava/util/ArrayList;
-      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|2604|2613|ArrayList|class|java.util.ArrayList|false
-      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|2614|2624|BopeModule|class|rina.turok.bope.bopemod.BopeModule|false
-      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|2626|2643|get_array_modules|method|rina.turok.bope.bopemod.manager.BopeModuleManager|get_array_modules|()Ljava/util/ArrayList;
-      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|2657|2669|array_module|field|rina.turok.bope.bopemod.manager.BopeModuleManager|array_module
+      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|2646|2655|ArrayList|class|java.util.ArrayList|false
+      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|2656|2666|BopeModule|class|rina.turok.bope.bopemod.BopeModule|false
+      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|2668|2685|get_array_modules|method|rina.turok.bope.bopemod.manager.BopeModuleManager|get_array_modules|()Ljava/util/ArrayList;
+      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|2699|2711|array_module|field|rina.turok.bope.bopemod.manager.BopeModuleManager|array_module
    Method End: get_array_modules()Ljava/util/ArrayList;
    Method Start: get_array_active_modules()Ljava/util/ArrayList;
-      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|2683|2692|ArrayList|class|java.util.ArrayList|false
-      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|2693|2703|BopeModule|class|rina.turok.bope.bopemod.BopeModule|false
-      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|2705|2729|get_array_active_modules|method|rina.turok.bope.bopemod.manager.BopeModuleManager|get_array_active_modules|()Ljava/util/ArrayList;
-      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|2736|2745|ArrayList|class|java.util.ArrayList|false
-      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|2746|2756|BopeModule|class|rina.turok.bope.bopemod.BopeModule|false
-      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|2780|2789|ArrayList|class|java.util.ArrayList|false
-      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|2803|2813|BopeModule|class|rina.turok.bope.bopemod.BopeModule|false
-      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|2824|2841|get_array_modules|method|rina.turok.bope.bopemod.manager.BopeModuleManager|get_array_modules|()Ljava/util/ArrayList;
-      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|2862|2871|is_active|method|rina.turok.bope.bopemod.BopeModule|is_active|()Z
-      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|2897|2900|add|method|java.util.Collection|add|(Ljava/lang/Object;)Z
+      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|2725|2734|ArrayList|class|java.util.ArrayList|false
+      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|2735|2745|BopeModule|class|rina.turok.bope.bopemod.BopeModule|false
+      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|2747|2771|get_array_active_modules|method|rina.turok.bope.bopemod.manager.BopeModuleManager|get_array_active_modules|()Ljava/util/ArrayList;
+      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|2778|2787|ArrayList|class|java.util.ArrayList|false
+      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|2788|2798|BopeModule|class|rina.turok.bope.bopemod.BopeModule|false
+      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|2822|2831|ArrayList|class|java.util.ArrayList|false
+      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|2845|2855|BopeModule|class|rina.turok.bope.bopemod.BopeModule|false
+      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|2866|2883|get_array_modules|method|rina.turok.bope.bopemod.manager.BopeModuleManager|get_array_modules|()Ljava/util/ArrayList;
+      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|2904|2913|is_active|method|rina.turok.bope.bopemod.BopeModule|is_active|()Z
+      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|2939|2942|add|method|java.util.Collection|add|(Ljava/lang/Object;)Z
    Method End: get_array_active_modules()Ljava/util/ArrayList;
    Method Start: process(Lnet/minecraft/entity/Entity;DDD)Lnet/minecraft/util/math/Vec3d;
-      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|2980|2986|entity|param|rina.turok.bope.bopemod.manager.BopeModuleManager|process|(Lnet/minecraft/entity/Entity;DDD)Lnet/minecraft/util/math/Vec3d;|entity|0
-      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|2995|2996|x|param|rina.turok.bope.bopemod.manager.BopeModuleManager|process|(Lnet/minecraft/entity/Entity;DDD)Lnet/minecraft/util/math/Vec3d;|x|1
-      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|3005|3006|y|param|rina.turok.bope.bopemod.manager.BopeModuleManager|process|(Lnet/minecraft/entity/Entity;DDD)Lnet/minecraft/util/math/Vec3d;|y|2
-      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|3015|3016|z|param|rina.turok.bope.bopemod.manager.BopeModuleManager|process|(Lnet/minecraft/entity/Entity;DDD)Lnet/minecraft/util/math/Vec3d;|z|3
-      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|2959|2964|Vec3d|class|net.minecraft.util.math.Vec3d|false
-      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|2965|2972|process|method|rina.turok.bope.bopemod.manager.BopeModuleManager|process|(Lnet/minecraft/entity/Entity;DDD)Lnet/minecraft/util/math/Vec3d;
-      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|2973|2979|Entity|class|net.minecraft.entity.Entity|false
-      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|3033|3038|Vec3d|class|net.minecraft.util.math.Vec3d|false
-      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|3044|3050|entity|param|rina.turok.bope.bopemod.manager.BopeModuleManager|process|(Lnet/minecraft/entity/Entity;DDD)Lnet/minecraft/util/math/Vec3d;|entity|0
-      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|3051|3055|posX|field|net.minecraft.entity.Entity|posX
-      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|3058|3064|entity|param|rina.turok.bope.bopemod.manager.BopeModuleManager|process|(Lnet/minecraft/entity/Entity;DDD)Lnet/minecraft/util/math/Vec3d;|entity|0
-      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|3065|3077|lastTickPosX|field|net.minecraft.entity.Entity|lastTickPosX
-      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|3081|3082|x|param|rina.turok.bope.bopemod.manager.BopeModuleManager|process|(Lnet/minecraft/entity/Entity;DDD)Lnet/minecraft/util/math/Vec3d;|x|1
-      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|3088|3094|entity|param|rina.turok.bope.bopemod.manager.BopeModuleManager|process|(Lnet/minecraft/entity/Entity;DDD)Lnet/minecraft/util/math/Vec3d;|entity|0
-      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|3095|3099|posY|field|net.minecraft.entity.Entity|posY
-      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|3102|3108|entity|param|rina.turok.bope.bopemod.manager.BopeModuleManager|process|(Lnet/minecraft/entity/Entity;DDD)Lnet/minecraft/util/math/Vec3d;|entity|0
-      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|3109|3121|lastTickPosY|field|net.minecraft.entity.Entity|lastTickPosY
-      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|3125|3126|y|param|rina.turok.bope.bopemod.manager.BopeModuleManager|process|(Lnet/minecraft/entity/Entity;DDD)Lnet/minecraft/util/math/Vec3d;|y|2
-      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|3132|3138|entity|param|rina.turok.bope.bopemod.manager.BopeModuleManager|process|(Lnet/minecraft/entity/Entity;DDD)Lnet/minecraft/util/math/Vec3d;|entity|0
-      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|3139|3143|posZ|field|net.minecraft.entity.Entity|posZ
-      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|3146|3152|entity|param|rina.turok.bope.bopemod.manager.BopeModuleManager|process|(Lnet/minecraft/entity/Entity;DDD)Lnet/minecraft/util/math/Vec3d;|entity|0
-      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|3153|3165|lastTickPosZ|field|net.minecraft.entity.Entity|lastTickPosZ
-      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|3169|3170|z|param|rina.turok.bope.bopemod.manager.BopeModuleManager|process|(Lnet/minecraft/entity/Entity;DDD)Lnet/minecraft/util/math/Vec3d;|z|3
+      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|3022|3028|entity|param|rina.turok.bope.bopemod.manager.BopeModuleManager|process|(Lnet/minecraft/entity/Entity;DDD)Lnet/minecraft/util/math/Vec3d;|entity|0
+      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|3037|3038|x|param|rina.turok.bope.bopemod.manager.BopeModuleManager|process|(Lnet/minecraft/entity/Entity;DDD)Lnet/minecraft/util/math/Vec3d;|x|1
+      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|3047|3048|y|param|rina.turok.bope.bopemod.manager.BopeModuleManager|process|(Lnet/minecraft/entity/Entity;DDD)Lnet/minecraft/util/math/Vec3d;|y|2
+      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|3057|3058|z|param|rina.turok.bope.bopemod.manager.BopeModuleManager|process|(Lnet/minecraft/entity/Entity;DDD)Lnet/minecraft/util/math/Vec3d;|z|3
+      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|3001|3006|Vec3d|class|net.minecraft.util.math.Vec3d|false
+      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|3007|3014|process|method|rina.turok.bope.bopemod.manager.BopeModuleManager|process|(Lnet/minecraft/entity/Entity;DDD)Lnet/minecraft/util/math/Vec3d;
+      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|3015|3021|Entity|class|net.minecraft.entity.Entity|false
+      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|3075|3080|Vec3d|class|net.minecraft.util.math.Vec3d|false
+      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|3086|3092|entity|param|rina.turok.bope.bopemod.manager.BopeModuleManager|process|(Lnet/minecraft/entity/Entity;DDD)Lnet/minecraft/util/math/Vec3d;|entity|0
+      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|3093|3097|posX|field|net.minecraft.entity.Entity|posX
+      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|3100|3106|entity|param|rina.turok.bope.bopemod.manager.BopeModuleManager|process|(Lnet/minecraft/entity/Entity;DDD)Lnet/minecraft/util/math/Vec3d;|entity|0
+      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|3107|3119|lastTickPosX|field|net.minecraft.entity.Entity|lastTickPosX
+      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|3123|3124|x|param|rina.turok.bope.bopemod.manager.BopeModuleManager|process|(Lnet/minecraft/entity/Entity;DDD)Lnet/minecraft/util/math/Vec3d;|x|1
+      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|3130|3136|entity|param|rina.turok.bope.bopemod.manager.BopeModuleManager|process|(Lnet/minecraft/entity/Entity;DDD)Lnet/minecraft/util/math/Vec3d;|entity|0
+      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|3137|3141|posY|field|net.minecraft.entity.Entity|posY
+      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|3144|3150|entity|param|rina.turok.bope.bopemod.manager.BopeModuleManager|process|(Lnet/minecraft/entity/Entity;DDD)Lnet/minecraft/util/math/Vec3d;|entity|0
+      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|3151|3163|lastTickPosY|field|net.minecraft.entity.Entity|lastTickPosY
+      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|3167|3168|y|param|rina.turok.bope.bopemod.manager.BopeModuleManager|process|(Lnet/minecraft/entity/Entity;DDD)Lnet/minecraft/util/math/Vec3d;|y|2
+      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|3174|3180|entity|param|rina.turok.bope.bopemod.manager.BopeModuleManager|process|(Lnet/minecraft/entity/Entity;DDD)Lnet/minecraft/util/math/Vec3d;|entity|0
+      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|3181|3185|posZ|field|net.minecraft.entity.Entity|posZ
+      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|3188|3194|entity|param|rina.turok.bope.bopemod.manager.BopeModuleManager|process|(Lnet/minecraft/entity/Entity;DDD)Lnet/minecraft/util/math/Vec3d;|entity|0
+      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|3195|3207|lastTickPosZ|field|net.minecraft.entity.Entity|lastTickPosZ
+      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|3211|3212|z|param|rina.turok.bope.bopemod.manager.BopeModuleManager|process|(Lnet/minecraft/entity/Entity;DDD)Lnet/minecraft/util/math/Vec3d;|z|3
    Method End: process(Lnet/minecraft/entity/Entity;DDD)Lnet/minecraft/util/math/Vec3d;
    Method Start: get_interpolated_pos(Lnet/minecraft/entity/Entity;D)Lnet/minecraft/util/math/Vec3d;
-      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|3219|3225|entity|param|rina.turok.bope.bopemod.manager.BopeModuleManager|get_interpolated_pos|(Lnet/minecraft/entity/Entity;D)Lnet/minecraft/util/math/Vec3d;|entity|0
-      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|3234|3239|ticks|param|rina.turok.bope.bopemod.manager.BopeModuleManager|get_interpolated_pos|(Lnet/minecraft/entity/Entity;D)Lnet/minecraft/util/math/Vec3d;|ticks|1
-      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|3185|3190|Vec3d|class|net.minecraft.util.math.Vec3d|false
-      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|3191|3211|get_interpolated_pos|method|rina.turok.bope.bopemod.manager.BopeModuleManager|get_interpolated_pos|(Lnet/minecraft/entity/Entity;D)Lnet/minecraft/util/math/Vec3d;
-      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|3212|3218|Entity|class|net.minecraft.entity.Entity|false
-      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|3256|3261|Vec3d|class|net.minecraft.util.math.Vec3d|false
-      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|3262|3268|entity|param|rina.turok.bope.bopemod.manager.BopeModuleManager|get_interpolated_pos|(Lnet/minecraft/entity/Entity;D)Lnet/minecraft/util/math/Vec3d;|entity|0
-      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|3269|3281|lastTickPosX|field|net.minecraft.entity.Entity|lastTickPosX
-      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|3283|3289|entity|param|rina.turok.bope.bopemod.manager.BopeModuleManager|get_interpolated_pos|(Lnet/minecraft/entity/Entity;D)Lnet/minecraft/util/math/Vec3d;|entity|0
-      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|3290|3302|lastTickPosY|field|net.minecraft.entity.Entity|lastTickPosY
+      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|3261|3267|entity|param|rina.turok.bope.bopemod.manager.BopeModuleManager|get_interpolated_pos|(Lnet/minecraft/entity/Entity;D)Lnet/minecraft/util/math/Vec3d;|entity|0
+      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|3276|3281|ticks|param|rina.turok.bope.bopemod.manager.BopeModuleManager|get_interpolated_pos|(Lnet/minecraft/entity/Entity;D)Lnet/minecraft/util/math/Vec3d;|ticks|1
+      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|3227|3232|Vec3d|class|net.minecraft.util.math.Vec3d|false
+      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|3233|3253|get_interpolated_pos|method|rina.turok.bope.bopemod.manager.BopeModuleManager|get_interpolated_pos|(Lnet/minecraft/entity/Entity;D)Lnet/minecraft/util/math/Vec3d;
+      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|3254|3260|Entity|class|net.minecraft.entity.Entity|false
+      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|3298|3303|Vec3d|class|net.minecraft.util.math.Vec3d|false
       @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|3304|3310|entity|param|rina.turok.bope.bopemod.manager.BopeModuleManager|get_interpolated_pos|(Lnet/minecraft/entity/Entity;D)Lnet/minecraft/util/math/Vec3d;|entity|0
-      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|3311|3323|lastTickPosZ|field|net.minecraft.entity.Entity|lastTickPosZ
-      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|3325|3328|add|method|net.minecraft.util.math.Vec3d|add|(Lnet/minecraft/util/math/Vec3d;)Lnet/minecraft/util/math/Vec3d;
-      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|3329|3336|process|method|rina.turok.bope.bopemod.manager.BopeModuleManager|process|(Lnet/minecraft/entity/Entity;DDD)Lnet/minecraft/util/math/Vec3d;
-      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|3337|3343|entity|param|rina.turok.bope.bopemod.manager.BopeModuleManager|get_interpolated_pos|(Lnet/minecraft/entity/Entity;D)Lnet/minecraft/util/math/Vec3d;|entity|0
-      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|3345|3350|ticks|param|rina.turok.bope.bopemod.manager.BopeModuleManager|get_interpolated_pos|(Lnet/minecraft/entity/Entity;D)Lnet/minecraft/util/math/Vec3d;|ticks|1
-      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|3352|3357|ticks|param|rina.turok.bope.bopemod.manager.BopeModuleManager|get_interpolated_pos|(Lnet/minecraft/entity/Entity;D)Lnet/minecraft/util/math/Vec3d;|ticks|1
-      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|3359|3364|ticks|param|rina.turok.bope.bopemod.manager.BopeModuleManager|get_interpolated_pos|(Lnet/minecraft/entity/Entity;D)Lnet/minecraft/util/math/Vec3d;|ticks|1
+      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|3311|3323|lastTickPosX|field|net.minecraft.entity.Entity|lastTickPosX
+      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|3325|3331|entity|param|rina.turok.bope.bopemod.manager.BopeModuleManager|get_interpolated_pos|(Lnet/minecraft/entity/Entity;D)Lnet/minecraft/util/math/Vec3d;|entity|0
+      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|3332|3344|lastTickPosY|field|net.minecraft.entity.Entity|lastTickPosY
+      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|3346|3352|entity|param|rina.turok.bope.bopemod.manager.BopeModuleManager|get_interpolated_pos|(Lnet/minecraft/entity/Entity;D)Lnet/minecraft/util/math/Vec3d;|entity|0
+      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|3353|3365|lastTickPosZ|field|net.minecraft.entity.Entity|lastTickPosZ
+      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|3367|3370|add|method|net.minecraft.util.math.Vec3d|add|(Lnet/minecraft/util/math/Vec3d;)Lnet/minecraft/util/math/Vec3d;
+      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|3371|3378|process|method|rina.turok.bope.bopemod.manager.BopeModuleManager|process|(Lnet/minecraft/entity/Entity;DDD)Lnet/minecraft/util/math/Vec3d;
+      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|3379|3385|entity|param|rina.turok.bope.bopemod.manager.BopeModuleManager|get_interpolated_pos|(Lnet/minecraft/entity/Entity;D)Lnet/minecraft/util/math/Vec3d;|entity|0
+      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|3387|3392|ticks|param|rina.turok.bope.bopemod.manager.BopeModuleManager|get_interpolated_pos|(Lnet/minecraft/entity/Entity;D)Lnet/minecraft/util/math/Vec3d;|ticks|1
+      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|3394|3399|ticks|param|rina.turok.bope.bopemod.manager.BopeModuleManager|get_interpolated_pos|(Lnet/minecraft/entity/Entity;D)Lnet/minecraft/util/math/Vec3d;|ticks|1
+      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|3401|3406|ticks|param|rina.turok.bope.bopemod.manager.BopeModuleManager|get_interpolated_pos|(Lnet/minecraft/entity/Entity;D)Lnet/minecraft/util/math/Vec3d;|ticks|1
    Method End: get_interpolated_pos(Lnet/minecraft/entity/Entity;D)Lnet/minecraft/util/math/Vec3d;
    Method Start: render(Lnet/minecraftforge/client/event/RenderWorldLastEvent;)V
-      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|3437|3442|event|param|rina.turok.bope.bopemod.manager.BopeModuleManager|render|(Lnet/minecraftforge/client/event/RenderWorldLastEvent;)V|event|0
-      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|3409|3415|render|method|rina.turok.bope.bopemod.manager.BopeModuleManager|render|(Lnet/minecraftforge/client/event/RenderWorldLastEvent;)V
-      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|3416|3436|RenderWorldLastEvent|class|net.minecraftforge.client.event.RenderWorldLastEvent|false
-      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|3448|3450|mc|field|rina.turok.bope.bopemod.manager.BopeModuleManager|mc
-      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|3451|3459|profiler|field|net.minecraft.client.Minecraft|profiler
-      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|3460|3472|startSection|method|net.minecraft.profiler.Profiler|startSection|(Ljava/lang/String;)V
-      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|3484|3486|mc|field|rina.turok.bope.bopemod.manager.BopeModuleManager|mc
-      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|3487|3495|profiler|field|net.minecraft.client.Minecraft|profiler
-      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|3496|3508|startSection|method|net.minecraft.profiler.Profiler|startSection|(Ljava/lang/String;)V
-      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|3522|3536|GlStateManager|class|net.minecraft.client.renderer.GlStateManager|false
-      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|3537|3553|disableTexture2D|method|net.minecraft.client.renderer.GlStateManager|disableTexture2D|()V
-      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|3559|3573|GlStateManager|class|net.minecraft.client.renderer.GlStateManager|false
-      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|3574|3585|enableBlend|method|net.minecraft.client.renderer.GlStateManager|enableBlend|()V
-      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|3591|3605|GlStateManager|class|net.minecraft.client.renderer.GlStateManager|false
-      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|3606|3618|disableAlpha|method|net.minecraft.client.renderer.GlStateManager|disableAlpha|()V
-      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|3624|3638|GlStateManager|class|net.minecraft.client.renderer.GlStateManager|false
-      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|3639|3659|tryBlendFuncSeparate|method|net.minecraft.client.renderer.GlStateManager|tryBlendFuncSeparate|(IIII)V
-      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|3660|3664|GL11|class|org.lwjgl.opengl.GL11|false
-      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|3665|3677|GL_SRC_ALPHA|field|org.lwjgl.opengl.GL11|GL_SRC_ALPHA
-      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|3679|3683|GL11|class|org.lwjgl.opengl.GL11|false
-      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|3684|3706|GL_ONE_MINUS_SRC_ALPHA|field|org.lwjgl.opengl.GL11|GL_ONE_MINUS_SRC_ALPHA
-      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|3717|3731|GlStateManager|class|net.minecraft.client.renderer.GlStateManager|false
-      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|3732|3742|shadeModel|method|net.minecraft.client.renderer.GlStateManager|shadeModel|(I)V
-      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|3743|3747|GL11|class|org.lwjgl.opengl.GL11|false
-      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|3748|3757|GL_SMOOTH|field|org.lwjgl.opengl.GL11|GL_SMOOTH
-      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|3762|3776|GlStateManager|class|net.minecraft.client.renderer.GlStateManager|false
-      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|3777|3789|disableDepth|method|net.minecraft.client.renderer.GlStateManager|disableDepth|()V
-      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|3796|3810|GlStateManager|class|net.minecraft.client.renderer.GlStateManager|false
-      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|3811|3822|glLineWidth|method|net.minecraft.client.renderer.GlStateManager|glLineWidth|(F)V
-      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|3833|3838|Vec3d|class|net.minecraft.util.math.Vec3d|false
-      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|3845|3865|get_interpolated_pos|method|rina.turok.bope.bopemod.manager.BopeModuleManager|get_interpolated_pos|(Lnet/minecraft/entity/Entity;D)Lnet/minecraft/util/math/Vec3d;
-      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|3866|3868|mc|field|rina.turok.bope.bopemod.manager.BopeModuleManager|mc
-      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|3869|3875|player|field|net.minecraft.client.Minecraft|player
-      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|3877|3882|event|param|rina.turok.bope.bopemod.manager.BopeModuleManager|render|(Lnet/minecraftforge/client/event/RenderWorldLastEvent;)V|event|0
-      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|3883|3898|getPartialTicks|method|net.minecraftforge.client.event.RenderWorldLastEvent|getPartialTicks|()F
-      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|3906|3921|BopeEventRender|class|rina.turok.bope.bopemod.events.BopeEventRender|false
-      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|3941|3956|BopeEventRender|class|rina.turok.bope.bopemod.events.BopeEventRender|false
-      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|3957|3972|TurokRenderHelp|class|rina.turok.turok.draw.TurokRenderHelp|false
-      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|3973|3981|INSTANCE|field|rina.turok.turok.draw.TurokRenderHelp|INSTANCE
-      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|4005|4022|reset_translation|method|rina.turok.bope.bopemod.events.BopeEventRender|reset_translation|()V
-      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|4029|4031|mc|field|rina.turok.bope.bopemod.manager.BopeModuleManager|mc
-      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|4032|4040|profiler|field|net.minecraft.client.Minecraft|profiler
-      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|4041|4051|endSection|method|net.minecraft.profiler.Profiler|endSection|()V
-      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|4063|4073|BopeModule|class|rina.turok.bope.bopemod.BopeModule|false
-      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|4084|4101|get_array_modules|method|rina.turok.bope.bopemod.manager.BopeModuleManager|get_array_modules|()Ljava/util/ArrayList;
-      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|4122|4131|is_active|method|rina.turok.bope.bopemod.BopeModule|is_active|()Z
-      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|4141|4143|mc|field|rina.turok.bope.bopemod.manager.BopeModuleManager|mc
-      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|4144|4152|profiler|field|net.minecraft.client.Minecraft|profiler
-      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|4153|4165|startSection|method|net.minecraft.profiler.Profiler|startSection|(Ljava/lang/String;)V
-      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|4174|4181|get_tag|method|rina.turok.bope.bopemod.BopeModule|get_tag|()Ljava/lang/String;
-      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|4199|4205|render|method|rina.turok.bope.bopemod.BopeModule|render|(Lrina/turok/bope/bopemod/events/BopeEventRender;)V
-      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|4226|4228|mc|field|rina.turok.bope.bopemod.manager.BopeModuleManager|mc
-      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|4229|4237|profiler|field|net.minecraft.client.Minecraft|profiler
-      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|4238|4248|endSection|method|net.minecraft.profiler.Profiler|endSection|()V
-      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|4264|4266|mc|field|rina.turok.bope.bopemod.manager.BopeModuleManager|mc
-      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|4267|4275|profiler|field|net.minecraft.client.Minecraft|profiler
-      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|4276|4288|startSection|method|net.minecraft.profiler.Profiler|startSection|(Ljava/lang/String;)V
-      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|4304|4318|GlStateManager|class|net.minecraft.client.renderer.GlStateManager|false
-      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|4319|4330|glLineWidth|method|net.minecraft.client.renderer.GlStateManager|glLineWidth|(F)V
-      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|4341|4355|GlStateManager|class|net.minecraft.client.renderer.GlStateManager|false
-      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|4356|4366|shadeModel|method|net.minecraft.client.renderer.GlStateManager|shadeModel|(I)V
-      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|4367|4371|GL11|class|org.lwjgl.opengl.GL11|false
-      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|4372|4379|GL_FLAT|field|org.lwjgl.opengl.GL11|GL_FLAT
-      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|4384|4398|GlStateManager|class|net.minecraft.client.renderer.GlStateManager|false
-      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|4399|4411|disableBlend|method|net.minecraft.client.renderer.GlStateManager|disableBlend|()V
-      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|4417|4431|GlStateManager|class|net.minecraft.client.renderer.GlStateManager|false
-      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|4432|4443|enableAlpha|method|net.minecraft.client.renderer.GlStateManager|enableAlpha|()V
-      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|4449|4463|GlStateManager|class|net.minecraft.client.renderer.GlStateManager|false
-      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|4464|4479|enableTexture2D|method|net.minecraft.client.renderer.GlStateManager|enableTexture2D|()V
-      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|4485|4499|GlStateManager|class|net.minecraft.client.renderer.GlStateManager|false
-      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|4500|4511|enableDepth|method|net.minecraft.client.renderer.GlStateManager|enableDepth|()V
-      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|4517|4531|GlStateManager|class|net.minecraft.client.renderer.GlStateManager|false
-      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|4532|4542|enableCull|method|net.minecraft.client.renderer.GlStateManager|enableCull|()V
-      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|4549|4564|TurokRenderHelp|class|rina.turok.turok.draw.TurokRenderHelp|false
-      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|4565|4575|release_gl|method|rina.turok.turok.draw.TurokRenderHelp|release_gl|()V
-      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|4582|4584|mc|field|rina.turok.bope.bopemod.manager.BopeModuleManager|mc
-      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|4585|4593|profiler|field|net.minecraft.client.Minecraft|profiler
-      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|4594|4604|endSection|method|net.minecraft.profiler.Profiler|endSection|()V
-      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|4610|4612|mc|field|rina.turok.bope.bopemod.manager.BopeModuleManager|mc
-      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|4613|4621|profiler|field|net.minecraft.client.Minecraft|profiler
-      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|4622|4632|endSection|method|net.minecraft.profiler.Profiler|endSection|()V
+      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|3479|3484|event|param|rina.turok.bope.bopemod.manager.BopeModuleManager|render|(Lnet/minecraftforge/client/event/RenderWorldLastEvent;)V|event|0
+      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|3451|3457|render|method|rina.turok.bope.bopemod.manager.BopeModuleManager|render|(Lnet/minecraftforge/client/event/RenderWorldLastEvent;)V
+      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|3458|3478|RenderWorldLastEvent|class|net.minecraftforge.client.event.RenderWorldLastEvent|false
+      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|3490|3492|mc|field|rina.turok.bope.bopemod.manager.BopeModuleManager|mc
+      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|3493|3501|profiler|field|net.minecraft.client.Minecraft|profiler
+      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|3502|3514|startSection|method|net.minecraft.profiler.Profiler|startSection|(Ljava/lang/String;)V
+      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|3526|3528|mc|field|rina.turok.bope.bopemod.manager.BopeModuleManager|mc
+      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|3529|3537|profiler|field|net.minecraft.client.Minecraft|profiler
+      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|3538|3550|startSection|method|net.minecraft.profiler.Profiler|startSection|(Ljava/lang/String;)V
+      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|3564|3578|GlStateManager|class|net.minecraft.client.renderer.GlStateManager|false
+      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|3579|3595|disableTexture2D|method|net.minecraft.client.renderer.GlStateManager|disableTexture2D|()V
+      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|3601|3615|GlStateManager|class|net.minecraft.client.renderer.GlStateManager|false
+      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|3616|3627|enableBlend|method|net.minecraft.client.renderer.GlStateManager|enableBlend|()V
+      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|3633|3647|GlStateManager|class|net.minecraft.client.renderer.GlStateManager|false
+      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|3648|3660|disableAlpha|method|net.minecraft.client.renderer.GlStateManager|disableAlpha|()V
+      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|3666|3680|GlStateManager|class|net.minecraft.client.renderer.GlStateManager|false
+      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|3681|3701|tryBlendFuncSeparate|method|net.minecraft.client.renderer.GlStateManager|tryBlendFuncSeparate|(IIII)V
+      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|3702|3706|GL11|class|org.lwjgl.opengl.GL11|false
+      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|3707|3719|GL_SRC_ALPHA|field|org.lwjgl.opengl.GL11|GL_SRC_ALPHA
+      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|3721|3725|GL11|class|org.lwjgl.opengl.GL11|false
+      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|3726|3748|GL_ONE_MINUS_SRC_ALPHA|field|org.lwjgl.opengl.GL11|GL_ONE_MINUS_SRC_ALPHA
+      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|3759|3773|GlStateManager|class|net.minecraft.client.renderer.GlStateManager|false
+      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|3774|3784|shadeModel|method|net.minecraft.client.renderer.GlStateManager|shadeModel|(I)V
+      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|3785|3789|GL11|class|org.lwjgl.opengl.GL11|false
+      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|3790|3799|GL_SMOOTH|field|org.lwjgl.opengl.GL11|GL_SMOOTH
+      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|3804|3818|GlStateManager|class|net.minecraft.client.renderer.GlStateManager|false
+      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|3819|3831|disableDepth|method|net.minecraft.client.renderer.GlStateManager|disableDepth|()V
+      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|3838|3852|GlStateManager|class|net.minecraft.client.renderer.GlStateManager|false
+      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|3853|3864|glLineWidth|method|net.minecraft.client.renderer.GlStateManager|glLineWidth|(F)V
+      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|3875|3880|Vec3d|class|net.minecraft.util.math.Vec3d|false
+      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|3887|3907|get_interpolated_pos|method|rina.turok.bope.bopemod.manager.BopeModuleManager|get_interpolated_pos|(Lnet/minecraft/entity/Entity;D)Lnet/minecraft/util/math/Vec3d;
+      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|3908|3910|mc|field|rina.turok.bope.bopemod.manager.BopeModuleManager|mc
+      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|3911|3917|player|field|net.minecraft.client.Minecraft|player
+      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|3919|3924|event|param|rina.turok.bope.bopemod.manager.BopeModuleManager|render|(Lnet/minecraftforge/client/event/RenderWorldLastEvent;)V|event|0
+      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|3925|3940|getPartialTicks|method|net.minecraftforge.client.event.RenderWorldLastEvent|getPartialTicks|()F
+      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|3948|3963|BopeEventRender|class|rina.turok.bope.bopemod.events.BopeEventRender|false
+      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|3983|3998|BopeEventRender|class|rina.turok.bope.bopemod.events.BopeEventRender|false
+      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|3999|4014|TurokRenderHelp|class|rina.turok.turok.draw.TurokRenderHelp|false
+      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|4015|4023|INSTANCE|field|rina.turok.turok.draw.TurokRenderHelp|INSTANCE
+      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|4047|4064|reset_translation|method|rina.turok.bope.bopemod.events.BopeEventRender|reset_translation|()V
+      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|4071|4073|mc|field|rina.turok.bope.bopemod.manager.BopeModuleManager|mc
+      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|4074|4082|profiler|field|net.minecraft.client.Minecraft|profiler
+      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|4083|4093|endSection|method|net.minecraft.profiler.Profiler|endSection|()V
+      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|4105|4115|BopeModule|class|rina.turok.bope.bopemod.BopeModule|false
+      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|4126|4143|get_array_modules|method|rina.turok.bope.bopemod.manager.BopeModuleManager|get_array_modules|()Ljava/util/ArrayList;
+      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|4164|4173|is_active|method|rina.turok.bope.bopemod.BopeModule|is_active|()Z
+      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|4183|4185|mc|field|rina.turok.bope.bopemod.manager.BopeModuleManager|mc
+      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|4186|4194|profiler|field|net.minecraft.client.Minecraft|profiler
+      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|4195|4207|startSection|method|net.minecraft.profiler.Profiler|startSection|(Ljava/lang/String;)V
+      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|4216|4223|get_tag|method|rina.turok.bope.bopemod.BopeModule|get_tag|()Ljava/lang/String;
+      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|4241|4247|render|method|rina.turok.bope.bopemod.BopeModule|render|(Lrina/turok/bope/bopemod/events/BopeEventRender;)V
+      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|4268|4270|mc|field|rina.turok.bope.bopemod.manager.BopeModuleManager|mc
+      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|4271|4279|profiler|field|net.minecraft.client.Minecraft|profiler
+      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|4280|4290|endSection|method|net.minecraft.profiler.Profiler|endSection|()V
+      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|4306|4308|mc|field|rina.turok.bope.bopemod.manager.BopeModuleManager|mc
+      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|4309|4317|profiler|field|net.minecraft.client.Minecraft|profiler
+      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|4318|4330|startSection|method|net.minecraft.profiler.Profiler|startSection|(Ljava/lang/String;)V
+      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|4346|4360|GlStateManager|class|net.minecraft.client.renderer.GlStateManager|false
+      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|4361|4372|glLineWidth|method|net.minecraft.client.renderer.GlStateManager|glLineWidth|(F)V
+      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|4383|4397|GlStateManager|class|net.minecraft.client.renderer.GlStateManager|false
+      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|4398|4408|shadeModel|method|net.minecraft.client.renderer.GlStateManager|shadeModel|(I)V
+      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|4409|4413|GL11|class|org.lwjgl.opengl.GL11|false
+      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|4414|4421|GL_FLAT|field|org.lwjgl.opengl.GL11|GL_FLAT
+      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|4426|4440|GlStateManager|class|net.minecraft.client.renderer.GlStateManager|false
+      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|4441|4453|disableBlend|method|net.minecraft.client.renderer.GlStateManager|disableBlend|()V
+      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|4459|4473|GlStateManager|class|net.minecraft.client.renderer.GlStateManager|false
+      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|4474|4485|enableAlpha|method|net.minecraft.client.renderer.GlStateManager|enableAlpha|()V
+      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|4491|4505|GlStateManager|class|net.minecraft.client.renderer.GlStateManager|false
+      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|4506|4521|enableTexture2D|method|net.minecraft.client.renderer.GlStateManager|enableTexture2D|()V
+      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|4527|4541|GlStateManager|class|net.minecraft.client.renderer.GlStateManager|false
+      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|4542|4553|enableDepth|method|net.minecraft.client.renderer.GlStateManager|enableDepth|()V
+      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|4559|4573|GlStateManager|class|net.minecraft.client.renderer.GlStateManager|false
+      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|4574|4584|enableCull|method|net.minecraft.client.renderer.GlStateManager|enableCull|()V
+      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|4591|4606|TurokRenderHelp|class|rina.turok.turok.draw.TurokRenderHelp|false
+      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|4607|4617|release_gl|method|rina.turok.turok.draw.TurokRenderHelp|release_gl|()V
+      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|4624|4626|mc|field|rina.turok.bope.bopemod.manager.BopeModuleManager|mc
+      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|4627|4635|profiler|field|net.minecraft.client.Minecraft|profiler
+      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|4636|4646|endSection|method|net.minecraft.profiler.Profiler|endSection|()V
+      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|4652|4654|mc|field|rina.turok.bope.bopemod.manager.BopeModuleManager|mc
+      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|4655|4663|profiler|field|net.minecraft.client.Minecraft|profiler
+      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|4664|4674|endSection|method|net.minecraft.profiler.Profiler|endSection|()V
    Method End: render(Lnet/minecraftforge/client/event/RenderWorldLastEvent;)V
    Method Start: update()V
-      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|4653|4659|update|method|rina.turok.bope.bopemod.manager.BopeModuleManager|update|()V
-      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|4671|4681|BopeModule|class|rina.turok.bope.bopemod.BopeModule|false
-      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|4692|4709|get_array_modules|method|rina.turok.bope.bopemod.manager.BopeModuleManager|get_array_modules|()Ljava/util/ArrayList;
-      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|4730|4739|is_active|method|rina.turok.bope.bopemod.BopeModule|is_active|()Z
-      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|4757|4763|update|method|rina.turok.bope.bopemod.BopeModule|update|()V
+      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|4695|4701|update|method|rina.turok.bope.bopemod.manager.BopeModuleManager|update|()V
+      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|4713|4723|BopeModule|class|rina.turok.bope.bopemod.BopeModule|false
+      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|4734|4751|get_array_modules|method|rina.turok.bope.bopemod.manager.BopeModuleManager|get_array_modules|()Ljava/util/ArrayList;
+      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|4772|4781|is_active|method|rina.turok.bope.bopemod.BopeModule|is_active|()Z
+      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|4799|4805|update|method|rina.turok.bope.bopemod.BopeModule|update|()V
    Method End: update()V
    Method Start: render()V
-      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|4793|4799|render|method|rina.turok.bope.bopemod.manager.BopeModuleManager|render|()V
-      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|4811|4821|BopeModule|class|rina.turok.bope.bopemod.BopeModule|false
-      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|4832|4849|get_array_modules|method|rina.turok.bope.bopemod.manager.BopeModuleManager|get_array_modules|()Ljava/util/ArrayList;
-      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|4870|4879|is_active|method|rina.turok.bope.bopemod.BopeModule|is_active|()Z
-      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|4897|4903|render|method|rina.turok.bope.bopemod.BopeModule|render|()V
+      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|4835|4841|render|method|rina.turok.bope.bopemod.manager.BopeModuleManager|render|()V
+      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|4853|4863|BopeModule|class|rina.turok.bope.bopemod.BopeModule|false
+      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|4874|4891|get_array_modules|method|rina.turok.bope.bopemod.manager.BopeModuleManager|get_array_modules|()Ljava/util/ArrayList;
+      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|4912|4921|is_active|method|rina.turok.bope.bopemod.BopeModule|is_active|()Z
+      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|4939|4945|render|method|rina.turok.bope.bopemod.BopeModule|render|()V
    Method End: render()V
    Method Start: bind(I)V
-      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|4942|4951|event_key|param|rina.turok.bope.bopemod.manager.BopeModuleManager|bind|(I)V|event_key|0
-      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|4933|4937|bind|method|rina.turok.bope.bopemod.manager.BopeModuleManager|bind|(I)V
-      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|4961|4970|event_key|param|rina.turok.bope.bopemod.manager.BopeModuleManager|bind|(I)V|event_key|0
-      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|5002|5012|BopeModule|class|rina.turok.bope.bopemod.BopeModule|false
-      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|5023|5040|get_array_modules|method|rina.turok.bope.bopemod.manager.BopeModuleManager|get_array_modules|()Ljava/util/ArrayList;
-      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|5061|5069|get_bind|method|rina.turok.bope.bopemod.BopeModule|get_bind|(I)I
-      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|5076|5085|event_key|param|rina.turok.bope.bopemod.manager.BopeModuleManager|bind|(I)V|event_key|0
-      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|5101|5107|toggle|method|rina.turok.bope.bopemod.BopeModule|toggle|()V
+      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|4984|4993|event_key|param|rina.turok.bope.bopemod.manager.BopeModuleManager|bind|(I)V|event_key|0
+      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|4975|4979|bind|method|rina.turok.bope.bopemod.manager.BopeModuleManager|bind|(I)V
+      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|5003|5012|event_key|param|rina.turok.bope.bopemod.manager.BopeModuleManager|bind|(I)V|event_key|0
+      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|5044|5054|BopeModule|class|rina.turok.bope.bopemod.BopeModule|false
+      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|5065|5082|get_array_modules|method|rina.turok.bope.bopemod.manager.BopeModuleManager|get_array_modules|()Ljava/util/ArrayList;
+      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|5103|5111|get_bind|method|rina.turok.bope.bopemod.BopeModule|get_bind|(I)I
+      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|5118|5127|event_key|param|rina.turok.bope.bopemod.manager.BopeModuleManager|bind|(I)V|event_key|0
+      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|5143|5149|toggle|method|rina.turok.bope.bopemod.BopeModule|toggle|()V
    Method End: bind(I)V
    Method Start: get_module_with_tag(Ljava/lang/String;)Lrina/turok/bope/bopemod/BopeModule;
-      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|5170|5173|tag|param|rina.turok.bope.bopemod.manager.BopeModuleManager|get_module_with_tag|(Ljava/lang/String;)Lrina/turok/bope/bopemod/BopeModule;|tag|0
-      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|5132|5142|BopeModule|class|rina.turok.bope.bopemod.BopeModule|false
-      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|5143|5162|get_module_with_tag|method|rina.turok.bope.bopemod.manager.BopeModuleManager|get_module_with_tag|(Ljava/lang/String;)Lrina/turok/bope/bopemod/BopeModule;
-      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|5163|5169|String|class|java.lang.String|false
-      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|5179|5189|BopeModule|class|rina.turok.bope.bopemod.BopeModule|false
-      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|5223|5233|BopeModule|class|rina.turok.bope.bopemod.BopeModule|false
-      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|5243|5260|get_array_modules|method|rina.turok.bope.bopemod.manager.BopeModuleManager|get_array_modules|()Ljava/util/ArrayList;
-      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|5280|5287|get_tag|method|rina.turok.bope.bopemod.BopeModule|get_tag|()Ljava/lang/String;
-      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|5290|5306|equalsIgnoreCase|method|java.lang.String|equalsIgnoreCase|(Ljava/lang/String;)Z
-      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|5307|5310|tag|param|rina.turok.bope.bopemod.manager.BopeModuleManager|get_module_with_tag|(Ljava/lang/String;)Lrina/turok/bope/bopemod/BopeModule;|tag|0
+      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|5212|5215|tag|param|rina.turok.bope.bopemod.manager.BopeModuleManager|get_module_with_tag|(Ljava/lang/String;)Lrina/turok/bope/bopemod/BopeModule;|tag|0
+      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|5174|5184|BopeModule|class|rina.turok.bope.bopemod.BopeModule|false
+      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|5185|5204|get_module_with_tag|method|rina.turok.bope.bopemod.manager.BopeModuleManager|get_module_with_tag|(Ljava/lang/String;)Lrina/turok/bope/bopemod/BopeModule;
+      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|5205|5211|String|class|java.lang.String|false
+      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|5221|5231|BopeModule|class|rina.turok.bope.bopemod.BopeModule|false
+      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|5265|5275|BopeModule|class|rina.turok.bope.bopemod.BopeModule|false
+      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|5285|5302|get_array_modules|method|rina.turok.bope.bopemod.manager.BopeModuleManager|get_array_modules|()Ljava/util/ArrayList;
+      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|5322|5329|get_tag|method|rina.turok.bope.bopemod.BopeModule|get_tag|()Ljava/lang/String;
+      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|5332|5348|equalsIgnoreCase|method|java.lang.String|equalsIgnoreCase|(Ljava/lang/String;)Z
+      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|5349|5352|tag|param|rina.turok.bope.bopemod.manager.BopeModuleManager|get_module_with_tag|(Ljava/lang/String;)Lrina/turok/bope/bopemod/BopeModule;|tag|0
    Method End: get_module_with_tag(Ljava/lang/String;)Lrina/turok/bope/bopemod/BopeModule;
    Method Start: get_modules_with_category(Lrina/turok/bope/bopemod/hacks/BopeCategory;)Ljava/util/ArrayList;
-      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|5468|5476|category|param|rina.turok.bope.bopemod.manager.BopeModuleManager|get_modules_with_category|(Lrina/turok/bope/bopemod/hacks/BopeCategory;)Ljava/util/ArrayList;|category|0
-      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|5407|5416|ArrayList|class|java.util.ArrayList|false
-      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|5417|5427|BopeModule|class|rina.turok.bope.bopemod.BopeModule|false
-      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|5429|5454|get_modules_with_category|method|rina.turok.bope.bopemod.manager.BopeModuleManager|get_modules_with_category|(Lrina/turok/bope/bopemod/hacks/BopeCategory;)Ljava/util/ArrayList;
-      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|5455|5467|BopeCategory|class|rina.turok.bope.bopemod.hacks.BopeCategory|false
-      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|5482|5491|ArrayList|class|java.util.ArrayList|false
-      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|5492|5502|BopeModule|class|rina.turok.bope.bopemod.BopeModule|false
-      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|5528|5537|ArrayList|class|java.util.ArrayList|false
-      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|5551|5561|BopeModule|class|rina.turok.bope.bopemod.BopeModule|false
-      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|5572|5589|get_array_modules|method|rina.turok.bope.bopemod.manager.BopeModuleManager|get_array_modules|()Ljava/util/ArrayList;
-      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|5610|5622|get_category|method|rina.turok.bope.bopemod.BopeModule|get_category|()Lrina/turok/bope/bopemod/hacks/BopeCategory;
-      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|5625|5631|equals|method|java.lang.Enum|equals|(Ljava/lang/Object;)Z
-      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|5632|5640|category|param|rina.turok.bope.bopemod.manager.BopeModuleManager|get_modules_with_category|(Lrina/turok/bope/bopemod/hacks/BopeCategory;)Ljava/util/ArrayList;|category|0
-      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|5667|5670|add|method|java.util.Collection|add|(Ljava/lang/Object;)Z
+      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|5510|5518|category|param|rina.turok.bope.bopemod.manager.BopeModuleManager|get_modules_with_category|(Lrina/turok/bope/bopemod/hacks/BopeCategory;)Ljava/util/ArrayList;|category|0
+      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|5449|5458|ArrayList|class|java.util.ArrayList|false
+      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|5459|5469|BopeModule|class|rina.turok.bope.bopemod.BopeModule|false
+      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|5471|5496|get_modules_with_category|method|rina.turok.bope.bopemod.manager.BopeModuleManager|get_modules_with_category|(Lrina/turok/bope/bopemod/hacks/BopeCategory;)Ljava/util/ArrayList;
+      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|5497|5509|BopeCategory|class|rina.turok.bope.bopemod.hacks.BopeCategory|false
+      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|5524|5533|ArrayList|class|java.util.ArrayList|false
+      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|5534|5544|BopeModule|class|rina.turok.bope.bopemod.BopeModule|false
+      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|5570|5579|ArrayList|class|java.util.ArrayList|false
+      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|5593|5603|BopeModule|class|rina.turok.bope.bopemod.BopeModule|false
+      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|5614|5631|get_array_modules|method|rina.turok.bope.bopemod.manager.BopeModuleManager|get_array_modules|()Ljava/util/ArrayList;
+      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|5652|5664|get_category|method|rina.turok.bope.bopemod.BopeModule|get_category|()Lrina/turok/bope/bopemod/hacks/BopeCategory;
+      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|5667|5673|equals|method|java.lang.Enum|equals|(Ljava/lang/Object;)Z
+      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|5674|5682|category|param|rina.turok.bope.bopemod.manager.BopeModuleManager|get_modules_with_category|(Lrina/turok/bope/bopemod/hacks/BopeCategory;)Ljava/util/ArrayList;|category|0
+      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|5709|5712|add|method|java.util.Collection|add|(Ljava/lang/Object;)Z
    Method End: get_modules_with_category(Lrina/turok/bope/bopemod/hacks/BopeCategory;)Ljava/util/ArrayList;
    Method Start: get_tag()Ljava/lang/String;
-      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|5731|5737|String|class|java.lang.String|false
-      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|5738|5745|get_tag|method|rina.turok.bope.bopemod.manager.BopeModuleManager|get_tag|()Ljava/lang/String;
-      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|5764|5767|tag|field|rina.turok.bope.bopemod.manager.BopeModuleManager|tag
+      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|5773|5779|String|class|java.lang.String|false
+      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|5780|5787|get_tag|method|rina.turok.bope.bopemod.manager.BopeModuleManager|get_tag|()Ljava/lang/String;
+      @|rina/turok/bope/bopemod/manager/BopeModuleManager.java|5806|5809|tag|field|rina.turok.bope.bopemod.manager.BopeModuleManager|tag
    Method End: get_tag()Ljava/lang/String;
 Class End  : rina.turok.bope.bopemod.manager.BopeModuleManager
 endProcessing "rina/turok/bope/bopemod/manager/BopeModuleManager.java"
@@ -15472,61 +15493,85 @@ Class Start: rina.turok.bope.mixins.BopeMixinEntity
 Class End  : rina.turok.bope.mixins.BopeMixinEntity
 endProcessing "rina/turok/bope/mixins/BopeMixinEntity.java"
 
-startProcessing "rina/turok/bope/mixins/BopeMixinEntityRender.java" md5: f86a843eeb89f13bf6a78daee35ef205
+startProcessing "rina/turok/bope/mixins/BopeMixinEntityRender.java" md5: 98310e826b28a2c7297b64588e6b3334
 @|rina/turok/bope/mixins/BopeMixinEntityRender.java|8|30|rina.turok.bope.mixins|package|rina.turok.bope.mixins|(file)
 Class Start: rina.turok.bope.mixins.BopeMixinEntityRender
-   @|rina/turok/bope/mixins/BopeMixinEntityRender.java|904|909|Mixin|class|org.spongepowered.asm.mixin.Mixin|false
-   @|rina/turok/bope/mixins/BopeMixinEntityRender.java|910|915|value|method|org.spongepowered.asm.mixin.Mixin|value|()[Ljava/lang/Class;
-   @|rina/turok/bope/mixins/BopeMixinEntityRender.java|918|932|EntityRenderer|class|net.minecraft.client.renderer.EntityRenderer|false
-   @|rina/turok/bope/mixins/BopeMixinEntityRender.java|940|948|priority|method|org.spongepowered.asm.mixin.Mixin|priority|()I
-   @|rina/turok/bope/mixins/BopeMixinEntityRender.java|970|991|BopeMixinEntityRender|class|rina.turok.bope.mixins.BopeMixinEntityRender|false
+   @|rina/turok/bope/mixins/BopeMixinEntityRender.java|991|996|Mixin|class|org.spongepowered.asm.mixin.Mixin|false
+   @|rina/turok/bope/mixins/BopeMixinEntityRender.java|997|1002|value|method|org.spongepowered.asm.mixin.Mixin|value|()[Ljava/lang/Class;
+   @|rina/turok/bope/mixins/BopeMixinEntityRender.java|1005|1019|EntityRenderer|class|net.minecraft.client.renderer.EntityRenderer|false
+   @|rina/turok/bope/mixins/BopeMixinEntityRender.java|1027|1035|priority|method|org.spongepowered.asm.mixin.Mixin|priority|()I
+   @|rina/turok/bope/mixins/BopeMixinEntityRender.java|1057|1078|BopeMixinEntityRender|class|rina.turok.bope.mixins.BopeMixinEntityRender|false
+   Method Start: rayTraceBlocks(Lnet/minecraft/client/multiplayer/WorldClient;Lnet/minecraft/util/math/Vec3d;Lnet/minecraft/util/math/Vec3d;)Lnet/minecraft/util/math/RayTraceResult;
+      @|rina/turok/bope/mixins/BopeMixinEntityRender.java|1395|1400|world|param|rina.turok.bope.mixins.BopeMixinEntityRender|rayTraceBlocks|(Lnet/minecraft/client/multiplayer/WorldClient;Lnet/minecraft/util/math/Vec3d;Lnet/minecraft/util/math/Vec3d;)Lnet/minecraft/util/math/RayTraceResult;|world|0
+      @|rina/turok/bope/mixins/BopeMixinEntityRender.java|1408|1413|start|param|rina.turok.bope.mixins.BopeMixinEntityRender|rayTraceBlocks|(Lnet/minecraft/client/multiplayer/WorldClient;Lnet/minecraft/util/math/Vec3d;Lnet/minecraft/util/math/Vec3d;)Lnet/minecraft/util/math/RayTraceResult;|start|1
+      @|rina/turok/bope/mixins/BopeMixinEntityRender.java|1421|1424|end|param|rina.turok.bope.mixins.BopeMixinEntityRender|rayTraceBlocks|(Lnet/minecraft/client/multiplayer/WorldClient;Lnet/minecraft/util/math/Vec3d;Lnet/minecraft/util/math/Vec3d;)Lnet/minecraft/util/math/RayTraceResult;|end|2
+      @|rina/turok/bope/mixins/BopeMixinEntityRender.java|1104|1112|Redirect|class|org.spongepowered.asm.mixin.injection.Redirect|false
+      @|rina/turok/bope/mixins/BopeMixinEntityRender.java|1113|1119|method|method|org.spongepowered.asm.mixin.injection.Redirect|method|()[Ljava/lang/String;
+      @|rina/turok/bope/mixins/BopeMixinEntityRender.java|1138|1140|at|method|org.spongepowered.asm.mixin.injection.Redirect|at|()Lorg/spongepowered/asm/mixin/injection/At;
+      @|rina/turok/bope/mixins/BopeMixinEntityRender.java|1144|1146|At|class|org.spongepowered.asm.mixin.injection.At|false
+      @|rina/turok/bope/mixins/BopeMixinEntityRender.java|1147|1152|value|method|org.spongepowered.asm.mixin.injection.At|value|()Ljava/lang/String;
+      @|rina/turok/bope/mixins/BopeMixinEntityRender.java|1165|1171|target|method|org.spongepowered.asm.mixin.injection.At|target|()Ljava/lang/String;
+      @|rina/turok/bope/mixins/BopeMixinEntityRender.java|1353|1367|RayTraceResult|class|net.minecraft.util.math.RayTraceResult|false
+      @|rina/turok/bope/mixins/BopeMixinEntityRender.java|1368|1382|rayTraceBlocks|method|rina.turok.bope.mixins.BopeMixinEntityRender|rayTraceBlocks|(Lnet/minecraft/client/multiplayer/WorldClient;Lnet/minecraft/util/math/Vec3d;Lnet/minecraft/util/math/Vec3d;)Lnet/minecraft/util/math/RayTraceResult;
+      @|rina/turok/bope/mixins/BopeMixinEntityRender.java|1383|1394|WorldClient|class|net.minecraft.client.multiplayer.WorldClient|false
+      @|rina/turok/bope/mixins/BopeMixinEntityRender.java|1402|1407|Vec3d|class|net.minecraft.util.math.Vec3d|false
+      @|rina/turok/bope/mixins/BopeMixinEntityRender.java|1415|1420|Vec3d|class|net.minecraft.util.math.Vec3d|false
+      @|rina/turok/bope/mixins/BopeMixinEntityRender.java|1435|1439|Bope|class|rina.turok.bope.Bope|false
+      @|rina/turok/bope/mixins/BopeMixinEntityRender.java|1440|1458|get_module_manager|method|rina.turok.bope.Bope|get_module_manager|()Lrina/turok/bope/bopemod/manager/BopeModuleManager;
+      @|rina/turok/bope/mixins/BopeMixinEntityRender.java|1461|1480|get_module_with_tag|method|rina.turok.bope.bopemod.manager.BopeModuleManager|get_module_with_tag|(Ljava/lang/String;)Lrina/turok/bope/bopemod/BopeModule;
+      @|rina/turok/bope/mixins/BopeMixinEntityRender.java|1501|1510|is_active|method|rina.turok.bope.bopemod.BopeModule|is_active|()Z
+      @|rina/turok/bope/mixins/BopeMixinEntityRender.java|1556|1561|world|param|rina.turok.bope.mixins.BopeMixinEntityRender|rayTraceBlocks|(Lnet/minecraft/client/multiplayer/WorldClient;Lnet/minecraft/util/math/Vec3d;Lnet/minecraft/util/math/Vec3d;)Lnet/minecraft/util/math/RayTraceResult;|world|0
+      @|rina/turok/bope/mixins/BopeMixinEntityRender.java|1562|1576|rayTraceBlocks|method|net.minecraft.world.World|rayTraceBlocks|(Lnet/minecraft/util/math/Vec3d;Lnet/minecraft/util/math/Vec3d;)Lnet/minecraft/util/math/RayTraceResult;
+      @|rina/turok/bope/mixins/BopeMixinEntityRender.java|1577|1582|start|param|rina.turok.bope.mixins.BopeMixinEntityRender|rayTraceBlocks|(Lnet/minecraft/client/multiplayer/WorldClient;Lnet/minecraft/util/math/Vec3d;Lnet/minecraft/util/math/Vec3d;)Lnet/minecraft/util/math/RayTraceResult;|start|1
+      @|rina/turok/bope/mixins/BopeMixinEntityRender.java|1584|1587|end|param|rina.turok.bope.mixins.BopeMixinEntityRender|rayTraceBlocks|(Lnet/minecraft/client/multiplayer/WorldClient;Lnet/minecraft/util/math/Vec3d;Lnet/minecraft/util/math/Vec3d;)Lnet/minecraft/util/math/RayTraceResult;|end|2
+   Method End: rayTraceBlocks(Lnet/minecraft/client/multiplayer/WorldClient;Lnet/minecraft/util/math/Vec3d;Lnet/minecraft/util/math/Vec3d;)Lnet/minecraft/util/math/RayTraceResult;
    Method Start: getEntitiesInAABBexcluding(Lnet/minecraft/client/multiplayer/WorldClient;Lnet/minecraft/entity/Entity;Lnet/minecraft/util/math/AxisAlignedBB;Lcom/google/common/base/Predicate;)Ljava/util/List;
-      @|rina/turok/bope/mixins/BopeMixinEntityRender.java|1345|1357|world_client|param|rina.turok.bope.mixins.BopeMixinEntityRender|getEntitiesInAABBexcluding|(Lnet/minecraft/client/multiplayer/WorldClient;Lnet/minecraft/entity/Entity;Lnet/minecraft/util/math/AxisAlignedBB;Lcom/google/common/base/Predicate;)Ljava/util/List;|world_client|0
-      @|rina/turok/bope/mixins/BopeMixinEntityRender.java|1366|1372|entity|param|rina.turok.bope.mixins.BopeMixinEntityRender|getEntitiesInAABBexcluding|(Lnet/minecraft/client/multiplayer/WorldClient;Lnet/minecraft/entity/Entity;Lnet/minecraft/util/math/AxisAlignedBB;Lcom/google/common/base/Predicate;)Ljava/util/List;|entity|1
-      @|rina/turok/bope/mixins/BopeMixinEntityRender.java|1388|1399|bouding_box|param|rina.turok.bope.mixins.BopeMixinEntityRender|getEntitiesInAABBexcluding|(Lnet/minecraft/client/multiplayer/WorldClient;Lnet/minecraft/entity/Entity;Lnet/minecraft/util/math/AxisAlignedBB;Lcom/google/common/base/Predicate;)Ljava/util/List;|bouding_box|2
-      @|rina/turok/bope/mixins/BopeMixinEntityRender.java|1411|1420|predicate|param|rina.turok.bope.mixins.BopeMixinEntityRender|getEntitiesInAABBexcluding|(Lnet/minecraft/client/multiplayer/WorldClient;Lnet/minecraft/entity/Entity;Lnet/minecraft/util/math/AxisAlignedBB;Lcom/google/common/base/Predicate;)Ljava/util/List;|predicate|3
-      @|rina/turok/bope/mixins/BopeMixinEntityRender.java|1016|1024|Redirect|class|org.spongepowered.asm.mixin.injection.Redirect|false
-      @|rina/turok/bope/mixins/BopeMixinEntityRender.java|1025|1031|method|method|org.spongepowered.asm.mixin.injection.Redirect|method|()[Ljava/lang/String;
-      @|rina/turok/bope/mixins/BopeMixinEntityRender.java|1050|1052|at|method|org.spongepowered.asm.mixin.injection.Redirect|at|()Lorg/spongepowered/asm/mixin/injection/At;
-      @|rina/turok/bope/mixins/BopeMixinEntityRender.java|1056|1058|At|class|org.spongepowered.asm.mixin.injection.At|false
-      @|rina/turok/bope/mixins/BopeMixinEntityRender.java|1059|1064|value|method|org.spongepowered.asm.mixin.injection.At|value|()Ljava/lang/String;
-      @|rina/turok/bope/mixins/BopeMixinEntityRender.java|1077|1083|target|method|org.spongepowered.asm.mixin.injection.At|target|()Ljava/lang/String;
-      @|rina/turok/bope/mixins/BopeMixinEntityRender.java|1293|1297|List|class|java.util.List|false
-      @|rina/turok/bope/mixins/BopeMixinEntityRender.java|1298|1304|Entity|class|net.minecraft.entity.Entity|false
-      @|rina/turok/bope/mixins/BopeMixinEntityRender.java|1306|1332|getEntitiesInAABBexcluding|method|rina.turok.bope.mixins.BopeMixinEntityRender|getEntitiesInAABBexcluding|(Lnet/minecraft/client/multiplayer/WorldClient;Lnet/minecraft/entity/Entity;Lnet/minecraft/util/math/AxisAlignedBB;Lcom/google/common/base/Predicate;)Ljava/util/List;
-      @|rina/turok/bope/mixins/BopeMixinEntityRender.java|1333|1344|WorldClient|class|net.minecraft.client.multiplayer.WorldClient|false
-      @|rina/turok/bope/mixins/BopeMixinEntityRender.java|1359|1365|Entity|class|net.minecraft.entity.Entity|false
-      @|rina/turok/bope/mixins/BopeMixinEntityRender.java|1374|1387|AxisAlignedBB|class|net.minecraft.util.math.AxisAlignedBB|false
-      @|rina/turok/bope/mixins/BopeMixinEntityRender.java|1401|1410|Predicate|class|com.google.common.base.Predicate|false
-      @|rina/turok/bope/mixins/BopeMixinEntityRender.java|1427|1437|BopeModule|class|rina.turok.bope.bopemod.BopeModule|false
-      @|rina/turok/bope/mixins/BopeMixinEntityRender.java|1457|1461|Bope|class|rina.turok.bope.Bope|false
-      @|rina/turok/bope/mixins/BopeMixinEntityRender.java|1462|1480|get_module_manager|method|rina.turok.bope.Bope|get_module_manager|()Lrina/turok/bope/bopemod/manager/BopeModuleManager;
-      @|rina/turok/bope/mixins/BopeMixinEntityRender.java|1483|1502|get_module_with_tag|method|rina.turok.bope.bopemod.manager.BopeModuleManager|get_module_with_tag|(Ljava/lang/String;)Lrina/turok/bope/bopemod/BopeModule;
-      @|rina/turok/bope/mixins/BopeMixinEntityRender.java|1547|1556|is_active|method|rina.turok.bope.bopemod.BopeModule|is_active|()Z
-      @|rina/turok/bope/mixins/BopeMixinEntityRender.java|1579|1594|value_boolean_0|method|rina.turok.bope.bopemod.BopeModule|value_boolean_0|()Z
-      @|rina/turok/bope/mixins/BopeMixinEntityRender.java|1615|1624|ArrayList|class|java.util.ArrayList|false
-      @|rina/turok/bope/mixins/BopeMixinEntityRender.java|1653|1665|world_client|param|rina.turok.bope.mixins.BopeMixinEntityRender|getEntitiesInAABBexcluding|(Lnet/minecraft/client/multiplayer/WorldClient;Lnet/minecraft/entity/Entity;Lnet/minecraft/util/math/AxisAlignedBB;Lcom/google/common/base/Predicate;)Ljava/util/List;|world_client|0
-      @|rina/turok/bope/mixins/BopeMixinEntityRender.java|1666|1692|getEntitiesInAABBexcluding|method|net.minecraft.world.World|getEntitiesInAABBexcluding|(Lnet/minecraft/entity/Entity;Lnet/minecraft/util/math/AxisAlignedBB;Lcom/google/common/base/Predicate;)Ljava/util/List;
-      @|rina/turok/bope/mixins/BopeMixinEntityRender.java|1693|1699|entity|param|rina.turok.bope.mixins.BopeMixinEntityRender|getEntitiesInAABBexcluding|(Lnet/minecraft/client/multiplayer/WorldClient;Lnet/minecraft/entity/Entity;Lnet/minecraft/util/math/AxisAlignedBB;Lcom/google/common/base/Predicate;)Ljava/util/List;|entity|1
-      @|rina/turok/bope/mixins/BopeMixinEntityRender.java|1701|1712|bouding_box|param|rina.turok.bope.mixins.BopeMixinEntityRender|getEntitiesInAABBexcluding|(Lnet/minecraft/client/multiplayer/WorldClient;Lnet/minecraft/entity/Entity;Lnet/minecraft/util/math/AxisAlignedBB;Lcom/google/common/base/Predicate;)Ljava/util/List;|bouding_box|2
-      @|rina/turok/bope/mixins/BopeMixinEntityRender.java|1714|1723|predicate|param|rina.turok.bope.mixins.BopeMixinEntityRender|getEntitiesInAABBexcluding|(Lnet/minecraft/client/multiplayer/WorldClient;Lnet/minecraft/entity/Entity;Lnet/minecraft/util/math/AxisAlignedBB;Lcom/google/common/base/Predicate;)Ljava/util/List;|predicate|3
+      @|rina/turok/bope/mixins/BopeMixinEntityRender.java|1952|1964|world_client|param|rina.turok.bope.mixins.BopeMixinEntityRender|getEntitiesInAABBexcluding|(Lnet/minecraft/client/multiplayer/WorldClient;Lnet/minecraft/entity/Entity;Lnet/minecraft/util/math/AxisAlignedBB;Lcom/google/common/base/Predicate;)Ljava/util/List;|world_client|0
+      @|rina/turok/bope/mixins/BopeMixinEntityRender.java|1973|1979|entity|param|rina.turok.bope.mixins.BopeMixinEntityRender|getEntitiesInAABBexcluding|(Lnet/minecraft/client/multiplayer/WorldClient;Lnet/minecraft/entity/Entity;Lnet/minecraft/util/math/AxisAlignedBB;Lcom/google/common/base/Predicate;)Ljava/util/List;|entity|1
+      @|rina/turok/bope/mixins/BopeMixinEntityRender.java|1995|2006|bouding_box|param|rina.turok.bope.mixins.BopeMixinEntityRender|getEntitiesInAABBexcluding|(Lnet/minecraft/client/multiplayer/WorldClient;Lnet/minecraft/entity/Entity;Lnet/minecraft/util/math/AxisAlignedBB;Lcom/google/common/base/Predicate;)Ljava/util/List;|bouding_box|2
+      @|rina/turok/bope/mixins/BopeMixinEntityRender.java|2018|2027|predicate|param|rina.turok.bope.mixins.BopeMixinEntityRender|getEntitiesInAABBexcluding|(Lnet/minecraft/client/multiplayer/WorldClient;Lnet/minecraft/entity/Entity;Lnet/minecraft/util/math/AxisAlignedBB;Lcom/google/common/base/Predicate;)Ljava/util/List;|predicate|3
+      @|rina/turok/bope/mixins/BopeMixinEntityRender.java|1623|1631|Redirect|class|org.spongepowered.asm.mixin.injection.Redirect|false
+      @|rina/turok/bope/mixins/BopeMixinEntityRender.java|1632|1638|method|method|org.spongepowered.asm.mixin.injection.Redirect|method|()[Ljava/lang/String;
+      @|rina/turok/bope/mixins/BopeMixinEntityRender.java|1657|1659|at|method|org.spongepowered.asm.mixin.injection.Redirect|at|()Lorg/spongepowered/asm/mixin/injection/At;
+      @|rina/turok/bope/mixins/BopeMixinEntityRender.java|1663|1665|At|class|org.spongepowered.asm.mixin.injection.At|false
+      @|rina/turok/bope/mixins/BopeMixinEntityRender.java|1666|1671|value|method|org.spongepowered.asm.mixin.injection.At|value|()Ljava/lang/String;
+      @|rina/turok/bope/mixins/BopeMixinEntityRender.java|1684|1690|target|method|org.spongepowered.asm.mixin.injection.At|target|()Ljava/lang/String;
+      @|rina/turok/bope/mixins/BopeMixinEntityRender.java|1900|1904|List|class|java.util.List|false
+      @|rina/turok/bope/mixins/BopeMixinEntityRender.java|1905|1911|Entity|class|net.minecraft.entity.Entity|false
+      @|rina/turok/bope/mixins/BopeMixinEntityRender.java|1913|1939|getEntitiesInAABBexcluding|method|rina.turok.bope.mixins.BopeMixinEntityRender|getEntitiesInAABBexcluding|(Lnet/minecraft/client/multiplayer/WorldClient;Lnet/minecraft/entity/Entity;Lnet/minecraft/util/math/AxisAlignedBB;Lcom/google/common/base/Predicate;)Ljava/util/List;
+      @|rina/turok/bope/mixins/BopeMixinEntityRender.java|1940|1951|WorldClient|class|net.minecraft.client.multiplayer.WorldClient|false
+      @|rina/turok/bope/mixins/BopeMixinEntityRender.java|1966|1972|Entity|class|net.minecraft.entity.Entity|false
+      @|rina/turok/bope/mixins/BopeMixinEntityRender.java|1981|1994|AxisAlignedBB|class|net.minecraft.util.math.AxisAlignedBB|false
+      @|rina/turok/bope/mixins/BopeMixinEntityRender.java|2008|2017|Predicate|class|com.google.common.base.Predicate|false
+      @|rina/turok/bope/mixins/BopeMixinEntityRender.java|2034|2044|BopeModule|class|rina.turok.bope.bopemod.BopeModule|false
+      @|rina/turok/bope/mixins/BopeMixinEntityRender.java|2064|2068|Bope|class|rina.turok.bope.Bope|false
+      @|rina/turok/bope/mixins/BopeMixinEntityRender.java|2069|2087|get_module_manager|method|rina.turok.bope.Bope|get_module_manager|()Lrina/turok/bope/bopemod/manager/BopeModuleManager;
+      @|rina/turok/bope/mixins/BopeMixinEntityRender.java|2090|2109|get_module_with_tag|method|rina.turok.bope.bopemod.manager.BopeModuleManager|get_module_with_tag|(Ljava/lang/String;)Lrina/turok/bope/bopemod/BopeModule;
+      @|rina/turok/bope/mixins/BopeMixinEntityRender.java|2154|2163|is_active|method|rina.turok.bope.bopemod.BopeModule|is_active|()Z
+      @|rina/turok/bope/mixins/BopeMixinEntityRender.java|2186|2201|value_boolean_0|method|rina.turok.bope.bopemod.BopeModule|value_boolean_0|()Z
+      @|rina/turok/bope/mixins/BopeMixinEntityRender.java|2222|2231|ArrayList|class|java.util.ArrayList|false
+      @|rina/turok/bope/mixins/BopeMixinEntityRender.java|2260|2272|world_client|param|rina.turok.bope.mixins.BopeMixinEntityRender|getEntitiesInAABBexcluding|(Lnet/minecraft/client/multiplayer/WorldClient;Lnet/minecraft/entity/Entity;Lnet/minecraft/util/math/AxisAlignedBB;Lcom/google/common/base/Predicate;)Ljava/util/List;|world_client|0
+      @|rina/turok/bope/mixins/BopeMixinEntityRender.java|2273|2299|getEntitiesInAABBexcluding|method|net.minecraft.world.World|getEntitiesInAABBexcluding|(Lnet/minecraft/entity/Entity;Lnet/minecraft/util/math/AxisAlignedBB;Lcom/google/common/base/Predicate;)Ljava/util/List;
+      @|rina/turok/bope/mixins/BopeMixinEntityRender.java|2300|2306|entity|param|rina.turok.bope.mixins.BopeMixinEntityRender|getEntitiesInAABBexcluding|(Lnet/minecraft/client/multiplayer/WorldClient;Lnet/minecraft/entity/Entity;Lnet/minecraft/util/math/AxisAlignedBB;Lcom/google/common/base/Predicate;)Ljava/util/List;|entity|1
+      @|rina/turok/bope/mixins/BopeMixinEntityRender.java|2308|2319|bouding_box|param|rina.turok.bope.mixins.BopeMixinEntityRender|getEntitiesInAABBexcluding|(Lnet/minecraft/client/multiplayer/WorldClient;Lnet/minecraft/entity/Entity;Lnet/minecraft/util/math/AxisAlignedBB;Lcom/google/common/base/Predicate;)Ljava/util/List;|bouding_box|2
+      @|rina/turok/bope/mixins/BopeMixinEntityRender.java|2321|2330|predicate|param|rina.turok.bope.mixins.BopeMixinEntityRender|getEntitiesInAABBexcluding|(Lnet/minecraft/client/multiplayer/WorldClient;Lnet/minecraft/entity/Entity;Lnet/minecraft/util/math/AxisAlignedBB;Lcom/google/common/base/Predicate;)Ljava/util/List;|predicate|3
    Method End: getEntitiesInAABBexcluding(Lnet/minecraft/client/multiplayer/WorldClient;Lnet/minecraft/entity/Entity;Lnet/minecraft/util/math/AxisAlignedBB;Lcom/google/common/base/Predicate;)Ljava/util/List;
    Method Start: hurtCameraEffect(FLorg/spongepowered/asm/mixin/injection/callback/CallbackInfo;)V
-      @|rina/turok/bope/mixins/BopeMixinEntityRender.java|1872|1877|ticks|param|rina.turok.bope.mixins.BopeMixinEntityRender|hurtCameraEffect|(FLorg/spongepowered/asm/mixin/injection/callback/CallbackInfo;)V|ticks|0
-      @|rina/turok/bope/mixins/BopeMixinEntityRender.java|1892|1896|info|param|rina.turok.bope.mixins.BopeMixinEntityRender|hurtCameraEffect|(FLorg/spongepowered/asm/mixin/injection/callback/CallbackInfo;)V|info|1
-      @|rina/turok/bope/mixins/BopeMixinEntityRender.java|1760|1766|Inject|class|org.spongepowered.asm.mixin.injection.Inject|false
-      @|rina/turok/bope/mixins/BopeMixinEntityRender.java|1767|1773|method|method|org.spongepowered.asm.mixin.injection.Inject|method|()[Ljava/lang/String;
-      @|rina/turok/bope/mixins/BopeMixinEntityRender.java|1796|1798|at|method|org.spongepowered.asm.mixin.injection.Inject|at|()[Lorg/spongepowered/asm/mixin/injection/At;
-      @|rina/turok/bope/mixins/BopeMixinEntityRender.java|1802|1804|At|class|org.spongepowered.asm.mixin.injection.At|false
-      @|rina/turok/bope/mixins/BopeMixinEntityRender.java|1814|1825|cancellable|method|org.spongepowered.asm.mixin.injection.Inject|cancellable|()Z
-      @|rina/turok/bope/mixins/BopeMixinEntityRender.java|1849|1865|hurtCameraEffect|method|rina.turok.bope.mixins.BopeMixinEntityRender|hurtCameraEffect|(FLorg/spongepowered/asm/mixin/injection/callback/CallbackInfo;)V
-      @|rina/turok/bope/mixins/BopeMixinEntityRender.java|1879|1891|CallbackInfo|class|org.spongepowered.asm.mixin.injection.callback.CallbackInfo|false
-      @|rina/turok/bope/mixins/BopeMixinEntityRender.java|1907|1911|Bope|class|rina.turok.bope.Bope|false
-      @|rina/turok/bope/mixins/BopeMixinEntityRender.java|1912|1930|get_module_manager|method|rina.turok.bope.Bope|get_module_manager|()Lrina/turok/bope/bopemod/manager/BopeModuleManager;
-      @|rina/turok/bope/mixins/BopeMixinEntityRender.java|1933|1952|get_module_with_tag|method|rina.turok.bope.bopemod.manager.BopeModuleManager|get_module_with_tag|(Ljava/lang/String;)Lrina/turok/bope/bopemod/BopeModule;
-      @|rina/turok/bope/mixins/BopeMixinEntityRender.java|1966|1975|is_active|method|rina.turok.bope.bopemod.BopeModule|is_active|()Z
-      @|rina/turok/bope/mixins/BopeMixinEntityRender.java|1985|1989|info|param|rina.turok.bope.mixins.BopeMixinEntityRender|hurtCameraEffect|(FLorg/spongepowered/asm/mixin/injection/callback/CallbackInfo;)V|info|1
-      @|rina/turok/bope/mixins/BopeMixinEntityRender.java|1990|1996|cancel|method|org.spongepowered.asm.mixin.injection.callback.Cancellable|cancel|()V
+      @|rina/turok/bope/mixins/BopeMixinEntityRender.java|2479|2484|ticks|param|rina.turok.bope.mixins.BopeMixinEntityRender|hurtCameraEffect|(FLorg/spongepowered/asm/mixin/injection/callback/CallbackInfo;)V|ticks|0
+      @|rina/turok/bope/mixins/BopeMixinEntityRender.java|2499|2503|info|param|rina.turok.bope.mixins.BopeMixinEntityRender|hurtCameraEffect|(FLorg/spongepowered/asm/mixin/injection/callback/CallbackInfo;)V|info|1
+      @|rina/turok/bope/mixins/BopeMixinEntityRender.java|2367|2373|Inject|class|org.spongepowered.asm.mixin.injection.Inject|false
+      @|rina/turok/bope/mixins/BopeMixinEntityRender.java|2374|2380|method|method|org.spongepowered.asm.mixin.injection.Inject|method|()[Ljava/lang/String;
+      @|rina/turok/bope/mixins/BopeMixinEntityRender.java|2403|2405|at|method|org.spongepowered.asm.mixin.injection.Inject|at|()[Lorg/spongepowered/asm/mixin/injection/At;
+      @|rina/turok/bope/mixins/BopeMixinEntityRender.java|2409|2411|At|class|org.spongepowered.asm.mixin.injection.At|false
+      @|rina/turok/bope/mixins/BopeMixinEntityRender.java|2421|2432|cancellable|method|org.spongepowered.asm.mixin.injection.Inject|cancellable|()Z
+      @|rina/turok/bope/mixins/BopeMixinEntityRender.java|2456|2472|hurtCameraEffect|method|rina.turok.bope.mixins.BopeMixinEntityRender|hurtCameraEffect|(FLorg/spongepowered/asm/mixin/injection/callback/CallbackInfo;)V
+      @|rina/turok/bope/mixins/BopeMixinEntityRender.java|2486|2498|CallbackInfo|class|org.spongepowered.asm.mixin.injection.callback.CallbackInfo|false
+      @|rina/turok/bope/mixins/BopeMixinEntityRender.java|2514|2518|Bope|class|rina.turok.bope.Bope|false
+      @|rina/turok/bope/mixins/BopeMixinEntityRender.java|2519|2537|get_module_manager|method|rina.turok.bope.Bope|get_module_manager|()Lrina/turok/bope/bopemod/manager/BopeModuleManager;
+      @|rina/turok/bope/mixins/BopeMixinEntityRender.java|2540|2559|get_module_with_tag|method|rina.turok.bope.bopemod.manager.BopeModuleManager|get_module_with_tag|(Ljava/lang/String;)Lrina/turok/bope/bopemod/BopeModule;
+      @|rina/turok/bope/mixins/BopeMixinEntityRender.java|2573|2582|is_active|method|rina.turok.bope.bopemod.BopeModule|is_active|()Z
+      @|rina/turok/bope/mixins/BopeMixinEntityRender.java|2592|2596|info|param|rina.turok.bope.mixins.BopeMixinEntityRender|hurtCameraEffect|(FLorg/spongepowered/asm/mixin/injection/callback/CallbackInfo;)V|info|1
+      @|rina/turok/bope/mixins/BopeMixinEntityRender.java|2597|2603|cancel|method|org.spongepowered.asm.mixin.injection.callback.Cancellable|cancel|()V
    Method End: hurtCameraEffect(FLorg/spongepowered/asm/mixin/injection/callback/CallbackInfo;)V
 Class End  : rina.turok.bope.mixins.BopeMixinEntityRender
 endProcessing "rina/turok/bope/mixins/BopeMixinEntityRender.java"
@@ -15879,37 +15924,37 @@ Class Start: rina.turok.bope.mixins.BopeMixinRenderLivingBase
 Class End  : rina.turok.bope.mixins.BopeMixinRenderLivingBase
 endProcessing "rina/turok/bope/mixins/BopeMixinRenderLivingBase.java"
 
-startProcessing "rina/turok/bope/mixins/BopeMixinRenderPlayer.java" md5: e98565d094176d44aecbe3eb9df76bf8
+startProcessing "rina/turok/bope/mixins/BopeMixinRenderPlayer.java" md5: ffe7f8388e0b315b73907f2268bbdfdf
 @|rina/turok/bope/mixins/BopeMixinRenderPlayer.java|8|30|rina.turok.bope.mixins|package|rina.turok.bope.mixins|(file)
 Class Start: rina.turok.bope.mixins.BopeMixinRenderPlayer
-   @|rina/turok/bope/mixins/BopeMixinRenderPlayer.java|681|686|Mixin|class|org.spongepowered.asm.mixin.Mixin|false
-   @|rina/turok/bope/mixins/BopeMixinRenderPlayer.java|687|692|value|method|org.spongepowered.asm.mixin.Mixin|value|()[Ljava/lang/Class;
-   @|rina/turok/bope/mixins/BopeMixinRenderPlayer.java|695|707|RenderPlayer|class|net.minecraft.client.renderer.entity.RenderPlayer|false
-   @|rina/turok/bope/mixins/BopeMixinRenderPlayer.java|715|723|priority|method|org.spongepowered.asm.mixin.Mixin|priority|()I
-   @|rina/turok/bope/mixins/BopeMixinRenderPlayer.java|754|775|BopeMixinRenderPlayer|class|rina.turok.bope.mixins.BopeMixinRenderPlayer|false
+   @|rina/turok/bope/mixins/BopeMixinRenderPlayer.java|774|779|Mixin|class|org.spongepowered.asm.mixin.Mixin|false
+   @|rina/turok/bope/mixins/BopeMixinRenderPlayer.java|780|785|value|method|org.spongepowered.asm.mixin.Mixin|value|()[Ljava/lang/Class;
+   @|rina/turok/bope/mixins/BopeMixinRenderPlayer.java|788|800|RenderPlayer|class|net.minecraft.client.renderer.entity.RenderPlayer|false
+   @|rina/turok/bope/mixins/BopeMixinRenderPlayer.java|808|816|priority|method|org.spongepowered.asm.mixin.Mixin|priority|()I
+   @|rina/turok/bope/mixins/BopeMixinRenderPlayer.java|847|868|BopeMixinRenderPlayer|class|rina.turok.bope.mixins.BopeMixinRenderPlayer|false
    Method Start: renderLivingLabel(Lnet/minecraft/client/entity/AbstractClientPlayer;DDDLjava/lang/String;DLorg/spongepowered/asm/mixin/injection/callback/CallbackInfo;)V
-      @|rina/turok/bope/mixins/BopeMixinRenderPlayer.java|928|934|entity|param|rina.turok.bope.mixins.BopeMixinRenderPlayer|renderLivingLabel|(Lnet/minecraft/client/entity/AbstractClientPlayer;DDDLjava/lang/String;DLorg/spongepowered/asm/mixin/injection/callback/CallbackInfo;)V|entity|0
-      @|rina/turok/bope/mixins/BopeMixinRenderPlayer.java|943|944|x|param|rina.turok.bope.mixins.BopeMixinRenderPlayer|renderLivingLabel|(Lnet/minecraft/client/entity/AbstractClientPlayer;DDDLjava/lang/String;DLorg/spongepowered/asm/mixin/injection/callback/CallbackInfo;)V|x|1
-      @|rina/turok/bope/mixins/BopeMixinRenderPlayer.java|953|954|y|param|rina.turok.bope.mixins.BopeMixinRenderPlayer|renderLivingLabel|(Lnet/minecraft/client/entity/AbstractClientPlayer;DDDLjava/lang/String;DLorg/spongepowered/asm/mixin/injection/callback/CallbackInfo;)V|y|2
-      @|rina/turok/bope/mixins/BopeMixinRenderPlayer.java|963|964|z|param|rina.turok.bope.mixins.BopeMixinRenderPlayer|renderLivingLabel|(Lnet/minecraft/client/entity/AbstractClientPlayer;DDDLjava/lang/String;DLorg/spongepowered/asm/mixin/injection/callback/CallbackInfo;)V|z|3
-      @|rina/turok/bope/mixins/BopeMixinRenderPlayer.java|973|977|name|param|rina.turok.bope.mixins.BopeMixinRenderPlayer|renderLivingLabel|(Lnet/minecraft/client/entity/AbstractClientPlayer;DDDLjava/lang/String;DLorg/spongepowered/asm/mixin/injection/callback/CallbackInfo;)V|name|4
-      @|rina/turok/bope/mixins/BopeMixinRenderPlayer.java|986|996|distanceSq|param|rina.turok.bope.mixins.BopeMixinRenderPlayer|renderLivingLabel|(Lnet/minecraft/client/entity/AbstractClientPlayer;DDDLjava/lang/String;DLorg/spongepowered/asm/mixin/injection/callback/CallbackInfo;)V|distanceSq|5
-      @|rina/turok/bope/mixins/BopeMixinRenderPlayer.java|1011|1019|callback|param|rina.turok.bope.mixins.BopeMixinRenderPlayer|renderLivingLabel|(Lnet/minecraft/client/entity/AbstractClientPlayer;DDDLjava/lang/String;DLorg/spongepowered/asm/mixin/injection/callback/CallbackInfo;)V|callback|6
-      @|rina/turok/bope/mixins/BopeMixinRenderPlayer.java|800|806|Inject|class|org.spongepowered.asm.mixin.injection.Inject|false
-      @|rina/turok/bope/mixins/BopeMixinRenderPlayer.java|807|813|method|method|org.spongepowered.asm.mixin.injection.Inject|method|()[Ljava/lang/String;
-      @|rina/turok/bope/mixins/BopeMixinRenderPlayer.java|836|838|at|method|org.spongepowered.asm.mixin.injection.Inject|at|()[Lorg/spongepowered/asm/mixin/injection/At;
-      @|rina/turok/bope/mixins/BopeMixinRenderPlayer.java|842|844|At|class|org.spongepowered.asm.mixin.injection.At|false
-      @|rina/turok/bope/mixins/BopeMixinRenderPlayer.java|854|865|cancellable|method|org.spongepowered.asm.mixin.injection.Inject|cancellable|()Z
-      @|rina/turok/bope/mixins/BopeMixinRenderPlayer.java|889|906|renderLivingLabel|method|rina.turok.bope.mixins.BopeMixinRenderPlayer|renderLivingLabel|(Lnet/minecraft/client/entity/AbstractClientPlayer;DDDLjava/lang/String;DLorg/spongepowered/asm/mixin/injection/callback/CallbackInfo;)V
-      @|rina/turok/bope/mixins/BopeMixinRenderPlayer.java|907|927|AbstractClientPlayer|class|net.minecraft.client.entity.AbstractClientPlayer|false
-      @|rina/turok/bope/mixins/BopeMixinRenderPlayer.java|966|972|String|class|java.lang.String|false
-      @|rina/turok/bope/mixins/BopeMixinRenderPlayer.java|998|1010|CallbackInfo|class|org.spongepowered.asm.mixin.injection.callback.CallbackInfo|false
-      @|rina/turok/bope/mixins/BopeMixinRenderPlayer.java|1030|1034|Bope|class|rina.turok.bope.Bope|false
-      @|rina/turok/bope/mixins/BopeMixinRenderPlayer.java|1035|1053|get_module_manager|method|rina.turok.bope.Bope|get_module_manager|()Lrina/turok/bope/bopemod/manager/BopeModuleManager;
-      @|rina/turok/bope/mixins/BopeMixinRenderPlayer.java|1056|1075|get_module_with_tag|method|rina.turok.bope.bopemod.manager.BopeModuleManager|get_module_with_tag|(Ljava/lang/String;)Lrina/turok/bope/bopemod/BopeModule;
-      @|rina/turok/bope/mixins/BopeMixinRenderPlayer.java|1087|1096|is_active|method|rina.turok.bope.bopemod.BopeModule|is_active|()Z
-      @|rina/turok/bope/mixins/BopeMixinRenderPlayer.java|1106|1114|callback|param|rina.turok.bope.mixins.BopeMixinRenderPlayer|renderLivingLabel|(Lnet/minecraft/client/entity/AbstractClientPlayer;DDDLjava/lang/String;DLorg/spongepowered/asm/mixin/injection/callback/CallbackInfo;)V|callback|6
-      @|rina/turok/bope/mixins/BopeMixinRenderPlayer.java|1115|1121|cancel|method|org.spongepowered.asm.mixin.injection.callback.Cancellable|cancel|()V
+      @|rina/turok/bope/mixins/BopeMixinRenderPlayer.java|1021|1027|entity|param|rina.turok.bope.mixins.BopeMixinRenderPlayer|renderLivingLabel|(Lnet/minecraft/client/entity/AbstractClientPlayer;DDDLjava/lang/String;DLorg/spongepowered/asm/mixin/injection/callback/CallbackInfo;)V|entity|0
+      @|rina/turok/bope/mixins/BopeMixinRenderPlayer.java|1036|1037|x|param|rina.turok.bope.mixins.BopeMixinRenderPlayer|renderLivingLabel|(Lnet/minecraft/client/entity/AbstractClientPlayer;DDDLjava/lang/String;DLorg/spongepowered/asm/mixin/injection/callback/CallbackInfo;)V|x|1
+      @|rina/turok/bope/mixins/BopeMixinRenderPlayer.java|1046|1047|y|param|rina.turok.bope.mixins.BopeMixinRenderPlayer|renderLivingLabel|(Lnet/minecraft/client/entity/AbstractClientPlayer;DDDLjava/lang/String;DLorg/spongepowered/asm/mixin/injection/callback/CallbackInfo;)V|y|2
+      @|rina/turok/bope/mixins/BopeMixinRenderPlayer.java|1056|1057|z|param|rina.turok.bope.mixins.BopeMixinRenderPlayer|renderLivingLabel|(Lnet/minecraft/client/entity/AbstractClientPlayer;DDDLjava/lang/String;DLorg/spongepowered/asm/mixin/injection/callback/CallbackInfo;)V|z|3
+      @|rina/turok/bope/mixins/BopeMixinRenderPlayer.java|1066|1070|name|param|rina.turok.bope.mixins.BopeMixinRenderPlayer|renderLivingLabel|(Lnet/minecraft/client/entity/AbstractClientPlayer;DDDLjava/lang/String;DLorg/spongepowered/asm/mixin/injection/callback/CallbackInfo;)V|name|4
+      @|rina/turok/bope/mixins/BopeMixinRenderPlayer.java|1079|1089|distanceSq|param|rina.turok.bope.mixins.BopeMixinRenderPlayer|renderLivingLabel|(Lnet/minecraft/client/entity/AbstractClientPlayer;DDDLjava/lang/String;DLorg/spongepowered/asm/mixin/injection/callback/CallbackInfo;)V|distanceSq|5
+      @|rina/turok/bope/mixins/BopeMixinRenderPlayer.java|1104|1112|callback|param|rina.turok.bope.mixins.BopeMixinRenderPlayer|renderLivingLabel|(Lnet/minecraft/client/entity/AbstractClientPlayer;DDDLjava/lang/String;DLorg/spongepowered/asm/mixin/injection/callback/CallbackInfo;)V|callback|6
+      @|rina/turok/bope/mixins/BopeMixinRenderPlayer.java|893|899|Inject|class|org.spongepowered.asm.mixin.injection.Inject|false
+      @|rina/turok/bope/mixins/BopeMixinRenderPlayer.java|900|906|method|method|org.spongepowered.asm.mixin.injection.Inject|method|()[Ljava/lang/String;
+      @|rina/turok/bope/mixins/BopeMixinRenderPlayer.java|929|931|at|method|org.spongepowered.asm.mixin.injection.Inject|at|()[Lorg/spongepowered/asm/mixin/injection/At;
+      @|rina/turok/bope/mixins/BopeMixinRenderPlayer.java|935|937|At|class|org.spongepowered.asm.mixin.injection.At|false
+      @|rina/turok/bope/mixins/BopeMixinRenderPlayer.java|947|958|cancellable|method|org.spongepowered.asm.mixin.injection.Inject|cancellable|()Z
+      @|rina/turok/bope/mixins/BopeMixinRenderPlayer.java|982|999|renderLivingLabel|method|rina.turok.bope.mixins.BopeMixinRenderPlayer|renderLivingLabel|(Lnet/minecraft/client/entity/AbstractClientPlayer;DDDLjava/lang/String;DLorg/spongepowered/asm/mixin/injection/callback/CallbackInfo;)V
+      @|rina/turok/bope/mixins/BopeMixinRenderPlayer.java|1000|1020|AbstractClientPlayer|class|net.minecraft.client.entity.AbstractClientPlayer|false
+      @|rina/turok/bope/mixins/BopeMixinRenderPlayer.java|1059|1065|String|class|java.lang.String|false
+      @|rina/turok/bope/mixins/BopeMixinRenderPlayer.java|1091|1103|CallbackInfo|class|org.spongepowered.asm.mixin.injection.callback.CallbackInfo|false
+      @|rina/turok/bope/mixins/BopeMixinRenderPlayer.java|1123|1127|Bope|class|rina.turok.bope.Bope|false
+      @|rina/turok/bope/mixins/BopeMixinRenderPlayer.java|1128|1146|get_module_manager|method|rina.turok.bope.Bope|get_module_manager|()Lrina/turok/bope/bopemod/manager/BopeModuleManager;
+      @|rina/turok/bope/mixins/BopeMixinRenderPlayer.java|1149|1168|get_module_with_tag|method|rina.turok.bope.bopemod.manager.BopeModuleManager|get_module_with_tag|(Ljava/lang/String;)Lrina/turok/bope/bopemod/BopeModule;
+      @|rina/turok/bope/mixins/BopeMixinRenderPlayer.java|1180|1189|is_active|method|rina.turok.bope.bopemod.BopeModule|is_active|()Z
+      @|rina/turok/bope/mixins/BopeMixinRenderPlayer.java|1199|1207|callback|param|rina.turok.bope.mixins.BopeMixinRenderPlayer|renderLivingLabel|(Lnet/minecraft/client/entity/AbstractClientPlayer;DDDLjava/lang/String;DLorg/spongepowered/asm/mixin/injection/callback/CallbackInfo;)V|callback|6
+      @|rina/turok/bope/mixins/BopeMixinRenderPlayer.java|1208|1214|cancel|method|org.spongepowered.asm.mixin.injection.callback.Cancellable|cancel|()V
    Method End: renderLivingLabel(Lnet/minecraft/client/entity/AbstractClientPlayer;DDDLjava/lang/String;DLorg/spongepowered/asm/mixin/injection/callback/CallbackInfo;)V
 Class End  : rina.turok.bope.mixins.BopeMixinRenderPlayer
 endProcessing "rina/turok/bope/mixins/BopeMixinRenderPlayer.java"

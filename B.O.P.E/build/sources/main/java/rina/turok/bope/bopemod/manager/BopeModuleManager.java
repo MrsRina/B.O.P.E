@@ -91,6 +91,7 @@ public class BopeModuleManager {
 		add_module(new BopeFreecam());
 
 		// Render.
+		add_module(new BopeFreeCameraOrient());
 		add_module(new BopeBrightness());
 		add_module(new BopeStorageESP());
 		add_module(new BopeHighlight());

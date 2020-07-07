@@ -69,7 +69,7 @@ public class BopeKillAura extends BopeModule {
 				/* RinaRinaRinaRinaRinaRinaRinaRinaRinaRinaR */ .filter(entity ->  mc.player.getDistance(entity) <= range.get_value(1))
 				/* RinaRinaRinaRinaRinaRinaRinaRinaRinaRinaR */ .filter(entity -> !entity.isDead)
 				/* RinaRinaRinaRinaRinaRinaRinaRinaRinaRinaR */ .filter(entity -> !(Bope.get_friend_manager().is_friend(entity.getName())))
-				/* RinaRinaRinaRinaRinaRinaRinaRinaRinaRinaR */ .filter(entity ->  entity instanceof EntityPlayer || (entity instanceof IMob && hostile.get_value(true)))
+				/* RinaRinaRinaRinaRinaRinaRinaRinaRinaRinaR */ .filter(entity ->  (entity instanceof EntityPlayer && player.get_value(true)) || (entity instanceof IMob && hostile.get_value(true)))
 				/* RinaRinaRinaRinaRinaRinaRinaRinaRinaRinaR */ .filter(entity ->  ((EntityPlayer) entity).getHealth() > 0)
 				/* RinaRinaRinaRinaRinaRinaRinaRinaRinaRinaR */ .sorted(Comparator.comparing(distance -> mc.player.getDistance(distance)))
 				/* RinaRinaRinaRinaRinaRinaRinaRinaRinaRinaR */ .collect(Collectors.toList());

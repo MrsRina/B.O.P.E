@@ -9,6 +9,8 @@ import org.spongepowered.asm.mixin.Mixin;
 
 import net.minecraft.client.renderer.entity.RenderPlayer;
 import net.minecraft.client.entity.AbstractClientPlayer;
+import net.minecraft.client.multiplayer.WorldClient;
+import net.minecraft.util.math.Vec3d;
 
 import org.lwjgl.opengl.GL11;
 

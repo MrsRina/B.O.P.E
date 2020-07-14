@@ -63,25 +63,23 @@ public class BopeKillAura extends BopeModule {
 	@Override
 	public void update() {
 		if (mc.player != null && mc.world != null) {
-			try {
-				List<Entity> entitys = mc.world.loadedEntityList.stream()
-				/* RinaRinaRinaRinaRinaRinaRinaRinaRinaRinaR */ .filter(entity ->  entity != mc.player)
-				/* RinaRinaRinaRinaRinaRinaRinaRinaRinaRinaR */ .filter(entity ->  mc.player.getDistance(entity) <= range.get_value(1))
-				/* RinaRinaRinaRinaRinaRinaRinaRinaRinaRinaR */ .filter(entity -> !entity.isDead)
-				/* RinaRinaRinaRinaRinaRinaRinaRinaRinaRinaR */ .filter(entity -> !(Bope.get_friend_manager().is_friend(entity.getName())))
-				/* RinaRinaRinaRinaRinaRinaRinaRinaRinaRinaR */ .filter(entity ->  (entity instanceof EntityPlayer && player.get_value(true)) || (entity instanceof IMob && hostile.get_value(true)))
-				/* RinaRinaRinaRinaRinaRinaRinaRinaRinaRinaR */ .filter(entity ->  ((EntityPlayer) entity).getHealth() > 0)
-				/* RinaRinaRinaRinaRinaRinaRinaRinaRinaRinaR */ .sorted(Comparator.comparing(distance -> mc.player.getDistance(distance)))
-				/* RinaRinaRinaRinaRinaRinaRinaRinaRinaRinaR */ .collect(Collectors.toList());
+			List<Entity> entities = mc.world.loadedEntityList.stream()
+			.filter(entity ->  entity != mc.player)
+			.filter(entity ->  mc.player.getDistance(entity) <= range.get_value(1))
+			.filter(entity -> !entity.isDead)
+			.filter(entity -> !(Bope.get_friend_manager().is_friend(entity.getName())))
+			.filter(entity ->  ((entity instanceof EntityPlayer && player.get_value(true)) || (entity instanceof IMob && hostile.get_value(true))))
+			.filter(entity ->  ((EntityPlayer) entity).getHealth() > 0)
+			.sorted(Comparator.comparing(distance -> mc.player.getDistance(distance)))
+			.collect(Collectors.toList());
 
-				entitys.forEach(entity -> {
-					if (!(mc.player.getHeldItemMainhand().getItem() instanceof ItemSword) && sword.get_value(true)) {
-						return;
-					}
+			entities.forEach(entity -> {
+				if (!(mc.player.getHeldItemMainhand().getItem() instanceof ItemSword) && sword.get_value(true)) {
+					return;
+				}
 
-					attack_entity(entity);
-				});
-			} catch(Exception exc) {}
+				attack_entity(entity);
+			});
 		}
 	}
 

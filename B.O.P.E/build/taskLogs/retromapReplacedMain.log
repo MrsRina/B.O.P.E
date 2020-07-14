@@ -993,12 +993,12 @@ End  Processing: rina/turok/bope/bopemod/hacks/chat/BopeAutoGG.java
 
 Start Processing: rina/turok/bope/bopemod/hacks/chat/BopeChatStyle.java
 FOUND CONSTR method rina/turok/bope/bopemod/hacks/chat/BopeChatStyle/BopeChatStyle ()V rina/turok/bope/bopemod/hacks/chat/BopeChatStyle
-Rename method net/minecraft/util/text/ITextComponent/getUnformattedText ()Ljava/lang/String;[3305,3323]::getUnformattedText->func_150260_c
-Rename field net/minecraft/client/Minecraft/player[3742,3748]::player->field_71439_g
-Rename method net/minecraft/command/ICommandSender/getName ()Ljava/lang/String;[3756,3763]::getName->func_70005_c_
-Rename method net/minecraft/util/text/ITextComponent/appendText (Ljava/lang/String;)Lnet/minecraft/util/text/ITextComponent;[4252,4262]::appendText->func_150258_a
-Rename method net/minecraft/util/text/ITextComponent/appendText (Ljava/lang/String;)Lnet/minecraft/util/text/ITextComponent;[4917,4927]::appendText->func_150258_a
-Rename method net/minecraft/util/text/ITextComponent/appendSibling (Lnet/minecraft/util/text/ITextComponent;)Lnet/minecraft/util/text/ITextComponent;[5018,5031]::appendSibling->func_150257_a
+Rename method net/minecraft/util/text/ITextComponent/getUnformattedText ()Ljava/lang/String;[3306,3324]::getUnformattedText->func_150260_c
+Rename field net/minecraft/client/Minecraft/player[3743,3749]::player->field_71439_g
+Rename method net/minecraft/command/ICommandSender/getName ()Ljava/lang/String;[3757,3764]::getName->func_70005_c_
+Rename method net/minecraft/util/text/ITextComponent/appendText (Ljava/lang/String;)Lnet/minecraft/util/text/ITextComponent;[4385,4395]::appendText->func_150258_a
+Rename method net/minecraft/util/text/ITextComponent/appendText (Ljava/lang/String;)Lnet/minecraft/util/text/ITextComponent;[5081,5091]::appendText->func_150258_a
+Rename method net/minecraft/util/text/ITextComponent/appendSibling (Lnet/minecraft/util/text/ITextComponent;)Lnet/minecraft/util/text/ITextComponent;[5182,5195]::appendSibling->func_150257_a
 Import: net.minecraftforge.client.event.ClientChatReceivedEvent
 Import: net.minecraft.util.text.TextComponentString
 Import: com.mojang.realmsclient.gui.ChatFormatting
@@ -1452,37 +1452,37 @@ Start Processing: rina/turok/bope/bopemod/hacks/combat/BopeKillAura.java
 FOUND CONSTR method rina/turok/bope/bopemod/hacks/combat/BopeKillAura/BopeKillAura ()V rina/turok/bope/bopemod/hacks/combat/BopeKillAura
 Rename field net/minecraft/client/Minecraft/player[1737,1743]::player->field_71439_g
 Rename field net/minecraft/client/Minecraft/world[1765,1770]::world->field_71441_e
-Rename field net/minecraft/client/Minecraft/world[1831,1836]::world->field_71441_e
-Rename field net/minecraft/world/World/loadedEntityList[1845,1861]::loadedEntityList->field_72996_f
-Rename field net/minecraft/client/Minecraft/player[1953,1959]::player->field_71439_g
-Rename field net/minecraft/client/Minecraft/player[2043,2049]::player->field_71439_g
-Rename method net/minecraft/entity/Entity/getDistance (Lnet/minecraft/entity/Entity;)F[2057,2068]::getDistance->func_70032_d
-Rename field net/minecraft/entity/Entity/isDead[2180,2186]::isDead->field_70128_L
-Rename method net/minecraft/command/ICommandSender/getName ()Ljava/lang/String;[2311,2318]::getName->func_70005_c_
-Rename method net/minecraft/entity/EntityLivingBase/getHealth ()F[2613,2622]::getHealth->func_110143_aJ
-Rename field net/minecraft/client/Minecraft/player[2732,2738]::player->field_71439_g
-Rename method net/minecraft/entity/Entity/getDistance (Lnet/minecraft/entity/Entity;)F[2746,2757]::getDistance->func_70032_d
-Rename field net/minecraft/client/Minecraft/player[2905,2911]::player->field_71439_g
-Rename method net/minecraft/entity/EntityLivingBase/getHeldItemMainhand ()Lnet/minecraft/item/ItemStack;[2919,2938]::getHeldItemMainhand->func_184614_ca
-Rename method net/minecraft/item/ItemStack/getItem ()Lnet/minecraft/item/Item;[2936,2943]::getItem->func_77973_b
-Rename field net/minecraft/client/Minecraft/player[3160,3166]::player->field_71439_g
-Rename method net/minecraft/entity/player/EntityPlayer/getCooledAttackStrength (F)F[3174,3197]::getCooledAttackStrength->func_184825_o
-Rename field net/minecraft/client/Minecraft/player[3265,3271]::player->field_71439_g
-Rename method net/minecraft/entity/EntityLivingBase/getHeldItemOffhand ()Lnet/minecraft/item/ItemStack;[3279,3297]::getHeldItemOffhand->func_184592_cb
-Rename method net/minecraft/item/ItemStack/getItem ()Lnet/minecraft/item/Item;[3403,3410]::getItem->func_77973_b
-Rename field net/minecraft/init/Items/SHIELD[3427,3433]::SHIELD->field_185159_cQ
-Rename field net/minecraft/client/Minecraft/player[3483,3489]::player->field_71439_g
-Rename field net/minecraft/client/entity/EntityPlayerSP/connection[3497,3507]::connection->field_71174_a
-Rename method net/minecraft/client/network/NetHandlerPlayClient/sendPacket (Lnet/minecraft/network/Packet;)V[3511,3521]::sendPacket->func_147297_a
+Rename field net/minecraft/client/Minecraft/world[1821,1826]::world->field_71441_e
+Rename field net/minecraft/world/World/loadedEntityList[1835,1851]::loadedEntityList->field_72996_f
+Rename field net/minecraft/client/Minecraft/player[1894,1900]::player->field_71439_g
+Rename field net/minecraft/client/Minecraft/player[1935,1941]::player->field_71439_g
+Rename method net/minecraft/entity/Entity/getDistance (Lnet/minecraft/entity/Entity;)F[1949,1960]::getDistance->func_70032_d
+Rename field net/minecraft/entity/Entity/isDead[2023,2029]::isDead->field_70128_L
+Rename method net/minecraft/command/ICommandSender/getName ()Ljava/lang/String;[2105,2112]::getName->func_70005_c_
+Rename method net/minecraft/entity/EntityLivingBase/getHealth ()F[2311,2320]::getHealth->func_110143_aJ
+Rename field net/minecraft/client/Minecraft/player[2381,2387]::player->field_71439_g
+Rename method net/minecraft/entity/Entity/getDistance (Lnet/minecraft/entity/Entity;)F[2395,2406]::getDistance->func_70032_d
+Rename field net/minecraft/client/Minecraft/player[2504,2510]::player->field_71439_g
+Rename method net/minecraft/entity/EntityLivingBase/getHeldItemMainhand ()Lnet/minecraft/item/ItemStack;[2518,2537]::getHeldItemMainhand->func_184614_ca
+Rename method net/minecraft/item/ItemStack/getItem ()Lnet/minecraft/item/Item;[2535,2542]::getItem->func_77973_b
+Rename field net/minecraft/client/Minecraft/player[2725,2731]::player->field_71439_g
+Rename method net/minecraft/entity/player/EntityPlayer/getCooledAttackStrength (F)F[2739,2762]::getCooledAttackStrength->func_184825_o
+Rename field net/minecraft/client/Minecraft/player[2830,2836]::player->field_71439_g
+Rename method net/minecraft/entity/EntityLivingBase/getHeldItemOffhand ()Lnet/minecraft/item/ItemStack;[2844,2862]::getHeldItemOffhand->func_184592_cb
+Rename method net/minecraft/item/ItemStack/getItem ()Lnet/minecraft/item/Item;[2968,2975]::getItem->func_77973_b
+Rename field net/minecraft/init/Items/SHIELD[2992,2998]::SHIELD->field_185159_cQ
+Rename field net/minecraft/client/Minecraft/player[3048,3054]::player->field_71439_g
+Rename field net/minecraft/client/entity/EntityPlayerSP/connection[3062,3072]::connection->field_71174_a
+Rename method net/minecraft/client/network/NetHandlerPlayClient/sendPacket (Lnet/minecraft/network/Packet;)V[3076,3086]::sendPacket->func_147297_a
 New Key: class net/minecraft/network/play/client/CPacketPlayerDigging
-Rename field net/minecraft/util/math/BlockPos/ORIGIN[3605,3611]::ORIGIN->field_177992_a
-Rename field net/minecraft/client/Minecraft/player[3624,3630]::player->field_71439_g
-Rename method net/minecraft/entity/Entity/getHorizontalFacing ()Lnet/minecraft/util/EnumFacing;[3638,3657]::getHorizontalFacing->func_174811_aO
-Rename field net/minecraft/client/Minecraft/playerController[3701,3717]::playerController->field_71442_b
-Rename method net/minecraft/client/multiplayer/PlayerControllerMP/attackEntity (Lnet/minecraft/entity/player/EntityPlayer;Lnet/minecraft/entity/Entity;)V[3715,3727]::attackEntity->func_78764_a
-Rename field net/minecraft/client/Minecraft/player[3731,3737]::player->field_71439_g
-Rename field net/minecraft/client/Minecraft/player[3762,3768]::player->field_71439_g
-Rename method net/minecraft/entity/EntityLivingBase/swingArm (Lnet/minecraft/util/EnumHand;)V[3776,3784]::swingArm->func_184609_a
+Rename field net/minecraft/util/math/BlockPos/ORIGIN[3170,3176]::ORIGIN->field_177992_a
+Rename field net/minecraft/client/Minecraft/player[3189,3195]::player->field_71439_g
+Rename method net/minecraft/entity/Entity/getHorizontalFacing ()Lnet/minecraft/util/EnumFacing;[3203,3222]::getHorizontalFacing->func_174811_aO
+Rename field net/minecraft/client/Minecraft/playerController[3266,3282]::playerController->field_71442_b
+Rename method net/minecraft/client/multiplayer/PlayerControllerMP/attackEntity (Lnet/minecraft/entity/player/EntityPlayer;Lnet/minecraft/entity/Entity;)V[3280,3292]::attackEntity->func_78764_a
+Rename field net/minecraft/client/Minecraft/player[3296,3302]::player->field_71439_g
+Rename field net/minecraft/client/Minecraft/player[3327,3333]::player->field_71439_g
+Rename method net/minecraft/entity/EntityLivingBase/swingArm (Lnet/minecraft/util/EnumHand;)V[3341,3349]::swingArm->func_184609_a
 Import: net.minecraft.network.play.client.CPacketPlayerDigging
 Import: net.minecraft.network.play.client.CPacketUseEntity
 Import: net.minecraft.entity.player.EntityPlayer

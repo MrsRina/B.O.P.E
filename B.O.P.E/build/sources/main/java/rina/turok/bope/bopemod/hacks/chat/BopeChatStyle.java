@@ -57,7 +57,7 @@ public class BopeChatStyle extends BopeModule {
 	BopeSetting color_time  = create("Time", "ChatStyleColorTime", colors_combobox.get(0), colors_combobox); 
 	BopeSetting color_name  = create("Name", "ChatStyleColorMessage", colors_combobox.get(0), colors_combobox);
 	BopeSetting color_fname = create("Friend", "ChatStyleColorFriend", colors_combobox.get(14), colors_combobox);
-	BopeSetting type_mode   = create("Type Mode", "ChatStyleTypeMode", "[]", combobox("[]", "<>"));
+	BopeSetting type_mode   = create("Separator", "ChatStyleSeparator", "[]", combobox("[]", "<>"));
 	//BopeSetting color_mode   = create("Color Mode", "ChatStyleColorMode", "HUD", combobox("HUD", "Server"));
 
 	public static HashMap<String, ChatFormatting> color = new HashMap<>();
@@ -128,12 +128,16 @@ public class BopeChatStyle extends BopeModule {
 			event_color_time = false;
 		}
 
+		if (color_fname.in("Disabled") && color_name.in("Disabled")) {
+			event_color_name = false;
+		}
+
 		if (color_name.in("Disabled")) {
 			event_color_name = false;
 		}
 
-		if (color_fname.in("Disabled")) {
-			event_color_name = false;
+		if (!color_fname.in("Disabled") && color_name.in("Disabled")) {
+			event_color_name = true;
 		}
 
 		if (event_color_time) {
@@ -147,7 +151,7 @@ public class BopeChatStyle extends BopeModule {
 		if (event_color_name && is_name) {
 			ChatFormatting c;
 
-			if (is_friend) {
+			if (is_friend && !color_fname.in("Disabled")) {
 				c = color.get(color_fname.get_current_value());
 			} else {
 				c = color.get(color_name.get_current_value());

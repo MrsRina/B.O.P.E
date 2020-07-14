@@ -22,6 +22,9 @@ import rina.turok.turok.Turok;
 import rina.turok.bope.bopemod.guiscreen.BopeGUI;
 import rina.turok.bope.bopemod.guiscreen.BopeHUD;
 
+// Notify.
+import rina.turok.bope.bopemod.guiscreen.hud.BopeNotifyClient;
+
 // Managers.
 import rina.turok.bope.bopemod.manager.BopeCommandManager;
 import rina.turok.bope.bopemod.manager.BopeSettingManager;
@@ -199,6 +202,10 @@ public class Bope {
 
 	public static void dev(String message) {
 		BopeMessage.send_client_message(message);
+	}
+
+	public static void hud_notify(String value) {
+		get_hud_manager().notify_client.notify_hud(value);
 	}
 
 	public static Bope get_instance() {

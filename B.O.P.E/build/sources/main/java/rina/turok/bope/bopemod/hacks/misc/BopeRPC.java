@@ -28,7 +28,7 @@ import rina.turok.bope.Bope;
  *
  **/
 public class BopeRPC extends BopeModule {
-	BopeSetting message = create("Custom", "RPCCustom", "off");
+	BopeSetting message = create("Custom", "RPCCustom", "");
 
 	public BopeRPC() {
 		super(BopeCategory.BOPE_MISC);

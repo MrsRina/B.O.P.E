@@ -21,8 +21,14 @@ public class BopeHUDManager {
 
 	public static ArrayList<BopePinnable> array_hud = new ArrayList<>();
 
+	public BopeNotifyClient notify_client;
+
 	public BopeHUDManager(String tag) {
-		this.tag = tag;
+		this.tag           = tag;
+		this.notify_client = new BopeNotifyClient();
+
+		// :)!=!
+		add_component_pinnable((BopePinnable) this.notify_client);
 
 		add_component_pinnable(new BopeInventoryPreview());
 		add_component_pinnable(new BopeSurroundPreview());

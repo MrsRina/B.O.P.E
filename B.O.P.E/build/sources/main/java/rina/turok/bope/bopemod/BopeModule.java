@@ -48,30 +48,33 @@ public class BopeModule {
 	public boolean alert_message;
 	public boolean widget_usage;
 	public boolean show_arraylist;
+	public boolean stage_primitive;
 
 	public final Minecraft mc = Minecraft.getMinecraft();
 
 	public BopeModule(BopeCategory category) {
-		this.name           = "";
-		this.tag            = "";
-		this.description    = "";
-		this.bind           = -1;
-		this.alert_message  = true;
-		this.widget_usage   = false;
-		this.show_arraylist = true;
+		this.name            = "";
+		this.tag             = "";
+		this.description     = "";
+		this.bind            = -1;
+		this.alert_message   = true;
+		this.widget_usage    = false;
+		this.show_arraylist  = true;
+		this.stage_primitive = false;
 
 		// Category.
 		this.category = category;
 	}
 
 	public BopeModule(BopeCategory category, boolean to_show) {
-		this.name           = "";
-		this.tag            = "";
-		this.description    = "";
-		this.bind           = -1;
-		this.alert_message  = true;
-		this.widget_usage   = false;
-		this.show_arraylist = to_show;
+		this.name            = "";
+		this.tag             = "";
+		this.description     = "";
+		this.bind            = -1;
+		this.alert_message   = true;
+		this.widget_usage    = false;
+		this.show_arraylist  = to_show;
+		this.stage_primitive = false;
 
 		// Category.
 		this.category = category;
@@ -149,19 +152,27 @@ public class BopeModule {
 	}
 
 	public void set_disable() {
-		this.state_module = false;
+		this.state_module    = false;
+		this.stage_primitive = true;
 
 		disable();
 
 		BopeEventBus.ZERO_ALPINE_EVENT_BUS.unsubscribe(this);
+
+		// :)!
+		this.stage_primitive = false;
 	}
 
 	public void set_enable() {
-		this.state_module = true;
+		this.state_module    = true;
+		this.stage_primitive = true;
 
 		enable();
 
 		BopeEventBus.ZERO_ALPINE_EVENT_BUS.subscribe(this);
+
+		// :)!
+		this.stage_primitive = false;
 	}
 
 	public void set_active(boolean value) {

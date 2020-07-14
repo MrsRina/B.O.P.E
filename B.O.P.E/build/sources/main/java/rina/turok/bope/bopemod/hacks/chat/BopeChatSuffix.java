@@ -64,7 +64,7 @@ public class BopeChatSuffix extends BopeModule {
 		"hephaestus",
 		"impact",
 		"team",
-		"rhuama",
+		"rama",
 		"oct",
 		"future",
 		"huzuni",
@@ -74,14 +74,12 @@ public class BopeChatSuffix extends BopeModule {
 		"root",
 		"holocaust",
 		"future",
-		"twd",
 		"aristois",
 		"axiom",
 		"fit",
 		"rina",
 		"zbob",
 		"trump",
-		"atlas",
 		"ares",
 		"oldturok",
 		"kotlin",
@@ -89,7 +87,10 @@ public class BopeChatSuffix extends BopeModule {
 		"based",
 		"rgba",
 		"rgb",
-		"obama"
+		"obama",
+		"google",
+		"facebook",
+		"027hack"
 	};
 
 	String[] random_suffix_mid = {
@@ -192,9 +193,14 @@ public class BopeChatSuffix extends BopeModule {
 
 				// Convert the base using the TurokFont.
 				suffix_with_randoms.append(convert_base(random_string(random_suffix_pre)));
-				suffix_with_randoms.append(convert_base(random_string(random_suffix_mid)));
 
-				if (is_with_emoji(5, 4)) {
+				// If requeste randomly mid.
+				if (r(3, 1)) {
+					suffix_with_randoms.append(convert_base(random_string(random_suffix_mid)));
+				}
+
+				// Request the end suffix.
+				if (r(5, 4)) {
 					suffix_with_randoms.append(convert_base(random_string(random_suffix_end)));
 				}
 
@@ -221,8 +227,8 @@ public class BopeChatSuffix extends BopeModule {
 		return list[new Random().nextInt(list.length)];
 	}
 
-	// Is with emoji.
-	public boolean is_with_emoji(int max, int equals) {
+	// Random.
+	public boolean r(int max, int equals) {
 		if (new Random().nextInt(max) == equals) {
 			return true;
 		}

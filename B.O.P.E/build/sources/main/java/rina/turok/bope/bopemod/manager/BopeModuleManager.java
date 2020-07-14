@@ -28,6 +28,7 @@ import rina.turok.bope.bopemod.hacks.BopeClickGUI;
 import rina.turok.bope.bopemod.hacks.BopeClickHUD;
 
 // System.
+import rina.turok.bope.bopemod.system.BopeSystem;
 import rina.turok.bope.bopemod.system.event.*;
 
 // Data.
@@ -104,6 +105,7 @@ public class BopeModuleManager {
 
 		// System.
 		add_module(new BopeEventRender0());
+		add_module(new BopeSystem());
 	}
 
 	public void add_module(BopeModule module) {
@@ -212,6 +214,34 @@ public class BopeModuleManager {
 				modules.toggle();
 			}
 		}
+	}
+
+	public boolean get_module_if_active_with_primitive() {
+		boolean sate_module_requested = false;
+
+		for (BopeModule module : get_array_modules()) {
+			if (module.stage_primitive) {
+				sate_module_requested = true;
+
+				break;
+			}
+		}
+
+		return sate_module_requested;
+	}
+
+	public BopeModule get_last_module_active_with_primitive() {
+		BopeModule module_requested = null;
+
+		for (BopeModule module : get_array_modules()) {
+			if (module.stage_primitive) {
+				module_requested = module;
+
+				break;
+			}
+		}
+
+		return module_requested;
 	}
 
 	public BopeModule get_module_with_tag(String tag) {

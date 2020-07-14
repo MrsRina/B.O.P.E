@@ -132,6 +132,10 @@ public class BopeChatStyle extends BopeModule {
 			event_color_name = false;
 		}
 
+		if (color_fname.in("Disabled")) {
+			event_color_name = false;
+		}
+
 		if (event_color_time) {
 			ChatFormatting c = color.get(color_time.get_current_value());
 

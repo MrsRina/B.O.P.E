@@ -35,6 +35,8 @@ public class BopeSystem extends BopeModule {
 
 	@Override
 	public void update() {
-		Bope.hud_notify("This still not work but will :)!");
+		Bope.client_r = Bope.get_setting_manager().get_setting_with_tag("HUD", "HUDStringsColorR").get_value(1);
+		Bope.client_g = Bope.get_setting_manager().get_setting_with_tag("HUD", "HUDStringsColorG").get_value(1);
+		Bope.client_b = Bope.get_setting_manager().get_setting_with_tag("HUD", "HUDStringsColorB").get_value(1);
 	}
 }

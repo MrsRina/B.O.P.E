@@ -66,6 +66,7 @@ public class BopeModuleManager {
 		add_module(new BopeVisualRange());
 		add_module(new BopeChatSuffix());
 		add_module(new BopeChatStyle());
+		add_module(new BopeAutoGG());
 
 		// Combat.
 		add_module(new BopeAutoCrystal());

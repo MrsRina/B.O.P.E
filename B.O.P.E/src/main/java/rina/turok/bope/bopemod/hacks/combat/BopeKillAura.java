@@ -19,12 +19,18 @@ import java.util.*;
 // Guiscreen.
 import rina.turok.bope.bopemod.guiscreen.settings.BopeSetting;
 
+// Render.
+import rina.turok.bope.bopemod.events.BopeEventRender;
+
 // Modules.
 import rina.turok.bope.bopemod.hacks.BopeCategory;
 
 // Data.
 import rina.turok.bope.bopemod.BopeMessage;
 import rina.turok.bope.bopemod.BopeModule;
+
+// Util.
+import rina.turok.bope.bopemod.util.BopeUtilRenderer;
 
 // Core.
 import rina.turok.bope.Bope;
@@ -37,16 +43,19 @@ import rina.turok.bope.Bope;
 *
 */
 public class BopeKillAura extends BopeModule {
-	BopeSetting player    = create("Player", "KillAuraPlayer", true);
-	BopeSetting hostile   = create("Hostile", "KillAuraHostile", false);
-	BopeSetting sword     = create("Sword", "KillAuraSword", true);
-	BopeSetting range     = create("Range", "KillAuraRange", 6, 1, 10);
+	BopeSetting player  = create("Player", "KillAuraPlayer", true);
+	BopeSetting hostile = create("Hostile", "KillAuraHostile", false);
+	BopeSetting sword   = create("Sword", "KillAuraSword", true);
+	BopeSetting esp     = create("Render Entity Mode", "KillAuraRenderEntityMode", "csgo", combobox("csgo", "rect", "disabled"));
+	BopeSetting range   = create("Range", "KillAuraRange", 6, 1, 10);
 
 	boolean with_sword = true;
 
 	EnumHand actual_hand = EnumHand.MAIN_HAND;
 
 	double tick = 0.0;
+
+	List<Entity> entities = null;
 
 	public BopeKillAura() {
 		super(BopeCategory.BOPE_COMBAT);
@@ -63,19 +72,32 @@ public class BopeKillAura extends BopeModule {
 	@Override
 	public void update() {
 		if (mc.player != null && mc.world != null) {
-			List<Entity> entities = mc.world.loadedEntityList.stream()
-			.filter(entity ->  entity != mc.player)
-			.filter(entity ->  mc.player.getDistance(entity) <= range.get_value(1))
-			.filter(entity -> !entity.isDead)
-			.filter(entity -> !(Bope.get_friend_manager().is_friend(entity.getName())))
-			.filter(entity ->  ((entity instanceof EntityPlayer && player.get_value(true)) || (entity instanceof IMob && hostile.get_value(true))))
-			.filter(entity ->  ((EntityPlayer) entity).getHealth() > 0)
-			.sorted(Comparator.comparing(distance -> mc.player.getDistance(distance)))
-			.collect(Collectors.toList());
+			entities = mc.world.loadedEntityList.stream()
+			/* RaRinaRinaRinaRinaRinaRinaRina */.filter(entity ->  entity != mc.player)
+			/* RaRinaRinaRinaRinaRinaRinaRina */.filter(entity ->  mc.player.getDistance(entity) <= range.get_value(1))
+			/* RaRinaRinaRinaRinaRinaRinaRina */.filter(entity -> !entity.isDead)
+			/* RaRinaRinaRinaRinaRinaRinaRina */.filter(entity -> !(Bope.get_friend_manager().is_friend(entity.getName())))
+			/* RaRinaRinaRinaRinaRinaRinaRina */.filter(entity ->  ((entity instanceof EntityPlayer && player.get_value(true)) || (entity instanceof IMob && hostile.get_value(true))))
+			/* RaRinaRinaRinaRinaRinaRinaRina */.filter(entity ->  ((EntityPlayer) entity).getHealth() > 0)
+			/* RaRinaRinaRinaRinaRinaRinaRina */.sorted(Comparator.comparing(distance -> mc.player.getDistance(distance)))
+			/* RaRinaRinaRinaRinaRinaRinaRina */.collect(Collectors.toList());
+		}
+	}
 
+	@Override
+	public void render(BopeEventRender event) {
+		if (entities != null) {
 			entities.forEach(entity -> {
 				if (!(mc.player.getHeldItemMainhand().getItem() instanceof ItemSword) && sword.get_value(true)) {
 					return;
+				}
+
+				if (esp.in("csgo")) {
+					BopeUtilRenderer.EntityPlayerCSGOESP((Entity) entity, 190, 190, 190, Math.round(mc.player.getDistance(entity) * 25.5f));
+				}
+
+				if (esp.in("rect")) {
+					BopeUtilRenderer.EntityPlayerRectESP((Entity) entity, 190, 190, 190, Math.round(mc.player.getDistance(entity) * 25.5f));
 				}
 
 				attack_entity(entity);

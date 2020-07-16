@@ -30,16 +30,6 @@ import rina.turok.bope.Bope;
 *
 */
 public class BopeNoSlowDown extends BopeModule {
-	BopeSetting mode = create("Mode", "NoSlowDown", "Packet", combobox("Packet"));
-
-	@EventHandler
-	private Listener<InputUpdateEvent> listener = new Listener<>(event -> {
-		if (mc.player.isHandActive() && !mc.player.isRiding()) {
-			event.getMovementInput().moveStrafe  *= 5;
-			event.getMovementInput().moveForward *= 5;
-		}
-	});
-
 	public BopeNoSlowDown() {
 		super(BopeCategory.BOPE_MOVEMENT);
 
@@ -52,8 +42,11 @@ public class BopeNoSlowDown extends BopeModule {
 		release("B.O.P.E - Module - B.O.P.E");
 	}
 
-	@Override
-	public String detail_option() {
-		return mode.get_current_value();
-	}
+	@EventHandler
+	private Listener<InputUpdateEvent> listener = new Listener<>(event -> {
+		if (mc.player.isHandActive() && !mc.player.isRiding()) {
+			event.getMovementInput().moveStrafe  *= 5;
+			event.getMovementInput().moveForward *= 5;
+		}
+	});
 }

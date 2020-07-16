@@ -92,12 +92,12 @@ public class BopeNameTag extends BopeModule {
 			GlStateManager.disableDepth();
 
 			mc.world.loadedEntityList.stream()
-			/* inaRinaRinaRinaRin */ .filter( entity -> entity instanceof EntityLivingBase)
-			/* inaRinaRinaRinaRin */ .filter( entity -> entity != mc.player)
-			/* inaRinaRinaRinaRin */ .map(    entity -> (EntityLivingBase) entity)
-			/* inaRinaRinaRinaRin */ .filter(_entity -> !_entity.isDead)
-			/* inaRinaRinaRinaRin */ .filter( entity -> entity instanceof EntityPlayer)
-			/* inaRinaRinaRinaRin */ .filter( entity -> mc.player.getDistance(entity) < (range.get_value(1)))
+			/* inaRinaRinaRinaRin */ .filter(entity -> entity instanceof EntityLivingBase)
+			/* inaRinaRinaRinaRin */ .filter(entity -> entity != mc.player)
+			/* inaRinaRinaRinaRin */ .map(entity -> (EntityLivingBase) entity)
+			/* inaRinaRinaRinaRin */ .filter(entity -> !entity.isDead)
+			/* inaRinaRinaRinaRin */ .filter(entity -> entity instanceof EntityPlayer)
+			/* inaRinaRinaRinaRin */ .filter(entity -> mc.player.getDistance(entity) < (range.get_value(1)))
 			/* inaRinaRinaRinaRin */ .sorted(Comparator.comparing(entity -> -mc.player.getDistance(entity)))
 			/* inaRinaRinaRinaRin */ .forEach(this::draw);
 		}
@@ -119,7 +119,7 @@ public class BopeNameTag extends BopeModule {
 
 			String spac = " ";
 			String name = name_.get_value(true) == true ? entity.getName() : "";
-			String life = life_.get_value(true) == true ? (name_.get_value(true) == true ? spac : "") + Bope.re + Integer.toString(Math.round(((EntityLivingBase) entity).getHealth() / 2 + (entity instanceof EntityPlayer ? ((EntityPlayer) entity).getAbsorptionAmount() : 0))) + Bope.r : "";
+			String life = life_.get_value(true) == true ? (name_.get_value(true) == true ? spac : "") + Bope.re + Integer.toString(Math.round(((EntityLivingBase) entity).getHealth() + (entity instanceof EntityPlayer ? ((EntityPlayer) entity).getAbsorptionAmount() : 0))) + Bope.r : "";
 			String ping = ping_.get_value(true) == true ? Bope.bl + get_ping(entity) + Bope.r + spac : "";
 			String tag  = ping + name + life;
 
@@ -152,9 +152,9 @@ public class BopeNameTag extends BopeModule {
 
 			GlStateManager.enableTexture2D();
 
-			int r = Bope.get_setting_manager().get_setting_with_tag("HUD", "HUDStringsColorR").get_value(1);
-			int g = Bope.get_setting_manager().get_setting_with_tag("HUD", "HUDStringsColorG").get_value(1);
-			int b = Bope.get_setting_manager().get_setting_with_tag("HUD", "HUDStringsColorB").get_value(1);
+			int r = Bope.client_r;
+			int g = Bope.client_g;
+			int b = Bope.client_b;
 
 			if (Bope.get_friend_manager().is_friend(entity.getName())) {
 				font.draw_string(tag, -colapse_x, 10, r, g, b, true, smooth);

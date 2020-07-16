@@ -3,6 +3,8 @@ package rina.turok.bope.bopemod.hacks.chat;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.Entity;
 
+import java.util.stream.Collectors;
+import java.util.Comparator;
 import java.util.*;
 
 // Zero alpine manager.
@@ -46,37 +48,25 @@ public class BopeAutoGG extends BopeModule {
 		release("B.O.P.E - Module - B.O.P.E");
 	}
 
-//	@Override
-//	public void enable() {
-//		entities_select = new ConcurrentHashMap<>();
-//	}
-//
-//	@Override
-//	public void disable() {
-//		entities_select = null;
-//	}
-//
-//	@Override
-//	public void update() {
-//		if (mc.player == null) {
-//			set_active(false);
-//		}
-//
-//		if (entities_select == null) {
-//			entities_select = new ConcurrentHashMap<>();
-//		}
-//
-//		for (Entity entities : mc.world.getLoadedEntityList()) {
-//			if (!(entities instanceof EntityPlayer)) {
-//				continue;
-//			}
-//
-//			EntityPlayer players = (EntityPlayer) entities;
-//
-//			if (players.getHealth() > 0) {
-//				continue;
-//			}
-//
-//		}
-//	}
+	@Override
+	public void update() {
+		if (mc.player != null && mc.world != null) {
+			List<Entity> entities = mc.world.loadedEntityList.stream()
+			/* RinaRinaRinaRinaRinaRinaRinaRinaRinaRinaRin */.filter(entity ->  entity != mc.player)
+			/* RinaRinaRinaRinaRinaRinaRinaRinaRinaRinaRin */.filter(entity ->  mc.player.getDistance(entity) <= 10)
+			/* RinaRinaRinaRinaRinaRinaRinaRinaRinaRinaRin */.filter(entity -> !entity.isDead)
+			/* RinaRinaRinaRinaRinaRinaRinaRinaRinaRinaRin */.filter(entity -> !(Bope.get_friend_manager().is_friend(entity.getName())))
+			/* RinaRinaRinaRinaRinaRinaRinaRinaRinaRinaRin */.filter(entity ->  entity instanceof EntityPlayer)
+			/* RinaRinaRinaRinaRinaRinaRinaRinaRinaRinaRin */.sorted(Comparator.comparing(distance -> mc.player.getDistance(distance)))
+			/* RinaRinaRinaRinaRinaRinaRinaRinaRinaRinaRin */.collect(Collectors.toList());
+
+			entities.forEach(entity -> {
+				EntityPlayer entity_player = (EntityPlayer) entity;
+
+				if (entity_player.isDead || entity_player.getHealth() < 0) {
+					Bope.dev(entity_player.getName() + " died in your range");
+				}
+			});
+		}
+	}
 }

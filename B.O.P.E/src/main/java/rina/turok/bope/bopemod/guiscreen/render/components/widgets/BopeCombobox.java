@@ -213,10 +213,8 @@ public class BopeCombobox extends BopeAbstractWidget {
 		if (is_open()) {
 			BopeDraw.draw_rect(this.x, this.save_y, this.x + this.width, this.save_y + this.height, bg_r, bg_g, bg_b, bg_a);
 			BopeDraw.draw_string(this.combobox_name, this.x + 2, this.save_y, ns_r, ns_g, ns_b, Bope.get_setting_manager().get_setting_with_tag("GUIStringsShadow").get_value(true), this.smoth);
-			BopeDraw.draw_string(this.setting.get_current_value(), this.x + this.width - separate - this.font.get_string_width(this.setting.get_current_value(), this.smoth) - 2, this.save_y, ns_r, ns_g, ns_b, Bope.get_setting_manager().get_setting_with_tag("GUIStringsShadow").get_value(true), this.smoth);
 		} else {
 			BopeDraw.draw_string(this.combobox_name, this.x + 2, this.save_y, ns_r, ns_g, ns_b, Bope.get_setting_manager().get_setting_with_tag("GUIStringsShadow").get_value(true), this.smoth);
-			BopeDraw.draw_string(this.setting.get_current_value(), this.x + this.width - separate - this.font.get_string_width(this.setting.get_current_value(), this.smoth) - 2, this.save_y, ns_r, ns_g, ns_b, Bope.get_setting_manager().get_setting_with_tag("GUIStringsShadow").get_value(true), this.smoth);
 		}
 
 		this.menu.render(motion(mx, my), this.save_y, mx, my);

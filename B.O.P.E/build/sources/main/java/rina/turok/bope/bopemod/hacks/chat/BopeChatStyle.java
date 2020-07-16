@@ -35,29 +35,29 @@ import rina.turok.bope.Bope;
 */
 public class BopeChatStyle extends BopeModule {
 	public List<String> colors_combobox = combobox(
-		"Disabled", // False. :)
-		"Black",
-		"Red",
-		"Aqua",
-		"Blue",
-		"Gold",
-		"Gray",
-		"White",
-		"Green",
-		"Yello",
-		"Dark_Red",
-		"Dark_aqua",
-		"Dark_Blue",
-		"Dark_Gray",
-		"Dark_Green",
-		"Dark_Purple",
-		"Light_Purple"
+		"disabled", // False. :)
+		"black",
+		"red",
+		"aqua",
+		"blue",
+		"gold",
+		"gray",
+		"white",
+		"green",
+		"yello",
+		"dark_red",
+		"dark_aqua",
+		"dark_blue",
+		"dark_gray",
+		"dark_green",
+		"dark_purple",
+		"light_purple"
 	);
 
 	BopeSetting color_time  = create("Time", "ChatStyleColorTime", colors_combobox.get(0), colors_combobox); 
 	BopeSetting color_name  = create("Name", "ChatStyleColorMessage", colors_combobox.get(0), colors_combobox);
 	BopeSetting color_fname = create("Friend", "ChatStyleColorFriend", colors_combobox.get(14), colors_combobox);
-	BopeSetting type_mode   = create("Separator", "ChatStyleSeparator", "[]", combobox("[]", "<>"));
+	BopeSetting type_mode   = create("Separator", "ChatStyleSeparator", "<>", combobox("[]", "<>"));
 	//BopeSetting color_mode   = create("Color Mode", "ChatStyleColorMode", "HUD", combobox("HUD", "Server"));
 
 	public static HashMap<String, ChatFormatting> color = new HashMap<>();
@@ -124,19 +124,19 @@ public class BopeChatStyle extends BopeModule {
 		String pre = type_mode.in("[]") ? "[" : "<";
 		String end = type_mode.in("[]") ? "]" : ">";
 
-		if (color_time.in("Disabled")) {
+		if (color_time.in("disabled")) {
 			event_color_time = false;
 		}
 
-		if (color_fname.in("Disabled") && color_name.in("Disabled")) {
+		if (color_fname.in("disabled") && color_name.in("disabled")) {
 			event_color_name = false;
 		}
 
-		if (color_name.in("Disabled")) {
+		if (color_name.in("disabled")) {
 			event_color_name = false;
 		}
 
-		if (!color_fname.in("Disabled") && color_name.in("Disabled")) {
+		if (!color_fname.in("disabled") && color_name.in("disabled")) {
 			event_color_name = true;
 		}
 
@@ -151,7 +151,7 @@ public class BopeChatStyle extends BopeModule {
 		if (event_color_name && is_name) {
 			ChatFormatting c;
 
-			if (is_friend && !color_fname.in("Disabled")) {
+			if (is_friend && !color_fname.in("disabled")) {
 				c = color.get(color_fname.get_current_value());
 			} else {
 				c = color.get(color_name.get_current_value());

@@ -31,7 +31,7 @@ import rina.turok.bope.Bope;
 *
 */
 public class BopeCriticals extends BopeModule {
-	BopeSetting mode = create("Mode", "CriticalsMode", "Packet", combobox("Packet", "Jump"));
+	BopeSetting event_mode = create("Event Mode", "CriticalsEventMode", "packet", combobox("packet", "jump"));
 
 	public BopeCriticals() {
 		super(BopeCategory.BOPE_COMBAT);
@@ -51,10 +51,10 @@ public class BopeCriticals extends BopeModule {
 			CPacketUseEntity event_entity = ((CPacketUseEntity) event.get_packet());
 
 			if (event_entity.getAction() == CPacketUseEntity.Action.ATTACK && mc.player.onGround) {
-				if (mode.in("Packet")) {
+				if (event_mode.in("Packet")) {
 					mc.player.connection.sendPacket(new CPacketPlayer.Position(mc.player.posX, mc.player.posY + 0.1f, mc.player.posZ, false));
 					mc.player.connection.sendPacket(new CPacketPlayer.Position(mc.player.posX, mc.player.posY, mc.player.posZ, false));
-				} else if (mode.in("Jump")) {
+				} else if (event_mode.in("Jump")) {
 					mc.player.jump();
 				}
 			}
@@ -63,6 +63,6 @@ public class BopeCriticals extends BopeModule {
 
 	@Override
 	public String detail_option() {
-		return mode.get_current_value();
+		return event_mode.get_current_value();
 	}
 }

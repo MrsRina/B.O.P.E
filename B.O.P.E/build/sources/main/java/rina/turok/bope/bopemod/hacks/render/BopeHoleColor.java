@@ -39,8 +39,8 @@ public class BopeHoleColor extends BopeModule {
 
 	BopeSetting line_a = create("Outline A", "HoleColorLineOutlineA", 255, 0, 255);
 
-	BopeSetting off_set = create("Off Set Side", "HoleColorOffSetSide", 0.2, 0.0, 1.0);
-	BopeSetting range   = create("Range",        "HoleColorRange",      6, 1, 8);
+	BopeSetting off_set = create("Off Set Y", "HoleColorOffSetY", 0.2, 0.0, 1.0);
+	BopeSetting range   = create("Range", "HoleColorRange", 6, 1, 8);
 
 	ArrayList<BlockPos> hole;
 

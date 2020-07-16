@@ -34,18 +34,14 @@ import rina.turok.turok.draw.TurokRenderHelp;
 *
 */
 public class BopeStorageESP extends BopeModule {
-	BopeSetting mode = create("Mode", "StorageESPMode", "Pretty", combobox("Pretty", "Solid", "Outline"));
-	BopeSetting shu_ = create("Shulker Color", "StorageESPShulker", "Client", combobox("Client", "Default"));
-	BopeSetting enc_ = create("Enchest Color", "StorageESPEnchest", "Default", combobox("Client", "Default"));
-	BopeSetting che_ = create("Chest Color", "StorageESPChest", "Default", combobox("Client", "Default"));
-	BopeSetting oth_ = create("Others Color", "StorageESPOthers", "Default", combobox("Client", "Default"));
+	BopeSetting shu_ = create("Shulker Color", "StorageESPShulker", "client", combobox("client", "default"));
+	BopeSetting enc_ = create("Enchest Color", "StorageESPEnchest", "default", combobox("client", "default"));
+	BopeSetting che_ = create("Chest Color", "StorageESPChest", "default", combobox("client", "default"));
+	BopeSetting oth_ = create("Others Color", "StorageESPOthers", "default", combobox("client", "default"));
 	BopeSetting ot_a = create("Outline A", "StorageESPOutlineA", 150, 0, 255);
 	BopeSetting a    = create("Solid A", "StorageESPSolidA", 150, 0, 255);
 
 	private int color_alpha;
-
-	boolean solid;
-	boolean outline;
 
 	public BopeStorageESP() {
 		super(BopeCategory.BOPE_RENDER);
@@ -58,26 +54,11 @@ public class BopeStorageESP extends BopeModule {
 
 	@Override
 	public void render(BopeEventRender event) {
-		int nl_r = Bope.get_setting_manager().get_setting_with_tag("HUD", "HUDStringsColorR").get_value(1);
-		int nl_g = Bope.get_setting_manager().get_setting_with_tag("HUD", "HUDStringsColorG").get_value(1);
-		int nl_b = Bope.get_setting_manager().get_setting_with_tag("HUD", "HUDStringsColorB").get_value(1);
+		int nl_r = Bope.client_r;
+		int nl_g = Bope.client_g;
+		int nl_b = Bope.client_b;
 
 		color_alpha = a.get_value(1);
-
-		if (mode.in("Pretty")) {
-			solid   = true;
-			outline = true;
-		}
-
-		if (mode.in("Solid")) {
-			solid   = true;
-			outline = false;
-		}
-
-		if (mode.in("Outline")) {
-			solid   = false;
-			outline = true;
-		}
 
 		for (TileEntity tiles : mc.world.loadedTileEntityList) {
 			if (tiles instanceof TileEntityShulkerBox) {
@@ -85,7 +66,7 @@ public class BopeStorageESP extends BopeModule {
 
 				int hex = (255 << 24) | shulker.getColor().getColorValue() & 0xFFFFFFFF;
 
-				if (shu_.in("Client")) {
+				if (shu_.in("client")) {
 					draw(tiles, nl_r, nl_g, nl_b);
 				} else {
 					draw(tiles, (hex & 0xFF0000) >> 16, (hex & 0xFF00) >> 8, (hex & 0xFF));
@@ -93,7 +74,7 @@ public class BopeStorageESP extends BopeModule {
 			}
 
 			if (tiles instanceof TileEntityEnderChest) {
-				if (enc_.in("Client")) {
+				if (enc_.in("client")) {
 					draw(tiles, nl_r, nl_g, nl_b);
 				} else {
 					draw(tiles, 204, 0, 255);
@@ -101,7 +82,7 @@ public class BopeStorageESP extends BopeModule {
 			}
 
 			if (tiles instanceof TileEntityChest) {
-				if (che_.in("Client")) {
+				if (che_.in("client")) {
 					draw(tiles, nl_r, nl_g, nl_b);
 				} else {
 					draw(tiles, 153, 102, 0);
@@ -113,7 +94,7 @@ public class BopeStorageESP extends BopeModule {
 				tiles instanceof TileEntityHopper    ||
 				tiles instanceof TileEntityFurnace   ||
 				tiles instanceof TileEntityBrewingStand) {
-				if (oth_.in("Client")) {
+				if (oth_.in("client")) {
 					draw(tiles, nl_r, nl_g, nl_b);
 				} else {
 					draw(tiles, 190, 190, 190);
@@ -123,16 +104,14 @@ public class BopeStorageESP extends BopeModule {
 	}
 
 	public void draw(TileEntity tile_entity, int r, int g, int b) {
-		if (solid) {
-			TurokRenderHelp.prepare("quads");
-			TurokRenderHelp.draw_cube(tile_entity.getPos(), r, g, b, a.get_value(1), "all");
-			TurokRenderHelp.release();
-		}
+		// Solid.
+		TurokRenderHelp.prepare("quads");
+		TurokRenderHelp.draw_cube(tile_entity.getPos(), r, g, b, a.get_value(1), "all");
+		TurokRenderHelp.release();
 
-		if (outline) {
-			TurokRenderHelp.prepare("lines");
-			TurokRenderHelp.draw_cube_line(tile_entity.getPos(), r, g, b, ot_a.get_value(1), "all");
-			TurokRenderHelp.release();
-		}
+		// Outline.
+		TurokRenderHelp.prepare("lines");
+		TurokRenderHelp.draw_cube_line(tile_entity.getPos(), r, g, b, ot_a.get_value(1), "all");
+		TurokRenderHelp.release();
 	}
 }

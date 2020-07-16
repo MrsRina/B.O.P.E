@@ -115,6 +115,10 @@ public class Bope {
 	public static ChatFormatting dp = ChatFormatting.DARK_PURPLE;
 	public static ChatFormatting lp = ChatFormatting.LIGHT_PURPLE;
 
+	public static int client_r = 0;
+	public static int client_g = 0;
+	public static int client_b = 0;
+
 	@Mod.EventHandler
 	public void BopeStarting(FMLInitializationEvent event) {
 		init_log(BOPE_NAME);
@@ -190,6 +194,10 @@ public class Bope {
 		if (module_manager.get_module_with_tag("HUD").is_active()) {
 			module_manager.get_module_with_tag("HUD").set_active(false);
 		}
+
+		client_r = get_setting_manager().get_setting_with_tag("HUD", "HUDStringsColorR").get_value(1);
+		client_g = get_setting_manager().get_setting_with_tag("HUD", "HUDStringsColorG").get_value(1);
+		client_b = get_setting_manager().get_setting_with_tag("HUD", "HUDStringsColorB").get_value(1);
 
 		send_minecraft_log("Client started.");
 	}

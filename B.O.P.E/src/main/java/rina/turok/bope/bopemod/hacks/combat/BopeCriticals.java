@@ -31,7 +31,7 @@ import rina.turok.bope.Bope;
 *
 */
 public class BopeCriticals extends BopeModule {
-	BopeSetting event_mode = create("Event Mode", "CriticalsEventMode", "packet", combobox("packet", "jump"));
+	BopeSetting event_mode = create("Event Mode", "CriticalsEventMode", "Packet", combobox("Packet", "Jump"));
 
 	public BopeCriticals() {
 		super(BopeCategory.BOPE_COMBAT);

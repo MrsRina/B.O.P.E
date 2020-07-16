@@ -71,7 +71,7 @@ public class BopeUtilRenderer {
 			GlStateManager.rotate((float) (is_third_person_view ? -1 : 1), 1.0f, 0.0f, 0.0f);
 
 			glColor4f(1, 1, 1, 0.5f);
-			glLineWidth(3f);
+			glLineWidth(2f);
 			glEnable(GL_LINE_SMOOTH);
 
 			if (entities instanceof EntityPlayer) {
@@ -131,7 +131,7 @@ public class BopeUtilRenderer {
 			GlStateManager.rotate((float) (is_third_person_view ? -1 : 1), 1.0f, 0.0f, 0.0f);
 
 			glColor4f(1, 1, 1, 0.5f);
-			glLineWidth(3f);
+			glLineWidth(2f);
 			glEnable(GL_LINE_SMOOTH);
 
 			if (entities instanceof EntityPlayer) {

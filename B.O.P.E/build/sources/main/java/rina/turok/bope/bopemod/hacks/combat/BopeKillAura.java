@@ -46,7 +46,7 @@ public class BopeKillAura extends BopeModule {
 	BopeSetting player  = create("Player", "KillAuraPlayer", true);
 	BopeSetting hostile = create("Hostile", "KillAuraHostile", false);
 	BopeSetting sword   = create("Sword", "KillAuraSword", true);
-	BopeSetting esp     = create("Render Entity Mode", "KillAuraRenderEntityMode", "csgo", combobox("csgo", "rect", "disabled"));
+	BopeSetting esp     = create("Render Entity Mode", "KillAuraRenderEntityMode", "CSGO", combobox("CSGO", "Rect", "Disabled"));
 	BopeSetting range   = create("Range", "KillAuraRange", 6, 1, 10);
 
 	boolean with_sword = true;
@@ -92,11 +92,11 @@ public class BopeKillAura extends BopeModule {
 					return;
 				}
 
-				if (esp.in("csgo")) {
+				if (esp.in("CSGO")) {
 					BopeUtilRenderer.EntityPlayerCSGOESP((Entity) entity, 190, 190, 190, Math.round(mc.player.getDistance(entity) * 25.5f));
 				}
 
-				if (esp.in("rect")) {
+				if (esp.in("Rect")) {
 					BopeUtilRenderer.EntityPlayerRectESP((Entity) entity, 190, 190, 190, Math.round(mc.player.getDistance(entity) * 25.5f));
 				}
 

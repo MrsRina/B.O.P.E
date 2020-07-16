@@ -34,10 +34,10 @@ import rina.turok.turok.draw.TurokRenderHelp;
 *
 */
 public class BopeStorageESP extends BopeModule {
-	BopeSetting shu_ = create("Shulker Color", "StorageESPShulker", "client", combobox("client", "default"));
-	BopeSetting enc_ = create("Enchest Color", "StorageESPEnchest", "default", combobox("client", "default"));
-	BopeSetting che_ = create("Chest Color", "StorageESPChest", "default", combobox("client", "default"));
-	BopeSetting oth_ = create("Others Color", "StorageESPOthers", "default", combobox("client", "default"));
+	BopeSetting shu_ = create("Shulker Color", "StorageESPShulker", "HUD", combobox("HUD", "Client"));
+	BopeSetting enc_ = create("Enchest Color", "StorageESPEnchest", "Client", combobox("HUD", "Client"));
+	BopeSetting che_ = create("Chest Color", "StorageESPChest", "Client", combobox("HUD", "Client"));
+	BopeSetting oth_ = create("Others Color", "StorageESPOthers", "Client", combobox("HUD", "Client"));
 	BopeSetting ot_a = create("Outline A", "StorageESPOutlineA", 150, 0, 255);
 	BopeSetting a    = create("Solid A", "StorageESPSolidA", 150, 0, 255);
 
@@ -66,7 +66,7 @@ public class BopeStorageESP extends BopeModule {
 
 				int hex = (255 << 24) | shulker.getColor().getColorValue() & 0xFFFFFFFF;
 
-				if (shu_.in("client")) {
+				if (shu_.in("HUD")) {
 					draw(tiles, nl_r, nl_g, nl_b);
 				} else {
 					draw(tiles, (hex & 0xFF0000) >> 16, (hex & 0xFF00) >> 8, (hex & 0xFF));
@@ -74,7 +74,7 @@ public class BopeStorageESP extends BopeModule {
 			}
 
 			if (tiles instanceof TileEntityEnderChest) {
-				if (enc_.in("client")) {
+				if (enc_.in("HUD")) {
 					draw(tiles, nl_r, nl_g, nl_b);
 				} else {
 					draw(tiles, 204, 0, 255);
@@ -82,7 +82,7 @@ public class BopeStorageESP extends BopeModule {
 			}
 
 			if (tiles instanceof TileEntityChest) {
-				if (che_.in("client")) {
+				if (che_.in("HUD")) {
 					draw(tiles, nl_r, nl_g, nl_b);
 				} else {
 					draw(tiles, 153, 102, 0);
@@ -94,7 +94,7 @@ public class BopeStorageESP extends BopeModule {
 				tiles instanceof TileEntityHopper    ||
 				tiles instanceof TileEntityFurnace   ||
 				tiles instanceof TileEntityBrewingStand) {
-				if (oth_.in("client")) {
+				if (oth_.in("HUD")) {
 					draw(tiles, nl_r, nl_g, nl_b);
 				} else {
 					draw(tiles, 190, 190, 190);

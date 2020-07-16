@@ -52,13 +52,13 @@ public class BopeAutoGG extends BopeModule {
 	public void update() {
 		if (mc.player != null && mc.world != null) {
 			List<Entity> entities = mc.world.loadedEntityList.stream()
-			/* RinaRinaRinaRinaRinaRinaRinaRinaRinaRinaRin */.filter(entity -> entity != mc.player)
-			/* RinaRinaRinaRinaRinaRinaRinaRinaRinaRinaRin */.filter(entity -> mc.player.getDistance(entity) <= 10)
-			/* RinaRinaRinaRinaRinaRinaRinaRinaRinaRinaRin */.filter(entity -> !entity.isDead)
-			/* RinaRinaRinaRinaRinaRinaRinaRinaRinaRinaRin */.filter(entity -> !(Bope.get_friend_manager().is_friend(entity.getName())))
-			/* RinaRinaRinaRinaRinaRinaRinaRinaRinaRinaRin */.filter(entity -> entity instanceof EntityPlayer)
-			/* RinaRinaRinaRinaRinaRinaRinaRinaRinaRinaRin */.sorted(Comparator.comparing(distance -> mc.player.getDistance(distance)))
-			/* RinaRinaRinaRinaRinaRinaRinaRinaRinaRinaRin */.collect(Collectors.toList());
+			/* RinaRinaRinaRinaRinaRinaRinaRinaRinaRinaRi */ .filter(entity -> entity != mc.player)
+			/* RinaRinaRinaRinaRinaRinaRinaRinaRinaRinaRi */ .filter(entity -> mc.player.getDistance(entity) <= 10)
+			/* RinaRinaRinaRinaRinaRinaRinaRinaRinaRinaRi */ .filter(entity -> !entity.isDead)
+			/* RinaRinaRinaRinaRinaRinaRinaRinaRinaRinaRi */ .filter(entity -> !(Bope.get_friend_manager().is_friend(entity.getName())))
+			/* RinaRinaRinaRinaRinaRinaRinaRinaRinaRinaRi */ .filter(entity -> entity instanceof EntityPlayer)
+			/* RinaRinaRinaRinaRinaRinaRinaRinaRinaRinaRi */ .sorted(Comparator.comparing(distance -> mc.player.getDistance(distance)))
+			/* RinaRinaRinaRinaRinaRinaRinaRinaRinaRinaRi */ .collect(Collectors.toList());
 
 			entities.forEach(entity -> {
 				EntityPlayer entity_player = (EntityPlayer) entity;

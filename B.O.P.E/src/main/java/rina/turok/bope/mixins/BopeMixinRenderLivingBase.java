@@ -40,7 +40,7 @@ public class BopeMixinRenderLivingBase <T extends EntityLivingBase> extends Bope
 	@Inject(method = "doRender", at = @At("HEAD"))
 	private void doRender(T entity, double x, double y, double z, float yaw, float partial_ticks, CallbackInfo callback) {
 		if (entity instanceof EntityPlayer && mc.player != null && mc.player.getDistance(entity) > Bope.get_setting_manager().get_setting_with_tag("PlayerESP", "PlayerESPDistanceRender").get_value(1) && mc.player.getDistance(entity) < (Bope.get_setting_manager().get_setting_with_tag("PlayerESP", "PlayerESPRange").get_value(1))) {
-			if (Bope.get_setting_manager().get_setting_with_tag("PlayerESP", "PlayerESPRenderEntity").in("chams") && Bope.get_module_manager().get_module_with_tag("PlayerESP").is_active()) {
+			if (Bope.get_setting_manager().get_setting_with_tag("PlayerESP", "PlayerESPRenderEntity").in("Chams") && Bope.get_module_manager().get_module_with_tag("PlayerESP").is_active()) {
 				BopePlayerESP.distance_player = mc.player.getDistance(entity);
 
 				GlStateManager.pushMatrix();
@@ -60,7 +60,7 @@ public class BopeMixinRenderLivingBase <T extends EntityLivingBase> extends Bope
 	@Inject(method = "doRender", at = @At("RETURN"))
 	private void doRenderlast(T entity, double x, double y, double z, float yaw, float partial_ticks, CallbackInfo callback) {
 		if (entity instanceof EntityPlayer && mc.player != null && mc.player.getDistance(entity) > Bope.get_setting_manager().get_setting_with_tag("PlayerESP", "PlayerESPDistanceRender").get_value(1) && mc.player.getDistance(entity) < (Bope.get_setting_manager().get_setting_with_tag("PlayerESP", "PlayerESPRange").get_value(1))) {
-			if (Bope.get_setting_manager().get_setting_with_tag("PlayerESP", "PlayerESPRenderEntity").in("chams") && Bope.get_module_manager().get_module_with_tag("PlayerESP").is_active()) {
+			if (Bope.get_setting_manager().get_setting_with_tag("PlayerESP", "PlayerESPRenderEntity").in("Chams") && Bope.get_module_manager().get_module_with_tag("PlayerESP").is_active()) {
 				BopePlayerESP.distance_player = mc.player.getDistance(entity);
 
 				GlStateManager.pushMatrix();

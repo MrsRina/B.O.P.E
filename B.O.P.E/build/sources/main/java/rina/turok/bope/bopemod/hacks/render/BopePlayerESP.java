@@ -48,8 +48,8 @@ import rina.turok.bope.Bope;
 *
 */
 public class BopePlayerESP extends BopeModule {
-	BopeSetting render_1 = create("Render Entity", "PlayerESPRenderEntity", "chams", combobox("chams", "outline", "disabled"));
-	BopeSetting render_2 = create("Render Entity 2D", "PlayerESPRenderEntity2D", "csgo", combobox("csgo", "rect", "disabled"));
+	BopeSetting render_1 = create("Render Entity", "PlayerESPRenderEntity", "Chams", combobox("Chams", "Outline", "Disabled"));
+	BopeSetting render_2 = create("Render Entity 2D", "PlayerESPRenderEntity2D", "CSGO", combobox("CSGO", "Rect", "Disabled"));
 	BopeSetting disp     = create("Distance Render", "PlayerESPDistanceRender", 6, 0, 10);
 	BopeSetting range    = create("Range", "PlayerESPRange", 200, 0, 200);
 
@@ -81,7 +81,7 @@ public class BopePlayerESP extends BopeModule {
 		/* inaRinaRinaRinaRin */ .forEach(entities -> {
 			EntityPlayer player_entities = (EntityPlayer) entities;
 
-			if (render_2.in("csgo")) {
+			if (render_2.in("CSGO")) {
 				if (Bope.get_friend_manager().is_friend(player_entities.getName())) {
 					BopeUtilRenderer.EntityPlayerCSGOESP((Entity) entities, Bope.client_r, Bope.client_g, Bope.client_b, Math.round(mc.player.getDistance(entities) * 25.5f));
 				} else {
@@ -89,7 +89,7 @@ public class BopePlayerESP extends BopeModule {
 				}
 			}
 
-			if (render_2.in("rect")) {
+			if (render_2.in("Rect")) {
 				if (Bope.get_friend_manager().is_friend(player_entities.getName())) {
 					BopeUtilRenderer.EntityPlayerRectESP((Entity) entities, Bope.client_r, Bope.client_g, Bope.client_b, Math.round(mc.player.getDistance(entities) * 25.5f));
 				} else {

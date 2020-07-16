@@ -1036,8 +1036,8 @@ End  Processing: rina/turok/bope/bopemod/hacks/chat/BopeChatStyle.java
 Start Processing: rina/turok/bope/bopemod/hacks/chat/BopeChatSuffix.java
 FOUND CONSTR method rina/turok/bope/bopemod/hacks/chat/BopeChatSuffix/BopeChatSuffix ()V rina/turok/bope/bopemod/hacks/chat/BopeChatSuffix
 New Key: class rina/turok/bope/bopemod/events/BopeEventPacket
-Rename method net/minecraft/network/play/client/CPacketChatMessage/getMessage ()Ljava/lang/String;[2851,2861]::getMessage->func_149439_c
-Rename field net/minecraft/network/play/client/CPacketChatMessage/message[5476,5483]::message->field_149440_a
+Rename method net/minecraft/network/play/client/CPacketChatMessage/getMessage ()Ljava/lang/String;[2848,2858]::getMessage->func_149439_c
+Rename field net/minecraft/network/play/client/CPacketChatMessage/message[5473,5480]::message->field_149440_a
 Import: net.minecraft.network.play.client.CPacketChatMessage
 Adding 8 imports
         java.util.Random
@@ -2190,12 +2190,12 @@ End  Processing: rina/turok/bope/bopemod/hacks/render/BopePlayerESP.java
 
 Start Processing: rina/turok/bope/bopemod/hacks/render/BopeStorageESP.java
 FOUND CONSTR method rina/turok/bope/bopemod/hacks/render/BopeStorageESP/BopeStorageESP ()V rina/turok/bope/bopemod/hacks/render/BopeStorageESP
-Rename field net/minecraft/client/Minecraft/world[1774,1779]::world->field_71441_e
-Rename field net/minecraft/world/World/loadedTileEntityList[1788,1808]::loadedTileEntityList->field_147482_g
-Rename method net/minecraft/tileentity/TileEntityShulkerBox/getColor ()Lnet/minecraft/item/EnumDyeColor;[1966,1974]::getColor->func_190592_s
-Rename method net/minecraft/item/EnumDyeColor/getColorValue ()I[1982,1995]::getColorValue->func_193350_e
-Rename method net/minecraft/tileentity/TileEntity/getPos ()Lnet/minecraft/util/math/BlockPos;[3064,3070]::getPos->func_174877_v
-Rename method net/minecraft/tileentity/TileEntity/getPos ()Lnet/minecraft/util/math/BlockPos;[3244,3250]::getPos->func_174877_v
+Rename field net/minecraft/client/Minecraft/world[1752,1757]::world->field_71441_e
+Rename field net/minecraft/world/World/loadedTileEntityList[1766,1786]::loadedTileEntityList->field_147482_g
+Rename method net/minecraft/tileentity/TileEntityShulkerBox/getColor ()Lnet/minecraft/item/EnumDyeColor;[1944,1952]::getColor->func_190592_s
+Rename method net/minecraft/item/EnumDyeColor/getColorValue ()I[1960,1973]::getColorValue->func_193350_e
+Rename method net/minecraft/tileentity/TileEntity/getPos ()Lnet/minecraft/util/math/BlockPos;[3030,3036]::getPos->func_174877_v
+Rename method net/minecraft/tileentity/TileEntity/getPos ()Lnet/minecraft/util/math/BlockPos;[3210,3216]::getPos->func_174877_v
 Import: net.minecraft.util.math.BlockPos
 Import: net.minecraft.tileentity.*
 Import: net.minecraft.block.Block

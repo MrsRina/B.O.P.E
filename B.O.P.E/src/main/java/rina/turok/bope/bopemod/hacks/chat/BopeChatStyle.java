@@ -35,23 +35,23 @@ import rina.turok.bope.Bope;
 */
 public class BopeChatStyle extends BopeModule {
 	public List<String> colors_combobox = combobox(
-		"disabled", // False. :)
-		"black",
-		"red",
-		"aqua",
-		"blue",
-		"gold",
-		"gray",
-		"white",
-		"green",
-		"yello",
-		"dark_red",
-		"dark_aqua",
-		"dark_blue",
-		"dark_gray",
-		"dark_green",
-		"dark_purple",
-		"light_purple"
+		"Disabled", // False. :)
+		"Black",
+		"Red",
+		"Aqua",
+		"Blue",
+		"Gold",
+		"Gray",
+		"White",
+		"Green",
+		"Yello",
+		"Dark_Red",
+		"Dark_Aqua",
+		"Dark_Blue",
+		"Dark_Gray",
+		"Dark_Green",
+		"Dark_Purple",
+		"Light_Purple"
 	);
 
 	BopeSetting color_time  = create("Time", "ChatStyleColorTime", colors_combobox.get(0), colors_combobox); 
@@ -124,19 +124,19 @@ public class BopeChatStyle extends BopeModule {
 		String pre = type_mode.in("[]") ? "[" : "<";
 		String end = type_mode.in("[]") ? "]" : ">";
 
-		if (color_time.in("disabled")) {
+		if (color_time.in("Disabled")) {
 			event_color_time = false;
 		}
 
-		if (color_fname.in("disabled") && color_name.in("disabled")) {
+		if (color_fname.in("Disabled") && color_name.in("Disabled")) {
 			event_color_name = false;
 		}
 
-		if (color_name.in("disabled")) {
+		if (color_name.in("Disabled")) {
 			event_color_name = false;
 		}
 
-		if (!color_fname.in("disabled") && color_name.in("disabled")) {
+		if (!color_fname.in("Disabled") && color_name.in("Disabled")) {
 			event_color_name = true;
 		}
 
@@ -151,7 +151,7 @@ public class BopeChatStyle extends BopeModule {
 		if (event_color_name && is_name) {
 			ChatFormatting c;
 
-			if (is_friend && !color_fname.in("disabled")) {
+			if (is_friend && !color_fname.in("Disabled")) {
 				c = color.get(color_fname.get_current_value());
 			} else {
 				c = color.get(color_name.get_current_value());

@@ -90,7 +90,7 @@ public class BopeChatSuffix extends BopeModule {
 		"obama",
 		"google",
 		"facebook",
-		"027hack"
+		"hack"
 	};
 
 	String[] random_suffix_mid = {

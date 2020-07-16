@@ -73,14 +73,14 @@ public class BopeKillAura extends BopeModule {
 	public void update() {
 		if (mc.player != null && mc.world != null) {
 			entities = mc.world.loadedEntityList.stream()
-			/* RaRinaRinaRinaRinaRinaRinaRina */.filter(entity ->  entity != mc.player)
-			/* RaRinaRinaRinaRinaRinaRinaRina */.filter(entity ->  mc.player.getDistance(entity) <= range.get_value(1))
-			/* RaRinaRinaRinaRinaRinaRinaRina */.filter(entity -> !entity.isDead)
-			/* RaRinaRinaRinaRinaRinaRinaRina */.filter(entity -> !(Bope.get_friend_manager().is_friend(entity.getName())))
-			/* RaRinaRinaRinaRinaRinaRinaRina */.filter(entity ->  ((entity instanceof EntityPlayer && player.get_value(true)) || (entity instanceof IMob && hostile.get_value(true))))
-			/* RaRinaRinaRinaRinaRinaRinaRina */.filter(entity ->  ((EntityPlayer) entity).getHealth() > 0)
-			/* RaRinaRinaRinaRinaRinaRinaRina */.sorted(Comparator.comparing(distance -> mc.player.getDistance(distance)))
-			/* RaRinaRinaRinaRinaRinaRinaRina */.collect(Collectors.toList());
+			/* RinaRinaRinaRinaRinaRinaRinaR */ .filter(entity -> entity != mc.player)
+			/* RinaRinaRinaRinaRinaRinaRinaR */ .filter(entity -> mc.player.getDistance(entity) <= range.get_value(1))
+			/* RinaRinaRinaRinaRinaRinaRinaR */ .filter(entity -> !entity.isDead)
+			/* RinaRinaRinaRinaRinaRinaRinaR */ .filter(entity -> !(Bope.get_friend_manager().is_friend(entity.getName())))
+			/* RinaRinaRinaRinaRinaRinaRinaR */ .filter(entity -> (entity instanceof EntityPlayer && player.get_value(true)) || (entity instanceof IMob && hostile.get_value(true)))
+			/* RinaRinaRinaRinaRinaRinaRinaR */ .filter(entity -> !entity.isDead)
+			/* RinaRinaRinaRinaRinaRinaRinaR */ .sorted(Comparator.comparing(distance -> mc.player.getDistance(distance)))
+			/* RinaRinaRinaRinaRinaRinaRinaR */ .collect(Collectors.toList());
 		}
 	}
 

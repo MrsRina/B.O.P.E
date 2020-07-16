@@ -52,11 +52,11 @@ public class BopeAutoGG extends BopeModule {
 	public void update() {
 		if (mc.player != null && mc.world != null) {
 			List<Entity> entities = mc.world.loadedEntityList.stream()
-			/* RinaRinaRinaRinaRinaRinaRinaRinaRinaRinaRin */.filter(entity ->  entity != mc.player)
-			/* RinaRinaRinaRinaRinaRinaRinaRinaRinaRinaRin */.filter(entity ->  mc.player.getDistance(entity) <= 10)
+			/* RinaRinaRinaRinaRinaRinaRinaRinaRinaRinaRin */.filter(entity -> entity != mc.player)
+			/* RinaRinaRinaRinaRinaRinaRinaRinaRinaRinaRin */.filter(entity -> mc.player.getDistance(entity) <= 10)
 			/* RinaRinaRinaRinaRinaRinaRinaRinaRinaRinaRin */.filter(entity -> !entity.isDead)
 			/* RinaRinaRinaRinaRinaRinaRinaRinaRinaRinaRin */.filter(entity -> !(Bope.get_friend_manager().is_friend(entity.getName())))
-			/* RinaRinaRinaRinaRinaRinaRinaRinaRinaRinaRin */.filter(entity ->  entity instanceof EntityPlayer)
+			/* RinaRinaRinaRinaRinaRinaRinaRinaRinaRinaRin */.filter(entity -> entity instanceof EntityPlayer)
 			/* RinaRinaRinaRinaRinaRinaRinaRinaRinaRinaRin */.sorted(Comparator.comparing(distance -> mc.player.getDistance(distance)))
 			/* RinaRinaRinaRinaRinaRinaRinaRinaRinaRinaRin */.collect(Collectors.toList());
 

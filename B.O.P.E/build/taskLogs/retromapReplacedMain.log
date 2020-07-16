@@ -988,16 +988,16 @@ Rename field net/minecraft/client/Minecraft/player[1151,1157]::player->field_714
 Rename field net/minecraft/client/Minecraft/world[1179,1184]::world->field_71441_e
 Rename field net/minecraft/client/Minecraft/world[1235,1240]::world->field_71441_e
 Rename field net/minecraft/world/World/loadedEntityList[1249,1265]::loadedEntityList->field_72996_f
-Rename field net/minecraft/client/Minecraft/player[1357,1363]::player->field_71439_g
-Rename field net/minecraft/client/Minecraft/player[1447,1453]::player->field_71439_g
-Rename method net/minecraft/entity/Entity/getDistance (Lnet/minecraft/entity/Entity;)F[1461,1472]::getDistance->func_70032_d
-Rename field net/minecraft/entity/Entity/isDead[1568,1574]::isDead->field_70128_L
-Rename method net/minecraft/command/ICommandSender/getName ()Ljava/lang/String;[1699,1706]::getName->func_70005_c_
-Rename field net/minecraft/client/Minecraft/player[1919,1925]::player->field_71439_g
-Rename method net/minecraft/entity/Entity/getDistance (Lnet/minecraft/entity/Entity;)F[1933,1944]::getDistance->func_70032_d
-Rename field net/minecraft/entity/Entity/isDead[2159,2165]::isDead->field_70128_L
-Rename method net/minecraft/entity/EntityLivingBase/getHealth ()F[2190,2199]::getHealth->func_110143_aJ
-Rename method net/minecraft/command/ICommandSender/getName ()Ljava/lang/String;[2243,2250]::getName->func_70005_c_
+Rename field net/minecraft/client/Minecraft/player[1356,1362]::player->field_71439_g
+Rename field net/minecraft/client/Minecraft/player[1445,1451]::player->field_71439_g
+Rename method net/minecraft/entity/Entity/getDistance (Lnet/minecraft/entity/Entity;)F[1459,1470]::getDistance->func_70032_d
+Rename field net/minecraft/entity/Entity/isDead[1566,1572]::isDead->field_70128_L
+Rename method net/minecraft/command/ICommandSender/getName ()Ljava/lang/String;[1697,1704]::getName->func_70005_c_
+Rename field net/minecraft/client/Minecraft/player[1916,1922]::player->field_71439_g
+Rename method net/minecraft/entity/Entity/getDistance (Lnet/minecraft/entity/Entity;)F[1930,1941]::getDistance->func_70032_d
+Rename field net/minecraft/entity/Entity/isDead[2156,2162]::isDead->field_70128_L
+Rename method net/minecraft/entity/EntityLivingBase/getHealth ()F[2187,2196]::getHealth->func_110143_aJ
+Rename method net/minecraft/command/ICommandSender/getName ()Ljava/lang/String;[2240,2247]::getName->func_70005_c_
 Import: net.minecraft.entity.player.EntityPlayer
 Import: net.minecraft.entity.Entity
 Adding 6 imports
@@ -1472,39 +1472,39 @@ Rename field net/minecraft/client/Minecraft/player[2028,2034]::player->field_714
 Rename field net/minecraft/client/Minecraft/world[2056,2061]::world->field_71441_e
 Rename field net/minecraft/client/Minecraft/world[2099,2104]::world->field_71441_e
 Rename field net/minecraft/world/World/loadedEntityList[2113,2129]::loadedEntityList->field_72996_f
-Rename field net/minecraft/client/Minecraft/player[2208,2214]::player->field_71439_g
-Rename field net/minecraft/client/Minecraft/player[2285,2291]::player->field_71439_g
-Rename method net/minecraft/entity/Entity/getDistance (Lnet/minecraft/entity/Entity;)F[2299,2310]::getDistance->func_70032_d
-Rename field net/minecraft/entity/Entity/isDead[2409,2415]::isDead->field_70128_L
-Rename method net/minecraft/command/ICommandSender/getName ()Ljava/lang/String;[2527,2534]::getName->func_70005_c_
-Rename method net/minecraft/entity/EntityLivingBase/getHealth ()F[2805,2814]::getHealth->func_110143_aJ
-Rename field net/minecraft/client/Minecraft/player[2911,2917]::player->field_71439_g
-Rename method net/minecraft/entity/Entity/getDistance (Lnet/minecraft/entity/Entity;)F[2925,2936]::getDistance->func_70032_d
-Rename field net/minecraft/client/Minecraft/player[3164,3170]::player->field_71439_g
-Rename method net/minecraft/entity/EntityLivingBase/getHeldItemMainhand ()Lnet/minecraft/item/ItemStack;[3178,3197]::getHeldItemMainhand->func_184614_ca
-Rename method net/minecraft/item/ItemStack/getItem ()Lnet/minecraft/item/Item;[3195,3202]::getItem->func_77973_b
-Rename field net/minecraft/client/Minecraft/player[3399,3405]::player->field_71439_g
-Rename method net/minecraft/entity/Entity/getDistance (Lnet/minecraft/entity/Entity;)F[3413,3424]::getDistance->func_70032_d
-Rename field net/minecraft/client/Minecraft/player[3570,3576]::player->field_71439_g
-Rename method net/minecraft/entity/Entity/getDistance (Lnet/minecraft/entity/Entity;)F[3584,3595]::getDistance->func_70032_d
-Rename field net/minecraft/client/Minecraft/player[3727,3733]::player->field_71439_g
-Rename method net/minecraft/entity/player/EntityPlayer/getCooledAttackStrength (F)F[3741,3764]::getCooledAttackStrength->func_184825_o
-Rename field net/minecraft/client/Minecraft/player[3832,3838]::player->field_71439_g
-Rename method net/minecraft/entity/EntityLivingBase/getHeldItemOffhand ()Lnet/minecraft/item/ItemStack;[3846,3864]::getHeldItemOffhand->func_184592_cb
-Rename method net/minecraft/item/ItemStack/getItem ()Lnet/minecraft/item/Item;[3970,3977]::getItem->func_77973_b
-Rename field net/minecraft/init/Items/SHIELD[3994,4000]::SHIELD->field_185159_cQ
-Rename field net/minecraft/client/Minecraft/player[4050,4056]::player->field_71439_g
-Rename field net/minecraft/client/entity/EntityPlayerSP/connection[4064,4074]::connection->field_71174_a
-Rename method net/minecraft/client/network/NetHandlerPlayClient/sendPacket (Lnet/minecraft/network/Packet;)V[4078,4088]::sendPacket->func_147297_a
+Rename field net/minecraft/client/Minecraft/player[2207,2213]::player->field_71439_g
+Rename field net/minecraft/client/Minecraft/player[2283,2289]::player->field_71439_g
+Rename method net/minecraft/entity/Entity/getDistance (Lnet/minecraft/entity/Entity;)F[2297,2308]::getDistance->func_70032_d
+Rename field net/minecraft/entity/Entity/isDead[2407,2413]::isDead->field_70128_L
+Rename method net/minecraft/command/ICommandSender/getName ()Ljava/lang/String;[2525,2532]::getName->func_70005_c_
+Rename field net/minecraft/entity/Entity/isDead[2783,2789]::isDead->field_70128_L
+Rename field net/minecraft/client/Minecraft/player[2882,2888]::player->field_71439_g
+Rename method net/minecraft/entity/Entity/getDistance (Lnet/minecraft/entity/Entity;)F[2896,2907]::getDistance->func_70032_d
+Rename field net/minecraft/client/Minecraft/player[3135,3141]::player->field_71439_g
+Rename method net/minecraft/entity/EntityLivingBase/getHeldItemMainhand ()Lnet/minecraft/item/ItemStack;[3149,3168]::getHeldItemMainhand->func_184614_ca
+Rename method net/minecraft/item/ItemStack/getItem ()Lnet/minecraft/item/Item;[3166,3173]::getItem->func_77973_b
+Rename field net/minecraft/client/Minecraft/player[3370,3376]::player->field_71439_g
+Rename method net/minecraft/entity/Entity/getDistance (Lnet/minecraft/entity/Entity;)F[3384,3395]::getDistance->func_70032_d
+Rename field net/minecraft/client/Minecraft/player[3541,3547]::player->field_71439_g
+Rename method net/minecraft/entity/Entity/getDistance (Lnet/minecraft/entity/Entity;)F[3555,3566]::getDistance->func_70032_d
+Rename field net/minecraft/client/Minecraft/player[3698,3704]::player->field_71439_g
+Rename method net/minecraft/entity/player/EntityPlayer/getCooledAttackStrength (F)F[3712,3735]::getCooledAttackStrength->func_184825_o
+Rename field net/minecraft/client/Minecraft/player[3803,3809]::player->field_71439_g
+Rename method net/minecraft/entity/EntityLivingBase/getHeldItemOffhand ()Lnet/minecraft/item/ItemStack;[3817,3835]::getHeldItemOffhand->func_184592_cb
+Rename method net/minecraft/item/ItemStack/getItem ()Lnet/minecraft/item/Item;[3941,3948]::getItem->func_77973_b
+Rename field net/minecraft/init/Items/SHIELD[3965,3971]::SHIELD->field_185159_cQ
+Rename field net/minecraft/client/Minecraft/player[4021,4027]::player->field_71439_g
+Rename field net/minecraft/client/entity/EntityPlayerSP/connection[4035,4045]::connection->field_71174_a
+Rename method net/minecraft/client/network/NetHandlerPlayClient/sendPacket (Lnet/minecraft/network/Packet;)V[4049,4059]::sendPacket->func_147297_a
 New Key: class net/minecraft/network/play/client/CPacketPlayerDigging
-Rename field net/minecraft/util/math/BlockPos/ORIGIN[4172,4178]::ORIGIN->field_177992_a
-Rename field net/minecraft/client/Minecraft/player[4191,4197]::player->field_71439_g
-Rename method net/minecraft/entity/Entity/getHorizontalFacing ()Lnet/minecraft/util/EnumFacing;[4205,4224]::getHorizontalFacing->func_174811_aO
-Rename field net/minecraft/client/Minecraft/playerController[4268,4284]::playerController->field_71442_b
-Rename method net/minecraft/client/multiplayer/PlayerControllerMP/attackEntity (Lnet/minecraft/entity/player/EntityPlayer;Lnet/minecraft/entity/Entity;)V[4282,4294]::attackEntity->func_78764_a
-Rename field net/minecraft/client/Minecraft/player[4298,4304]::player->field_71439_g
-Rename field net/minecraft/client/Minecraft/player[4329,4335]::player->field_71439_g
-Rename method net/minecraft/entity/EntityLivingBase/swingArm (Lnet/minecraft/util/EnumHand;)V[4343,4351]::swingArm->func_184609_a
+Rename field net/minecraft/util/math/BlockPos/ORIGIN[4143,4149]::ORIGIN->field_177992_a
+Rename field net/minecraft/client/Minecraft/player[4162,4168]::player->field_71439_g
+Rename method net/minecraft/entity/Entity/getHorizontalFacing ()Lnet/minecraft/util/EnumFacing;[4176,4195]::getHorizontalFacing->func_174811_aO
+Rename field net/minecraft/client/Minecraft/playerController[4239,4255]::playerController->field_71442_b
+Rename method net/minecraft/client/multiplayer/PlayerControllerMP/attackEntity (Lnet/minecraft/entity/player/EntityPlayer;Lnet/minecraft/entity/Entity;)V[4253,4265]::attackEntity->func_78764_a
+Rename field net/minecraft/client/Minecraft/player[4269,4275]::player->field_71439_g
+Rename field net/minecraft/client/Minecraft/player[4300,4306]::player->field_71439_g
+Rename method net/minecraft/entity/EntityLivingBase/swingArm (Lnet/minecraft/util/EnumHand;)V[4314,4322]::swingArm->func_184609_a
 Import: net.minecraft.network.play.client.CPacketPlayerDigging
 Import: net.minecraft.network.play.client.CPacketUseEntity
 Import: net.minecraft.entity.player.EntityPlayer

@@ -66,42 +66,12 @@ public abstract class BopeMixinRender <T extends Entity> {
 				GlStateManager.popMatrix();
 			}
 		}
-
-		if (entity instanceof EntityItem && mc.player != null && mc.player.getDistance(entity) > Bope.get_setting_manager().get_setting_with_tag("EntityESP", "EntityESPDistanceRender").get_value(1) && mc.player.getDistance(entity) < (Bope.get_setting_manager().get_setting_with_tag("EntityESP", "EntityESPRange").get_value(1)) && Bope.get_module_manager().get_module_with_tag("EntityESP").is_active() && Bope.get_setting_manager().get_setting_with_tag("EntityESP", "EntityESPItems").get_value(true)) {
-			BopeEntityESP.distance_player = mc.player.getDistance(entity);
-
-			if (Bope.get_setting_manager().get_setting_with_tag("EntityESP", "EntityESPRenderEntity").in("Chams")) {
-				GlStateManager.pushMatrix();
-
-				OpenGlHelper.setLightmapTextureCoords(OpenGlHelper.lightmapTexUnit, 240.0F, 240.0F);
-
-				glEnable(GL11.GL_POLYGON_OFFSET_FILL);
-
-				glPolygonOffset(1.0f, -1100000.0f);
-
-				GlStateManager.popMatrix();
-			}
-		}
 	}
 
 	// Last render.
 	@Inject(method = "doRender", at = @At("RETURN"))
 	private void doRenderlast(T entity, double x, double y, double z, float yaw, float partial_ticks, CallbackInfo callback) {
 		if (entity instanceof EntityEnderCrystal && mc.player != null && mc.player.getDistance(entity) > Bope.get_setting_manager().get_setting_with_tag("EntityESP", "EntityESPDistanceRender").get_value(1) && mc.player.getDistance(entity) < (Bope.get_setting_manager().get_setting_with_tag("EntityESP", "EntityESPRange").get_value(1)) && Bope.get_module_manager().get_module_with_tag("EntityESP").is_active() && Bope.get_module_manager().get_module_with_tag("EntityESP").is_active() && Bope.get_setting_manager().get_setting_with_tag("EntityESP", "EntityESPCrystal").get_value(true)) {
-			BopeEntityESP.distance_player = mc.player.getDistance(entity);
-
-			if (Bope.get_setting_manager().get_setting_with_tag("EntityESP", "EntityESPRenderEntity").in("Chams")) {
-				GlStateManager.pushMatrix();
-
-				glDisable(GL11.GL_POLYGON_OFFSET_FILL);
-				glPolygonOffset(1.0f, 1100000.0f);
-				glEnable(GL11.GL_TEXTURE_2D);
-
-				GlStateManager.popMatrix();
-			}
-		}
-
-		if (entity instanceof EntityItem && mc.player != null && mc.player.getDistance(entity) > Bope.get_setting_manager().get_setting_with_tag("EntityESP", "EntityESPDistanceRender").get_value(1) && mc.player.getDistance(entity) < (Bope.get_setting_manager().get_setting_with_tag("EntityESP", "EntityESPRange").get_value(1)) && Bope.get_module_manager().get_module_with_tag("EntityESP").is_active() && Bope.get_setting_manager().get_setting_with_tag("EntityESP", "EntityESPItems").get_value(true)) {
 			BopeEntityESP.distance_player = mc.player.getDistance(entity);
 
 			if (Bope.get_setting_manager().get_setting_with_tag("EntityESP", "EntityESPRenderEntity").in("Chams")) {

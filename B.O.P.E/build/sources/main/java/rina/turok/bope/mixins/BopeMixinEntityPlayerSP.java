@@ -18,9 +18,6 @@ import org.spongepowered.asm.mixin.Mixin;
 // Events.
 import rina.turok.bope.bopemod.events.BopeEventMove;
 
-// External.
-import rina.turok.bope.external.BopeEventBus;
-
 // Core.
 import rina.turok.bope.Bope;
 
@@ -34,16 +31,26 @@ import rina.turok.bope.Bope;
 *
 */
 @Mixin(value = EntityPlayerSP.class)
-public abstract class BopeMixinEntitySP extends Entity {
-	public BopeMixinEntitySP(World world) {
+public abstract class BopeMixinEntityPlayerSP extends Entity {
+	public BopeMixinEntityPlayerSP(World world) {
 		super(world);
 	}
 
+	private double motion_x;
+	private double motion_y;
+	private double motion_z;
+
 	// Move event.
-	@Inject(method = "move", at = @At("HEAD"), cancellable = true)
+	@Inject(method = "move(Lnet/minecraft/entity/MoverType;DDD)V", at = @At("HEAD"), cancellable = true)
 	private void move(MoverType type, double x, double y, double z, CallbackInfo info) {
 		BopeEventMove event = new BopeEventMove(type, x, y, z);
 
-		BopeEventBus.ZERO_ALPINE_EVENT_BUS.post(event);
+		Bope.ZERO_ALPINE_EVENT_BUS.post(event);
+
+		if (event.isCancelled()) {
+			super.move(type, event.x, event.y, event.z);
+
+			info.cancel();
+		}
 	}
 }

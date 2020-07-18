@@ -22,9 +22,6 @@ import me.zero.alpine.listener.Listener;
 import rina.turok.bope.bopemod.BopeCommand;
 import rina.turok.bope.bopemod.BopeMessage;
 
-// External.
-import rina.turok.bope.external.BopeEventBus;
-
 // Events.
 import rina.turok.bope.bopemod.events.BopeEventPacket;
 import rina.turok.bope.bopemod.events.BopeEventLeave;
@@ -150,17 +147,17 @@ public class BopeEventManager {
 
 	@SubscribeEvent
 	public void onInputUpdate(InputUpdateEvent event) {
-		BopeEventBus.ZERO_ALPINE_EVENT_BUS.post(event);
+		Bope.ZERO_ALPINE_EVENT_BUS.post(event);
 	}
 
 	@SubscribeEvent
 	public void onClientChatReceivedEvent(ClientChatReceivedEvent event) {
-		BopeEventBus.ZERO_ALPINE_EVENT_BUS.post(event);
+		Bope.ZERO_ALPINE_EVENT_BUS.post(event);
 	}
 
 	@SubscribeEvent
 	public void onPlayerPush(PlayerSPPushOutOfBlocksEvent event) {
-		BopeEventBus.ZERO_ALPINE_EVENT_BUS.post(event);
+		Bope.ZERO_ALPINE_EVENT_BUS.post(event);
 	}
 
 	public String get_tag() {

@@ -48,9 +48,7 @@ public class BopeCriticals extends BopeModule {
 	@EventHandler
 	private Listener<BopeEventPacket.SendPacket> listener = new Listener<>(event -> {
 		if (event.get_packet() instanceof CPacketUseEntity) {
-			CPacketUseEntity event_entity = ((CPacketUseEntity) event.get_packet());
-
-			if (event_entity.getAction() == CPacketUseEntity.Action.ATTACK && mc.player.onGround) {
+			if (((CPacketUseEntity) event.get_packet()).getAction() == CPacketUseEntity.Action.ATTACK && mc.player.onGround) {
 				if (event_mode.in("Packet")) {
 					mc.player.connection.sendPacket(new CPacketPlayer.Position(mc.player.posX, mc.player.posY + 0.1f, mc.player.posZ, false));
 					mc.player.connection.sendPacket(new CPacketPlayer.Position(mc.player.posX, mc.player.posY, mc.player.posZ, false));

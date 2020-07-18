@@ -1,5 +1,8 @@
 {
   "mappings": {
+    "rina/turok/bope/mixins/BopeMixinEntityPlayerSP": {
+      "move(Lnet/minecraft/entity/MoverType;DDD)V": "Lnet/minecraft/client/entity/EntityPlayerSP;func_70091_d(Lnet/minecraft/entity/MoverType;DDD)V"
+    },
     "rina/turok/bope/mixins/BopeMixinRenderPlayer": {
       "renderEntityName": "Lnet/minecraft/client/renderer/entity/RenderPlayer;func_188296_a(Lnet/minecraft/client/entity/AbstractClientPlayer;DDDLjava/lang/String;D)V"
     },
@@ -13,17 +16,9 @@
       "orientCamera": "Lnet/minecraft/client/renderer/EntityRenderer;func_78467_g(F)V",
       "getMouseOver": "Lnet/minecraft/client/renderer/EntityRenderer;func_78473_a(F)V"
     },
-    "rina/turok/bope/mixins/BopeMixinPlayerControllerMP": {
-      "onPlayerDamageBlock": "Lnet/minecraft/client/multiplayer/PlayerControllerMP;func_180512_c(Lnet/minecraft/util/math/BlockPos;Lnet/minecraft/util/EnumFacing;)Z",
-      "Lnet/minecraft/block/state/IBlockState;getPlayerRelativeBlockHardness(Lnet/minecraft/entity/player/EntityPlayer;Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;)F": "Lnet/minecraft/block/state/IBlockState;func_185903_a(Lnet/minecraft/entity/player/EntityPlayer;Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;)F"
-    },
     "rina/turok/bope/mixins/BopeMixinNetworkManager": {
       "sendPacket(Lnet/minecraft/network/Packet;)V": "Lnet/minecraft/network/NetworkManager;func_179290_a(Lnet/minecraft/network/Packet;)V",
-      "exceptionCaught": "Lnet/minecraft/network/NetworkManager;exceptionCaught(Lio/netty/channel/ChannelHandlerContext;Ljava/lang/Throwable;)V",
       "channelRead0": "Lnet/minecraft/network/NetworkManager;channelRead0(Lio/netty/channel/ChannelHandlerContext;Lnet/minecraft/network/Packet;)V"
-    },
-    "rina/turok/bope/mixins/BopeMixinEntitySP": {
-      "move": "Lnet/minecraft/client/entity/EntityPlayerSP;func_70091_d(Lnet/minecraft/entity/MoverType;DDD)V"
     },
     "rina/turok/bope/mixins/BopeMixinRender": {
       "doRender": "Lnet/minecraft/client/renderer/entity/Render;func_76986_a(Lnet/minecraft/entity/Entity;DDDFF)V"
@@ -41,6 +36,9 @@
   },
   "data": {
     "notch": {
+      "rina/turok/bope/mixins/BopeMixinEntityPlayerSP": {
+        "move(Lnet/minecraft/entity/MoverType;DDD)V": "Lbud;a(Lvv;DDD)V"
+      },
       "rina/turok/bope/mixins/BopeMixinRenderPlayer": {
         "renderEntityName": "Lcct;a(Lbua;DDDLjava/lang/String;D)V"
       },
@@ -54,17 +52,9 @@
         "orientCamera": "Lbuq;f(F)V",
         "getMouseOver": "Lbuq;a(F)V"
       },
-      "rina/turok/bope/mixins/BopeMixinPlayerControllerMP": {
-        "onPlayerDamageBlock": "Lbsa;b(Let;Lfa;)Z",
-        "Lnet/minecraft/block/state/IBlockState;getPlayerRelativeBlockHardness(Lnet/minecraft/entity/player/EntityPlayer;Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;)F": "Lawt;a(Laed;Lamu;Let;)F"
-      },
       "rina/turok/bope/mixins/BopeMixinNetworkManager": {
         "sendPacket(Lnet/minecraft/network/Packet;)V": "Lgw;a(Lht;)V",
-        "exceptionCaught": "Lgw;exceptionCaught(Lio/netty/channel/ChannelHandlerContext;Ljava/lang/Throwable;)V",
         "channelRead0": "Lgw;a(Lio/netty/channel/ChannelHandlerContext;Lht;)V"
-      },
-      "rina/turok/bope/mixins/BopeMixinEntitySP": {
-        "move": "Lbud;a(Lvv;DDD)V"
       },
       "rina/turok/bope/mixins/BopeMixinRender": {
         "doRender": "Lbzg;a(Lvg;DDDFF)V"
@@ -81,6 +71,9 @@
       }
     },
     "searge": {
+      "rina/turok/bope/mixins/BopeMixinEntityPlayerSP": {
+        "move(Lnet/minecraft/entity/MoverType;DDD)V": "Lnet/minecraft/client/entity/EntityPlayerSP;func_70091_d(Lnet/minecraft/entity/MoverType;DDD)V"
+      },
       "rina/turok/bope/mixins/BopeMixinRenderPlayer": {
         "renderEntityName": "Lnet/minecraft/client/renderer/entity/RenderPlayer;func_188296_a(Lnet/minecraft/client/entity/AbstractClientPlayer;DDDLjava/lang/String;D)V"
       },
@@ -94,17 +87,9 @@
         "orientCamera": "Lnet/minecraft/client/renderer/EntityRenderer;func_78467_g(F)V",
         "getMouseOver": "Lnet/minecraft/client/renderer/EntityRenderer;func_78473_a(F)V"
       },
-      "rina/turok/bope/mixins/BopeMixinPlayerControllerMP": {
-        "onPlayerDamageBlock": "Lnet/minecraft/client/multiplayer/PlayerControllerMP;func_180512_c(Lnet/minecraft/util/math/BlockPos;Lnet/minecraft/util/EnumFacing;)Z",
-        "Lnet/minecraft/block/state/IBlockState;getPlayerRelativeBlockHardness(Lnet/minecraft/entity/player/EntityPlayer;Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;)F": "Lnet/minecraft/block/state/IBlockState;func_185903_a(Lnet/minecraft/entity/player/EntityPlayer;Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;)F"
-      },
       "rina/turok/bope/mixins/BopeMixinNetworkManager": {
         "sendPacket(Lnet/minecraft/network/Packet;)V": "Lnet/minecraft/network/NetworkManager;func_179290_a(Lnet/minecraft/network/Packet;)V",
-        "exceptionCaught": "Lnet/minecraft/network/NetworkManager;exceptionCaught(Lio/netty/channel/ChannelHandlerContext;Ljava/lang/Throwable;)V",
         "channelRead0": "Lnet/minecraft/network/NetworkManager;channelRead0(Lio/netty/channel/ChannelHandlerContext;Lnet/minecraft/network/Packet;)V"
-      },
-      "rina/turok/bope/mixins/BopeMixinEntitySP": {
-        "move": "Lnet/minecraft/client/entity/EntityPlayerSP;func_70091_d(Lnet/minecraft/entity/MoverType;DDD)V"
       },
       "rina/turok/bope/mixins/BopeMixinRender": {
         "doRender": "Lnet/minecraft/client/renderer/entity/Render;func_76986_a(Lnet/minecraft/entity/Entity;DDDFF)V"

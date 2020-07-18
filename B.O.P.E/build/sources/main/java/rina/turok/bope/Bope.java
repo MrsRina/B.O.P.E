@@ -15,6 +15,10 @@ import java.text.SimpleDateFormat;
 import java.time.*;
 import java.util.*;
 
+// Zero Alpine.
+import me.zero.alpine.EventManager;
+import me.zero.alpine.EventBus;
+
 // Framework.
 import rina.turok.turok.Turok;
 
@@ -33,9 +37,6 @@ import rina.turok.bope.bopemod.manager.BopeModuleManager;
 import rina.turok.bope.bopemod.manager.BopeFriendManager;
 import rina.turok.bope.bopemod.manager.BopeEventManager;
 import rina.turok.bope.bopemod.manager.BopeHUDManager;
-
-// External.
-import rina.turok.bope.external.BopeEventHandler;
 
 // Data.
 import rina.turok.bope.bopemod.BopeDiscordRichPresence;
@@ -59,6 +60,8 @@ public class Bope {
 	// Master instance.
 	@Mod.Instance
 	private static Bope MASTER;
+
+	public static final EventBus ZERO_ALPINE_EVENT_BUS = new EventManager();
 
 	// Somes arguments like, version, name, space...
 	public static final String BOPE_NAME    = "B.O.P.E";
@@ -124,9 +127,6 @@ public class Bope {
 		init_log(BOPE_NAME);
 
 		send_minecraft_log("Loading packages initializing in main class. [Bope.class]");
-
-		// Init BopeEventHandler.
-		BopeEventHandler.INSTANCE = new BopeEventHandler();
 
 		// Init managers. // systen a bit ant-deobf.
 		setting_manager = new BopeSettingManager("setting");
@@ -271,10 +271,6 @@ public class Bope {
 
 	public static BopeHUDManager get_hud_manager() {
 		return get_instance().hud_manager;
-	}
-
-	public static BopeEventHandler get_event_handler() {
-		return BopeEventHandler.INSTANCE;
 	}
 
 	public static BopeDiscordRichPresence get_rpc() {

@@ -23,9 +23,6 @@ import org.spongepowered.asm.mixin.Mixin;
 // Events.
 import rina.turok.bope.bopemod.events.BopeEventGUIScreen;
 
-// External.
-import rina.turok.bope.external.BopeEventBus;
-
 // Core.
 import rina.turok.bope.Bope;
 
@@ -44,7 +41,7 @@ public class BopeMixinMinecraft {
 	private void displayGuiScreen(GuiScreen guiScreenIn, CallbackInfo info) {
 		BopeEventGUIScreen guiscreen = new BopeEventGUIScreen(guiScreenIn);
 
-		BopeEventBus.ZERO_ALPINE_EVENT_BUS.post(guiscreen);
+		Bope.ZERO_ALPINE_EVENT_BUS.post(guiscreen);
 	}
 
 	@Inject(method = "shutdown", at = @At("HEAD"))

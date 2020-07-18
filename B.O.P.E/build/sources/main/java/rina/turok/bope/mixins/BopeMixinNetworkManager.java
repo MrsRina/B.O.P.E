@@ -15,10 +15,6 @@ import java.io.IOException;
 // Events.
 import rina.turok.bope.bopemod.events.BopeEventPacket;
 
-// External.
-import rina.turok.bope.external.BopeNoPacketKick;
-import rina.turok.bope.external.BopeEventBus;
-
 // Core.
 import rina.turok.bope.Bope;
 
@@ -38,7 +34,7 @@ public class BopeMixinNetworkManager {
 	private void receive(ChannelHandlerContext context, Packet<?> packet, CallbackInfo callback) {
 		BopeEventPacket event_packet = new BopeEventPacket.ReceivePacket(packet);
 
-		BopeEventBus.ZERO_ALPINE_EVENT_BUS.post(event_packet);
+		Bope.ZERO_ALPINE_EVENT_BUS.post(event_packet);
 
 		if (event_packet.isCancelled()) {
 			callback.cancel();
@@ -50,17 +46,9 @@ public class BopeMixinNetworkManager {
 	private void send(Packet<?> packet, CallbackInfo callback) {
 		BopeEventPacket event_packet = new BopeEventPacket.SendPacket(packet);
 
-		BopeEventBus.ZERO_ALPINE_EVENT_BUS.post(event_packet);
+		Bope.ZERO_ALPINE_EVENT_BUS.post(event_packet);
 
 		if (event_packet.isCancelled()) {
-			callback.cancel();
-		}
-	}
-
-	// Exception packet.
-	@Inject(method = "exceptionCaught", at = @At("HEAD"), cancellable = true)
-	private void exception(ChannelHandlerContext exc, Throwable exc_, CallbackInfo callback) {
-		if (exc_ instanceof Exception && BopeNoPacketKick.is_active()) {
 			callback.cancel();
 		}
 	}

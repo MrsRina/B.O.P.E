@@ -13,9 +13,6 @@ import org.spongepowered.asm.mixin.Mixin;
 // Events.
 import rina.turok.bope.bopemod.events.BopeEventEntity;
 
-// External.
-import rina.turok.bope.external.BopeEventBus;
-
 // Core.
 import rina.turok.bope.Bope;
 
@@ -35,7 +32,7 @@ public abstract class BopeMixinEntity {
 	public void velocity(Entity entity, double x, double y, double z) {
 		BopeEventEntity.BopeEventColision event = new BopeEventEntity.BopeEventColision(entity, x, y, z);
 
-		BopeEventBus.ZERO_ALPINE_EVENT_BUS.post(event);
+		Bope.ZERO_ALPINE_EVENT_BUS.post(event);
 
 		if (event.isCancelled()) {
 			return;

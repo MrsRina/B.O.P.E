@@ -146,20 +146,20 @@ public class BopeChatSuffix extends BopeModule {
 		String message = ((CPacketChatMessage) event.get_packet()).getMessage();
 
 		// If is with some caracther.
-		if (message.startsWith("/")  && ignore_prefix) accept_suffix = false;
-		if (message.startsWith("\\") && ignore_prefix) accept_suffix = false;
-		if (message.startsWith("!")  && ignore_prefix) accept_suffix = false;
-		if (message.startsWith(":")  && ignore_prefix) accept_suffix = false;
-		if (message.startsWith(";")  && ignore_prefix) accept_suffix = false;
-		if (message.startsWith(".")  && ignore_prefix) accept_suffix = false;
-		if (message.startsWith(",")  && ignore_prefix) accept_suffix = false;
-		if (message.startsWith("@")  && ignore_prefix) accept_suffix = false;
-		if (message.startsWith("&")  && ignore_prefix) accept_suffix = false;
-		if (message.startsWith("*")  && ignore_prefix) accept_suffix = false;
-		if (message.startsWith("$")  && ignore_prefix) accept_suffix = false;
-		if (message.startsWith("#")  && ignore_prefix) accept_suffix = false;
-		if (message.startsWith("(")  && ignore_prefix) accept_suffix = false;
-		if (message.startsWith(")")  && ignore_prefix) accept_suffix = false;
+		if (message.startsWith("/")  ||
+		    message.startsWith("\\") ||
+		    message.startsWith("!")  ||
+		    message.startsWith(":")  ||
+		    message.startsWith(";")  ||
+		    message.startsWith(".")  ||
+		    message.startsWith(",")  ||
+		    message.startsWith("@")  ||
+		    message.startsWith("&")  ||
+		    message.startsWith("*")  ||
+		    message.startsWith("$")  ||
+		    message.startsWith("#")  ||
+		    message.startsWith("(")  ||
+		    message.startsWith(")")  && ignore_prefix) accept_suffix = false;
 
 		// Compare the values type.
 		if (type.in("Default")) {

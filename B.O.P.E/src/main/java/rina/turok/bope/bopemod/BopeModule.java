@@ -21,9 +21,6 @@ import rina.turok.bope.bopemod.hacks.BopeCategory;
 // Guiscreen.
 import rina.turok.bope.bopemod.guiscreen.settings.BopeSetting;
 
-// External:
-import rina.turok.bope.external.BopeEventBus;
-
 // Core.
 import rina.turok.bope.Bope;
 
@@ -157,7 +154,7 @@ public class BopeModule {
 
 		disable();
 
-		BopeEventBus.ZERO_ALPINE_EVENT_BUS.unsubscribe(this);
+		Bope.ZERO_ALPINE_EVENT_BUS.unsubscribe(this);
 
 		// :)!
 		this.stage_primitive = false;
@@ -169,7 +166,7 @@ public class BopeModule {
 
 		enable();
 
-		BopeEventBus.ZERO_ALPINE_EVENT_BUS.subscribe(this);
+		Bope.ZERO_ALPINE_EVENT_BUS.subscribe(this);
 
 		// :)!
 		this.stage_primitive = false;

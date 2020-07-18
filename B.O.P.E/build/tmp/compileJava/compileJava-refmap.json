@@ -25,6 +25,9 @@
     "rina/turok/bope/mixins/BopeMixinEntitySP": {
       "move": "Lnet/minecraft/client/entity/EntityPlayerSP;func_70091_d(Lnet/minecraft/entity/MoverType;DDD)V"
     },
+    "rina/turok/bope/mixins/BopeMixinRender": {
+      "doRender": "Lnet/minecraft/client/renderer/entity/Render;func_76986_a(Lnet/minecraft/entity/Entity;DDDFF)V"
+    },
     "rina/turok/bope/mixins/BopeMixinMinecraft": {
       "Lnet/minecraft/client/Minecraft;displayCrashReport(Lnet/minecraft/crash/CrashReport;)V": "Lnet/minecraft/client/Minecraft;func_71377_b(Lnet/minecraft/crash/CrashReport;)V",
       "run": "Lnet/minecraft/client/Minecraft;func_99999_d()V",
@@ -63,6 +66,9 @@
       "rina/turok/bope/mixins/BopeMixinEntitySP": {
         "move": "Lbud;a(Lvv;DDD)V"
       },
+      "rina/turok/bope/mixins/BopeMixinRender": {
+        "doRender": "Lbzg;a(Lvg;DDDFF)V"
+      },
       "rina/turok/bope/mixins/BopeMixinMinecraft": {
         "Lnet/minecraft/client/Minecraft;displayCrashReport(Lnet/minecraft/crash/CrashReport;)V": "Lbib;c(Lb;)V",
         "run": "Lbib;a()V",
@@ -99,6 +105,9 @@
       },
       "rina/turok/bope/mixins/BopeMixinEntitySP": {
         "move": "Lnet/minecraft/client/entity/EntityPlayerSP;func_70091_d(Lnet/minecraft/entity/MoverType;DDD)V"
+      },
+      "rina/turok/bope/mixins/BopeMixinRender": {
+        "doRender": "Lnet/minecraft/client/renderer/entity/Render;func_76986_a(Lnet/minecraft/entity/Entity;DDDFF)V"
       },
       "rina/turok/bope/mixins/BopeMixinMinecraft": {
         "Lnet/minecraft/client/Minecraft;displayCrashReport(Lnet/minecraft/crash/CrashReport;)V": "Lnet/minecraft/client/Minecraft;func_71377_b(Lnet/minecraft/crash/CrashReport;)V",

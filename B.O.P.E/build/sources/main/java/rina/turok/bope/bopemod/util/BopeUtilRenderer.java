@@ -53,7 +53,7 @@ import rina.turok.turok.draw.TurokRenderHelp;
 public class BopeUtilRenderer {
 	public static final Minecraft mc = Minecraft.getMinecraft();
 
-	public static void EntityPlayerCSGOESP(Entity entities, int r, int g, int b, int a) {
+	public static void EntityCSGOESP(Entity entities, int r, int g, int b, int a) {
 		if (mc.world != null && mc.getRenderManager().options != null) {
 			boolean is_third_person_view = mc.getRenderManager().options.thirdPersonView == 2;
 
@@ -113,7 +113,7 @@ public class BopeUtilRenderer {
 		}
 	}
 
-	public static void EntityPlayerRectESP(Entity entities, int r, int g, int b, int a) {
+	public static void EntityRectESP(Entity entities, int r, int g, int b, int a) {
 		if (mc.world != null && mc.getRenderManager().options != null) {
 			boolean is_third_person_view = mc.getRenderManager().options.thirdPersonView == 2;
 
@@ -151,5 +151,9 @@ public class BopeUtilRenderer {
 
 			glColor4f(1, 1, 1, 1);
 		}
+	}
+
+	public static void EntityTracerESP(Entity entities, int r, int g, int b, int a) {
+		if (mc.world != null && mc.getRenderManager().options != null) {}
 	}
 }

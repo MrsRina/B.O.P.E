@@ -102,6 +102,7 @@ public class BopeModuleManager {
 		add_module(new BopeHighlight());
 		add_module(new BopeHoleColor());
 		add_module(new BopePlayerESP());
+		add_module(new BopeEntityESP());
 		add_module(new BopeNameTag());
 
 		// System.

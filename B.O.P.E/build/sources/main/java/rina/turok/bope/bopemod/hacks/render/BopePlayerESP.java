@@ -83,17 +83,17 @@ public class BopePlayerESP extends BopeModule {
 
 			if (render_2.in("CSGO")) {
 				if (Bope.get_friend_manager().is_friend(player_entities.getName())) {
-					BopeUtilRenderer.EntityPlayerCSGOESP((Entity) entities, Bope.client_r, Bope.client_g, Bope.client_b, Math.round(mc.player.getDistance(entities) * 25.5f));
+					BopeUtilRenderer.EntityCSGOESP((Entity) entities, Bope.client_r, Bope.client_g, Bope.client_b, Math.round(mc.player.getDistance(entities) * 25.5f));
 				} else {
-					BopeUtilRenderer.EntityPlayerCSGOESP((Entity) entities, 190, 190, 190, Math.round(mc.player.getDistance(entities) * 25.5f));
+					BopeUtilRenderer.EntityCSGOESP((Entity) entities, 190, 190, 190, Math.round(mc.player.getDistance(entities) * 25.5f));
 				}
 			}
 
 			if (render_2.in("Rect")) {
 				if (Bope.get_friend_manager().is_friend(player_entities.getName())) {
-					BopeUtilRenderer.EntityPlayerRectESP((Entity) entities, Bope.client_r, Bope.client_g, Bope.client_b, Math.round(mc.player.getDistance(entities) * 25.5f));
+					BopeUtilRenderer.EntityRectESP((Entity) entities, Bope.client_r, Bope.client_g, Bope.client_b, Math.round(mc.player.getDistance(entities) * 25.5f));
 				} else {
-					BopeUtilRenderer.EntityPlayerRectESP((Entity) entities, 190, 190, 190, Math.round(mc.player.getDistance(entities) * 25.5f));
+					BopeUtilRenderer.EntityRectESP((Entity) entities, 190, 190, 190, Math.round(mc.player.getDistance(entities) * 25.5f));
 				}
 			}
 		});

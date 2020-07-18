@@ -3,12 +3,14 @@ package rina.turok.bope.bopemod.hacks.render;
 import net.minecraft.client.renderer.vertex.DefaultVertexFormats;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.entity.player.InventoryPlayer;
+import net.minecraft.entity.item.EntityEnderCrystal;
 import com.mojang.realmsclient.gui.ChatFormatting;
 import net.minecraft.client.renderer.RenderHelper;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.entity.passive.EntityAnimal;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.EntityLivingBase;
+import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.monster.IMob;
 import net.minecraft.client.renderer.*;
 import net.minecraft.util.math.Vec3d;
@@ -47,21 +49,24 @@ import rina.turok.bope.Bope;
 * 05/06/2020.
 *
 */
-public class BopePlayerESP extends BopeModule {
-	BopeSetting render_1 = create("Render Entity", "PlayerESPRenderEntity", "Chams", combobox("Chams", "Outline", "Disabled"));
-	BopeSetting render_2 = create("Render Entity 2D", "PlayerESPRenderEntity2D", "CSGO", combobox("CSGO", "Rect", "Disabled"));
-	BopeSetting disp     = create("Distance Render", "PlayerESPDistanceRender", 6, 0, 10);
-	BopeSetting range    = create("Range", "PlayerESPRange", 200, 0, 200);
+public class BopeEntityESP extends BopeModule {
+	BopeSetting hostile  = create("Hostile", "EntityESPHostile", true);
+	BopeSetting pigs_ani = create("Animals & Pigies", "EntityESPAnimals", true);
+	BopeSetting crystal  = create("Crystals", "EntityESPCrystal", true);
+	BopeSetting item     = create("Items", "EntityESPItems", true);
+	BopeSetting render_1 = create("Render Entity", "EntityESPRenderEntity", "Chams", combobox("Chams", "Outline", "Disabled"));
+	BopeSetting disp     = create("Distance Render", "EntityESPDistanceRender", 6, 0, 10);
+	BopeSetting range    = create("Range", "EntityESPRange", 200, 0, 200);
 
 	public static float distance_player = 0.0f;
 
-	public BopePlayerESP() {
+	public BopeEntityESP() {
 		super(BopeCategory.BOPE_RENDER);
 
 		// Info.
-		this.name        = "Player ESP";
-		this.tag         = "PlayerESP";
-		this.description = "Player ESP - Extra Sensory Perception.";
+		this.name        = "Entity ESP";
+		this.tag         = "EntityESP";
+		this.description = "Entity ESP - Extra Sensory Perception.";
 
 		// Release or launch the module.
 		release("B.O.P.E - Module - B.O.P.E");	
@@ -74,28 +79,12 @@ public class BopePlayerESP extends BopeModule {
 		/* inaRinaRinaRinaRin */ .filter(entity -> entity != mc.player)
 		/* inaRinaRinaRinaRin */ .map(entity -> (EntityLivingBase) entity)
 		/* inaRinaRinaRinaRin */ .filter(entity -> !entity.isDead)
-		/* inaRinaRinaRinaRin */ .filter(entity -> entity instanceof EntityPlayer)
+		/* inaRinaRinaRinaRin */ .filter(entity -> (entity instanceof IMob && hostile.get_value(true)) || (entity instanceof EntityAnimal && pigs_ani.get_value(true))) //|| (entity instanceof EntityEnderCrystal && crystal.get_value(true)) || (entity instanceof EntityItem && item.get_value(true)))
 		/* inaRinaRinaRinaRin */ .filter(entity -> mc.player.getDistance(entity) < (range.get_value(1)))
 		/* inaRinaRinaRinaRin */ .filter(entity -> distance_player > disp.get_value(1))
 		/* inaRinaRinaRinaRin */ .sorted(Comparator.comparing(entity -> -mc.player.getDistance(entity)))
 		/* inaRinaRinaRinaRin */ .forEach(entities -> {
-			EntityPlayer player_entities = (EntityPlayer) entities;
 
-			if (render_2.in("CSGO")) {
-				if (Bope.get_friend_manager().is_friend(player_entities.getName())) {
-					BopeUtilRenderer.EntityCSGOESP((Entity) entities, Bope.client_r, Bope.client_g, Bope.client_b, Math.round(mc.player.getDistance(entities) * 25.5f));
-				} else {
-					BopeUtilRenderer.EntityCSGOESP((Entity) entities, 190, 190, 190, Math.round(mc.player.getDistance(entities) * 25.5f));
-				}
-			}
-
-			if (render_2.in("Rect")) {
-				if (Bope.get_friend_manager().is_friend(player_entities.getName())) {
-					BopeUtilRenderer.EntityRectESP((Entity) entities, Bope.client_r, Bope.client_g, Bope.client_b, Math.round(mc.player.getDistance(entities) * 25.5f));
-				} else {
-					BopeUtilRenderer.EntityRectESP((Entity) entities, 190, 190, 190, Math.round(mc.player.getDistance(entities) * 25.5f));
-				}
-			}
 		});
 	}
 }

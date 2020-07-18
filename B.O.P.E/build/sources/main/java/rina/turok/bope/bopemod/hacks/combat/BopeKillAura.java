@@ -93,11 +93,11 @@ public class BopeKillAura extends BopeModule {
 				}
 
 				if (esp.in("CSGO")) {
-					BopeUtilRenderer.EntityPlayerCSGOESP((Entity) entity, 190, 190, 190, Math.round(mc.player.getDistance(entity) * 25.5f));
+					BopeUtilRenderer.EntityCSGOESP((Entity) entity, 190, 190, 190, Math.round(mc.player.getDistance(entity) * 25.5f));
 				}
 
 				if (esp.in("Rect")) {
-					BopeUtilRenderer.EntityPlayerRectESP((Entity) entity, 190, 190, 190, Math.round(mc.player.getDistance(entity) * 25.5f));
+					BopeUtilRenderer.EntityRectESP((Entity) entity, 190, 190, 190, Math.round(mc.player.getDistance(entity) * 25.5f));
 				}
 
 				attack_entity(entity);

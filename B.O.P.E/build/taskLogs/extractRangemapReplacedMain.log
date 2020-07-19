@@ -1,8 +1,8 @@
 Unsupposrted library path: C:\Users\SrRina\Documents\B.O.P.E\B.O.P.E\build\classes\api
 Unsupposrted library path: C:\Users\SrRina\Documents\B.O.P.E\B.O.P.E\build\resources\api
 Symbol range map extraction starting
-Processing 129 files
-startProcessing "rina/turok/bope/Bope.java" md5: 5572add42d6fea33ca62bad6580f3267
+Processing 130 files
+startProcessing "rina/turok/bope/Bope.java" md5: ef11cddaeb3b725fc89b9fff9a239ad7
 endProcessing "rina/turok/bope/Bope.java"
 
 startProcessing "rina/turok/bope/BopeEventRegister.java" md5: fe9c6818b1598ca2e7eb75c65e94031a
@@ -113,7 +113,7 @@ endProcessing "rina/turok/bope/bopemod/guiscreen/hud/BopeInventoryPreview.java"
 startProcessing "rina/turok/bope/bopemod/guiscreen/hud/BopeNotifyClient.java" md5: 9847d3ae6d4643fbbcaf0832ea3aa604
 endProcessing "rina/turok/bope/bopemod/guiscreen/hud/BopeNotifyClient.java"
 
-startProcessing "rina/turok/bope/bopemod/guiscreen/hud/BopeServerInfo.java" md5: cd93c9c898f30cd714118da7752d6fba
+startProcessing "rina/turok/bope/bopemod/guiscreen/hud/BopeServerInfo.java" md5: 5cc7c766dd5b2d2c2e328fea9026943b
 endProcessing "rina/turok/bope/bopemod/guiscreen/hud/BopeServerInfo.java"
 
 startProcessing "rina/turok/bope/bopemod/guiscreen/hud/BopeSurroundPreview.java" md5: f99de0c4cdd387b6d2669933afbbda1c
@@ -215,7 +215,7 @@ endProcessing "rina/turok/bope/bopemod/hacks/combat/BopeAutoReplace.java"
 startProcessing "rina/turok/bope/bopemod/hacks/combat/BopeAutoTotem.java" md5: 4836ea7fec2784168d54bfddb32fbdd1
 endProcessing "rina/turok/bope/bopemod/hacks/combat/BopeAutoTotem.java"
 
-startProcessing "rina/turok/bope/bopemod/hacks/combat/BopeCriticals.java" md5: 128249df9fc90f4e5c2fdaf9d824e931
+startProcessing "rina/turok/bope/bopemod/hacks/combat/BopeCriticals.java" md5: cf1624216f20db6af0aa688c26c2f15e
 endProcessing "rina/turok/bope/bopemod/hacks/combat/BopeCriticals.java"
 
 startProcessing "rina/turok/bope/bopemod/hacks/combat/BopeFastUtil.java" md5: 6e9255bf571b90ab194415dcbd813ddb
@@ -325,6 +325,9 @@ endProcessing "rina/turok/bope/bopemod/util/BopeUtilRenderer.java"
 
 startProcessing "rina/turok/bope/external/BopeEventCancellable.java" md5: bd94263ed347874e835d7a4fe99c56d9
 endProcessing "rina/turok/bope/external/BopeEventCancellable.java"
+
+startProcessing "rina/turok/bope/external/BopeEventHandler.java" md5: 104ae603d836c1bdae8c4104300fa028
+endProcessing "rina/turok/bope/external/BopeEventHandler.java"
 
 startProcessing "rina/turok/bope/mixins/BopeMixinEntity.java" md5: 5e0bd619988f88106252405fad6faccc
 endProcessing "rina/turok/bope/mixins/BopeMixinEntity.java"

@@ -42,6 +42,9 @@ import rina.turok.bope.bopemod.manager.BopeHUDManager;
 import rina.turok.bope.bopemod.BopeDiscordRichPresence;
 import rina.turok.bope.bopemod.BopeMessage;
 
+// External.
+import rina.turok.bope.external.BopeEventHandler;
+
 // Core.
 import rina.turok.bope.BopeEventRegister;
 
@@ -127,6 +130,9 @@ public class Bope {
 		init_log(BOPE_NAME);
 
 		send_minecraft_log("Loading packages initializing in main class. [Bope.class]");
+
+		// Init BopeEventHandler.
+		BopeEventHandler.INSTANCE = new BopeEventHandler();
 
 		// Init managers. // systen a bit ant-deobf.
 		setting_manager = new BopeSettingManager("setting");
@@ -275,6 +281,10 @@ public class Bope {
 
 	public static BopeDiscordRichPresence get_rpc() {
 		return get_instance().discord_rpc;
+	}
+
+	public static BopeEventHandler get_event_handler() {
+		return BopeEventHandler.INSTANCE;
 	}
 
 	public static Turok get_turok() {

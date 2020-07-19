@@ -2,6 +2,7 @@ package rina.turok.bope.bopemod.hacks.combat;
 
 import net.minecraft.network.play.client.CPacketUseEntity;
 import net.minecraft.network.play.client.CPacketPlayer;
+import net.minecraft.entity.EntityLivingBase;
 
 // Zero alpine manager.
 import me.zero.alpine.listener.EventHandler;
@@ -48,7 +49,9 @@ public class BopeCriticals extends BopeModule {
 	@EventHandler
 	private Listener<BopeEventPacket.SendPacket> listener = new Listener<>(event -> {
 		if (event.get_packet() instanceof CPacketUseEntity) {
-			if (((CPacketUseEntity) event.get_packet()).getAction() == CPacketUseEntity.Action.ATTACK && mc.player.onGround) {
+			CPacketUseEntity packet = (CPacketUseEntity) event.get_packet();
+
+			if (packet.getAction() == CPacketUseEntity.Action.ATTACK && mc.player.onGround && !mc.gameSettings.keyBindJump.isKeyDown() && packet.getEntityFromWorld(mc.world) instanceof EntityLivingBase) {
 				if (event_mode.in("Packet")) {
 					mc.player.connection.sendPacket(new CPacketPlayer.Position(mc.player.posX, mc.player.posY + 0.1f, mc.player.posZ, false));
 					mc.player.connection.sendPacket(new CPacketPlayer.Position(mc.player.posX, mc.player.posY, mc.player.posZ, false));

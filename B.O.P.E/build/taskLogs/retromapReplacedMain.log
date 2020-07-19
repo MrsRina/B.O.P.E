@@ -1,12 +1,12 @@
-Processing 129 files
+Processing 130 files
 Start Processing: rina/turok/bope/Bope.java
 New Key: class net/minecraftforge/fml/common/Mod
 New Key: class net/minecraftforge/fml/common/Mod
-Rename method net/minecraft/client/Minecraft/getMinecraft ()Lnet/minecraft/client/Minecraft;[7487,7499]::getMinecraft->func_71410_x
-Rename field net/minecraft/client/Minecraft/player[7502,7508]::player->field_71439_g
-Rename method net/minecraft/client/Minecraft/getMinecraft ()Lnet/minecraft/client/Minecraft;[7559,7571]::getMinecraft->func_71410_x
-Rename field net/minecraft/client/Minecraft/player[7574,7580]::player->field_71439_g
-Rename method net/minecraft/command/ICommandSender/getName ()Ljava/lang/String;[7588,7595]::getName->func_70005_c_
+Rename method net/minecraft/client/Minecraft/getMinecraft ()Lnet/minecraft/client/Minecraft;[7634,7646]::getMinecraft->func_71410_x
+Rename field net/minecraft/client/Minecraft/player[7649,7655]::player->field_71439_g
+Rename method net/minecraft/client/Minecraft/getMinecraft ()Lnet/minecraft/client/Minecraft;[7706,7718]::getMinecraft->func_71410_x
+Rename field net/minecraft/client/Minecraft/player[7721,7727]::player->field_71439_g
+Rename method net/minecraft/command/ICommandSender/getName ()Ljava/lang/String;[7735,7742]::getName->func_70005_c_
 Import: net.minecraftforge.fml.common.event.FMLInitializationEvent
 Import: com.mojang.realmsclient.gui.ChatFormatting
 Import: net.minecraftforge.fml.common.Mod
@@ -18,7 +18,7 @@ Import: org.lwjgl.input.Keyboard
 Import: java.text.SimpleDateFormat
 Import: java.time.*
 Import: java.util.*
-Adding 14 imports
+Adding 15 imports
         me.zero.alpine.EventBus
         me.zero.alpine.EventManager
         rina.turok.bope.bopemod.BopeDiscordRichPresence
@@ -32,6 +32,7 @@ Adding 14 imports
         rina.turok.bope.bopemod.manager.BopeHUDManager
         rina.turok.bope.bopemod.manager.BopeModuleManager
         rina.turok.bope.bopemod.manager.BopeSettingManager
+        rina.turok.bope.external.BopeEventHandler
         rina.turok.turok.Turok
 End  Processing: rina/turok/bope/Bope.java
 
@@ -557,7 +558,8 @@ Rename method net/minecraft/client/Minecraft/getCurrentServerData ()Lnet/minecra
 Rename method net/minecraft/client/Minecraft/getCurrentServerData ()Lnet/minecraft/client/multiplayer/ServerData;[593,613]::getCurrentServerData->func_147104_D
 Rename field net/minecraft/client/multiplayer/ServerData/pingToServer[609,621]::pingToServer->field_78844_e
 Import: com.mojang.realmsclient.gui.ChatFormatting
-Adding 1 imports
+Adding 2 imports
+        rina.turok.bope.Bope
         rina.turok.bope.bopemod.guiscreen.render.pinnables.BopePinnable
 End  Processing: rina/turok/bope/bopemod/guiscreen/hud/BopeServerInfo.java
 
@@ -1379,34 +1381,40 @@ End  Processing: rina/turok/bope/bopemod/hacks/combat/BopeAutoTotem.java
 Start Processing: rina/turok/bope/bopemod/hacks/combat/BopeCriticals.java
 FOUND CONSTR method rina/turok/bope/bopemod/hacks/combat/BopeCriticals/BopeCriticals ()V rina/turok/bope/bopemod/hacks/combat/BopeCriticals
 New Key: class rina/turok/bope/bopemod/events/BopeEventPacket
-Rename method net/minecraft/network/play/client/CPacketUseEntity/getAction ()Lnet/minecraft/network/play/client/CPacketUseEntity$Action;[1360,1369]::getAction->func_149565_c
+Rename method net/minecraft/network/play/client/CPacketUseEntity/getAction ()Lnet/minecraft/network/play/client/CPacketUseEntity$Action;[1445,1454]::getAction->func_149565_c
 New Key: class net/minecraft/network/play/client/CPacketUseEntity
-Rename field net/minecraft/client/Minecraft/player[1416,1422]::player->field_71439_g
-Rename field net/minecraft/entity/Entity/onGround[1430,1438]::onGround->field_70122_E
-Rename field net/minecraft/client/Minecraft/player[1492,1498]::player->field_71439_g
-Rename field net/minecraft/client/entity/EntityPlayerSP/connection[1506,1516]::connection->field_71174_a
-Rename method net/minecraft/client/network/NetHandlerPlayClient/sendPacket (Lnet/minecraft/network/Packet;)V[1520,1530]::sendPacket->func_147297_a
+Rename field net/minecraft/client/Minecraft/player[1501,1507]::player->field_71439_g
+Rename field net/minecraft/entity/Entity/onGround[1515,1523]::onGround->field_70122_E
+Rename field net/minecraft/client/Minecraft/gameSettings[1536,1548]::gameSettings->field_71474_y
+Rename field net/minecraft/client/settings/GameSettings/keyBindJump[1550,1561]::keyBindJump->field_74314_A
+Rename method net/minecraft/client/settings/KeyBinding/isKeyDown ()Z[1564,1573]::isKeyDown->func_151470_d
+Rename method net/minecraft/network/play/client/CPacketUseEntity/getEntityFromWorld (Lnet/minecraft/world/World;)Lnet/minecraft/entity/Entity;[1590,1608]::getEntityFromWorld->func_149564_a
+Rename field net/minecraft/client/Minecraft/world[1607,1612]::world->field_71441_e
+Rename field net/minecraft/client/Minecraft/player[1698,1704]::player->field_71439_g
+Rename field net/minecraft/client/entity/EntityPlayerSP/connection[1712,1722]::connection->field_71174_a
+Rename method net/minecraft/client/network/NetHandlerPlayClient/sendPacket (Lnet/minecraft/network/Packet;)V[1726,1736]::sendPacket->func_147297_a
 New Key: class net/minecraft/network/play/client/CPacketPlayer
-Rename field net/minecraft/client/Minecraft/player[1564,1570]::player->field_71439_g
-Rename field net/minecraft/entity/Entity/posX[1578,1582]::posX->field_70165_t
-Rename field net/minecraft/client/Minecraft/player[1596,1602]::player->field_71439_g
-Rename field net/minecraft/entity/Entity/posY[1610,1614]::posY->field_70163_u
-Rename field net/minecraft/client/Minecraft/player[1635,1641]::player->field_71439_g
-Rename field net/minecraft/entity/Entity/posZ[1649,1653]::posZ->field_70161_v
-Rename field net/minecraft/client/Minecraft/player[1682,1688]::player->field_71439_g
-Rename field net/minecraft/client/entity/EntityPlayerSP/connection[1696,1706]::connection->field_71174_a
-Rename method net/minecraft/client/network/NetHandlerPlayClient/sendPacket (Lnet/minecraft/network/Packet;)V[1710,1720]::sendPacket->func_147297_a
+Rename field net/minecraft/client/Minecraft/player[1770,1776]::player->field_71439_g
+Rename field net/minecraft/entity/Entity/posX[1784,1788]::posX->field_70165_t
+Rename field net/minecraft/client/Minecraft/player[1802,1808]::player->field_71439_g
+Rename field net/minecraft/entity/Entity/posY[1816,1820]::posY->field_70163_u
+Rename field net/minecraft/client/Minecraft/player[1841,1847]::player->field_71439_g
+Rename field net/minecraft/entity/Entity/posZ[1855,1859]::posZ->field_70161_v
+Rename field net/minecraft/client/Minecraft/player[1888,1894]::player->field_71439_g
+Rename field net/minecraft/client/entity/EntityPlayerSP/connection[1902,1912]::connection->field_71174_a
+Rename method net/minecraft/client/network/NetHandlerPlayClient/sendPacket (Lnet/minecraft/network/Packet;)V[1916,1926]::sendPacket->func_147297_a
 New Key: class net/minecraft/network/play/client/CPacketPlayer
-Rename field net/minecraft/client/Minecraft/player[1754,1760]::player->field_71439_g
-Rename field net/minecraft/entity/Entity/posX[1768,1772]::posX->field_70165_t
-Rename field net/minecraft/client/Minecraft/player[1786,1792]::player->field_71439_g
-Rename field net/minecraft/entity/Entity/posY[1800,1804]::posY->field_70163_u
-Rename field net/minecraft/client/Minecraft/player[1818,1824]::player->field_71439_g
-Rename field net/minecraft/entity/Entity/posZ[1832,1836]::posZ->field_70161_v
-Rename field net/minecraft/client/Minecraft/player[1906,1912]::player->field_71439_g
-Rename method net/minecraft/entity/EntityLivingBase/jump ()V[1920,1924]::jump->func_70664_aZ
+Rename field net/minecraft/client/Minecraft/player[1960,1966]::player->field_71439_g
+Rename field net/minecraft/entity/Entity/posX[1974,1978]::posX->field_70165_t
+Rename field net/minecraft/client/Minecraft/player[1992,1998]::player->field_71439_g
+Rename field net/minecraft/entity/Entity/posY[2006,2010]::posY->field_70163_u
+Rename field net/minecraft/client/Minecraft/player[2024,2030]::player->field_71439_g
+Rename field net/minecraft/entity/Entity/posZ[2038,2042]::posZ->field_70161_v
+Rename field net/minecraft/client/Minecraft/player[2112,2118]::player->field_71439_g
+Rename method net/minecraft/entity/EntityLivingBase/jump ()V[2126,2130]::jump->func_70664_aZ
 Import: net.minecraft.network.play.client.CPacketUseEntity
 Import: net.minecraft.network.play.client.CPacketPlayer
+Import: net.minecraft.entity.EntityLivingBase
 Adding 6 imports
         me.zero.alpine.listener.EventHandler
         me.zero.alpine.listener.Listener
@@ -2839,6 +2847,22 @@ Rename method net/minecraft/client/Minecraft/getRenderPartialTicks ()F[384,405]:
 Import: me.zero.alpine.type.Cancellable
 Import: net.minecraft.client.Minecraft
 End  Processing: rina/turok/bope/external/BopeEventCancellable.java
+
+Start Processing: rina/turok/bope/external/BopeEventHandler.java
+New Key: class rina/turok/bope/bopemod/events/BopeEventPacket
+FOUND CONSTR method rina/turok/bope/external/BopeEventHandler/BopeEventHandler ()V rina/turok/bope/external/BopeEventHandler
+Rename method net/minecraft/util/math/MathHelper/clamp (FFF)F[1336,1341]::clamp->func_76131_a
+Rename method net/minecraft/util/math/MathHelper/clamp (FFF)F[1816,1821]::clamp->func_76131_a
+Import: net.minecraft.network.play.server.SPacketTimeUpdate
+Import: net.minecraft.util.math.MathHelper
+Adding 6 imports
+        java.util.Arrays
+        java.util.EventListener
+        me.zero.alpine.listener.EventHandler
+        me.zero.alpine.listener.Listener
+        rina.turok.bope.Bope
+        rina.turok.bope.bopemod.events.BopeEventPacket
+End  Processing: rina/turok/bope/external/BopeEventHandler.java
 
 Start Processing: rina/turok/bope/mixins/BopeMixinEntity.java
 New Key: class rina/turok/bope/bopemod/events/BopeEventEntity

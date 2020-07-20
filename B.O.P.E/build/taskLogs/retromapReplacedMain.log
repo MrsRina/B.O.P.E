@@ -1,4 +1,4 @@
-Processing 130 files
+Processing 131 files
 Start Processing: rina/turok/bope/Bope.java
 New Key: class net/minecraftforge/fml/common/Mod
 New Key: class net/minecraftforge/fml/common/Mod
@@ -1265,47 +1265,47 @@ End  Processing: rina/turok/bope/bopemod/hacks/combat/BopeAutoCrystal.java
 
 Start Processing: rina/turok/bope/bopemod/hacks/combat/BopeAutoGapple.java
 FOUND CONSTR method rina/turok/bope/bopemod/hacks/combat/BopeAutoGapple/BopeAutoGapple ()V rina/turok/bope/bopemod/hacks/combat/BopeAutoGapple
-Rename field net/minecraft/client/Minecraft/player[1914,1920]::player->field_71439_g
-Rename field net/minecraft/client/Minecraft/world[1942,1947]::world->field_71441_e
-Rename field net/minecraft/client/Minecraft/player[2053,2059]::player->field_71439_g
-Rename method net/minecraft/entity/EntityLivingBase/getHealth ()F[2067,2076]::getHealth->func_110143_aJ
-Rename field net/minecraft/client/Minecraft/player[2233,2239]::player->field_71439_g
-Rename field net/minecraft/entity/player/EntityPlayer/inventory[2247,2256]::inventory->field_71071_by
-Rename field net/minecraft/entity/player/InventoryPlayer/mainInventory[2262,2275]::mainInventory->field_70462_a
-Rename method net/minecraft/item/ItemStack/getItem ()Lnet/minecraft/item/Item;[2305,2312]::getItem->func_77973_b
-Rename field net/minecraft/init/Items/GOLDEN_APPLE[2329,2341]::GOLDEN_APPLE->field_151153_ao
-Rename method net/minecraft/item/ItemStack/getCount ()I[2366,2374]::getCount->func_190916_E
-Rename field net/minecraft/client/Minecraft/currentScreen[2432,2445]::currentScreen->field_71462_r
-Rename field net/minecraft/client/Minecraft/player[2653,2659]::player->field_71439_g
-Rename field net/minecraft/entity/player/EntityPlayer/inventory[2667,2676]::inventory->field_71071_by
-Rename method net/minecraft/inventory/IInventory/getStackInSlot (I)Lnet/minecraft/item/ItemStack;[2682,2696]::getStackInSlot->func_70301_a
-Rename field net/minecraft/item/ItemStack/isEmpty[2702,2709]::isEmpty->field_190928_g
-Rename field net/minecraft/client/Minecraft/playerController[2861,2877]::playerController->field_71442_b
-Rename method net/minecraft/client/multiplayer/PlayerControllerMP/windowClick (IIILnet/minecraft/inventory/ClickType;Lnet/minecraft/entity/player/EntityPlayer;)Lnet/minecraft/item/ItemStack;[2875,2886]::windowClick->func_187098_a
-Rename field net/minecraft/client/Minecraft/player[2954,2960]::player->field_71439_g
-Rename field net/minecraft/client/Minecraft/player[3017,3023]::player->field_71439_g
-Rename method net/minecraft/entity/EntityLivingBase/getHeldItemOffhand ()Lnet/minecraft/item/ItemStack;[3031,3049]::getHeldItemOffhand->func_184592_cb
-Rename method net/minecraft/item/ItemStack/getItem ()Lnet/minecraft/item/Item;[3048,3055]::getItem->func_77973_b
-Rename field net/minecraft/init/Items/GOLDEN_APPLE[3072,3084]::GOLDEN_APPLE->field_151153_ao
-Rename field net/minecraft/client/Minecraft/playerController[3124,3140]::playerController->field_71442_b
-Rename method net/minecraft/client/multiplayer/PlayerControllerMP/windowClick (IIILnet/minecraft/inventory/ClickType;Lnet/minecraft/entity/player/EntityPlayer;)Lnet/minecraft/item/ItemStack;[3138,3149]::windowClick->func_187098_a
-Rename field net/minecraft/client/Minecraft/player[3183,3189]::player->field_71439_g
-Rename field net/minecraft/client/Minecraft/player[3244,3250]::player->field_71439_g
-Rename field net/minecraft/entity/player/EntityPlayer/inventory[3258,3267]::inventory->field_71071_by
-Rename field net/minecraft/entity/player/InventoryPlayer/itemStack[3273,3282]::itemStack->field_70457_g
-Rename method net/minecraft/item/ItemStack/isEmpty ()Z[3287,3294]::isEmpty->func_190926_b
-Rename field net/minecraft/client/Minecraft/player[3378,3384]::player->field_71439_g
-Rename field net/minecraft/entity/player/EntityPlayer/inventory[3392,3401]::inventory->field_71071_by
-Rename field net/minecraft/entity/player/InventoryPlayer/itemStack[3407,3416]::itemStack->field_70457_g
-Rename method net/minecraft/item/ItemStack/isEmpty ()Z[3421,3428]::isEmpty->func_190926_b
-Rename field net/minecraft/client/Minecraft/player[3571,3577]::player->field_71439_g
-Rename field net/minecraft/entity/player/EntityPlayer/inventory[3585,3594]::inventory->field_71071_by
-Rename method net/minecraft/inventory/IInventory/getStackInSlot (I)Lnet/minecraft/item/ItemStack;[3600,3614]::getStackInSlot->func_70301_a
-Rename method net/minecraft/item/ItemStack/getItem ()Lnet/minecraft/item/Item;[3616,3623]::getItem->func_77973_b
-Rename field net/minecraft/init/Items/GOLDEN_APPLE[3640,3652]::GOLDEN_APPLE->field_151153_ao
-Rename field net/minecraft/client/Minecraft/playerController[3787,3803]::playerController->field_71442_b
-Rename method net/minecraft/client/multiplayer/PlayerControllerMP/windowClick (IIILnet/minecraft/inventory/ClickType;Lnet/minecraft/entity/player/EntityPlayer;)Lnet/minecraft/item/ItemStack;[3801,3812]::windowClick->func_187098_a
-Rename field net/minecraft/client/Minecraft/player[3871,3877]::player->field_71439_g
+Rename field net/minecraft/client/Minecraft/player[2346,2352]::player->field_71439_g
+Rename field net/minecraft/client/Minecraft/world[2374,2379]::world->field_71441_e
+Rename field net/minecraft/client/Minecraft/player[2485,2491]::player->field_71439_g
+Rename method net/minecraft/entity/EntityLivingBase/getHealth ()F[2499,2508]::getHealth->func_110143_aJ
+Rename field net/minecraft/client/Minecraft/player[2665,2671]::player->field_71439_g
+Rename field net/minecraft/entity/player/EntityPlayer/inventory[2679,2688]::inventory->field_71071_by
+Rename field net/minecraft/entity/player/InventoryPlayer/mainInventory[2694,2707]::mainInventory->field_70462_a
+Rename method net/minecraft/item/ItemStack/getItem ()Lnet/minecraft/item/Item;[2737,2744]::getItem->func_77973_b
+Rename field net/minecraft/init/Items/GOLDEN_APPLE[2761,2773]::GOLDEN_APPLE->field_151153_ao
+Rename method net/minecraft/item/ItemStack/getCount ()I[2798,2806]::getCount->func_190916_E
+Rename field net/minecraft/client/Minecraft/currentScreen[2864,2877]::currentScreen->field_71462_r
+Rename field net/minecraft/client/Minecraft/player[3085,3091]::player->field_71439_g
+Rename field net/minecraft/entity/player/EntityPlayer/inventory[3099,3108]::inventory->field_71071_by
+Rename method net/minecraft/inventory/IInventory/getStackInSlot (I)Lnet/minecraft/item/ItemStack;[3114,3128]::getStackInSlot->func_70301_a
+Rename field net/minecraft/item/ItemStack/isEmpty[3134,3141]::isEmpty->field_190928_g
+Rename field net/minecraft/client/Minecraft/playerController[3293,3309]::playerController->field_71442_b
+Rename method net/minecraft/client/multiplayer/PlayerControllerMP/windowClick (IIILnet/minecraft/inventory/ClickType;Lnet/minecraft/entity/player/EntityPlayer;)Lnet/minecraft/item/ItemStack;[3307,3318]::windowClick->func_187098_a
+Rename field net/minecraft/client/Minecraft/player[3386,3392]::player->field_71439_g
+Rename field net/minecraft/client/Minecraft/player[3449,3455]::player->field_71439_g
+Rename method net/minecraft/entity/EntityLivingBase/getHeldItemOffhand ()Lnet/minecraft/item/ItemStack;[3463,3481]::getHeldItemOffhand->func_184592_cb
+Rename method net/minecraft/item/ItemStack/getItem ()Lnet/minecraft/item/Item;[3480,3487]::getItem->func_77973_b
+Rename field net/minecraft/init/Items/GOLDEN_APPLE[3504,3516]::GOLDEN_APPLE->field_151153_ao
+Rename field net/minecraft/client/Minecraft/playerController[3556,3572]::playerController->field_71442_b
+Rename method net/minecraft/client/multiplayer/PlayerControllerMP/windowClick (IIILnet/minecraft/inventory/ClickType;Lnet/minecraft/entity/player/EntityPlayer;)Lnet/minecraft/item/ItemStack;[3570,3581]::windowClick->func_187098_a
+Rename field net/minecraft/client/Minecraft/player[3615,3621]::player->field_71439_g
+Rename field net/minecraft/client/Minecraft/player[3676,3682]::player->field_71439_g
+Rename field net/minecraft/entity/player/EntityPlayer/inventory[3690,3699]::inventory->field_71071_by
+Rename field net/minecraft/entity/player/InventoryPlayer/itemStack[3705,3714]::itemStack->field_70457_g
+Rename method net/minecraft/item/ItemStack/isEmpty ()Z[3719,3726]::isEmpty->func_190926_b
+Rename field net/minecraft/client/Minecraft/player[3810,3816]::player->field_71439_g
+Rename field net/minecraft/entity/player/EntityPlayer/inventory[3824,3833]::inventory->field_71071_by
+Rename field net/minecraft/entity/player/InventoryPlayer/itemStack[3839,3848]::itemStack->field_70457_g
+Rename method net/minecraft/item/ItemStack/isEmpty ()Z[3853,3860]::isEmpty->func_190926_b
+Rename field net/minecraft/client/Minecraft/player[4003,4009]::player->field_71439_g
+Rename field net/minecraft/entity/player/EntityPlayer/inventory[4017,4026]::inventory->field_71071_by
+Rename method net/minecraft/inventory/IInventory/getStackInSlot (I)Lnet/minecraft/item/ItemStack;[4032,4046]::getStackInSlot->func_70301_a
+Rename method net/minecraft/item/ItemStack/getItem ()Lnet/minecraft/item/Item;[4048,4055]::getItem->func_77973_b
+Rename field net/minecraft/init/Items/GOLDEN_APPLE[4072,4084]::GOLDEN_APPLE->field_151153_ao
+Rename field net/minecraft/client/Minecraft/playerController[4219,4235]::playerController->field_71442_b
+Rename method net/minecraft/client/multiplayer/PlayerControllerMP/windowClick (IIILnet/minecraft/inventory/ClickType;Lnet/minecraft/entity/player/EntityPlayer;)Lnet/minecraft/item/ItemStack;[4233,4244]::windowClick->func_187098_a
+Rename field net/minecraft/client/Minecraft/player[4303,4309]::player->field_71439_g
 Import: net.minecraft.client.gui.inventory.GuiContainer
 Import: net.minecraft.inventory.ClickType
 Import: net.minecraft.item.ItemStack
@@ -1316,6 +1316,60 @@ Adding 4 imports
         rina.turok.bope.bopemod.guiscreen.settings.BopeSetting
         rina.turok.bope.bopemod.hacks.BopeCategory
 End  Processing: rina/turok/bope/bopemod/hacks/combat/BopeAutoGapple.java
+
+Start Processing: rina/turok/bope/bopemod/hacks/combat/BopeAutoOffHandCrystal.java
+FOUND CONSTR method rina/turok/bope/bopemod/hacks/combat/BopeAutoOffHandCrystal/BopeAutoOffHandCrystal ()V rina/turok/bope/bopemod/hacks/combat/BopeAutoOffHandCrystal
+Rename field net/minecraft/client/Minecraft/player[2391,2397]::player->field_71439_g
+Rename field net/minecraft/client/Minecraft/world[2419,2424]::world->field_71441_e
+Rename field net/minecraft/client/Minecraft/player[2530,2536]::player->field_71439_g
+Rename method net/minecraft/entity/EntityLivingBase/getHealth ()F[2544,2553]::getHealth->func_110143_aJ
+Rename field net/minecraft/client/Minecraft/player[2705,2711]::player->field_71439_g
+Rename field net/minecraft/entity/player/EntityPlayer/inventory[2719,2728]::inventory->field_71071_by
+Rename field net/minecraft/entity/player/InventoryPlayer/mainInventory[2734,2747]::mainInventory->field_70462_a
+Rename method net/minecraft/item/ItemStack/getItem ()Lnet/minecraft/item/Item;[2777,2784]::getItem->func_77973_b
+Rename field net/minecraft/init/Items/GOLDEN_APPLE[2801,2813]::GOLDEN_APPLE->field_151153_ao
+Rename method net/minecraft/item/ItemStack/getCount ()I[2838,2846]::getCount->func_190916_E
+Rename field net/minecraft/client/Minecraft/currentScreen[2904,2917]::currentScreen->field_71462_r
+Rename field net/minecraft/client/Minecraft/player[3126,3132]::player->field_71439_g
+Rename field net/minecraft/entity/player/EntityPlayer/inventory[3140,3149]::inventory->field_71071_by
+Rename method net/minecraft/inventory/IInventory/getStackInSlot (I)Lnet/minecraft/item/ItemStack;[3155,3169]::getStackInSlot->func_70301_a
+Rename field net/minecraft/item/ItemStack/isEmpty[3175,3182]::isEmpty->field_190928_g
+Rename field net/minecraft/client/Minecraft/playerController[3334,3350]::playerController->field_71442_b
+Rename method net/minecraft/client/multiplayer/PlayerControllerMP/windowClick (IIILnet/minecraft/inventory/ClickType;Lnet/minecraft/entity/player/EntityPlayer;)Lnet/minecraft/item/ItemStack;[3348,3359]::windowClick->func_187098_a
+Rename field net/minecraft/client/Minecraft/player[3427,3433]::player->field_71439_g
+Rename field net/minecraft/client/Minecraft/player[3491,3497]::player->field_71439_g
+Rename method net/minecraft/entity/EntityLivingBase/getHeldItemOffhand ()Lnet/minecraft/item/ItemStack;[3505,3523]::getHeldItemOffhand->func_184592_cb
+Rename method net/minecraft/item/ItemStack/getItem ()Lnet/minecraft/item/Item;[3522,3529]::getItem->func_77973_b
+Rename field net/minecraft/init/Items/END_CRYSTAL[3546,3557]::END_CRYSTAL->field_185158_cP
+Rename field net/minecraft/client/Minecraft/playerController[3599,3615]::playerController->field_71442_b
+Rename method net/minecraft/client/multiplayer/PlayerControllerMP/windowClick (IIILnet/minecraft/inventory/ClickType;Lnet/minecraft/entity/player/EntityPlayer;)Lnet/minecraft/item/ItemStack;[3613,3624]::windowClick->func_187098_a
+Rename field net/minecraft/client/Minecraft/player[3658,3664]::player->field_71439_g
+Rename field net/minecraft/client/Minecraft/player[3720,3726]::player->field_71439_g
+Rename field net/minecraft/entity/player/EntityPlayer/inventory[3734,3743]::inventory->field_71071_by
+Rename field net/minecraft/entity/player/InventoryPlayer/itemStack[3749,3758]::itemStack->field_70457_g
+Rename method net/minecraft/item/ItemStack/isEmpty ()Z[3763,3770]::isEmpty->func_190926_b
+Rename field net/minecraft/client/Minecraft/player[3855,3861]::player->field_71439_g
+Rename field net/minecraft/entity/player/EntityPlayer/inventory[3869,3878]::inventory->field_71071_by
+Rename field net/minecraft/entity/player/InventoryPlayer/itemStack[3884,3893]::itemStack->field_70457_g
+Rename method net/minecraft/item/ItemStack/isEmpty ()Z[3898,3905]::isEmpty->func_190926_b
+Rename field net/minecraft/client/Minecraft/player[4049,4055]::player->field_71439_g
+Rename field net/minecraft/entity/player/EntityPlayer/inventory[4063,4072]::inventory->field_71071_by
+Rename method net/minecraft/inventory/IInventory/getStackInSlot (I)Lnet/minecraft/item/ItemStack;[4078,4092]::getStackInSlot->func_70301_a
+Rename method net/minecraft/item/ItemStack/getItem ()Lnet/minecraft/item/Item;[4094,4101]::getItem->func_77973_b
+Rename field net/minecraft/init/Items/END_CRYSTAL[4118,4129]::END_CRYSTAL->field_185158_cP
+Rename field net/minecraft/client/Minecraft/playerController[4265,4281]::playerController->field_71442_b
+Rename method net/minecraft/client/multiplayer/PlayerControllerMP/windowClick (IIILnet/minecraft/inventory/ClickType;Lnet/minecraft/entity/player/EntityPlayer;)Lnet/minecraft/item/ItemStack;[4279,4290]::windowClick->func_187098_a
+Rename field net/minecraft/client/Minecraft/player[4349,4355]::player->field_71439_g
+Import: net.minecraft.client.gui.inventory.GuiContainer
+Import: net.minecraft.inventory.ClickType
+Import: net.minecraft.item.ItemStack
+Import: net.minecraft.init.Items
+Adding 4 imports
+        rina.turok.bope.Bope
+        rina.turok.bope.bopemod.BopeModule
+        rina.turok.bope.bopemod.guiscreen.settings.BopeSetting
+        rina.turok.bope.bopemod.hacks.BopeCategory
+End  Processing: rina/turok/bope/bopemod/hacks/combat/BopeAutoOffHandCrystal.java
 
 Start Processing: rina/turok/bope/bopemod/hacks/combat/BopeAutoReplace.java
 FOUND CONSTR method rina/turok/bope/bopemod/hacks/combat/BopeAutoReplace/BopeAutoReplace ()V rina/turok/bope/bopemod/hacks/combat/BopeAutoReplace
@@ -2397,47 +2451,47 @@ End  Processing: rina/turok/bope/bopemod/manager/BopeHUDManager.java
 Start Processing: rina/turok/bope/bopemod/manager/BopeModuleManager.java
 Rename method net/minecraft/client/Minecraft/getMinecraft ()Lnet/minecraft/client/Minecraft;[1460,1472]::getMinecraft->func_71410_x
 FOUND CONSTR method rina/turok/bope/bopemod/manager/BopeModuleManager/BopeModuleManager (Ljava/lang/String;)V rina/turok/bope/bopemod/manager/BopeModuleManager
-Rename field net/minecraft/entity/Entity/posX[3353,3357]::posX->field_70165_t
-Rename field net/minecraft/entity/Entity/lastTickPosX[3376,3388]::lastTickPosX->field_70142_S
-Rename field net/minecraft/entity/Entity/posY[3407,3411]::posY->field_70163_u
-Rename field net/minecraft/entity/Entity/lastTickPosY[3430,3442]::lastTickPosY->field_70137_T
-Rename field net/minecraft/entity/Entity/posZ[3461,3465]::posZ->field_70161_v
-Rename field net/minecraft/entity/Entity/lastTickPosZ[3484,3496]::lastTickPosZ->field_70136_U
-Rename field net/minecraft/entity/Entity/lastTickPosX[3601,3613]::lastTickPosX->field_70142_S
-Rename field net/minecraft/entity/Entity/lastTickPosY[3623,3635]::lastTickPosY->field_70137_T
-Rename field net/minecraft/entity/Entity/lastTickPosZ[3645,3657]::lastTickPosZ->field_70136_U
-Rename method net/minecraft/util/math/Vec3d/add (Lnet/minecraft/util/math/Vec3d;)Lnet/minecraft/util/math/Vec3d;[3660,3663]::add->func_178787_e
-Rename field net/minecraft/client/Minecraft/profiler[3796,3804]::profiler->field_71424_I
-Rename method net/minecraft/profiler/Profiler/startSection (Ljava/lang/String;)V[3810,3822]::startSection->func_76320_a
-Rename field net/minecraft/client/Minecraft/profiler[3837,3845]::profiler->field_71424_I
-Rename method net/minecraft/profiler/Profiler/startSection (Ljava/lang/String;)V[3851,3863]::startSection->func_76320_a
-Rename method net/minecraft/client/renderer/GlStateManager/disableTexture2D ()V[3892,3908]::disableTexture2D->func_179090_x
-Rename method net/minecraft/client/renderer/GlStateManager/enableBlend ()V[3926,3937]::enableBlend->func_179147_l
-Rename method net/minecraft/client/renderer/GlStateManager/disableAlpha ()V[3960,3972]::disableAlpha->func_179118_c
-Rename method net/minecraft/client/renderer/GlStateManager/tryBlendFuncSeparate (IIII)V[3994,4014]::tryBlendFuncSeparate->func_179120_a
-Rename method net/minecraft/client/renderer/GlStateManager/shadeModel (I)V[4080,4090]::shadeModel->func_179103_j
-Rename method net/minecraft/client/renderer/GlStateManager/disableDepth ()V[4128,4140]::disableDepth->func_179097_i
-Rename method net/minecraft/client/renderer/GlStateManager/glLineWidth (F)V[4163,4174]::glLineWidth->func_187441_d
-Rename field net/minecraft/client/Minecraft/player[4223,4229]::player->field_71439_g
-Rename field net/minecraft/client/Minecraft/profiler[4393,4401]::profiler->field_71424_I
-Rename method net/minecraft/profiler/Profiler/endSection ()V[4407,4417]::endSection->func_76319_b
-Rename field net/minecraft/client/Minecraft/profiler[4512,4520]::profiler->field_71424_I
-Rename method net/minecraft/profiler/Profiler/startSection (Ljava/lang/String;)V[4526,4538]::startSection->func_76320_a
-Rename field net/minecraft/client/Minecraft/profiler[4602,4610]::profiler->field_71424_I
-Rename method net/minecraft/profiler/Profiler/endSection ()V[4616,4626]::endSection->func_76319_b
-Rename field net/minecraft/client/Minecraft/profiler[4647,4655]::profiler->field_71424_I
-Rename method net/minecraft/profiler/Profiler/startSection (Ljava/lang/String;)V[4661,4673]::startSection->func_76320_a
-Rename method net/minecraft/client/renderer/GlStateManager/glLineWidth (F)V[4704,4715]::glLineWidth->func_187441_d
-Rename method net/minecraft/client/renderer/GlStateManager/shadeModel (I)V[4743,4753]::shadeModel->func_179103_j
-Rename method net/minecraft/client/renderer/GlStateManager/disableBlend ()V[4789,4801]::disableBlend->func_179084_k
-Rename method net/minecraft/client/renderer/GlStateManager/enableAlpha ()V[4823,4834]::enableAlpha->func_179141_d
-Rename method net/minecraft/client/renderer/GlStateManager/enableTexture2D ()V[4857,4872]::enableTexture2D->func_179098_w
-Rename method net/minecraft/client/renderer/GlStateManager/enableDepth ()V[4891,4902]::enableDepth->func_179126_j
-Rename method net/minecraft/client/renderer/GlStateManager/enableCull ()V[4925,4935]::enableCull->func_179089_o
-Rename field net/minecraft/client/Minecraft/profiler[4981,4989]::profiler->field_71424_I
-Rename method net/minecraft/profiler/Profiler/endSection ()V[4995,5005]::endSection->func_76319_b
-Rename field net/minecraft/client/Minecraft/profiler[5016,5024]::profiler->field_71424_I
-Rename method net/minecraft/profiler/Profiler/endSection ()V[5030,5040]::endSection->func_76319_b
+Rename field net/minecraft/entity/Entity/posX[3397,3401]::posX->field_70165_t
+Rename field net/minecraft/entity/Entity/lastTickPosX[3420,3432]::lastTickPosX->field_70142_S
+Rename field net/minecraft/entity/Entity/posY[3451,3455]::posY->field_70163_u
+Rename field net/minecraft/entity/Entity/lastTickPosY[3474,3486]::lastTickPosY->field_70137_T
+Rename field net/minecraft/entity/Entity/posZ[3505,3509]::posZ->field_70161_v
+Rename field net/minecraft/entity/Entity/lastTickPosZ[3528,3540]::lastTickPosZ->field_70136_U
+Rename field net/minecraft/entity/Entity/lastTickPosX[3645,3657]::lastTickPosX->field_70142_S
+Rename field net/minecraft/entity/Entity/lastTickPosY[3667,3679]::lastTickPosY->field_70137_T
+Rename field net/minecraft/entity/Entity/lastTickPosZ[3689,3701]::lastTickPosZ->field_70136_U
+Rename method net/minecraft/util/math/Vec3d/add (Lnet/minecraft/util/math/Vec3d;)Lnet/minecraft/util/math/Vec3d;[3704,3707]::add->func_178787_e
+Rename field net/minecraft/client/Minecraft/profiler[3840,3848]::profiler->field_71424_I
+Rename method net/minecraft/profiler/Profiler/startSection (Ljava/lang/String;)V[3854,3866]::startSection->func_76320_a
+Rename field net/minecraft/client/Minecraft/profiler[3881,3889]::profiler->field_71424_I
+Rename method net/minecraft/profiler/Profiler/startSection (Ljava/lang/String;)V[3895,3907]::startSection->func_76320_a
+Rename method net/minecraft/client/renderer/GlStateManager/disableTexture2D ()V[3936,3952]::disableTexture2D->func_179090_x
+Rename method net/minecraft/client/renderer/GlStateManager/enableBlend ()V[3970,3981]::enableBlend->func_179147_l
+Rename method net/minecraft/client/renderer/GlStateManager/disableAlpha ()V[4004,4016]::disableAlpha->func_179118_c
+Rename method net/minecraft/client/renderer/GlStateManager/tryBlendFuncSeparate (IIII)V[4038,4058]::tryBlendFuncSeparate->func_179120_a
+Rename method net/minecraft/client/renderer/GlStateManager/shadeModel (I)V[4124,4134]::shadeModel->func_179103_j
+Rename method net/minecraft/client/renderer/GlStateManager/disableDepth ()V[4172,4184]::disableDepth->func_179097_i
+Rename method net/minecraft/client/renderer/GlStateManager/glLineWidth (F)V[4207,4218]::glLineWidth->func_187441_d
+Rename field net/minecraft/client/Minecraft/player[4267,4273]::player->field_71439_g
+Rename field net/minecraft/client/Minecraft/profiler[4437,4445]::profiler->field_71424_I
+Rename method net/minecraft/profiler/Profiler/endSection ()V[4451,4461]::endSection->func_76319_b
+Rename field net/minecraft/client/Minecraft/profiler[4556,4564]::profiler->field_71424_I
+Rename method net/minecraft/profiler/Profiler/startSection (Ljava/lang/String;)V[4570,4582]::startSection->func_76320_a
+Rename field net/minecraft/client/Minecraft/profiler[4646,4654]::profiler->field_71424_I
+Rename method net/minecraft/profiler/Profiler/endSection ()V[4660,4670]::endSection->func_76319_b
+Rename field net/minecraft/client/Minecraft/profiler[4691,4699]::profiler->field_71424_I
+Rename method net/minecraft/profiler/Profiler/startSection (Ljava/lang/String;)V[4705,4717]::startSection->func_76320_a
+Rename method net/minecraft/client/renderer/GlStateManager/glLineWidth (F)V[4748,4759]::glLineWidth->func_187441_d
+Rename method net/minecraft/client/renderer/GlStateManager/shadeModel (I)V[4787,4797]::shadeModel->func_179103_j
+Rename method net/minecraft/client/renderer/GlStateManager/disableBlend ()V[4833,4845]::disableBlend->func_179084_k
+Rename method net/minecraft/client/renderer/GlStateManager/enableAlpha ()V[4867,4878]::enableAlpha->func_179141_d
+Rename method net/minecraft/client/renderer/GlStateManager/enableTexture2D ()V[4901,4916]::enableTexture2D->func_179098_w
+Rename method net/minecraft/client/renderer/GlStateManager/enableDepth ()V[4935,4946]::enableDepth->func_179126_j
+Rename method net/minecraft/client/renderer/GlStateManager/enableCull ()V[4969,4979]::enableCull->func_179089_o
+Rename field net/minecraft/client/Minecraft/profiler[5025,5033]::profiler->field_71424_I
+Rename method net/minecraft/profiler/Profiler/endSection ()V[5039,5049]::endSection->func_76319_b
+Rename field net/minecraft/client/Minecraft/profiler[5060,5068]::profiler->field_71424_I
+Rename method net/minecraft/profiler/Profiler/endSection ()V[5074,5084]::endSection->func_76319_b
 Import: net.minecraftforge.client.event.RenderWorldLastEvent
 Import: net.minecraft.client.renderer.GlStateManager
 Import: net.minecraft.client.Minecraft
@@ -2446,7 +2500,7 @@ Import: net.minecraft.entity.Entity
 Import: org.lwjgl.opengl.GL11
 Import: java.util.Comparator
 Import: java.util.*
-Adding 37 imports
+Adding 38 imports
         rina.turok.bope.bopemod.BopeModule
         rina.turok.bope.bopemod.events.BopeEventRender
         rina.turok.bope.bopemod.hacks.BopeCategory
@@ -2458,6 +2512,7 @@ Adding 37 imports
         rina.turok.bope.bopemod.hacks.chat.BopeVisualRange
         rina.turok.bope.bopemod.hacks.combat.BopeAutoCrystal
         rina.turok.bope.bopemod.hacks.combat.BopeAutoGapple
+        rina.turok.bope.bopemod.hacks.combat.BopeAutoOffHandCrystal
         rina.turok.bope.bopemod.hacks.combat.BopeAutoTotem
         rina.turok.bope.bopemod.hacks.combat.BopeCriticals
         rina.turok.bope.bopemod.hacks.combat.BopeFastUtil

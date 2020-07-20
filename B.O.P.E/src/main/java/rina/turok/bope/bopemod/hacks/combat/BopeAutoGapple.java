@@ -26,7 +26,8 @@ import rina.turok.bope.Bope;
 *
 */
 public class BopeAutoGapple extends BopeModule {
-	BopeSetting auto_totem_d = create("Disable Auto Totem", "AutoGappleDisableAutoTotem", true);
+	BopeSetting auto_totem_d = create("Disable Totem", "AutoGappleDisableAutoTotem", true);
+	BopeSetting absolute     = create("Absolute Item", "AutoGappleAbsoluteItem", true);
 	BopeSetting slider_smart = create("Smart", "AutoGappleSmart", 2, 1, 18);
 
 	boolean find_gapple = false;
@@ -51,11 +52,11 @@ public class BopeAutoGapple extends BopeModule {
 	public void disable() {
 		// If auto disable totem on, just desactive with the actual value.
 		if (auto_totem_d.get_value(true)) {
-			Bope.get_module_manager().get_module_with_tag("AutoTotem").set_active(!is_active());
+			Bope.get_module_manager().get_module_with_tag("AutoTotem").set_active(true);
 		} else {
 			// If the smast on active totem.
 			if (is_smart_ev) {
-				Bope.get_module_manager().get_module_with_tag("AutoTotem").set_active(!is_active());
+				Bope.get_module_manager().get_module_with_tag("AutoTotem").set_active(true);
 
 				is_smart_ev = false;
 			}
@@ -64,9 +65,14 @@ public class BopeAutoGapple extends BopeModule {
 
 	@Override
 	public void enable() {
+		if ((Bope.get_module_manager().get_module_with_tag("AutoOffhandCrystal").is_active() || Bope.get_module_manager().get_module_with_tag("AutoTotem").is_active()) && absolute.get_value(true)) {
+			Bope.get_module_manager().get_module_with_tag("AutoOffhandCrystal").set_active(false);
+			Bope.get_module_manager().get_module_with_tag("AutoTotem").set_active(false);
+		}
+
 		if (auto_totem_d.get_value(true)) {
 			// Disable auto totem.
-			Bope.get_module_manager().get_module_with_tag("AutoTotem").set_active(!is_active());
+			Bope.get_module_manager().get_module_with_tag("AutoTotem").set_active(false);
 		}
 	}
 

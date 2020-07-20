@@ -69,6 +69,7 @@ public class BopeModuleManager {
 		add_module(new BopeAutoGG());
 
 		// Combat.
+		add_module(new BopeAutoOffHandCrystal());
 		add_module(new BopeAutoCrystal());
 		add_module(new BopeAutoGapple());
 		add_module(new BopeAutoTotem());

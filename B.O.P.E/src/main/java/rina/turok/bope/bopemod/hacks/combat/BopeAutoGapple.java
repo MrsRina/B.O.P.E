@@ -109,7 +109,6 @@ public class BopeAutoGapple extends BopeModule {
 
 	@Override
 	public void update() {
-		// 18 * 2 = 36.
 		if (mc.player != null && mc.world != null) {
 			gapple_stack = mc.player.inventory.mainInventory.stream().filter(item -> item.getItem() == Items.TOTEM_OF_UNDYING).mapToInt(ItemStack::getCount).sum();
 

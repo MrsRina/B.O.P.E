@@ -49,6 +49,8 @@ import rina.turok.turok.draw.TurokRenderHelp;
  * Created by Rina.
  * 15/07/20.
  *
+ * - Used like reference KAMI utils.
+ *
  **/
 public class BopeUtilRenderer {
 	public static final Minecraft mc = Minecraft.getMinecraft();

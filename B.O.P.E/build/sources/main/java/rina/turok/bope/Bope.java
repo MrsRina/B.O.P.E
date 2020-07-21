@@ -38,9 +38,13 @@ import rina.turok.bope.bopemod.manager.BopeFriendManager;
 import rina.turok.bope.bopemod.manager.BopeEventManager;
 import rina.turok.bope.bopemod.manager.BopeHUDManager;
 
+// Setting.
+import rina.turok.bope.bopemod.guiscreen.settings.BopeSetting;
+
 // Data.
 import rina.turok.bope.bopemod.BopeDiscordRichPresence;
 import rina.turok.bope.bopemod.BopeMessage;
+import rina.turok.bope.bopemod.BopeModule;
 
 // External.
 import rina.turok.bope.external.BopeEventHandler;
@@ -293,5 +297,18 @@ public class Bope {
 
 	public static String smooth(String base) {
 		return Bope.get_turok().get_font_manager().smooth(base);
+	}
+
+	// Util.
+	public static BopeSetting get_setting(String module, String setting) {
+		return get_setting_manager().get_setting_with_tag(module, setting);
+	}
+
+	public static BopeModule get_module(String module) {
+		return get_module_manager().get_module_with_tag(module);
+	}
+
+	public static boolean module_is_active(String module) {
+		return get_module_manager().get_module_with_tag(module).is_active();
 	}
 }

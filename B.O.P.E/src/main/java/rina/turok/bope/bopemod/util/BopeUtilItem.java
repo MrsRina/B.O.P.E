@@ -16,6 +16,7 @@ import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.item.EntityXPOrb;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.inventory.ClickType;
 import net.minecraft.block.BlockObsidian;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.block.BlockLiquid;
@@ -32,6 +33,7 @@ import net.minecraft.entity.Entity;
 import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
+import net.minecraft.item.Item;
 
 /**
  * @author Rina.
@@ -42,4 +44,27 @@ import net.minecraft.init.Items;
  **/
 public class BopeUtilItem {
 	public static final Minecraft mc = Minecraft.getMinecraft();
+
+	public static int get_item_slot(Item item_requested) {
+		for(int i = 0; i < 36; i++) {
+			Item items = Minecraft.getMinecraft().player.inventory.getStackInSlot(i).getItem();
+
+			if (items == item_requested) {
+				if (i < 9) {
+					i += 36;
+				}
+
+				return i;
+			}
+		}
+
+		return -1;
+	}
+
+	public static void set_offhand_item(int slot) {
+		mc.playerController.windowClick(mc.player.inventoryContainer.windowId, slot, 0, ClickType.PICKUP, mc.player);
+		mc.playerController.windowClick(mc.player.inventoryContainer.windowId, 45, 0, ClickType.PICKUP, mc.player);
+		mc.playerController.windowClick(mc.player.inventoryContainer.windowId, slot, 0, ClickType.PICKUP, mc.player);
+		mc.playerController.updateController();
+	}
 }

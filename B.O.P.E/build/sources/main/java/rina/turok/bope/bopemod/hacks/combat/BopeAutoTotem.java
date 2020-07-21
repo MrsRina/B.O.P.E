@@ -13,6 +13,10 @@ import rina.turok.bope.bopemod.hacks.BopeCategory;
 
 // Data.
 import rina.turok.bope.bopemod.BopeModule;
+import rina.turok.bope.bopemod.BopeMessage;
+
+// Util.
+import rina.turok.bope.bopemod.util.BopeUtilItem;
 
 // Core.
 import rina.turok.bope.Bope;
@@ -25,12 +29,11 @@ import rina.turok.bope.Bope;
 *
 */
 public class BopeAutoTotem extends BopeModule {
+	BopeSetting absolute      = create("Absolute", "AutoTotemAbsolute", true);
 	BopeSetting slider_health = create("Health", "AutoTotemHealth", 18, 1, 18);
 
-	boolean find_totem = false;
-	boolean move_totem = false;
-
 	int totem_count;
+	int last_slot;
 
 	public BopeAutoTotem() {
 		super(BopeCategory.BOPE_COMBAT);
@@ -45,6 +48,66 @@ public class BopeAutoTotem extends BopeModule {
 	}
 
 	@Override
+	public void enable() {
+		last_slot = -1;
+
+		if (absolute.get_value(true)) {
+			boolean crystal = false;
+			boolean gapple  = false;
+
+			if (Bope.module_is_active("AutoOffhandCrystal")) {
+				boolean cancel = false;
+
+				crystal = true;
+
+				if (Bope.get_setting("AutoOffhandCrystal", "AutoOffhandCrystalEnableAutoTotem").get_value(true)) {
+					Bope.get_setting("AutoOffhandCrystal", "AutoOffhandCrystalEnableAutoTotem").set_value(false);
+				
+					cancel = true;
+				}
+
+				Bope.get_module("AutoOffhandCrystal").set_disable();
+
+				if (cancel) {
+					Bope.get_setting("AutoOffhandCrystal", "AutoOffhandCrystalEnableAutoTotem").set_value(true);
+				}
+			}
+
+			if (Bope.module_is_active("AutoGapple")) {
+				boolean cancel = false;
+
+				gapple = true;
+
+				if (Bope.get_setting("AutoGapple", "AutoGappleEnableAutoTotem").get_value(true)) {
+					Bope.get_setting("AutoGapple", "AutoGappleEnableAutoTotem").set_value(false);
+				
+					cancel = true;
+				}
+
+				Bope.get_module("AutoGapple").set_disable();
+
+				if (cancel) {
+					Bope.get_setting("AutoGapple", "AutoGappleEnableAutoTotem").set_value(true);
+				}
+			}
+
+			if (gapple || crystal) {
+				StringBuilder message = new StringBuilder();
+
+				if (gapple && crystal) {
+					message.append(Bope.dg + "AutoGapple & AutoOffhandCrystal" + Bope.r + " has been " + Bope.re + "disactived");
+				} else if (gapple) {
+					message.append(Bope.dg + "AutoGapple" + Bope.r + " has been " + Bope.re + "disactived");
+				} else if (crystal) {
+					message.append(Bope.dg + "AutoOffhandCrystal" + Bope.r + " has been " + Bope.re + "disactived");
+				}
+
+				BopeMessage.send_client_message(message.toString());
+			}
+		}
+	}
+
+	@Override
 	public void update() {
 		// 18 * 2 = 36.
 		if (mc.player != null && mc.world != null && mc.player.getHealth() <= slider_health.get_value(1) * 2) {
@@ -54,63 +117,21 @@ public class BopeAutoTotem extends BopeModule {
 				return;
 			}
 
-			if (find_totem) {
-				int totem = - 1;
-
-				for (int items = 0; items < 45; items++) {
-					if (mc.player.inventory.getStackInSlot(items).isEmpty) {
-						totem = items;
-
-						break;
-					}
-				}
-
-				if (totem == - 1) {
-					return;
-				}
-
-				mc.playerController.windowClick(0, totem < 9 ? totem + 36 : totem, 0, ClickType.PICKUP, mc.player);
-
-				find_totem = false;
+			if (mc.player.getHeldItemOffhand().getItem() == Items.TOTEM_OF_UNDYING) {
+				return;
 			}
 
-			if (mc.player.getHeldItemOffhand().getItem() != Items.TOTEM_OF_UNDYING) {
-				if (move_totem) {
-					mc.playerController.windowClick(0, 45, 0, ClickType.PICKUP, mc.player);
+			int totem_slot = BopeUtilItem.get_item_slot(Items.TOTEM_OF_UNDYING);
 
-					move_totem = false;
-
-					if (!mc.player.inventory.itemStack.isEmpty()) {
-						find_totem = true;
-					}
-
-					return;
-				}
-
-				if (mc.player.inventory.itemStack.isEmpty()) {
-					if (totem_count == 0) {
-						return;
-					}
-
-					int item = - 1;
-
-					for (int i = 0; i < 45; i++) {
-						if (mc.player.inventory.getStackInSlot(i).getItem() == Items.TOTEM_OF_UNDYING) {
-							item = i;
-
-							break;
-						}
-					}
-
-					if (item == - 1) {
-						return;
-					}
-
-					mc.playerController.windowClick(0, item < 9 ? item + 36 : item, 0, ClickType.PICKUP, mc.player);
-
-					move_totem = true;
-				}
+			if (totem_slot == -1) {
+				return;
 			}
+
+			if (totem_slot < 9) {
+				last_slot = totem_slot;
+			}
+
+			BopeUtilItem.set_offhand_item(totem_slot);
 		}
 	}
 }

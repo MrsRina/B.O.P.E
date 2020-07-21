@@ -11,6 +11,9 @@ import rina.turok.bope.bopemod.guiscreen.settings.BopeSetting;
 // Modules.
 import rina.turok.bope.bopemod.hacks.BopeCategory;
 
+// Util.
+import rina.turok.bope.bopemod.util.BopeUtilItem;
+
 // Data.
 import rina.turok.bope.bopemod.BopeMessage;
 import rina.turok.bope.bopemod.BopeModule;
@@ -26,15 +29,14 @@ import rina.turok.bope.Bope;
 *
 */
 public class BopeAutoGapple extends BopeModule {
-	BopeSetting auto_totem_d = create("Disable Totem", "AutoGappleDisableAutoTotem", true);
-	BopeSetting absolute     = create("Absolute Item", "AutoGappleAbsoluteItem", true);
+	BopeSetting absolute     = create("Absolute", "AutoGappleAbsolute", true);
+	BopeSetting enable_totem = create("Auto Enable Totem", "AutoGappleEnableAutoTotem", true);
 	BopeSetting slider_smart = create("Smart", "AutoGappleSmart", 2, 1, 18);
 
-	boolean find_gapple = false;
-	boolean move_gapple = false;
 	boolean is_smart_ev = false;
 
 	int gapple_stack;
+	int last_slot;
 
 	public BopeAutoGapple() {
 		super(BopeCategory.BOPE_COMBAT, true);
@@ -49,112 +51,91 @@ public class BopeAutoGapple extends BopeModule {
 	}
 
 	@Override
-	public void disable() {
-		// If auto disable totem on, just desactive with the actual value.
-		if (auto_totem_d.get_value(true)) {
-			Bope.get_module_manager().get_module_with_tag("AutoTotem").set_active(true);
-		} else {
-			// If the smast on active totem.
-			if (is_smart_ev) {
-				Bope.get_module_manager().get_module_with_tag("AutoTotem").set_active(true);
+	public void enable() {
+		last_slot = -1;
 
-				is_smart_ev = false;
+		boolean totem   = false;
+		boolean crystal = false;
+
+		if (absolute.get_value(true)) {
+			if (Bope.module_is_active("AutoTotem")) {
+				totem = true;
+
+				Bope.get_module("AutoTotem").set_disable();
+			}
+
+			if (Bope.module_is_active("AutoOffhandCrystal")) {
+				boolean cancel = false;
+
+				crystal = true;
+
+				if (Bope.get_setting("AutoOffhandCrystal", "AutoOffhandCrystalEnableAutoTotem").get_value(true)) {
+					Bope.get_setting("AutoOffhandCrystal", "AutoOffhandCrystalEnableAutoTotem").set_value(false);
+				
+					cancel = true;
+				}
+
+				Bope.get_module("AutoOffhandCrystal").set_disable();
+
+				if (cancel) {
+					Bope.get_setting("AutoOffhandCrystal", "AutoOffhandCrystalEnableAutoTotem").set_value(true);
+				}
+			}
+
+			if (totem || crystal) {
+				StringBuilder message = new StringBuilder();
+
+				if (totem && crystal) {
+					message.append(Bope.dg + "AutoTotem & AutoOffhandCrystal" + Bope.r + " has been " + Bope.re + "disactived");
+				} else if (totem) {
+					message.append(Bope.dg + "AutoTotem" + Bope.r + " has been " + Bope.re + "disactived");
+				} else if (crystal) {
+					message.append(Bope.dg + "AutoOffhandCrystal" + Bope.r + " has been " + Bope.re + "disactived");
+				}
+
+				BopeMessage.send_client_message(message.toString());
 			}
 		}
 	}
 
 	@Override
-	public void enable() {
-		if ((Bope.get_module_manager().get_module_with_tag("AutoOffhandCrystal").is_active() || Bope.get_module_manager().get_module_with_tag("AutoTotem").is_active()) && absolute.get_value(true)) {
-			Bope.get_module_manager().get_module_with_tag("AutoOffhandCrystal").set_active(false);
-			Bope.get_module_manager().get_module_with_tag("AutoTotem").set_active(false);
-		}
-
-		if (auto_totem_d.get_value(true)) {
-			// Disable auto totem.
-			Bope.get_module_manager().get_module_with_tag("AutoTotem").set_active(false);
+	public void disable() {
+		if (enable_totem.get_value(true)) {
+			if (!Bope.module_is_active("AutoTotem")) {
+				Bope.get_module("AutoTotem").set_active(true);
+			}
 		}
 	}
 
 	@Override
 	public void update() {
+		// 18 * 2 = 36.
 		if (mc.player != null && mc.world != null) {
-			// If health is < of limit smart, disable and start event is_smart_ev.
-			if (mc.player.getHealth() <= slider_smart.get_value(1) * 2) {
-				is_smart_ev = true;
+			gapple_stack = mc.player.inventory.mainInventory.stream().filter(item -> item.getItem() == Items.TOTEM_OF_UNDYING).mapToInt(ItemStack::getCount).sum();
 
-				set_active(!is_active());
-			}
-
-			// Get gapple stack.
-			gapple_stack = mc.player.inventory.mainInventory.stream().filter(item -> item.getItem() == Items.GOLDEN_APPLE).mapToInt(ItemStack::getCount).sum();
-
-			// Ignore if in inventory.
 			if (mc.currentScreen instanceof GuiContainer) {
 				return;
 			}
 
-			// If find gapples.
-			if (find_gapple) {
-				int gapples = - 1;
+			if (mc.player.getHeldItemOffhand().getItem() == Items.GOLDEN_APPLE && mc.player.getHealth() <= slider_smart.get_value(1) * 2) {
+				is_smart_ev = true;
 
-				// Search on stack.
-				for (int items = 0; items < 45; items++) {
-					if (mc.player.inventory.getStackInSlot(items).isEmpty) {
-						gapples = items;
-
-						break;
-					}
-				}
-
-				if (gapples == - 1) {
-					return;
-				}
-
-				// Move to off hand.
-				mc.playerController.windowClick(0, gapples < 9 ? gapples + 36 : gapples, 0, ClickType.PICKUP, mc.player);
-
-				find_gapple = false;
+				set_active(false);
+			} else if (mc.player.getHeldItemOffhand().getItem() == Items.GOLDEN_APPLE) {
+				return;
 			}
 
-			if (mc.player.getHeldItemOffhand().getItem() != Items.GOLDEN_APPLE) {
-				if (move_gapple) {
-					mc.playerController.windowClick(0, 45, 0, ClickType.PICKUP, mc.player);
+			int gapple_slot = BopeUtilItem.get_item_slot(Items.GOLDEN_APPLE);
 
-					move_gapple = false;
-
-					if (!mc.player.inventory.itemStack.isEmpty()) {
-						find_gapple = true;
-					}
-
-					return;
-				}
-
-				if (mc.player.inventory.itemStack.isEmpty()) {
-					if (gapple_stack == 0) {
-						return;
-					}
-
-					int item = - 1;
-
-					for (int i = 0; i < 45; i++) {
-						if (mc.player.inventory.getStackInSlot(i).getItem() == Items.GOLDEN_APPLE) {
-							item = i;
-
-							break;
-						}
-					}
-
-					if (item == - 1) {
-						return;
-					}
-
-					// Move.
-					mc.playerController.windowClick(0, item < 9 ? item + 36 : item, 0, ClickType.PICKUP, mc.player);
-
-					move_gapple = true;
-				}
+			if (gapple_slot == -1) {
+				return;
 			}
+
+			if (gapple_slot < 9) {
+				last_slot = gapple_slot;
+			}
+
+			BopeUtilItem.set_offhand_item(gapple_slot);
 		}
 	}
 }

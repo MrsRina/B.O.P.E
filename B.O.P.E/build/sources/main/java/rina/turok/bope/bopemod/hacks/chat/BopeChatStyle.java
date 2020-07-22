@@ -143,7 +143,7 @@ public class BopeChatStyle extends BopeModule {
 		if (event_color_time) {
 			ChatFormatting c = color.get(color_time.get_current_value());
 
-			message.appendText(Bope.r + pre + c + new SimpleDateFormat("k:mm:a").format(new Date()) + Bope.r + end + " ");
+			message.appendText(Bope.r + pre + c + new SimpleDateFormat("k:mm:a").format(new Date()) + Bope.r + end + (is_name == true ? "" : " "));
 		
 			cancel = false;
 		}

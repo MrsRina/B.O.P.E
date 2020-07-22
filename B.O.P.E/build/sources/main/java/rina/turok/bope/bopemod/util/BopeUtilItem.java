@@ -40,6 +40,7 @@ import net.minecraft.item.Item;
  *
  * Created by Rina.
  * 10/06/20.
+ * - Used like reference KAMI utils.
  *
  **/
 public class BopeUtilItem {

@@ -29,7 +29,7 @@ import rina.turok.bope.Bope;
 *
 */
 public class BopeAutoTotem extends BopeModule {
-	BopeSetting absolute      = create("Absolute", "AutoTotemAbsolute", true);
+	BopeSetting absolute      = create("Absolutedisabled", "AutoTotemAbsolute", true);
 	BopeSetting slider_health = create("Health", "AutoTotemHealth", 18, 1, 18);
 
 	int totem_count;
@@ -95,11 +95,11 @@ public class BopeAutoTotem extends BopeModule {
 				StringBuilder message = new StringBuilder();
 
 				if (gapple && crystal) {
-					message.append(Bope.dg + "AutoGapple & AutoOffhandCrystal" + Bope.r + " has been " + Bope.re + "disactived");
+					message.append(Bope.dg + "AutoGapple & AutoOffhandCrystal" + Bope.r + " has been " + Bope.re + "disabled");
 				} else if (gapple) {
-					message.append(Bope.dg + "AutoGapple" + Bope.r + " has been " + Bope.re + "disactived");
+					message.append(Bope.dg + "AutoGapple" + Bope.r + " has been " + Bope.re + "disabled");
 				} else if (crystal) {
-					message.append(Bope.dg + "AutoOffhandCrystal" + Bope.r + " has been " + Bope.re + "disactived");
+					message.append(Bope.dg + "AutoOffhandCrystal" + Bope.r + " has been " + Bope.re + "disabled");
 				}
 
 				BopeMessage.send_client_message(message.toString());

@@ -39,6 +39,8 @@ import net.minecraft.init.Items;
  * Created by Rina.
  * 10/06/20.
  *
+ * - Used like reference KAMI utils.
+ *
  **/
 public class BopeUtilMath {
 	public static final Minecraft mc = Minecraft.getMinecraft();

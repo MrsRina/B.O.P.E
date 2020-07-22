@@ -89,11 +89,11 @@ public class BopeAutoOffHandCrystal extends BopeModule {
 				StringBuilder message = new StringBuilder();
 
 				if (totem && gapple) {
-					message.append(Bope.dg + "AutoTotem & AutoGapple" + Bope.r + " has been " + Bope.re + "disactived");
+					message.append(Bope.dg + "AutoTotem & AutoGapple" + Bope.r + " has been " + Bope.re + "disabled");
 				} else if (totem) {
-					message.append(Bope.dg + "AutoTotem" + Bope.r + " has been " + Bope.re + "disactived");
+					message.append(Bope.dg + "AutoTotem" + Bope.r + " has been " + Bope.re + "disabled");
 				} else if (gapple) {
-					message.append(Bope.dg + "AutoGapple" + Bope.r + " has been " + Bope.re + "disactived");
+					message.append(Bope.dg + "AutoGapple" + Bope.r + " has been " + Bope.re + "disabled");
 				}
 
 				BopeMessage.send_client_message(message.toString());
@@ -112,7 +112,6 @@ public class BopeAutoOffHandCrystal extends BopeModule {
 
 	@Override
 	public void update() {
-		// 18 * 2 = 36.
 		if (mc.player != null && mc.world != null) {
 			crystal_stack = mc.player.inventory.mainInventory.stream().filter(item -> item.getItem() == Items.TOTEM_OF_UNDYING).mapToInt(ItemStack::getCount).sum();
 

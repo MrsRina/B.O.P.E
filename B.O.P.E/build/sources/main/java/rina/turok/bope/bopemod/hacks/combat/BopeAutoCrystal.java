@@ -109,6 +109,8 @@ public class BopeAutoCrystal extends BopeModule {
 
 	private long system_time = -1l;
 
+	public boolean off_hand = false;
+
 	public BopeAutoCrystal() {
 		super(BopeCategory.BOPE_COMBAT);
 
@@ -140,7 +142,7 @@ public class BopeAutoCrystal extends BopeModule {
 				calcule_look_at(crystal.posX, crystal.posY, crystal.posZ, mc.player);
 
 				mc.playerController.attackEntity(mc.player, crystal);
-				mc.player.swingArm(EnumHand.MAIN_HAND);
+				mc.player.swingArm(off_hand ? EnumHand.OFF_HAND : EnumHand.MAIN_HAND);
 
 				system_time = System.nanoTime() / 1000000L;
 
@@ -177,7 +179,7 @@ public class BopeAutoCrystal extends BopeModule {
 			}
 		}
 
-		boolean off_hand = false;
+		off_hand = false;
 
 		if (mc.player.getHeldItemOffhand().getItem() == Items.END_CRYSTAL) {
 			off_hand = true;

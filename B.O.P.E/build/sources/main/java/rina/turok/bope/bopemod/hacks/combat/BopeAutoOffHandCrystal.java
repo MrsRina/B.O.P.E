@@ -57,10 +57,11 @@ public class BopeAutoOffHandCrystal extends BopeModule {
 	public void enable() {
 		last_slot = -1;
 
-		boolean totem  = false;
-		boolean gapple = false;
-
 		if (absolute.get_value(true)) {
+			boolean totem  = false;
+			boolean gapple = false;
+
+
 			if (Bope.module_is_active("AutoTotem")) {
 				totem = true;
 
@@ -113,7 +114,7 @@ public class BopeAutoOffHandCrystal extends BopeModule {
 	@Override
 	public void update() {
 		if (mc.player != null && mc.world != null) {
-			crystal_stack = mc.player.inventory.mainInventory.stream().filter(item -> item.getItem() == Items.TOTEM_OF_UNDYING).mapToInt(ItemStack::getCount).sum();
+			crystal_stack = mc.player.inventory.mainInventory.stream().filter(item -> item.getItem() == Items.END_CRYSTAL).mapToInt(ItemStack::getCount).sum();
 
 			if (mc.currentScreen instanceof GuiContainer) {
 				return;
@@ -131,10 +132,6 @@ public class BopeAutoOffHandCrystal extends BopeModule {
 
 			if (crystal_slot == -1) {
 				return;
-			}
-
-			if (crystal_slot < 9) {
-				last_slot = crystal_slot;
 			}
 
 			BopeUtilItem.set_offhand_item(crystal_slot);

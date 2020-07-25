@@ -54,7 +54,6 @@ public class BopeAutoGG extends BopeModule {
 			List<Entity> entities = mc.world.loadedEntityList.stream()
 			/* RinaRinaRinaRinaRinaRinaRinaRinaRinaRinaRi */ .filter(entity -> entity != mc.player)
 			/* RinaRinaRinaRinaRinaRinaRinaRinaRinaRinaRi */ .filter(entity -> mc.player.getDistance(entity) <= 10)
-			/* RinaRinaRinaRinaRinaRinaRinaRinaRinaRinaRi */ .filter(entity -> !entity.isDead)
 			/* RinaRinaRinaRinaRinaRinaRinaRinaRinaRinaRi */ .filter(entity -> !(Bope.get_friend_manager().is_friend(entity.getName())))
 			/* RinaRinaRinaRinaRinaRinaRinaRinaRinaRinaRi */ .filter(entity -> entity instanceof EntityPlayer)
 			/* RinaRinaRinaRinaRinaRinaRinaRinaRinaRinaRi */ .sorted(Comparator.comparing(distance -> mc.player.getDistance(distance)))

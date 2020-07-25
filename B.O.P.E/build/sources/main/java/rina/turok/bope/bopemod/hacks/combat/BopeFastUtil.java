@@ -7,6 +7,7 @@ import net.minecraft.item.ItemExpBottle;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.network.Packet;
 import net.minecraft.item.ItemBow;
+import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 
 // Guiscreen.

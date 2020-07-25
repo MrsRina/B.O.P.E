@@ -30,17 +30,11 @@ public class BopeBrightness extends BopeModule {
 
 	@Override
 	public void disable() {
-		mc.gameSettings.gammaSetting = old_gamme_value;
+		mc.gameSettings.gammaSetting -= 1000;
 	}
 
 	@Override
 	public void enable() {
-		old_gamme_value = mc.gameSettings.gammaSetting;
-	}
-
-	public void update() {
-		if (mc.world != null) {
-			mc.gameSettings.gammaSetting = 1000;
-		}
+		mc.gameSettings.gammaSetting += 1000;
 	}
 }

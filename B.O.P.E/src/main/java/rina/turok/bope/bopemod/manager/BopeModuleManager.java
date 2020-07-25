@@ -82,6 +82,7 @@ public class BopeModuleManager {
 		// Exploit.
 		add_module(new BopeSpeedMine());
 		add_module(new BopeXCarry());
+		add_module(new BopeTimer());
 
 		// Misc.
 		add_module(new BopeNoEntityTrace());
@@ -90,6 +91,7 @@ public class BopeModuleManager {
 		add_module(new BopeRPC());
 
 		// Movement.
+		add_module(new BopeInventoryWalk());
 		add_module(new BopeNoSlowDown());
 		add_module(new BopeStrafe());
 

@@ -141,7 +141,7 @@ public class BopeFreecam extends BopeModule {
 	@Override
 	public void update() {
 		if (mc.player != null && mc.world != null) {
-			mc.player.noClip                = true;
+			mc.player.noClip               = true;
 
 			mc.player.setVelocity(0, 0, 0);
 

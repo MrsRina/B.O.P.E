@@ -26,13 +26,25 @@ public class BopeServerInfo extends BopePinnable {
 			background();
 		}
 
-		String ms   = mc.getCurrentServerData() != null ? Long.toString(Long.valueOf(mc.getCurrentServerData().pingToServer)) : "0";
-		String tps  = Float.toString(Math.round(Bope.get_event_handler().get_tick_rate()));
+		String ms   = Integer.toString(get_ping());
+		String tps  = String.format("%.2f", Bope.get_event_handler().get_tick_rate());
 		String info = "MS " + ms + " TPS " + tps;
 
 		create_line(info, 1, 1);
 
 		set_width(get(info, "width") + 1);
 		set_height(get(info, "height") + 2);
+	}
+
+	public int get_ping() {
+		int ping = -1;
+
+		if (mc.player == null || mc.getConnection() == null || mc.getConnection().getPlayerInfo(mc.player.getName()) == null) {
+			return -1;
+		} else {
+			ping = mc.getConnection().getPlayerInfo(mc.player.getName()).getResponseTime();
+		}
+
+		return ping;
 	}
 }

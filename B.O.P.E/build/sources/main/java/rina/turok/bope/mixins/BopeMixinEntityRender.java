@@ -19,6 +19,9 @@ import org.spongepowered.asm.mixin.Mixin;
 
 import java.util.*;
 
+// Modules.
+import rina.turok.bope.bopemod.hacks.misc.BopeNoEntityTrace;
+
 // Data.
 import rina.turok.bope.bopemod.BopeModule;
 
@@ -31,14 +34,12 @@ import rina.turok.bope.Bope;
 * Created by Rina.
 * 12/05/20.
 *
-* - It were referenced with KAMI mixins, 086 thanks for help me.
-*
 */
-@Mixin(value = EntityRenderer.class, priority = 998)
+@Mixin(value = EntityRenderer.class)
 public class BopeMixinEntityRender {
 	// orient camera.
 	@Redirect(method = "orientCamera", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/multiplayer/WorldClient;rayTraceBlocks(Lnet/minecraft/util/math/Vec3d;Lnet/minecraft/util/math/Vec3d;)Lnet/minecraft/util/math/RayTraceResult;"))
-	public RayTraceResult rayTraceBlocks(WorldClient world, Vec3d start, Vec3d end) {
+	public RayTraceResult orientCamera(WorldClient world, Vec3d start, Vec3d end) {
 		if (Bope.get_module_manager().get_module_with_tag("FreeCameraOrient").is_active()) {
 			return null;
 		} else {
@@ -48,10 +49,10 @@ public class BopeMixinEntityRender {
 
 	// Entity Trace.
 	@Redirect(method = "getMouseOver", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/multiplayer/WorldClient;getEntitiesInAABBexcluding(Lnet/minecraft/entity/Entity;Lnet/minecraft/util/math/AxisAlignedBB;Lcom/google/common/base/Predicate;)Ljava/util/List;"))
-	private List<Entity> getEntitiesInAABBexcluding(WorldClient world_client, Entity entity, AxisAlignedBB bouding_box, Predicate predicate) {
+	private List<Entity> getMouseOver(WorldClient world_client, Entity entity, AxisAlignedBB bouding_box, Predicate predicate) {
 		BopeModule module_requested = Bope.get_module_manager().get_module_with_tag("NoEntityTrace");
 
-		if (module_requested.is_active() && module_requested.value_boolean_0()) {
+		if (module_requested.is_active() && BopeNoEntityTrace.trace()) {
 			return new ArrayList<>();
 		} else {
 			return world_client.getEntitiesInAABBexcluding(entity, bouding_box, predicate);

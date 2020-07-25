@@ -40,6 +40,7 @@ import net.minecraft.init.Items;
  * 10/06/20.
  *
  * - Used like reference KAMI utils.
+ * - And Seppuku utils.
  *
  **/
 public class BopeUtilMath {

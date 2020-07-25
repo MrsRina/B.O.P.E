@@ -74,17 +74,6 @@ public class BopeEntityESP extends BopeModule {
 
 	@Override
 	public void render(BopeEventRender event) {
-//		mc.world.loadedEntityList.stream()
-//		/* inaRinaRinaRinaRin */ .filter(entity -> entity instanceof EntityLivingBase)
-//		/* inaRinaRinaRinaRin */ .filter(entity -> entity != mc.player)
-//		/* inaRinaRinaRinaRin */ .map(entity -> (EntityLivingBase) entity)
-//		/* inaRinaRinaRinaRin */ .filter(entity -> !entity.isDead)
-//		/* inaRinaRinaRinaRin */ .filter(entity -> (entity instanceof IMob && hostile.get_value(true)) || (entity instanceof EntityAnimal && pigs_ani.get_value(true))) //|| (entity instanceof EntityEnderCrystal && crystal.get_value(true)) || (entity instanceof EntityItem && item.get_value(true)))
-//		/* inaRinaRinaRinaRin */ .filter(entity -> mc.player.getDistance(entity) < (range.get_value(1)))
-//		/* inaRinaRinaRinaRin */ .filter(entity -> distance_player > disp.get_value(1))
-//		/* inaRinaRinaRinaRin */ .sorted(Comparator.comparing(entity -> -mc.player.getDistance(entity)))
-//		/* inaRinaRinaRinaRin */ .forEach(entities -> {});
-
 		for (Entity entity : mc.world.loadedEntityList) {
 			if (entity != mc.player && mc.player.getDistance(entity) < (range.get_value(1)) && distance_player > disp.get_value(1)) {
 				if (entity instanceof EntityItem && item.get_value(true)) {

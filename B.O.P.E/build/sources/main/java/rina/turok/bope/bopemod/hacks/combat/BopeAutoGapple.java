@@ -54,10 +54,10 @@ public class BopeAutoGapple extends BopeModule {
 	public void enable() {
 		last_slot = -1;
 
-		boolean totem   = false;
-		boolean crystal = false;
-
 		if (absolute.get_value(true)) {
+			boolean totem   = false;
+			boolean crystal = false;
+
 			if (Bope.module_is_active("AutoTotem")) {
 				totem = true;
 
@@ -110,7 +110,7 @@ public class BopeAutoGapple extends BopeModule {
 	@Override
 	public void update() {
 		if (mc.player != null && mc.world != null) {
-			gapple_stack = mc.player.inventory.mainInventory.stream().filter(item -> item.getItem() == Items.TOTEM_OF_UNDYING).mapToInt(ItemStack::getCount).sum();
+			gapple_stack = mc.player.inventory.mainInventory.stream().filter(item -> item.getItem() == Items.GOLDEN_APPLE).mapToInt(ItemStack::getCount).sum();
 
 			if (mc.currentScreen instanceof GuiContainer) {
 				return;
@@ -128,10 +128,6 @@ public class BopeAutoGapple extends BopeModule {
 
 			if (gapple_slot == -1) {
 				return;
-			}
-
-			if (gapple_slot < 9) {
-				last_slot = gapple_slot;
 			}
 
 			BopeUtilItem.set_offhand_item(gapple_slot);

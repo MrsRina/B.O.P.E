@@ -23,10 +23,8 @@ import rina.turok.bope.Bope;
 * Created by Rina.
 * 23/04/20.
 *
-* - It were referenced with KAMI mixins, 086 thanks for help me.
-*
 */
-@Mixin(value = RenderPlayer.class, priority = 998)
+@Mixin(value = RenderPlayer.class)
 public abstract class BopeMixinRenderPlayer {
 	// Renmove name.
 	@Inject(method = "renderEntityName", at = @At("HEAD"), cancellable = true)

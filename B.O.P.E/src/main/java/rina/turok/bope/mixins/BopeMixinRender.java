@@ -38,10 +38,8 @@ import rina.turok.bope.Bope;
 * Created by Rina.
 * 23/04/20.
 *
-* - It were referenced with KAMI mixins, 086 thanks for help me.
-*
 */
-@Mixin(value = Render.class, priority = 998)
+@Mixin(value = Render.class)
 public abstract class BopeMixinRender <T extends Entity> {
 	public final Minecraft mc = Minecraft.getMinecraft();
 

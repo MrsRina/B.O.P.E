@@ -41,11 +41,8 @@ import rina.turok.turok.draw.TurokGL;
 * Created by Rina.
 * 23/04/20.
 *
-* - It were referenced with KAMI mixins, 086 thanks for help me.
-* - Thanks for superblaubeere27 :D!
-*
 */
-@Mixin(value = RenderLivingBase.class, priority = 998)
+@Mixin(value = RenderLivingBase.class)
 public abstract class BopeMixinRenderLivingBase <T extends EntityLivingBase> extends BopeMixinRender<T> {
 	public final Minecraft mc = Minecraft.getMinecraft();
 

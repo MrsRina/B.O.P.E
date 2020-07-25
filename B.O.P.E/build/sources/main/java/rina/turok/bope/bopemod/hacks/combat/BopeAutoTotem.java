@@ -127,10 +127,6 @@ public class BopeAutoTotem extends BopeModule {
 				return;
 			}
 
-			if (totem_slot < 9) {
-				last_slot = totem_slot;
-			}
-
 			BopeUtilItem.set_offhand_item(totem_slot);
 		}
 	}

@@ -22,10 +22,8 @@ import rina.turok.bope.Bope;
 * Created by Rina.
 * 17/05/2020.
 *
-* - It were referenced with KAMI mixins, 086 thanks for help me.
-*
 */
-@Mixin(value = PlayerControllerMP.class, priority = 998)
+@Mixin(value = PlayerControllerMP.class)
 public class BopeMixinPlayerControllerMP {
 //	@Inject(method = "onPlayerDamageBlockHook", at = @At(value = "INVOKE", target = "(Lnet/minecraft/util/math/BlockPos;Lnet/minecraft/util/EnumFacing;)Z"))
 //	private boolean onPlayerDamageBlockHook(BlockPos pos, EnumFacing face) {

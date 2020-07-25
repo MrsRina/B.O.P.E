@@ -24,10 +24,8 @@ import rina.turok.bope.Bope;
 * Created by Rina.
 * 08/04/20.
 *
-* - It were referenced with KAMI mixins, 086 thanks for help me.
-*
 */
-@Mixin(value = NetworkManager.class, priority = 998)
+@Mixin(value = NetworkManager.class)
 public class BopeMixinNetworkManager {
 	// Receive packet.
 	@Inject(method = "channelRead0", at = @At("HEAD"), cancellable = true)

@@ -13,19 +13,12 @@ import rina.turok.bope.external.BopeEventCancellable;
 *
 */
 public class BopeEventMove extends BopeEventCancellable {
-	private MoverType move_type;
-
 	public double x, y, z;
 
-	public BopeEventMove(MoverType type, double x, double y, double z) {
-		this.move_type = type;
-		this.x         = x;
-		this.y         = y;
-		this.z         = z;
-	}
-
-	public void set_move_type(MoverType type) {
-		this.move_type = type;
+	public BopeEventMove(double x, double y, double z) {
+		this.x = x;
+		this.y = y;
+		this.z = z;
 	}
 
 	public void set_x(double x) {
@@ -38,10 +31,6 @@ public class BopeEventMove extends BopeEventCancellable {
 
 	public void set_z(double x) {
 		this.z = z;
-	}
-
-	public MoverType get_move_type() {
-		return this.move_type;
 	}
 
 	public double get_x() {

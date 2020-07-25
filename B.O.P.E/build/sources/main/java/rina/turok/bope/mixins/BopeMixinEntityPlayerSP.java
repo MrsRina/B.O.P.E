@@ -27,8 +27,6 @@ import rina.turok.bope.Bope;
 * Created by Rina.
 * 12/05/20.
 *
-* - It were referenced with KAMI mixins, 086 thanks for help me.
-*
 */
 @Mixin(value = EntityPlayerSP.class)
 public abstract class BopeMixinEntityPlayerSP extends Entity {
@@ -41,16 +39,10 @@ public abstract class BopeMixinEntityPlayerSP extends Entity {
 	private double motion_z;
 
 	// Move event.
-	@Inject(method = "move(Lnet/minecraft/entity/MoverType;DDD)V", at = @At("HEAD"), cancellable = true)
+	@Inject(method = "move(Lnet/minecraft/entity/MoverType;DDD)V", at = @At("HEAD"))
 	private void move(MoverType type, double x, double y, double z, CallbackInfo info) {
-		BopeEventMove event = new BopeEventMove(type, x, y, z);
+		BopeEventMove event = new BopeEventMove(x, y, z);
 
 		Bope.ZERO_ALPINE_EVENT_BUS.post(event);
-
-		if (event.isCancelled()) {
-			super.move(type, event.x, event.y, event.z);
-
-			info.cancel();
-		}
 	}
 }

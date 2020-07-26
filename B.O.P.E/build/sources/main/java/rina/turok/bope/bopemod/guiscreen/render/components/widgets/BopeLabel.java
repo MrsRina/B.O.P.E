@@ -214,7 +214,7 @@ public class BopeLabel extends BopeAbstractWidget {
 		int bd_a = 100;
 
 		if (this.info) {
-			BopeDraw.draw_string(this.setting.get_value(zbob), this.x + 2, this.save_y, ns_r, ns_g, ns_b, this.smoth);
+			BopeDraw.draw_string(this.setting.get_value(zbob), this.x + 2, this.save_y, ns_r, ns_g, ns_b, Bope.get_setting_manager().get_setting_with_tag("GUIStringsShadow").get_value(true), this.smoth);
 		} else {
 			this.entry.width  = this.width;
 			this.entry.height = this.height;

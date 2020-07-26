@@ -11,6 +11,7 @@ import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.entity.monster.IMob;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.CombatRules;
@@ -54,7 +55,8 @@ import rina.turok.bope.bopemod.events.BopeEventPacket;
 import rina.turok.bope.bopemod.hacks.BopeCategory;
 
 // Util.
-import static rina.turok.bope.bopemod.util.BopeUtilMath.calcule_look_at;
+import rina.turok.bope.bopemod.util.BopeUtilMath;
+import rina.turok.bope.bopemod.util.BopeUtilItem;
 
 // Data.
 import rina.turok.bope.bopemod.BopeModule;
@@ -77,39 +79,52 @@ import rina.turok.turok.draw.TurokRenderHelp;
  *
  **/
 public class BopeAutoCrystal extends BopeModule {
-	BopeSetting doubles     = create("Double", "AutoCrystalDouble", true);
-	BopeSetting ray_trace   = create("Ray Trace", "AutoCrystalRayTrace", true);
-	BopeSetting auto_slot   = create("Auto Slot", "AutoCrystalAutoSlot", true); // <3
-	BopeSetting place_range = create("Place Range", "AutoCrystalPlaceRange", 5, 0, 6);
-	BopeSetting tick_hit    = create("Tick Hit", "AutoCrystalTickHit", 0, 0, 5);
-	BopeSetting range_hit   = create("Range Hit", "AutoCrystalRangeHit", 6, 0, 8);
-	BopeSetting minimum     = create("Minimum Damage", "AutoCrystalMinimumDamage", 1, 0, 6);
+	BopeSetting spearate_1      = create("info", "AutoCrystalInfo1", "Render");
+	BopeSetting rgb             = create("RGB Effect", "AutoCrystalRGBEffect", false);
+	BopeSetting color_r         = create("R", "AutoCrystalColorR", 255, 0, 255);
+	BopeSetting color_g         = create("G", "AutoCrystalColorG", 255, 0, 255);
+	BopeSetting color_b         = create("B", "AutoCrystalColorB", 255, 0, 255);
+	BopeSetting solid_a         = create("Solid R", "AutoCrystalSolidA", 255, 0, 255);
+	BopeSetting outline_a       = create("Outline R", "AutoCrystalOutlineA", 255, 0, 255);
+	BopeSetting spearate_2      = create("info", "AutoCrystalInfo2", "Settings");
+	BopeSetting find_player     = create("Player", "AutoCrystalPlayer", true);
+	BopeSetting find_hostile    = create("Hostile", "AutoCrystalHostile", true);
+	BopeSetting double_place    = create("Double Place", "AutoCrystalDoublePlace", true);
+	BopeSetting auto_slot       = create("Auto Switch", "AutoCrystalAutoSlot", true);
+	BopeSetting anti_weakness   = create("Anti Weakness", "AutoCrystalAntiWeakness", true);
+	BopeSetting offhand_crystal = create("Offhand Crystal Hit", "AutoCrystalOffhandCrystalHit", false);
+	BopeSetting ray_trace_util  = create("Ray Trace", "AutoCrystalRayTrace", false);
+	BopeSetting face_place_min  = create("Minimum", "AutoCrystalMinimum", 2, 0, 36);
+	BopeSetting speed_place     = create("Place Delay", "AutoCrystalPlaceDelay", 8, 0, 10);
+	BopeSetting speed_hit       = create("Speed Hit", "AutoCrystalSpeedHit", 16, 0, 20);
+	BopeSetting range_hit       = create("Range Hit", "AutoCrystalRangeHit", 5, 0, 8);
+	BopeSetting range_place     = create("Range Place", "AutoCrystalRangePlace", 5, 0, 6);
+	BopeSetting range_enemy     = create("Range Enemy", "AutoCrystalRangeEnemy", 13, 0, 16);
 
-	// Angles events.
-	public static boolean spoofing_anlges;
-	public static boolean toggling_pitch;
+	private BlockPos render;
+	private Entity render_entity;
 
-	// Angles values.
-	public static double player_pitch;
-	public static double player_yaw;
+	private long system_time_hit    = -1;
+	private long system_time_place  = -1;
+	private long system_time_double = -1;
+	private long system_time_ms     = -1;
 
-	// Entity specs.
-	private Entity   render_entity;
-	private BlockPos render_position;
+	private static boolean toggle_pitch = false;
 
-	// Events.
 	private boolean switch_cooldown = false;
-	private boolean can_attack      = false;
+	private boolean is_attacking    = false;
 
 	private int old_slot = -1;
 	private int new_slot;
 
-	// Count crystals.
-	private int place_count;
+	private int places;
 
-	private long system_time = -1l;
+	private static boolean is_spoofing_angles;
 
-	public boolean off_hand = false;
+	private static double yaw;
+	private static double pitch;
+
+	private static boolean offhand;
 
 	public BopeAutoCrystal() {
 		super(BopeCategory.BOPE_COMBAT);
@@ -124,98 +139,145 @@ public class BopeAutoCrystal extends BopeModule {
 	}
 
 	@EventHandler
-	private Listener<BopeEventPacket.SendPacket> listner = new Listener<>(event -> {
-		if (event.get_packet() instanceof CPacketPlayer && spoofing_anlges) {
-			CPacketPlayer player = (CPacketPlayer) event.get_packet();
+	private Listener<BopeEventPacket.SendPacket> listener = new Listener<>(event -> {
+		Packet packet = event.get_packet();
 
-			player.yaw   = (float) player_yaw;
-			player.pitch = (float) player_pitch;
+		if (packet instanceof CPacketPlayer) {
+			if (is_spoofing_angles) {
+				((CPacketPlayer) packet).yaw   = (float) yaw;
+				((CPacketPlayer) packet).pitch = (float) pitch;
+			}
 		}
 	});
 
 	@Override
+	public void enable() {
+		render        = null;
+		render_entity = null;
+
+		reset_rotation();
+	}
+
+	@Override
 	public void update() {
-		EntityEnderCrystal crystal = request("crystal", 0);
+		EntityEnderCrystal crystal = mc.world.loadedEntityList.stream()
+		/* RinaRinaRinaRinaRinaRinaRinaRinaRinaRinaRinaRin */ .filter(entity -> entity instanceof EntityEnderCrystal)
+		/* RinaRinaRinaRinaRinaRinaRinaRinaRinaRinaRinaRin */ .map(entity -> (EntityEnderCrystal) entity)
+		/* RinaRinaRinaRinaRinaRinaRinaRinaRinaRinaRinaRin */ .min(Comparator.comparing(c -> mc.player.getDistance(c)))
+		/* RinaRinaRinaRinaRinaRinaRinaRinaRinaRinaRinaRin */ .orElse(null);
 
 		if (crystal != null && mc.player.getDistance(crystal) <= range_hit.get_value(1)) {
-			if (System.nanoTime() / 1000000L - system_time >= tick_hit.get_value(1)) {
-				calcule_look_at(crystal.posX, crystal.posY, crystal.posZ, mc.player);
+			if (((System.nanoTime() / 1000000) - system_time_hit) >= 420 - speed_hit.get_value(1) * 20) {
+				if (anti_weakness.get_value(true) && mc.player.isPotionActive(MobEffects.WEAKNESS)) {
+					if (is_attacking) {
+						old_slot     = mc.player.inventory.currentItem;
+						is_attacking = false;
+					}
+
+					new_slot = -1;
+
+					for (int i = 0; i < 9; i++) {
+						ItemStack stack = mc.player.inventory.getStackInSlot(i);
+
+						if (stack == ItemStack.EMPTY) {
+							continue;
+						}
+
+						if (stack.getItem() instanceof ItemSword) {
+							new_slot = i;
+
+							break;
+						}
+
+						if (stack.getItem() instanceof ItemTool) {
+							new_slot = i;
+
+							break;
+						}
+					}
+
+					if (new_slot != -1) {
+						mc.player.inventory.currentItem = new_slot;
+
+						switch_cooldown = true;
+					}
+				}
+
+				BopeUtilMath.calcule_look_at(crystal.posX, crystal.posY, crystal.posZ, mc.player);
 
 				mc.playerController.attackEntity(mc.player, crystal);
-				mc.player.swingArm(off_hand ? EnumHand.OFF_HAND : EnumHand.MAIN_HAND);
+				mc.player.swingArm(offhand == true && offhand_crystal.get_value(true) ? EnumHand.OFF_HAND : EnumHand.MAIN_HAND);
 
-				system_time = System.nanoTime() / 1000000L;
-
-				// ++ to count.
-				place_count++;
+				system_time_hit = System.nanoTime() / 1000000;
 			}
 
-			if (place_count >= 1 && !doubles.get_value(true)) {
-				reset_rotation();
+			if (!double_place.get_value(true)) {
+				if (System.nanoTime() / 1000000L - system_time_double >= 20 * speed_hit.get_value(1) && System.nanoTime() / 1000000L - system_time_ms <= 400 + (400 - speed_hit.get_value(1) * 20)) {
+					system_time_double = System.nanoTime() / 1000000;
 
-				place_count = 0;
-
-				return;
-			} else if (place_count >= 2 && doubles.get_value(true)) {
-				reset_rotation();
-
-				place_count = 0;
-
-				return;
+					return;
+				} else if (System.nanoTime() / 1000000L - system_time_ms <= 400 + (400 - speed_hit.get_value(1) * 20)) {
+					return;
+				}
 			}
 		} else {
 			reset_rotation();
-		}
 
-		int crystal_slot = (mc.player.getHeldItemMainhand().getItem() == Items.END_CRYSTAL) ? mc.player.inventory.currentItem : -1;
-		
-		if (crystal_slot == -1) {
-			for (int l = 0; l < 9; ++l) {
-				if (mc.player.inventory.getStackInSlot(l).getItem() == Items.END_CRYSTAL) {
-					crystal_slot = l;
-
-					break;
-				}
+			if (old_slot != -1) {
+				mc.player.inventory.currentItem = old_slot;
+				old_slot                        = -1;
 			}
+
+			is_attacking = false;
 		}
 
-		off_hand = false;
+		int crystal_slot = mc.player.getHeldItemMainhand().getItem() == Items.END_CRYSTAL ? mc.player.inventory.currentItem : -1;
+
+		if (crystal_slot == -1) {
+			crystal_slot = BopeUtilItem.get_hotbar_item_slot(Items.END_CRYSTAL);
+		}
+
+		offhand = false;
 
 		if (mc.player.getHeldItemOffhand().getItem() == Items.END_CRYSTAL) {
-			off_hand = true;
+			offhand = true;
 		} else if (crystal_slot == -1) {
 			return;
 		}
 
-		List<BlockPos> block  = find_block_to_crystal();
-		List<Entity>   entity = new ArrayList<Entity>();
+		List<BlockPos> blocks = find();
+		List<Entity> entities = new ArrayList<>();
 
-		entity.addAll(mc.world.playerEntities.stream().filter(entity_requested -> !Bope.get_friend_manager().is_friend(entity_requested.getName())).collect(Collectors.toList()));
+		if (find_player.get_value(true)) {
+			entities.addAll(mc.world.playerEntities.stream().filter(entity_player -> !Bope.get_friend_manager().is_friend(entity_player.getName())).collect(Collectors.toList()));
+		}
+
+		entities.addAll(mc.world.loadedEntityList.stream().filter(entity -> entity instanceof EntityLivingBase && (entity instanceof IMob && find_hostile.get_value(true))).collect(Collectors.toList()));
 	
-		BlockPos pos = null;
+		BlockPos q = null;
 
-		double damage = 0;
+		double damage = 0.5;
 
-		for (Entity entities : entity) {
-			if (entities != mc.player) {
-				if (((EntityLivingBase) entities).getHealth() <= 0.0f || ((EntityLivingBase) entities).isDead) {
+		for (Entity entity : entities) {
+			if (entity != mc.player) {
+				if (((EntityLivingBase) entity).getHealth() <= 0.0f || ((EntityLivingBase) entity).isDead) {
 					continue;
 				}
 
-				for (BlockPos blocks : block) {
-					double sq = entities.getDistanceSq(blocks);
-					double dm = calculate_damage(blocks.x + 0.5, blocks.y + 1, blocks.z + 0.5, entities);
-					double sf = calculate_damage(blocks.x + 0.5, blocks.y + 1, blocks.z + 0.5, mc.player);
+				for (BlockPos pos : blocks) {
+					double sq = entity.getDistanceSq(pos);
 
-					if (sq > 169) {
+					if (sq > range_enemy.get_value(1) * range_enemy.get_value(1)) {
 						continue;
 					}
 
+					double dm = calcule_damage(pos.x + 0.5, pos.y + 1, pos.z + 0.5, entity);
 					if (dm <= damage) {
 						continue;
 					}
 
-					if (sf > dm && dm >= ((EntityLivingBase) entities).getHealth()) {
+					double sf = calcule_damage(pos.x + 0.5, pos.y + 1, pos.z + 0.5, mc.player);
+					if (sf > dm && dm >= ((EntityLivingBase) entity).getHealth()) {
 						continue;
 					}
 
@@ -223,62 +285,78 @@ public class BopeAutoCrystal extends BopeModule {
 						continue;
 					}
 
-					if (dm < minimum.get_value(1)) {
+					if (dm < face_place_min.get_value(1)) {
 						continue;
 					}
 
 					damage        = dm;
-					pos           = blocks;
-					render_entity = entities;
+					q             = pos;
+					render_entity = entity;
 				}
 			}
 		}
 
-		if (damage == 0) {
-			render_entity   = null;
-			render_position = null;
+		if (damage == 0.5) {
+			render        = null;
+			render_entity = null;
 
 			reset_rotation();
 
 			return;
 		}
 
-		render_position = pos;
+		render = q;
 
-		if (!off_hand && mc.player.inventory.currentItem != crystal_slot) {
+		if (!offhand && mc.player.inventory.currentItem != crystal_slot) {
 			if (auto_slot.get_value(true)) {
-				new_slot                        = crystal_slot;
 				mc.player.inventory.currentItem = crystal_slot;
 
 				reset_rotation();
+
+				switch_cooldown = true;
 			}
+
+			return;
 		}
 
-		look_at_packet(pos.x + 0.5, pos.y - 0.5, pos.z + 0.5, mc.player);
+		BopeUtilMath.calcule_look_at(q.x + 0.5, q.y - 0.5, q.z + 0.5, mc.player);
 
-		EnumFacing face;
+		EnumFacing f;
 
-		if (ray_trace.get_value(true)) {
-			RayTraceResult result = mc.world.rayTraceBlocks(new Vec3d(mc.player.posX, mc.player.posY + mc.player.getEyeHeight(), mc.player.posZ), new Vec3d(pos.x + 0.5, pos.y - 0.5, pos.z + 0.5));
+		if (ray_trace_util.get_value(true)) {
+			RayTraceResult result = mc.world.rayTraceBlocks(new Vec3d(mc.player.posX, mc.player.posY + mc.player.getEyeHeight(), mc.player.posZ), new Vec3d(q.x + 0.5, q.y - 0.5d, q.z + 0.5));
 		
 			if (result == null || result.sideHit == null) {
-				face = EnumFacing.UP;
+				f = EnumFacing.UP;
 			} else {
-				face = result.sideHit;
+				f = result.sideHit;
 			}
 		} else {
-			face = EnumFacing.DOWN;
+			f = EnumFacing.DOWN;
 		}
 
-		mc.player.connection.sendPacket((Packet) new CPacketPlayerTryUseItemOnBlock(pos, face, off_hand ? EnumHand.OFF_HAND : EnumHand.MAIN_HAND, 0.0f, 0.0f, 0.0f));
-	
-		if (spoofing_anlges) {
-			if (toggling_pitch) {
-				mc.player.rotationPitch += 4.0E-4f;
-				toggling_pitch           = false;
+		if (switch_cooldown) {
+			switch_cooldown = false;
+
+			return;
+		}
+
+		if (System.nanoTime() / 1000000L - system_time_place >= speed_place.get_value(1) * 2) {
+			mc.player.connection.sendPacket(new CPacketPlayerTryUseItemOnBlock(q, f, offhand ? EnumHand.OFF_HAND : EnumHand.MAIN_HAND, 0, 0, 0));
+
+			places++;
+
+			system_time_place  = System.nanoTime() / 1000000;
+			system_time_ms     = System.nanoTime() / 1000000;
+		}
+
+		if (is_spoofing_angles) {
+			if (toggle_pitch) {
+				mc.player.rotationPitch += 0.0004;
+				toggle_pitch             = false;
 			} else {
-				mc.player.rotationPitch -= 4.0E-4f;
-				toggling_pitch           = true;
+				mc.player.rotationPitch -= 0.0004;
+				toggle_pitch             = true;
 			}
 		}
 	}
@@ -288,108 +366,115 @@ public class BopeAutoCrystal extends BopeModule {
 		float[] tick_color = {
 			(System.currentTimeMillis() % (360 * 32)) / (360f * 32)
 		};
-
+	
 		int color_rgb = Color.HSBtoRGB(tick_color[0], 1, 1);
 
-		if (render_entity != null && render_position != null) {
-			TurokRenderHelp.prepare("quads");
+		int r;
+		int g;
+		int b;
+	
+		if (rgb.get_value(true)) {
+			r = ((color_rgb >> 16) & 0xFF);
+			g = ((color_rgb >> 8) & 0xFF);
+			b = (color_rgb & 0xFF);
+	
+			color_r.set_value(r);
+			color_g.set_value(g);
+			color_b.set_value(b);
+		} else {
+			r = color_r.get_value(1);
+			g = color_g.get_value(2);
+			b = color_b.get_value(3);
+		}
 
-			TurokRenderHelp.draw_cube_line(render_position, 255, 255, 255, 255, "all");
+		if (render != null) {
+			// Solid.			
+			TurokRenderHelp.prepare("quads");
+			TurokRenderHelp.draw_cube(TurokRenderHelp.get_buffer_build(),
+				render.x, render.y, render.z,
+				1, 1, 1,
+				r, g, b, solid_a.get_value(1),
+				"all"
+			);
+
+			TurokRenderHelp.release();
+
+			// Outline.
+			TurokRenderHelp.prepare("lines");
+			TurokRenderHelp.draw_cube_line(TurokRenderHelp.get_buffer_build(),
+				render.x, render.y, render.z,
+				1, 1, 1,
+				r, g, b, outline_a.get_value(1),
+				"all"
+			);
 
 			TurokRenderHelp.release();
 		}
 	}
 
-	public void look_at_packet(double px, double py, double pz, EntityPlayer player) {
-		double[] view = calcule_look_at(px, py, pz, player);
+	private boolean can_place_crystal(BlockPos pos) {
+		BlockPos boost_1 = pos.add(0, 1, 0);
+		BlockPos boost_2 = pos.add(0, 1, 0);
 
-		set_yaw_and_pitch((float) view[0], (float) view[1]);
-	};
-
-	public void set_yaw_and_pitch(float yaw, float pitch) {
-		player_yaw      = yaw;
-		player_pitch    = pitch;
-		spoofing_anlges = true;
-	}
-
-	public void reset_rotation() {
-		if (spoofing_anlges) {
-			player_yaw      = mc.player.rotationYaw;
-			player_pitch    = mc.player.rotationPitch;
-			spoofing_anlges = false;
+		return (mc.world.getBlockState(pos).getBlock() == Blocks.BEDROCK
+				|| mc.world.getBlockState(pos).getBlock() == Blocks.OBSIDIAN)
+				&& mc.world.getBlockState(boost_1).getBlock() == Blocks.AIR
+				&& mc.world.getBlockState(boost_2).getBlock() == Blocks.AIR
+				&& mc.world.getEntitiesWithinAABB(Entity.class, new AxisAlignedBB(boost_1)).isEmpty()
+				&& mc.world.getEntitiesWithinAABB(Entity.class, new AxisAlignedBB(boost_2)).isEmpty();
 		}
+
+	public BlockPos get_player_as_block_pos() {
+		return new BlockPos(Math.floor(mc.player.posX), Math.floor(mc.player.posY), Math.floor(mc.player.posZ));
 	}
 
-	public BlockPos player_pos() {
-		return new BlockPos(mc.player.posX, mc.player.posY, mc.player.posZ);
-	}
+	private List<BlockPos> find() {
+		NonNullList<BlockPos> positions = NonNullList.create();
 
-	public List<BlockPos> find_block_to_crystal() {
-		NonNullList<BlockPos> position = NonNullList.create();
-
-		// Position.
-		position.addAll(sphere(player_pos(), (float) place_range.get_value(1), place_range.get_value(1), false, true).stream().filter(this::can_place_crystal).collect(Collectors.toList()));
+		positions.addAll(get_sphere(get_player_as_block_pos(), (float) range_place.get_value(1), range_place.get_value(1), false, true, 0).stream().filter(this::can_place_crystal).collect(Collectors.toList()));
 	
-		return position;
+		return positions;
 	}
 
-	public List<BlockPos> sphere(BlockPos pos, float r, int h, boolean hollow, boolean sphere) {
-		int plus_y = 0;
+	public List<BlockPos> get_sphere(BlockPos loc, float r, int h, boolean hollow, boolean sphere, int plus_y) {
+		List<BlockPos> sphere_list = new ArrayList<>();
 
-		List<BlockPos> sphere_block = new ArrayList<BlockPos>();
+		int cx = loc.getX();
+		int cy = loc.getY();
+		int cz = loc.getZ();
 
-		int cx = pos.getX();
-		int cy = pos.getY();
-		int cz = pos.getZ();
-
-		for (int x = cx - (int)r; x <= cx + r; ++x) {
-			for (int z = cz - (int)r; z <= cz + r; ++z) {
-				for (int y = sphere ? (cy - (int)r) : cy; y < (sphere ? (cy + r) : ((float)(cy + h))); ++y) {
-					double dist = (cx - x) * (cx - x) + (cz - z) * (cz - z) + (sphere ? ((cy - y) * (cy - y)) : 0);
-					if (dist < r * r && (!hollow || dist >= (r - 1.0f) * (r - 1.0f))) {
+		for (int x = cx - (int) r; x <= cx + r; x++) {
+			for (int z = cz - (int) r; z <= cz + r; z++) {
+				for (int y = (sphere ? cy - (int) r : cy); y < (sphere ? cy + r : cy + h); y++) {
+					double dist = (cx - x) * (cx - x) + (cz - z) * (cz - z) + (sphere ? (cy - y) * (cy - y) : 0);
+					if (dist < r * r && !(hollow && dist < (r - 1) * (r - 1))) {
 						BlockPos spheres = new BlockPos(x, y + plus_y, z);
-
-						sphere_block.add(spheres);
+						
+						sphere_list.add(spheres);
 					}
 				}
 			}
 		}
 
-		return sphere_block;
+		return sphere_list;
 	}
 
-	public boolean can_place_crystal(BlockPos pos) {
-		BlockPos bs1 = pos.add(0, 1, 0);
-		BlockPos bs2 = pos.add(0, 2, 0);
+	public float calcule_damage(double pos_x, double pos_y, double pos_z, Entity entity) {
+		float double_explosion_size = 6.0f * 2.0f;
 
-		return (mc.world.getBlockState(pos).getBlock() == Blocks.BEDROCK
-			||  mc.world.getBlockState(pos).getBlock() == Blocks.OBSIDIAN)
-			&&  mc.world.getBlockState(bs1).getBlock() == Blocks.AIR
-			&&  mc.world.getBlockState(bs2).getBlock() == Blocks.AIR
-			&&  mc.world.getEntitiesWithinAABB((Class) Entity.class, new AxisAlignedBB(bs1)).isEmpty()
-			&&  mc.world.getEntitiesWithinAABB((Class) Entity.class, new AxisAlignedBB(bs2)).isEmpty();
-	}
+		double distanced_size = entity.getDistance(pos_x, pos_y, pos_z) / (double) double_explosion_size;
 
-	public EntityEnderCrystal request(String tag, int index) {
-		return (EntityEnderCrystal) mc.world.loadedEntityList.stream().filter(entity -> entity instanceof EntityEnderCrystal).map(entity -> entity).min(Comparator.comparing(d_entity -> mc.player.getDistance(d_entity))).orElse(null);
-	}
+		Vec3d vec3d = new Vec3d(pos_x, pos_y, pos_z);
 
-	public float calculate_damage(double x, double y, double z, Entity entity) {
-		float double_explosions = 12.0f;
+		double block_desinty = (double) entity.world.getBlockDensity(vec3d, entity.getEntityBoundingBox());
+		double v             = (1.0D - distanced_size) * block_desinty;
 
-		double distance_size = entity.getDistance(x, y, z) / double_explosions;
+		float damage = (float) ((int) ((v * v + v) / 2.0D * 7.0D * (double) double_explosion_size + 1.0D));
 
-		Vec3d vec3d = new Vec3d(x, y, z);
-
-		double block_density = entity.world.getBlockDensity(vec3d, entity.getEntityBoundingBox());
-		double vulgo_kkkkkkk = (1.0 - distance_size) * block_density;
-		
-		float damage = (float) (int) ((vulgo_kkkkkkk * vulgo_kkkkkkk + vulgo_kkkkkkk) / 2.0 * 7.0 * double_explosions + 1.0);
-		
-		double finald = 1.0;
+		double finald = 1;
 
 		if (entity instanceof EntityLivingBase) {
-			finald = get_blast_reduction((EntityLivingBase) entity, get_damage_multiplied(damage), new Explosion(mc.world, null, x, y, z, 6.0f, false, true));
+		    finald = get_blast_reduction((EntityLivingBase) entity, get_damage_multiplied(damage), new Explosion(mc.world, null, pos_x, pos_y, pos_z, 6f, false, true));
 		}
 
 		return (float) finald;
@@ -400,19 +485,19 @@ public class BopeAutoCrystal extends BopeModule {
 			EntityPlayer ep = (EntityPlayer) entity;
 			DamageSource ds = DamageSource.causeExplosionDamage(explosion);
 
-			damage = CombatRules.getDamageAfterAbsorb(damage, (float)ep.getTotalArmorValue(), (float)ep.getEntityAttribute(SharedMonsterAttributes.ARMOR_TOUGHNESS).getAttributeValue());
+			damage = CombatRules.getDamageAfterAbsorb(damage, (float) ep.getTotalArmorValue(), (float) ep.getEntityAttribute(SharedMonsterAttributes.ARMOR_TOUGHNESS).getAttributeValue());
 
 			int k   = EnchantmentHelper.getEnchantmentModifierDamage(ep.getArmorInventoryList(), ds);
-			float f = MathHelper.clamp((float) k, 0.0f, 20.0f);
+			float f = MathHelper.clamp(k, 0.0F, 20.0F);
 
-			damage *= 1.0f - f / 25.0f;
+			damage = damage * (1.0F - f / 25.0F);
 
 			if (entity.isPotionActive(Potion.getPotionById(11))) {
-				damage -= damage / 4.0f;
+			    damage = damage - (damage / 4);
 			}
-			
-			damage = Math.max(damage, 0.0f);
-			
+
+			damage = Math.max(damage - ep.getAbsorptionAmount(), 0.0f);
+
 			return damage;
 		}
 
@@ -424,6 +509,26 @@ public class BopeAutoCrystal extends BopeModule {
 	private float get_damage_multiplied(float damage) {
 		int diff = mc.world.getDifficulty().getId();
 
-		return damage * ((diff == 0) ? 0.0f : ((diff == 2) ? 1.0f : ((diff == 1) ? 0.5f : 1.5f)));
+		return damage * (diff == 0 ? 0 : (diff == 2 ? 1 : (diff == 1 ? 0.5f : 1.5f)));
+	}
+
+	public float calcule_damage(EntityEnderCrystal crystal, Entity entity) {
+		return calcule_damage(crystal.posX, crystal.posY, crystal.posZ, entity);
+	}
+
+	public void set_angles(double new_yaw, double new_pitch) {
+		yaw   = new_yaw;
+		pitch = new_pitch;
+
+		is_spoofing_angles = true;
+	}
+
+	public void reset_rotation() {
+		if (is_spoofing_angles) {
+			yaw   = mc.player.rotationYaw;
+			pitch = mc.player.rotationPitch;
+
+			is_spoofing_angles = false;
+		}
 	}
 }

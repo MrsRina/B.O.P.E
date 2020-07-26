@@ -28,7 +28,7 @@ import rina.turok.bope.Bope;
  *
  **/
 public class BopeSmallHand extends BopeModule {
-	BopeSetting offset = create("Offset", "SmallHandOffset", 105, 0, 360);
+	BopeSetting offset = create("Offset", "SmallHandOffset", 90, 0, 360);
 
 	public BopeSmallHand() {
 		super(BopeCategory.BOPE_MISC);

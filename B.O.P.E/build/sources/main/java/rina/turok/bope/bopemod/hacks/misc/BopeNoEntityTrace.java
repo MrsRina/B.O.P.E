@@ -17,8 +17,6 @@ import rina.turok.bope.Bope;
 *
 */
 public class BopeNoEntityTrace extends BopeModule {
-	public static BopeNoEntityTrace INSTANCE;
-
 	public BopeNoEntityTrace() {
 		super(BopeCategory.BOPE_MISC, false);
 
@@ -29,11 +27,10 @@ public class BopeNoEntityTrace extends BopeModule {
 
 		// Release or launch the module.
 		release("B.O.P.E - Module - B.O.P.E");
-
-		INSTANCE = this;
 	}
 
-	public static boolean trace() {
+	@Override
+	public boolean value_boolean_0() {
 		return true;
 	}	
 }

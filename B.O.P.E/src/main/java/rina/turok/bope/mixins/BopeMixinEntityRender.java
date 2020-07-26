@@ -19,9 +19,6 @@ import org.spongepowered.asm.mixin.Mixin;
 
 import java.util.*;
 
-// Modules.
-import rina.turok.bope.bopemod.hacks.misc.BopeNoEntityTrace;
-
 // Data.
 import rina.turok.bope.bopemod.BopeModule;
 
@@ -52,7 +49,7 @@ public class BopeMixinEntityRender {
 	private List<Entity> getMouseOver(WorldClient world_client, Entity entity, AxisAlignedBB bouding_box, Predicate predicate) {
 		BopeModule module_requested = Bope.get_module_manager().get_module_with_tag("NoEntityTrace");
 
-		if (module_requested.is_active() && BopeNoEntityTrace.trace()) {
+		if (module_requested.is_active() && module_requested.value_boolean_0()) {
 			return new ArrayList<>();
 		} else {
 			return world_client.getEntitiesInAABBexcluding(entity, bouding_box, predicate);

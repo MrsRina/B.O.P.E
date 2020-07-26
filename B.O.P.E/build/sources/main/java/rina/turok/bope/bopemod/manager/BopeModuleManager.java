@@ -87,6 +87,7 @@ public class BopeModuleManager {
 		// Misc.
 		add_module(new BopeNoEntityTrace());
 		add_module(new BopeNoHurtCam());
+		add_module(new BopeSmallHand());
 		add_module(new BopeSwing());
 		add_module(new BopeRPC());
 

@@ -4,12 +4,12 @@ package rina.turok.bope.bopemod.events;
 import rina.turok.bope.external.BopeEventCancellable;
 
 /**
-* @author Rina
-*
-* Created by Rina.
-* 30/05/20.
-*
-**/
+ * @author Rina
+ *
+ * Created by Rina.
+ * 30/05/20.
+ *
+ **/
 public class BopeEventJoin extends BopeEventCancellable {
 	String name;
 

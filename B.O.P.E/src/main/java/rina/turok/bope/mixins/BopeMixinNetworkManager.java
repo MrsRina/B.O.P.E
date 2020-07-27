@@ -19,12 +19,12 @@ import rina.turok.bope.bopemod.events.BopeEventPacket;
 import rina.turok.bope.Bope;
 
 /**
-* @author Rina
-*
-* Created by Rina.
-* 08/04/20.
-*
-*/
+ * @author Rina
+ *
+ * Created by Rina.
+ * 08/04/20.
+ *
+ */
 @Mixin(value = NetworkManager.class)
 public class BopeMixinNetworkManager {
 	// Receive packet.

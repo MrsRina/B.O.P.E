@@ -1,12 +1,12 @@
 package rina.turok.turok.values;
 
 /**
-* @author Rina
-*
-* Created by Rina.
-* 08/04/20.
-*
-*/
+ * @author Rina
+ *
+ * Created by Rina.
+ * 08/04/20.
+ *
+ */
 public class TurokFloat {
 	private String name;
 	private String tag;

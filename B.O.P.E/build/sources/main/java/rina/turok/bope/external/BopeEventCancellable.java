@@ -5,12 +5,12 @@ import me.zero.alpine.type.Cancellable;
 import net.minecraft.client.Minecraft;
 
 /**
-* @author Rina
-*
-* Created by Rina.
-* 08/04/20.
-*
-*/
+ * @author Rina
+ *
+ * Created by Rina.
+ * 08/04/20.
+ *
+ */
 public class BopeEventCancellable extends Cancellable {
 	private Era era_switch = Era.EVENT_PRE;
 

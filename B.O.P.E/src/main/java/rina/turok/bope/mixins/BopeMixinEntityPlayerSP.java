@@ -22,12 +22,12 @@ import rina.turok.bope.bopemod.events.BopeEventMove;
 import rina.turok.bope.Bope;
 
 /**
-* @author Rina
-*
-* Created by Rina.
-* 12/05/20.
-*
-*/
+ * @author Rina
+ *
+ * Created by Rina.
+ * 12/05/20.
+ *
+ */
 @Mixin(value = EntityPlayerSP.class)
 public abstract class BopeMixinEntityPlayerSP extends Entity {
 	public BopeMixinEntityPlayerSP(World world) {

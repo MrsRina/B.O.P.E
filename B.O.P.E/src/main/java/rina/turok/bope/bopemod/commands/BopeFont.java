@@ -63,7 +63,7 @@ public class BopeFont extends BopeCommand {
 		String [] fonts = g.getAvailableFontFamilyNames();
 		
 		for (int i = 0; i < fonts.length; i++) {
-			if(fonts[i].equals(font_name)) {
+			if (fonts[i].equals(font_name)) {
 				return true;
 			}
 		}

@@ -1,12 +1,12 @@
 package rina.turok.turok.task;
 
 /**
-* @author Rina
-*
-* Created by Rina.
-* 08/05/20.
-*
-*/
+ * @author Rina
+ *
+ * Created by Rina.
+ * 08/05/20.
+ *
+ */
 public class TurokFont {
 	public static String smooth(String base) {
 		String new_base = base;

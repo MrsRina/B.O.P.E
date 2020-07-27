@@ -18,12 +18,12 @@ import org.lwjgl.opengl.GL11;
 import rina.turok.bope.Bope;
 
 /**
-* @author Rina
-*
-* Created by Rina.
-* 23/04/20.
-*
-*/
+ * @author Rina
+ *
+ * Created by Rina.
+ * 23/04/20.
+ *
+ */
 @Mixin(value = RenderPlayer.class)
 public abstract class BopeMixinRenderPlayer {
 	// Renmove name.

@@ -11,12 +11,12 @@ import org.spongepowered.asm.mixin.Mixins;
 import java.util.Map;
 
 /**
-* @author Rina
-*
-* Created by Rina.
-* 08/04/20.
-*
-*/
+ * @author Rina
+ *
+ * Created by Rina.
+ * 08/04/20.
+ *
+ */
 public class BopeMixinLoader implements IFMLLoadingPlugin {
 	public BopeMixinLoader() {
 		// Gay:

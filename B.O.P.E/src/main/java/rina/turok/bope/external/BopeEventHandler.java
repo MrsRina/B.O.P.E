@@ -12,13 +12,13 @@ import java.util.Arrays;
 import rina.turok.bope.bopemod.events.BopeEventPacket;
 import rina.turok.bope.Bope;
 
-//
-// Author: Rina.
-// A event handler for events packet into B.O.P.E.
-// This update the ticks on EventListener.
-// I used like reference the LagCompressor from KAMI.
-//
-
+/**
+ * @author 086
+ *
+ * Created by Rina. / file
+ * 08/04/20.
+ *
+ */
 public class BopeEventHandler implements EventListener {
 	public static BopeEventHandler INSTANCE;
 

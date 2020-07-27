@@ -13,12 +13,12 @@ import java.util.*;
 import rina.turok.bope.Bope;
 
 /**
-* @author Rina
-*
-* Created by Rina.
-* 15/06/2020.
-*
-*/
+ * @author Rina
+ *
+ * Created by Rina.
+ * 15/06/2020.
+ *
+ */
 public class BopeDiscordRichPresence {
 	public final DiscordRPC discord_rpc;
 	public       DiscordRichPresence discord_presence;

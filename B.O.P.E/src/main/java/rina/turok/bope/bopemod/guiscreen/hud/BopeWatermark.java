@@ -26,7 +26,7 @@ public class BopeWatermark extends BopePinnable {
 			background();
 		}
 
-		String line = "Welcome to B.O.P.E. " + Bope.g + "[" + Bope.r + Bope.get_version() + Bope.g + "]" + Bope.r;
+		String line = "B.O.P.E. " + Bope.g + "[" + Bope.r + Bope.get_version() + Bope.g + "]" + Bope.r;
 
 		create_line(line, 1, 2);
 

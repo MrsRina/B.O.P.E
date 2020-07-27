@@ -4,12 +4,12 @@ package rina.turok.turok.values;
 import rina.turok.turok.values.TurokGeneric;
 
 /**
-* @author Rina
-*
-* Created by Rina.
-* 08/04/20.
-*
-*/
+ * @author Rina
+ *
+ * Created by Rina.
+ * 08/04/20.
+ *
+ */
 public class TurokBoolean {
 	private String name;
 	private String tag;

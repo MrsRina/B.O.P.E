@@ -33,12 +33,12 @@ import rina.turok.bope.bopemod.hacks.render.BopeEntityESP;
 import rina.turok.bope.Bope;
 
 /**
-* @author Rina
-*
-* Created by Rina.
-* 23/04/20.
-*
-*/
+ * @author Rina
+ *
+ * Created by Rina.
+ * 23/04/20.
+ *
+ */
 @Mixin(value = Render.class)
 public abstract class BopeMixinRender <T extends Entity> {
 	public final Minecraft mc = Minecraft.getMinecraft();

@@ -33,12 +33,12 @@ public class BopeCoordinates extends BopePinnable {
 			background();
 		}
 
-		String x = Bope.g + "["  + db + Integer.toString((int) (mc.player.posX)) + Bope.g + Bope.r;
-		String y = Bope.g + ", " + db + Integer.toString((int) (mc.player.posY)) + Bope.g + Bope.r;
-		String z = Bope.g + ", " + db + Integer.toString((int) (mc.player.posZ)) + Bope.g + "]" + Bope.r;
+		String x = Bope.g + "["  + db + String.format("%.2f", (double) (mc.player.posX)) + Bope.g + Bope.r;
+		String y = Bope.g + ", " + db + String.format("%.2f", (double) (mc.player.posY)) + Bope.g + Bope.r;
+		String z = Bope.g + ", " + db + String.format("%.2f", (double) (mc.player.posZ)) + Bope.g + "]" + Bope.r;
 
-		String x_nether = Bope.g + "["  + dr + Integer.toString((int) (mc.player.posX * 0.125f)) + Bope.g + Bope.r;
-		String z_nether = Bope.g + ", " + dr + Integer.toString((int) (mc.player.posZ * 0.125f)) + Bope.g + "]" + Bope.r;
+		String x_nether = Bope.g + "["  + dr + String.format("%.2f", (Double) (mc.player.posX * 0.125f)) + Bope.g + Bope.r;
+		String z_nether = Bope.g + ", " + dr + String.format("%.2f", (Double) (mc.player.posZ * 0.125f)) + Bope.g + "]" + Bope.r;
 
 		String line = "XYZ " + x + y + z + x_nether + z_nether;
 

@@ -7,12 +7,12 @@ import rina.turok.turok.draw.TurokGL;
 import rina.turok.turok.task.TurokFont;
 
 /**
-* @author Rina
-*
-* Created by Rina.
-* 27/04/20.
-*
-*/
+ * @author Rina
+ *
+ * Created by Rina.
+ * 27/04/20.
+ *
+ */
 public class Turok {
 	private String tag;
 

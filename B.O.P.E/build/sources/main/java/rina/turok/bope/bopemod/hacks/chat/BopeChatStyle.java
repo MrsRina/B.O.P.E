@@ -57,7 +57,7 @@ public class BopeChatStyle extends BopeModule {
 	BopeSetting color_time  = create("Time", "ChatStyleColorTime", colors_combobox.get(0), colors_combobox); 
 	BopeSetting color_name  = create("Name", "ChatStyleColorMessage", colors_combobox.get(0), colors_combobox);
 	BopeSetting color_fname = create("Friend", "ChatStyleColorFriend", colors_combobox.get(14), colors_combobox);
-	BopeSetting type_mode   = create("Separator", "ChatStyleSeparator", "<>", combobox("[]", "<>"));
+	BopeSetting type_mode   = create("Separator", "ChatStyleSeparator", "<>", combobox("[]", "<>", "None"));
 	//BopeSetting color_mode   = create("Color Mode", "ChatStyleColorMode", "HUD", combobox("HUD", "Server"));
 
 	public static HashMap<String, ChatFormatting> color = new HashMap<>();
@@ -121,8 +121,17 @@ public class BopeChatStyle extends BopeModule {
 			is_friend = true;
 		}
 
-		String pre = type_mode.in("[]") ? "[" : "<";
-		String end = type_mode.in("[]") ? "]" : ">";
+		String pre = "";
+		String end = "";
+
+		boolean none = true;
+
+		if (!type_mode.in("None")) {
+			pre = type_mode.in("[]") ? "[" : "<";
+			end = type_mode.in("[]") ? "]" : ">";
+
+			none = false;
+		}
 
 		if (color_time.in("Disabled")) {
 			event_color_time = false;
@@ -143,7 +152,7 @@ public class BopeChatStyle extends BopeModule {
 		if (event_color_time) {
 			ChatFormatting c = color.get(color_time.get_current_value());
 
-			message.appendText(Bope.r + pre + c + new SimpleDateFormat("k:mm:a").format(new Date()) + Bope.r + end + (is_name == true ? "" : " "));
+			message.appendText(Bope.r + pre + c + new SimpleDateFormat("k:mm:a").format(new Date()) + Bope.r + end + (is_name == true ? (none == true ? " " : "") : " "));
 		
 			cancel = false;
 		}
@@ -161,8 +170,8 @@ public class BopeChatStyle extends BopeModule {
 
 			String base_1 = separates[0];
 				
-			base_1 = base_1.replaceAll("<", Bope.r + pre + c);
-			base_1 = base_1.replaceAll(">", Bope.r + end + Bope.r);
+			base_1 = base_1.replaceAll("<", Bope.r + "<" + c);
+			base_1 = base_1.replaceAll(">", Bope.r + ">" + Bope.r);
 
 			String message_of_player = original_message.substring(separates[0].length());
 

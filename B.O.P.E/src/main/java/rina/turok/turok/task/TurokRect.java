@@ -1,12 +1,12 @@
 package rina.turok.turok.task;
 
 /**
-* @author Rina
-*
-* Created by Rina.
-* 25/04/20.
-*
-*/
+ * @author Rina
+ *
+ * Created by Rina.
+ * 25/04/20.
+ *
+ */
 public class TurokRect {
 	private String tag;
 

@@ -26,12 +26,12 @@ import rina.turok.bope.bopemod.BopeModule;
 import rina.turok.bope.Bope;
 
 /**
-* @author Rina
-*
-* Created by Rina.
-* 12/05/20.
-*
-*/
+ * @author Rina
+ *
+ * Created by Rina.
+ * 12/05/20.
+ *
+ */
 @Mixin(value = EntityRenderer.class)
 public class BopeMixinEntityRender {
 	// orient camera.

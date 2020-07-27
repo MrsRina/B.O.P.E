@@ -6,12 +6,12 @@ import net.minecraft.entity.Entity;
 import rina.turok.bope.external.BopeEventCancellable;
 
 /**
-* @author Rina
-*
-* Created by Rina.
-* 12/05/20.
-*
-*/
+ * @author Rina
+ *
+ * Created by Rina.
+ * 12/05/20.
+ *
+ */
 public class BopeEventEntity extends BopeEventCancellable {
 	private Entity entity;
 

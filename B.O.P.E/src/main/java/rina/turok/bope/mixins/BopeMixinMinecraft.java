@@ -27,12 +27,12 @@ import rina.turok.bope.bopemod.events.BopeEventGUIScreen;
 import rina.turok.bope.Bope;
 
 /**
-* @author Rina
-*
-* Created by Rina.
-* 23/04/20.
-*
-*/
+ * @author Rina
+ *
+ * Created by Rina.
+ * 23/04/20.
+ *
+ */
 @Mixin(value = Minecraft.class)
 public class BopeMixinMinecraft {
 	@Inject(method = "displayGuiScreen", at = @At("HEAD"))

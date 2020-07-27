@@ -11,15 +11,15 @@ import org.lwjgl.opengl.GL11;
 import java.awt.*;
 
 /**
-* @author Rina
-*
-* Created by Rina.
-* 08/04/20.
-*
-* - Thanks for:
-* Copyright ï¿½ 2016 | Hexeption & TheCyberBrick | Innocent All rights reserved.
-*
-*/
+ * @author Rina
+ *
+ * Created by Rina.
+ * 08/04/20.
+ *
+ * - Thanks for:
+ * Copyright ï¿½ 2016 | Hexeption & TheCyberBrick | Innocent All rights reserved.
+ *
+ */
 public class TurokGL {
 	public static void color(float r, float g, float b, float a) {
 		GL11.glColor4f(r / 255, g / 255, b / 255, a / 255);

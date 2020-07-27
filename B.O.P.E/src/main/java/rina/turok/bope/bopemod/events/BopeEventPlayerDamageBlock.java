@@ -4,9 +4,9 @@ package rina.turok.bope.bopemod.events;
 import rina.turok.bope.external.BopeEventCancellable;
 
 /**
-* @author Rina
-*
-* Created by Rina.
-* 27/06/20.
-*
-**/
+ * @author Rina
+ *
+ * Created by Rina.
+ * 27/06/20.
+ *
+ **/

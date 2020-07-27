@@ -6,12 +6,12 @@ import net.minecraft.client.gui.GuiScreen;
 import rina.turok.bope.external.BopeEventCancellable;
 
 /**
-* @author Rina
-*
-* Created by Rina.
-* 08/04/20.
-*
-*/
+ * @author Rina
+ *
+ * Created by Rina.
+ * 08/04/20.
+ *
+ */
 public class BopeEventGUIScreen extends BopeEventCancellable {
 	private final GuiScreen guiscreen;
 

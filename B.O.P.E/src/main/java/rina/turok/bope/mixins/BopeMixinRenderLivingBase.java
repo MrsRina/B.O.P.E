@@ -36,12 +36,12 @@ import rina.turok.bope.Bope;
 import rina.turok.turok.draw.TurokGL;
 
 /**
-* @author Rina
-*
-* Created by Rina.
-* 23/04/20.
-*
-*/
+ * @author Rina
+ *
+ * Created by Rina.
+ * 23/04/20.
+ *
+ */
 @Mixin(value = RenderLivingBase.class)
 public abstract class BopeMixinRenderLivingBase <T extends EntityLivingBase> extends BopeMixinRender<T> {
 	public final Minecraft mc = Minecraft.getMinecraft();

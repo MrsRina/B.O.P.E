@@ -17,12 +17,12 @@ import rina.turok.bope.bopemod.BopeModule;
 import rina.turok.bope.Bope;
 
 /**
-* @author Rina
-*
-* Created by Rina.
-* 08/04/20.
-*
-*/
+ * @author Rina
+ *
+ * Created by Rina.
+ * 08/04/20.
+ *
+ */
 public class BopeMessage {
 	public static Minecraft mc = Minecraft.getMinecraft();
 

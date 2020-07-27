@@ -157,7 +157,7 @@ public class BopeModuleManager {
 		GlStateManager.shadeModel(GL11.GL_SMOOTH);
 		GlStateManager.disableDepth();
 
-		GlStateManager.glLineWidth(0.5f);
+		GlStateManager.glLineWidth(1.0f);
 
 		Vec3d pos = get_interpolated_pos(mc.player, event.getPartialTicks());
 
@@ -179,7 +179,7 @@ public class BopeModuleManager {
 
 		mc.profiler.startSection("release");
 
-		GlStateManager.glLineWidth(0.5f);
+		GlStateManager.glLineWidth(1.0f);
 
 		GlStateManager.shadeModel(GL11.GL_FLAT);
 		GlStateManager.disableBlend();

@@ -6,12 +6,12 @@ import net.minecraft.network.Packet;
 import rina.turok.bope.external.BopeEventCancellable;
 
 /**
-* @author Rina
-*
-* Created by Rina.
-* 08/04/20.
-*
-**/
+ * @author Rina
+ *
+ * Created by Rina.
+ * 08/04/20.
+ *
+ **/
 public class BopeEventPacket extends BopeEventCancellable {
 	private final Packet packet;
 

@@ -25,12 +25,12 @@ import rina.turok.bope.bopemod.events.BopeEventGUIScreen;
 import rina.turok.bope.Bope;
 
 /**
-* @author Rina
-*
-* Created by Rina.
-* 24/07/20.
-*
-*/
+ * @author Rina
+ *
+ * Created by Rina.
+ * 24/07/20.
+ *
+ */
 @Mixin(value = GuiContainer.class, priority = 998)
 public abstract class BopeMixinGUIContainer extends GuiScreen {
 //  	@Inject(method = "drawScreen", at = @At("HEAD"), cancellable = true)

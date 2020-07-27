@@ -25,12 +25,12 @@ import rina.turok.bope.bopemod.guiscreen.settings.BopeSetting;
 import rina.turok.bope.Bope;
 
 /**
-* @author Rina
-*
-* Created by Rina.
-* 08/04/20.
-*
-*/
+ * @author Rina
+ *
+ * Created by Rina.
+ * 08/04/20.
+ *
+ */
 public class BopeModule {
 	public BopeCategory category;
 

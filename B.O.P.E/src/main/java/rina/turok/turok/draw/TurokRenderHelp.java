@@ -11,12 +11,12 @@ import java.util.*;
 import static org.lwjgl.opengl.GL11.*;
 
 /**
-* @author 086
-*
-* Update by Rina.
-* 08/04/20.
-*
-*/
+ * @author 086
+ *
+ * Update by Rina.
+ * 08/04/20.
+ *
+ */
 public class TurokRenderHelp extends Tessellator {
     public static TurokRenderHelp INSTANCE = new TurokRenderHelp();
 
@@ -33,7 +33,7 @@ public class TurokRenderHelp extends Tessellator {
             mode = GL_LINES;
         }
 
-        prepare_gl(0.5f);
+        prepare_gl(1.0f);
         begin(mode);
     }
 

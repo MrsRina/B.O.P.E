@@ -17,12 +17,12 @@ import rina.turok.bope.bopemod.events.BopeEventEntity;
 import rina.turok.bope.Bope;
 
 /**
-* @author Rina
-*
-* Created by Rina.
-* 12/05/20.
-*
-*/
+ * @author Rina
+ *
+ * Created by Rina.
+ * 12/05/20.
+ *
+ */
 @Mixin(value = Entity.class)
 public abstract class BopeMixinEntity {
 	// Inject.

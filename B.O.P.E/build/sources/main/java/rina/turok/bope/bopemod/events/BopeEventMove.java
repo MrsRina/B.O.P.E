@@ -6,12 +6,12 @@ import net.minecraft.entity.MoverType;
 import rina.turok.bope.external.BopeEventCancellable;
 
 /**
-* @author Rina
-*
-* Created by Rina.
-* 12/05/20.
-*
-*/
+ * @author Rina
+ *
+ * Created by Rina.
+ * 12/05/20.
+ *
+ */
 public class BopeEventMove extends BopeEventCancellable {
 	public double x, y, z;
 

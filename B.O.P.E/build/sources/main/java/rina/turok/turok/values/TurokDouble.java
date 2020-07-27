@@ -3,12 +3,12 @@ package rina.turok.turok.values;
 import java.math.*;
 
 /**
-* @author Rina
-*
-* Created by Rina.
-* 08/04/20.
-*
-*/
+ * @author Rina
+ *
+ * Created by Rina.
+ * 08/04/20.
+ *
+ */
 public class TurokDouble {
 	private String name;
 	private String tag;

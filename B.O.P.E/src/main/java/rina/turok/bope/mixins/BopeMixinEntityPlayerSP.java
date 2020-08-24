@@ -29,11 +29,7 @@ import rina.turok.bope.Bope;
  *
  */
 @Mixin(value = EntityPlayerSP.class)
-public abstract class BopeMixinEntityPlayerSP extends Entity {
-	public BopeMixinEntityPlayerSP(World world) {
-		super(world);
-	}
-
+public abstract class BopeMixinEntityPlayerSP extends BopeMixinEntityPlayer {
 	private double motion_x;
 	private double motion_y;
 	private double motion_z;

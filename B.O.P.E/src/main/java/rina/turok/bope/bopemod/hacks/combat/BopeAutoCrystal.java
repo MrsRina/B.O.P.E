@@ -1,6 +1,8 @@
 package rina.turok.bope.bopemod.hacks.combat;
 
 import net.minecraft.network.play.client.CPacketPlayerTryUseItemOnBlock;
+import net.minecraft.network.play.client.CPacketPlayerDigging;
+import net.minecraft.network.play.client.CPacketUseEntity;
 import net.minecraft.network.play.client.CPacketPlayer;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.item.EntityEnderCrystal;
@@ -87,16 +89,14 @@ public class BopeAutoCrystal extends BopeModule {
 	BopeSetting solid_a         = create("Solid R", "AutoCrystalSolidA", 255, 0, 255);
 	BopeSetting outline_a       = create("Outline R", "AutoCrystalOutlineA", 255, 0, 255);
 	BopeSetting spearate_2      = create("info", "AutoCrystalInfo2", "Settings");
-	BopeSetting find_player     = create("Player", "AutoCrystalPlayer", true);
-	BopeSetting find_hostile    = create("Hostile", "AutoCrystalHostile", true);
 	BopeSetting double_place    = create("Double Place", "AutoCrystalDoublePlace", true);
 	BopeSetting auto_slot       = create("Auto Switch", "AutoCrystalAutoSlot", true);
 	BopeSetting anti_weakness   = create("Anti Weakness", "AutoCrystalAntiWeakness", true);
 	BopeSetting offhand_crystal = create("Offhand Crystal Hit", "AutoCrystalOffhandCrystalHit", false);
 	BopeSetting ray_trace_util  = create("Ray Trace", "AutoCrystalRayTrace", false);
 	BopeSetting face_place_min  = create("Minimum", "AutoCrystalMinimum", 2, 0, 36);
-	BopeSetting speed_place     = create("Place Delay", "AutoCrystalPlaceDelay", 8, 0, 10);
 	BopeSetting speed_hit       = create("Speed Hit", "AutoCrystalSpeedHit", 16, 0, 20);
+	BopeSetting speed_place     = create("Speed Place", "AtuoCrystalSpeedPlace", 9, 0, 10);
 	BopeSetting range_hit       = create("Range Hit", "AutoCrystalRangeHit", 5, 0, 8);
 	BopeSetting range_place     = create("Range Place", "AutoCrystalRangePlace", 5, 0, 6);
 	BopeSetting range_enemy     = create("Range Enemy", "AutoCrystalRangeEnemy", 13, 0, 16);
@@ -125,6 +125,8 @@ public class BopeAutoCrystal extends BopeModule {
 	private static double pitch;
 
 	private static boolean offhand;
+	private static boolean only_crystal_render;
+	private static boolean can_break;
 
 	public BopeAutoCrystal() {
 		super(BopeCategory.BOPE_COMBAT);
@@ -167,7 +169,7 @@ public class BopeAutoCrystal extends BopeModule {
 		/* RinaRinaRinaRinaRinaRinaRinaRinaRinaRinaRinaRin */ .orElse(null);
 
 		if (crystal != null && mc.player.getDistance(crystal) <= range_hit.get_value(1)) {
-			if (((System.nanoTime() / 1000000) - system_time_hit) >= 420 - speed_hit.get_value(1) * 20) {
+			if (((System.nanoTime() / 1000000) - system_time_hit) >= 400 - speed_hit.get_value(1) * 20) {
 				if (anti_weakness.get_value(true) && mc.player.isPotionActive(MobEffects.WEAKNESS)) {
 					if (is_attacking) {
 						old_slot     = mc.player.inventory.currentItem;
@@ -201,6 +203,12 @@ public class BopeAutoCrystal extends BopeModule {
 
 						switch_cooldown = true;
 					}
+				}
+
+				ItemStack off_hand_item = mc.player.getHeldItemOffhand();
+				
+				if (off_hand_item != null && off_hand_item.getItem() == Items.SHIELD && off_hand_item.getItem() != Items.END_CRYSTAL) {
+					mc.player.connection.sendPacket(new CPacketPlayerDigging(CPacketPlayerDigging.Action.RELEASE_USE_ITEM, BlockPos.ORIGIN, mc.player.getHorizontalFacing()));
 				}
 
 				BopeUtilMath.calcule_look_at(crystal.posX, crystal.posY, crystal.posZ, mc.player);
@@ -248,55 +256,54 @@ public class BopeAutoCrystal extends BopeModule {
 		List<BlockPos> blocks = find();
 		List<Entity> entities = new ArrayList<>();
 
-		if (find_player.get_value(true)) {
-			entities.addAll(mc.world.playerEntities.stream().filter(entity_player -> !Bope.get_friend_manager().is_friend(entity_player.getName())).collect(Collectors.toList()));
-		}
-
-		entities.addAll(mc.world.loadedEntityList.stream().filter(entity -> entity instanceof EntityLivingBase && (entity instanceof IMob && find_hostile.get_value(true))).collect(Collectors.toList()));
+		entities.addAll(mc.world.playerEntities.stream().filter(entity_player -> !Bope.get_friend_manager().is_friend(entity_player.getName())).collect(Collectors.toList()));
 	
 		BlockPos q = null;
 
-		double damage = 0.5;
+		double damage = 0;
 
 		for (Entity entity : entities) {
-			if (entity != mc.player) {
-				if (((EntityLivingBase) entity).getHealth() <= 0.0f || ((EntityLivingBase) entity).isDead) {
+			if (mc.player == entity) {
+				continue;
+			}
+
+			if (((EntityLivingBase) entity).getHealth() <= 0.0f || ((EntityLivingBase) entity).isDead) {
+				continue;
+			}
+
+			for (BlockPos pos : blocks) {
+				double sq = entity.getDistanceSq(pos);
+
+				if (sq > range_enemy.get_value(1) * range_enemy.get_value(1)) {
 					continue;
 				}
 
-				for (BlockPos pos : blocks) {
-					double sq = entity.getDistanceSq(pos);
-
-					if (sq > range_enemy.get_value(1) * range_enemy.get_value(1)) {
-						continue;
-					}
-
-					double dm = calcule_damage(pos.x + 0.5, pos.y + 1, pos.z + 0.5, entity);
-					if (dm <= damage) {
-						continue;
-					}
-
-					double sf = calcule_damage(pos.x + 0.5, pos.y + 1, pos.z + 0.5, mc.player);
-					if (sf > dm && dm >= ((EntityLivingBase) entity).getHealth()) {
-						continue;
-					}
-
-					if (sf - 0.5 > mc.player.getHealth()) {
-						continue;
-					}
-
-					if (dm < face_place_min.get_value(1)) {
-						continue;
-					}
-
-					damage        = dm;
-					q             = pos;
-					render_entity = entity;
+				double dm = calcule_damage(pos.x + 0.5, pos.y + 1, pos.z + 0.5, entity);
+				if (dm <= damage) {
+					continue;
 				}
+
+				double sf = calcule_damage(pos.x + 0.5, pos.y + 1, pos.z + 0.5, mc.player);
+
+				if (sf > dm && dm >= ((EntityLivingBase) entity).getHealth()) {
+					continue;
+				}
+
+				if (sf - 0.5 > mc.player.getHealth()) {
+					continue;
+				}
+
+				if (dm < face_place_min.get_value(1)) {
+					continue;
+				}
+
+				damage        = dm;
+				q             = pos;
+				render_entity = entity;
 			}
 		}
 
-		if (damage == 0.5) {
+		if (damage == 0) {
 			render        = null;
 			render_entity = null;
 
@@ -341,10 +348,10 @@ public class BopeAutoCrystal extends BopeModule {
 			return;
 		}
 
+		ItemStack off_hand_item = mc.player.getHeldItemOffhand();
+
 		if (System.nanoTime() / 1000000L - system_time_place >= speed_place.get_value(1) * 2) {
 			mc.player.connection.sendPacket(new CPacketPlayerTryUseItemOnBlock(q, f, offhand ? EnumHand.OFF_HAND : EnumHand.MAIN_HAND, 0, 0, 0));
-
-			places++;
 
 			system_time_place  = System.nanoTime() / 1000000;
 			system_time_ms     = System.nanoTime() / 1000000;
@@ -414,7 +421,7 @@ public class BopeAutoCrystal extends BopeModule {
 
 	private boolean can_place_crystal(BlockPos pos) {
 		BlockPos boost_1 = pos.add(0, 1, 0);
-		BlockPos boost_2 = pos.add(0, 1, 0);
+		BlockPos boost_2 = pos.add(0, 2, 0);
 
 		return (mc.world.getBlockState(pos).getBlock() == Blocks.BEDROCK
 				|| mc.world.getBlockState(pos).getBlock() == Blocks.OBSIDIAN)
@@ -467,9 +474,9 @@ public class BopeAutoCrystal extends BopeModule {
 		Vec3d vec3d = new Vec3d(pos_x, pos_y, pos_z);
 
 		double block_desinty = (double) entity.world.getBlockDensity(vec3d, entity.getEntityBoundingBox());
-		double v             = (1.0D - distanced_size) * block_desinty;
+		double v             = (1.0d - distanced_size) * block_desinty;
 
-		float damage = (float) ((int) ((v * v + v) / 2.0D * 7.0D * (double) double_explosion_size + 1.0D));
+		float damage = (float) ((int) ((v * v + v) / 2.0d * 7.0d * (double) double_explosion_size + 1.0d));
 
 		double finald = 1;
 
@@ -530,5 +537,17 @@ public class BopeAutoCrystal extends BopeModule {
 
 			is_spoofing_angles = false;
 		}
+	}
+
+	public int get_ping() {
+		int ping = -1;
+
+		if (mc.player == null || mc.getConnection() == null || mc.getConnection().getPlayerInfo(mc.player.getName()) == null) {
+			return -1;
+		} else {
+			ping = mc.getConnection().getPlayerInfo(mc.player.getName()).getResponseTime();
+		}
+
+		return ping;
 	}
 }

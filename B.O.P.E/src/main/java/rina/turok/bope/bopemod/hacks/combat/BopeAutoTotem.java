@@ -30,7 +30,7 @@ import rina.turok.bope.Bope;
 */
 public class BopeAutoTotem extends BopeModule {
 	BopeSetting absolute      = create("Absolutedisabled", "AutoTotemAbsolute", true);
-	BopeSetting slider_health = create("Health", "AutoTotemHealth", 18, 1, 18);
+	BopeSetting slider_health = create("Health", "AutoTotemHealth", 36.0, 1.0, 36.0);
 
 	int totem_count;
 	int last_slot;
@@ -110,7 +110,7 @@ public class BopeAutoTotem extends BopeModule {
 	@Override
 	public void update() {
 		// 18 * 2 = 36.
-		if (mc.player != null && mc.world != null && mc.player.getHealth() <= slider_health.get_value(1) * 2) {
+		if (mc.player != null && mc.world != null && mc.player.getHealth() <= (float) slider_health.get_value(1.0)) {
 			totem_count = mc.player.inventory.mainInventory.stream().filter(item -> item.getItem() == Items.TOTEM_OF_UNDYING).mapToInt(ItemStack::getCount).sum();
 
 			if (mc.currentScreen instanceof GuiContainer) {

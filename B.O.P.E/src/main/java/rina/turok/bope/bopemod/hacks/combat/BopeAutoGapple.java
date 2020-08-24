@@ -31,7 +31,7 @@ import rina.turok.bope.Bope;
 public class BopeAutoGapple extends BopeModule {
 	BopeSetting absolute     = create("Absolute", "AutoGappleAbsolute", true);
 	BopeSetting enable_totem = create("Auto Enable Totem", "AutoGappleEnableAutoTotem", true);
-	BopeSetting slider_smart = create("Smart", "AutoGappleSmart", 2, 1, 18);
+	BopeSetting slider_smart = create("Smart", "AutoGappleSmart", 1, 0, 10);
 
 	boolean is_smart_ev = false;
 
@@ -116,7 +116,7 @@ public class BopeAutoGapple extends BopeModule {
 				return;
 			}
 
-			if (mc.player.getHeldItemOffhand().getItem() == Items.GOLDEN_APPLE && mc.player.getHealth() <= slider_smart.get_value(1) * 2) {
+			if (mc.player.getHeldItemOffhand().getItem() == Items.GOLDEN_APPLE && mc.player.getHealth() <= (float) slider_smart.get_value(1.0)) {
 				is_smart_ev = true;
 
 				set_active(false);

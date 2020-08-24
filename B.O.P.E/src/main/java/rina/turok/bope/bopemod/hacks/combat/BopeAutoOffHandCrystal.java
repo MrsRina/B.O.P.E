@@ -32,7 +32,7 @@ import rina.turok.bope.Bope;
 public class BopeAutoOffHandCrystal extends BopeModule {
 	BopeSetting absolute     = create("Absolute", "AutoOffhandCrystalAbsolute", true);
 	BopeSetting enable_totem = create("Auto Enable Totem", "AutoOffhandCrystalEnableAutoTotem", true);
-	BopeSetting slider_smart = create("Smart", "AutoOffhandCrystalSmart", 2, 1, 18);
+	BopeSetting slider_smart = create("Smart", "AutoOffhandCrystalSmart", 1, 0, 10);
 
 	boolean is_smart_ev  = false;
 
@@ -120,7 +120,7 @@ public class BopeAutoOffHandCrystal extends BopeModule {
 				return;
 			}
 
-			if (mc.player.getHeldItemOffhand().getItem() == Items.END_CRYSTAL && mc.player.getHealth() <= slider_smart.get_value(1) * 2) {
+			if (mc.player.getHeldItemOffhand().getItem() == Items.END_CRYSTAL && mc.player.getHealth() <= (float) slider_smart.get_value(1.0)) {
 				is_smart_ev = true;
 
 				set_active(false);

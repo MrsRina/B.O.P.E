@@ -4,12 +4,12 @@ class Compile:
 
 	def run(self):
 		import os	
-		#os.system("cd B.O.P.E && gradlew setupDecompWorkspace --stop && gradlew clean build")
-		os.system("cd B.O.P.E && gradlew runClient --stop && gradlew clean build")
+		os.system("cd B.O.P.E && gradlew setupDecompWorkspace --stop && gradlew clean build")
+		#os.system("cd B.O.P.E && gradlew runClient --stop && gradlew clean build")
 
 		import shutil
 		try:
-			shutil.copyfile("B.O.P.E/build/libs/bope-0.3-all.jar", os.getenv("APPDATA") + "\\.minecraft\\mods\\bope-0.3.jar")
+			shutil.copyfile("B.O.P.E/build/libs/bope-0.4-all.jar", os.getenv("APPDATA") + "\\.minecraft\\mods\\bope-0.4.jar")
 			os.system("start C:/Users/Public/Desktop/Minecraft_Launcher")
 			print("Copiadokkk")
 		except:

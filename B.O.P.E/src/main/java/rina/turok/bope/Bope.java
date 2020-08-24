@@ -72,7 +72,7 @@ public class Bope {
 
 	// Somes arguments like, version, name, space...
 	public static final String BOPE_NAME    = "B.O.P.E";
-	public static final String BOPE_VERSION = "0.3";
+	public static final String BOPE_VERSION = "0.4";
 	public static final String BOPE_SPACE   = " ";
 	public static final String BOPE_SIGN    = " \u23D0 ";
 
